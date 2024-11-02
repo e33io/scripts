@@ -2,7 +2,7 @@
 
 # ================================================================================
 # Debian (post-install) Initial Setup and WM or DE Installation
-# URL: https://git.sr.ht/~e33io/scripts/tree/main/item/deb-post-install-options.sh
+# URL: https://github.com/e33io/scripts/blob/main/deb-post-install-options.sh
 # --------------------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
 # NOTE! For best results only select "standard system utilities" on the
@@ -12,7 +12,7 @@
 # --------------------------------------------------------------------------------
 # Instructions for running this script:
 #   sudo apt install git
-#   git clone https://git.sr.ht/~e33io/scripts
+#   git clone https://github.com/e33io/scripts
 #   cd scripts
 #   sh deb-post-install-options.sh
 # ================================================================================

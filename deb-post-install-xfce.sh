@@ -2,7 +2,7 @@
 
 # =============================================================================
 # Debian (post-install) Xfce Installation
-# URL: https://git.sr.ht/~e33io/scripts/tree/main/item/deb-post-install-xfce.sh
+# URL: https://github.com/e33io/scripts/blob/main/deb-post-install-xfce.sh
 # Installation steps and other configuration options: https://e33.io/1541
 # -----------------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
@@ -67,8 +67,8 @@ echo "#########################################################"
 echo "Clone custom configuration files"
 echo "#########################################################"
 
-git clone https://git.sr.ht/~e33io/dotfiles $HOME/dotfiles
-git clone https://git.sr.ht/~e33io/opt-dots $HOME/opt-dots
+git clone https://github.com/e33io/dotfiles $HOME/dotfiles
+git clone https://github.com/e33io/opt-dots $HOME/opt-dots
 
 echo "#########################################################"
 echo "Copy custom configuration files"

@@ -2,7 +2,7 @@
 
 # ==========================================================================
 # Install Signal App from Signal's apt package repos
-# URL: https://git.sr.ht/~e33io/scripts/tree/main/item/install-signal-deb.sh
+# URL: https://github.com/e33io/scripts/blob/main/install-signal-deb.sh
 # --------------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
 # ==========================================================================

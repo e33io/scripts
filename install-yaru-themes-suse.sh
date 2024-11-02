@@ -2,7 +2,7 @@
 
 # ================================================================================
 # Install Yaru Themes and Icons
-# URL: https://git.sr.ht/~e33io/scripts/tree/main/item/install-yaru-themes-suse.sh
+# URL: https://github.com/e33io/scripts/blob/main/install-yaru-themes-suse.sh
 # --------------------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
 # NOTE: Only use with openSUSE Linux!

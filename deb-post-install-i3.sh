@@ -2,7 +2,7 @@
 
 # ===========================================================================
 # Debian (post-install) i3 Installation
-# URL: https://git.sr.ht/~e33io/scripts/tree/main/item/deb-post-install-i3.sh
+# URL: https://github.com/e33io/scripts/blob/main/deb-post-install-i3.sh
 # Installation steps and other configuration options: https://e33.io/1121
 # ---------------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
@@ -68,7 +68,7 @@ echo "#########################################################"
 echo "Clone custom configuration files"
 echo "#########################################################"
 
-git clone https://git.sr.ht/~e33io/dotfiles $HOME/dotfiles
+git clone https://github.com/e33io/dotfiles $HOME/dotfiles
 
 echo "#########################################################"
 echo "Copy custom configuration files"

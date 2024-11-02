@@ -2,7 +2,7 @@
 
 # ===========================================================================
 # Install Firefox Web Browser from Mozilla's .deb package repos
-# URL: https://git.sr.ht/~e33io/scripts/tree/main/item/install-firefox-deb.sh
+# URL: https://github.com/e33io/scripts/blob/main/install-firefox-deb.sh
 # ---------------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
 # ===========================================================================

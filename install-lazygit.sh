@@ -2,7 +2,7 @@
 
 # =============================================================================
 # Install Lazygit (terminal UI for git commands)
-# URL: https://git.sr.ht/~e33io/scripts/tree/main/item/install-lazygit.sh
+# URL: https://github.com/e33io/scripts/blob/main/install-lazygit.sh
 # -----------------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
 # Please see https://github.com/jesseduffield/lazygit for a complete reference!

@@ -2,7 +2,7 @@
 
 # =======================================================================
 # Update standalone window manager configs from desktop use to laptop use
-# URL: https://git.sr.ht/~e33io/scripts/tree/main/item/mod-wm-laptop.sh
+# URL: https://github.com/e33io/scripts/blob/main/mod-wm-laptop.sh
 # -----------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
 # =======================================================================

@@ -2,7 +2,7 @@
 
 # =======================================================================
 # Install Firefox Web Browser from Mozilla's latest builds
-# URL: https://git.sr.ht/~e33io/scripts/tree/main/item/install-firefox.sh
+# URL: https://github.com/e33io/scripts/blob/main/install-firefox.sh
 # -----------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
 # This method is for the current user only, and will auto-update

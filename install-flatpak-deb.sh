@@ -2,7 +2,7 @@
 
 # ===========================================================================
 # Install Flatpak package and add Flathub repository on Debian/Ubuntu
-# URL: https://git.sr.ht/~e33io/scripts/tree/main/item/install-flatpak-deb.sh
+# URL: https://github.com/e33io/scripts/blob/main/install-flatpak-deb.sh
 # ---------------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
 # ===========================================================================

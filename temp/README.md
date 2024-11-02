@@ -7,4 +7,4 @@
 &nbsp;
 
 ### License
-[BSD Zero Clause License](https://git.sr.ht/~e33io/scripts/tree/main/item/LICENSE)
+[BSD Zero Clause License](https://github.com/e33io/scripts/blob/main/LICENSE)

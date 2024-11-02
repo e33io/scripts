@@ -2,7 +2,7 @@
 
 # =============================================================================
 # Install tick-rs (realtime ticker data in your terminal)
-# URL: https://git.sr.ht/~e33io/scripts/tree/main/item/install-tickrs.sh
+# URL: https://github.com/e33io/scripts/blob/main/install-tickrs.sh
 # -----------------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
 # Please see https://github.com/tarkah/tickrs for a complete reference!

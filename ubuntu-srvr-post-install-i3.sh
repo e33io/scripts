@@ -2,7 +2,7 @@
 
 # ===================================================================================
 # Ubuntu 24.04 Server (post-install) i3 Installation
-# URL: https://git.sr.ht/~e33io/scripts/tree/main/item/ubuntu-srvr-post-install-i3.sh
+# URL: https://github.com/e33io/scripts/blob/main/ubuntu-srvr-post-install-i3.sh
 # Installation steps and other configuration options: https://e33.io/1793
 # -----------------------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!

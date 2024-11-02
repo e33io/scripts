@@ -2,7 +2,7 @@
 
 # ================================================================================
 # Install Linux Mint Themes and Icons
-# URL: https://git.sr.ht/~e33io/scripts/tree/main/item/install-mint-themes-suse.sh
+# URL: https://github.com/e33io/scripts/blob/main/install-mint-themes-suse.sh
 # --------------------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
 # NOTE: Only use with openSUSE Linux!
@@ -59,7 +59,7 @@ echo "#########################################################"
 echo "Clone custom theming repo"
 echo "#########################################################"
 
-git clone https://git.sr.ht/~e33io/theming $HOME/theming-temp
+git clone https://github.com/e33io/theming $HOME/theming-temp
 
 echo "#########################################################"
 echo "Copy custom Mint Dark Mod themes"

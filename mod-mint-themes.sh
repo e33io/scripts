@@ -2,7 +2,7 @@
 
 # =======================================================================
 # Modify Linux Mint Dark themes for a slightly darker overall appearance
-# URL: https://git.sr.ht/~e33io/scripts/tree/main/item/mod-mint-themes.sh
+# URL: https://github.com/e33io/scripts/blob/main/mod-mint-themes.sh
 # -----------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
 # =======================================================================

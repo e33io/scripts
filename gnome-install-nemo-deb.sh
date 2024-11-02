@@ -2,7 +2,7 @@
 
 # ==============================================================================
 # Debian/Ubuntu Replace Default Gnome Files App with Nemo File Manager
-# URL: https://git.sr.ht/~e33io/scripts/tree/main/item/gnome-install-nemo-deb.sh
+# URL: https://github.com/e33io/scripts/blob/main/gnome-install-nemo-deb.sh
 # ------------------------------------------------------------------------------
 # NOTE: Only use with the Gnome desktop environment on Debian/Ubuntu!
 # ==============================================================================

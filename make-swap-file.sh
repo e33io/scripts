@@ -2,7 +2,7 @@
 
 # =======================================================================
 # Make and setup a swap file
-# URL: https://git.sr.ht/~e33io/scripts/tree/main/item/make-swap-file.sh
+# URL: https://github.com/e33io/scripts/blob/main/make-swap-file.sh
 # -----------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
 # Only use on file systems that do not already have a swap file/partition

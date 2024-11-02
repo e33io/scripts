@@ -3,7 +3,7 @@
 # ============================================================================
 # Update Xfce configs from "Window Scaling 2x" (HiDPI)
 # to "Window Scaling 1x" (non-HiPDI)
-# URL: https://git.sr.ht/~e33io/scripts/tree/main/item/mod-dpi-scaling-xfce.sh
+# URL: https://github.com/e33io/scripts/blob/main/mod-dpi-scaling-xfce.sh
 # ----------------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
 # ============================================================================

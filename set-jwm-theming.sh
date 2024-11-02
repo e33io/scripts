@@ -2,7 +2,7 @@
 
 # =======================================================================
 # Select and Set Theming for JWM and Applications
-# URL: https://git.sr.ht/~e33io/scripts/tree/main/item/set-jwm-theming.sh
+# URL: https://github.com/e33io/scripts/blob/main/set-jwm-theming.sh
 # -----------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
 # NOTE: Only use with Debian/Ubuntu or openSUSE Linux!
@@ -35,7 +35,7 @@ if [ ! -n "$(ls -d /usr/share/themes/Mint-*-Dark-Mod-* 2>/dev/null)" ]; then
     while true; do
         read -p "Do you want to install Mint themes to continue this theming script? (y/n) " yn
         case $yn in
-            [Yy]* ) git clone https://git.sr.ht/~e33io/scripts $HOME/scripts-theming;
+            [Yy]* ) git clone https://github.com/e33io/scripts $HOME/scripts-theming;
                     if [ -f "/etc/debian_version" ]; then
                         sh $HOME/scripts-theming/install-mint-themes.sh \
                         && sudo rm -R $HOME/scripts-theming

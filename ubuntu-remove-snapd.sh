@@ -2,7 +2,7 @@
 
 # ===========================================================================
 # Ubuntu Remove Snaps, Disable Snapd and Optionally Install Flatpak
-# URL: https://git.sr.ht/~e33io/scripts/tree/main/item/ubuntu-remove-snapd.sh
+# URL: https://github.com/e33io/scripts/blob/main/ubuntu-remove-snapd.sh
 # ---------------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
 # ===========================================================================

@@ -2,7 +2,7 @@
 
 # =========================================================================
 # Install Brave Browser from Brave's apt-release package repos
-# URL: https://git.sr.ht/~e33io/scripts/tree/main/item/install-brave-deb.sh
+# URL: https://github.com/e33io/scripts/blob/main/install-brave-deb.sh
 # -------------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
 # =========================================================================
