@@ -1,19 +1,19 @@
 #!/bin/bash
 
-# ===================================================================================
+# ==============================================================================
 # Ubuntu 24.04 Server (post-install) i3 Installation
 # URL: https://github.com/e33io/scripts/blob/main/ubuntu-srvr-post-install-i3.sh
 # Installation steps and other configuration options: https://e33.io/1793
-# -----------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
 # Use with an Ubuntu 24.04 Server installation to install the i3 window
 # manager and a base set of apps for a ready-to-use desktop session.
-# -----------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # The default configuration is for use with HiDPI monitors (192 dpi settings)
 # and desktop-type computers, but there are options at the end of the script
 # that let you change to 96 dpi settings for use with non-HiDPI monitors,
 # and/or change to laptop-type (battery powered) computer settings.
-# ===================================================================================
+# ==============================================================================
 
 if [ "$(id -u)" = 0 ]; then
     echo "#########################################################"
