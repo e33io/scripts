@@ -5,6 +5,13 @@
 # URL: https://github.com/e33io/scripts/blob/main/install-plex-fonts.sh
 # ==========================================================================
 
+if [ ! -f "/usr/bin/git" ]; then
+    echo "#########################################################"
+    echo "This script requires git. Install git and try again."
+    echo "#########################################################"
+    exit 1
+fi
+
 echo "#########################################################"
 echo "Clone font files and make truetype directory"
 echo "#########################################################"
