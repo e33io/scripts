@@ -82,6 +82,9 @@ while true; do
     read -p "Do you want to install the backports kernel? (y/n) " yn
     case $yn in
         [Yy]* ) sudo apt -t bookworm-backports -y install linux-image-amd64;
+                if [ -d "/usr/share/doc/firmware-iwlwifi" ]; then
+                    sudo apt -t bookworm-backports -y install firmware-iwlwifi
+                fi
                 break;;
         [Nn]* ) echo "You chose NOT to install the backports kernel";
                 break;;
