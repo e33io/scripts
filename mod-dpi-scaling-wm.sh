@@ -77,12 +77,7 @@ fi
 
 # JWM specific configs
 if [ -f "$HOME/.jwmrc" ]; then
-    # update jwm configs (tray/bar, window sizes and window decorations)
-    sed -i 's/Tray x="0" y="0" height="40"/Tray x="0" y="0" height="22"/' $HOME/.config/jwm/tray
-    sed -i 's/Swallow width="552"/Swallow width="279"/' $HOME/.config/jwm/tray
-    sed -i 's/Swallow width="434"/Swallow width="217"/' $HOME/.config/jwm/tray
-    sed -i 's/Dock spacing="4"/Dock spacing="2"/' $HOME/.config/jwm/tray
-    sed -i 's/-b "1"/-b "0"/' $HOME/.config/jwm/tray
+    # update jwm configs (window sizes and window decorations)
     sed -i 's/<Option>height:1028/<Option>height:514/' $HOME/.config/jwm/windows
     sed -i 's/<Option>height:1188/<Option>height:594/' $HOME/.config/jwm/windows
     sed -i 's/<Option>height:1296/<Option>height:648/' $HOME/.config/jwm/windows
