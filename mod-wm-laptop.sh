@@ -41,11 +41,6 @@ if [ -f "$HOME/.jwmrc" ]; then
     # update .jwmrc (include laptop config instead of desktop config)
     sed -i 's/<Include>\$HOME\/\.config\/jwm\/desktop<\/Include>/<!-- <Include>\$HOME\/\.config\/jwm\/desktop<\/Include> -->/' $HOME/.jwmrc
     sed -i 's/<!-- <Include>\$HOME\/\.config\/jwm\/laptop<\/Include> -->/<Include>\$HOME\/\.config\/jwm\/laptop<\/Include>/' $HOME/.jwmrc
-    # update jwm/tray (status tray width)
-    sed -i 's/Swallow width="434"/Swallow width="552"/' $HOME/.config/jwm/tray
-    sed -i 's/Swallow width="217"/Swallow width="279"/' $HOME/.config/jwm/tray
-    # update jwm-bar.sh (status options/icons)
-    sed -i 's/$(time1)$(spcr)$(vol)/$(time1)$(spcr)$(bat)$(spcr)$(vol)/' $HOME/.local/bin/jwm-bar.sh
 fi
 
 # update rofi-power.sh (lock with i3lock instead of loginctl)
