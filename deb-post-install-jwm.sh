@@ -35,7 +35,7 @@ echo "#########################################################"
 echo "Install JWM and other core packages"
 echo "#########################################################"
 
-sudo apt -y install jwm i3lock xautolock rofi dunst network-manager playerctl xsel xclip xinput x11-utils lxappearance qt5ct qt5-style-plugins adwaita-qt gnome-themes-extra papirus-icon-theme fonts-dejavu fonts-noto-color-emoji nitrogen policykit-1-gnome python3-gi gobject-introspection gir1.2-gtk-3.0 libdbus-glib-1-2 upower dex slick-greeter plymouth plymouth-themes kitty python3-pypillowfight thunar thunar-archive-plugin tumbler-plugins-extra ffmpegthumbnailer gvfs-fuse gvfs-backends nfs-common cifs-utils engrampa pavucontrol
+sudo apt -y install jwm xfce4-panel xfce4-pulseaudio-plugin xfce4-sntray-plugin network-manager-gnome i3lock xautolock rofi dunst playerctl xsel xclip xinput x11-utils lxappearance qt5ct qt5-style-plugins adwaita-qt gnome-themes-extra papirus-icon-theme fonts-dejavu fonts-noto-color-emoji nitrogen policykit-1-gnome python3-gi gobject-introspection gir1.2-gtk-3.0 libdbus-glib-1-2 upower dex slick-greeter plymouth plymouth-themes kitty python3-pypillowfight thunar thunar-archive-plugin tumbler-plugins-extra ffmpegthumbnailer gvfs-fuse gvfs-backends nfs-common cifs-utils engrampa pavucontrol
 
 echo "#########################################################"
 echo "Install other packages"
@@ -177,6 +177,7 @@ file:///home/$(whoami)/Videos
 file:///home/$(whoami)/Music" > $HOME/.config/gtk-3.0/bookmarks
 sed -i "s/~\/\.gtkrc-2\.0\.mine/\/home\/$(whoami)\/\.gtkrc-2\.0\.mine/" $HOME/.gtkrc-2.0
 sed -i "s/home\/.*\/Desktop/home\/$(whoami)\/Desktop/" $HOME/.config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml
+sed -i "s/xsetroot -solid \".*\"/xsetroot -solid \"#092648\"/" $HOME/.profile
 rm -R $HOME/.config/i3
 sudo rm -R $HOME/dotfiles
 sudo rm -R $HOME/opt-dots
