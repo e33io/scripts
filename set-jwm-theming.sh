@@ -153,6 +153,24 @@ Adwaita_Darker () {
     theming_files
 }
 
+Adwaita_Light () {
+    # JWM theme
+    jwm_theme="JWM-Adwaita-Light"
+    # CAVA foreground color
+    cava_fg_color="#3584e4"
+    # Desktop background color
+    desktop_bg_color="#11427f"
+    # GUI and TUI theme names
+    prefer_dark_theme="0"
+    gtk_theme=Adwaita
+    qt_ct_theme=Adwaita
+    rofi_theme=Floating-Adwaita-Light
+    icon_theme=Papirus-Light
+    papirus_folders=blue
+    # Call the theming files
+    theming_files
+}
+
 Mint_L_Dark_Mod_Brown () {
     # JWM theme
     jwm_theme="JWM-Mint-L-Dark-Brown"
@@ -332,15 +350,16 @@ while true; do
     echo "   0) Keep current theming"
     echo "   1) Adwaita-Dark"
     echo "   2) Adwaita-Darker"
-    echo "   3) Mint-L-Dark-Mod-Brown"
-    echo "   4) Mint-L-Dark-Mod-Teal"
-    echo "   5) Mint-Y-Dark-Mod-Blue"
-    echo "   6) Mint-Y-Dark-Mod-Green"
-    echo "   7) Mint-Y-Dark-Mod-Grey"
-    echo "   8) Mint-Y-Dark-Mod-Orange"
-    echo "   9) Mint-Y-Dark-Mod-Purple"
-    echo "  10) Mint-Y-Dark-Mod-Red"
-    echo "  11) Mint-Y-Dark-Mod-Teal"
+    echo "   3) Adwaita-Light"
+    echo "   4) Mint-L-Dark-Mod-Brown"
+    echo "   5) Mint-L-Dark-Mod-Teal"
+    echo "   6) Mint-Y-Dark-Mod-Blue"
+    echo "   7) Mint-Y-Dark-Mod-Green"
+    echo "   8) Mint-Y-Dark-Mod-Grey"
+    echo "   9) Mint-Y-Dark-Mod-Orange"
+    echo "  10) Mint-Y-Dark-Mod-Purple"
+    echo "  11) Mint-Y-Dark-Mod-Red"
+    echo "  12) Mint-Y-Dark-Mod-Teal"
 
     read -p "Which theme do you want to use? " n
     case $n in
@@ -352,31 +371,34 @@ while true; do
         2) echo "You chose Adwaita-Darker";
            Adwaita_Darker;
            break;;
-        3) echo "You chose Mint-L-Dark-Mod-Brown";
+        3) echo "You chose Adwaita-Light";
+           Adwaita_Light;
+           break;;
+        4) echo "You chose Mint-L-Dark-Mod-Brown";
            Mint_L_Dark_Mod_Brown;
            break;;
-        4) echo "You chose Mint-L-Dark-Mod-Teal";
+        5) echo "You chose Mint-L-Dark-Mod-Teal";
            Mint_L_Dark_Mod_Teal;
            break;;
-        5) echo "You chose Mint-Y-Dark-Mod-Blue";
+        6) echo "You chose Mint-Y-Dark-Mod-Blue";
            Mint_Y_Dark_Mod_Blue;
            break;;
-        6) echo "You chose Mint-Y-Dark-Mod-Green";
+        7) echo "You chose Mint-Y-Dark-Mod-Green";
            Mint_Y_Dark_Mod_Green;
            break;;
-        7) echo "You chose Mint-Y-Dark-Mod-Grey";
+        8) echo "You chose Mint-Y-Dark-Mod-Grey";
            Mint_Y_Dark_Mod_Grey;
            break;;
-        8) echo "You chose Mint-Y-Dark-Mod-Orange";
+        9) echo "You chose Mint-Y-Dark-Mod-Orange";
            Mint_Y_Dark_Mod_Orange;
            break;;
-        9) echo "You chose Mint-Y-Dark-Mod-Purple";
+        10) echo "You chose Mint-Y-Dark-Mod-Purple";
            Mint_Y_Dark_Mod_Purple;
            break;;
-        10) echo "You chose Mint-Y-Dark-Mod-Red";
+        11) echo "You chose Mint-Y-Dark-Mod-Red";
            Mint_Y_Dark_Mod_Red;
            break;;
-        11) echo "You chose Mint-Y-Dark-Mod-Teal";
+        12) echo "You chose Mint-Y-Dark-Mod-Teal";
            Mint_Y_Dark_Mod_Teal;
            break;;
         *) echo "Invalid selection, please enter a number from the list.";;
