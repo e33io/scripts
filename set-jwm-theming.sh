@@ -159,7 +159,7 @@ Adwaita_Light () {
     # CAVA foreground color
     cava_fg_color="#3584e4"
     # Desktop background color
-    desktop_bg_color="#11427f"
+    desktop_bg_color="#0f3a6f"
     # GUI and TUI theme names
     prefer_dark_theme="0"
     gtk_theme=Adwaita
