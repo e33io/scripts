@@ -212,15 +212,15 @@ Adwaita_Light () {
     status_good="#2e3436"
     #                  border  bckgrd  text
     focused_workspace="#3584e4 #3584e4 #ffffff"
-    active_workspace="#5f5f5f #5f5f5f #eeeeee"
+    active_workspace="#b3aaa2 #b3aaa2 #453f39"
     inactive_workspace="#f6f5f4 #f6f5f4 #2e3436"
-    urgent_workspace="#aa0e15 #aa0e15 #eeeeee"
-    binding_mode="#713d98 #713d98 #eeeeee"
+    urgent_workspace="#aa0e15 #aa0e15 #ffffff"
+    binding_mode="#703c97 #703c97 #ffffff"
     # i3 colors     border  bckgrd  text    indictr child_border
     client_focused="#3584e4 #3584e4 #ffffff #7bafed #3584e4"
-    client_focused_inactive="#5f5f5f #f6f5f4 #40494c #828282 #5f5f5f"
-    client_unfocused="#5f5f5f #f6f5f4 #40494c #828282 #5f5f5f"
-    client_urgent="#aa0e15 #aa0e15 #eeeeee #e6131d #aa0e15"
+    client_focused_inactive="#b3aaa2 #f6f5f4 #453f39 #8e8175 #b3aaa2"
+    client_unfocused="#b3aaa2 #f6f5f4 #453f39 #8e8175 #b3aaa2"
+    client_urgent="#aa0e15 #aa0e15 #ffffff #e6131d #aa0e15"
     client_placeholder="#f6f5f4 #f6f5f4 #2e3436 #f6f5f4 #f6f5f4"
     client_background="#7f7f7f"
     # CAVA foreground color
