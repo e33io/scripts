@@ -1,13 +1,13 @@
 #!/bin/bash
 
-# =============================================================================
-# Install tick-rs (realtime ticker data in your terminal)
+# =====================================================================
+# Install tickrs (realtime ticker data in your terminal)
 # URL: https://github.com/e33io/scripts/blob/main/install-tickrs.sh
-# -----------------------------------------------------------------------------
+# ---------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
 # Please see https://github.com/tarkah/tickrs for a complete reference!
 # NOTE: This method is for the current user only.
-# =============================================================================
+# =====================================================================
 
 if [ "$(id -u)" = 0 ]; then
     echo "########################################################"
@@ -43,12 +43,12 @@ mkdir -p $HOME/.config/tickrs
 
 # write config file
 echo "symbols:
+  - ^DJI
+  - ^IXIC
+  - ^GSPC
   - AMD
   - INTC
   - NVDA
-  - ^DJI
-  - ^GSPC
-  - ^IXIC
   - BTC-USD
   - XMR-USD" > $HOME/.config/tickrs/config.yml
 
