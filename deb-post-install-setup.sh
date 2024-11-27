@@ -27,7 +27,7 @@ echo "#########################################################"
 echo "Update Debian Bookworm apt sources.list file"
 echo "#########################################################"
 
-echo "# Please see https://wiki.debian.org/SourcesList for a complete reference!
+echo "# Reference: https://wiki.debian.org/SourcesList
 
 deb http://deb.debian.org/debian bookworm main contrib non-free non-free-firmware
 deb-src http://deb.debian.org/debian bookworm main contrib non-free non-free-firmware
