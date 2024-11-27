@@ -19,9 +19,9 @@ fi
 release="$(lsb_release -a | awk '/Codename:/ { print $2 }')"
 if [ ! $release = bookworm ]; then
     echo "#########################################################"
-    echo "This script is NOT compatible with your version of Linux!"
-    echo "It only works with Debian Linux 12 Bookworm,"
-    echo "and it will exit now without running."
+    echo "Debian 12 Bookworm Initial Setup is NOT compatible with"
+    echo "your version of Linux, and it will exit now without"
+    echo "running or making any changes."
     echo "#########################################################"
     exit 1
 fi
