@@ -1,17 +1,27 @@
 #!/bin/bash
 
-# ==============================================================================
+# =========================================================================
 # Debian 12 Bookworm (post-install) Initial Setup
 # URL: https://github.com/e33io/scripts/blob/main/deb-post-install-setup.sh
-# ------------------------------------------------------------------------------
+# -------------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
-# ==============================================================================
+# =========================================================================
 
 if [ "$(id -u)" = 0 ]; then
     echo "#########################################################"
     echo "This script MUST NOT be run as root user."
     echo "Run this script as a normal user."
     echo "You will be asked for a sudo password when necessary."
+    echo "#########################################################"
+    exit 1
+fi
+
+release="$(lsb_release -a | awk '/Codename:/ { print $2 }')"
+if [ ! $release = bookworm ]; then
+    echo "#########################################################"
+    echo "This script is NOT compatible with your version of Linux!"
+    echo "It only works with Debian Linux 12 Bookworm,"
+    echo "and it will exit now without running."
     echo "#########################################################"
     exit 1
 fi
