@@ -31,6 +31,14 @@ echo "#########################################################"
 
 sudo apt -y install cinnamon slick-greeter qt5ct qt5-style-plugins papirus-icon-theme arc-theme fonts-noto-color-emoji plymouth plymouth-themes kitty python3-pypillowfight xfce4-appfinder atril eog rhythmbox mpv parole mousepad galculator gnome-screenshot mintstick synaptic gpick darktable gimp inkscape filezilla libreoffice-calc libreoffice-draw libreoffice-impress libreoffice-writer libreoffice-gtk3 timeshift dconf-editor dconf-cli nfs-common cifs-utils micro fzf htop neofetch cava libimage-exiftool-perl apt-transport-https curl rsync xclip xdotool xbindkeys
 
+
+echo "#########################################################"
+echo "Install pipewire and enable wireplumber service"
+echo "#########################################################"
+
+sudo apt -y install pipewire-audio pipewire-media-session-
+systemctl --user --now enable wireplumber.service
+
 echo "#########################################################"
 echo "Install Linux Mint themes and icons"
 echo "#########################################################"

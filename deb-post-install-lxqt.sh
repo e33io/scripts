@@ -42,6 +42,13 @@ echo "#########################################################"
 sudo apt -y install synaptic gnome-disk-utility mintstick atril imv mpv parole pragha galculator flameshot gpick darktable gimp inkscape filezilla libreoffice-calc libreoffice-draw libreoffice-impress libreoffice-writer libreoffice-gtk3 timeshift dunst rofi htop neofetch cmus cava cmatrix ncal micro ranger ueberzug caca-utils highlight atool w3m poppler-utils mediainfo fzf libimage-exiftool-perl apt-transport-https curl rsync xdotool xbindkeys
 
 echo "#########################################################"
+echo "Install pipewire and enable wireplumber service"
+echo "#########################################################"
+
+sudo apt -y install pipewire-audio pipewire-media-session-
+systemctl --user --now enable wireplumber.service
+
+echo "#########################################################"
 echo "Install Firefox Browser"
 echo "#########################################################"
 
