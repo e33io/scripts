@@ -1,16 +1,16 @@
 #!/bin/bash
 
-# ===========================================================================
+# ======================================================================
 # Install Thunderbird Email Client from Mozilla's latest builds
 # URL: https://github.com/e33io/scripts/blob/main/install-thunderbird.sh
-# ---------------------------------------------------------------------------
+# ----------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
 # This method is for the current user only, and will auto-update
-# ---------------------------------------------------------------------------
+# ----------------------------------------------------------------------
 # NOTE: If your active icon theme doesn't have a Thunderbird icon,
 #       update the `Icon` path in the thunderbird.desktop file
 #       to a Thunderbird icon on your system
-# ===========================================================================
+# ======================================================================
 
 if [ "$(id -u)" = 0 ]; then
     echo "#########################################################"
@@ -23,6 +23,7 @@ fi
 
 # make directories
 mkdir -p $HOME/.local/applications
+mkdir -p $HOME/.local/bin
 mkdir -p $HOME/.local/share/applications
 
 # download and extract tar
@@ -45,8 +46,8 @@ Keywords=email;contact;addressbook;news;
 StartupWMClass=thunderbird-default
 StartupNotify=true" > $HOME/.local/share/applications/thunderbird.desktop
 
-# make symbolic link to /usr/local/bin
-sudo ln -s $HOME/.local/applications/thunderbird/thunderbird /usr/local/bin/thunderbird
+# make symbolic link to $HOME/.local/bin
+ln -s $HOME/.local/applications/thunderbird/thunderbird $HOME/.local/bin/thunderbird
 
 echo "#########################################################"
 echo "All done, Thunderbird Email Client is now installed"
