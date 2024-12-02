@@ -130,7 +130,7 @@ Adwaita_Dark () {
     qt_ct_theme=Adwaita-Dark
     rofi_theme=Floating-Adwaita-Dark
     icon_theme=Papirus-Dark
-    papirus_folders=blue
+    papirus_folders=adwaita
     # Call the theming files
     theming_files
 }
@@ -148,7 +148,7 @@ Adwaita_Darker () {
     qt_ct_theme=Adwaita-Dark
     rofi_theme=Floating-Adwaita-Darker
     icon_theme=Papirus-Dark
-    papirus_folders=blue
+    papirus_folders=adwaita
     # Call the theming files
     theming_files
 }
