@@ -99,8 +99,10 @@ sudo cp -R $HOME/dotfiles/usr/share /usr
 sudo cp -R $HOME/opt-dots/mate/etc/lightdm /etc
 sudo mkdir -p /boot/grub/fonts
 sudo cp -R /usr/share/grub/ter-* /boot/grub/fonts
-sudo mkdir -p /root/.config/qt5ct
-sudo ln -s $HOME/.config/qt5ct/qt5ct.conf /root/.config/qt5ct/qt5ct.conf
+if [ ! -f "/root/.config/qt5ct/qt5ct.conf" ]; then
+    sudo mkdir -p /root/.config/qt5ct
+    sudo ln -s $HOME/.config/qt5ct/qt5ct.conf /root/.config/qt5ct/qt5ct.conf
+fi
 sudo update-initramfs -u
 sudo update-grub
 
