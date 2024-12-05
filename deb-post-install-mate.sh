@@ -96,6 +96,7 @@ sudo cp -R $HOME/dotfiles/etc/lightdm /etc
 sudo cp -R $HOME/dotfiles/etc/network /etc
 sudo cp -R $HOME/dotfiles/etc/plymouth /etc
 sudo cp -R $HOME/dotfiles/usr/share /usr
+sudo cp -R $HOME/opt-dots/mate/etc/lightdm /etc
 sudo mkdir -p /boot/grub/fonts
 sudo cp -R /usr/share/grub/ter-* /boot/grub/fonts
 sudo mkdir -p /root/.config/qt5ct
