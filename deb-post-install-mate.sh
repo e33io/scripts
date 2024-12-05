@@ -29,7 +29,7 @@ echo "#########################################################"
 echo "Install MATE and other core packages"
 echo "#########################################################"
 
-sudo apt -y install sudo apt install mate-desktop-environment mate-desktop-environment-extras mate-media caja-mediainfo network-manager-gnome slick-greeter qt5ct qt5-style-plugins adwaita-qt gnome-themes-extra papirus-icon-theme fonts-noto-color-emoji nfs-common cifs-utils xclip plymouth plymouth-themes
+sudo apt -y install mate-desktop-environment mate-desktop-environment-extras mate-media caja-mediainfo network-manager-gnome slick-greeter qt5ct qt5-style-plugins adwaita-qt gnome-themes-extra papirus-icon-theme fonts-noto-color-emoji nfs-common cifs-utils xclip plymouth plymouth-themes
 
 echo "#########################################################"
 echo "Install other packages"
