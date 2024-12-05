@@ -29,13 +29,13 @@ echo "#########################################################"
 echo "Install MATE and other core packages"
 echo "#########################################################"
 
-sudo apt -y install mate-desktop-environment mate-desktop-environment-extras mate-media caja-mediainfo network-manager-gnome slick-greeter qt5ct qt5-style-plugins adwaita-qt gnome-themes-extra papirus-icon-theme fonts-noto-color-emoji nfs-common cifs-utils xclip plymouth plymouth-themes
+sudo apt -y install mate-desktop-environment mate-desktop-environment-extras mate-media caja-mediainfo network-manager-gnome slick-greeter qt5ct qt5-style-plugins adwaita-qt gnome-themes-extra papirus-icon-theme fonts-noto-color-emoji plank nfs-common cifs-utils xclip plymouth plymouth-themes
 
 echo "#########################################################"
 echo "Install other packages"
 echo "#########################################################"
 
-sudo apt -y install parole mpv rhythmbox gnome-disk-utility mintstick synaptic darktable gimp inkscape filezilla libreoffice-calc libreoffice-draw libreoffice-impress libreoffice-writer libreoffice-gtk3 timeshift dconf-editor dconf-cli micro htop neofetch cava fzf libimage-exiftool-perl apt-transport-https curl rsync xdotool xbindkeys
+sudo apt -y install xfce4-appfinder parole mpv rhythmbox gnome-disk-utility mintstick synaptic darktable gimp inkscape filezilla libreoffice-calc libreoffice-draw libreoffice-impress libreoffice-writer libreoffice-gtk3 timeshift dconf-editor dconf-cli micro htop neofetch cava fzf libimage-exiftool-perl apt-transport-https curl rsync xdotool xbindkeys
 
 echo "#########################################################"
 echo "Install pipewire and enable wireplumber service"
