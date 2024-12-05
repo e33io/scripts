@@ -76,8 +76,8 @@ echo "#########################################################"
 echo "Clone custom configuration files"
 echo "#########################################################"
 
-git clone https://git.sr.ht/~e33io/dotfiles $HOME/dotfiles
-git clone https://git.sr.ht/~e33io/opt-dots $HOME/opt-dots
+git clone https://github.com/e33io/dotfiles $HOME/dotfiles
+git clone https://github.com/e33io/opt-dots $HOME/opt-dots
 
 echo "#########################################################"
 echo "Copy custom configuration files"
