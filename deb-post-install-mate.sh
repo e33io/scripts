@@ -128,6 +128,13 @@ echo "#########################################################"
 sudo rm -R /usr/share/xsessions/lightdm-xsession.desktop
 
 echo "#########################################################"
+echo "Change Papirus folders color"
+echo "#########################################################"
+
+wget -qO- https://git.io/papirus-folders-install | sh
+papirus-folders -C yaru --theme Papirus-Dark
+
+echo "#########################################################"
 echo "Update x-www-browser settings"
 echo "#########################################################"
 
