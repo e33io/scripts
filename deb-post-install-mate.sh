@@ -29,7 +29,7 @@ echo "#########################################################"
 echo "Install MATE and other core packages"
 echo "#########################################################"
 
-sudo apt -y install mate-desktop-environment mate-desktop-environment-extras mate-media caja-mediainfo caja-actions network-manager-gnome ayatana-indicator-application ayatana-indicator-keyboard ayatana-indicator-messages ayatana-indicator-notifications ayatana-indicator-power ayatana-indicator-printers ayatana-indicator-session ayatana-indicator-sound ayatana-settings slick-greeter qt5ct qt5-style-plugins adwaita-qt gnome-themes-extra papirus-icon-theme fonts-noto-color-emoji plank nfs-common cifs-utils xclip plymouth plymouth-themes
+sudo apt -y install mate-desktop-environment mate-desktop-environment-extras mate-media caja-mediainfo caja-actions network-manager-gnome ayatana-indicator-application ayatana-indicator-keyboard ayatana-indicator-messages ayatana-indicator-notifications ayatana-indicator-power ayatana-indicator-printers ayatana-indicator-session ayatana-indicator-sound ayatana-settings slick-greeter qt5ct qt5-style-plugins adwaita-qt gnome-themes-extra papirus-icon-theme fonts-noto-color-emoji plank kitty python3-pypillowfight nfs-common cifs-utils xclip plymouth plymouth-themes
 
 echo "#########################################################"
 echo "Install other packages"
