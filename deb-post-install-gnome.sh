@@ -29,7 +29,7 @@ echo "#########################################################"
 echo "Install Gnome and other packages"
 echo "#########################################################"
 
-sudo apt -y install gnome-core gnome-tweaks gnome-shell-extension-manager adwaita-qt qgnomeplatform-qt5 papirus-icon-theme fonts-noto-color-emoji plymouth-themes file-roller rhythmbox synaptic mintstick firefox-esr gcolor3 darktable gimp inkscape filezilla libreoffice-calc libreoffice-draw libreoffice-impress libreoffice-writer libreoffice-gtk3 soundconverter timeshift dconf-editor nfs-common cifs-utils libimage-exiftool-perl micro fzf htop neofetch cava apt-transport-https curl xclip input-remapper-gtk
+sudo apt -y install gnome-core gnome-tweaks gnome-shell-extension-manager adwaita-qt qgnomeplatform-qt5 papirus-icon-theme fonts-noto-color-emoji plymouth-themes file-roller rhythmbox synaptic mintstick firefox-esr gcolor3 darktable gimp inkscape filezilla libreoffice-calc libreoffice-draw libreoffice-impress libreoffice-writer libreoffice-gtk3 soundconverter timeshift dconf-editor nfs-common cifs-utils libimage-exiftool-perl micro fzf htop neofetch cava cmatrix apt-transport-https curl xclip input-remapper-gtk
 
 echo "#########################################################"
 echo "Replace default Files app with Nemo"
