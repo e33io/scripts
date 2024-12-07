@@ -12,6 +12,7 @@ custom Linux installation scripts
 	- use [`deb-post-install-jwm.sh`](https://github.com/e33io/scripts/blob/main/deb-post-install-jwm.sh) to [install the JWM window manager](https://e33.io/1398)
 	- use [`deb-post-install-xfce.sh`](https://github.com/e33io/scripts/blob/main/deb-post-install-xfce.sh) to [install the Xfce desktop environment](https://e33.io/1541)
 	- use [`deb-post-install-lxqt.sh`](https://github.com/e33io/scripts/blob/main/deb-post-install-lxqt.sh) to [install the LXQt desktop environment](https://github.com/e33io/reference-wiki/blob/main/installation-docs/debian-lxqt-installation.md)
+	- use [`deb-post-install-mate.sh`](https://github.com/e33io/scripts/blob/main/deb-post-install-mate.sh) to [install the MATE desktop environment](https://github.com/e33io/reference-wiki/blob/main/installation-docs/debian-mate-installation.md)
 	- use [`deb-post-install-cinnamon.sh`](https://github.com/e33io/scripts/blob/main/deb-post-install-cinnamon.sh) to [install the Cinnamon desktop environment](https://github.com/e33io/reference-wiki/blob/main/installation-docs/debian-cinnamon-installation.md)
 	- use [`deb-post-install-gnome.sh`](https://github.com/e33io/scripts/blob/main/deb-post-install-gnome.sh) to [install the Gnome desktop environment](https://github.com/e33io/reference-wiki/blob/main/installation-docs/debian-gnome-installation.md)
 
