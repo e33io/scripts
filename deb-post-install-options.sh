@@ -1,21 +1,21 @@
 #!/bin/bash
 
-# ================================================================================
+# ===========================================================================
 # Debian (post-install) Initial Setup and WM or DE Installation
 # URL: https://github.com/e33io/scripts/blob/main/deb-post-install-options.sh
-# --------------------------------------------------------------------------------
+# ---------------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
 # NOTE! For best results only select "standard system utilities" on the
 # Software selection screen (uncheck all the rest) during the
 # Debian install process for a clean minimal install base.
 # Reference screenshot: https://i.e33.io/screenshots/deb-minimal-install.jpg
-# --------------------------------------------------------------------------------
+# ---------------------------------------------------------------------------
 # Instructions for running this script:
 #   sudo apt install git
 #   git clone https://github.com/e33io/scripts
 #   cd scripts
 #   sh deb-post-install-options.sh
-# ================================================================================
+# ===========================================================================
 
 if [ "$(id -u)" = 0 ]; then
     echo "############################################################"
@@ -69,8 +69,9 @@ echo "  1) i3 Window Manager (tiling WM)"
 echo "  2) JWM Window Manager (floating WM)"
 echo "  3) Xfce Desktop Environment"
 echo "  4) LXQt Desktop Environment"
-echo "  5) Cinnamon Desktop Environment"
-echo "  6) Gnome Desktop Environment"
+echo "  5) MATE Desktop Environment"
+echo "  6) Cinnamon Desktop Environment"
+echo "  7) Gnome Desktop Environment"
 
 while true; do
     read -p "Which window manager or desktop environment do you want to install? " n
@@ -89,10 +90,13 @@ while true; do
         4) echo "You chose LXQt Desktop Environment";
            sh deb-post-install-lxqt.sh;
            break;;
-        5) echo "You chose Cinnamon Desktop Environment";
+        5) echo "You chose MATE Desktop Environment";
+           sh deb-post-install-mate.sh;
+           break;;
+        6) echo "You chose Cinnamon Desktop Environment";
            sh deb-post-install-cinnamon.sh;
            break;;
-        6) echo "You chose Gnome Desktop Environment";
+        7) echo "You chose Gnome Desktop Environment";
            sh deb-post-install-gnome.sh;
            break;;
         *) echo "Invalid selection, please enter a number from the list.";;
