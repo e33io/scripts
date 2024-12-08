@@ -135,6 +135,12 @@ wget -qO- https://git.io/papirus-folders-install | sh
 papirus-folders -C yaru --theme Papirus-Dark
 
 echo "#########################################################"
+echo "Modify Plank dock theme"
+echo "#########################################################"
+
+echo "IndicatorSize=6" | sudo tee -a /usr/share/plank/themes/Transparent/dock.theme
+
+echo "#########################################################"
 echo "Update x-www-browser settings"
 echo "#########################################################"
 
