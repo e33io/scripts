@@ -1,17 +1,23 @@
 #!/bin/bash
 
-# =============================================================================
+# ============================================================================
 # Debian (post-install) LXQt Installation
 # URL: https://github.com/e33io/scripts/blob/main/deb-post-install-lxqt.sh
-# -----------------------------------------------------------------------------
+# ----------------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
 # Use with a minimal installation of Debian Linux to install the LXQt desktop
 # environment and a base set of apps for a ready-to-use desktop session.
-# -----------------------------------------------------------------------------
+# ----------------------------------------------------------------------------
 # The default configuration is for use with HiDPI monitors (192 dpi settings),
 # but there is an option at the end of the script that lets you change to
 # 96 dpi settings for use with standard non-HiDPI monitors.
-# =============================================================================
+# ----------------------------------------------------------------------------
+# Instructions for running this script:
+#   sudo apt install git
+#   git clone https://github.com/e33io/scripts
+#   cd scripts
+#   sh deb-post-install-lxqt.sh
+# ============================================================================
 
 if [ "$(id -u)" = 0 ]; then
     echo "#########################################################"

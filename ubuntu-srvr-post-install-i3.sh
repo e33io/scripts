@@ -13,6 +13,12 @@
 # and desktop-type computers, but there are options at the end of the script
 # that let you change to 96 dpi settings for use with non-HiDPI monitors,
 # and/or change to laptop-type (battery powered) computer settings.
+# ------------------------------------------------------------------------------
+# Instructions for running this script:
+#   sudo apt install git
+#   git clone https://github.com/e33io/scripts
+#   cd scripts
+#   sh ubuntu-srvr-post-install-i3.sh
 # ==============================================================================
 
 if [ "$(id -u)" = 0 ]; then

@@ -22,6 +22,12 @@
 #       trust always (a) to all prompts
 #
 #       When the script is done, enter `sudo reboot`, then login to i3 session
+# --------------------------------------------------------------------------------
+# Instructions for running this script:
+#   sudo apt install git
+#   git clone https://github.com/e33io/scripts
+#   cd scripts
+#   sh opensuse-post-install-i3.sh
 # ================================================================================
 
 if [ "$(id -u)" = 0 ]; then

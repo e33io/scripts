@@ -1,19 +1,25 @@
 #!/bin/bash
 
-# ============================================================================
+# ===========================================================================
 # Debian (post-install) JWM Installation
 # URL: https://github.com/e33io/scripts/blob/main/deb-post-install-jwm.sh
 # Installation steps and other configuration options: https://e33.io/1398
-# ----------------------------------------------------------------------------
+# ---------------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
 # Use with a minimal installation of Debian Linux to install the JWM window
 # manager and a base set of apps for a ready-to-use desktop session.
-# ----------------------------------------------------------------------------
+# ---------------------------------------------------------------------------
 # The default configuration is for use with HiDPI monitors (192 dpi settings)
 # and desktop-type computers, but there are options at the end of the script
 # that let you change to 96 dpi settings for use with non-HiDPI monitors,
 # and/or change to laptop-type (battery powered) computer settings.
-# ============================================================================
+# ---------------------------------------------------------------------------
+# Instructions for running this script:
+#   sudo apt install git
+#   git clone https://github.com/e33io/scripts
+#   cd scripts
+#   sh deb-post-install-jwm.sh
+# ===========================================================================
 
 if [ "$(id -u)" = 0 ]; then
     echo "#########################################################"

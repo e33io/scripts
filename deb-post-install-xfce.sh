@@ -1,18 +1,24 @@
 #!/bin/bash
 
-# =============================================================================
+# ===========================================================================
 # Debian (post-install) Xfce Installation
 # URL: https://github.com/e33io/scripts/blob/main/deb-post-install-xfce.sh
 # Installation steps and other configuration options: https://e33.io/1541
-# -----------------------------------------------------------------------------
+# ---------------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
 # Use with a minimal installation of Debian Linux to install the Xfce desktop
 # environment and a base set of apps for a ready-to-use desktop session.
-# -----------------------------------------------------------------------------
+# ---------------------------------------------------------------------------
 # Configs and theming are based on using HiDPI monitors (Window Scaling 2x),
 # but there is an option at the end of the script that lets you change to
 # 'Window Scaling 1x' settings for use with non-HiDPI monitors.
-# =============================================================================
+# ---------------------------------------------------------------------------
+# Instructions for running this script:
+#   sudo apt install git
+#   git clone https://github.com/e33io/scripts
+#   cd scripts
+#   sh deb-post-install-xfce.sh
+# ===========================================================================
 
 if [ "$(id -u)" = 0 ]; then
     echo "#########################################################"

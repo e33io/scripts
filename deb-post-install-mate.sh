@@ -7,6 +7,12 @@
 # Use this script at your own risk, it will overwrite existing files!
 # Use with a minimal installation of Debian Linux to install the MATE desktop
 # environment and a base set of apps for a ready-to-use desktop session.
+# ---------------------------------------------------------------------------
+# Instructions for running this script:
+#   sudo apt install git
+#   git clone https://github.com/e33io/scripts
+#   cd scripts
+#   sh deb-post-install-mate.sh
 # ===========================================================================
 
 if [ "$(id -u)" = 0 ]; then
