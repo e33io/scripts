@@ -24,7 +24,7 @@
 #       When the script is done, enter `sudo reboot`, then login to i3 session
 # --------------------------------------------------------------------------------
 # Instructions for running this script:
-#   sudo apt install git
+#   sudo zypper install git
 #   git clone https://github.com/e33io/scripts
 #   cd scripts
 #   sh opensuse-post-install-i3.sh
