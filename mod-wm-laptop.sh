@@ -38,11 +38,13 @@ fi
 
 # JWM specific configs
 if [ -f "$HOME/.jwmrc" ]; then
-    # install xfce4-battery-plugin for Xfce Panel
-    sudo apt -y install xfce4-battery-plugin
     # update .jwmrc (include laptop config instead of desktop config)
     sed -i 's/<Include>\$HOME\/\.config\/jwm\/desktop<\/Include>/<!-- <Include>\$HOME\/\.config\/jwm\/desktop<\/Include> -->/' $HOME/.jwmrc
     sed -i 's/<!-- <Include>\$HOME\/\.config\/jwm\/laptop<\/Include> -->/<Include>\$HOME\/\.config\/jwm\/laptop<\/Include>/' $HOME/.jwmrc
+    # install xfce4-battery-plugin for Xfce Panel
+    sudo apt -y install xfce4-battery-plugin
+    # copy laptop-specific Xfce Panel config files
+    cp -R $HOME/opt-dots/jwm/options/xfce4 $HOME/.config
 fi
 
 # update rofi-power.sh (lock with i3lock instead of loginctl)
