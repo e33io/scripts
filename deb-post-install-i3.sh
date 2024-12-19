@@ -41,7 +41,7 @@ echo "#########################################################"
 echo "Install i3 and other core packages"
 echo "#########################################################"
 
-sudo apt -y install i3 python3-i3ipc py3status xautolock rofi network-manager playerctl xsel xclip xinput x11-utils lxappearance qt5ct qt5-style-plugins adwaita-qt gnome-themes-extra papirus-icon-theme fonts-dejavu fonts-noto-color-emoji nitrogen policykit-1-gnome python3-gi gobject-introspection gir1.2-gtk-3.0 libdbus-glib-1-2 upower slick-greeter plymouth plymouth-themes kitty python3-pypillowfight thunar thunar-archive-plugin tumbler-plugins-extra ffmpegthumbnailer gvfs-fuse gvfs-backends nfs-common cifs-utils engrampa pavucontrol
+sudo apt -y install i3 python3-i3ipc py3status xautolock rofi network-manager playerctl xsel xclip xinput x11-utils lxappearance qt5ct qt5-style-plugins adwaita-qt gnome-themes-extra papirus-icon-theme fonts-dejavu fonts-noto-color-emoji nitrogen policykit-1-gnome python3-gi gobject-introspection gir1.2-gtk-3.0 libdbus-glib-1-2 upower slick-greeter plymouth plymouth-themes kitty python3-pypillowfight thunar thunar-archive-plugin tumbler-plugins-extra ffmpegthumbnailer heif-thumbnailer gvfs-fuse gvfs-backends nfs-common cifs-utils engrampa pavucontrol
 
 echo "#########################################################"
 echo "Install other packages"
