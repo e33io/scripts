@@ -1,12 +1,12 @@
 #!/bin/bash
 
-# ==========================================================================
+# =====================================================================
 # Setup TearFree for AMD GPUs
 # URL: https://github.com/e33io/scripts/blob/main/setup-tearfree-amd.sh
-# --------------------------------------------------------------------------
+# ---------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
 # Only use on X11 systems with AMD GPUs
-# ==========================================================================
+# =====================================================================
 
 if [ "$(id -u)" = 0 ]; then
     echo "#########################################################"
@@ -15,6 +15,14 @@ if [ "$(id -u)" = 0 ]; then
     echo "You will be asked for a sudo password when necessary."
     echo "#########################################################"
     exit 1
+fi
+
+if [ -f "/etc/debian_version" ]; then
+    sudo apt -y install xserver-xorg-video-amdgpu
+fi
+
+if [ -f "/etc/zypp/zypper.conf" ]; then
+    sudo zypper install xf86-video-amdgpu
 fi
 
 device="$(glxinfo -B | awk '/Vendor:/ { print $2 }')"
