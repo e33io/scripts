@@ -45,7 +45,7 @@ echo "#########################################################"
 echo "Install other packages"
 echo "#########################################################"
 
-sudo apt -y install synaptic gnome-disk-utility mintstick atril imv mpv parole pragha galculator flameshot gpick darktable gimp inkscape filezilla libreoffice-calc libreoffice-draw libreoffice-impress libreoffice-writer libreoffice-gtk3 timeshift dunst rofi htop neofetch cmus cava cmatrix ncal micro ranger ueberzug caca-utils highlight atool w3m poppler-utils mediainfo fzf heif-thumbnailer libimage-exiftool-perl apt-transport-https curl rsync xdotool xbindkeys
+sudo apt -y install synaptic gnome-disk-utility mintstick atril imv mpv parole pragha galculator flameshot gpick darktable gimp inkscape filezilla libreoffice-calc libreoffice-draw libreoffice-impress libreoffice-writer libreoffice-gtk3 timeshift dunst rofi htop neofetch cmus cava cmatrix ncal micro ranger ueberzug caca-utils highlight atool w3m poppler-utils mediainfo fzf heif-thumbnailer heif-gdk-pixbuf libimage-exiftool-perl apt-transport-https curl rsync xdotool xbindkeys
 
 echo "#########################################################"
 echo "Install pipewire and enable wireplumber service"

@@ -46,7 +46,7 @@ echo "#########################################################"
 echo "Install other packages"
 echo "#########################################################"
 
-sudo apt -y install atril ristretto parole rhythmbox galculator gnome-disk-utility mintstick synaptic gpick darktable gimp inkscape filezilla libreoffice-calc libreoffice-draw libreoffice-impress libreoffice-writer libreoffice-gtk3 timeshift xterm micro imv mpv htop neofetch cmus cava cmatrix ncal ranger ueberzug caca-utils highlight atool w3m poppler-utils mediainfo fzf heif-thumbnailer libimage-exiftool-perl apt-transport-https curl rsync wmctrl xdotool xbindkeys
+sudo apt -y install atril ristretto parole rhythmbox galculator gnome-disk-utility mintstick synaptic gpick darktable gimp inkscape filezilla libreoffice-calc libreoffice-draw libreoffice-impress libreoffice-writer libreoffice-gtk3 timeshift xterm micro imv mpv htop neofetch cmus cava cmatrix ncal ranger ueberzug caca-utils highlight atool w3m poppler-utils mediainfo fzf heif-thumbnailer heif-gdk-pixbuf libimage-exiftool-perl apt-transport-https curl rsync wmctrl xdotool xbindkeys
 
 echo "#########################################################"
 echo "Install pipewire and enable wireplumber service"
