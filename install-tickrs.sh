@@ -28,7 +28,7 @@ mkdir -p $HOME/.local/bin
 
 # download and extract tar
 TICKRS_VERSION=$(curl -s "https://api.github.com/repos/tarkah/tickrs/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
-curl -Lo tickrs.tar.gz "https://github.com/tarkah/tickrs/releases/download/v0.14.10/tickrs-v${TICKRS_VERSION}-x86_64-unknown-linux-gnu.tar.gz"
+curl -Lo tickrs.tar.gz "https://github.com/tarkah/tickrs/releases/download/v${TICKRS_VERSION}/tickrs-v${TICKRS_VERSION}-x86_64-unknown-linux-gnu.tar.gz"
 tar -xf tickrs.tar.gz --directory $HOME/.local/applications/tickrs
 
 # make symbolic link to ~/.local/bin/
