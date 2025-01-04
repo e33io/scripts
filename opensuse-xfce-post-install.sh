@@ -66,14 +66,13 @@ if [ -d "/usr/share/slick-greeter" ]; then
     sudo cp -R $HOME/dotfiles/etc/lightdm /etc
 fi
 sudo cp -R $HOME/dotfiles/usr/share/fonts /usr/share
-sudo cp -RT $HOME/dotfiles/usr/share/grub /usr/share/grub2
+sudo cp -R $HOME/dotfiles/usr/share/grub/* /usr/share/grub2
 sudo cp -R $HOME/dotfiles/usr/share/gtksourceview-4 /usr/share
 sudo cp -R $HOME/dotfiles/usr/share/pixmaps /usr/share
 sudo cp -R $HOME/dotfiles/usr/share/wallpapers /usr/share
 sudo cp -R $HOME/opt-dots/xfce/usr/bin /usr
 sudo cp -R $HOME/opt-dots/xfce/usr/share /usr
 sudo cp -R $HOME/opt-dots/opensuse/etc/default/grub /etc/default
-sudo cp -R $HOME/opt-dots/opensuse/usr/share/fonts /usr/share
 sudo mkdir -p /boot/grub2/fonts
 sudo cp /usr/share/grub2/ter-* /boot/grub2/fonts
 sudo mkdir -p /root/.config/qt5ct
