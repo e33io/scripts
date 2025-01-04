@@ -53,12 +53,6 @@ echo "#########################################################"
 sudo zypper dup --no-recommends
 
 echo "#########################################################"
-echo "Remove unneeded/unwanted packages"
-echo "#########################################################"
-
-sudo zypper remove busybox-which busybox-diffutils
-
-echo "#########################################################"
 echo "Install i3 and other packages"
 echo "#########################################################"
 
