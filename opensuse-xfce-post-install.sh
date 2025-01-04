@@ -41,7 +41,7 @@ echo "#########################################################"
 echo "Install other packages"
 echo "#########################################################"
 
-sudo zypper install xsel xinput xbindkeys xdotool xdpyinfo playerctl xf86-video-amdgpu exfatprogs git opi qt5ct adwaita-qt5 gnome-themes-extras papirus-icon-theme words heif-thumbnailer gdk-pixbuf-loader-libheif htop neofetch ranger micro-editor fzf cmus cava engrampa atril flameshot darktable gimp inkscape libreoffice libreoffice-gtk3
+sudo zypper install xsel xinput xbindkeys xdotool xdpyinfo playerctl xf86-video-amdgpu exfatprogs git opi qt5ct adwaita-qt5 gnome-themes-extras papirus-icon-theme words htop neofetch ranger micro-editor fzf cmus cava engrampa atril flameshot darktable gimp inkscape libreoffice libreoffice-gtk3
 
 echo "#########################################################"
 echo "Clone custom configuration files"
@@ -57,19 +57,21 @@ echo "#########################################################"
 mkdir -p $HOME/.config/micro
 cp -R $HOME/dotfiles/.config/micro $HOME/.config
 cp -R $HOME/dotfiles/.xbindkeysrc $HOME
-cp -R $HOME/dotfiles/xfce/.Xresources $HOME
+cp -R $HOME/opt-dots/xfce/.Xresources $HOME
 cp -R $HOME/opt-dots/opensuse-xfce/.config $HOME
 cp -R $HOME/opt-dots/opensuse-xfce/.local $HOME
 cp -R $HOME/opt-dots/opensuse-xfce/.bashrc $HOME
 cp -R $HOME/opt-dots/opensuse-xfce/.profile $HOME
-sudo cp -R $HOME/dotfiles/etc/lightdm /etc
+if [ -d "/usr/share/slick-greeter" ]; then
+    sudo cp -R $HOME/dotfiles/etc/lightdm /etc
+fi
 sudo cp -R $HOME/dotfiles/usr/share/fonts /usr/share
 sudo cp -RT $HOME/dotfiles/usr/share/grub /usr/share/grub2
 sudo cp -R $HOME/dotfiles/usr/share/gtksourceview-4 /usr/share
 sudo cp -R $HOME/dotfiles/usr/share/pixmaps /usr/share
 sudo cp -R $HOME/dotfiles/usr/share/wallpapers /usr/share
-sudo cp -R $HOME/dotfiles/xfce/usr/bin /usr
-sudo cp -R $HOME/dotfiles/xfce/usr/share /usr
+sudo cp -R $HOME/opt-dots/xfce/usr/bin /usr
+sudo cp -R $HOME/opt-dots/xfce/usr/share /usr
 sudo cp -R $HOME/opt-dots/opensuse/etc/default/grub /etc/default
 sudo cp -R $HOME/opt-dots/opensuse/usr/share/fonts /usr/share
 sudo mkdir -p /boot/grub2/fonts
