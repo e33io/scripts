@@ -22,6 +22,9 @@ custom Linux installation scripts
 - use the script below with an [openSUSE "Generic Desktop" installation](https://github.com/e33io/reference-wiki/blob/main/installation-docs/opensuse-generic-desktop-installation.md)
 	- use [`opensuse-post-install-i3.sh`](https://github.com/e33io/scripts/blob/main/opensuse-post-install-i3.sh) to [install the i3 window manager](https://github.com/e33io/reference-wiki/blob/main/installation-docs/opensuse-i3-installation.md)
 
+- use the script below with an [openSUSE "Desktop with Xfce" installation](https://github.com/e33io/reference-wiki/blob/main/installation-docs/opensuse-xfce-desktop-installation.md)
+	- use [`opensuse-xfce-post-install.sh`](https://github.com/e33io/scripts/blob/main/opensuse-xfce-post-install.sh) to [install the Xfce desktop environment](https://github.com/e33io/reference-wiki/blob/main/installation-docs/opensuse-xfce-post-installation.md)
+
 &nbsp;
 
 ## applications
