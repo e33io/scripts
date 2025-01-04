@@ -14,6 +14,12 @@
 # -----------------------------------------------------------------------------
 # NOTE: When running the script, enter your password and answer yes (y) or
 #       trust always (a) to all prompts
+# -----------------------------------------------------------------------------
+# Instructions for running this script:
+#   sudo zypper install git
+#   git clone https://github.com/e33io/scripts
+#   cd scripts
+#   sh opensuse-xfce-post-install.sh
 # =============================================================================
 
 if [ "$(id -u)" = 0 ]; then
