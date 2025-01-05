@@ -47,7 +47,7 @@ echo "#########################################################"
 echo "Install other packages"
 echo "#########################################################"
 
-sudo zypper install xsel xinput xbindkeys xdotool xdpyinfo playerctl xf86-video-amdgpu exfatprogs git opi qt5ct adwaita-qt5 gnome-themes-extras papirus-icon-theme words htop neofetch ranger micro-editor fzf cmus cava engrampa atril flameshot darktable gimp inkscape libreoffice libreoffice-gtk3
+sudo zypper install xsel xinput xbindkeys xdotool xdpyinfo playerctl xf86-video-amdgpu nfs-client exfatprogs git opi qt5ct adwaita-qt5 gnome-themes-extras papirus-icon-theme words htop neofetch ranger micro-editor fzf cmus cava engrampa atril flameshot darktable gimp inkscape libreoffice libreoffice-gtk3
 
 echo "#########################################################"
 echo "Clone custom configuration files"
