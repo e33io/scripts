@@ -1,12 +1,12 @@
 #!/bin/bash
 
-# ============================================================================
+# =======================================================================
 # Update LXQt configs from 192 dpi (HiDPI scaling)
 # to standard 96 dpi (non-HiDPI scaling)
 # URL: https://github.com/e33io/scripts/blob/main/mod-dpi-scaling-lxqt.sh
-# ----------------------------------------------------------------------------
+# -----------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
-# ============================================================================
+# =======================================================================
 
 if [ "$(id -u)" = 0 ]; then
     echo "#########################################################"
@@ -42,7 +42,7 @@ sed -i 's/gtk-icon-sizes="gtk-menu=32,32:gtk-button=32,32"/#gtk-icon-sizes="gtk-
 sed -i 's/panelSize=24/panelSize=26/' $HOME/.config/lxqt/panel.conf
 
 # update xfwm4.xml (window theme)
-sed -i 's/"theme" type="string" value="System-40"/"theme" type="string" value="System-24"/' $HOME/.config/xfce4/xfconf/xfce-perchannel-xml/xfwm4.xml
+sed -i 's/"theme" type="string" value="System-40"/"theme" type="string" value="System-22"/' $HOME/.config/xfce4/xfconf/xfce-perchannel-xml/xfwm4.xml
 
 # update dunstrc (dunst scaling)
 if [ -f "$HOME/.config/dunst/dunstrc" ]; then
