@@ -25,6 +25,15 @@ if [ "$(id -u)" = 0 ]; then
     exit 1
 fi
 
+if ! { grep 'trixie' /etc/debian_version || grep 'sid' /etc/debian_version; }; then
+    echo "#########################################################"
+    echo "This script is NOT compatible with your version of Debian!"
+    echo "It only works with Debian Sid/unstable, and it will"
+    echo "exit now without running."
+    echo "#########################################################"
+    exit 1
+fi
+
 echo "#########################################################"
 echo "Update and upgrade"
 echo "#########################################################"
