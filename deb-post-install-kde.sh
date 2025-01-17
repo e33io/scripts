@@ -1,20 +1,20 @@
 #!/bin/bash
 
-# =======================================================================
+# =========================================================================
 # Debian (post-install) KDE Plasma Installation
 # URL: https://github.com/e33io/scripts/blob/main/deb-post-install-kde.sh
-# -----------------------------------------------------------------------
+# -------------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
 # Use with a minimal installation of Debian Linux to install the
 # KDE Plasma desktop environment and a base set of apps for a
 # ready-to-use desktop session.
-# -----------------------------------------------------------------------
+# -------------------------------------------------------------------------
 # Instructions for running this script:
 #   sudo apt install git
 #   git clone https://github.com/e33io/scripts
 #   cd scripts
 #   sh deb-post-install-kde.sh
-# =======================================================================
+# =========================================================================
 
 if [ "$(id -u)" = 0 ]; then
     echo "#########################################################"
@@ -84,6 +84,7 @@ cp -R $HOME/dotfiles/.xbindkeysrc $HOME
 cp -R $HOME/opt-dots/kde/.config $HOME
 cp -R $HOME/opt-dots/kde/.local $HOME
 cp -R $HOME/opt-dots/kde/.bashrc $HOME
+cp -R $HOME/opt-dots/kde/.gtkrc-2.0 $HOME
 cp -R $HOME/opt-dots/kde/.profile $HOME
 cp -R $HOME/opt-dots/kde/.Xresources $HOME
 sudo cp -R $HOME/dotfiles/etc/default /etc
