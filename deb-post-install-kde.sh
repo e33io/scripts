@@ -132,6 +132,12 @@ mkdir -p $HOME/Downloads
 mkdir -p $HOME/Music
 mkdir -p $HOME/Pictures
 mkdir -p $HOME/Videos
+sed -i "s/e33/$(whoami)/g" $HOME/.config/ksmserverrc
+sed -i "s/e33/$(whoami)/g" $HOME/.config/ktrashrc
+sed -i "s/e33/$(whoami)/g" $HOME/.config/session/dolphin_dolphin_dolphin
+sed -i "s/e33/$(whoami)/g" $HOME/.local/share/recently-used.xbel
+sed -i "s/e33/$(whoami)/g" $HOME/.local/share/user-places.xbel
+sed -i "s/e33/$(whoami)/g" $HOME/.local/share/user-places.xbel.bak
 sudo rm /usr/share/applications/imv-folder.desktop
 sudo rm -R $HOME/dotfiles
 sudo rm -R $HOME/opt-dots
