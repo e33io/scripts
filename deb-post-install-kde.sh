@@ -1,20 +1,20 @@
 #!/bin/bash
 
-# =========================================================================
+# =======================================================================
 # Debian (post-install) KDE Plasma Installation
 # URL: https://github.com/e33io/scripts/blob/main/deb-post-install-kde.sh
-# -------------------------------------------------------------------------
+# -----------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
 # Use with a minimal installation of Debian Linux to install the
 # KDE Plasma desktop environment and a base set of apps for a
 # ready-to-use desktop session.
-# -------------------------------------------------------------------------
+# -----------------------------------------------------------------------
 # Instructions for running this script:
 #   sudo apt install git
 #   git clone https://github.com/e33io/scripts
 #   cd scripts
 #   sh deb-post-install-kde.sh
-# =========================================================================
+# =======================================================================
 
 if [ "$(id -u)" = 0 ]; then
     echo "#########################################################"
@@ -117,6 +117,12 @@ echo "#########################################################"
 echo "Clean up user directory"
 echo "#########################################################"
 
+mkdir -p $HOME/Desktop
+mkdir -p $HOME/Documents
+mkdir -p $HOME/Downloads
+mkdir -p $HOME/Music
+mkdir -p $HOME/Pictures
+mkdir -p $HOME/Videos
 sudo rm /usr/share/applications/imv-folder.desktop
 sudo rm -R $HOME/dotfiles
 sudo rm -R $HOME/opt-dots
