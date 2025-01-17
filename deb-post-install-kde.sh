@@ -117,7 +117,6 @@ echo "#########################################################"
 echo "Clean up user directory"
 echo "#########################################################"
 
-xdg-user-dirs-update
 sudo rm /usr/share/applications/imv-folder.desktop
 sudo rm -R $HOME/dotfiles
 sudo rm -R $HOME/opt-dots
