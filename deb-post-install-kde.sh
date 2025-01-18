@@ -51,7 +51,7 @@ echo "#########################################################"
 echo "Install other packages"
 echo "#########################################################"
 
-sudo apt -y install synaptic darktable gimp inkscape kdenlive filezilla libreoffice-calc libreoffice-draw libreoffice-impress libreoffice-writer libreoffice-k* gnome-disk-utility mintstick timeshift micro htop neofetch cmus cava cmatrix fzf libimage-exiftool-perl apt-transport-https curl rsync xbindkeys xdotool
+sudo apt -y install synaptic darktable gimp inkscape kdenlive filezilla libreoffice-calc libreoffice-draw libreoffice-impress libreoffice-writer libreoffice-k* gnome-disk-utility mintstick timeshift mpv micro htop neofetch cmus cava cmatrix fzf libimage-exiftool-perl apt-transport-https curl rsync xdotool xbindkeys
 
 echo "#########################################################"
 echo "Install Firefox Browser"
