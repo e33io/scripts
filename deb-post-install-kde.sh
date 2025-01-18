@@ -45,7 +45,7 @@ echo "#########################################################"
 echo "Install KDE Plasma and other core packages"
 echo "#########################################################"
 
-sudo apt -y install kde-plasma-desktop plasma-nm sddm-theme-breeze ark gwenview okular kde-spectacle kcalc kcolorchooser kate elisa vlc fonts-noto-color-emoji plymouth plymouth-themes xterm nfs-common cifs-utils
+sudo apt -y install kde-plasma-desktop plasma-nm sddm-theme-breeze ark gwenview okular kde-spectacle kcalc kcolorchooser kate elisa vlc fonts-noto-color-emoji plymouth plymouth-themes xterm gvfs-fuse gvfs-backends nfs-common cifs-utils
 
 echo "#########################################################"
 echo "Install other packages"
