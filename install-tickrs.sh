@@ -23,16 +23,16 @@ echo "Install tickrs latest release"
 echo "########################################################"
 
 # make directories
-mkdir -p $HOME/.local/applications/tickrs
+mkdir -p $HOME/.local/tickrs
 mkdir -p $HOME/.local/bin
 
 # download and extract tar
 TICKRS_VERSION=$(curl -s "https://api.github.com/repos/tarkah/tickrs/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
 curl -Lo tickrs.tar.gz "https://github.com/tarkah/tickrs/releases/download/v${TICKRS_VERSION}/tickrs-v${TICKRS_VERSION}-x86_64-unknown-linux-gnu.tar.gz"
-tar -xf tickrs.tar.gz --directory $HOME/.local/applications/tickrs
+tar -xf tickrs.tar.gz --directory $HOME/.local/tickrs
 
 # make symbolic link to ~/.local/bin/
-ln -s $HOME/.local/applications/tickrs/tickrs $HOME/.local/bin/tickrs
+ln -s $HOME/.local/tickrs/tickrs $HOME/.local/bin/tickrs
 
 echo "########################################################"
 echo "Add basic starter config file"
