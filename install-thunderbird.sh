@@ -22,20 +22,19 @@ if [ "$(id -u)" = 0 ]; then
 fi
 
 # make directories
-mkdir -p $HOME/.local/applications
 mkdir -p $HOME/.local/bin
 mkdir -p $HOME/.local/share/applications
 
 # download and extract tar
 wget -O thunderbirdsetup.tar.bz2 "https://download.mozilla.org/?product=thunderbird-latest&os=linux64&lang=en-US"
-tar -xf thunderbirdsetup.tar.bz2 --directory $HOME/.local/applications
+tar -xf thunderbirdsetup.tar.bz2 --directory $HOME/.local
 
 # write thunderbird.desktop file
 echo "[Desktop Entry] 
 Name=Thunderbird
 GenericName=Email Client
 Comment=Send and Receive Email
-Exec=/home/$(whoami)/.local/applications/thunderbird/thunderbird %u
+Exec=/home/$(whoami)/.local/thunderbird/thunderbird %u
 Icon=thunderbird
 Terminal=false
 X-MultipleArgs=false
@@ -47,7 +46,7 @@ StartupWMClass=thunderbird-default
 StartupNotify=true" > $HOME/.local/share/applications/thunderbird.desktop
 
 # make symbolic link to $HOME/.local/bin
-ln -s $HOME/.local/applications/thunderbird/thunderbird $HOME/.local/bin/thunderbird
+ln -s $HOME/.local/thunderbird/thunderbird $HOME/.local/bin/thunderbird
 
 echo "#########################################################"
 echo "All done, Thunderbird Email Client is now installed"
