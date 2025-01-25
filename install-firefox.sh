@@ -22,20 +22,19 @@ if [ "$(id -u)" = 0 ]; then
 fi
 
 # make directories
-mkdir -p $HOME/.local/applications
 mkdir -p $HOME/.local/bin
 mkdir -p $HOME/.local/share/applications
 
 # download and extract tar
 wget -O firefoxsetup.tar.bz2 "https://download.mozilla.org/?product=firefox-latest&os=linux64&lang=en-US"
-tar -xf firefoxsetup.tar.bz2 --directory $HOME/.local/applications
+tar -xf firefoxsetup.tar.bz2 --directory $HOME/.local
 
 # write firefox.desktop file
 echo "[Desktop Entry] 
 Name=Firefox
 GenericName=Web Browser
 Comment=Browse the Web
-Exec=/home/$(whoami)/.local/applications/firefox/firefox %u
+Exec=/home/$(whoami)/.local/firefox/firefox %u
 Icon=firefox
 Terminal=false
 Type=Application
@@ -45,7 +44,7 @@ Keywords=web;browser;internet;
 StartupNotify=true" > $HOME/.local/share/applications/firefox.desktop
 
 # make symbolic link to $HOME/.local/bin
-ln -s $HOME/.local/applications/firefox/firefox $HOME/.local/bin/firefox
+ln -s $HOME/.local/firefox/firefox $HOME/.local/bin/firefox
 
 echo "#########################################################"
 echo "All done, Firefox Web Browser is now installed"
