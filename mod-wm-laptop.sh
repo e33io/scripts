@@ -37,10 +37,10 @@ if [ -d "$HOME/.config/i3" ]; then
 fi
 
 # JWM specific configs
-if [ -f "$HOME/.jwmrc" ]; then
-    # update .jwmrc (include laptop config instead of desktop config)
-    sed -i 's/<Include>\$HOME\/\.config\/jwm\/desktop<\/Include>/<!-- <Include>\$HOME\/\.config\/jwm\/desktop<\/Include> -->/' $HOME/.jwmrc
-    sed -i 's/<!-- <Include>\$HOME\/\.config\/jwm\/laptop<\/Include> -->/<Include>\$HOME\/\.config\/jwm\/laptop<\/Include>/' $HOME/.jwmrc
+if [ -f "$HOME/.config/jwm/jwmrc" ]; then
+    # update jwmrc (include laptop config instead of desktop config)
+    sed -i 's/<Include>\$HOME\/\.config\/jwm\/desktop<\/Include>/<!-- <Include>\$HOME\/\.config\/jwm\/desktop<\/Include> -->/' $HOME/.config/jwm/jwmrc
+    sed -i 's/<!-- <Include>\$HOME\/\.config\/jwm\/laptop<\/Include> -->/<Include>\$HOME\/\.config\/jwm\/laptop<\/Include>/' $HOME/.config/jwm/jwmrc
     # install xfce4-battery-plugin for Xfce Panel
     sudo apt -y install xfce4-battery-plugin
     # copy laptop-specific Xfce Panel config files

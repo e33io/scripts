@@ -1,12 +1,12 @@
 #!/bin/bash
 
-# =======================================================================
+# ===================================================================
 # Select and Set Theming for JWM and Applications
 # URL: https://github.com/e33io/scripts/blob/main/set-jwm-theming.sh
-# -----------------------------------------------------------------------
+# -------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
 # NOTE: Only use with Debian/Ubuntu or openSUSE Linux!
-# =======================================================================
+# ===================================================================
 
 if [ "$(id -u)" = 0 ]; then
     echo "#########################################################"
@@ -80,7 +80,7 @@ fi
 
 theming_files () {
     # JWM theme
-    sed -i "s/jwm\/themes\/.*<\/Include>/jwm\/themes\/$jwm_theme<\/Include>/" $HOME/.jwmrc
+    sed -i "s/jwm\/themes\/.*<\/Include>/jwm\/themes\/$jwm_theme<\/Include>/" $HOME/.config/jwm/jwmrc
     # GTK 2 theme and icon theme
     sed -i "s/gtk-theme-name=\".*\"/gtk-theme-name=\"$gtk_theme\"/" $HOME/.gtkrc-2.0
     sed -i "s/gtk-icon-theme-name=\".*\"/gtk-icon-theme-name=\"$icon_theme\"/" $HOME/.gtkrc-2.0

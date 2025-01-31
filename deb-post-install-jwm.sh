@@ -99,7 +99,6 @@ cp -R $HOME/dotfiles/.Xresources $HOME
 cp -R $HOME/opt-dots/jwm/.config $HOME
 cp -R $HOME/opt-dots/jwm/.local $HOME
 cp -R $HOME/opt-dots/jwm/.dmrc $HOME
-cp -R $HOME/opt-dots/jwm/.jwmrc $HOME
 sudo cp -R $HOME/dotfiles/etc/default /etc
 sudo cp -R $HOME/dotfiles/etc/lightdm /etc
 sudo cp -R $HOME/dotfiles/etc/network /etc

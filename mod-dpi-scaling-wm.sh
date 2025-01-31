@@ -1,12 +1,12 @@
 #!/bin/bash
 
-# ==========================================================================
+# =====================================================================
 # Update standalone window manager configs from 192 dpi (HiDPI scaling)
 # to 96 dpi (non-HiDPI scaling)
 # URL: https://github.com/e33io/scripts/blob/main/mod-dpi-scaling-wm.sh
-# --------------------------------------------------------------------------
+# ---------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
-# ==========================================================================
+# =====================================================================
 
 if [ "$(id -u)" = 0 ]; then
     echo "#########################################################"
@@ -76,7 +76,7 @@ if [ -d "$HOME/.config/i3" ]; then
 fi
 
 # JWM specific configs
-if [ -f "$HOME/.jwmrc" ]; then
+if [ -f "$HOME/.config/jwm/jwmrc" ]; then
     # update jwm configs (window sizes and window decorations)
     sed -i 's/<Option>height:1028/<Option>height:514/' $HOME/.config/jwm/windows
     sed -i 's/<Option>height:1188/<Option>height:594/' $HOME/.config/jwm/windows
