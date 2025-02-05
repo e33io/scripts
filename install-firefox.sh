@@ -26,8 +26,8 @@ mkdir -p $HOME/.local/bin
 mkdir -p $HOME/.local/share/applications
 
 # download and extract tar
-wget -O firefoxsetup.tar.bz2 "https://download.mozilla.org/?product=firefox-latest&os=linux64&lang=en-US"
-tar -xf firefoxsetup.tar.bz2 --directory $HOME/.local
+wget -O firefoxsetup.tar.xz "https://download.mozilla.org/?product=firefox-latest&os=linux64&lang=en-US"
+tar -xf firefoxsetup.tar.xz --directory $HOME/.local
 
 # write firefox.desktop file
 echo "[Desktop Entry] 
@@ -45,6 +45,12 @@ StartupNotify=true" > $HOME/.local/share/applications/firefox.desktop
 
 # make symbolic link to $HOME/.local/bin
 ln -s $HOME/.local/firefox/firefox $HOME/.local/bin/firefox
+
+echo "########################################################"
+echo "Clean up directory"
+echo "########################################################"
+
+rm -R $PWD/firefoxsetup.tar.xz
 
 echo "#########################################################"
 echo "All done, Firefox Web Browser is now installed"
