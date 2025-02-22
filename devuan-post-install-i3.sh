@@ -106,6 +106,15 @@ sudo update-initramfs -u
 sudo update-grub
 
 echo "#########################################################"
+echo "Update i3 config file"
+echo "#########################################################"
+
+echo '# Set default mute and default volume level
+exec --no-startup-id sleep 1 && pactl set-sink-mute @DEFAULT_SINK@ false && $refresh_i3status
+exec --no-startup-id sleep 6 && pactl set-sink-volume @DEFAULT_SINK@ 15% && $refresh_i3status' \
+| tee -a $HOME/.config/i3/config > /dev/null
+
+echo "#########################################################"
 echo "Add user .bash_profile and .xsessionrc files"
 echo "#########################################################"
 
