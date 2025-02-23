@@ -93,8 +93,8 @@ cp -R $HOME/opt-dots/devuan/.bashrc $HOME
 sudo cp -R $HOME/dotfiles/etc/default /etc
 sudo cp -R $HOME/dotfiles/etc/lightdm /etc
 sudo cp -R $HOME/dotfiles/etc/network /etc
-sudo cp -R $HOME/dotfiles/etc/plymouth /etc
 sudo cp -R $HOME/dotfiles/usr/share /usr
+sudo cp -R $HOME/opt-dots/devuan/etc/plymouth /etc
 sudo mkdir -p /boot/grub/fonts
 sudo cp -R /usr/share/grub/ter-* /boot/grub/fonts
 sudo mkdir -p /root/.config/gtk-3.0
