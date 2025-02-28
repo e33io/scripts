@@ -56,7 +56,16 @@ echo "#########################################################"
 echo "Install i3 and other packages"
 echo "#########################################################"
 
-sudo zypper install i3 python312-i3ipc python312-py3status xss-lock xautolock rofi dunst xsel xclip xinput xbindkeys xdotool playerctl xdg-user-dirs xdg-utils xf86-video-amdgpu gvfs-fuse gvfs-backends nfs-client exfatprogs polkit-gnome dex git wget rsync cronie fuse psmisc words opi lxappearance qt5ct adwaita-qt5 gnome-themes-extras papirus-icon-theme google-noto-coloremoji-fonts nitrogen yast2-control-center-qt thunar thunar-plugin-archive tumbler ffmpegthumbnailer engrampa kitty pipewire-pulseaudio pavucontrol gnome-disk-utility atril imv mpv parole mousepad galculator xfce4-screenshooter flameshot NetworkManager-tui htop neofetch ranger nano micro-editor fzf exiftool cmus cava MozillaFirefox darktable gimp inkscape filezilla libreoffice libreoffice-gtk3
+sudo zypper install i3 python312-i3ipc python312-py3status xss-lock xautolock rofi dunst xsel xclip xinput xbindkeys xdotool playerctl xdg-user-dirs xdg-utils xf86-video-amdgpu gvfs-fuse gvfs-backends nfs-client exfatprogs polkit-gnome dex git wget rsync cronie fuse psmisc words opi lxappearance qt5ct adwaita-qt5 gnome-themes-extras papirus-icon-theme google-noto-coloremoji-fonts nitrogen yast2-control-center-qt thunar thunar-plugin-archive tumbler ffmpegthumbnailer engrampa kitty pipewire-pulseaudio pavucontrol gnome-disk-utility atril imv mpv parole mousepad galculator xfce4-screenshooter flameshot NetworkManager-tui htop neofetch ranger nano micro-editor fzf exiftool cmus cava darktable gimp inkscape filezilla libreoffice libreoffice-gtk3
+
+echo "#########################################################"
+echo "Install LibreWolf Web Browser"
+echo "#########################################################"
+
+sudo rpm --import https://rpm.librewolf.net/pubkey.gpg
+sudo zypper ar -ef https://rpm.librewolf.net librewolf
+sudo zypper refresh
+sudo zypper install librewolf
 
 echo "#########################################################"
 echo "Remove unneeded/unwanted packages"

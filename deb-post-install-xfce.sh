@@ -56,16 +56,14 @@ sudo apt -y install pipewire-audio pipewire-media-session-
 systemctl --user --now enable wireplumber.service
 
 echo "#########################################################"
-echo "Install Firefox Browser"
+echo "Install LibreWolf Web Browser"
 echo "#########################################################"
 
-curl -fsSL https://packages.mozilla.org/apt/repo-signing-key.gpg | sudo gpg --dearmor -o /usr/share/keyrings/packages.mozilla.org.gpg
-echo "deb [signed-by=/usr/share/keyrings/packages.mozilla.org.gpg] https://packages.mozilla.org/apt mozilla main" | sudo tee /etc/apt/sources.list.d/mozilla.list
-echo "Package: *
-Pin: origin packages.mozilla.org
-Pin-Priority: 1000" | sudo tee /etc/apt/preferences.d/mozilla > /dev/null
 sudo apt update
-sudo apt -y install firefox
+sudo apt -y install extrepo
+sudo extrepo enable librewolf
+sudo apt update
+sudo apt -y install librewolf
 
 echo "#########################################################"
 echo "Install Signal App"
@@ -158,8 +156,8 @@ echo "#########################################################"
 echo "Update x-www-browser settings"
 echo "#########################################################"
 
-sudo update-alternatives --install /usr/bin/x-www-browser x-www-browser /usr/lib/firefox/firefox 210
-sudo update-alternatives --set x-www-browser /usr/lib/firefox/firefox
+sudo update-alternatives --install /usr/bin/x-www-browser x-www-browser /usr/bin/librewolf 201
+sudo update-alternatives --set x-www-browser /usr/bin/librewolf
 
 echo "#########################################################"
 echo "Add bookmarks and clean up user directory"
