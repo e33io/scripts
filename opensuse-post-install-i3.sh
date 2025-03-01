@@ -119,6 +119,7 @@ echo "#########################################################"
 echo "Update i3 config file"
 echo "#########################################################"
 
+sed -i 's/GDK_SCALE=1 signal-desktop/flatpak run org\.signal\.Signal/' $HOME/.config/i3/config
 echo '# openSUSE specific options
 for_window [class="Catfish"] floating enable, resize set 1440 1280, move position center
 for_window [class="imagewriter"] floating enable, move position center
