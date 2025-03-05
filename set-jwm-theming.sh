@@ -107,6 +107,8 @@ theming_files () {
     sed -i "s/icon-theme: \".*\"/icon-theme: \"$icon_theme\"/" $HOME/.config/rofi/config.rasi
     # Desktop background color (only visible if no wallpaper is set)
     sed -i "s/xsetroot -solid \".*\"/xsetroot -solid \"$desktop_bg_color\"/" $HOME/.profile
+    # Nitrogen desktop background color (visible if semi-transparent wallpaper is set)
+    sed -i "s/bgcolor=.*/bgcolor=$desktop_bg_color/" $HOME/.config/nitrogen/bg-saved.cfg
     # CAVA foreground color
     if [ -f "$HOME/.config/cava/config" ]; then
         sed -i "s/^foreground = .*/foreground = '$cava_fg_color'/" $HOME/.config/cava/config
