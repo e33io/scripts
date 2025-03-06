@@ -22,19 +22,17 @@ custom Linux installation scripts
 
 ## applications
 
-- use [`install-brave-deb.sh`](https://github.com/e33io/scripts/blob/main/install-brave-deb.sh) to install the [Brave Browser](https://brave.com) (.deb package)
-
 - use [`install-librewolf-deb.sh`](https://github.com/e33io/scripts/blob/main/install-librewolf-deb.sh) to install the [LibreWolf Web Browser](https://librewolf.net) (.deb package)
+
+- use [`install-brave-deb.sh`](https://github.com/e33io/scripts/blob/main/install-brave-deb.sh) to install the [Brave Browser](https://brave.com) (.deb package)
 
 - use [`install-signal-deb.sh`](https://github.com/e33io/scripts/blob/main/install-signal-deb.sh) to install [Signal App](https://www.signal.org) (.deb package)
 
-- use [`install-firefox-deb.sh`](https://github.com/e33io/scripts/blob/main/install-firefox-deb.sh) to install the [Firefox Web Browser](https://www.mozilla.org/en-US/firefox) (.deb package)
-
-- use [`install-firefox.sh`](https://github.com/e33io/scripts/blob/main/install-firefox.sh) to install the [Firefox Web Browser](https://www.mozilla.org/en-US/firefox) (tarball build)
-
-- use [`install-thunderbird.sh`](https://github.com/e33io/scripts/blob/main/install-thunderbird.sh) to install the [Thunderbird Email Client](https://www.thunderbird.net/en-US) (tarball build)
-
 - use [`install-lazygit.sh`](https://github.com/e33io/scripts/blob/main/install-lazygit.sh) to install [Lazygit](https://github.com/jesseduffield/lazygit) (tarball build)
+
+- use [`install-flatpak-deb.sh`](https://github.com/e33io/scripts/blob/main/install-flatpak-deb.sh) to install Flatpak and add Flathub on Debian
+
+- use [`ubuntu-remove-snapd.sh`](https://github.com/e33io/scripts/blob/main/ubuntu-remove-snapd.sh) to remove Snap and optionally install Flatpak on Ubuntu
 
 &nbsp;
 
@@ -63,10 +61,6 @@ custom Linux installation scripts
 - use [`setup-tearfree-intel.sh`](https://github.com/e33io/scripts/blob/main/setup-tearfree-intel.sh) to setup TearFree for Intel GPUs
 
 - use [`laptop-wakelock-service.sh`](https://github.com/e33io/scripts/blob/main/laptop-wakelock-service.sh) to add and enable wakelock service for laptops
-
-- use [`ubuntu-remove-snapd.sh`](https://github.com/e33io/scripts/blob/main/ubuntu-remove-snapd.sh) to remove Snap and optionally install Flatpak on Ubuntu
-
-- use [`install-flatpak-deb.sh`](https://github.com/e33io/scripts/blob/main/install-flatpak-deb.sh) to install Flatpak and add Flathub on Debian
 
 &nbsp;
 
