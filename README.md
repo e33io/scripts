@@ -22,9 +22,9 @@ custom Linux installation scripts
 
 ## applications
 
-- use [`install-librewolf-deb.sh`](https://github.com/e33io/scripts/blob/main/install-librewolf-deb.sh) to install the [LibreWolf Web Browser](https://librewolf.net) (.deb package)
+- use [`install-librewolf-deb.sh`](https://github.com/e33io/scripts/blob/main/install-librewolf-deb.sh) to install [LibreWolf Browser](https://librewolf.net) (.deb package)
 
-- use [`install-brave-deb.sh`](https://github.com/e33io/scripts/blob/main/install-brave-deb.sh) to install the [Brave Browser](https://brave.com) (.deb package)
+- use [`install-brave-deb.sh`](https://github.com/e33io/scripts/blob/main/install-brave-deb.sh) to install [Brave Browser](https://brave.com) (.deb package)
 
 - use [`install-signal-deb.sh`](https://github.com/e33io/scripts/blob/main/install-signal-deb.sh) to install [Signal App](https://www.signal.org) (.deb package)
 
