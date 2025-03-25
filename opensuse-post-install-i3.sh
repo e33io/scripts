@@ -8,9 +8,10 @@
 # Use with an openSUSE Tumbleweed "Generic Desktop" installation to install the
 # i3 window manager and a base set of apps for a ready-to-use desktop session.
 # --------------------------------------------------------------------------------
-# The default configuration is for use with HiDPI monitors (192 dpi settings)
-# and desktop-type computers, but there are options at the end of the script
-# that let you change to 96 dpi settings for use with non-HiDPI monitors,
+# The default configuration is for use with HiDPI monitors
+# (192 dpi settings for 2x scaling) and desktop-type computers,
+# but there are options at the end of the script that let you change
+# to non-HiDPI monitors (96 dpi settings for 1x scaling),
 # and/or change to laptop-type (battery powered) computer settings.
 # --------------------------------------------------------------------------------
 # NOTE: When installing openSUSE Tumbleweed, within the Generic Desktop selection,
@@ -31,58 +32,58 @@
 # ================================================================================
 
 if [ "$(id -u)" = 0 ]; then
-    echo "#########################################################"
+    echo "################################################################"
     echo "This script MUST NOT be run as root user."
     echo "Run this script as a normal user."
     echo "You will be asked for a sudo password when necessary."
-    echo "#########################################################"
+    echo "################################################################"
     exit 1
 fi
 
-echo "#########################################################"
+echo "################################################################"
 echo "Add X11:Utilities repository"
-echo "#########################################################"
+echo "################################################################"
 
 sudo zypper ar -f https://download.opensuse.org/repositories/X11:Utilities/openSUSE_Tumbleweed/X11:Utilities.repo
 sudo zypper refresh
 
-echo "#########################################################"
+echo "################################################################"
 echo "Run system update"
-echo "#########################################################"
+echo "################################################################"
 
 sudo zypper dup --no-recommends
 
-echo "#########################################################"
+echo "################################################################"
 echo "Install i3 and other packages"
-echo "#########################################################"
+echo "################################################################"
 
 sudo zypper install i3 python312-i3ipc python312-py3status xss-lock xautolock rofi dunst xsel xclip xinput xbindkeys xdotool playerctl xdg-user-dirs xdg-utils xf86-video-amdgpu gvfs-fuse gvfs-backends nfs-client exfatprogs polkit-gnome dex git wget rsync cronie fuse psmisc words opi lxappearance qt5ct adwaita-qt5 gnome-themes-extras papirus-icon-theme google-noto-coloremoji-fonts nitrogen yast2-control-center-qt thunar thunar-plugin-archive tumbler ffmpegthumbnailer engrampa kitty pipewire-pulseaudio pavucontrol gnome-disk-utility atril imv mpv parole mousepad galculator xfce4-screenshooter flameshot NetworkManager-tui htop neofetch ranger nano micro-editor fzf exiftool cmus cava darktable gimp inkscape filezilla libreoffice libreoffice-gtk3
 
-echo "#########################################################"
+echo "################################################################"
 echo "Install LibreWolf Web Browser"
-echo "#########################################################"
+echo "################################################################"
 
 sudo rpm --import https://rpm.librewolf.net/pubkey.gpg
 sudo zypper ar -ef https://rpm.librewolf.net librewolf
 sudo zypper refresh
 sudo zypper install librewolf
 
-echo "#########################################################"
+echo "################################################################"
 echo "Remove unneeded/unwanted packages"
-echo "#########################################################"
+echo "################################################################"
 
 sudo zypper remove icewm* openbox *obconf* libobrender32 libobt2 xscreensaver*
 
-echo "#########################################################"
+echo "################################################################"
 echo "Clone custom configuration files"
-echo "#########################################################"
+echo "################################################################"
 
 git clone https://github.com/e33io/dotfiles $HOME/dotfiles
 git clone https://github.com/e33io/opt-dots $HOME/opt-dots
 
-echo "#########################################################"
+echo "################################################################"
 echo "Copy custom configuration files"
-echo "#########################################################"
+echo "################################################################"
 
 mkdir -p $HOME/.local/bin
 cp -R $HOME/dotfiles/.config $HOME
@@ -115,9 +116,9 @@ sudo chmod u+s /bin/umount
 sudo chmod u+s /sbin/mount.cifs
 sudo grub2-mkconfig -o /boot/grub2/grub.cfg
 
-echo "#########################################################"
+echo "################################################################"
 echo "Update i3 config file"
-echo "#########################################################"
+echo "################################################################"
 
 sed -i 's/GDK_SCALE=1 signal-desktop/flatpak run org\.signal\.Signal/' $HOME/.config/i3/config
 echo '# openSUSE specific options
@@ -126,24 +127,24 @@ for_window [class="imagewriter"] floating enable, move position center
 for_window [class=".*YaST.*"] floating enable, resize set 3000 2000, move position center
 for_window [title="xdg-su: .*"] floating enable' | tee -a $HOME/.config/i3/config > /dev/null
 
-echo "#########################################################"
+echo "################################################################"
 echo "Update root .bashrc file"
-echo "#########################################################"
+echo "################################################################"
 
 echo "#
 # Set command prompt
 PS1='\[\e[01;31m\][\u \w]#\[\e[m\] '
 #" | sudo tee -a /root/.bashrc > /dev/null
 
-echo "#########################################################"
-echo "NOTE: The configs that were installed with this script"
-echo "are based on using HiDPI monitors (192 dpi settings)."
-echo "The option below lets you change to 96 dpi settings for"
-echo "use with non-HiDPI monitors."
-echo "---------------------------------------------------------"
+echo "################################################################"
+echo "NOTE: The configs that were installed with this script are"
+echo "based on using HiDPI monitors (192 dpi settings for 2x scaling)."
+echo "The option below lets you change to non-HiDPI monitors"
+echo "(96 dpi settings for 1x scaling)."
+echo "----------------------------------------------------------------"
 
 while true; do
-    read -p "Do you want to change to 96 dpi non-HiDPI settings? (y/n) " yn
+    read -p "Do you want to change to 96 dpi settings for 1x scaling? (y/n) " yn
     case $yn in
         [Yy]* ) sh mod-dpi-scaling-wm.sh;
                 echo "You chose to change to non-HiDPI settings";
@@ -154,12 +155,12 @@ while true; do
     esac
 done
 
-echo "#########################################################"
+echo "################################################################"
 echo "NOTE: The configs that were installed with this script"
 echo "are based on using a desktop-type computer."
 echo "The option below lets you change to laptop configs for"
 echo "use with a laptop-type (battery powered) computer."
-echo "---------------------------------------------------------"
+echo "----------------------------------------------------------------"
 
 while true; do
     read -p "Do you want to change to laptop configs? (y/n) " yn
@@ -173,9 +174,9 @@ while true; do
     esac
 done
 
-echo "#########################################################"
+echo "################################################################"
 echo "Clean up user directory"
-echo "#########################################################"
+echo "################################################################"
 
 xdg-user-dirs-update
 echo "file:///home/$(whoami)/Downloads
@@ -190,6 +191,6 @@ sudo rm -R $HOME/dotfiles
 sudo rm -R $HOME/opt-dots
 sudo rm -R $HOME/scripts
 
-echo "#########################################################"
+echo "################################################################"
 echo "All done, you can now run other commands or reboot the PC"
-echo "#########################################################"
+echo "################################################################"

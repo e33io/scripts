@@ -14,34 +14,34 @@
 # =========================================================================
 
 if [ "$(id -u)" = 0 ]; then
-    echo "#########################################################"
+    echo "################################################################"
     echo "This script MUST NOT be run as root user."
     echo "Run this script as a normal user."
     echo "You will be asked for a sudo password when necessary."
-    echo "#########################################################"
+    echo "################################################################"
     exit 1
 fi
 
 release="$(lsb_release -a | awk '/Codename:/ { print $2 }')"
 if [ ! $release = bookworm ]; then
-    echo "#########################################################"
+    echo "################################################################"
     echo "Debian 12 Bookworm Initial Setup is NOT compatible with"
     echo "your version of Linux, and it will exit now without"
     echo "running or making any changes."
-    echo "#########################################################"
+    echo "################################################################"
     exit 1
 fi
 
-echo "#########################################################"
+echo "################################################################"
 echo "Run console-setup to set TTY font and font size"
-echo "#########################################################"
+echo "################################################################"
 
 sudo dpkg-reconfigure console-setup
 clear
 
-echo "#########################################################"
+echo "################################################################"
 echo "Update Debian Bookworm apt sources.list file"
-echo "#########################################################"
+echo "################################################################"
 
 echo "# Reference: https://wiki.debian.org/SourcesList
 
@@ -58,23 +58,23 @@ deb http://deb.debian.org/debian bookworm-backports main contrib non-free non-fr
 deb-src http://deb.debian.org/debian bookworm-backports main contrib non-free non-free-firmware" \
 | sudo tee /etc/apt/sources.list > /dev/null
 
-echo "#########################################################"
+echo "################################################################"
 echo "Update and upgrade system"
-echo "#########################################################"
+echo "################################################################"
 
 sudo apt update
 sudo apt -y upgrade
 sudo apt -y full-upgrade
 
-echo "#########################################################"
+echo "################################################################"
 echo "Install additional firmware packages"
-echo "#########################################################"
+echo "################################################################"
 
 sudo apt -y install firmware-linux firmware-linux-nonfree
 
-echo "#########################################################"
+echo "################################################################"
 echo "Make and setup a swap file"
-echo "#########################################################"
+echo "################################################################"
 
 if free | awk '/^Swap:/ { exit !$2 }'; then
     echo "Swap file/partition already exists,"
@@ -92,7 +92,7 @@ else
     echo "Swap file was added to the system."
 fi
 
-echo "#########################################################"
+echo "################################################################"
 
 while true; do
     read -p "Do you want to install the backports kernel? (y/n) " yn
@@ -108,13 +108,13 @@ while true; do
     esac
 done
 
-echo "#########################################################"
+echo "################################################################"
 echo "Remove and clean up unneeded packages"
-echo "#########################################################"
+echo "################################################################"
 
 sudo apt -y autoremove
 sudo apt -y autoclean
 
-echo "#########################################################"
+echo "################################################################"
 echo "Initial setup is done."
-echo "#########################################################"
+echo "################################################################"

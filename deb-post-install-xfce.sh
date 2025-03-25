@@ -9,9 +9,9 @@
 # Use with a minimal installation of Debian Linux to install the Xfce desktop
 # environment and a base set of apps for a ready-to-use desktop session.
 # ---------------------------------------------------------------------------
-# Configs and theming are based on using HiDPI monitors (Window Scaling 2x),
-# but there is an option at the end of the script that lets you change to
-# 'Window Scaling 1x' settings for use with non-HiDPI monitors.
+# Configs are based on using 'Window Scaling 2x' for HiDPI monitors,
+# but there is an option at the end of the script that lets you change
+# to 'Window Scaling 1x' settings for use with non-HiDPI monitors.
 # ---------------------------------------------------------------------------
 # Instructions for running this script:
 #   sudo apt install git
@@ -21,43 +21,43 @@
 # ===========================================================================
 
 if [ "$(id -u)" = 0 ]; then
-    echo "#########################################################"
+    echo "################################################################"
     echo "This script MUST NOT be run as root user."
     echo "Run this script as a normal user."
     echo "You will be asked for a sudo password when necessary."
-    echo "#########################################################"
+    echo "################################################################"
     exit 1
 fi
 
-echo "#########################################################"
+echo "################################################################"
 echo "Update and upgrade system"
-echo "#########################################################"
+echo "################################################################"
 
 sudo apt update
 sudo apt -y upgrade
 
-echo "#########################################################"
+echo "################################################################"
 echo "Install Xfce and other core packages"
-echo "#########################################################"
+echo "################################################################"
 
 sudo apt -y install xfce4 xfce4-terminal xfce4-power-manager xfce4-screenshooter xfce4-taskmanager xfce4-sntray-plugin thunar-archive-plugin engrampa network-manager-gnome light-locker slick-greeter gvfs-fuse gvfs-backends nfs-common cifs-utils tumbler-plugins-extra xclip mousepad menulibre gnome-themes-extra qt5ct qt5-style-plugins adwaita-qt papirus-icon-theme fonts-noto-color-emoji plymouth plymouth-themes
 
-echo "#########################################################"
+echo "################################################################"
 echo "Install other packages"
-echo "#########################################################"
+echo "################################################################"
 
 sudo apt -y install atril ristretto parole rhythmbox galculator gnome-disk-utility mintstick synaptic gpick darktable gimp inkscape filezilla libreoffice-calc libreoffice-draw libreoffice-impress libreoffice-writer libreoffice-gtk3 timeshift xterm micro imv mpv htop neofetch cmus cava cmatrix ncal ranger ueberzug caca-utils highlight atool w3m poppler-utils mediainfo fzf heif-thumbnailer heif-gdk-pixbuf libimage-exiftool-perl apt-transport-https curl rsync wmctrl xdotool xbindkeys
 
-echo "#########################################################"
+echo "################################################################"
 echo "Install pipewire and enable wireplumber service"
-echo "#########################################################"
+echo "################################################################"
 
 sudo apt -y install pipewire-audio pipewire-media-session-
 systemctl --user --now enable wireplumber.service
 
-echo "#########################################################"
+echo "################################################################"
 echo "Install LibreWolf Web Browser"
-echo "#########################################################"
+echo "################################################################"
 
 sudo apt update
 sudo apt -y install extrepo
@@ -65,25 +65,25 @@ sudo extrepo enable librewolf
 sudo apt update
 sudo apt -y install librewolf
 
-echo "#########################################################"
+echo "################################################################"
 echo "Install Signal App"
-echo "#########################################################"
+echo "################################################################"
 
 curl -fsSL https://updates.signal.org/desktop/apt/keys.asc | sudo gpg --dearmor -o /usr/share/keyrings/signal-desktop-keyring.gpg
 echo "deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] https://updates.signal.org/desktop/apt xenial main" | sudo tee /etc/apt/sources.list.d/signal-xenial.list
 sudo apt update
 sudo apt -y install signal-desktop
 
-echo "#########################################################"
+echo "################################################################"
 echo "Clone custom configuration files"
-echo "#########################################################"
+echo "################################################################"
 
 git clone https://github.com/e33io/dotfiles $HOME/dotfiles
 git clone https://github.com/e33io/opt-dots $HOME/opt-dots
 
-echo "#########################################################"
+echo "################################################################"
 echo "Copy custom configuration files"
-echo "#########################################################"
+echo "################################################################"
 
 mkdir -p $HOME/.config/micro
 cp -R $HOME/dotfiles/.config/micro $HOME/.config
@@ -108,37 +108,37 @@ sudo ln -sf /usr/share/wallpapers/background.png /usr/share/images/desktop-base/
 sudo update-initramfs -u
 sudo update-grub
 
-echo "#########################################################"
+echo "################################################################"
 echo "Add user .bash_profile and .xsessionrc files"
-echo "#########################################################"
+echo "################################################################"
 
 echo "if [ -f ~/.profile ]; then
     . ~/.profile
 fi" | tee $HOME/.bash_profile $HOME/.xsessionrc > /dev/null
 
-echo "#########################################################"
+echo "################################################################"
 echo "Update root .bashrc file"
-echo "#########################################################"
+echo "################################################################"
 
 echo "#
 # Set command prompt
 PS1='\[\e[01;31m\][\u \w]#\[\e[m\] '
 #" | sudo tee -a /root/.bashrc > /dev/null
 
-echo "#########################################################"
+echo "################################################################"
 echo "Remove unneeded default xsession file if it exists"
-echo "#########################################################"
+echo "################################################################"
 
 if [ -f "/usr/share/xsessions/lightdm-xsession.desktop" ]; then
     sudo rm -R /usr/share/xsessions/lightdm-xsession.desktop
 fi
 
-echo "#########################################################"
+echo "################################################################"
 echo "NOTE: The configs that were installed with this script"
-echo "are based on using HiDPI monitors (Window Scaling 2x)."
+echo "are based on using 'Window Scaling 2x' for HiDPI monitors."
 echo "The option below lets you change to 'Window Scaling 1x'"
 echo "settings for use with non-HiDPI monitors."
-echo "---------------------------------------------------------"
+echo "----------------------------------------------------------------"
 
 while true; do
     read -p "Do you want to change to 'Window Scaling 1x' non-HiDPI settings? (y/n) " yn
@@ -152,16 +152,16 @@ while true; do
     esac
 done
 
-echo "#########################################################"
+echo "################################################################"
 echo "Update x-www-browser settings"
-echo "#########################################################"
+echo "################################################################"
 
 sudo update-alternatives --install /usr/bin/x-www-browser x-www-browser /usr/bin/librewolf 201
 sudo update-alternatives --set x-www-browser /usr/bin/librewolf
 
-echo "#########################################################"
+echo "################################################################"
 echo "Add bookmarks and clean up user directory"
-echo "#########################################################"
+echo "################################################################"
 
 xdg-user-dirs-update
 echo "file:///home/$(whoami)/Downloads
@@ -174,6 +174,6 @@ sudo rm -R $HOME/dotfiles
 sudo rm -R $HOME/opt-dots
 sudo rm -R $HOME/scripts
 
-echo "#########################################################"
+echo "################################################################"
 echo "All done, you can now run other commands or reboot the PC"
-echo "#########################################################"
+echo "################################################################"

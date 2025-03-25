@@ -9,9 +9,10 @@
 # Use with an Ubuntu 24.04 Server installation to install the i3 window
 # manager and a base set of apps for a ready-to-use desktop session.
 # ------------------------------------------------------------------------------
-# The default configuration is for use with HiDPI monitors (192 dpi settings)
-# and desktop-type computers, but there are options at the end of the script
-# that let you change to 96 dpi settings for use with non-HiDPI monitors,
+# The default configuration is for use with HiDPI monitors
+# (192 dpi settings for 2x scaling) and desktop-type computers,
+# but there are options at the end of the script that let you change
+# to non-HiDPI monitors (96 dpi settings for 1x scaling),
 # and/or change to laptop-type (battery powered) computer settings.
 # ------------------------------------------------------------------------------
 # Instructions for running this script:
@@ -22,33 +23,33 @@
 # ==============================================================================
 
 if [ "$(id -u)" = 0 ]; then
-    echo "#########################################################"
+    echo "################################################################"
     echo "This script MUST NOT be run as root user."
     echo "Run this script as a normal user."
     echo "You will be asked for a sudo password when necessary."
-    echo "#########################################################"
+    echo "################################################################"
     exit 1
 fi
 
-echo "#########################################################"
+echo "################################################################"
 echo "Update and upgrade system"
-echo "#########################################################"
+echo "################################################################"
 
 sudo apt update
 sudo apt -y upgrade
 sudo apt -y dist-upgrade
 
-echo "#########################################################"
+echo "################################################################"
 echo "Remove unneeded packages"
-echo "#########################################################"
+echo "################################################################"
 
 sudo apt -y purge apport* byobu cloud-* finalrd *fwupd* lxd-* multipath-tools needrestart networkd-dispatcher open-iscsi open-vm-tools pollinate postfix rsyslog thermald tpm-* ufw unattended-upgrades
 sudo apt -y autoremove
 sudo apt -y autoclean
 
-echo "#########################################################"
+echo "################################################################"
 echo "Disable unneeded services and remove/de-prioritize snapd"
-echo "#########################################################"
+echo "################################################################"
 
 sudo systemctl disable systemd-networkd-wait-online.service
 sudo systemctl disable systemd-networkd.service
@@ -64,35 +65,35 @@ echo "Package: snapd
 Pin: release a=*
 Pin-Priority: -10" | sudo tee /etc/apt/preferences.d/nosnap.pref > /dev/null
 
-echo "#########################################################"
+echo "################################################################"
 echo "Update deb-post-install-i3.sh script"
-echo "#########################################################"
+echo "################################################################"
 
 sed -i 's/sudo rm -R \$HOME\/scripts/#/' $HOME/scripts/deb-post-install-i3.sh
 
-echo "#########################################################"
+echo "################################################################"
 echo "Run deb-post-install-i3.sh script to"
 echo "install i3 and other applications"
-echo "#########################################################"
+echo "################################################################"
 
 sh deb-post-install-i3.sh
 
-echo "#########################################################"
+echo "################################################################"
 echo "Run install-yaru-themes.sh script to"
 echo "install Yaru themes and icons"
-echo "#########################################################"
+echo "################################################################"
 
 sh install-yaru-themes.sh
 
-echo "#########################################################"
+echo "################################################################"
 echo "Disable ESM hook to turn off ESM upgrade messages"
-echo "#########################################################"
+echo "################################################################"
 
 sudo mv /etc/apt/apt.conf.d/20apt-esm-hook.conf /etc/apt/apt.conf.d/20apt-esm-hook.conf.bak
 
-echo "#########################################################"
+echo "################################################################"
 echo "Update NetworkManager files and apply changes"
-echo "#########################################################"
+echo "################################################################"
 
 echo "# Let NetworkManager manage all devices on this system
 network:
@@ -102,15 +103,15 @@ sudo rm -R /etc/network/interfaces
 sudo netplan generate
 sudo netplan apply
 
-echo "#########################################################"
+echo "################################################################"
 echo "Update the swap swappiness value"
-echo "#########################################################"
+echo "################################################################"
 
 echo "vm.swappiness=5" | sudo tee -a /etc/sysctl.conf > /dev/null
 
-echo "#########################################################"
+echo "################################################################"
 echo "Add info.desktop file"
-echo "#########################################################"
+echo "################################################################"
 
 echo "[Desktop Entry]
 Name=TeXInfo
@@ -121,9 +122,9 @@ Type=Application
 Categories=Utility;ConsoleOnly;
 NoDisplay=true" > $HOME/.local/share/applications/info.desktop
 
-echo "#########################################################"
+echo "################################################################"
 echo "Update cursor, wallpaper and lightdm settings"
-echo "#########################################################"
+echo "################################################################"
 
 sed -i 's/gtk-cursor-theme-name="Adwaita"/gtk-cursor-theme-name="Yaru"/' $HOME/.gtkrc-2.0
 sed -i 's/gtk-cursor-theme-name=Adwaita/gtk-cursor-theme-name=Yaru/' $HOME/.config/gtk-3.0/settings.ini
@@ -135,18 +136,18 @@ sudo sed -i 's/theme-name=Adwaita-dark/theme-name=Yaru-dark/' /etc/lightdm/slick
 sudo sed -i 's/DeviceScale=2/DeviceScale=1/' /etc/plymouth/plymouthd.conf
 sudo update-initramfs -u
 
-echo "#########################################################"
+echo "################################################################"
 echo "Clean up /usr/share/applications directory"
-echo "#########################################################"
+echo "################################################################"
 
 sudo rm -R /usr/share/applications/imv-folder.desktop
 
-echo "#########################################################"
+echo "################################################################"
 echo "Clean up user directory"
-echo "#########################################################"
+echo "################################################################"
 
 sudo rm -R $HOME/scripts
 
-echo "#########################################################"
+echo "################################################################"
 echo "All done, you can now run other commands or reboot the PC"
-echo "#########################################################"
+echo "################################################################"
