@@ -1,21 +1,21 @@
 #!/bin/bash
 
-# =======================================================================
+# =====================================================================
 # Make and setup a swap file
 # URL: https://github.com/e33io/scripts/blob/main/make-swap-file.sh
-# -----------------------------------------------------------------------
+# ---------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
-# Only use on file systems that do not already have a swap file/partition
-# -----------------------------------------------------------------------
+# Only with file systems that do not already have a swap file/partition
+# ---------------------------------------------------------------------
 # NOTE: Do not use with LVM or Btrfs file systems
-# =======================================================================
+# =====================================================================
 
 if [ "$(id -u)" = 0 ]; then
-    echo "#########################################################"
+    echo "################################################################"
     echo "This script MUST NOT be run as root user."
     echo "Run this script as a normal user."
     echo "You will be asked for a sudo password when necessary."
-    echo "#########################################################"
+    echo "################################################################"
     exit 1
 fi
 

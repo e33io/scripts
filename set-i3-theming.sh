@@ -9,29 +9,29 @@
 # ===================================================================
 
 if [ "$(id -u)" = 0 ]; then
-    echo "#########################################################"
+    echo "################################################################"
     echo "This script MUST NOT be run as root user."
     echo "Run this script as a normal user."
     echo "You will be asked for a sudo password when necessary."
-    echo "#########################################################"
+    echo "################################################################"
     exit 1
 fi
 
 if ! { [ -f "/etc/debian_version" ] || [ -f "/etc/zypp/zypper.conf" ]; }; then
-    echo "#########################################################"
+    echo "################################################################"
     echo "This script is NOT compatible with your version of Linux!"
     echo "It only works with Debian/Ubuntu or openSUSE Linux,"
     echo "and it will exit now without running."
-    echo "#########################################################"
+    echo "################################################################"
     exit 1
 fi
 
 if [ ! -n "$(ls -d /usr/share/themes/Mint-*-Dark-Mod-* 2>/dev/null)" ]; then
-    echo "#########################################################"
+    echo "################################################################"
     echo "NOTE! The required themes are NOT installed!"
     echo "Answer y (for yes) to install the required Mint themes,"
     echo "or n (for no) to exit the theming script."
-    echo "---------------------------------------------------------"
+    echo "----------------------------------------------------------------"
     while true; do
         read -p "Do you want to install Mint themes to continue this theming script? (y/n) " yn
         case $yn in
@@ -53,11 +53,11 @@ if [ ! -n "$(ls -d /usr/share/themes/Mint-*-Dark-Mod-* 2>/dev/null)" ]; then
 fi
 
 if [ ! -n "$(ls -d /usr/bin/papirus-folders 2>/dev/null)" ]; then
-    echo "#########################################################"
+    echo "################################################################"
     echo "Option to install the Papirus Icon Theme and the Papirus"
     echo "Folders application for changing Papirus folder colors"
     echo "with this theming script."
-    echo "---------------------------------------------------------"
+    echo "----------------------------------------------------------------"
 
     while true; do
         read -p "Do you want to install optional Papirus icons and application? (y/n) " yn
@@ -565,9 +565,9 @@ Mint_Y_Dark_Mod_Teal () {
 }
 
 while true; do
-    echo "#########################################################"
+    echo "################################################################"
     echo "Select and set theming for i3 and applications"
-    echo "#########################################################"
+    echo "################################################################"
     echo "List of available themes:"
     echo "   0) Keep current theming"
     echo "   1) Adwaita-Dark"
@@ -627,6 +627,6 @@ while true; do
     esac
 done
 
-echo "#########################################################"
+echo "################################################################"
 echo "Reboot the system or logout/login now to complete changes"
-echo "#########################################################"
+echo "################################################################"

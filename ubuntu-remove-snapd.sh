@@ -1,32 +1,32 @@
 #!/bin/bash
 
-# ===========================================================================
+# ======================================================================
 # Ubuntu Remove Snaps, Disable Snapd and Optionally Install Flatpak
 # URL: https://github.com/e33io/scripts/blob/main/ubuntu-remove-snapd.sh
-# ---------------------------------------------------------------------------
+# ----------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
-# ===========================================================================
+# ======================================================================
 
 if [ "$(id -u)" = 0 ]; then
-    echo "#########################################################"
+    echo "################################################################"
     echo "This script MUST NOT be run as root user."
     echo "Run this script as a normal user."
     echo "You will be asked for a sudo password when necessary."
-    echo "#########################################################"
+    echo "################################################################"
     exit 1
 fi
 
-echo "#########################################################"
+echo "################################################################"
 echo "Update and upgrade system"
-echo "#########################################################"
+echo "################################################################"
 
 sudo apt update
 sudo apt -y upgrade
 
-echo "#########################################################"
+echo "################################################################"
 echo "Disable and remove snapd, then de-prioritize snapd"
 echo "packages to avoid snap(s) installation"
-echo "#########################################################"
+echo "################################################################"
 
 if [ -d "/snap/firefox" ]; then
     sudo snap remove firefox
@@ -86,9 +86,9 @@ echo "Package: snapd
 Pin: release a=*
 Pin-Priority: -10" | sudo tee /etc/apt/preferences.d/nosnap.pref > /dev/null
 
-echo "#########################################################"
+echo "################################################################"
 echo "Flatpak package and Flathub repository option"
-echo "---------------------------------------------------------"
+echo "----------------------------------------------------------------"
 
 while true; do
     read -p "Do you want to install Flatpak and add Flathub repository (y/n) " yn
@@ -106,14 +106,14 @@ while true; do
 done
 
 if [ -f "/bin/gnome-software" ]; then
-    echo "#########################################################"
+    echo "################################################################"
     echo "Add org.gnome.Software.desktop file to manually"
     echo "start Gnome Software (disable autostart)"
-    echo "#########################################################"
+    echo "################################################################"
     mkdir -p $HOME/.config/autostart
     echo "X-GNOME-Autostart-enabled=false" > $HOME/.config/autostart/org.gnome.Software.desktop
 fi
 
-echo "#########################################################"
+echo "################################################################"
 echo "All done, you can now run other commands or reboot the PC"
-echo "#########################################################"
+echo "################################################################"

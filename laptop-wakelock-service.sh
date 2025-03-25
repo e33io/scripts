@@ -1,18 +1,18 @@
 #!/bin/bash
 
-# ===============================================================================
+# ==========================================================================
 # Lock the screen on resume from suspend (using i3lock), for laptop use
 # URL: https://github.com/e33io/scripts/blob/main/laptop-wakelock-service.sh
-# -------------------------------------------------------------------------------
+# --------------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
-# ===============================================================================
+# ==========================================================================
 
 if [ "$(id -u)" = 0 ]; then
-    echo "#########################################################"
+    echo "################################################################"
     echo "This script MUST NOT be run as root user."
     echo "Run this script as a normal user."
     echo "You will be asked for a sudo password when necessary."
-    echo "#########################################################"
+    echo "################################################################"
     exit 1
 fi
 
@@ -33,6 +33,6 @@ WantedBy=sleep.target suspend.target" | sudo tee /etc/systemd/system/wakelock.se
 # enable wakelock service
 sudo systemctl enable wakelock
 
-echo "#########################################################"
+echo "################################################################"
 echo "The wakelock.service file was added and enabled."
-echo "#########################################################"
+echo "################################################################"
