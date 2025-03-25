@@ -9,9 +9,9 @@
 # Use with a minimal installation of Debian Linux to install the Xfce desktop
 # environment and a base set of apps for a ready-to-use desktop session.
 # ---------------------------------------------------------------------------
-# Configs are based on using 'Window Scaling 2x' for HiDPI monitors,
-# but there is an option at the end of the script that lets you change
-# to 'Window Scaling 1x' settings for use with non-HiDPI monitors.
+# The default configuration is based on using 'Window Scaling 2x' for HiDPI
+# monitors, but there is an option at the end of the script that lets you
+# change to 'Window Scaling 1x' settings for use with non-HiDPI monitors.
 # ---------------------------------------------------------------------------
 # Instructions for running this script:
 #   sudo apt install git
