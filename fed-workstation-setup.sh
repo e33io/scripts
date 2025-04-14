@@ -9,11 +9,6 @@
 # ----------------------------------------------------------------------------
 # Post-install instructions:
 #   - open Software Center and enable third-party repos and run updates/reboot
-#   - open Software Center and install `Extension Manager` (Flathub version)
-#   - open Extension Manager and install:
-#       - `Dash to Dock`
-#       - `Transparent Top Bar (Adjustable transparency)`
-#       - `Disable workspace overlay GNOME Shell 45,46,47,48`
 #   - open Terminal and run this script:
 #       - git clone https://github.com/e33io/scripts
 #       - cd scripts
@@ -49,10 +44,11 @@ echo "################################################################"
 
 sudo dnf -y install gnome-tweaks adwaita-gtk* gnome-themes-extra dconf-editor htop fastfetch papirus-icon-theme timeshift filezilla gimp darktable inkscape
 
-flatpak install org.gtk.Gtk3theme.Adwaita-dark --noninteractive
-flatpak install org.signal.Signal --noninteractive
-flatpak install org.torproject.torbrowser-launcher --noninteractive
-flatpak install nl.hjdskes.gcolor3 --noninteractive
+flatpak install -y --noninteractive com.mattjakeman.ExtensionManager
+flatpak install -y --noninteractive org.gtk.Gtk3theme.Adwaita-dark
+flatpak install -y --noninteractive org.signal.Signal
+flatpak install -y --noninteractive org.torproject.torbrowser-launcher
+flatpak install -y --noninteractive nl.hjdskes.gcolor3
 
 curl -fsSL https://repo.librewolf.net/librewolf.repo | pkexec tee /etc/yum.repos.d/librewolf.repo
 sudo dnf -y install librewolf
