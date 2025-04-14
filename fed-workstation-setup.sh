@@ -52,7 +52,7 @@ echo "################################################################"
 echo "Install other packages"
 echo "################################################################"
 
-sudo dnf -y install gnome-tweaks adwaita-gtk* gnome-themes-extra dconf-editor htop fastfetch papirus-icon-theme timeshift filezilla gimp darktable inkscape
+sudo dnf -y install gnome-tweaks dconf-editor adwaita-gtk* gnome-themes-extra papirus-icon-theme htop fastfetch perl-Image-ExifTool timeshift filezilla gimp darktable inkscape
 
 echo "################################################################"
 echo "Install LibreWolf Web Browser"
