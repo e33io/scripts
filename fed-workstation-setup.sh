@@ -26,6 +26,16 @@ if [ "$(id -u)" = 0 ]; then
 fi
 
 echo "################################################################"
+echo "Install flatpak packages"
+echo "################################################################"
+
+flatpak install -y --noninteractive com.mattjakeman.ExtensionManager
+flatpak install -y --noninteractive org.gtk.Gtk3theme.Adwaita-dark
+flatpak install -y --noninteractive org.signal.Signal
+flatpak install -y --noninteractive org.torproject.torbrowser-launcher
+flatpak install -y --noninteractive nl.hjdskes.gcolor3
+
+echo "################################################################"
 echo "Add rpmfusion free and nonfree repositories"
 echo "################################################################"
 
@@ -44,11 +54,9 @@ echo "################################################################"
 
 sudo dnf -y install gnome-tweaks adwaita-gtk* gnome-themes-extra dconf-editor htop fastfetch papirus-icon-theme timeshift filezilla gimp darktable inkscape
 
-flatpak install -y --noninteractive com.mattjakeman.ExtensionManager
-flatpak install -y --noninteractive org.gtk.Gtk3theme.Adwaita-dark
-flatpak install -y --noninteractive org.signal.Signal
-flatpak install -y --noninteractive org.torproject.torbrowser-launcher
-flatpak install -y --noninteractive nl.hjdskes.gcolor3
+echo "################################################################"
+echo "Install LibreWolf Web Browser"
+echo "################################################################"
 
 curl -fsSL https://repo.librewolf.net/librewolf.repo | pkexec tee /etc/yum.repos.d/librewolf.repo
 sudo dnf -y install librewolf
