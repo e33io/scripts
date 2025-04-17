@@ -41,10 +41,10 @@ dconf write /org/gnome/desktop/app-folders/folder-children "['System', 'Utilitie
 dconf write /org/gnome/desktop/app-folders/folders/Pardus/categories "['X-Pardus-Apps']"
 dconf write /org/gnome/desktop/app-folders/folders/Pardus/name "'X-Pardus-Apps.directory'"
 dconf write /org/gnome/desktop/app-folders/folders/Pardus/translate "true"
-dconf write /org/gnome/desktop/app-folders/folders/System/apps "['org.gnome.baobab.desktop', 'org.gnome.DiskUtility.desktop', 'org.gnome.Logs.desktop', 'org.freedesktop.MalcontentControl.desktop', 'org.freedesktop.GnomeAbrt.desktop', 'org.gnome.SystemMonitor.desktop', 'htop.desktop', 'org.torproject.torbrowser-launcher.settings.desktop']"
+dconf write /org/gnome/desktop/app-folders/folders/System/apps "['org.gnome.SystemMonitor.desktop', 'org.gnome.baobab.desktop', 'org.gnome.DiskUtility.desktop', 'org.gnome.Logs.desktop', 'org.freedesktop.MalcontentControl.desktop', 'org.freedesktop.GnomeAbrt.desktop', 'htop.desktop', 'org.torproject.torbrowser-launcher.settings.desktop', 'input-remapper-gtk.desktop']"
 dconf write /org/gnome/desktop/app-folders/folders/System/name "'X-GNOME-Shell-System.directory'"
 dconf write /org/gnome/desktop/app-folders/folders/System/translate "true"
-dconf write /org/gnome/desktop/app-folders/folders/Utilities/apps "['org.gnome.Connections.desktop', 'org.gnome.Evince.desktop', 'org.gnome.font-viewer.desktop', 'org.gnome.Loupe.desktop', 'simple-scan.desktop', 'org.gnome.Characters.desktop', 'org.gnome.Tour.desktop', 'yelp.desktop', 'org.gnome.Snapshot.desktop']"
+dconf write /org/gnome/desktop/app-folders/folders/Utilities/apps "['org.gnome.Connections.desktop', 'org.gnome.Evince.desktop', 'org.gnome.Loupe.desktop', 'simple-scan.desktop', 'org.gnome.font-viewer.desktop', 'org.gnome.Characters.desktop', 'org.gnome.Tour.desktop', 'yelp.desktop', 'org.gnome.Snapshot.desktop', 'hp-uiscan.desktop', 'hplip.desktop']"
 dconf write /org/gnome/desktop/app-folders/folders/Utilities/name "'X-GNOME-Shell-Utilities.directory'"
 dconf write /org/gnome/desktop/app-folders/folders/Utilities/translate "true"
 dconf write /org/gnome/desktop/app-folders/folders/YaST/categories "['X-SuSE-YaST']"
@@ -121,11 +121,13 @@ dconf write /org/gnome/desktop/wm/keybindings/toggle-maximized "['<Super><Shift>
 dconf write /org/gnome/desktop/wm/preferences/button-layout "'appmenu:minimize,maximize,close'"
 dconf write /org/gnome/desktop/wm/preferences/focus-mode "'sloppy'"
 dconf write /org/gnome/desktop/wm/preferences/focus-new-windows "'smart'"
+dconf write /org/gnome/desktop/wm/preferences/num-workspaces "6"
 dconf write /org/gnome/desktop/wm/preferences/raise-on-click "true"
 
 dconf write /org/gnome/evolution-data-server/migrated "true"
 
 dconf write /org/gnome/mutter/center-new-windows "false"
+dconf write /org/gnome/mutter/dynamic-workspaces "false"
 
 dconf write /org/gnome/nautilus/icon-view/default-zoom-level "'small-plus'"
 
@@ -139,7 +141,7 @@ dconf write /org/gnome/nautilus/window-state/initial-size-file-chooser "(890, 55
 
 dconf write /org/gnome/settings-daemon/plugins/color/night-light-schedule-automatic "false"
 
-dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/']"
+dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/']"
 dconf write /org/gnome/settings-daemon/plugins/media-keys/screensaver "['<Super>x', '<Super>l']"
 dconf write /org/gnome/settings-daemon/plugins/media-keys/www "['<Super>b']"
 dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/binding "'<Super>Return'"
@@ -154,13 +156,16 @@ dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/cus
 dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/binding "'<Shift><Super>t'"
 dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/command "'gnome-text-editor --new-window'"
 dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/name "'Gnome Text Editor - New Window'"
+dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/binding "'<Super>c'"
+dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/command "'flatpak run org.signal.Signal'"
+dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/name "'Signal App'"
 
 dconf write /org/gnome/settings-daemon/plugins/power/sleep-inactive-ac-type "'nothing'"
 
 dconf write /org/gnome/shell/app-picker-layout "[{'org.mozilla.firefox.desktop': <{'position': <0>}>, 'a8997e7e-188b-4a9b-b07e-c19a3d4cb1d8': <{'position': <1>}>, 'org.gnome.Calculator.desktop': <{'position': <2>}>, 'org.gnome.clocks.desktop': <{'position': <3>}>, 'org.gnome.Weather.desktop': <{'position': <4>}>, 'org.gnome.Maps.desktop': <{'position': <5>}>, 'org.gnome.Totem.desktop': <{'position': <6>}>, 'org.fedoraproject.MediaWriter.desktop': <{'position': <7>}>, 'org.gnome.Settings.desktop': <{'position': <8>}>, 'org.gnome.tweaks.desktop': <{'position': <9>}>, 'com.mattjakeman.ExtensionManager.desktop': <{'position': <10>}>, 'ca.desrt.dconf-editor.desktop': <{'position': <11>}>, 'Utilities': <{'position': <12>}>, 'System': <{'position': <13>}>, 'timeshift-gtk.desktop': <{'position': <14>}>, 'org.gnome.Software.desktop': <{'position': <15>}>, 'org.gnome.Boxes.desktop': <{'position': <16>}>, 'filezilla.desktop': <{'position': <17>}>, 'nl.hjdskes.gcolor3.desktop': <{'position': <18>}>}]"
 
 dconf write /org/gnome/shell/disabled-extensions "['background-logo@fedorahosted.org']"
-dconf write /org/gnome/shell/enabled-extensions "['dash-to-dock@micxgx.gmail.com', 'transparent-top-bar@ftpix.com', 'disable-workspace-switcher-overlay@cleardevice']"
+dconf write /org/gnome/shell/enabled-extensions "['dash-to-dock@micxgx.gmail.com', 'transparent-top-bar@ftpix.com', 'disable-workspace-switcher-overlay@cleardevice', 'space-bar@luchrioh']"
 
 dconf write /org/gnome/shell/favorite-apps "['org.gnome.Nautilus.desktop', 'librewolf.desktop', 'org.torproject.torbrowser-launcher.desktop', 'org.signal.Signal.desktop', 'org.gnome.Rhythmbox3.desktop', 'org.darktable.darktable.desktop', 'gimp.desktop', 'org.inkscape.Inkscape.desktop', 'org.gnome.TextEditor.desktop', 'org.gnome.Ptyxis.desktop']"
 
@@ -182,6 +187,20 @@ dconf write /org/gnome/shell/extensions/dash-to-dock/shift-middle-click-action "
 dconf write /org/gnome/shell/extensions/dash-to-dock/show-mounts "false"
 dconf write /org/gnome/shell/extensions/dash-to-dock/show-trash "false"
 dconf write /org/gnome/shell/extensions/dash-to-dock/transparency-mode "'FIXED'"
+
+dconf write /org/gnome/shell/extensions/space-bar/appearance/application-styles "'.space-bar {\n  -natural-hpadding: 1px;\n}\n\n.space-bar-workspace-label.active {\n  margin: 0 2px;\n  background-color: rgba(255,255,255,0.3);\n  color: rgba(255,255,255,1);\n  border-color: rgba(0,0,0,0);\n  font-weight: 700;\n  border-radius: 4px;\n  border-width: 0px;\n  padding: 3px 8px;\n}\n\n.space-bar-workspace-label.inactive {\n  margin: 0 2px;\n  background-color: rgba(0,0,0,0);\n  color: rgba(255,255,255,0.85);\n  border-color: rgba(0,0,0,0);\n  font-weight: 700;\n  border-radius: 4px;\n  border-width: 0px;\n  padding: 3px 8px;\n}\n\n.space-bar-workspace-label.inactive.empty {\n  margin: 0 2px;\n  background-color: rgba(0,0,0,0);\n  color: rgba(255,255,255,0.4);\n  border-color: rgba(0,0,0,0);\n  font-weight: 700;\n  border-radius: 4px;\n  border-width: 0px;\n  padding: 3px 8px;\n}'"
+dconf write /org/gnome/shell/extensions/space-bar/appearance/empty-workspace-text-color "'rgba(255,255,255,0.4)'"
+dconf write /org/gnome/shell/extensions/space-bar/appearance/inactive-workspace-text-color "'rgba(255,255,255,0.85)'"
+dconf write /org/gnome/shell/extensions/space-bar/appearance/workspace-margin "2"
+dconf write /org/gnome/shell/extensions/space-bar/appearance/workspaces-bar-padding "1"
+dconf write /org/gnome/shell/extensions/space-bar/behavior/always-show-numbers "false"
+dconf write /org/gnome/shell/extensions/space-bar/behavior/indicator-style "'workspaces-bar'"
+dconf write /org/gnome/shell/extensions/space-bar/behavior/scroll-wheel "'workspaces-bar'"
+dconf write /org/gnome/shell/extensions/space-bar/behavior/scroll-wheel-wrap-around "true"
+dconf write /org/gnome/shell/extensions/space-bar/behavior/show-empty-workspaces "true"
+dconf write /org/gnome/shell/extensions/space-bar/behavior/toggle-overview "false"
+dconf write /org/gnome/shell/extensions/space-bar/shortcuts/enable-activate-workspace-shortcuts "false"
+dconf write /org/gnome/shell/extensions/space-bar/shortcuts/open-menu "@as []"
 
 dconf write /org/gnome/shell/keybindings/open-new-window-application-1 "@as []"
 dconf write /org/gnome/shell/keybindings/open-new-window-application-2 "@as []"
