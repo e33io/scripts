@@ -33,7 +33,6 @@ flatpak install -y --noninteractive com.mattjakeman.ExtensionManager
 flatpak install -y --noninteractive org.gtk.Gtk3theme.Adwaita-dark
 flatpak install -y --noninteractive org.signal.Signal
 flatpak install -y --noninteractive org.torproject.torbrowser-launcher
-flatpak install -y --noninteractive nl.hjdskes.gcolor3
 
 echo "################################################################"
 echo "Add rpmfusion free and nonfree repositories"
@@ -52,7 +51,13 @@ echo "################################################################"
 echo "Install other packages"
 echo "################################################################"
 
-sudo dnf -y install gnome-tweaks dconf-editor adwaita-gtk* gnome-themes-extra papirus-icon-theme htop fastfetch perl-Image-ExifTool timeshift filezilla gimp darktable inkscape
+sudo dnf -y install gnome-tweaks dconf-editor adwaita-gtk* gnome-themes-extra papirus-icon-theme htop fastfetch perl-Image-ExifTool timeshift filezilla gimp darktable inkscape gcolor3
+
+pc_type="$(hostnamectl chassis)"
+if [ $pc_type = desktop ]; then
+    sudo dnf -y install input-remapper
+    sudo systemctl enable --now input-remapper
+fi
 
 echo "################################################################"
 echo "Install LibreWolf Web Browser"
