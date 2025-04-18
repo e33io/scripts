@@ -1,8 +1,9 @@
 #!/bin/bash
 
-# ==============================
+# ==================================================================
 # Fedora Workstation Dconf Setup
-# ==============================
+# URL: https://github.com/e33io/scripts/blob/main/fed-dconf-setup.sh
+# ==================================================================
 
 dconf write /ca/desrt/dconf-editor/window-height "700"
 dconf write /ca/desrt/dconf-editor/window-is-maximized "false"
@@ -171,6 +172,7 @@ dconf write /org/gnome/shell/favorite-apps "['org.gnome.Nautilus.desktop', 'libr
 
 dconf write /org/gnome/shell/last-selected-power-profile "'performance'"
 
+dconf write /org/gnome/shell/extensions/dash-to-dock/autohide-in-fullscreen "true"
 dconf write /org/gnome/shell/extensions/dash-to-dock/background-color "'rgb(0,0,0)'"
 dconf write /org/gnome/shell/extensions/dash-to-dock/background-opacity "0.75"
 dconf write /org/gnome/shell/extensions/dash-to-dock/click-action "'minimize-or-previews'"
@@ -181,6 +183,7 @@ dconf write /org/gnome/shell/extensions/dash-to-dock/disable-overview-on-startup
 dconf write /org/gnome/shell/extensions/dash-to-dock/dock-position "'BOTTOM'"
 dconf write /org/gnome/shell/extensions/dash-to-dock/height-fraction "0.90"
 dconf write /org/gnome/shell/extensions/dash-to-dock/hot-keys "false"
+dconf write /org/gnome/shell/extensions/dash-to-dock/intellihide-mode "'ALL_WINDOWS'"
 dconf write /org/gnome/shell/extensions/dash-to-dock/middle-click-action "'launch'"
 dconf write /org/gnome/shell/extensions/dash-to-dock/shift-click-action "'minimize'"
 dconf write /org/gnome/shell/extensions/dash-to-dock/shift-middle-click-action "'launch'"
