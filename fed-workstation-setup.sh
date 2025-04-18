@@ -51,7 +51,7 @@ echo "################################################################"
 echo "Install other packages"
 echo "################################################################"
 
-sudo dnf -y install gnome-tweaks dconf-editor adwaita-gtk* gnome-themes-extra papirus-icon-theme htop fastfetch cava perl-Image-ExifTool timeshift filezilla gimp darktable inkscape gcolor3
+sudo dnf -y install gnome-tweaks dconf-editor adwaita-gtk* gnome-themes-extra papirus-icon-theme htop fastfetch cava cmus perl-Image-ExifTool timeshift filezilla gimp darktable inkscape gcolor3
 
 pc_type="$(hostnamectl chassis)"
 if [ $pc_type = desktop ]; then
