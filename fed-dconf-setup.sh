@@ -166,11 +166,14 @@ dconf write /org/gnome/settings-daemon/plugins/power/sleep-inactive-ac-type "'no
 dconf write /org/gnome/shell/app-picker-layout "[{'org.mozilla.firefox.desktop': <{'position': <0>}>, 'a8997e7e-188b-4a9b-b07e-c19a3d4cb1d8': <{'position': <1>}>, 'org.gnome.Calculator.desktop': <{'position': <2>}>, 'org.gnome.clocks.desktop': <{'position': <3>}>, 'org.gnome.Weather.desktop': <{'position': <4>}>, 'org.gnome.Maps.desktop': <{'position': <5>}>, 'org.gnome.Totem.desktop': <{'position': <6>}>, 'org.fedoraproject.MediaWriter.desktop': <{'position': <7>}>, 'org.gnome.Settings.desktop': <{'position': <8>}>, 'org.gnome.tweaks.desktop': <{'position': <9>}>, 'com.mattjakeman.ExtensionManager.desktop': <{'position': <10>}>, 'ca.desrt.dconf-editor.desktop': <{'position': <11>}>, 'Utilities': <{'position': <12>}>, 'System': <{'position': <13>}>, 'timeshift-gtk.desktop': <{'position': <14>}>, 'org.gnome.Software.desktop': <{'position': <15>}>, 'org.gnome.Boxes.desktop': <{'position': <16>}>, 'filezilla.desktop': <{'position': <17>}>, 'nl.hjdskes.gcolor3.desktop': <{'position': <18>}>}]"
 
 dconf write /org/gnome/shell/disabled-extensions "['background-logo@fedorahosted.org']"
-dconf write /org/gnome/shell/enabled-extensions "['dash-to-dock@micxgx.gmail.com', 'transparent-top-bar@ftpix.com', 'disable-workspace-switcher-overlay@cleardevice', 'space-bar@luchrioh', 'window-title-is-back@fthx']"
+dconf write /org/gnome/shell/enabled-extensions "['dash-to-dock@micxgx.gmail.com', 'transparent-top-bar@ftpix.com', 'disable-workspace-switcher-overlay@cleardevice', 'space-bar@luchrioh', 'window-title-is-back@fthx', 'appindicatorsupport@rgcjonas.gmail.com']"
 
 dconf write /org/gnome/shell/favorite-apps "['org.gnome.Nautilus.desktop', 'librewolf.desktop', 'org.torproject.torbrowser-launcher.desktop', 'org.signal.Signal.desktop', 'org.gnome.Rhythmbox3.desktop', 'org.darktable.darktable.desktop', 'gimp.desktop', 'org.inkscape.Inkscape.desktop', 'org.gnome.TextEditor.desktop', 'org.gnome.Ptyxis.desktop']"
 
 dconf write /org/gnome/shell/last-selected-power-profile "'performance'"
+
+dconf write /org/gnome/shell/extensions/appindicator/icon-opacity "255"
+dconf write /org/gnome/shell/extensions/appindicator/icon-size "15"
 
 dconf write /org/gnome/shell/extensions/dash-to-dock/autohide-in-fullscreen "true"
 dconf write /org/gnome/shell/extensions/dash-to-dock/background-color "'rgb(0,0,0)'"
