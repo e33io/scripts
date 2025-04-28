@@ -1,26 +1,26 @@
 #!/bin/bash
 
-# ===========================================================================
+# ========================================================================
 # Debian (post-install) i3 Installation
 # URL: https://github.com/e33io/scripts/blob/main/deb-post-install-i3.sh
 # Installation steps and other configuration options: https://e33.io/1121
-# ---------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
 # Use with a minimal installation of Debian Linux to install the i3 window
 # manager and a base set of apps for a ready-to-use desktop session.
-# ---------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 # The default configuration is for use with HiDPI monitors
 # (192 dpi settings for 2x scaling) and desktop-type computers,
 # but there are options at the end of the script that let you change
 # to non-HiDPI monitors (96 dpi settings for 1x scaling),
 # and/or change to laptop-type (battery powered) computer settings.
-# ---------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 # Instructions for running this script:
 #   sudo apt install git
 #   git clone https://github.com/e33io/scripts
 #   cd scripts
 #   sh deb-post-install-i3.sh
-# ===========================================================================
+# ========================================================================
 
 if [ "$(id -u)" = 0 ]; then
     echo "################################################################"
@@ -42,7 +42,7 @@ echo "################################################################"
 echo "Install i3 and other core packages"
 echo "################################################################"
 
-sudo apt -y install i3 python3-i3ipc py3status xautolock rofi network-manager playerctl xsel xclip xinput x11-utils lxappearance qt5ct qt5-style-plugins adwaita-qt gnome-themes-extra papirus-icon-theme fonts-dejavu fonts-noto-color-emoji nitrogen policykit-1-gnome python3-gi gobject-introspection gir1.2-gtk-3.0 libdbus-glib-1-2 upower slick-greeter plymouth plymouth-themes kitty python3-pypillowfight thunar thunar-archive-plugin tumbler-plugins-extra ffmpegthumbnailer heif-thumbnailer heif-gdk-pixbuf gvfs-fuse gvfs-backends nfs-common cifs-utils engrampa pavucontrol
+sudo apt -y install i3 python3-i3ipc py3status xautolock rofi network-manager playerctl xssproxy xsel xclip xinput x11-utils lxappearance qt5ct qt5-style-plugins adwaita-qt gnome-themes-extra papirus-icon-theme fonts-dejavu fonts-noto-color-emoji nitrogen policykit-1-gnome python3-gi gobject-introspection gir1.2-gtk-3.0 libdbus-glib-1-2 upower slick-greeter plymouth plymouth-themes kitty python3-pypillowfight thunar thunar-archive-plugin tumbler-plugins-extra ffmpegthumbnailer heif-thumbnailer heif-gdk-pixbuf gvfs-fuse gvfs-backends nfs-common cifs-utils engrampa pavucontrol
 
 echo "################################################################"
 echo "Install other packages"
