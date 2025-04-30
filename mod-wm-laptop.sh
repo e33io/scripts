@@ -23,6 +23,9 @@ fi
 if [ -f "/etc/zypp/zypper.conf" ]; then
     sudo zypper install brightnessctl
 fi
+if [ -f "/etc/pacman.conf" ]; then
+    sudo pacman -S brightnessctl
+fi
 
 # i3wm specific configs
 if [ -d "$HOME/.config/i3" ]; then
