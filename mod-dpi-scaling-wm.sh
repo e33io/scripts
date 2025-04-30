@@ -72,6 +72,7 @@ if [ -d "$HOME/.config/i3" ]; then
     sed -i 's/set 1920 1920/set 960 960/' $HOME/.config/i3/config
     sed -i 's/set 3000 2000/set 1500 1000/' $HOME/.config/i3/config
     # update i3/config (keybindings)
+    sed -i 's/GDK_SCALE=1 brave/brave/' $HOME/.config/i3/config
     sed -i 's/GDK_SCALE=1 signal-desktop/signal-desktop/' $HOME/.config/i3/config
     # update i3status.conf (window title width in bar)
     sed -i 's/min_width = 2990/min_width = 1495/' $HOME/.config/i3/i3status.conf
@@ -104,4 +105,9 @@ if [ -d "$HOME/.config/jwm" ]; then
 fi
 
 # Remove unneeded .desktop files
-rm -R $HOME/.local/share/applications/signal-desktop.desktop
+if [ -f "$HOME/.local/share/applications/brave-browser.desktop" ]; then
+    rm -R $HOME/.local/share/applications/brave-browser.desktop
+fi
+if [ -f "$HOME/.local/share/applications/signal-desktop.desktop" ]; then
+    rm -R $HOME/.local/share/applications/signal-desktop.desktop
+fi
