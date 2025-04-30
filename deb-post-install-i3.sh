@@ -134,41 +134,45 @@ if [ -f "/usr/share/xsessions/lightdm-xsession.desktop" ]; then
     sudo rm -R /usr/share/xsessions/lightdm-xsession.desktop
 fi
 
-echo "################################################################"
-echo "NOTE: The configs that were installed with this script are"
-echo "based on using HiDPI monitors (192 dpi settings for 2x scaling)."
-echo "The option below lets you change to non-HiDPI monitors"
-echo "(96 dpi settings for 1x scaling)."
-echo "----------------------------------------------------------------"
-
+clear
 while true; do
-    read -p "Do you want to change to 96 dpi settings for 1x scaling? (y/n) " yn
-    case $yn in
-        [Yy]* ) sh mod-dpi-scaling-wm.sh;
-                echo "You chose to change to non-HiDPI settings";
-                break;;
-        [Nn]* ) echo "You chose to keep the default HiDPI settings";
-                break;;
-        * ) echo "Please answer y (for yes) or n (for no)";;
+    echo "################################################################"
+    echo "The option below lets you select a configuration specific"
+    echo "to your monitor type for proper display scaling."
+    echo "################################################################"
+    echo "   1) Standard HD (96 dpi settings for 1x scaling)"
+    echo "   2) HiDPI (192 dpi settings for 2x scaling)"
+    echo "----------------------------------------------------------------"
+
+    read -p "What type of monitor are you using? " n
+    case $n in
+        1) echo "You chose Standard HD (96 dpi) monitor";
+           sh mod-dpi-scaling-wm.sh;
+           break;;
+        2) echo "You chose HiDPI (192 dpi) monitor";
+           break;;
+        *) echo "Invalid selection, please enter a number from the list.";;
     esac
 done
 
-echo "################################################################"
-echo "NOTE: The configs that were installed with this script"
-echo "are based on using a desktop-type computer."
-echo "The option below lets you change to laptop configs for"
-echo "use with a laptop-type (battery powered) computer."
-echo "----------------------------------------------------------------"
-
+clear
 while true; do
-    read -p "Do you want to change to laptop configs? (y/n) " yn
-    case $yn in
-        [Yy]* ) sh mod-wm-laptop.sh;
-                echo "You chose to change to laptop configs";
-                break;;
-        [Nn]* ) echo "You chose to keep the default desktop configs";
-                break;;
-        * ) echo "Please answer y (for yes) or n (for no)";;
+    echo "################################################################"
+    echo "The option below lets you select a configuration"
+    echo "specific to your computer type."
+    echo "################################################################"
+    echo "   1) Desktop"
+    echo "   2) Laptop"
+    echo "----------------------------------------------------------------"
+
+    read -p "What type of computer are you using? " n
+    case $n in
+        1) echo "You chose Desktop computer";
+           break;;
+        2) echo "You chose Laptop computer";
+           sh mod-wm-laptop.sh;
+           break;;
+        *) echo "Invalid selection, please enter a number from the list.";;
     esac
 done
 

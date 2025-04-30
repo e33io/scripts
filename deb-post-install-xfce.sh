@@ -133,22 +133,24 @@ if [ -f "/usr/share/xsessions/lightdm-xsession.desktop" ]; then
     sudo rm -R /usr/share/xsessions/lightdm-xsession.desktop
 fi
 
-echo "################################################################"
-echo "NOTE: The configs that were installed with this script"
-echo "are based on using 'Window Scaling 2x' for HiDPI monitors."
-echo "The option below lets you change to 'Window Scaling 1x'"
-echo "settings for use with non-HiDPI monitors."
-echo "----------------------------------------------------------------"
-
+clear
 while true; do
-    read -p "Do you want to change to 'Window Scaling 1x' non-HiDPI settings? (y/n) " yn
-    case $yn in
-        [Yy]* ) sh mod-dpi-scaling-xfce.sh;
-                echo "You chose to change to non-HiDPI settings";
-                break;;
-        [Nn]* ) echo "You chose to keep the default HiDPI settings";
-                break;;
-        * ) echo "Please answer y (for yes) or n (for no)";;
+    echo "################################################################"
+    echo "The option below lets you select a configuration specific"
+    echo "to your monitor type for proper display scaling."
+    echo "################################################################"
+    echo "   1) Standard HD (96 dpi settings for 'Window Scaling 1x')"
+    echo "   2) HiDPI (192 dpi settings for 'Window Scaling 2x')"
+    echo "----------------------------------------------------------------"
+
+    read -p "What type of monitor are you using? " n
+    case $n in
+        1) echo "You chose Standard HD (96 dpi) monitor";
+           sh mod-dpi-scaling-xfce.sh;
+           break;;
+        2) echo "You chose HiDPI (192 dpi) monitor";
+           break;;
+        *) echo "Invalid selection, please enter a number from the list.";;
     esac
 done
 
