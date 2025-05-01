@@ -19,7 +19,7 @@ custom Linux installation scripts
 	- use [`opensuse-post-install-i3.sh`](https://github.com/e33io/scripts/blob/main/opensuse-post-install-i3.sh) to [install the i3 window manager](https://github.com/e33io/reference-wiki/blob/main/installation-docs/opensuse-i3-installation.md)
 
 - use the script below with an [Arch](https://wiki.archlinux.org/title/Archinstall) minimal installation
-	- use [`arch-post-install-i3.sh`](https://github.com/e33io/scripts/blob/main/arch-post-install-i3.sh) to install the i3 window manager
+	- use [`arch-post-install-i3.sh`](https://github.com/e33io/scripts/blob/main/arch-post-install-i3.sh) to [install the i3 window manager](https://github.com/e33io/reference-wiki/blob/main/installation-docs/arch-i3-installation.md)
 
 - use the script below with a [Fedora Workstation](https://fedoraproject.org/workstation) installation
 	- use [`fed-workstation-setup.sh`](https://github.com/e33io/scripts/blob/main/fed-workstation-setup.sh) to customize Gnome
