@@ -56,6 +56,10 @@ if [ -f "/etc/debian_version" ]; then
     sudo sed -i 's/DeviceScale=2/DeviceScale=1/' /etc/plymouth/plymouthd.conf
     sudo update-initramfs -u
 fi
+if [ -f "/etc/pacman.conf" ]; then
+    sudo sed -i 's/DeviceScale=2/DeviceScale=1/' /etc/plymouth/plymouthd.conf
+    sudo mkinitcpio -p linux
+fi
 
 # i3wm specific configs
 if [ -d "$HOME/.config/i3" ]; then
