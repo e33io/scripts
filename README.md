@@ -12,7 +12,7 @@ custom Linux installation scripts
 	- use [`deb-post-install-jwm.sh`](https://github.com/e33io/scripts/blob/main/deb-post-install-jwm.sh) to [install the JWM window manager](https://e33.io/1398)
 	- use [`deb-post-install-xfce.sh`](https://github.com/e33io/scripts/blob/main/deb-post-install-xfce.sh) to [install the Xfce desktop environment](https://e33.io/1541)
 
-- use the script below with an Ubuntu 24.04 Server installation
+- use the script below with an [Ubuntu 24.04 Server](https://ubuntu.com/download/server) installation
 	- use [`ubuntu-srvr-post-install-i3.sh`](https://github.com/e33io/scripts/blob/main/ubuntu-srvr-post-install-i3.sh) to [install the i3 window manager](https://github.com/e33io/reference-wiki/blob/main/installation-docs/ubuntu-i3-installation.md)
 
 - use the script below with an [openSUSE "Generic Desktop" installation](https://github.com/e33io/reference-wiki/blob/main/installation-docs/opensuse-generic-desktop-installation.md)
