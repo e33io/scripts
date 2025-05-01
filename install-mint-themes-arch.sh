@@ -40,7 +40,7 @@ echo "################################################################"
 echo "Install Mint themes and dependencies"
 echo "################################################################"
 
-sudo pacman -S gnome-themes-extra less git
+sudo pacman -S gnome-themes-extra gtk-engine-murrine less git
 
 yay -S mint-x-icons
 yay -S mint-y-icons
