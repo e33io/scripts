@@ -85,6 +85,7 @@ cp -R $HOME/opt-dots/arch/.config $HOME
 cp -R $HOME/opt-dots/arch/.local $HOME
 cp -R $HOME/opt-dots/arch/.bash_profile $HOME
 cp -R $HOME/opt-dots/arch/.bashrc $HOME
+cp -R $HOME/opt-dots/arch/.profile $HOME
 sudo cp -R $HOME/dotfiles/etc/plymouth /etc
 sudo cp -R $HOME/dotfiles/usr/share/fonts /usr/share
 sudo cp -R $HOME/dotfiles/usr/share/grub /usr/share
