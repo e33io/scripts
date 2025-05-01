@@ -35,7 +35,7 @@ echo "################################################################"
 echo "Install i3 and other packages"
 echo "################################################################"
 
-sudo pacman -S xorg-server xorg-apps i3-wm i3status i3lock python-i3ipc py3status xss-lock dmenu rofi dunst gvfs nfs-utils cifs-utils fuse rsync cronie git curl wget tar less base-devel xsel xclip playerctl dex polkit-gnome xdg-user-dirs xbindkeys xdotool lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings lxappearance-gtk3 gnome-themes-extra qt5ct qt6ct ttf-dejavu noto-fonts-emoji papirus-icon-theme pavucontrol-qt nitrogen kitty python-pillowfight xterm thunar thunar-archive-plugin thunar-volman tumbler ffmpegthumbnailer engrampa atril imv mpv parole mousepad galculator xfce4-screenshooter flameshot dconf-editor gnome-disk-utility vim nano micro fzf htop fastfetch cmus cava cmatrix perl-image-exiftool timeshift signal-desktop darktable gimp inkscape filezilla libreoffice
+sudo pacman -S xorg-server xorg-apps i3-wm i3status i3lock python-i3ipc py3status xss-lock dmenu rofi dunst gvfs nfs-utils cifs-utils fuse rsync cronie git curl wget tar less base-devel xsel xclip playerctl dex polkit-gnome xdg-user-dirs xbindkeys xdotool lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings lxappearance-gtk3 gnome-themes-extra qt5ct qt6ct ttf-dejavu noto-fonts-emoji papirus-icon-theme plymouth pavucontrol-qt nitrogen kitty python-pillowfight xterm thunar thunar-archive-plugin thunar-volman tumbler ffmpegthumbnailer engrampa atril imv mpv parole mousepad galculator xfce4-screenshooter flameshot dconf-editor gnome-disk-utility vim nano micro fzf htop fastfetch cmus cava cmatrix perl-image-exiftool timeshift signal-desktop darktable gimp inkscape filezilla libreoffice
 
 echo "################################################################"
 echo "Setup Yay for AUR"
@@ -85,6 +85,7 @@ cp -R $HOME/opt-dots/arch/.config $HOME
 cp -R $HOME/opt-dots/arch/.local $HOME
 cp -R $HOME/opt-dots/arch/.bash_profile $HOME
 cp -R $HOME/opt-dots/arch/.bashrc $HOME
+sudo cp -R $HOME/dotfiles/etc/plymouth /etc
 sudo cp -R $HOME/dotfiles/usr/share/fonts /usr/share
 sudo cp -R $HOME/dotfiles/usr/share/grub /usr/share
 sudo cp -R $HOME/dotfiles/usr/share/gtksourceview-4 /usr/share
