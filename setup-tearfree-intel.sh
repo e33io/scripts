@@ -25,6 +25,10 @@ if [ -f "/etc/zypp/zypper.conf" ]; then
     sudo zypper install xf86-video-intel
 fi
 
+if [ -f "/etc/pacman.conf" ]; then
+    sudo pacman -S xf86-video-intel
+fi
+
 device="$(glxinfo -B | awk '/Vendor:/ { print $2 }')"
 if [ $device = Intel ]; then
     echo 'Section "Device"

@@ -25,6 +25,10 @@ if [ -f "/etc/zypp/zypper.conf" ]; then
     sudo zypper install xf86-video-amdgpu
 fi
 
+if [ -f "/etc/pacman.conf" ]; then
+    sudo pacman -S xf86-video-amdgpu
+fi
+
 device="$(glxinfo -B | awk '/Vendor:/ { print $2 }')"
 if [ $device = AMD ]; then
     echo 'Section "Device"
