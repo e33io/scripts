@@ -5,7 +5,7 @@
 # URL: https://github.com/e33io/scripts/blob/main/arch-post-install-i3.sh
 # ------------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
-# Use with a "minimal" installation of Arch Linux to install the i3 window
+# Use with a "Minimal" installation of Arch Linux to install the i3 window
 # manager and a base set of apps for a ready-to-use desktop session.
 # ------------------------------------------------------------------------
 # The default configuration is for use with HiDPI monitors
@@ -35,7 +35,7 @@ echo "################################################################"
 echo "Install i3 and other packages"
 echo "################################################################"
 
-sudo pacman -S xorg-server xorg-apps i3-wm i3status i3lock python-i3ipc py3status xss-lock dmenu rofi dunst gvfs nfs-utils cifs-utils fuse rsync cronie git curl wget tar less base-devel xsel xclip playerctl dex polkit-gnome xdg-user-dirs xbindkeys xdotool lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings lxappearance-gtk3 gnome-themes-extra gtk-engine-murrine qt5ct qt6ct ttf-dejavu noto-fonts-emoji papirus-icon-theme plymouth pavucontrol-qt nitrogen kitty python-pillowfight xterm thunar thunar-archive-plugin thunar-volman tumbler ffmpegthumbnailer engrampa atril imv mpv parole mousepad galculator xfce4-screenshooter flameshot dconf-editor gnome-disk-utility vim nano micro fzf htop fastfetch cmus cava cmatrix perl-image-exiftool timeshift signal-desktop darktable gimp inkscape filezilla libreoffice
+sudo pacman -S xorg-server xorg-apps i3-wm i3status i3lock python-i3ipc py3status xss-lock dmenu rofi dunst gvfs nfs-utils cifs-utils fuse rsync cronie git curl wget tar less base-devel xsel xclip playerctl dex polkit-gnome xdg-desktop-portal-gtk xdg-user-dirs xbindkeys xdotool lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings lxappearance-gtk3 gnome-themes-extra gtk-engine-murrine qt5ct qt6ct ttf-dejavu noto-fonts-emoji papirus-icon-theme plymouth pavucontrol-qt nitrogen kitty python-pillowfight xterm thunar thunar-archive-plugin thunar-volman tumbler ffmpegthumbnailer engrampa atril imv mpv parole mousepad galculator xfce4-screenshooter flameshot dconf-editor gnome-disk-utility vim nano micro fzf htop fastfetch cmus cava cmatrix perl-image-exiftool timeshift signal-desktop darktable gimp inkscape filezilla libreoffice
 
 echo "################################################################"
 echo "Setup Yay for AUR"
