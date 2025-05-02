@@ -49,6 +49,8 @@ if [ ! -n "$(ls -d /usr/bin/papirus-folders 2>/dev/null)" ]; then
     wget -qO- https://git.io/papirus-folders-install | sh
 fi
 
+clear
+
 theming_files () {
     # JWM theme
     sed -i "s/jwm\/themes\/.*<\/Include>/jwm\/themes\/$jwm_theme<\/Include>/" $HOME/.config/jwm/jwmrc

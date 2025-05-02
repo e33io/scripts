@@ -55,6 +55,8 @@ if [ ! -n "$(ls -d /usr/bin/papirus-folders 2>/dev/null)" ]; then
     wget -qO- https://git.io/papirus-folders-install | sh
 fi
 
+clear
+
 theming_files () {
     # i3bar colors
     sed -i "s/background .*/background $background/" $HOME/.config/i3/config
