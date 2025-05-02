@@ -16,15 +16,16 @@ if [ "$(id -u)" = 0 ]; then
     exit 1
 fi
 
-# install `brightnessctl` to control screen brightness
+# install other packages
 if [ -f "/etc/debian_version" ]; then
-    sudo apt -y install brightnessctl
+    sudo apt -y install xautolock brightnessctl
 fi
 if [ -f "/etc/zypp/zypper.conf" ]; then
-    sudo zypper install brightnessctl
+    sudo zypper install xautolock brightnessctl
 fi
 if [ -f "/etc/pacman.conf" ]; then
     sudo pacman -S brightnessctl
+    yay -S xautolock
 fi
 
 # i3wm specific configs
