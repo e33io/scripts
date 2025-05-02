@@ -26,56 +26,27 @@ if ! { [ -f "/etc/debian_version" ] || [ -f "/etc/zypp/zypper.conf" ]; }; then
     exit 1
 fi
 
+# install mint themes if needed
 if [ ! -n "$(ls -d /usr/share/themes/Mint-*-Dark-Mod-* 2>/dev/null)" ]; then
-    echo "################################################################"
-    echo "NOTE! The required themes are NOT installed!"
-    echo "Answer y (for yes) to install the required Mint themes,"
-    echo "or n (for no) to exit the theming script."
-    echo "----------------------------------------------------------------"
-    while true; do
-        read -p "Do you want to install Mint themes to continue this theming script? (y/n) " yn
-        case $yn in
-            [Yy]* ) git clone https://github.com/e33io/scripts $HOME/scripts-theming;
-                    if [ -f "/etc/debian_version" ]; then
-                        sh $HOME/scripts-theming/install-mint-themes.sh \
-                        && sudo rm -R $HOME/scripts-theming
-                    fi
-                    if [ -f "/etc/zypp/zypper.conf" ]; then
-                        sh $HOME/scripts-theming/install-mint-themes-suse.sh \
-                        && sudo rm -R $HOME/scripts-theming
-                    fi
-                    break;;
-            [Nn]* ) echo "You chose not to install Mint themes and to exit this theming script";
-                    exit 1;;
-            * ) echo "Please answer y (for yes) or n (for no)";;
-        esac
-    done
+    git clone https://github.com/e33io/scripts $HOME/scripts-theming
+    if [ -f "/etc/debian_version" ]; then
+        sh $HOME/scripts-theming/install-mint-themes.sh
+    fi
+    if [ -f "/etc/zypp/zypper.conf" ]; then
+        sh $HOME/scripts-theming/install-mint-themes-suse.sh
+    fi
+    sudo rm -R $HOME/scripts-theming
 fi
 
+# install papirus-icon-theme and papirus-folders if needed
 if [ ! -n "$(ls -d /usr/bin/papirus-folders 2>/dev/null)" ]; then
-    echo "################################################################"
-    echo "Option to install the Papirus Icon Theme and the Papirus"
-    echo "Folders application for changing Papirus folder colors"
-    echo "with this theming script."
-    echo "----------------------------------------------------------------"
-
-    while true; do
-        read -p "Do you want to install optional Papirus icons and application? (y/n) " yn
-        case $yn in
-            [Yy]* ) if [ -f "/etc/debian_version" ]; then
-                        sudo apt -y install papirus-icon-theme;
-                    fi
-                    if [ -f "/etc/zypp/zypper.conf" ]; then
-                        sudo zypper install papirus-icon-theme;
-                    fi
-                    wget -qO- https://git.io/papirus-folders-install | sh;
-                    clear;
-                    break;;
-            [Nn]* ) echo "You chose not to install optional Papirus icons and application";
-                    break;;
-            * ) echo "Please answer y (for yes) or n (for no)";;
-        esac
-    done
+    if [ -f "/etc/debian_version" ]; then
+        sudo apt -y install papirus-icon-theme
+    fi
+    if [ -f "/etc/zypp/zypper.conf" ]; then
+        sudo zypper install papirus-icon-theme
+    fi
+    wget -qO- https://git.io/papirus-folders-install | sh
 fi
 
 theming_files () {
