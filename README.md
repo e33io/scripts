@@ -15,9 +15,6 @@ custom Linux installation scripts
 - use the script below with an [Ubuntu 24.04 Server](https://ubuntu.com/download/server) installation
 	- use [`ubuntu-srvr-post-install-i3.sh`](https://github.com/e33io/scripts/blob/main/ubuntu-srvr-post-install-i3.sh) to [install the i3 window manager](https://github.com/e33io/reference-wiki/blob/main/installation-docs/ubuntu-i3-installation.md)
 
-- use the script below with an [openSUSE "Generic Desktop" installation](https://github.com/e33io/reference-wiki/blob/main/installation-docs/opensuse-generic-desktop-installation.md)
-	- use [`opensuse-post-install-i3.sh`](https://github.com/e33io/scripts/blob/main/opensuse-post-install-i3.sh) to [install the i3 window manager](https://github.com/e33io/reference-wiki/blob/main/installation-docs/opensuse-i3-installation.md)
-
 - use the script below with an [Arch](https://wiki.archlinux.org/title/Archinstall) minimal installation
 	- use [`arch-post-install-i3.sh`](https://github.com/e33io/scripts/blob/main/arch-post-install-i3.sh) to [install the i3 window manager](https://github.com/e33io/reference-wiki/blob/main/installation-docs/arch-i3-installation.md)
 
@@ -50,13 +47,9 @@ custom Linux installation scripts
 
 - use [`install-mint-themes.sh`](https://github.com/e33io/scripts/blob/main/install-mint-themes.sh) to install Linux Mint themes and icons on Debian
 
-- use [`install-mint-themes-suse.sh`](https://github.com/e33io/scripts/blob/main/install-mint-themes-suse.sh) to install Linux Mint themes and icons on openSUSE
-
 - use [`install-mint-themes-arch.sh`](https://github.com/e33io/scripts/blob/main/install-mint-themes-arch.sh) to install Linux Mint themes and icons on Arch
 
 - use [`install-yaru-themes.sh`](https://github.com/e33io/scripts/blob/main/install-yaru-themes.sh) to install Yaru themes and icons on Debian
-
-- use [`install-yaru-themes-suse.sh`](https://github.com/e33io/scripts/blob/main/install-yaru-themes-suse.sh) to install Yaru themes and icons on openSUSE
 
 &nbsp;
 
