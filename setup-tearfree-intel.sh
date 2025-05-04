@@ -21,10 +21,6 @@ if [ -f "/etc/debian_version" ]; then
     sudo apt -y install xserver-xorg-video-intel
 fi
 
-if [ -f "/etc/zypp/zypper.conf" ]; then
-    sudo zypper install xf86-video-intel
-fi
-
 if [ -f "/etc/pacman.conf" ]; then
     sudo pacman -S xf86-video-intel
 fi

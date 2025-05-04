@@ -5,7 +5,7 @@
 # URL: https://github.com/e33io/scripts/blob/main/set-jwm-theming.sh
 # -------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
-# NOTE: Only use with Debian/Ubuntu or openSUSE Linux!
+# NOTE: Only use with Debian/Ubuntu Linux!
 # ===================================================================
 
 if [ "$(id -u)" = 0 ]; then
@@ -17,11 +17,11 @@ if [ "$(id -u)" = 0 ]; then
     exit 1
 fi
 
-if ! { [ -f "/etc/debian_version" ] || [ -f "/etc/zypp/zypper.conf" ]; }; then
+if ! { [ -f "/etc/debian_version" ]; }; then
     echo "################################################################"
     echo "This script is NOT compatible with your version of Linux!"
-    echo "It only works with Debian/Ubuntu or openSUSE Linux,"
-    echo "and it will exit now without running."
+    echo "It only works with Debian/Ubuntu Linux, and it will"
+    echo "exit now without running."
     echo "################################################################"
     exit 1
 fi
@@ -32,9 +32,6 @@ if [ ! -n "$(ls -d /usr/share/themes/Mint-*-Dark-Mod-* 2>/dev/null)" ]; then
     if [ -f "/etc/debian_version" ]; then
         sh $HOME/scripts-theming/install-mint-themes.sh
     fi
-    if [ -f "/etc/zypp/zypper.conf" ]; then
-        sh $HOME/scripts-theming/install-mint-themes-suse.sh
-    fi
     sudo rm -R $HOME/scripts-theming
 fi
 
@@ -42,9 +39,6 @@ fi
 if [ ! -n "$(ls -d /usr/bin/papirus-folders 2>/dev/null)" ]; then
     if [ -f "/etc/debian_version" ]; then
         sudo apt -y install papirus-icon-theme
-    fi
-    if [ -f "/etc/zypp/zypper.conf" ]; then
-        sudo zypper install papirus-icon-theme
     fi
     wget -qO- https://git.io/papirus-folders-install | sh
 fi
