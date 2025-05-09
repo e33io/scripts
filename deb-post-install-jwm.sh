@@ -58,14 +58,13 @@ sudo apt -y install pipewire-audio pipewire-media-session-
 systemctl --user --now enable wireplumber.service
 
 echo "################################################################"
-echo "Install LibreWolf Web Browser"
+echo "Install Brave Browser"
 echo "################################################################"
 
+sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
+echo "deb [arch=amd64 signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
 sudo apt update
-sudo apt -y install extrepo
-sudo extrepo enable librewolf
-sudo apt update
-sudo apt -y install librewolf
+sudo apt -y install brave-browser
 
 echo "################################################################"
 echo "Install Signal App"
@@ -177,8 +176,7 @@ echo "Update x-terminal-emulator and x-www-browser settings"
 echo "################################################################"
 
 sudo update-alternatives --set x-terminal-emulator /usr/bin/kitty
-sudo update-alternatives --install /usr/bin/x-www-browser x-www-browser /usr/bin/librewolf 201
-sudo update-alternatives --set x-www-browser /usr/bin/librewolf
+sudo update-alternatives --set x-www-browser /usr/bin/brave-browser-stable
 
 echo "################################################################"
 echo "Add bookmarks and clean up user directory"

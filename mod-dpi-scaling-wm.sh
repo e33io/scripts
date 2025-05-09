@@ -103,6 +103,7 @@ if [ -d "$HOME/.config/jwm" ]; then
     sed -i 's/<Width>4/<Width>2/' $HOME/.config/jwm/themes/*
     sed -i 's/<Height>37/<Height>19/' $HOME/.config/jwm/themes/*
     # update jwm configs (keybindings)
+    sed -i 's/GDK_SCALE=1 brave/brave/' $HOME/.config/jwm/keybindings
     sed -i 's/GDK_SCALE=1 signal-desktop/signal-desktop/' $HOME/.config/jwm/keybindings
     # update rofi/config.rasi (yoffset position)
     sed -i 's/yoffset: -275;/yoffset: -180;/' $HOME/.config/rofi/config.rasi

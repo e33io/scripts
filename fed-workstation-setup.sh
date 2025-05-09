@@ -60,11 +60,12 @@ if [ $pc_type = desktop ]; then
 fi
 
 echo "################################################################"
-echo "Install LibreWolf Web Browser"
+echo "Install Brave Browser"
 echo "################################################################"
 
-curl -fsSL https://repo.librewolf.net/librewolf.repo | pkexec tee /etc/yum.repos.d/librewolf.repo
-sudo dnf -y install librewolf
+sudo dnf -y install dnf-plugins-core
+sudo dnf -y config-manager addrepo --from-repofile=https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
+sudo dnf -y install brave-browser
 
 echo "################################################################"
 echo "Add and setup multimedia packages/codecs"
