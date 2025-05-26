@@ -1,13 +1,14 @@
 #!/bin/bash
 
-# ==========================================================================
+# ============================================================================
 # Arch Gnome Setup (post-install)
 # URL: https://github.com/e33io/scripts/blob/main/arch-gnome-post-install.sh
-# --------------------------------------------------------------------------
+# ----------------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
-# NOTE: Only use with a fresh archinstall of Arch Gnome!
-#       (Profile > Type > Desktop > GNOME)
-# --------------------------------------------------------------------------
+# Only use with a fresh "GNOME" archinstall (Profile > Type > Desktop > GNOME)
+# to install the Gnome desktop environment and a base set of apps for a
+# ready-to-use desktop session.
+# ----------------------------------------------------------------------------
 # Post-install instructions:
 #   - open Terminal and run these commands:
 #       - sudo pacman -Syu
@@ -16,7 +17,7 @@
 #       - cd scripts
 #       - sh arch-gnome-post-install.sh
 #       (the script will reboot the system when it's done)
-# ==========================================================================
+# ============================================================================
 
 if [ "$(id -u)" = 0 ]; then
     echo "################################################################"

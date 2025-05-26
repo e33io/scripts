@@ -1,26 +1,27 @@
 #!/bin/bash
 
-# ========================================================================
+# =======================================================================
 # Arch Linux (post-install) i3
 # URL: https://github.com/e33io/scripts/blob/main/arch-post-install-i3.sh
-# ------------------------------------------------------------------------
+# -----------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
-# Use with a "Minimal" installation of Arch Linux to install the i3 window
-# manager and a base set of apps for a ready-to-use desktop session.
-# ------------------------------------------------------------------------
+# Only use with a fresh "Minimal" archinstall (Profile > Type > Minimal)
+# to install the i3 window manager and a base set of apps for a
+# ready-to-use desktop session.
+# -----------------------------------------------------------------------
 # The default configuration is for use with HiDPI monitors
 # (192 dpi settings for 2x scaling) and desktop-type computers,
 # but there are options at the end of the script that let you change
 # to non-HiDPI monitors (96 dpi settings for 1x scaling),
 # and/or change to laptop-type (battery powered) computer settings.
-# ------------------------------------------------------------------------
+# -----------------------------------------------------------------------
 # Instructions for running this script:
 #   sudo pacman -Syu
 #   sudo pacman -S git
 #   git clone https://github.com/e33io/scripts
 #   cd scripts
 #   sh arch-post-install-i3.sh
-# ========================================================================
+# =======================================================================
 
 if [ "$(id -u)" = 0 ]; then
     echo "################################################################"
