@@ -6,6 +6,7 @@
 # --------------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
 # NOTE: Only use with a fresh archinstall of Arch Gnome!
+#       (Profile > Type > Desktop > GNOME)
 # --------------------------------------------------------------------------
 # Post-install instructions:
 #   - open Terminal and run these commands:
