@@ -2,7 +2,7 @@
 
 # ============================================================================
 # Fedora Workstation Setup (post-install)
-# URL: https://github.com/e33io/scripts/blob/main/fed-workstation-setup.sh
+# URL: https://github.com/e33io/scripts/blob/main/fed-gnome-post-install.sh
 # ----------------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
 # NOTE: Only use with a fresh install of Fedora Workstation!
@@ -12,7 +12,7 @@
 #   - open Terminal and run this script:
 #       - git clone https://github.com/e33io/scripts
 #       - cd scripts
-#       - sh fed-workstation-setup.sh
+#       - sh fed-gnome-post-install.sh
 #       (the script will reboot the system when it's done)
 # ============================================================================
 
