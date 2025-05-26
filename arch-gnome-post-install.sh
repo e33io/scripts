@@ -112,7 +112,7 @@ file:///home/$(whoami)/Pictures
 file:///home/$(whoami)/Videos
 file:///home/$(whoami)/Music
 file:/// /" > $HOME/.config/gtk-3.0/bookmarks
-sh gnome-dconf-setup.sh
+sh $HOME/scripts/gnome-dconf-setup.sh
 sudo rm -R $HOME/dotfiles
 sudo rm -R $HOME/opt-dots
 sudo rm -R $HOME/scripts
