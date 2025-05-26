@@ -32,6 +32,7 @@ echo "################################################################"
 flatpak install -y --noninteractive com.mattjakeman.ExtensionManager
 flatpak install -y --noninteractive org.gtk.Gtk3theme.Adwaita-dark
 flatpak install -y --noninteractive org.signal.Signal
+flatpak install -y --noninteractive org.torproject.torbrowser-launcher
 
 echo "################################################################"
 echo "Add rpmfusion free and nonfree repositories"

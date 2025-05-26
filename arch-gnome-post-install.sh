@@ -27,6 +27,15 @@ if [ "$(id -u)" = 0 ]; then
 fi
 
 echo "################################################################"
+echo "Install flatpak packages"
+echo "################################################################"
+
+sudo -k
+flatpak install -y --noninteractive com.mattjakeman.ExtensionManager
+flatpak install -y --noninteractive org.gtk.Gtk3theme.Adwaita-dark
+flatpak install -y --noninteractive org.torproject.torbrowser-launcher
+
+echo "################################################################"
 echo "Remove unneeded/unwanted packages"
 echo "################################################################"
 
@@ -51,7 +60,6 @@ echo "################################################################"
 echo "Install packages from AUR"
 echo "################################################################"
 
-yay -S extension-manager
 yay -S mintstick
 yay -S brave-bin
 yay -S octopi
