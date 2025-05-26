@@ -47,7 +47,7 @@ echo "################################################################"
 echo "Install other packages"
 echo "################################################################"
 
-sudo pacman -S ptyxis gnome-shell-extension-appindicator dconf-editor gnome-themes-extra papirus-icon-theme nfs-utils less micro fzf fastfetch cava cmus perl-image-exiftool timeshift signal-desktop filezilla gimp darktable inkscape gcolor3 libreoffice
+sudo pacman -S gnome-shell-extension-appindicator dconf-editor gnome-themes-extra papirus-icon-theme less nfs-utils micro fzf fastfetch cava cmus perl-image-exiftool timeshift ghostty signal-desktop filezilla gimp darktable inkscape gcolor3 libreoffice
 
 echo "################################################################"
 echo "Setup Yay for AUR"
