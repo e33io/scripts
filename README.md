@@ -15,11 +15,14 @@ custom Linux installation scripts
 - use the script below with an [Ubuntu 24.04 Server](https://ubuntu.com/download/server) installation
 	- use [`ubuntu-srvr-post-install-i3.sh`](https://github.com/e33io/scripts/blob/main/ubuntu-srvr-post-install-i3.sh) to [install the i3 window manager](https://github.com/e33io/reference-wiki/blob/main/installation-docs/ubuntu-i3-installation.md)
 
-- use the script below with an [Arch](https://wiki.archlinux.org/title/Archinstall) minimal installation
+- use the script below with an [Arch](https://wiki.archlinux.org/title/Archinstall) "Minimal" installation
 	- use [`arch-post-install-i3.sh`](https://github.com/e33io/scripts/blob/main/arch-post-install-i3.sh) to [install the i3 window manager](https://github.com/e33io/reference-wiki/blob/main/installation-docs/arch-i3-installation.md)
 
+- use the script below with an [Arch](https://wiki.archlinux.org/title/Archinstall) "GNOME" installation
+	- use [`arch-gnome-post-install.sh`](https://github.com/e33io/scripts/blob/main/arch-gnome-post-install.sh) to customize Gnome
+
 - use the script below with a [Fedora Workstation](https://fedoraproject.org/workstation) installation
-	- use [`fed-workstation-setup.sh`](https://github.com/e33io/scripts/blob/main/fed-workstation-setup.sh) to customize Gnome
+	- use [`fed-gnome-post-install.sh`](https://github.com/e33io/scripts/blob/main/fed-gnome-post-install.sh) to customize Gnome
 
 &nbsp;
 
