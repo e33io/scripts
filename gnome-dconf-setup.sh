@@ -49,7 +49,7 @@ if [ -f "/etc/pacman.conf" ]; then
     dconf write /org/gnome/desktop/app-folders/folders/Pardus/categories "['X-Pardus-Apps']"
     dconf write /org/gnome/desktop/app-folders/folders/Pardus/name "'X-Pardus-Apps.directory'"
     dconf write /org/gnome/desktop/app-folders/folders/Pardus/translate "true"
-    dconf write /org/gnome/desktop/app-folders/folders/System/apps "['org.gnome.SystemMonitor.desktop', 'org.gnome.baobab.desktop', 'org.gnome.DiskUtility.desktop', 'org.gnome.Logs.desktop', 'org.freedesktop.MalcontentControl.desktop', 'nm-connection-editor.desktop', 'avahi-discover.desktop', 'bvnc.desktop', 'bssh.desktop', 'org.torproject.torbrowser-launcher.settings.desktop', 'htop.desktop', 'vim.desktop', 'lstopo.desktop', 'octopi-cachecleaner.desktop', 'octopi-notifier.desktop', 'octopi-repoeditor.desktop', 'assistant.desktop', 'qdbusviewer.desktop', 'linguist.desktop', 'qv4l2.desktop', 'qvidcap.desktop', 'designer.desktop']"
+    dconf write /org/gnome/desktop/app-folders/folders/System/apps "['org.gnome.SystemMonitor.desktop', 'org.gnome.baobab.desktop', 'org.gnome.DiskUtility.desktop', 'org.gnome.Logs.desktop', 'org.freedesktop.MalcontentControl.desktop', 'nm-connection-editor.desktop', 'avahi-discover.desktop', 'bvnc.desktop', 'bssh.desktop', 'htop.desktop', 'vim.desktop', 'lstopo.desktop', 'octopi-cachecleaner.desktop', 'octopi-notifier.desktop', 'octopi-repoeditor.desktop', 'assistant.desktop', 'qdbusviewer.desktop', 'linguist.desktop', 'qv4l2.desktop', 'qvidcap.desktop', 'designer.desktop']"
     dconf write /org/gnome/desktop/app-folders/folders/System/name "'X-GNOME-Shell-System.directory'"
     dconf write /org/gnome/desktop/app-folders/folders/System/translate "true"
     dconf write /org/gnome/desktop/app-folders/folders/Utilities/apps "['org.gnome.Connections.desktop', 'org.gnome.Evince.desktop', 'org.gnome.Loupe.desktop', 'org.gnome.SimpleScan.desktop', 'org.gnome.font-viewer.desktop', 'org.gnome.Characters.desktop', 'org.gnome.Snapshot.desktop', 'input-remapper-gtk.desktop', 'yelp.desktop', 'org.gnome.Tour.desktop', 'org.gnome.Extensions.desktop', 'cmake-gui.desktop', 'org.gnome.Console.desktop']"
@@ -66,7 +66,7 @@ if [ -f "/etc/dnf/dnf.conf" ]; then
     dconf write /org/gnome/desktop/app-folders/folders/Pardus/categories "['X-Pardus-Apps']"
     dconf write /org/gnome/desktop/app-folders/folders/Pardus/name "'X-Pardus-Apps.directory'"
     dconf write /org/gnome/desktop/app-folders/folders/Pardus/translate "true"
-    dconf write /org/gnome/desktop/app-folders/folders/System/apps "['org.gnome.SystemMonitor.desktop', 'org.gnome.baobab.desktop', 'org.gnome.DiskUtility.desktop', 'org.gnome.Logs.desktop', 'org.freedesktop.MalcontentControl.desktop', 'org.freedesktop.GnomeAbrt.desktop', 'htop.desktop', 'org.torproject.torbrowser-launcher.settings.desktop', 'input-remapper-gtk.desktop']"
+    dconf write /org/gnome/desktop/app-folders/folders/System/apps "['org.gnome.SystemMonitor.desktop', 'org.gnome.baobab.desktop', 'org.gnome.DiskUtility.desktop', 'org.gnome.Logs.desktop', 'org.freedesktop.MalcontentControl.desktop', 'org.freedesktop.GnomeAbrt.desktop', 'htop.desktop', 'input-remapper-gtk.desktop']"
     dconf write /org/gnome/desktop/app-folders/folders/System/name "'X-GNOME-Shell-System.directory'"
     dconf write /org/gnome/desktop/app-folders/folders/System/translate "true"
     dconf write /org/gnome/desktop/app-folders/folders/Utilities/apps "['org.gnome.Connections.desktop', 'org.gnome.Evince.desktop', 'org.gnome.Loupe.desktop', 'simple-scan.desktop', 'org.gnome.font-viewer.desktop', 'org.gnome.Characters.desktop', 'org.gnome.Tour.desktop', 'yelp.desktop', 'org.gnome.Snapshot.desktop', 'hp-uiscan.desktop', 'hplip.desktop']"
@@ -202,7 +202,7 @@ if [ -f "/etc/pacman.conf" ]; then
 
     dconf write /org/gnome/shell/enabled-extensions "['appindicatorsupport@rgcjonas.gmail.com', 'dash-to-dock@micxgx.gmail.com', 'disable-workspace-switcher-overlay@cleardevice', 'space-bar@luchrioh', 'transparent-top-bar@ftpix.com', 'window-title-is-back@fthx']"
 
-    dconf write /org/gnome/shell/favorite-apps "['org.gnome.Nautilus.desktop', 'brave-browser.desktop', 'org.torproject.torbrowser-launcher.desktop', 'signal-desktop.desktop', 'org.gnome.Music.desktop', 'org.darktable.darktable.desktop', 'gimp.desktop', 'org.inkscape.Inkscape.desktop', 'org.gnome.TextEditor.desktop', 'org.gnome.Ptyxis.desktop']"
+    dconf write /org/gnome/shell/favorite-apps "['org.gnome.Nautilus.desktop', 'brave-browser.desktop', 'signal-desktop.desktop', 'org.gnome.Music.desktop', 'org.darktable.darktable.desktop', 'gimp.desktop', 'org.inkscape.Inkscape.desktop', 'org.gnome.TextEditor.desktop', 'org.gnome.Ptyxis.desktop']"
 fi
 
 # Fedora specific settings
@@ -212,7 +212,7 @@ if [ -f "/etc/dnf/dnf.conf" ]; then
     dconf write /org/gnome/shell/disabled-extensions "['background-logo@fedorahosted.org']"
     dconf write /org/gnome/shell/enabled-extensions "['dash-to-dock@micxgx.gmail.com', 'transparent-top-bar@ftpix.com', 'disable-workspace-switcher-overlay@cleardevice', 'space-bar@luchrioh', 'window-title-is-back@fthx', 'appindicatorsupport@rgcjonas.gmail.com']"
 
-    dconf write /org/gnome/shell/favorite-apps "['org.gnome.Nautilus.desktop', 'brave-browser.desktop', 'org.torproject.torbrowser-launcher.desktop', 'org.signal.Signal.desktop', 'org.gnome.Rhythmbox3.desktop', 'org.darktable.darktable.desktop', 'gimp.desktop', 'org.inkscape.Inkscape.desktop', 'org.gnome.TextEditor.desktop', 'org.gnome.Ptyxis.desktop']"
+    dconf write /org/gnome/shell/favorite-apps "['org.gnome.Nautilus.desktop', 'brave-browser.desktop', 'org.signal.Signal.desktop', 'org.gnome.Rhythmbox3.desktop', 'org.darktable.darktable.desktop', 'gimp.desktop', 'org.inkscape.Inkscape.desktop', 'org.gnome.TextEditor.desktop', 'org.gnome.Ptyxis.desktop']"
 fi
 
 dconf write /org/gnome/shell/last-selected-power-profile "'performance'"
