@@ -91,6 +91,8 @@ echo "################################################################"
 echo "Copy custom configuration files"
 echo "################################################################"
 
+mkdir -p $HOME/.config/micro
+cp -R $HOME/dotfiles/.config/micro $HOME/.config
 cp -R $HOME/opt-dots/fedora-gnome/.config $HOME
 cp -R $HOME/opt-dots/fedora-gnome/.local $HOME
 cp -R $HOME/opt-dots/fedora-gnome/.bashrc $HOME
