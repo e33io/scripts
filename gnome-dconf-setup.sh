@@ -49,10 +49,10 @@ if [ -f "/etc/pacman.conf" ]; then
     dconf write /org/gnome/desktop/app-folders/folders/Pardus/categories "['X-Pardus-Apps']"
     dconf write /org/gnome/desktop/app-folders/folders/Pardus/name "'X-Pardus-Apps.directory'"
     dconf write /org/gnome/desktop/app-folders/folders/Pardus/translate "true"
-    dconf write /org/gnome/desktop/app-folders/folders/System/apps "['org.gnome.SystemMonitor.desktop', 'org.gnome.baobab.desktop', 'org.gnome.DiskUtility.desktop', 'org.gnome.Logs.desktop', 'org.freedesktop.MalcontentControl.desktop', 'nm-connection-editor.desktop', 'avahi-discover.desktop', 'bvnc.desktop', 'bssh.desktop', 'org.torproject.torbrowser-launcher.settings.desktop', 'htop.desktop', 'micro.desktop', 'vim.desktop', 'lstopo.desktop', 'octopi-cachecleaner.desktop', 'octopi-notifier.desktop', 'octopi-repoeditor.desktop', 'assistant.desktop', 'qdbusviewer.desktop', 'linguist.desktop', 'qv4l2.desktop', 'qvidcap.desktop', 'designer.desktop']"
+    dconf write /org/gnome/desktop/app-folders/folders/System/apps "['org.gnome.SystemMonitor.desktop', 'org.gnome.baobab.desktop', 'org.gnome.DiskUtility.desktop', 'qt5ct.desktop', 'qt6ct.desktop', 'org.gnome.Logs.desktop', 'nm-connection-editor.desktop', 'org.freedesktop.MalcontentControl.desktop', 'htop.desktop', 'avahi-discover.desktop', 'bvnc.desktop', 'bssh.desktop', 'org.torproject.torbrowser-launcher.settings.desktop', 'micro.desktop', 'vim.desktop', 'octopi-cachecleaner.desktop', 'octopi-notifier.desktop', 'octopi-repoeditor.desktop', 'assistant.desktop', 'qdbusviewer.desktop', 'linguist.desktop', 'qv4l2.desktop', 'qvidcap.desktop', 'designer.desktop', 'org.gnome.Extensions.desktop', 'lstopo.desktop']"
     dconf write /org/gnome/desktop/app-folders/folders/System/name "'X-GNOME-Shell-System.directory'"
     dconf write /org/gnome/desktop/app-folders/folders/System/translate "true"
-    dconf write /org/gnome/desktop/app-folders/folders/Utilities/apps "['org.gnome.Connections.desktop', 'org.gnome.Evince.desktop', 'org.gnome.Loupe.desktop', 'org.gnome.SimpleScan.desktop', 'org.gnome.font-viewer.desktop', 'org.gnome.Characters.desktop', 'org.gnome.Snapshot.desktop', 'input-remapper-gtk.desktop', 'yelp.desktop', 'org.gnome.Tour.desktop', 'org.gnome.Extensions.desktop', 'cmake-gui.desktop', 'org.gnome.Console.desktop']"
+    dconf write /org/gnome/desktop/app-folders/folders/Utilities/apps "['org.gnome.Connections.desktop', 'org.gnome.Evince.desktop', 'org.gnome.Loupe.desktop', 'org.gnome.SimpleScan.desktop', 'org.gnome.font-viewer.desktop', 'org.gnome.Characters.desktop', 'org.gnome.Snapshot.desktop', 'input-remapper-gtk.desktop', 'yelp.desktop', 'org.gnome.Tour.desktop', 'cmake-gui.desktop', 'org.gnome.Console.desktop']"
     dconf write /org/gnome/desktop/app-folders/folders/Utilities/name "'X-GNOME-Shell-Utilities.directory'"
     dconf write /org/gnome/desktop/app-folders/folders/Utilities/translate "true"
     dconf write /org/gnome/desktop/app-folders/folders/YaST/categories "['X-SuSE-YaST']"
@@ -227,7 +227,7 @@ fi
 dconf write /org/gnome/shell/last-selected-power-profile "'performance'"
 
 dconf write /org/gnome/shell/extensions/appindicator/icon-opacity "255"
-dconf write /org/gnome/shell/extensions/appindicator/icon-size "15"
+dconf write /org/gnome/shell/extensions/appindicator/icon-size "16"
 
 dconf write /org/gnome/shell/extensions/dash-to-dock/autohide-in-fullscreen "true"
 dconf write /org/gnome/shell/extensions/dash-to-dock/background-color "'rgb(0,0,0)'"
