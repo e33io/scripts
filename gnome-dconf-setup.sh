@@ -41,6 +41,25 @@ dconf write /org/gnome/TextEditor/use-system-font "false"
 dconf write /org/gnome/control-center/last-panel "'background'"
 dconf write /org/gnome/control-center/window-state "(980, 672, false)"
 
+# Debian specific settings
+if [ -f "/etc/debian_version" ]; then
+    dconf write /org/gnome/desktop/app-folders/folder-children "['System', 'Utilities', 'YaST', 'Pardus', '5e50329d-2752-4667-84e7-18ad4ad19750']"
+    dconf write /org/gnome/desktop/app-folders/folders/5e50329d-2752-4667-84e7-18ad4ad19750/apps "['libreoffice-calc.desktop', 'libreoffice-writer.desktop', 'libreoffice-impress.desktop', 'libreoffice-draw.desktop', 'libreoffice-startcenter.desktop', 'org.gnome.Calendar.desktop', 'org.gnome.Contacts.desktop']"
+    dconf write /org/gnome/desktop/app-folders/folders/5e50329d-2752-4667-84e7-18ad4ad19750/name "'Office'"
+    dconf write /org/gnome/desktop/app-folders/folders/Pardus/categories "['X-Pardus-Apps']"
+    dconf write /org/gnome/desktop/app-folders/folders/Pardus/name "'X-Pardus-Apps.directory'"
+    dconf write /org/gnome/desktop/app-folders/folders/Pardus/translate "true"
+    dconf write /org/gnome/desktop/app-folders/folders/System/apps "['org.gnome.SystemMonitor.desktop', 'nm-connection-editor.desktop', 'org.gnome.DiskUtility.desktop', 'org.gnome.baobab.desktop', 'org.gnome.Logs.desktop', 'org.freedesktop.MalcontentControl.desktop', 'im-config.desktop', 'input-remapper-gtk.desktop']"
+    dconf write /org/gnome/desktop/app-folders/folders/System/name "'X-GNOME-Shell-System.directory'"
+    dconf write /org/gnome/desktop/app-folders/folders/System/translate "true"
+    dconf write /org/gnome/desktop/app-folders/folders/Utilities/apps "['org.gnome.Connections.desktop', 'org.gnome.Evince.desktop', 'org.gnome.Loupe.desktop', 'simple-scan.desktop', 'org.gnome.FileRoller.desktop', 'org.gnome.Snapshot.desktop', 'org.gnome.font-viewer.desktop', 'org.gnome.Characters.desktop', 'yelp.desktop', 'org.gnome.Tour.desktop']"
+    dconf write /org/gnome/desktop/app-folders/folders/Utilities/name "'X-GNOME-Shell-Utilities.directory'"
+    dconf write /org/gnome/desktop/app-folders/folders/Utilities/translate "true"
+    dconf write /org/gnome/desktop/app-folders/folders/YaST/categories "['X-SuSE-YaST']"
+    dconf write /org/gnome/desktop/app-folders/folders/YaST/name "'suse-yast.directory'"
+    dconf write /org/gnome/desktop/app-folders/folders/YaST/translate "true"
+fi
+
 # Arch specific settings
 if [ -f "/etc/pacman.conf" ]; then
     dconf write /org/gnome/desktop/app-folders/folder-children "['System', 'Utilities', 'YaST', 'Pardus', '7385973a-bf95-4858-ac66-ad784a3ea649']"
@@ -87,6 +106,11 @@ dconf write /org/gnome/desktop/interface/clock-show-date "true"
 dconf write /org/gnome/desktop/interface/clock-show-seconds "true"
 dconf write /org/gnome/desktop/interface/clock-show-weekday "true"
 dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
+# Debian specific settings
+if [ -f "/etc/debian_version" ]; then
+    dconf write /org/gnome/desktop/interface/document-font-name "'Inter 11'"
+    dconf write /org/gnome/desktop/interface/font-name "'Inter 11'"
+fi
 dconf write /org/gnome/desktop/interface/gtk-theme "'Adwaita-dark'"
 dconf write /org/gnome/desktop/interface/icon-theme "'Papirus-Dark'"
 dconf write /org/gnome/desktop/interface/monospace-font-name "'SovranMono Nerd Font Propo 12'"
@@ -173,6 +197,12 @@ dconf write /org/gnome/settings-daemon/plugins/color/night-light-schedule-automa
 dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/']"
 dconf write /org/gnome/settings-daemon/plugins/media-keys/screensaver "['<Super>x', '<Super>l']"
 dconf write /org/gnome/settings-daemon/plugins/media-keys/www "['<Super>b']"
+# Debian specific settings
+if [ -f "/etc/debian_version" ]; then
+    dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/binding "'<Super>Return'"
+    dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/command "'ptyxis --new-window'"
+    dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/name "'Gnome Terminal'"
+fi
 # Arch specific settings
 if [ -f "/etc/pacman.conf" ]; then
     dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/binding "'<Super>Return'"
@@ -204,6 +234,15 @@ fi
 dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/name "'Signal App'"
 
 dconf write /org/gnome/settings-daemon/plugins/power/sleep-inactive-ac-type "'nothing'"
+
+# Debian specific settings
+if [ -f "/etc/debian_version" ]; then
+    dconf write /org/gnome/shell/app-picker-layout "[{'org.gnome.Epiphany.desktop': <{'position': <0>}>, '5e50329d-2752-4667-84e7-18ad4ad19750': <{'position': <1>}>, 'org.gnome.Calculator.desktop': <{'position': <2>}>, 'org.gnome.clocks.desktop': <{'position': <3>}>, 'org.gnome.Weather.desktop': <{'position': <4>}>, 'org.gnome.Maps.desktop': <{'position': <5>}>, 'org.gnome.Totem.desktop': <{'position': <6>}>, 'timeshift-gtk.desktop': <{'position': <7>}>, 'org.gnome.Settings.desktop': <{'position': <8>}>, 'org.gnome.tweaks.desktop': <{'position': <9>}>, 'com.mattjakeman.ExtensionManager.desktop': <{'position': <10>}>, 'ca.desrt.dconf-editor.desktop': <{'position': <11>}>, 'Utilities': <{'position': <12>}>, 'System': <{'position': <13>}>, 'synaptic.desktop': <{'position': <14>}>, 'org.gnome.Software.desktop': <{'position': <15>}>, 'mintstick.desktop': <{'position': <16>}>, 'mintstick-format.desktop': <{'position': <17>}>, 'filezilla.desktop': <{'position': <18>}>, 'soundconverter.desktop': <{'position': <19>}>, 'nl.hjdskes.gcolor3.desktop': <{'position': <20>}>}]"
+
+    dconf write /org/gnome/shell/enabled-extensions "['ubuntu-appindicators@ubuntu.com', 'window-title-is-back@fthx', 'transparent-top-bar@ftpix.com', 'space-bar@luchrioh', 'disable-workspace-switcher-overlay@cleardevice', 'dash-to-dock@micxgx.gmail.com']"
+
+    dconf write /org/gnome/shell/favorite-apps "['org.gnome.Nautilus.desktop', 'brave-browser.desktop', 'signal-desktop.desktop', 'org.gnome.Rhythmbox3.desktop', 'org.darktable.darktable.desktop', 'gimp.desktop', 'org.inkscape.Inkscape.desktop', 'org.gnome.TextEditor.desktop', 'org.gnome.Ptyxis.desktop']"
+fi
 
 # Arch specific settings
 if [ -f "/etc/pacman.conf" ]; then
