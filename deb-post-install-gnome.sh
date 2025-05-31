@@ -117,6 +117,12 @@ PS1='\[\e[01;31m\][\u \w]#\[\e[m\] '
 #" | sudo tee -a /root/.bashrc > /dev/null
 
 echo "################################################################"
+echo "Update x-www-browser settings"
+echo "################################################################"
+
+sudo update-alternatives --set x-www-browser /usr/bin/brave-browser-stable
+
+echo "################################################################"
 echo "Add bookmarks and clean up directories"
 echo "################################################################"
 
