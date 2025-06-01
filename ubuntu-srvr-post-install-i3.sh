@@ -123,7 +123,7 @@ Categories=Utility;ConsoleOnly;
 NoDisplay=true" > $HOME/.local/share/applications/info.desktop
 
 echo "################################################################"
-echo "Update cursor, wallpaper and lightdm settings"
+echo "Update cursor, lightdm and plymouth settings"
 echo "################################################################"
 
 sed -i 's/gtk-cursor-theme-name="Adwaita"/gtk-cursor-theme-name="Yaru"/' $HOME/.gtkrc-2.0
