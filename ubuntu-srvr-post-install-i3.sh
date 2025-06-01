@@ -130,7 +130,6 @@ sed -i 's/gtk-cursor-theme-name="Adwaita"/gtk-cursor-theme-name="Yaru"/' $HOME/.
 sed -i 's/gtk-cursor-theme-name=Adwaita/gtk-cursor-theme-name=Yaru/' $HOME/.config/gtk-3.0/settings.ini
 sed -i 's/Inherits=Adwaita/Inherits=Yaru/' $HOME/.icons/default/index.theme
 sed -i 's/Xcursor\.theme: Adwaita/Xcursor\.theme: Yaru/' $HOME/.Xresources
-sed -i 's/alpha-background\.png/background-1\.jpg/' $HOME/.config/nitrogen/bg-saved.cfg
 sudo sed -i 's/cursor-theme-name=Adwaita/cursor-theme-name=Yaru/' /etc/lightdm/slick-greeter.conf
 sudo sed -i 's/theme-name=Adwaita-dark/theme-name=Yaru-dark/' /etc/lightdm/slick-greeter.conf
 sudo sed -i 's/DeviceScale=2/DeviceScale=1/' /etc/plymouth/plymouthd.conf
