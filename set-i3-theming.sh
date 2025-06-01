@@ -5,7 +5,7 @@
 # URL: https://github.com/e33io/scripts/blob/main/set-i3-theming.sh
 # -------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
-# NOTE: Only use with Debian/Ubuntu or Arch Linux!
+# NOTE: Only use with Debian or Arch Linux!
 # ===================================================================
 
 if [ "$(id -u)" = 0 ]; then
@@ -20,7 +20,7 @@ fi
 if ! { [ -f "/etc/debian_version" ] || [ -f "/etc/pacman.conf" ]; }; then
     echo "################################################################"
     echo "This script is NOT compatible with your version of Linux!"
-    echo "It only works with Debian/Ubuntu or Arch and it will"
+    echo "It only works with Debian or Arch Linux and it will"
     echo "exit now without running."
     echo "################################################################"
     exit 1

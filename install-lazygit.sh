@@ -7,7 +7,7 @@
 # Use this script at your own risk, it will overwrite existing files!
 # Please see https://github.com/jesseduffield/lazygit for a complete reference
 # ----------------------------------------------------------------------------
-# NOTE: Only use with Debian/Ubuntu
+# NOTE: Only use with Debian 12 Bookworm
 # ============================================================================
 
 if [ "$(id -u)" = 0 ]; then
@@ -15,6 +15,16 @@ if [ "$(id -u)" = 0 ]; then
     echo "This script MUST NOT be run as root user."
     echo "Run this script as a normal user."
     echo "You will be asked for a sudo password when necessary."
+    echo "################################################################"
+    exit 1
+fi
+
+release="$(lsb_release -a | awk '/Codename:/ { print $2 }')"
+if [ ! $release = bookworm ]; then
+    echo "################################################################"
+    echo "Install Lazygit script is NOT compatible with your"
+    echo "version of Linux, and it will exit now without"
+    echo "running or making any changes."
     echo "################################################################"
     exit 1
 fi

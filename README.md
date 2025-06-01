@@ -12,9 +12,6 @@ custom Linux installation scripts
 	- use [`deb-post-install-jwm.sh`](https://github.com/e33io/scripts/blob/main/deb-post-install-jwm.sh) to [install the JWM window manager](https://e33.io/1398)
 	- use [`deb-post-install-xfce.sh`](https://github.com/e33io/scripts/blob/main/deb-post-install-xfce.sh) to [install the Xfce desktop environment](https://e33.io/1541)
 
-- use the script below with an [Ubuntu 24.04 Server](https://ubuntu.com/download/server) installation
-	- use [`ubuntu-srvr-post-install-i3.sh`](https://github.com/e33io/scripts/blob/main/ubuntu-srvr-post-install-i3.sh) to [install the i3 window manager](https://github.com/e33io/reference-wiki/blob/main/installation-docs/ubuntu-i3-installation.md)
-
 - use the script below with an [Arch](https://wiki.archlinux.org/title/Archinstall) "Minimal" installation
 	- use [`arch-post-install-i3.sh`](https://github.com/e33io/scripts/blob/main/arch-post-install-i3.sh) to [install the i3 window manager](https://github.com/e33io/reference-wiki/blob/main/installation-docs/arch-i3-installation.md)
 
@@ -34,7 +31,7 @@ custom Linux installation scripts
 
 - use [`install-signal-deb.sh`](https://github.com/e33io/scripts/blob/main/install-signal-deb.sh) to install [Signal App](https://www.signal.org) (.deb package)
 
-- use [`install-lazygit.sh`](https://github.com/e33io/scripts/blob/main/install-lazygit.sh) to install [Lazygit](https://github.com/jesseduffield/lazygit) (tarball build)
+- use [`install-lazygit.sh`](https://github.com/e33io/scripts/blob/main/install-lazygit.sh) to install [Lazygit](https://github.com/jesseduffield/lazygit) (tarball build) on Debian 12
 
 - use [`install-flatpak-deb.sh`](https://github.com/e33io/scripts/blob/main/install-flatpak-deb.sh) to install Flatpak and add Flathub on Debian
 

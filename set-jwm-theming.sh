@@ -5,7 +5,7 @@
 # URL: https://github.com/e33io/scripts/blob/main/set-jwm-theming.sh
 # -------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
-# NOTE: Only use with Debian/Ubuntu Linux!
+# NOTE: Only use with Debian Linux!
 # ===================================================================
 
 if [ "$(id -u)" = 0 ]; then
@@ -20,7 +20,7 @@ fi
 if ! { [ -f "/etc/debian_version" ]; }; then
     echo "################################################################"
     echo "This script is NOT compatible with your version of Linux!"
-    echo "It only works with Debian/Ubuntu Linux, and it will"
+    echo "It only works with Debian Linux, and it will"
     echo "exit now without running."
     echo "################################################################"
     exit 1
