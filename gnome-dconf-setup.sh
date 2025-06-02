@@ -287,6 +287,8 @@ dconf write /org/gnome/shell/extensions/dash-to-dock/show-mounts "false"
 dconf write /org/gnome/shell/extensions/dash-to-dock/show-trash "false"
 dconf write /org/gnome/shell/extensions/dash-to-dock/transparency-mode "'FIXED'"
 
+dconf write /org/gnome/shell/extensions/net/gfxmonk/impatience/speed-factor "0.5"
+
 dconf write /org/gnome/shell/extensions/space-bar/appearance/active-workspace-background-color "'rgba(0,0,0,0)'"
 dconf write /org/gnome/shell/extensions/space-bar/appearance/active-workspace-border-radius "32"
 dconf write /org/gnome/shell/extensions/space-bar/appearance/active-workspace-text-color "'rgb(255,255,255)'"
