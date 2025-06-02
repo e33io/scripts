@@ -94,6 +94,7 @@ sudo cp -R $HOME/dotfiles/usr/share /usr
 sudo mkdir -p /usr/share/gtksourceview-5
 sudo cp -R /usr/share/gtksourceview-4/* /usr/share/gtksourceview-5
 sudo cp -R $HOME/opt-dots/gnome/etc/gdm3 /etc
+sudo cp -R $HOME/opt-dots/gnome/etc/plymouth /etc
 sudo mkdir -p /boot/grub/fonts
 sudo cp -R /usr/share/grub/ter-* /boot/grub/fonts
 sudo update-initramfs -u
