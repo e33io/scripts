@@ -123,7 +123,7 @@ echo "################################################################"
 sudo update-alternatives --set x-www-browser /usr/bin/brave-browser-stable
 
 echo "################################################################"
-echo "Add bookmarks and clean up directories"
+echo "Add bookmarks, run dconf script and clean up files"
 echo "################################################################"
 
 xdg-user-dirs-update
