@@ -89,7 +89,6 @@ cp -R $HOME/opt-dots/gnome/.bashrc $HOME
 cp -R $HOME/opt-dots/gnome/.profile $HOME
 sudo cp -R $HOME/dotfiles/etc/default /etc
 sudo cp -R $HOME/dotfiles/etc/network /etc
-sudo cp -R $HOME/dotfiles/etc/plymouth /etc
 sudo cp -R $HOME/dotfiles/usr/share /usr
 sudo mkdir -p /usr/share/gtksourceview-5
 sudo cp -R /usr/share/gtksourceview-4/* /usr/share/gtksourceview-5
