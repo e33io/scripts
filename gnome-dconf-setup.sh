@@ -344,7 +344,7 @@ dconf write /org/gnome/shell/keybindings/switch-to-application-7 "@as []"
 dconf write /org/gnome/shell/keybindings/switch-to-application-8 "@as []"
 dconf write /org/gnome/shell/keybindings/switch-to-application-9 "@as []"
 dconf write /org/gnome/shell/keybindings/toggle-application-view "['<Super>d', '<Super>a']"
-dconf write /org/gnome/shell/keybindings/toggle-overview "['<Shift><Super>o']"
+dconf write /org/gnome/shell/keybindings/toggle-overview "['<Super>o']"
 
 # Debian specific settings
 if [ -f "/etc/debian_version" ]; then
