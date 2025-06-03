@@ -239,7 +239,7 @@ dconf write /org/gnome/settings-daemon/plugins/power/sleep-inactive-ac-type "'no
 if [ -f "/etc/debian_version" ]; then
     dconf write /org/gnome/shell/app-picker-layout "[{'org.gnome.Epiphany.desktop': <{'position': <0>}>, '5e50329d-2752-4667-84e7-18ad4ad19750': <{'position': <1>}>, 'org.gnome.Calculator.desktop': <{'position': <2>}>, 'org.gnome.clocks.desktop': <{'position': <3>}>, 'org.gnome.Weather.desktop': <{'position': <4>}>, 'org.gnome.Maps.desktop': <{'position': <5>}>, 'org.gnome.Totem.desktop': <{'position': <6>}>, 'timeshift-gtk.desktop': <{'position': <7>}>, 'org.gnome.Settings.desktop': <{'position': <8>}>, 'org.gnome.tweaks.desktop': <{'position': <9>}>, 'com.mattjakeman.ExtensionManager.desktop': <{'position': <10>}>, 'ca.desrt.dconf-editor.desktop': <{'position': <11>}>, 'Utilities': <{'position': <12>}>, 'System': <{'position': <13>}>, 'synaptic.desktop': <{'position': <14>}>, 'org.gnome.Software.desktop': <{'position': <15>}>, 'mintstick.desktop': <{'position': <16>}>, 'mintstick-format.desktop': <{'position': <17>}>, 'filezilla.desktop': <{'position': <18>}>, 'soundconverter.desktop': <{'position': <19>}>, 'nl.hjdskes.gcolor3.desktop': <{'position': <20>}>}]"
 
-    dconf write /org/gnome/shell/enabled-extensions "['ubuntu-appindicators@ubuntu.com', 'dash-to-dock@micxgx.gmail.com', 'transparent-top-bar@ftpix.com', 'disable-workspace-switcher-overlay@cleardevice', 'disable-workspace-animation@ethnarque', 'space-bar@luchrioh', 'window-title-is-back@fthx', 'impatience@gfxmonk.net']"
+    dconf write /org/gnome/shell/enabled-extensions "['ubuntu-appindicators@ubuntu.com', 'dash-to-dock@micxgx.gmail.com', 'transparent-top-bar@ftpix.com', 'disable-workspace-switcher-overlay@cleardevice', 'disable-workspace-animation@ethnarque', 'space-bar@luchrioh', 'window-title-is-back@fthx', 'overviewbackground@github.com.orbitcorrection', 'impatience@gfxmonk.net']"
 
     dconf write /org/gnome/shell/favorite-apps "['org.gnome.Nautilus.desktop', 'brave-browser.desktop', 'signal-desktop.desktop', 'org.gnome.Rhythmbox3.desktop', 'org.darktable.darktable.desktop', 'gimp.desktop', 'org.inkscape.Inkscape.desktop', 'org.gnome.TextEditor.desktop', 'org.gnome.Ptyxis.desktop']"
 fi
@@ -248,7 +248,7 @@ fi
 if [ -f "/etc/pacman.conf" ]; then
     dconf write /org/gnome/shell/app-picker-layout "[{'org.gnome.Epiphany.desktop': <{'position': <0>}>, '7385973a-bf95-4858-ac66-ad784a3ea649': <{'position': <1>}>, 'org.gnome.Calculator.desktop': <{'position': <2>}>, 'org.gnome.clocks.desktop': <{'position': <3>}>, 'org.gnome.Weather.desktop': <{'position': <4>}>, 'org.gnome.Maps.desktop': <{'position': <5>}>, 'org.gnome.Totem.desktop': <{'position': <6>}>, 'org.gnome.Decibels.desktop': <{'position': <7>}>, 'org.gnome.Settings.desktop': <{'position': <8>}>, 'org.gnome.tweaks.desktop': <{'position': <9>}>, 'com.mattjakeman.ExtensionManager.desktop': <{'position': <10>}>, 'ca.desrt.dconf-editor.desktop': <{'position': <11>}>, 'Utilities': <{'position': <12>}>, 'System': <{'position': <13>}>, 'timeshift-gtk.desktop': <{'position': <14>}>, 'octopi.desktop': <{'position': <15>}>, 'mintstick.desktop': <{'position': <16>}>, 'mintstick-format.desktop': <{'position': <17>}>, 'filezilla.desktop': <{'position': <18>}>, 'nl.hjdskes.gcolor3.desktop': <{'position': <19>}>}]"
 
-    dconf write /org/gnome/shell/enabled-extensions "['appindicatorsupport@rgcjonas.gmail.com', 'dash-to-dock@micxgx.gmail.com', 'transparent-top-bar@ftpix.com', 'disable-workspace-switcher-overlay@cleardevice', 'disable-workspace-animation@ethnarque', 'space-bar@luchrioh', 'window-title-is-back@fthx', 'impatience@gfxmonk.net']"
+    dconf write /org/gnome/shell/enabled-extensions "['appindicatorsupport@rgcjonas.gmail.com', 'dash-to-dock@micxgx.gmail.com', 'transparent-top-bar@ftpix.com', 'disable-workspace-switcher-overlay@cleardevice', 'disable-workspace-animation@ethnarque', 'space-bar@luchrioh', 'window-title-is-back@fthx', 'overviewbackground@github.com.orbitcorrection', 'impatience@gfxmonk.net']"
 
     dconf write /org/gnome/shell/favorite-apps "['org.gnome.Nautilus.desktop', 'brave-browser.desktop', 'org.torproject.torbrowser-launcher.desktop', 'signal-desktop.desktop', 'org.gnome.Music.desktop', 'org.darktable.darktable.desktop', 'gimp.desktop', 'org.inkscape.Inkscape.desktop', 'org.gnome.TextEditor.desktop', 'com.mitchellh.ghostty.desktop']"
 fi
@@ -259,7 +259,7 @@ if [ -f "/etc/dnf/dnf.conf" ]; then
 
     dconf write /org/gnome/shell/disabled-extensions "['background-logo@fedorahosted.org']"
 
-    dconf write /org/gnome/shell/enabled-extensions "['appindicatorsupport@rgcjonas.gmail.com', 'dash-to-dock@micxgx.gmail.com', 'transparent-top-bar@ftpix.com', 'disable-workspace-switcher-overlay@cleardevice', 'disable-workspace-animation@ethnarque', 'space-bar@luchrioh', 'window-title-is-back@fthx', 'impatience@gfxmonk.net']"
+    dconf write /org/gnome/shell/enabled-extensions "['appindicatorsupport@rgcjonas.gmail.com', 'dash-to-dock@micxgx.gmail.com', 'transparent-top-bar@ftpix.com', 'disable-workspace-switcher-overlay@cleardevice', 'disable-workspace-animation@ethnarque', 'space-bar@luchrioh', 'window-title-is-back@fthx', 'overviewbackground@github.com.orbitcorrection', 'impatience@gfxmonk.net']"
 
     dconf write /org/gnome/shell/favorite-apps "['org.gnome.Nautilus.desktop', 'brave-browser.desktop', 'org.torproject.torbrowser-launcher.desktop', 'org.signal.Signal.desktop', 'org.gnome.Rhythmbox3.desktop', 'org.darktable.darktable.desktop', 'gimp.desktop', 'org.inkscape.Inkscape.desktop', 'org.gnome.TextEditor.desktop', 'org.gnome.Ptyxis.desktop']"
 fi
@@ -289,6 +289,9 @@ dconf write /org/gnome/shell/extensions/dash-to-dock/show-trash "false"
 dconf write /org/gnome/shell/extensions/dash-to-dock/transparency-mode "'FIXED'"
 
 dconf write /org/gnome/shell/extensions/net/gfxmonk/impatience/speed-factor "0.5"
+
+dconf write /org/gnome/shell/extensions/ob/blur-brightness "5"
+dconf write /org/gnome/shell/extensions/ob/blur-sigma "20"
 
 dconf write /org/gnome/shell/extensions/space-bar/appearance/active-workspace-background-color "'rgba(0,0,0,0)'"
 dconf write /org/gnome/shell/extensions/space-bar/appearance/active-workspace-border-radius "32"
