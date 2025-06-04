@@ -239,7 +239,7 @@ dconf write /org/gnome/settings-daemon/plugins/power/sleep-inactive-ac-type "'no
 if [ -f "/etc/debian_version" ]; then
     dconf write /org/gnome/shell/app-picker-layout "[{'org.gnome.Epiphany.desktop': <{'position': <0>}>, '5e50329d-2752-4667-84e7-18ad4ad19750': <{'position': <1>}>, 'org.gnome.Calculator.desktop': <{'position': <2>}>, 'org.gnome.clocks.desktop': <{'position': <3>}>, 'org.gnome.Weather.desktop': <{'position': <4>}>, 'org.gnome.Maps.desktop': <{'position': <5>}>, 'org.gnome.Totem.desktop': <{'position': <6>}>, 'timeshift-gtk.desktop': <{'position': <7>}>, 'org.gnome.Settings.desktop': <{'position': <8>}>, 'org.gnome.tweaks.desktop': <{'position': <9>}>, 'com.mattjakeman.ExtensionManager.desktop': <{'position': <10>}>, 'ca.desrt.dconf-editor.desktop': <{'position': <11>}>, 'Utilities': <{'position': <12>}>, 'System': <{'position': <13>}>, 'synaptic.desktop': <{'position': <14>}>, 'org.gnome.Software.desktop': <{'position': <15>}>, 'mintstick.desktop': <{'position': <16>}>, 'mintstick-format.desktop': <{'position': <17>}>, 'filezilla.desktop': <{'position': <18>}>, 'soundconverter.desktop': <{'position': <19>}>, 'nl.hjdskes.gcolor3.desktop': <{'position': <20>}>}]"
 
-    dconf write /org/gnome/shell/enabled-extensions "['ubuntu-appindicators@ubuntu.com', 'dash-to-dock@micxgx.gmail.com', 'transparent-top-bar@ftpix.com', 'disable-workspace-switcher-overlay@cleardevice', 'disable-workspace-animation@ethnarque', 'space-bar@luchrioh', 'window-title-is-back@fthx', 'overviewbackground@github.com.orbitcorrection', 'impatience@gfxmonk.net']"
+    dconf write /org/gnome/shell/enabled-extensions "['ubuntu-appindicators@ubuntu.com', 'dash-to-dock@micxgx.gmail.com', 'transparent-top-bar@ftpix.com', 'disable-workspace-switcher-overlay@cleardevice', 'disable-workspace-animation@ethnarque', 'space-bar@luchrioh', 'window-title-is-back@fthx', 'overviewbackground@github.com.orbitcorrection', 'impatience@gfxmonk.net', 'tiling-assistant@leleat-on-github']"
 
     dconf write /org/gnome/shell/favorite-apps "['org.gnome.Nautilus.desktop', 'brave-browser.desktop', 'signal-desktop.desktop', 'org.gnome.Rhythmbox3.desktop', 'org.darktable.darktable.desktop', 'gimp.desktop', 'org.inkscape.Inkscape.desktop', 'org.gnome.TextEditor.desktop', 'org.gnome.Ptyxis.desktop']"
 fi
@@ -248,7 +248,7 @@ fi
 if [ -f "/etc/pacman.conf" ]; then
     dconf write /org/gnome/shell/app-picker-layout "[{'org.gnome.Epiphany.desktop': <{'position': <0>}>, '7385973a-bf95-4858-ac66-ad784a3ea649': <{'position': <1>}>, 'org.gnome.Calculator.desktop': <{'position': <2>}>, 'org.gnome.clocks.desktop': <{'position': <3>}>, 'org.gnome.Weather.desktop': <{'position': <4>}>, 'org.gnome.Maps.desktop': <{'position': <5>}>, 'org.gnome.Totem.desktop': <{'position': <6>}>, 'org.gnome.Decibels.desktop': <{'position': <7>}>, 'org.gnome.Settings.desktop': <{'position': <8>}>, 'org.gnome.tweaks.desktop': <{'position': <9>}>, 'com.mattjakeman.ExtensionManager.desktop': <{'position': <10>}>, 'ca.desrt.dconf-editor.desktop': <{'position': <11>}>, 'Utilities': <{'position': <12>}>, 'System': <{'position': <13>}>, 'timeshift-gtk.desktop': <{'position': <14>}>, 'octopi.desktop': <{'position': <15>}>, 'mintstick.desktop': <{'position': <16>}>, 'mintstick-format.desktop': <{'position': <17>}>, 'filezilla.desktop': <{'position': <18>}>, 'nl.hjdskes.gcolor3.desktop': <{'position': <19>}>}]"
 
-    dconf write /org/gnome/shell/enabled-extensions "['appindicatorsupport@rgcjonas.gmail.com', 'dash-to-dock@micxgx.gmail.com', 'transparent-top-bar@ftpix.com', 'disable-workspace-switcher-overlay@cleardevice', 'disable-workspace-animation@ethnarque', 'space-bar@luchrioh', 'window-title-is-back@fthx', 'overviewbackground@github.com.orbitcorrection', 'impatience@gfxmonk.net']"
+    dconf write /org/gnome/shell/enabled-extensions "['appindicatorsupport@rgcjonas.gmail.com', 'dash-to-dock@micxgx.gmail.com', 'transparent-top-bar@ftpix.com', 'disable-workspace-switcher-overlay@cleardevice', 'disable-workspace-animation@ethnarque', 'space-bar@luchrioh', 'window-title-is-back@fthx', 'overviewbackground@github.com.orbitcorrection', 'impatience@gfxmonk.net', 'tiling-assistant@leleat-on-github']"
 
     dconf write /org/gnome/shell/favorite-apps "['org.gnome.Nautilus.desktop', 'brave-browser.desktop', 'org.torproject.torbrowser-launcher.desktop', 'signal-desktop.desktop', 'org.gnome.Music.desktop', 'org.darktable.darktable.desktop', 'gimp.desktop', 'org.inkscape.Inkscape.desktop', 'org.gnome.TextEditor.desktop', 'com.mitchellh.ghostty.desktop']"
 fi
@@ -259,7 +259,7 @@ if [ -f "/etc/dnf/dnf.conf" ]; then
 
     dconf write /org/gnome/shell/disabled-extensions "['background-logo@fedorahosted.org']"
 
-    dconf write /org/gnome/shell/enabled-extensions "['appindicatorsupport@rgcjonas.gmail.com', 'dash-to-dock@micxgx.gmail.com', 'transparent-top-bar@ftpix.com', 'disable-workspace-switcher-overlay@cleardevice', 'disable-workspace-animation@ethnarque', 'space-bar@luchrioh', 'window-title-is-back@fthx', 'overviewbackground@github.com.orbitcorrection', 'impatience@gfxmonk.net']"
+    dconf write /org/gnome/shell/enabled-extensions "['appindicatorsupport@rgcjonas.gmail.com', 'dash-to-dock@micxgx.gmail.com', 'transparent-top-bar@ftpix.com', 'disable-workspace-switcher-overlay@cleardevice', 'disable-workspace-animation@ethnarque', 'space-bar@luchrioh', 'window-title-is-back@fthx', 'overviewbackground@github.com.orbitcorrection', 'impatience@gfxmonk.net', 'tiling-assistant@leleat-on-github']"
 
     dconf write /org/gnome/shell/favorite-apps "['org.gnome.Nautilus.desktop', 'brave-browser.desktop', 'org.torproject.torbrowser-launcher.desktop', 'org.signal.Signal.desktop', 'org.gnome.Rhythmbox3.desktop', 'org.darktable.darktable.desktop', 'gimp.desktop', 'org.inkscape.Inkscape.desktop', 'org.gnome.TextEditor.desktop', 'org.gnome.Ptyxis.desktop']"
 fi
@@ -314,6 +314,51 @@ dconf write /org/gnome/shell/extensions/space-bar/behavior/show-empty-workspaces
 dconf write /org/gnome/shell/extensions/space-bar/behavior/toggle-overview "false"
 dconf write /org/gnome/shell/extensions/space-bar/shortcuts/enable-activate-workspace-shortcuts "false"
 dconf write /org/gnome/shell/extensions/space-bar/shortcuts/open-menu "@as []"
+
+dconf write /org/gnome/shell/extensions/tiling-assistant/activate-layout0 "@as []"
+dconf write /org/gnome/shell/extensions/tiling-assistant/activate-layout1 "@as []"
+dconf write /org/gnome/shell/extensions/tiling-assistant/activate-layout2 "@as []"
+dconf write /org/gnome/shell/extensions/tiling-assistant/activate-layout3 "@as []"
+dconf write /org/gnome/shell/extensions/tiling-assistant/auto-tile "@as []"
+dconf write /org/gnome/shell/extensions/tiling-assistant/center-window "@as []"
+dconf write /org/gnome/shell/extensions/tiling-assistant/debugging-free-rects "@as []"
+dconf write /org/gnome/shell/extensions/tiling-assistant/debugging-show-tiled-rects "@as []"
+dconf write /org/gnome/shell/extensions/tiling-assistant/default-move-mode "0"
+dconf write /org/gnome/shell/extensions/tiling-assistant/dynamic-keybinding-behavior "0"
+dconf write /org/gnome/shell/extensions/tiling-assistant/enable-tiling-popup "false"
+dconf write /org/gnome/shell/extensions/tiling-assistant/focus-hint "0"
+dconf write /org/gnome/shell/extensions/tiling-assistant/focus-hint-color "'rgb(53,132,228)'"
+dconf write /org/gnome/shell/extensions/tiling-assistant/import-layout-examples "false"
+dconf write /org/gnome/shell/extensions/tiling-assistant/last-version-installed "52"
+dconf write /org/gnome/shell/extensions/tiling-assistant/maximize-with-gap "true"
+dconf write /org/gnome/shell/extensions/tiling-assistant/overridden-settings "{'org.gnome.mutter.edge-tiling': <@mb nothing>, 'org.gnome.desktop.wm.keybindings.maximize': <@mb nothing>, 'org.gnome.desktop.wm.keybindings.unmaximize': <@mb nothing>, 'org.gnome.mutter.keybindings.toggle-tiled-left': <@mb nothing>, 'org.gnome.mutter.keybindings.toggle-tiled-right': <@mb nothing>}"
+dconf write /org/gnome/shell/extensions/tiling-assistant/restore-window "['<Super>Down']"
+dconf write /org/gnome/shell/extensions/tiling-assistant/search-popup-layout "@as []"
+dconf write /org/gnome/shell/extensions/tiling-assistant/single-screen-gap "8"
+dconf write /org/gnome/shell/extensions/tiling-assistant/tile-bottom-half "['<Super>KP_2']"
+dconf write /org/gnome/shell/extensions/tiling-assistant/tile-bottom-half-ignore-ta "@as []"
+dconf write /org/gnome/shell/extensions/tiling-assistant/tile-bottomleft-quarter "['<Super>KP_1']"
+dconf write /org/gnome/shell/extensions/tiling-assistant/tile-bottomleft-quarter-ignore-ta "@as []"
+dconf write /org/gnome/shell/extensions/tiling-assistant/tile-bottomright-quarter "['<Super>KP_3']"
+dconf write /org/gnome/shell/extensions/tiling-assistant/tile-bottomright-quarter-ignore-ta "@as []"
+dconf write /org/gnome/shell/extensions/tiling-assistant/tile-edit-mode "@as []"
+dconf write /org/gnome/shell/extensions/tiling-assistant/tile-left-half "['<Super>Left', '<Super>KP_4']"
+dconf write /org/gnome/shell/extensions/tiling-assistant/tile-left-half-ignore-ta "@as []"
+dconf write /org/gnome/shell/extensions/tiling-assistant/tile-maximize "['<Super>Up', '<Super>KP_5']"
+dconf write /org/gnome/shell/extensions/tiling-assistant/tile-maximize-horizontally "@as []"
+dconf write /org/gnome/shell/extensions/tiling-assistant/tile-maximize-vertically "@as []"
+dconf write /org/gnome/shell/extensions/tiling-assistant/tile-right-half "['<Super>Right', '<Super>KP_6']"
+dconf write /org/gnome/shell/extensions/tiling-assistant/tile-right-half-ignore-ta "@as []"
+dconf write /org/gnome/shell/extensions/tiling-assistant/tile-top-half "['<Super>KP_8']"
+dconf write /org/gnome/shell/extensions/tiling-assistant/tile-top-half-ignore-ta "@as []"
+dconf write /org/gnome/shell/extensions/tiling-assistant/tile-topleft-quarter "['<Super>KP_7']"
+dconf write /org/gnome/shell/extensions/tiling-assistant/tile-topleft-quarter-ignore-ta "@as []"
+dconf write /org/gnome/shell/extensions/tiling-assistant/tile-topright-quarter "['<Super>KP_9']"
+dconf write /org/gnome/shell/extensions/tiling-assistant/tile-topright-quarter-ignore-ta "@as []"
+dconf write /org/gnome/shell/extensions/tiling-assistant/tiling-popup-all-workspace "false"
+dconf write /org/gnome/shell/extensions/tiling-assistant/toggle-always-on-top "@as []"
+dconf write /org/gnome/shell/extensions/tiling-assistant/toggle-tiling-popup "@as []"
+dconf write /org/gnome/shell/extensions/tiling-assistant/window-gap "8"
 
 dconf write /org/gnome/shell/extensions/window-title-is-back/colored-icon "false"
 dconf write /org/gnome/shell/extensions/window-title-is-back/ease-time "0"
