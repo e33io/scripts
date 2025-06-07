@@ -18,11 +18,10 @@ fi
 
 # install other packages
 if [ -f "/etc/debian_version" ]; then
-    sudo apt -y install xautolock brightnessctl
+    sudo apt -y install brightnessctl
 fi
 if [ -f "/etc/pacman.conf" ]; then
     sudo pacman -S brightnessctl
-    yay -S xautolock
 fi
 
 # i3wm specific configs
@@ -50,24 +49,3 @@ if [ -d "$HOME/.config/jwm" ]; then
     # copy laptop-specific Xfce Panel config files
     cp -R $HOME/opt-dots/jwm/options/xfce4 $HOME/.config
 fi
-
-# update rofi-power.sh (lock with i3lock instead of loginctl)
-sed -i 's/loginctl lock-session/#loginctl lock-session/' $HOME/.local/bin/rofi-power.sh
-sed -i 's/#i3lock -c 252525/i3lock -c 252525/' $HOME/.local/bin/rofi-power.sh
-
-# write wakelock.service file
-echo "[Unit]
-Description=Lock the screen on resume from suspend
-Before=sleep.target suspend.target
-
-[Service]
-User=$(whoami)
-Type=forking
-Environment=DISPLAY=:0
-ExecStart=/usr/bin/i3lock -c 252525
-
-[Install]
-WantedBy=sleep.target suspend.target" | sudo tee /etc/systemd/system/wakelock.service > /dev/null
-
-# enable wakelock service
-sudo systemctl enable wakelock

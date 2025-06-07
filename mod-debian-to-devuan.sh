@@ -29,14 +29,8 @@ echo "################################################################"
 echo "Replace systemctl with loginctl"
 echo "################################################################"
 
-if [ -d "$HOME/.config/i3" ]; then
-    sed -i 's/systemctl/loginctl/g' $HOME/.config/i3/laptop.conf
-fi
-if [ -d "$HOME/.config/jwm" ]; then
-    sed -i 's/systemctl/loginctl/g' $HOME/.config/jwm/laptop
-fi
+sed -i 's/systemctl/loginctl/g' $HOME/.local/bin/i3lock-suspend.sh
 sed -i 's/systemctl/loginctl/g' $HOME/.local/bin/rofi-power.sh
-sed -i 's/systemctl/loginctl/g' $HOME/.local/bin/stay-awake.sh
 sed -i 's/systemctl/loginctl/g' $HOME/.bashrc
 
 echo "################################################################"
