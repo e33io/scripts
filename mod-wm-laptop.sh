@@ -26,9 +26,8 @@ fi
 
 # i3wm specific configs
 if [ -d "$HOME/.config/i3" ]; then
-    # update config (include laptop.conf instead of desktop.conf)
-    sed -i 's/include ~\/\.config\/i3\/desktop\.conf/#include ~\/\.config\/i3\/desktop\.conf/' $HOME/.config/i3/config
-    sed -i 's/#include ~\/\.config\/i3\/laptop\.conf/include ~\/\.config\/i3\/laptop\.conf/' $HOME/.config/i3/config
+    # update config (add lock-suspend.sh to xss-lock command)
+    sed -i 's/xss-lock -l/xss-lock -n sh ~\/\.local\/bin\/lock-suspend\.sh -l/' $HOME/.config/i3/config
     # update i3status.conf (window title width in bar)
     sed -i 's/min_width = 2990/min_width = 2776/' $HOME/.config/i3/i3status.conf
     sed -i 's/min_width = 1495/min_width = 1388/' $HOME/.config/i3/i3status.conf
@@ -41,11 +40,15 @@ fi
 
 # JWM specific configs
 if [ -d "$HOME/.config/jwm" ]; then
-    # update jwmrc (include laptop config instead of desktop config)
-    sed -i 's/<Include>\$HOME\/\.config\/jwm\/desktop<\/Include>/<!-- <Include>\$HOME\/\.config\/jwm\/desktop<\/Include> -->/' $HOME/.config/jwm/jwmrc
-    sed -i 's/<!-- <Include>\$HOME\/\.config\/jwm\/laptop<\/Include> -->/<Include>\$HOME\/\.config\/jwm\/laptop<\/Include>/' $HOME/.config/jwm/jwmrc
+    # update startup (add lock-suspend.sh to xss-lock command)
+    sed -i 's/xss-lock -l/xss-lock -n sh ~\/\.local\/bin\/lock-suspend\.sh -l/' $HOME/.config/jwm/startup
     # install xfce4-battery-plugin for Xfce Panel
-    sudo apt -y install xfce4-battery-plugin
+    if [ -f "/etc/debian_version" ]; then
+        sudo apt -y install xfce4-battery-plugin
+    fi
+    if [ -f "/etc/pacman.conf" ]; then
+        sudo pacman -S xfce4-battery-plugin
+    fi
     # copy laptop-specific Xfce Panel config files
     cp -R $HOME/opt-dots/jwm/options/xfce4 $HOME/.config
 fi
