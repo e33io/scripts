@@ -62,8 +62,6 @@ custom Linux installation scripts
 
 - use [`setup-tearfree-intel.sh`](https://github.com/e33io/scripts/blob/main/setup-tearfree-intel.sh) to setup TearFree for Intel GPUs
 
-- use [`laptop-wakelock-service.sh`](https://github.com/e33io/scripts/blob/main/laptop-wakelock-service.sh) to add and enable wakelock service for laptops
-
 &nbsp;
 
 ## links
