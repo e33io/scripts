@@ -85,26 +85,26 @@ fi
 # JWM specific configs
 if [ -d "$HOME/.config/jwm" ]; then
     # update jwm configs (window sizes and window decorations)
-    sed -i 's/<Option>height:1028/<Option>height:514/' $HOME/.config/jwm/windows
-    sed -i 's/<Option>height:1188/<Option>height:594/' $HOME/.config/jwm/windows
-    sed -i 's/<Option>height:1296/<Option>height:648/' $HOME/.config/jwm/windows
-    sed -i 's/<Option>height:1536/<Option>height:768/' $HOME/.config/jwm/windows
-    sed -i 's/<Option>height:1728/<Option>height:864/' $HOME/.config/jwm/windows
-    sed -i 's/<Option>width:1364/<Option>width:682/' $HOME/.config/jwm/windows
-    sed -i 's/<Option>width:1440/<Option>width:720/' $HOME/.config/jwm/windows
-    sed -i 's/<Option>width:1536/<Option>width:768/' $HOME/.config/jwm/windows
-    sed -i 's/<Option>width:1728/<Option>width:864/' $HOME/.config/jwm/windows
-    sed -i 's/<Option>x:1152/<Option>x:576/' $HOME/.config/jwm/windows
-    sed -i 's/<Option>x:1200/<Option>x:600/' $HOME/.config/jwm/windows
-    sed -i 's/<Option>x:1594/<Option>x:797/' $HOME/.config/jwm/windows
-    sed -i 's/<Option>y:312/<Option>y:156/' $HOME/.config/jwm/windows
-    sed -i 's/<Option>y:566/<Option>y:283/' $HOME/.config/jwm/windows
-    sed -i 's/<Option>y:725/<Option>y:362/' $HOME/.config/jwm/windows
+    sed -i 's/<Option>height:1028/<Option>height:514/' $HOME/.config/jwm/jwmrc
+    sed -i 's/<Option>height:1188/<Option>height:594/' $HOME/.config/jwm/jwmrc
+    sed -i 's/<Option>height:1296/<Option>height:648/' $HOME/.config/jwm/jwmrc
+    sed -i 's/<Option>height:1536/<Option>height:768/' $HOME/.config/jwm/jwmrc
+    sed -i 's/<Option>height:1728/<Option>height:864/' $HOME/.config/jwm/jwmrc
+    sed -i 's/<Option>width:1364/<Option>width:682/' $HOME/.config/jwm/jwmrc
+    sed -i 's/<Option>width:1440/<Option>width:720/' $HOME/.config/jwm/jwmrc
+    sed -i 's/<Option>width:1536/<Option>width:768/' $HOME/.config/jwm/jwmrc
+    sed -i 's/<Option>width:1728/<Option>width:864/' $HOME/.config/jwm/jwmrc
+    sed -i 's/<Option>x:1152/<Option>x:576/' $HOME/.config/jwm/jwmrc
+    sed -i 's/<Option>x:1200/<Option>x:600/' $HOME/.config/jwm/jwmrc
+    sed -i 's/<Option>x:1594/<Option>x:797/' $HOME/.config/jwm/jwmrc
+    sed -i 's/<Option>y:312/<Option>y:156/' $HOME/.config/jwm/jwmrc
+    sed -i 's/<Option>y:566/<Option>y:283/' $HOME/.config/jwm/jwmrc
+    sed -i 's/<Option>y:725/<Option>y:362/' $HOME/.config/jwm/jwmrc
     sed -i 's/<Width>4/<Width>2/' $HOME/.config/jwm/themes/*
     sed -i 's/<Height>37/<Height>19/' $HOME/.config/jwm/themes/*
     # update jwm configs (keybindings)
-    sed -i 's/GDK_SCALE=1 brave/brave/' $HOME/.config/jwm/keybindings
-    sed -i 's/GDK_SCALE=1 signal-desktop/signal-desktop/' $HOME/.config/jwm/keybindings
+    sed -i 's/GDK_SCALE=1 brave/brave/' $HOME/.config/jwm/jwmrc
+    sed -i 's/GDK_SCALE=1 signal-desktop/signal-desktop/' $HOME/.config/jwm/jwmrc
     # update rofi/config.rasi (yoffset position)
     sed -i 's/yoffset: -275;/yoffset: -180;/' $HOME/.config/rofi/config.rasi
 fi
