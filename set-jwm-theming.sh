@@ -17,10 +17,10 @@ if [ "$(id -u)" = 0 ]; then
     exit 1
 fi
 
-if ! { [ -f "/etc/debian_version" ]; }; then
+if ! { [ -f "/etc/debian_version" ] || [ -f "/etc/pacman.conf" ]; }; then
     echo "################################################################"
     echo "This script is NOT compatible with your version of Linux!"
-    echo "It only works with Debian Linux, and it will"
+    echo "It only works with Debian or Arch Linux and it will"
     echo "exit now without running."
     echo "################################################################"
     exit 1
@@ -32,6 +32,9 @@ if [ ! -n "$(ls -d /usr/share/themes/Mint-*-Dark-Mod-* 2>/dev/null)" ]; then
     if [ -f "/etc/debian_version" ]; then
         sh $HOME/scripts-theming/install-mint-themes.sh
     fi
+    if [ -f "/etc/pacman.conf" ]; then
+        sh $HOME/scripts-theming/install-mint-themes-arch.sh
+    fi
     sudo rm -R $HOME/scripts-theming
 fi
 
@@ -39,6 +42,9 @@ fi
 if [ ! -n "$(ls -d /usr/bin/papirus-folders 2>/dev/null)" ]; then
     if [ -f "/etc/debian_version" ]; then
         sudo apt -y install papirus-icon-theme
+    fi
+    if [ -f "/etc/pacman.conf" ]; then
+        sudo pacman -S papirus-icon-theme
     fi
     wget -qO- https://git.io/papirus-folders-install | sh
 fi
