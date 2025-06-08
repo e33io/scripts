@@ -41,7 +41,7 @@ fi
 # JWM specific configs
 if [ -d "$HOME/.config/jwm" ]; then
     # update startup (add lock-suspend.sh to xss-lock command)
-    sed -i 's/xss-lock -l/xss-lock -n sh ~\/\.local\/bin\/lock-suspend\.sh -l/' $HOME/.config/jwm/startup
+    sed -i 's/xss-lock -l/xss-lock -n sh ~\/\.local\/bin\/lock-suspend\.sh -l/' $HOME/.config/jwm/jwmrc
     # install xfce4-battery-plugin for Xfce Panel
     if [ -f "/etc/debian_version" ]; then
         sudo apt -y install xfce4-battery-plugin
