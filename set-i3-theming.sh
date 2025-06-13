@@ -131,7 +131,7 @@ Adwaita_Dark () {
     # CAVA foreground color
     cava_fg_color="#1c6dcf"
     # Desktop background color
-    desktop_bg_color="#0b2f5a"
+    desktop_bg_color="#202a36"
     # GUI and TUI theme names
     prefer_dark_theme="1"
     gtk_theme=Adwaita-dark
@@ -166,7 +166,7 @@ Adwaita_Darker () {
     # CAVA foreground color
     cava_fg_color="#15539e"
     # Desktop background color
-    desktop_bg_color="#0b2f5a"
+    desktop_bg_color="#202a36"
     # GUI and TUI theme names
     prefer_dark_theme="1"
     gtk_theme=Adwaita-dark
@@ -201,7 +201,7 @@ Adwaita_Light () {
     # CAVA foreground color
     cava_fg_color="#3584e4"
     # Desktop background color
-    desktop_bg_color="#0f3a6f"
+    desktop_bg_color="#303e50"
     # GUI and TUI theme names
     prefer_dark_theme="0"
     gtk_theme=Adwaita
@@ -236,7 +236,7 @@ Mint_L_Dark_Mod_Brown () {
     # CAVA foreground color
     cava_fg_color="#9c7e65"
     # Desktop background color
-    desktop_bg_color="#382d24"
+    desktop_bg_color="#32271e"
     # GUI and TUI theme names
     prefer_dark_theme="1"
     gtk_theme=Mint-L-Dark-Mod-Brown
@@ -272,7 +272,7 @@ Mint_L_Dark_Mod_Teal () {
     # CAVA foreground color
     cava_fg_color="#579c8e"
     # Desktop background color
-    desktop_bg_color="#1d3430"
+    desktop_bg_color="#1b2d29"
     # GUI and TUI theme names
     prefer_dark_theme="1"
     gtk_theme=Mint-L-Dark-Mod-Teal
@@ -308,7 +308,7 @@ Mint_Y_Dark_Mod_Blue () {
     # CAVA foreground color
     cava_fg_color="#0c75de"
     # Desktop background color
-    desktop_bg_color="#052f5a"
+    desktop_bg_color="#202a35"
     # GUI and TUI theme names
     prefer_dark_theme="1"
     gtk_theme=Mint-Y-Dark-Mod-Blue
@@ -344,7 +344,7 @@ Mint_Y_Dark_Mod_Green () {
     # CAVA foreground color
     cava_fg_color="#35a854"
     # Desktop background color
-    desktop_bg_color="#12361c"
+    desktop_bg_color="#1b2d20"
     # GUI and TUI theme names
     prefer_dark_theme="1"
     gtk_theme=Mint-Y-Dark-Mod-Green
@@ -380,7 +380,7 @@ Mint_Y_Dark_Mod_Grey () {
     # CAVA foreground color
     cava_fg_color="#8e9197"
     # Desktop background color
-    desktop_bg_color="#2e2f32"
+    desktop_bg_color="#282a2c"
     # GUI and TUI theme names
     prefer_dark_theme="1"
     gtk_theme=Mint-Y-Dark-Mod-Grey
@@ -416,7 +416,7 @@ Mint_Y_Dark_Mod_Orange () {
     # CAVA foreground color
     cava_fg_color="#ff7139"
     # Desktop background color
-    desktop_bg_color="#591900"
+    desktop_bg_color="#352620"
     # GUI and TUI theme names
     prefer_dark_theme="1"
     gtk_theme=Mint-Y-Dark-Mod-Orange
@@ -452,7 +452,7 @@ Mint_Y_Dark_Mod_Purple () {
     # CAVA foreground color
     cava_fg_color="#8c5dd9"
     # Desktop background color
-    desktop_bg_color="#321d56"
+    desktop_bg_color="#2e253e"
     # GUI and TUI theme names
     prefer_dark_theme="1"
     gtk_theme=Mint-Y-Dark-Mod-Purple
@@ -488,7 +488,7 @@ Mint_Y_Dark_Mod_Red () {
     # CAVA foreground color
     cava_fg_color="#e82127"
     # Desktop background color
-    desktop_bg_color="#57090b"
+    desktop_bg_color="#3b2324"
     # GUI and TUI theme names
     prefer_dark_theme="1"
     gtk_theme=Mint-Y-Dark-Mod-Red
@@ -524,7 +524,7 @@ Mint_Y_Dark_Mod_Teal () {
     # CAVA foreground color
     cava_fg_color="#199ca8"
     # Desktop background color
-    desktop_bg_color="#083539"
+    desktop_bg_color="#1b2c2e"
     # GUI and TUI theme names
     prefer_dark_theme="1"
     gtk_theme=Mint-Y-Dark-Mod-Teal
