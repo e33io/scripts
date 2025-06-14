@@ -100,10 +100,10 @@ echo "################################################################"
 echo "Install Qt and Kvantum styling packages"
 echo "################################################################"
 
-sudo apt -y install adwaita-qt qt5-style-plugins qt5-style-kvantum
+sudo apt -y install adwaita-qt* qt5-style-kvantum
 
 if [ ! -f "/bin/lxqt-session" ]; then
-    sudo apt -y install qt5ct
+    sudo apt -y install qt*ct
 fi
 
 echo "################################################################"
@@ -130,6 +130,16 @@ if [ -f "/usr/bin/qt5ct" ]; then
 
     sudo mkdir -p /root/.config/qt5ct
     sudo ln -sf $HOME/.config/qt5ct/qt5ct.conf /root/.config/qt5ct/qt5ct.conf
+fi
+
+if [ -f "/usr/bin/qt6ct" ]; then
+    echo "################################################################"
+    echo "Link config files to root user directories for styling"
+    echo "su/root applications if using qt6ct app"
+    echo "################################################################"
+
+    sudo mkdir -p /root/.config/qt6ct
+    sudo ln -sf $HOME/.config/qt6ct/qt6ct.conf /root/.config/qt6ct/qt6ct.conf
 fi
 
 echo "################################################################"
