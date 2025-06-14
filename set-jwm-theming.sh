@@ -65,10 +65,8 @@ theming_files () {
     sed -i "s/^style=.*/style=$qt_ct_theme/" $HOME/.config/qt5ct/qt5ct.conf
     sed -i "s/icon_theme=.*/icon_theme=$icon_theme/" $HOME/.config/qt5ct/qt5ct.conf
     # Qt6ct theme and icon theme
-    if [ -d "$HOME/.config/qt6ct" ]; then
-        sed -i "s/^style=.*/style=$qt_ct_theme/" $HOME/.config/qt6ct/qt6ct.conf
-        sed -i "s/icon_theme=.*/icon_theme=$icon_theme/" $HOME/.config/qt6ct/qt6ct.conf
-    fi
+    sed -i "s/^style=.*/style=$qt_ct_theme/" $HOME/.config/qt6ct/qt6ct.conf
+    sed -i "s/icon_theme=.*/icon_theme=$icon_theme/" $HOME/.config/qt6ct/qt6ct.conf
     # Kvantum theme
     if [ ! -f "$HOME/.config/Kvantum" ]; then
         mkdir -p $HOME/.config/Kvantum
@@ -81,7 +79,9 @@ theming_files () {
     # Desktop background color (only visible if no wallpaper is set)
     sed -i "s/xsetroot -solid \".*\"/xsetroot -solid \"$desktop_bg_color\"/" $HOME/.profile
     # Nitrogen desktop background color (visible if semi-transparent wallpaper is set)
-    sed -i "s/bgcolor=.*/bgcolor=$desktop_bg_color/" $HOME/.config/nitrogen/bg-saved.cfg
+    if [ -f "$HOME/.config/nitrogen/bg-saved.cfg" ]; then
+        sed -i "s/bgcolor=.*/bgcolor=$desktop_bg_color/" $HOME/.config/nitrogen/bg-saved.cfg
+    fi
     # CAVA foreground color
     if [ -f "$HOME/.config/cava/config" ]; then
         sed -i "s/^foreground = .*/foreground = '$cava_fg_color'/" $HOME/.config/cava/config
