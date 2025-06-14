@@ -19,9 +19,6 @@ custom Linux installation scripts
 - use the script below with an [Arch](https://wiki.archlinux.org/title/Archinstall) "GNOME" installation
 	- use [`arch-gnome-post-install.sh`](https://github.com/e33io/scripts/blob/main/arch-gnome-post-install.sh) to customize Gnome
 
-- use the script below with a [Fedora Workstation](https://fedoraproject.org/workstation) installation
-	- use [`fed-gnome-post-install.sh`](https://github.com/e33io/scripts/blob/main/fed-gnome-post-install.sh) to customize Gnome
-
 &nbsp;
 
 ## applications

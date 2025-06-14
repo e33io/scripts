@@ -79,25 +79,6 @@ if [ -f "/etc/pacman.conf" ]; then
     dconf write /org/gnome/desktop/app-folders/folders/YaST/translate "true"
 fi
 
-# Fedora specific settings
-if [ -f "/etc/dnf/dnf.conf" ]; then
-    dconf write /org/gnome/desktop/app-folders/folder-children "['System', 'Utilities', 'YaST', 'Pardus', 'a8997e7e-188b-4a9b-b07e-c19a3d4cb1d8']"
-    dconf write /org/gnome/desktop/app-folders/folders/Pardus/categories "['X-Pardus-Apps']"
-    dconf write /org/gnome/desktop/app-folders/folders/Pardus/name "'X-Pardus-Apps.directory'"
-    dconf write /org/gnome/desktop/app-folders/folders/Pardus/translate "true"
-    dconf write /org/gnome/desktop/app-folders/folders/System/apps "['org.gnome.SystemMonitor.desktop', 'org.gnome.baobab.desktop', 'org.gnome.DiskUtility.desktop', 'org.gnome.Logs.desktop', 'org.freedesktop.MalcontentControl.desktop', 'org.freedesktop.GnomeAbrt.desktop', 'htop.desktop', 'org.torproject.torbrowser-launcher.settings.desktop', 'input-remapper-gtk.desktop']"
-    dconf write /org/gnome/desktop/app-folders/folders/System/name "'X-GNOME-Shell-System.directory'"
-    dconf write /org/gnome/desktop/app-folders/folders/System/translate "true"
-    dconf write /org/gnome/desktop/app-folders/folders/Utilities/apps "['org.gnome.Connections.desktop', 'org.gnome.Evince.desktop', 'org.gnome.Loupe.desktop', 'simple-scan.desktop', 'org.gnome.font-viewer.desktop', 'org.gnome.Characters.desktop', 'org.gnome.Tour.desktop', 'yelp.desktop', 'org.gnome.Snapshot.desktop', 'hp-uiscan.desktop', 'hplip.desktop']"
-    dconf write /org/gnome/desktop/app-folders/folders/Utilities/name "'X-GNOME-Shell-Utilities.directory'"
-    dconf write /org/gnome/desktop/app-folders/folders/Utilities/translate "true"
-    dconf write /org/gnome/desktop/app-folders/folders/YaST/categories "['X-SuSE-YaST']"
-    dconf write /org/gnome/desktop/app-folders/folders/YaST/name "'suse-yast.directory'"
-    dconf write /org/gnome/desktop/app-folders/folders/YaST/translate "true"
-    dconf write /org/gnome/desktop/app-folders/folders/a8997e7e-188b-4a9b-b07e-c19a3d4cb1d8/apps "['libreoffice-calc.desktop', 'libreoffice-writer.desktop', 'libreoffice-impress.desktop', 'org.gnome.Calendar.desktop', 'org.gnome.Contacts.desktop']"
-    dconf write /org/gnome/desktop/app-folders/folders/a8997e7e-188b-4a9b-b07e-c19a3d4cb1d8/name "'Office'"
-fi
-
 dconf write /org/gnome/desktop/background/picture-uri "'file:///usr/share/backgrounds/gnome/drool-l.svg'"
 dconf write /org/gnome/desktop/background/picture-uri-dark "'file:///usr/share/backgrounds/gnome/drool-d.svg'"
 
@@ -209,12 +190,6 @@ if [ -f "/etc/pacman.conf" ]; then
     dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/command "'ghostty'"
     dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/name "'Ghostty Terminal'"
 fi
-# Fedora specific settings
-if [ -f "/etc/dnf/dnf.conf" ]; then
-    dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/binding "'<Super>Return'"
-    dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/command "'ptyxis --new-window'"
-    dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/name "'Gnome Terminal'"
-fi
 dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/binding "'<Shift><Super>Return'"
 dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/command "'nautilus --new-window'"
 dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/name "'Gnome File Manager'"
@@ -225,12 +200,7 @@ dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/cus
 dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/command "'gnome-text-editor --new-window'"
 dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/name "'Gnome Text Editor - New Window'"
 dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/binding "'<Super>c'"
-# Flatpak specific settings
-if [ -d "/var/lib/flatpak/app/org.signal.Signal" ]; then
-    dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/command "'flatpak run org.signal.Signal'"
-else
-    dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/command "'signal-desktop'"
-fi
+dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/command "'signal-desktop'"
 dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/name "'Signal App'"
 
 dconf write /org/gnome/settings-daemon/plugins/power/sleep-inactive-ac-type "'nothing'"
@@ -251,17 +221,6 @@ if [ -f "/etc/pacman.conf" ]; then
     dconf write /org/gnome/shell/enabled-extensions "['appindicatorsupport@rgcjonas.gmail.com', 'dash-to-dock@micxgx.gmail.com', 'transparent-top-bar@ftpix.com', 'disable-workspace-switcher-overlay@cleardevice', 'disable-workspace-animation@ethnarque', 'space-bar@luchrioh', 'window-title-is-back@fthx', 'overviewbackground@github.com.orbitcorrection', 'impatience@gfxmonk.net', 'tiling-assistant@leleat-on-github']"
 
     dconf write /org/gnome/shell/favorite-apps "['org.gnome.Nautilus.desktop', 'brave-browser.desktop', 'org.torproject.torbrowser-launcher.desktop', 'signal-desktop.desktop', 'org.gnome.Music.desktop', 'org.darktable.darktable.desktop', 'gimp.desktop', 'org.inkscape.Inkscape.desktop', 'org.gnome.TextEditor.desktop', 'com.mitchellh.ghostty.desktop']"
-fi
-
-# Fedora specific settings
-if [ -f "/etc/dnf/dnf.conf" ]; then
-    dconf write /org/gnome/shell/app-picker-layout "[{'org.mozilla.firefox.desktop': <{'position': <0>}>, 'a8997e7e-188b-4a9b-b07e-c19a3d4cb1d8': <{'position': <1>}>, 'org.gnome.Calculator.desktop': <{'position': <2>}>, 'org.gnome.clocks.desktop': <{'position': <3>}>, 'org.gnome.Weather.desktop': <{'position': <4>}>, 'org.gnome.Maps.desktop': <{'position': <5>}>, 'org.gnome.Totem.desktop': <{'position': <6>}>, 'org.gnome.Decibels.desktop': <{'position': <7>}>, 'org.gnome.Settings.desktop': <{'position': <8>}>, 'org.gnome.tweaks.desktop': <{'position': <9>}>, 'com.mattjakeman.ExtensionManager.desktop': <{'position': <10>}>, 'ca.desrt.dconf-editor.desktop': <{'position': <11>}>, 'Utilities': <{'position': <12>}>, 'System': <{'position': <13>}>, 'timeshift-gtk.desktop': <{'position': <14>}>, 'org.gnome.Software.desktop': <{'position': <15>}>, 'org.fedoraproject.MediaWriter.desktop': <{'position': <16>}>, 'org.gnome.Boxes.desktop': <{'position': <17>}>, 'filezilla.desktop': <{'position': <18>}>, 'nl.hjdskes.gcolor3.desktop': <{'position': <19>}>}]"
-
-    dconf write /org/gnome/shell/disabled-extensions "['background-logo@fedorahosted.org']"
-
-    dconf write /org/gnome/shell/enabled-extensions "['appindicatorsupport@rgcjonas.gmail.com', 'dash-to-dock@micxgx.gmail.com', 'transparent-top-bar@ftpix.com', 'disable-workspace-switcher-overlay@cleardevice', 'disable-workspace-animation@ethnarque', 'space-bar@luchrioh', 'window-title-is-back@fthx', 'overviewbackground@github.com.orbitcorrection', 'impatience@gfxmonk.net', 'tiling-assistant@leleat-on-github']"
-
-    dconf write /org/gnome/shell/favorite-apps "['org.gnome.Nautilus.desktop', 'brave-browser.desktop', 'org.torproject.torbrowser-launcher.desktop', 'org.signal.Signal.desktop', 'org.gnome.Rhythmbox3.desktop', 'org.darktable.darktable.desktop', 'gimp.desktop', 'org.inkscape.Inkscape.desktop', 'org.gnome.TextEditor.desktop', 'org.gnome.Ptyxis.desktop']"
 fi
 
 dconf write /org/gnome/shell/last-selected-power-profile "'performance'"
