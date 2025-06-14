@@ -40,7 +40,7 @@ echo "################################################################"
 echo "Install Xfce and other core packages"
 echo "################################################################"
 
-sudo apt -y install xfce4 xfce4-terminal xfce4-power-manager xfce4-screenshooter xfce4-taskmanager xfce4-sntray-plugin thunar-archive-plugin engrampa network-manager-gnome light-locker slick-greeter gvfs-fuse gvfs-backends nfs-common cifs-utils tumbler-plugins-extra xclip mousepad menulibre gnome-themes-extra qt5ct qt5-style-plugins adwaita-qt papirus-icon-theme fonts-noto-color-emoji plymouth plymouth-themes
+sudo apt -y install xfce4 xfce4-terminal xfce4-power-manager xfce4-screenshooter xfce4-taskmanager xfce4-sntray-plugin thunar-archive-plugin engrampa network-manager-gnome light-locker slick-greeter gvfs-fuse gvfs-backends nfs-common cifs-utils tumbler-plugins-extra xclip mousepad menulibre gnome-themes-extra qt*ct adwaita-qt* papirus-icon-theme breeze-icon-theme fonts-noto-color-emoji plymouth plymouth-themes
 
 echo "################################################################"
 echo "Install other packages"
@@ -102,7 +102,9 @@ sudo cp -R $HOME/opt-dots/xfce/usr/share /usr
 sudo mkdir -p /boot/grub/fonts
 sudo cp -R /usr/share/grub/ter-* /boot/grub/fonts
 sudo mkdir -p /root/.config/qt5ct
+sudo mkdir -p /root/.config/qt6ct
 sudo ln -s $HOME/.config/qt5ct/qt5ct.conf /root/.config/qt5ct/qt5ct.conf
+sudo ln -s $HOME/.config/qt6ct/qt6ct.conf /root/.config/qt6ct/qt6ct.conf
 sudo ln -sf /usr/share/wallpapers/background.png /usr/share/images/desktop-base/default
 sudo update-initramfs -u
 sudo update-grub
