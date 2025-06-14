@@ -50,20 +50,13 @@ if [ -f "/bin/gnome-shell" ]; then
     echo "################################################################"
 
     sudo apt -y install yaru-theme-gnome-shell yaru-theme-sound
-
-    echo "################################################################"
-    echo "Remove unneeded font-weight override to fix font-weight"
-    echo "issues in Gnome shell panel (top bar)"
-    echo "################################################################"
-
-    sudo sed -i 's/font-weight: normal !important;/\/\* font-weight: normal !important; \*\//' /usr/share/gnome-shell/theme/Yaru*/gnome-shell.css
 else
     echo "################################################################"
     echo "Install Qt and Kvantum styling packages for desktop"
     echo "environments and window managers other than Gnome"
     echo "################################################################"
 
-    sudo apt -y install adwaita-qt qt5-style-plugins qt5-style-kvantum git
+    sudo apt -y install adwaita-qt* qt5-style-kvantum git
 
     echo "################################################################"
     echo "Clone and copy Kvantum KvYaru-Colors Qt themes"
@@ -92,7 +85,7 @@ if ! { [ -f "/bin/gnome-shell" ] || [ -f "/bin/lxqt-session" ]; }; then
     echo "window managers other than Gnome or LXQt"
     echo "################################################################"
 
-    sudo apt -y install qt5ct
+    sudo apt -y install qt*ct
 fi
 
 if [ -f "/usr/bin/lxappearance" ]; then
@@ -124,6 +117,16 @@ if [ -f "/usr/bin/qt5ct" ]; then
 
     sudo mkdir -p /root/.config/qt5ct
     sudo ln -sf $HOME/.config/qt5ct/qt5ct.conf /root/.config/qt5ct/qt5ct.conf
+fi
+
+if [ -f "/usr/bin/qt6ct" ]; then
+    echo "################################################################"
+    echo "Link config files to root user directories for styling"
+    echo "su/root applications if using qt6ct app"
+    echo "################################################################"
+
+    sudo mkdir -p /root/.config/qt6ct
+    sudo ln -sf $HOME/.config/qt6ct/qt6ct.conf /root/.config/qt6ct/qt6ct.conf
 fi
 
 echo "################################################################"
