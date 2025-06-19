@@ -173,6 +173,16 @@ while true; do
     esac
 done
 
+pc_type="$(hostnamectl chassis)"
+if [ $pc_type = vm ]; then
+    echo "################################################################"
+    echo "Install spice-vdagent and update lightdm scaling"
+    echo "################################################################"
+
+    sudo apt -y install spice-vdagent
+    sudo sed -i 's/GDK_SCALE=2/GDK_SCALE=1/' /etc/lightdm/Xgsession
+fi
+
 echo "################################################################"
 echo "Update x-terminal-emulator and x-www-browser settings"
 echo "################################################################"
