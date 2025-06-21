@@ -152,7 +152,7 @@ echo "################################################################"
 sudo update-alternatives --set x-www-browser /usr/bin/brave-browser-stable
 
 echo "#########################################################"
-echo "Add bookmarks and clean up user directory"
+echo "Add bookmarks, add wallpaper and clean up user directory"
 echo "#########################################################"
 
 xdg-user-dirs-update
@@ -161,6 +161,9 @@ file:///home/$(whoami)/Documents
 file:///home/$(whoami)/Pictures
 file:///home/$(whoami)/Videos
 file:///home/$(whoami)/Music" > $HOME/.config/gtk-3.0/bookmarks
+sudo wget -q https://i.e33.io/wp/rancho-twilight-4k.jpg -P /usr/share/backgrounds
+dconf write /org/mate/desktop/background/picture-filename "'/usr/share/backgrounds/rancho-twilight-4k.jpg'"
+dconf write /org/mate/screensaver/picture-filename "'/usr/share/backgrounds/rancho-twilight-4k.jpg'"
 sudo rm -Rf /usr/share/applications/imv-folder.desktop
 sudo rm -R $HOME/dotfiles
 sudo rm -R $HOME/opt-dots
