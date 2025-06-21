@@ -145,6 +145,15 @@ echo "#########################################################"
 
 echo "IndicatorSize=6" | sudo tee -a /usr/share/plank/themes/Transparent/dock.theme
 
+pc_type="$(hostnamectl chassis)"
+if [ $pc_type = vm ]; then
+    echo "################################################################"
+    echo "Install spice-vdagent"
+    echo "################################################################"
+
+    sudo apt -y install spice-vdagent
+fi
+
 echo "################################################################"
 echo "Update x-www-browser settings"
 echo "################################################################"
