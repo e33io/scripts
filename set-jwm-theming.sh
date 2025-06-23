@@ -76,6 +76,10 @@ theming_files () {
     # Rofi theme and icon theme
     sed -i "s/rofi\/themes\/.*\"/rofi\/themes\/$rofi_theme\.rasi\"/" $HOME/.config/rofi/config.rasi
     sed -i "s/icon-theme: \".*\"/icon-theme: \"$icon_theme\"/" $HOME/.config/rofi/config.rasi
+    # i3lock background color
+    lock_bg_color=$(echo "$desktop_bg_color" | sed 's/^.//')
+    sed -i "s/i3lock -c .* &/i3lock -c $lock_bg_color &/" $HOME/.local/bin/lock-suspend.sh
+    sed -i "s/i3lock -n -c .*</i3lock -n -c $lock_bg_color</" $HOME/.config/jwm/jwmrc
     # Lightdm desktop background color (visible if no wallpaper is set)
     if [ -f "/etc/lightdm/lightdm-gtk-greeter.conf" ]; then
         sudo sed -i "s/^background =.*/background = $desktop_bg_color/" /etc/lightdm/lightdm-gtk-greeter.conf
@@ -90,7 +94,7 @@ theming_files () {
     fi
     # Papirus folders color
     if [ -f "/usr/bin/papirus-folders" ]; then
-        papirus-folders -C $papirus_folders --theme Papirus-Dark
+        papirus-folders -C $papirus_folders --theme $icon_theme
     fi
 }
 
