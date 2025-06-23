@@ -76,6 +76,10 @@ theming_files () {
     # Rofi theme and icon theme
     sed -i "s/rofi\/themes\/.*\"/rofi\/themes\/$rofi_theme\.rasi\"/" $HOME/.config/rofi/config.rasi
     sed -i "s/icon-theme: \".*\"/icon-theme: \"$icon_theme\"/" $HOME/.config/rofi/config.rasi
+    # Lightdm desktop background color (visible if no wallpaper is set)
+    if [ -f "/etc/lightdm/lightdm-gtk-greeter.conf" ]; then
+        sudo sed -i "s/^background =.*/background = $desktop_bg_color/" /etc/lightdm/lightdm-gtk-greeter.conf
+    fi
     # Nitrogen desktop background color (visible if semi-transparent wallpaper is set)
     if [ -f "$HOME/.config/nitrogen/bg-saved.cfg" ]; then
         sed -i "s/bgcolor=.*/bgcolor=$desktop_bg_color/" $HOME/.config/nitrogen/bg-saved.cfg
