@@ -29,8 +29,12 @@ echo "################################################################"
 echo "Replace systemctl with loginctl"
 echo "################################################################"
 
-sed -i 's/systemctl/loginctl/g' $HOME/.local/bin/i3lock-suspend.sh
-sed -i 's/systemctl/loginctl/g' $HOME/.local/bin/rofi-power.sh
+if [ -f "$HOME/.local/bin/lock-suspend.sh" ]; then
+    sed -i 's/systemctl/loginctl/g' $HOME/.local/bin/lock-suspend.sh
+fi
+if [ -f "$HOME/.local/bin/rofi-power.sh" ]; then
+    sed -i 's/systemctl/loginctl/g' $HOME/.local/bin/rofi-power.sh
+fi
 sed -i 's/systemctl/loginctl/g' $HOME/.bashrc
 
 echo "################################################################"
