@@ -80,9 +80,11 @@ theming_files () {
     lock_bg_color=$(echo "$desktop_bg_color" | sed 's/^.//')
     sed -i "s/i3lock -c .* &/i3lock -c $lock_bg_color &/" $HOME/.local/bin/lock-suspend.sh
     sed -i "s/i3lock -n -c .*</i3lock -n -c $lock_bg_color</" $HOME/.config/jwm/jwmrc
-    # Lightdm desktop background color (visible if no wallpaper is set)
+    # Lightdm background color, GTK 3 theme and icon theme
     if [ -f "/etc/lightdm/lightdm-gtk-greeter.conf" ]; then
         sudo sed -i "s/^background =.*/background = $desktop_bg_color/" /etc/lightdm/lightdm-gtk-greeter.conf
+        sudo sed -i "s/^icon-theme-name =.*/icon-theme-name = $icon_theme/" /etc/lightdm/lightdm-gtk-greeter.conf
+        sudo sed -i "s/^theme-name =.*/theme-name = $gtk_theme/" /etc/lightdm/lightdm-gtk-greeter.conf
     fi
     # Nitrogen desktop background color (visible if semi-transparent wallpaper is set)
     if [ -f "$HOME/.config/nitrogen/bg-saved.cfg" ]; then
