@@ -95,7 +95,7 @@ theming_files () {
     # i3lock background color
     lock_bg_color=$(echo "$desktop_bg_color" | sed 's/^.//')
     sed -i "s/i3lock -n -c .*/i3lock -n -c $lock_bg_color/" $HOME/.config/i3/config
-    sed -i "s/i3lock -c .* &/i3lock -c $lock_bg_color &/" $HOME/.local/bin/lock-suspend.sh
+    sed -i "s/i3lock -c .* \&/i3lock -c $lock_bg_color \&/" $HOME/.local/bin/lock-suspend.sh
     # Lightdm background color, GTK 3 theme and icon theme
     if [ -f "/etc/lightdm/lightdm-gtk-greeter.conf" ]; then
         sudo sed -i "s/^background =.*/background = $desktop_bg_color/" /etc/lightdm/lightdm-gtk-greeter.conf
