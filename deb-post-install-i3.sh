@@ -187,6 +187,14 @@ if [ $pc_type = vm ]; then
     sudo sed -i 's/GDK_SCALE=2/GDK_SCALE=1/' /etc/lightdm/Xgsession
 fi
 
+if [ -f "/etc/devuan_version" ]; then
+    echo "################################################################"
+    echo "Update Debian configs for use with Devuan Linux"
+    echo "################################################################"
+
+    sh mod-debian-to-devuan.sh
+fi
+
 echo "################################################################"
 echo "Update x-terminal-emulator and x-www-browser settings"
 echo "################################################################"
