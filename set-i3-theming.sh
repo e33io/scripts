@@ -108,7 +108,7 @@ theming_files () {
     fi
     # CAVA foreground color
     if [ -f "$HOME/.config/cava/config" ]; then
-        sed -i "s/^foreground = .*/foreground = '$cava_fg_color'/" $HOME/.config/cava/config
+        sed -i "s/^foreground = .*/foreground = '$accent_color'/" $HOME/.config/cava/config
     fi
     # Papirus folders color
     if [ -f "/usr/bin/papirus-folders" ]; then
@@ -136,8 +136,8 @@ Adwaita_Dark () {
     client_urgent="#a80e15 #a80e15 #ffffff #dc121b #a80e15"
     client_placeholder="#1e1e1e #1e1e1e #eeeeee #1e1e1e #1e1e1e"
     client_background="#7f7f7f"
-    # CAVA foreground color
-    cava_fg_color="#1c6dcf"
+    # Theme accent color
+    accent_color="#1c6dcf"
     # Desktop background color
     desktop_bg_color="#202a36"
     # GUI and TUI theme names
@@ -171,8 +171,8 @@ Adwaita_Darker () {
     client_urgent="#a80e15 #a80e15 #f4f4f4 #dc121b #a80e15"
     client_placeholder="#1e1e1e #1e1e1e #eeeeee #1e1e1e #1e1e1e"
     client_background="#7f7f7f"
-    # CAVA foreground color
-    cava_fg_color="#15539e"
+    # Theme accent color
+    accent_color="#15539e"
     # Desktop background color
     desktop_bg_color="#202a36"
     # GUI and TUI theme names
@@ -206,8 +206,8 @@ Adwaita_Light () {
     client_urgent="#aa0e15 #aa0e15 #ffffff #e6131d #aa0e15"
     client_placeholder="#f6f5f4 #f6f5f4 #2e3436 #f6f5f4 #f6f5f4"
     client_background="#7f7f7f"
-    # CAVA foreground color
-    cava_fg_color="#3584e4"
+    # Theme accent color
+    accent_color="#3584e4"
     # Desktop background color
     desktop_bg_color="#303e50"
     # GUI and TUI theme names
@@ -241,8 +241,8 @@ Mint_L_Dark_Mod_Brown () {
     client_urgent="#ae0e16 #ae0e16 #ffffff #e2121d #ae0e16"
     client_placeholder="#1e1e1e #1e1e1e #eeeeee #1e1e1e #1e1e1e"
     client_background="#7f7f7f"
-    # CAVA foreground color
-    cava_fg_color="#9c7e65"
+    # Theme accent color
+    accent_color="#9c7e65"
     # Desktop background color
     desktop_bg_color="#32271e"
     # GUI and TUI theme names
@@ -277,8 +277,8 @@ Mint_L_Dark_Mod_Teal () {
     client_urgent="#ae0e16 #ae0e16 #ffffff #e2121d #ae0e16"
     client_placeholder="#1e1e1e #1e1e1e #eeeeee #1e1e1e #1e1e1e"
     client_background="#7f7f7f"
-    # CAVA foreground color
-    cava_fg_color="#579c8e"
+    # Theme accent color
+    accent_color="#579c8e"
     # Desktop background color
     desktop_bg_color="#1b2d29"
     # GUI and TUI theme names
@@ -313,8 +313,8 @@ Mint_Y_Dark_Mod_Blue () {
     client_urgent="#ae0e16 #ae0e16 #ffffff #e2121d #ae0e16"
     client_placeholder="#1e1e1e #1e1e1e #eeeeee #1e1e1e #1e1e1e"
     client_background="#7f7f7f"
-    # CAVA foreground color
-    cava_fg_color="#0c75de"
+    # Theme accent color
+    accent_color="#0c75de"
     # Desktop background color
     desktop_bg_color="#202a35"
     # GUI and TUI theme names
@@ -349,8 +349,8 @@ Mint_Y_Dark_Mod_Green () {
     client_urgent="#ae0e16 #ae0e16 #ffffff #e2121d #ae0e16"
     client_placeholder="#1e1e1e #1e1e1e #eeeeee #1e1e1e #1e1e1e"
     client_background="#7f7f7f"
-    # CAVA foreground color
-    cava_fg_color="#35a854"
+    # Theme accent color
+    accent_color="#35a854"
     # Desktop background color
     desktop_bg_color="#1b2d20"
     # GUI and TUI theme names
@@ -385,8 +385,8 @@ Mint_Y_Dark_Mod_Grey () {
     client_urgent="#ae0e16 #ae0e16 #ffffff #e2121d #ae0e16"
     client_placeholder="#1e1e1e #1e1e1e #eeeeee #1e1e1e #1e1e1e"
     client_background="#7f7f7f"
-    # CAVA foreground color
-    cava_fg_color="#8e9197"
+    # Theme accent color
+    accent_color="#8e9197"
     # Desktop background color
     desktop_bg_color="#282a2c"
     # GUI and TUI theme names
@@ -421,8 +421,8 @@ Mint_Y_Dark_Mod_Orange () {
     client_urgent="#ae0e16 #ae0e16 #ffffff #e2121d #ae0e16"
     client_placeholder="#1e1e1e #1e1e1e #eeeeee #1e1e1e #1e1e1e"
     client_background="#7f7f7f"
-    # CAVA foreground color
-    cava_fg_color="#ff7139"
+    # Theme accent color
+    accent_color="#ff7139"
     # Desktop background color
     desktop_bg_color="#352620"
     # GUI and TUI theme names
@@ -457,8 +457,8 @@ Mint_Y_Dark_Mod_Purple () {
     client_urgent="#ae0e16 #ae0e16 #ffffff #e2121d #ae0e16"
     client_placeholder="#1e1e1e #1e1e1e #eeeeee #1e1e1e #1e1e1e"
     client_background="#7f7f7f"
-    # CAVA foreground color
-    cava_fg_color="#8c5dd9"
+    # Theme accent color
+    accent_color="#8c5dd9"
     # Desktop background color
     desktop_bg_color="#2e253e"
     # GUI and TUI theme names
@@ -493,8 +493,8 @@ Mint_Y_Dark_Mod_Red () {
     client_urgent="#eeeeee #eeeeee #c9161a #c4c4c4 #eeeeee"
     client_placeholder="#1e1e1e #1e1e1e #eeeeee #1e1e1e #1e1e1e"
     client_background="#7f7f7f"
-    # CAVA foreground color
-    cava_fg_color="#e82127"
+    # Theme accent color
+    accent_color="#e82127"
     # Desktop background color
     desktop_bg_color="#3b2324"
     # GUI and TUI theme names
@@ -529,8 +529,8 @@ Mint_Y_Dark_Mod_Teal () {
     client_urgent="#ae0e16 #ae0e16 #ffffff #e2121d #ae0e16"
     client_placeholder="#1e1e1e #1e1e1e #eeeeee #1e1e1e #1e1e1e"
     client_background="#7f7f7f"
-    # CAVA foreground color
-    cava_fg_color="#199ca8"
+    # Theme accent color
+    accent_color="#199ca8"
     # Desktop background color
     desktop_bg_color="#1b2c2e"
     # GUI and TUI theme names

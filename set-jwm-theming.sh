@@ -92,7 +92,7 @@ theming_files () {
     fi
     # CAVA foreground color
     if [ -f "$HOME/.config/cava/config" ]; then
-        sed -i "s/^foreground = .*/foreground = '$cava_fg_color'/" $HOME/.config/cava/config
+        sed -i "s/^foreground = .*/foreground = '$accent_color'/" $HOME/.config/cava/config
     fi
     # Papirus folders color
     if [ -f "/usr/bin/papirus-folders" ]; then
@@ -103,8 +103,8 @@ theming_files () {
 Adwaita_Dark () {
     # JWM theme
     jwm_theme="JWM-Adwaita-Dark"
-    # CAVA foreground color
-    cava_fg_color="#1c6dcf"
+    # Theme accent color
+    accent_color="#1c6dcf"
     # Desktop background color
     desktop_bg_color="#202a36"
     # GUI and TUI theme names
@@ -121,8 +121,8 @@ Adwaita_Dark () {
 Adwaita_Darker () {
     # JWM theme
     jwm_theme="JWM-Adwaita-Darker"
-    # CAVA foreground color
-    cava_fg_color="#15539e"
+    # Theme accent color
+    accent_color="#15539e"
     # Desktop background color
     desktop_bg_color="#202a36"
     # GUI and TUI theme names
@@ -139,8 +139,8 @@ Adwaita_Darker () {
 Adwaita_Light () {
     # JWM theme
     jwm_theme="JWM-Adwaita-Light"
-    # CAVA foreground color
-    cava_fg_color="#3584e4"
+    # Theme accent color
+    accent_color="#3584e4"
     # Desktop background color
     desktop_bg_color="#303e50"
     # GUI and TUI theme names
@@ -157,8 +157,8 @@ Adwaita_Light () {
 Mint_L_Dark_Mod_Brown () {
     # JWM theme
     jwm_theme="JWM-Mint-L-Dark-Brown"
-    # CAVA foreground color
-    cava_fg_color="#9c7e65"
+    # Theme accent color
+    accent_color="#9c7e65"
     # Desktop background color
     desktop_bg_color="#32271e"
     # GUI and TUI theme names
@@ -176,8 +176,8 @@ Mint_L_Dark_Mod_Brown () {
 Mint_L_Dark_Mod_Teal () {
     # JWM theme
     jwm_theme="JWM-Mint-L-Dark-Teal"
-    # CAVA foreground color
-    cava_fg_color="#579c8e"
+    # Theme accent color
+    accent_color="#579c8e"
     # Desktop background color
     desktop_bg_color="#1b2d29"
     # GUI and TUI theme names
@@ -195,8 +195,8 @@ Mint_L_Dark_Mod_Teal () {
 Mint_Y_Dark_Mod_Blue () {
     # JWM theme
     jwm_theme="JWM-Mint-Y-Dark-Blue"
-    # CAVA foreground color
-    cava_fg_color="#0c75de"
+    # Theme accent color
+    accent_color="#0c75de"
     # Desktop background color
     desktop_bg_color="#202a35"
     # GUI and TUI theme names
@@ -214,8 +214,8 @@ Mint_Y_Dark_Mod_Blue () {
 Mint_Y_Dark_Mod_Green () {
     # JWM theme
     jwm_theme="JWM-Mint-Y-Dark-Green"
-    # CAVA foreground color
-    cava_fg_color="#35a854"
+    # Theme accent color
+    accent_color="#35a854"
     # Desktop background color
     desktop_bg_color="#1b2d20"
     # GUI and TUI theme names
@@ -233,8 +233,8 @@ Mint_Y_Dark_Mod_Green () {
 Mint_Y_Dark_Mod_Grey () {
     # JWM theme
     jwm_theme="JWM-Mint-Y-Dark-Grey"
-    # CAVA foreground color
-    cava_fg_color="#8e9197"
+    # Theme accent color
+    accent_color="#8e9197"
     # Desktop background color
     desktop_bg_color="#282a2c"
     # GUI and TUI theme names
@@ -252,8 +252,8 @@ Mint_Y_Dark_Mod_Grey () {
 Mint_Y_Dark_Mod_Orange () {
     # JWM theme
     jwm_theme="JWM-Mint-Y-Dark-Orange"
-    # CAVA foreground color
-    cava_fg_color="#ff7139"
+    # Theme accent color
+    accent_color="#ff7139"
     # Desktop background color
     desktop_bg_color="#352620"
     # GUI and TUI theme names
@@ -271,8 +271,8 @@ Mint_Y_Dark_Mod_Orange () {
 Mint_Y_Dark_Mod_Purple () {
     # JWM theme
     jwm_theme="JWM-Mint-Y-Dark-Purple"
-    # CAVA foreground color
-    cava_fg_color="#8c5dd9"
+    # Theme accent color
+    accent_color="#8c5dd9"
     # Desktop background color
     desktop_bg_color="#2e253e"
     # GUI and TUI theme names
@@ -290,8 +290,8 @@ Mint_Y_Dark_Mod_Purple () {
 Mint_Y_Dark_Mod_Red () {
     # JWM theme
     jwm_theme="JWM-Mint-Y-Dark-Red"
-    # CAVA foreground color
-    cava_fg_color="#e82127"
+    # Theme accent color
+    accent_color="#e82127"
     # Desktop background color
     desktop_bg_color="#3b2324"
     # GUI and TUI theme names
@@ -309,8 +309,8 @@ Mint_Y_Dark_Mod_Red () {
 Mint_Y_Dark_Mod_Teal () {
     # JWM theme
     jwm_theme="JWM-Mint-Y-Dark-Teal"
-    # CAVA foreground color
-    cava_fg_color="#199ca8"
+    # Theme accent color
+    accent_color="#199ca8"
     # Desktop background color
     desktop_bg_color="#1b2c2e"
     # GUI and TUI theme names
