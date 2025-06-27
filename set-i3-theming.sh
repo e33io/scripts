@@ -374,14 +374,14 @@ Mint_Y_Dark_Mod_Grey () {
     status_good="#eeeeee"
     #                  border  bckgrd  text
     focused_workspace="#70737a #70737a #ffffff"
-    active_workspace="#535353 #535353 #eeeeee"
+    active_workspace="#494949 #494949 #eeeeee"
     inactive_workspace="#1e1e1e #1e1e1e #eeeeee"
     urgent_workspace="#ae0e16 #ae0e16 #ffffff"
     binding_mode="#733d9a #733d9a #ffffff"
     # i3 colors     border  bckgrd  text    indictr child_border
     client_focused="#70737a #70737a #ffffff #8e9197 #70737a"
-    client_focused_inactive="#535353 #1e1e1e #cccccc #6e6e6e #535353"
-    client_unfocused="#535353 #1e1e1e #cccccc #6e6e6e #535353"
+    client_focused_inactive="#494949 #1e1e1e #cccccc #636363 #494949"
+    client_unfocused="#494949 #1e1e1e #cccccc #636363 #494949"
     client_urgent="#ae0e16 #ae0e16 #ffffff #e2121d #ae0e16"
     client_placeholder="#1e1e1e #1e1e1e #eeeeee #1e1e1e #1e1e1e"
     client_background="#7f7f7f"
