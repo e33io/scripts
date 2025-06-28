@@ -386,7 +386,7 @@ Mint_Y_Dark_Mod_Grey () {
     client_placeholder="#1e1e1e #1e1e1e #eeeeee #1e1e1e #1e1e1e"
     client_background="#7f7f7f"
     # Theme accent color
-    accent_color="#8e9197"
+    accent_color="#70737a"
     # Desktop background color
     desktop_bg_color="#282a2c"
     # GUI and TUI theme names
@@ -496,7 +496,7 @@ Mint_Y_Dark_Mod_Red () {
     # Theme accent color
     accent_color="#e82127"
     # Desktop background color
-    desktop_bg_color="#3b2324"
+    desktop_bg_color="#441e20"
     # GUI and TUI theme names
     prefer_dark_theme="1"
     gtk_theme=Mint-Y-Dark-Mod-Red

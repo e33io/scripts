@@ -234,7 +234,7 @@ Mint_Y_Dark_Mod_Grey () {
     # JWM theme
     jwm_theme="JWM-Mint-Y-Dark-Grey"
     # Theme accent color
-    accent_color="#8e9197"
+    accent_color="#70737a"
     # Desktop background color
     desktop_bg_color="#282a2c"
     # GUI and TUI theme names
@@ -293,7 +293,7 @@ Mint_Y_Dark_Mod_Red () {
     # Theme accent color
     accent_color="#e82127"
     # Desktop background color
-    desktop_bg_color="#3b2324"
+    desktop_bg_color="#441e20"
     # GUI and TUI theme names
     prefer_dark_theme="1"
     gtk_theme=Mint-Y-Dark-Mod-Red
