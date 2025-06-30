@@ -51,12 +51,7 @@ echo "################################################################"
 echo "Install packages from AUR"
 echo "################################################################"
 
-yay -S xssproxy
-yay -S adwaita-qt5-git
-yay -S adwaita-qt6-git
-yay -S mintstick
-yay -S brave-bin
-yay -S octopi
+yay -S xssproxy adwaita-qt5-git adwaita-qt6-git mintstick brave-bin octopi
 
 echo "################################################################"
 echo "Enable LightDM"
