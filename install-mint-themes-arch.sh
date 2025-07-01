@@ -40,13 +40,10 @@ echo "################################################################"
 echo "Install Mint themes and dependencies"
 echo "################################################################"
 
+sudo pacman -Syu
 sudo pacman -S gnome-themes-extra gtk-engine-murrine less git
 
-yay -S mint-x-icons
-yay -S mint-y-icons
-yay -S mint-l-icons
-yay -S mint-themes
-yay -S mint-l-theme
+yay -S mint-x-icons mint-y-icons mint-l-icons mint-themes mint-l-theme
 
 echo "################################################################"
 echo "Remove prespecified GTK2 icon sizes to fix scaling issues"
@@ -89,10 +86,7 @@ echo "################################################################"
 sudo pacman -S kvantum kvantum-qt5
 
 if [ ! -f "/lib/qt/plugins/styles/adwaita.so" ]; then
-    yay -S adwaita-qt5-git
-fi
-if [ ! -f "/lib/qt6/plugins/styles/adwaita.so" ]; then
-    yay -S adwaita-qt6-git
+    yay -S adwaita-qt5-git adwaita-qt6-git
 fi
 
 if [ ! -f "/bin/lxqt-session" ]; then
