@@ -89,8 +89,11 @@ cp -R $HOME/opt-dots/arch-gnome/.bash_profile $HOME
 cp -R $HOME/opt-dots/arch-gnome/.bashrc $HOME
 cp -R $HOME/opt-dots/arch-gnome/.profile $HOME
 sudo cp -R $HOME/dotfiles/usr/share/fonts /usr/share
+sudo cp -R $HOME/dotfiles/usr/share/grub /usr/share
 sudo cp -R $HOME/opt-dots/arch-gnome/usr/share/gtksourceview-4 /usr/share
 sudo cp -R /usr/share/gtksourceview-4/* /usr/share/gtksourceview-5
+sudo mkdir -p /boot/grub/fonts
+sudo cp -R /usr/share/grub/ter-* /boot/grub/fonts
 fc-cache -f
 
 echo "################################################################"
