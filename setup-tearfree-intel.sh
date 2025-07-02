@@ -22,7 +22,7 @@ if [ -f "/etc/debian_version" ]; then
 fi
 
 if [ -f "/etc/pacman.conf" ]; then
-    sudo pacman -S xf86-video-intel
+    sudo pacman -S mesa-utils xf86-video-intel
 fi
 
 device="$(glxinfo -B | awk '/Vendor:/ { print $2 }')"
