@@ -35,13 +35,19 @@ echo "#########################################################"
 echo "Install MATE and other core packages"
 echo "#########################################################"
 
-sudo apt -y install mate-desktop-environment mate-desktop-environment-extras mate-media caja-mediainfo caja-actions network-manager-gnome ayatana-indicator-application ayatana-indicator-keyboard ayatana-indicator-messages ayatana-indicator-notifications ayatana-indicator-power ayatana-indicator-printers ayatana-indicator-session ayatana-indicator-sound ayatana-settings slick-greeter gnome-themes-extra qt*ct adwaita-qt* papirus-icon-theme fonts-noto-color-emoji plank kitty python3-pypillowfight nfs-common cifs-utils xclip plymouth plymouth-themes
+sudo apt -y install mate-desktop-environment mate-desktop-environment-extras mate-media caja-mediainfo caja-actions network-manager-gnome \
+ayatana-indicator-application ayatana-indicator-keyboard ayatana-indicator-messages ayatana-indicator-notifications ayatana-indicator-power \
+ayatana-indicator-printers ayatana-indicator-session ayatana-indicator-sound ayatana-settings slick-greeter gnome-themes-extra qt*ct \
+adwaita-qt* papirus-icon-theme fonts-noto-color-emoji plank kitty python3-pypillowfight nfs-common cifs-utils xclip plymouth plymouth-themes
 
 echo "#########################################################"
 echo "Install other packages"
 echo "#########################################################"
 
-sudo apt -y install xfce4-appfinder parole mpv rhythmbox gnome-disk-utility mintstick synaptic darktable gimp inkscape filezilla libreoffice-calc libreoffice-draw libreoffice-impress libreoffice-writer libreoffice-gtk3 timeshift dconf-editor dconf-cli heif-thumbnailer heif-gdk-pixbuf micro htop neofetch cmus cava cmatrix ncal micro ranger ueberzug caca-utils highlight atool w3m poppler-utils mediainfo fzf libimage-exiftool-perl apt-transport-https curl rsync xdotool xbindkeys
+sudo apt -y install xfce4-appfinder parole mpv rhythmbox gnome-disk-utility mintstick synaptic darktable gimp inkscape filezilla \
+libreoffice-calc libreoffice-draw libreoffice-impress libreoffice-writer libreoffice-gtk3 timeshift dconf-editor dconf-cli heif-thumbnailer \
+heif-gdk-pixbuf micro htop neofetch cmus cava cmatrix ncal micro ranger ueberzug caca-utils highlight atool w3m poppler-utils mediainfo fzf \
+libimage-exiftool-perl apt-transport-https curl rsync xdotool xbindkeys
 
 echo "#########################################################"
 echo "Install pipewire and enable wireplumber service"
@@ -61,17 +67,23 @@ echo "################################################################"
 echo "Install Brave Browser"
 echo "################################################################"
 
-sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
-echo "deb [arch=amd64 signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
+sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg \
+https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
+echo "deb [arch=amd64 signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] \
+https://brave-browser-apt-release.s3.brave.com/ stable main" \
+| sudo tee /etc/apt/sources.list.d/brave-browser-release.list
 sudo apt update
 sudo apt -y install brave-browser
 
-echo "#########################################################"
+echo "################################################################"
 echo "Install Signal App"
-echo "#########################################################"
+echo "################################################################"
 
-curl -fsSL https://updates.signal.org/desktop/apt/keys.asc | sudo gpg --dearmor -o /usr/share/keyrings/signal-desktop-keyring.gpg
-echo "deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] https://updates.signal.org/desktop/apt xenial main" | sudo tee /etc/apt/sources.list.d/signal-xenial.list
+curl -fsSL https://updates.signal.org/desktop/apt/keys.asc \
+| sudo gpg --dearmor -o /usr/share/keyrings/signal-desktop-keyring.gpg
+echo "deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] \
+https://updates.signal.org/desktop/apt xenial main" \
+| sudo tee /etc/apt/sources.list.d/signal-xenial.list
 sudo apt update
 sudo apt -y install signal-desktop
 

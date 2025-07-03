@@ -45,7 +45,11 @@ echo "################################################################"
 echo "Install Gnome and other packages"
 echo "################################################################"
 
-sudo apt -y install gnome-core gnome-tweaks gnome-shell-extension-manager gnome-shell-extension-appindicator file-roller ptyxis loupe gnome-snapshot gnome-themes-extra adwaita-qt* qt*ct papirus-icon-theme plymouth-themes dconf-editor synaptic epiphany-browser rhythmbox darktable gimp inkscape gcolor3 soundconverter filezilla libreoffice-calc libreoffice-draw libreoffice-impress libreoffice-writer libreoffice-gtk3 mintstick timeshift nfs-common cifs-utils libimage-exiftool-perl micro fzf lazygit htop fastfetch cmus cava cmatrix apt-transport-https curl xclip
+sudo apt -y install gnome-core gnome-tweaks gnome-shell-extension-manager gnome-shell-extension-appindicator file-roller ptyxis loupe \
+gnome-snapshot gnome-themes-extra adwaita-qt* qt*ct papirus-icon-theme plymouth-themes dconf-editor synaptic epiphany-browser rhythmbox \
+darktable gimp inkscape gcolor3 soundconverter filezilla libreoffice-calc libreoffice-draw libreoffice-impress libreoffice-writer \
+libreoffice-gtk3 mintstick timeshift nfs-common cifs-utils libimage-exiftool-perl micro fzf lazygit htop fastfetch cmus cava cmatrix \
+apt-transport-https curl xclip
 
 pc_type="$(hostnamectl chassis)"
 if [ $pc_type = desktop ]; then
@@ -56,8 +60,11 @@ echo "################################################################"
 echo "Install Brave Browser"
 echo "################################################################"
 
-sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
-echo "deb [arch=amd64 signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
+sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg \
+https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
+echo "deb [arch=amd64 signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] \
+https://brave-browser-apt-release.s3.brave.com/ stable main" \
+| sudo tee /etc/apt/sources.list.d/brave-browser-release.list
 sudo apt update
 sudo apt -y install brave-browser
 
@@ -65,8 +72,11 @@ echo "################################################################"
 echo "Install Signal App"
 echo "################################################################"
 
-curl -fsSL https://updates.signal.org/desktop/apt/keys.asc | sudo gpg --dearmor -o /usr/share/keyrings/signal-desktop-keyring.gpg
-echo "deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] https://updates.signal.org/desktop/apt xenial main" | sudo tee /etc/apt/sources.list.d/signal-xenial.list
+curl -fsSL https://updates.signal.org/desktop/apt/keys.asc \
+| sudo gpg --dearmor -o /usr/share/keyrings/signal-desktop-keyring.gpg
+echo "deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] \
+https://updates.signal.org/desktop/apt xenial main" \
+| sudo tee /etc/apt/sources.list.d/signal-xenial.list
 sudo apt update
 sudo apt -y install signal-desktop
 

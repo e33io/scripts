@@ -31,7 +31,8 @@ echo "Install Yaru themes, icons and dependencies"
 echo "################################################################"
 
 sudo apt update
-sudo apt -y install yaru-theme-gtk yaru-theme-icon gnome-themes-extra gtk2-engines gtk2-engines-murrine gtk2-engines-pixbuf libglib2.0-bin libgtk-3-common libgtk-4-common libgtk2.0-common
+sudo apt -y install yaru-theme-gtk yaru-theme-icon gnome-themes-extra gtk2-engines gtk2-engines-murrine gtk2-engines-pixbuf \
+libglib2.0-bin libgtk-3-common libgtk-4-common libgtk2.0-common
 
 echo "################################################################"
 echo "Remove prespecified GTK2 icon sizes to fix scaling issues"
