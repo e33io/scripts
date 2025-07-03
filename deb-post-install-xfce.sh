@@ -11,7 +11,7 @@
 # ---------------------------------------------------------------------------
 # The default configuration is based on using 'Window Scaling 2x' for HiDPI
 # monitors, but there is an option at the end of the script that lets you
-# change to 'Window Scaling 1x' settings for use with non-HiDPI monitors.
+# change to 'Window Scaling 1x' settings for use with standard HD monitors.
 # ---------------------------------------------------------------------------
 # Instructions for running this script:
 #   sudo apt install git
