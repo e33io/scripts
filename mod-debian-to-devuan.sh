@@ -17,34 +17,37 @@ if [ "$(id -u)" = 0 ]; then
 fi
 
 clear
-while true; do
+
+if { [ -d "$HOME/.config/i3" ] || [ -d "$HOME/.config/jwm" ]; }; then
+    while true; do
+        echo "################################################################"
+        echo "The option below lets you select a configuration"
+        echo "specific to your computer type."
+        echo "################################################################"
+        echo "   1) Desktop"
+        echo "   2) Laptop"
+        echo "----------------------------------------------------------------"
+
+        read -p "What type of computer are you using? " n
+        case $n in
+            1) echo "You chose Desktop computer";
+               break;;
+            2) echo "You chose Laptop computer";
+               sh mod-wm-laptop.sh;
+               break;;
+            *) echo "Invalid selection, please enter a number from the list.";;
+        esac
+    done
+fi
+
+if [ -d "$HOME/.config/i3" ]; then
     echo "################################################################"
-    echo "The option below lets you select a configuration"
-    echo "specific to your computer type."
+    echo "Set default mute and default volume level"
     echo "################################################################"
-    echo "   1) Desktop"
-    echo "   2) Laptop"
-    echo "----------------------------------------------------------------"
-
-    read -p "What type of computer are you using? " n
-    case $n in
-        1) echo "You chose Desktop computer";
-           break;;
-        2) echo "You chose Laptop computer";
-           sh mod-wm-laptop.sh;
-           break;;
-        *) echo "Invalid selection, please enter a number from the list.";;
-    esac
-done
-
-echo "################################################################"
-echo "Replace pipewire with pulseaudio"
-echo "################################################################"
-
-sudo apt -y purge pipewire*
-sudo apt -y autoremove
-sudo apt -y autoclean
-sudo apt -y install pulseaudio
+    echo '# Set default mute and default volume level
+exec --no-startup-id sleep 1 && pactl set-sink-mute @DEFAULT_SINK@ false && $refresh_i3status
+exec --no-startup-id sleep 6 && pactl set-sink-volume @DEFAULT_SINK@ 15% && $refresh_i3status' | tee -a $HOME/.config/i3/config > /dev/null
+fi
 
 echo "################################################################"
 echo "Replace systemctl with loginctl"
@@ -59,14 +62,13 @@ fi
 sed -i 's/systemctl/loginctl/g' $HOME/.bashrc
 
 echo "################################################################"
-echo "Set default mute and default volume level"
+echo "Replace pipewire with pulseaudio"
 echo "################################################################"
 
-if [ -d "$HOME/.config/i3" ]; then
-    echo '# Set default mute and default volume level
-exec --no-startup-id sleep 1 && pactl set-sink-mute @DEFAULT_SINK@ false && $refresh_i3status
-exec --no-startup-id sleep 6 && pactl set-sink-volume @DEFAULT_SINK@ 15% && $refresh_i3status' | tee -a $HOME/.config/i3/config > /dev/null
-fi
+sudo apt -y purge pipewire*
+sudo apt -y autoremove
+sudo apt -y autoclean
+sudo apt -y install pulseaudio
 
 echo "################################################################"
 echo "Reboot the system or logout/login now to complete changes"
