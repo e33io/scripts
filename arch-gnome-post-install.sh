@@ -41,7 +41,7 @@ echo "################################################################"
 echo "Remove unneeded/unwanted packages"
 echo "################################################################"
 
-sudo pacman -R gnome-software
+sudo pacman -R --noconfirm --needed gnome-software
 
 echo "################################################################"
 echo "Install other packages"
