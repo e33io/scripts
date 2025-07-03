@@ -42,8 +42,8 @@ echo "################################################################"
 echo "Clean up directory"
 echo "################################################################"
 
-rm -R $PWD/lazygit.tar.gz
-rm -R $PWD/lazygit
+rm -rf $PWD/lazygit.tar.gz
+rm -rf $PWD/lazygit
 
 echo "################################################################"
 echo "All done, Lazygit is now installed"

@@ -80,7 +80,7 @@ sudo apt -y purge snapd
 sudo apt -y autoremove
 sudo apt -y autoclean
 
-rm -Rf ~/snap
+rm -rf ~/snap
 
 echo "Package: snapd
 Pin: release a=*
