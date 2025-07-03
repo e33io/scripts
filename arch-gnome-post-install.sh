@@ -38,15 +38,10 @@ flatpak install -y --noninteractive org.gtk.Gtk3theme.Adwaita-dark
 flatpak install -y --noninteractive org.torproject.torbrowser-launcher
 
 echo "################################################################"
-echo "Remove unneeded/unwanted packages"
-echo "################################################################"
-
-sudo pacman -R --noconfirm --needed gnome-software
-
-echo "################################################################"
 echo "Install other packages"
 echo "################################################################"
 
+sudo pacman -R --noconfirm --needed gnome-software
 sudo pacman -S --noconfirm --needed nautilus-python gnome-shell-extension-appindicator file-roller dconf-editor gnome-themes-extra papirus-icon-theme qt5ct qt6ct less nfs-utils micro fzf fastfetch cava cmus perl-image-exiftool timeshift ghostty signal-desktop filezilla gimp darktable inkscape gcolor3 libreoffice
 
 echo "################################################################"
