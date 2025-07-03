@@ -36,22 +36,23 @@ echo "################################################################"
 echo "Install i3 and other packages"
 echo "################################################################"
 
-sudo pacman -S xorg-server xorg-apps i3-wm i3status i3lock python-i3ipc py3status xss-lock dmenu rofi dunst gvfs nfs-utils cifs-utils fuse rsync cronie git curl wget tar less 7zip base-devel xsel xclip playerctl dex mate-polkit xdg-desktop-portal-gtk xdg-user-dirs xbindkeys xdotool lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings lxappearance-gtk3 gnome-themes-extra gtk-engine-murrine qt5ct qt6ct ttf-dejavu noto-fonts-emoji papirus-icon-theme breeze-icons plymouth pavucontrol-qt nitrogen kitty python-pillowfight xterm thunar thunar-archive-plugin thunar-volman tumbler ffmpegthumbnailer engrampa scrot atril imv mpv parole mousepad galculator dconf-editor gnome-disk-utility timeshift vim nano micro fzf htop fastfetch cmus cava ranger ueberzug highlight atool w3m mediainfo perl-image-exiftool signal-desktop darktable gimp inkscape filezilla libreoffice
+sudo pacman -S --noconfirm --needed xorg-server xorg-apps i3-wm i3status i3lock python-i3ipc py3status xss-lock dmenu rofi dunst gvfs nfs-utils cifs-utils fuse rsync cronie git curl wget tar less 7zip base-devel xsel xclip playerctl dex mate-polkit xdg-desktop-portal-gtk xdg-user-dirs xbindkeys xdotool lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings lxappearance-gtk3 gnome-themes-extra gtk-engine-murrine qt5ct qt6ct ttf-dejavu noto-fonts-emoji papirus-icon-theme breeze-icons plymouth pavucontrol-qt nitrogen kitty python-pillowfight xterm thunar thunar-archive-plugin thunar-volman tumbler ffmpegthumbnailer engrampa scrot atril imv mpv parole mousepad galculator dconf-editor gnome-disk-utility timeshift vim nano micro fzf htop fastfetch cmus cava ranger ueberzug highlight atool w3m mediainfo perl-image-exiftool signal-desktop darktable gimp inkscape filezilla libreoffice
 
 echo "################################################################"
 echo "Setup Yay for AUR"
 echo "################################################################"
 
-git clone https://aur.archlinux.org/yay.git $HOME/yay
-cd $HOME/yay
-makepkg -si
+git clone https://aur.archlinux.org/yay-bin.git $HOME/yay-bin
+cd $HOME/yay-bin
+makepkg -si --noconfirm
 cd
+rm -Rf $HOME/yay-bin
 
 echo "################################################################"
 echo "Install packages from AUR"
 echo "################################################################"
 
-yay -S xssproxy adwaita-qt5-git adwaita-qt6-git mintstick brave-bin octopi
+yay -S --noconfirm --needed --sudoloop xssproxy adwaita-qt5-git adwaita-qt6-git mintstick brave-bin octopi
 
 echo "################################################################"
 echo "Enable LightDM"
@@ -159,7 +160,7 @@ if [ $pc_type = vm ]; then
     echo "Install spice-vdagent and update lightdm scaling"
     echo "################################################################"
 
-    sudo pacman -S spice-vdagent
+    sudo pacman -S --noconfirm --needed spice-vdagent
     sudo sed -i 's/GDK_SCALE=2/GDK_SCALE=1/' /etc/lightdm/Xgsession
 fi
 

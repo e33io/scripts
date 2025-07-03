@@ -47,26 +47,27 @@ echo "################################################################"
 echo "Install other packages"
 echo "################################################################"
 
-sudo pacman -S nautilus-python gnome-shell-extension-appindicator file-roller dconf-editor gnome-themes-extra papirus-icon-theme qt5ct qt6ct less nfs-utils micro fzf fastfetch cava cmus perl-image-exiftool timeshift ghostty signal-desktop filezilla gimp darktable inkscape gcolor3 libreoffice
+sudo pacman -S --noconfirm --needed nautilus-python gnome-shell-extension-appindicator file-roller dconf-editor gnome-themes-extra papirus-icon-theme qt5ct qt6ct less nfs-utils micro fzf fastfetch cava cmus perl-image-exiftool timeshift ghostty signal-desktop filezilla gimp darktable inkscape gcolor3 libreoffice
 
 echo "################################################################"
 echo "Setup Yay for AUR"
 echo "################################################################"
 
-git clone https://aur.archlinux.org/yay.git $HOME/yay
-cd $HOME/yay
-makepkg -si
+git clone https://aur.archlinux.org/yay-bin.git $HOME/yay-bin
+cd $HOME/yay-bin
+makepkg -si --noconfirm
 cd
+rm -Rf $HOME/yay-bin
 
 echo "################################################################"
 echo "Install packages from AUR"
 echo "################################################################"
 
-yay -S adwaita-qt5-git adwaita-qt6-git mintstick brave-bin octopi
+yay -S --noconfirm --needed --sudoloop adwaita-qt5-git adwaita-qt6-git mintstick brave-bin octopi
 
 pc_type="$(hostnamectl chassis)"
 if [ $pc_type = desktop ]; then
-    yay -S input-remapper
+    yay -S --noconfirm --needed --sudoloop input-remapper
     sudo systemctl enable --now input-remapper
 fi
 

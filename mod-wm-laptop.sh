@@ -21,7 +21,7 @@ if [ -f "/etc/debian_version" ]; then
     sudo apt -y install brightnessctl
 fi
 if [ -f "/etc/pacman.conf" ]; then
-    sudo pacman -S brightnessctl
+    sudo pacman -S --noconfirm --needed brightnessctl
 fi
 
 # i3wm specific configs
@@ -47,7 +47,7 @@ if [ -d "$HOME/.config/jwm" ]; then
         sudo apt -y install xfce4-battery-plugin
     fi
     if [ -f "/etc/pacman.conf" ]; then
-        sudo pacman -S xfce4-battery-plugin
+        sudo pacman -S --noconfirm --needed xfce4-battery-plugin
     fi
     # copy laptop-specific Xfce Panel config files
     cp -R $HOME/opt-dots/jwm/options/xfce4 $HOME/.config

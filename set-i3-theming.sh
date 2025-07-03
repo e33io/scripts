@@ -44,7 +44,7 @@ if [ ! -n "$(ls -d /usr/bin/papirus-folders 2>/dev/null)" ]; then
         sudo apt -y install papirus-icon-theme
     fi
     if [ -f "/etc/pacman.conf" ]; then
-        sudo pacman -S papirus-icon-theme
+        sudo pacman -S --noconfirm --needed papirus-icon-theme
     fi
     wget -qO- https://git.io/papirus-folders-install | sh
 fi

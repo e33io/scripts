@@ -30,10 +30,12 @@ if ! command -v yay &>/dev/null; then
     echo "################################################################"
     echo "Setup Yay for AUR"
     echo "################################################################"
-    git clone https://aur.archlinux.org/yay.git $HOME/yay
-    cd $HOME/yay
-    makepkg -si
+    
+    git clone https://aur.archlinux.org/yay-bin.git $HOME/yay-bin
+    cd $HOME/yay-bin
+    makepkg -si --noconfirm
     cd
+    rm -Rf $HOME/yay-bin
 fi
 
 echo "################################################################"
@@ -41,9 +43,9 @@ echo "Install Mint themes and dependencies"
 echo "################################################################"
 
 sudo pacman -Syu
-sudo pacman -S gnome-themes-extra gtk-engine-murrine less git
+sudo pacman -S --noconfirm --needed gnome-themes-extra gtk-engine-murrine less git
 
-yay -S mint-x-icons mint-y-icons mint-l-icons mint-themes mint-l-theme
+yay -S --noconfirm --needed --sudoloop mint-x-icons mint-y-icons mint-l-icons mint-themes mint-l-theme
 
 echo "################################################################"
 echo "Remove prespecified GTK2 icon sizes to fix scaling issues"
@@ -83,14 +85,14 @@ echo "################################################################"
 echo "Install Qt and Kvantum styling packages"
 echo "################################################################"
 
-sudo pacman -S kvantum kvantum-qt5
+sudo pacman -S --noconfirm --needed kvantum kvantum-qt5
 
 if [ ! -f "/lib/qt/plugins/styles/adwaita.so" ]; then
-    yay -S adwaita-qt5-git adwaita-qt6-git
+    yay -S --noconfirm --needed --sudoloop adwaita-qt5-git adwaita-qt6-git
 fi
 
 if [ ! -f "/bin/lxqt-session" ]; then
-    sudo pacman -S qt5ct qt6ct
+    sudo pacman -S --noconfirm --needed qt5ct qt6ct
 fi
 
 echo "################################################################"
