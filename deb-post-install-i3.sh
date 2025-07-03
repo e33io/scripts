@@ -132,7 +132,7 @@ echo "Remove unneeded default xsession file if it exists"
 echo "################################################################"
 
 if [ -f "/usr/share/xsessions/lightdm-xsession.desktop" ]; then
-    sudo rm -R /usr/share/xsessions/lightdm-xsession.desktop
+    sudo rm -rf /usr/share/xsessions/lightdm-xsession.desktop
 fi
 
 clear
@@ -214,8 +214,8 @@ file:///home/$(whoami)/Videos
 file:///home/$(whoami)/Music" > $HOME/.config/gtk-3.0/bookmarks
 sed -i "s/~\/\.gtkrc-2\.0\.mine/\/home\/$(whoami)\/\.gtkrc-2\.0\.mine/" $HOME/.gtkrc-2.0
 sed -i "s/home\/.*\/Desktop/home\/$(whoami)\/Desktop/" $HOME/.config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml
-sudo rm -R $HOME/dotfiles
-sudo rm -R $HOME/scripts
+rm -rf $HOME/dotfiles
+rm -rf $HOME/scripts
 
 echo "################################################################"
 echo "All done, you can now run other commands or reboot the PC"

@@ -35,7 +35,7 @@ if [ ! -n "$(ls -d /usr/share/themes/Mint-*-Dark-Mod-* 2>/dev/null)" ]; then
     if [ -f "/etc/pacman.conf" ]; then
         sh $HOME/scripts-theming/install-mint-themes-arch.sh
     fi
-    sudo rm -R $HOME/scripts-theming
+    rm -rf $HOME/scripts-theming
 fi
 
 # install papirus-icon-theme and papirus-folders if needed

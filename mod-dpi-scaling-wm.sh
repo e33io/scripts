@@ -118,8 +118,8 @@ fi
 
 # Remove unneeded .desktop files
 if [ -f "$HOME/.local/share/applications/brave-browser.desktop" ]; then
-    rm -R $HOME/.local/share/applications/brave-browser.desktop
+    rm -rf $HOME/.local/share/applications/brave-browser.desktop
 fi
 if [ -f "$HOME/.local/share/applications/signal-desktop.desktop" ]; then
-    rm -R $HOME/.local/share/applications/signal-desktop.desktop
+    rm -rf $HOME/.local/share/applications/signal-desktop.desktop
 fi

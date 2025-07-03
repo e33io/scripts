@@ -46,7 +46,7 @@ git clone https://aur.archlinux.org/yay-bin.git $HOME/yay-bin
 cd $HOME/yay-bin
 makepkg -si --noconfirm
 cd
-rm -Rf $HOME/yay-bin
+rm -rf $HOME/yay-bin
 
 echo "################################################################"
 echo "Install packages from AUR"
@@ -182,9 +182,9 @@ sed -i "s/~\/\.gtkrc-2\.0\.mine/\/home\/$(whoami)\/\.gtkrc-2\.0\.mine/" $HOME/.g
 echo '# Set default volume level (using pactl)
 exec --no-startup-id sleep 2 && pactl set-sink-volume @DEFAULT_SINK@ 25% && $refresh_i3status' \
 | tee -a $HOME/.config/i3/config > /dev/null
-sudo rm -R $HOME/dotfiles
-sudo rm -R $HOME/opt-dots
-sudo rm -R $HOME/scripts
+rm -rf $HOME/dotfiles
+rm -rf $HOME/opt-dots
+rm -rf $HOME/scripts
 
 echo "################################################################"
 echo "All done, you can now run other commands or reboot the PC"

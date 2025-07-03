@@ -35,7 +35,7 @@ if ! command -v yay &>/dev/null; then
     cd $HOME/yay-bin
     makepkg -si --noconfirm
     cd
-    rm -Rf $HOME/yay-bin
+    rm -rf $HOME/yay-bin
 fi
 
 echo "################################################################"
@@ -127,7 +127,7 @@ echo "################################################################"
 echo "Clean up user directory"
 echo "################################################################"
 
-sudo rm -Rf $HOME/theming-temp
+rm -rf $HOME/theming-temp
 
 echo "################################################################"
 echo "All done, themes and icons are now installed"

@@ -131,7 +131,7 @@ echo "#########################################################"
 echo "Remove unneeded default xsession file"
 echo "#########################################################"
 
-sudo rm -R /usr/share/xsessions/lightdm-xsession.desktop
+sudo rm -rf /usr/share/xsessions/lightdm-xsession.desktop
 
 echo "#########################################################"
 echo "Change Papirus folders color"
@@ -174,10 +174,10 @@ file:///home/$(whoami)/Music" > $HOME/.config/gtk-3.0/bookmarks
 sudo wget -q https://i.e33.io/wp/rancho-twilight-4k.jpg -P /usr/share/backgrounds
 dconf write /org/mate/desktop/background/picture-filename "'/usr/share/backgrounds/rancho-twilight-4k.jpg'"
 dconf write /org/mate/screensaver/picture-filename "'/usr/share/backgrounds/rancho-twilight-4k.jpg'"
-sudo rm -Rf /usr/share/applications/imv-folder.desktop
-sudo rm -R $HOME/dotfiles
-sudo rm -R $HOME/opt-dots
-sudo rm -R $HOME/scripts
+sudo rm -rf /usr/share/applications/imv-folder.desktop
+rm -rf $HOME/dotfiles
+rm -rf $HOME/opt-dots
+rm -rf $HOME/scripts
 
 echo "#########################################################"
 echo "All done, you can now run other commands or reboot the PC"

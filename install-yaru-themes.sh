@@ -64,7 +64,7 @@ else
 
     git clone https://github.com/GabePoel/KvYaru-Colors.git $HOME/KvYaru-Colors
     sudo cp -R $HOME/KvYaru-Colors/src/* /usr/share/Kvantum
-    sudo rm -Rf $HOME/KvYaru-Colors
+    rm -rf $HOME/KvYaru-Colors
 
     echo "################################################################"
     echo "Update Kvantum KvYaru theme colors to correctly match"

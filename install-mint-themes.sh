@@ -146,7 +146,7 @@ echo "################################################################"
 echo "Clean up user directory"
 echo "################################################################"
 
-sudo rm -Rf $HOME/theming-temp
+rm -rf $HOME/theming-temp
 
 echo "################################################################"
 echo "All done, themes and icons are now installed"

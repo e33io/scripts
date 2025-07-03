@@ -52,7 +52,7 @@ git clone https://aur.archlinux.org/yay-bin.git $HOME/yay-bin
 cd $HOME/yay-bin
 makepkg -si --noconfirm
 cd
-rm -Rf $HOME/yay-bin
+rm -rf $HOME/yay-bin
 
 echo "################################################################"
 echo "Install packages from AUR"
@@ -118,7 +118,7 @@ sudo wget -q https://i.e33.io/wp/rancho-twilight-4k.jpg -P /usr/share/background
 dconf write /org/gnome/desktop/background/picture-uri "'file:///usr/share/backgrounds/rancho-twilight-4k.jpg'"
 dconf write /org/gnome/desktop/background/picture-uri-dark "'file:///usr/share/backgrounds/rancho-twilight-4k.jpg'"
 dconf write /org/gnome/desktop/screensaver/picture-uri "'file:///usr/share/backgrounds/rancho-twilight-4k.jpg'"
-sudo rm -R $HOME/dotfiles
-sudo rm -R $HOME/opt-dots
-sudo rm -R $HOME/scripts
+rm -rf $HOME/dotfiles
+rm -rf $HOME/opt-dots
+rm -rf $HOME/scripts
 reboot
