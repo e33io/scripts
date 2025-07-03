@@ -10,10 +10,9 @@
 # manager and a base set of apps for a ready-to-use desktop session.
 # ------------------------------------------------------------------------
 # The default configuration is for use with HiDPI monitors
-# (192 dpi settings for 2x scaling) and desktop-type computers,
-# but there are options at the end of the script that let you change
-# to non-HiDPI monitors (96 dpi settings for 1x scaling),
-# and/or change to laptop-type (battery powered) computer settings.
+# (192 dpi settings for 2x scaling), but there is an option
+# at the end of the script that lets you change to standard
+# HD monitors (96 dpi settings for 1x scaling).
 # ------------------------------------------------------------------------
 # Instructions for running this script:
 #   sudo apt install git
@@ -156,28 +155,14 @@ while true; do
     esac
 done
 
-clear
-while true; do
-    echo "################################################################"
-    echo "The option below lets you select a configuration"
-    echo "specific to your computer type."
-    echo "################################################################"
-    echo "   1) Desktop"
-    echo "   2) Laptop"
-    echo "----------------------------------------------------------------"
-
-    read -p "What type of computer are you using? " n
-    case $n in
-        1) echo "You chose Desktop computer";
-           break;;
-        2) echo "You chose Laptop computer";
-           sh mod-wm-laptop.sh;
-           break;;
-        *) echo "Invalid selection, please enter a number from the list.";;
-    esac
-done
-
 pc_type="$(hostnamectl chassis)"
+if [ $pc_type = laptop ]; then
+    echo "################################################################"
+    echo "Modify window manager configs for laptop use"
+    echo "################################################################"
+
+    sh mod-wm-laptop.sh
+fi
 if [ $pc_type = vm ]; then
     echo "################################################################"
     echo "Install spice-vdagent and update lightdm scaling"
