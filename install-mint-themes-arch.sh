@@ -26,7 +26,7 @@ if [ ! -f "/etc/pacman.conf" ]; then
     exit 1
 fi
 
-if [ ! -d "$HOME/yay" ]; then
+if ! command -v yay &>/dev/null; then
     echo "################################################################"
     echo "Setup Yay for AUR"
     echo "################################################################"
