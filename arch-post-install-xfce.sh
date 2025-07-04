@@ -54,16 +54,6 @@ echo "################################################################"
 
 yay -S --noconfirm --needed --sudoloop menulibre adwaita-qt5-git adwaita-qt6-git mintstick brave-bin octopi
 
-pc_type="$(hostnamectl chassis)"
-if [ $pc_type = vm ]; then
-    echo "################################################################"
-    echo "Install spice-vdagent and update lightdm scaling"
-    echo "################################################################"
-
-    sudo pacman -S --noconfirm --needed spice-vdagent
-    sudo sed -i 's/GDK_SCALE=2/GDK_SCALE=1/' /etc/lightdm/Xgsession
-fi
-
 echo "################################################################"
 echo "Enable LightDM"
 echo "################################################################"
@@ -139,6 +129,16 @@ while true; do
         *) echo "Invalid selection, please enter a number from the list.";;
     esac
 done
+
+pc_type="$(hostnamectl chassis)"
+if [ $pc_type = vm ]; then
+    echo "################################################################"
+    echo "Install spice-vdagent and update lightdm scaling"
+    echo "################################################################"
+
+    sudo pacman -S --noconfirm --needed spice-vdagent
+    sudo sed -i 's/GDK_SCALE=2/GDK_SCALE=1/' /etc/lightdm/Xgsession
+fi
 
 echo "################################################################"
 echo "Add bookmarks and clean up user directory"
