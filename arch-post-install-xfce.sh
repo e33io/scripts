@@ -107,7 +107,8 @@ sudo mkdir -p /root/.config/qt5ct
 sudo mkdir -p /root/.config/qt6ct
 sudo ln -s $HOME/.config/qt5ct/qt5ct.conf /root/.config/qt5ct/qt5ct.conf
 sudo ln -s $HOME/.config/qt6ct/qt6ct.conf /root/.config/qt6ct/qt6ct.conf
-sudo ln -sf /usr/share/wallpapers/background.png /usr/share/images/desktop-base/default
+sudo mv /usr/share/backgrounds/xfce/xfce-x.svg /usr/share/backgrounds/xfce/xfce-default.svg
+sudo ln -sf /usr/share/wallpapers/background.png /usr/share/backgrounds/xfce/xfce-x.svg
 
 echo "################################################################"
 echo "Update root .bashrc file"
@@ -149,6 +150,7 @@ file:///home/$(whoami)/Documents
 file:///home/$(whoami)/Pictures
 file:///home/$(whoami)/Videos
 file:///home/$(whoami)/Music" > $HOME/.config/gtk-3.0/bookmarks
+sed -i "s/home\/.*\/\.local/home\/$(whoami)\/\.local/" $HOME/.config/menus/xfce-applications.menu
 sed -i "s/home\/.*\/\.config/home\/$(whoami)\/\.config/" $HOME/.config/qt5ct/qt5ct.conf
 sed -i "s/home\/.*\/\.config/home\/$(whoami)\/\.config/" $HOME/.config/qt6ct/qt6ct.conf
 sed -i "s/home\/.*\/Desktop/home\/$(whoami)\/Desktop/" $HOME/.config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml
