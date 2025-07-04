@@ -88,7 +88,7 @@ sudo cp -R $HOME/dotfiles/usr/share/grub /usr/share
 sudo cp -R $HOME/dotfiles/usr/share/gtksourceview-4 /usr/share
 sudo cp -R $HOME/dotfiles/usr/share/pixmaps /usr/share
 sudo cp -R $HOME/dotfiles/usr/share/wallpapers /usr/share
-sudo cp -R $HOME/opt-dots/arch/etc/lightdm /etc
+sudo cp -R $HOME/opt-dots/arch-xfce/etc/lightdm /etc
 sudo cp -R $HOME/opt-dots/xfce/usr/bin /usr
 sudo cp -R $HOME/opt-dots/xfce/usr/share /usr
 sudo mkdir -p /boot/grub/fonts
