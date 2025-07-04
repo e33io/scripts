@@ -33,8 +33,8 @@ echo "Install Gnome and other packages"
 echo "################################################################"
 
 sudo pacman -S --noconfirm --needed gnome gnome-tweaks gnome-shell-extension-appindicator nautilus-python file-roller dconf-editor \
-gnome-themes-extra papirus-icon-theme qt5ct qt6ct less nfs-utils micro fzf lazygit fastfetch cava cmus perl-image-exiftool timeshift \
-ghostty signal-desktop filezilla gimp darktable inkscape gcolor3 libreoffice
+gnome-themes-extra papirus-icon-theme qt5ct qt6ct less wget nfs-utils vim nano micro fzf lazygit fastfetch cava cmus perl-image-exiftool \
+timeshift ghostty signal-desktop filezilla gimp darktable inkscape gcolor3 libreoffice
 sudo pacman -R --noconfirm gnome-software
 
 echo "################################################################"
