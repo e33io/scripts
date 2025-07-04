@@ -32,11 +32,11 @@ echo "################################################################"
 
 sudo pacman -S --noconfirm --needed xfce4 xfce4-screensaver xfce4-screenshooter xfce4-taskmanager xfce4-notifyd xfce4-battery-plugin \
 xfce4-pulseaudio-plugin thunar-archive-plugin network-manager-applet gvfs nfs-utils cifs-utils fuse rsync cronie git curl wget tar 7zip less \
-base-devel ffmpegthumbnailer xsel xclip xdg-desktop-portal-gtk xdg-user-dirs wmctrl xdotool xbindkeys plymouth lightdm lightdm-gtk-greeter \
-lightdm-gtk-greeter-settings gnome-themes-extra gtk-engine-murrine qt5ct qt6ct ttf-dejavu noto-fonts-emoji papirus-icon-theme breeze-icons \
-pavucontrol engrampa atril ristretto imv mpv parole rhythmbox mousepad galculator dconf-editor gnome-disk-utility timeshift xterm vim nano \
-micro fzf lazygit htop fastfetch cmus cava ranger ueberzug highlight atool w3m mediainfo perl-image-exiftool signal-desktop darktable gimp \
-inkscape filezilla libreoffice
+base-devel ffmpegthumbnailer xsel xclip xdg-desktop-portal-gtk xdg-user-dirs wmctrl xdotool xorg-xdpyinfo xbindkeys plymouth lightdm \
+lightdm-gtk-greeter lightdm-gtk-greeter-settings gnome-themes-extra gtk-engine-murrine qt5ct qt6ct ttf-dejavu noto-fonts-emoji \
+papirus-icon-theme breeze-icons pavucontrol engrampa atril ristretto imv mpv parole rhythmbox mousepad galculator dconf-editor \
+gnome-disk-utility timeshift xterm vim nano micro fzf lazygit htop fastfetch cmus cava ranger ueberzug highlight atool w3m mediainfo \
+perl-image-exiftool signal-desktop darktable gimp inkscape filezilla libreoffice
 
 echo "################################################################"
 echo "Setup Yay for AUR"
