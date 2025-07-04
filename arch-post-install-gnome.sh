@@ -1,23 +1,21 @@
 #!/bin/bash
 
-# ============================================================================
-# Arch Gnome Setup (post-install)
-# URL: https://github.com/e33io/scripts/blob/main/arch-gnome-post-install.sh
-# ----------------------------------------------------------------------------
+# ==========================================================================
+# Arch Linux (post-install) Gnome
+# URL: https://github.com/e33io/scripts/blob/main/arch-post-install-gnome.sh
+# --------------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
 # Only use with a fresh "Minimal" archinstall (Profile > Type > Minimal)
 # to install the Gnome desktop environment and a base set of apps for a
 # ready-to-use desktop session.
-# ----------------------------------------------------------------------------
-# Post-install instructions:
-#   - open Terminal and run these commands:
-#       - sudo pacman -Syu
-#       - sudo pacman -S git
-#       - git clone https://github.com/e33io/scripts
-#       - cd scripts
-#       - sh arch-gnome-post-install.sh
-#       (the script will reboot the system when it's done)
-# ============================================================================
+# --------------------------------------------------------------------------
+# Instructions for running this script:
+#   sudo pacman -Syu
+#   sudo pacman -S git
+#   git clone https://github.com/e33io/scripts
+#   cd scripts
+#   sh arch-post-install-gnome.sh
+# ==========================================================================
 
 if [ "$(id -u)" = 0 ]; then
     echo "################################################################"
@@ -33,7 +31,7 @@ echo "Install Gnome and other packages"
 echo "################################################################"
 
 sudo pacman -S --noconfirm --needed gnome gnome-tweaks gnome-shell-extension-appindicator nautilus-python file-roller dconf-editor \
-gnome-themes-extra papirus-icon-theme qt5ct qt6ct less wget nfs-utils vim nano micro fzf lazygit fastfetch cava cmus perl-image-exiftool \
+gnome-themes-extra papirus-icon-theme qt5ct qt6ct less wget nfs-utils vim nano micro fzf lazygit htop fastfetch cmus cava perl-image-exiftool \
 timeshift ghostty signal-desktop filezilla gimp darktable inkscape gcolor3 libreoffice
 sudo pacman -R --noconfirm gnome-software
 

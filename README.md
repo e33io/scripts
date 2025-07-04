@@ -14,11 +14,9 @@ linux installation scripts
 	- use [`deb-post-install-mate.sh`](https://github.com/e33io/scripts/blob/main/deb-post-install-mate.sh) to [install the MATE desktop environment](https://github.com/e33io/reference-wiki/blob/main/installation-docs/debian-mate-installation.md)
 	- use [`deb-post-install-gnome.sh`](https://github.com/e33io/scripts/blob/main/deb-post-install-gnome.sh) to [install the Gnome desktop environment](https://github.com/e33io/reference-wiki/blob/main/installation-docs/debian-gnome-installation.md)
 
-- use the script below with an [Arch](https://wiki.archlinux.org/title/Archinstall) "Minimal" installation
+- use the scripts below with an [Arch](https://wiki.archlinux.org/title/Archinstall) "Minimal" installation
 	- use [`arch-post-install-i3.sh`](https://github.com/e33io/scripts/blob/main/arch-post-install-i3.sh) to [install the i3 window manager](https://github.com/e33io/reference-wiki/blob/main/installation-docs/arch-i3-installation.md)
-
-- use the script below with an [Arch](https://wiki.archlinux.org/title/Archinstall) "GNOME" installation
-	- use [`arch-gnome-post-install.sh`](https://github.com/e33io/scripts/blob/main/arch-gnome-post-install.sh) to customize Gnome
+	- use [`arch-post-install-gnome.sh`](https://github.com/e33io/scripts/blob/main/arch-post-install-gnome.sh) to install the Gnome desktop environment
 
 &nbsp;
 
