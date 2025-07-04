@@ -5,7 +5,7 @@
 # URL: https://github.com/e33io/scripts/blob/main/arch-gnome-post-install.sh
 # ----------------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
-# Only use with a fresh "GNOME" archinstall (Profile > Type > Desktop > GNOME)
+# Only use with a fresh "Minimal" archinstall (Profile > Type > Minimal)
 # to install the Gnome desktop environment and a base set of apps for a
 # ready-to-use desktop session.
 # ----------------------------------------------------------------------------
@@ -29,6 +29,15 @@ if [ "$(id -u)" = 0 ]; then
 fi
 
 echo "################################################################"
+echo "Install Gnome and other packages"
+echo "################################################################"
+
+sudo pacman -S --noconfirm --needed gnome gnome-tweaks gnome-shell-extension-appindicator nautilus-python file-roller dconf-editor \
+gnome-themes-extra papirus-icon-theme qt5ct qt6ct less nfs-utils micro fzf lazygit fastfetch cava cmus perl-image-exiftool timeshift \
+ghostty signal-desktop filezilla gimp darktable inkscape gcolor3 libreoffice
+sudo pacman -R --noconfirm gnome-software
+
+echo "################################################################"
 echo "Install flatpak packages"
 echo "################################################################"
 
@@ -36,15 +45,6 @@ sudo -k
 flatpak install -y --noninteractive com.mattjakeman.ExtensionManager
 flatpak install -y --noninteractive org.gtk.Gtk3theme.Adwaita-dark
 flatpak install -y --noninteractive org.torproject.torbrowser-launcher
-
-echo "################################################################"
-echo "Install other packages"
-echo "################################################################"
-
-sudo pacman -R --noconfirm gnome-software
-sudo pacman -S --noconfirm --needed nautilus-python gnome-shell-extension-appindicator file-roller dconf-editor gnome-themes-extra \
-papirus-icon-theme qt5ct qt6ct less nfs-utils micro fzf lazygit fastfetch cava cmus perl-image-exiftool timeshift ghostty signal-desktop \
-filezilla gimp darktable inkscape gcolor3 libreoffice
 
 echo "################################################################"
 echo "Setup Yay for AUR"
@@ -67,6 +67,13 @@ if [ $pc_type = desktop ]; then
     yay -S --noconfirm --needed --sudoloop input-remapper
     sudo systemctl enable --now input-remapper
 fi
+
+echo "################################################################"
+echo "Enable GDM"
+echo "################################################################"
+
+sudo systemctl set-default graphical.target
+sudo systemctl enable gdm.service
 
 echo "################################################################"
 echo "Clone custom configuration files"
@@ -104,7 +111,7 @@ PS1='\[\e[01;31m\][\u \w]#\[\e[m\] '
 #" | sudo tee -a /root/.bashrc > /dev/null
 
 echo "################################################################"
-echo "Add bookmarks, run dconf script, clean up files and reboot"
+echo "Add bookmarks, run dconf script and clean up files"
 echo "################################################################"
 
 echo "file:///home/$(whoami)/Downloads
@@ -123,4 +130,7 @@ dconf write /org/gnome/desktop/screensaver/picture-uri "'file:///usr/share/backg
 rm -rf $HOME/dotfiles
 rm -rf $HOME/opt-dots
 rm -rf $HOME/scripts
-reboot
+
+echo "################################################################"
+echo "All done, you can now run other commands or reboot the PC"
+echo "################################################################"
