@@ -54,9 +54,10 @@ echo "################################################################"
 
 yay -S --noconfirm --needed --sudoloop menulibre adwaita-qt5-git adwaita-qt6-git mintstick brave-bin octopi
 
+pc_type="$(hostnamectl chassis)"
 if [ $pc_type = vm ]; then
     echo "################################################################"
-    echo "Install spice-vdagent"
+    echo "Install spice-vdagent and update lightdm scaling"
     echo "################################################################"
 
     sudo pacman -S --noconfirm --needed spice-vdagent
