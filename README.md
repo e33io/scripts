@@ -16,17 +16,17 @@ linux installation scripts
 
 - use the scripts below with an [Arch](https://wiki.archlinux.org/title/Archinstall) "Minimal" installation
 	- use [`arch-post-install-i3.sh`](https://github.com/e33io/scripts/blob/main/arch-post-install-i3.sh) to [install the i3 window manager](https://github.com/e33io/reference-wiki/blob/main/installation-docs/arch-i3-installation.md)
-	- use [`arch-post-install-gnome.sh`](https://github.com/e33io/scripts/blob/main/arch-post-install-gnome.sh) to install the Gnome desktop environment
+	- use [`arch-post-install-gnome.sh`](https://github.com/e33io/scripts/blob/main/arch-post-install-gnome.sh) to [install the Gnome desktop environment](https://github.com/e33io/reference-wiki/blob/main/installation-docs/arch-gnome-installation.md)
 
 &nbsp;
 
 ## applications
 
-- use [`install-librewolf-deb.sh`](https://github.com/e33io/scripts/blob/main/install-librewolf-deb.sh) to install [LibreWolf Browser](https://librewolf.net) (.deb package)
-
 - use [`install-brave-deb.sh`](https://github.com/e33io/scripts/blob/main/install-brave-deb.sh) to install [Brave Browser](https://brave.com) (.deb package)
 
 - use [`install-signal-deb.sh`](https://github.com/e33io/scripts/blob/main/install-signal-deb.sh) to install [Signal App](https://www.signal.org) (.deb package)
+
+- use [`install-librewolf-deb.sh`](https://github.com/e33io/scripts/blob/main/install-librewolf-deb.sh) to install [LibreWolf Browser](https://librewolf.net) (.deb package)
 
 - use [`install-lazygit.sh`](https://github.com/e33io/scripts/blob/main/install-lazygit.sh) to install [Lazygit](https://github.com/jesseduffield/lazygit) (tarball build) on Debian 12
 
