@@ -278,7 +278,7 @@ Mint_Y_Dark_Mod_Teal () {
 
 while true; do
     echo "################################################################"
-    echo "Select and set theming for JWM and applications"
+    echo "Select and set theming for Xfce and applications"
     echo "################################################################"
     echo "List of available themes:"
     echo "   0) Keep current theming"
