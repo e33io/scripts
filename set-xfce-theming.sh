@@ -36,16 +36,10 @@ if [ ! -n "$(ls -d /usr/share/themes/Mint-*-Dark-Mod-* 2>/dev/null)" ]; then
         sh $HOME/scripts-theming/install-mint-themes-arch.sh
     fi
     sudo rm -R $HOME/scripts-theming
-    echo "[Desktop Entry]
-Type=Application
-Version=1.0
-Name=Kvantum Manager
-Comment=A simple GUI for installing, selecting and manipulating Kvantum themes
-Exec=kvantummanager
-Icon=kvantum
-Terminal=false
-Categories=Qt;Settings;DesktopSettings;LXQt;X-XFCE-SettingsDialog;X-XFCE-PersonalSettings;X-GNOME-PersonalSettings;
-X-KDE-StartupNotify=false" > $HOME/.local/share/applications/kvantummanager.desktop
+    printf "%s\n" "[Desktop Entry]" "Type=Application" "Version=1.0" "Name=Kvantum Manager" \
+    "Comment=A simple GUI for Kvantum themes" "Exec=kvantummanager" "Icon=kvantum" "Terminal=false" \
+    "Categories=Qt;Settings;DesktopSettings;LXQt;X-XFCE-SettingsDialog;X-XFCE-PersonalSettings;X-GNOME-PersonalSettings;" \
+    "X-KDE-StartupNotify=false" > $HOME/.local/share/applications/kvantummanager.desktop
 fi
 
 # install papirus-icon-theme and papirus-folders if needed
@@ -63,8 +57,10 @@ clear
 
 theming_files () {
     # Xfce GTK theme and icon theme
-    sed -i "s/\"ThemeName\" type=\"string\" value=\".*\"/\"ThemeName\" type=\"string\" value=\"$gtk_theme\"/" $HOME/.config/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml
-    sed -i "s/\"IconThemeName\" type=\"string\" value=\".*\"/\"IconThemeName\" type=\"string\" value=\"$icon_theme\"/" $HOME/.config/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml
+    sed -i "s/\"ThemeName\" type=\"string\" value=\".*\"/\"ThemeName\" type=\"string\" value=\"$gtk_theme\"/" \
+    $HOME/.config/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml
+    sed -i "s/\"IconThemeName\" type=\"string\" value=\".*\"/\"IconThemeName\" type=\"string\" value=\"$icon_theme\"/" \
+    $HOME/.config/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml
     # Qt5ct theme and icon theme
     sed -i "s/^style=.*/style=$qt_ct_theme/" $HOME/.config/qt5ct/qt5ct.conf
     sed -i "s/icon_theme=.*/icon_theme=$icon_theme/" $HOME/.config/qt5ct/qt5ct.conf
