@@ -16,6 +16,7 @@ linux installation scripts
 
 - use the scripts below with an [Arch](https://wiki.archlinux.org/title/Archinstall) "Minimal" installation
 	- use [`arch-post-install-i3.sh`](https://github.com/e33io/scripts/blob/main/arch-post-install-i3.sh) to [install the i3 window manager](https://github.com/e33io/reference-wiki/blob/main/installation-docs/arch-i3-installation.md)
+	- use [`arch-post-install-xfce.sh`](https://github.com/e33io/scripts/blob/main/arch-post-install-xfce.sh) to [install the Xfce desktop environment](https://github.com/e33io/reference-wiki/blob/main/installation-docs/arch-xfce-installation.md)
 	- use [`arch-post-install-gnome.sh`](https://github.com/e33io/scripts/blob/main/arch-post-install-gnome.sh) to [install the Gnome desktop environment](https://github.com/e33io/reference-wiki/blob/main/installation-docs/arch-gnome-installation.md)
 
 &nbsp;
@@ -41,6 +42,8 @@ linux installation scripts
 - use [`set-i3-theming.sh`](https://github.com/e33io/scripts/blob/main/set-i3-theming.sh) to select and set theming for i3 and applications
 
 - use [`set-jwm-theming.sh`](https://github.com/e33io/scripts/blob/main/set-jwm-theming.sh) to select and set theming for JWM and applications
+
+- use [`set-xfce-theming.sh`](https://github.com/e33io/scripts/blob/main/set-xfce-theming.sh) to select and set theming for Xfce and applications
 
 - use [`install-mint-themes.sh`](https://github.com/e33io/scripts/blob/main/install-mint-themes.sh) to install Linux Mint themes and icons on Debian
 
