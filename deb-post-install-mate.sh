@@ -115,10 +115,10 @@ sudo cp -R $HOME/opt-dots/mate/etc/lightdm /etc
 sudo cp -R $HOME/opt-dots/mate/usr/share /usr
 sudo mkdir -p /boot/grub/fonts
 sudo cp -R /usr/share/grub/ter-* /boot/grub/fonts
-sudo mkdir -p /root/.config/qt5ct
-sudo mkdir -p /root/.config/qt6ct
-sudo ln -sf $HOME/.config/qt5ct/qt5ct.conf /root/.config/qt5ct/qt5ct.conf
-sudo ln -sf $HOME/.config/qt6ct/qt6ct.conf /root/.config/qt6ct/qt6ct.conf
+sudo mkdir -p /root/.config
+sudo ln -sf $HOME/.config/micro/ /root/.config/
+sudo ln -sf $HOME/.config/qt5ct/ /root/.config/
+sudo ln -sf $HOME/.config/qt6ct/ /root/.config/
 sudo update-initramfs -u
 sudo update-grub
 

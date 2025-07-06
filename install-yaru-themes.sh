@@ -89,45 +89,28 @@ if ! { [ -f "/bin/gnome-shell" ] || [ -f "/bin/lxqt-session" ]; }; then
     sudo apt -y install qt*ct
 fi
 
-if [ -f "/usr/bin/lxappearance" ]; then
-    echo "################################################################"
-    echo "Link config files to root user directories for styling"
-    echo "su/root applications if using lxappearance app"
-    echo "################################################################"
+echo "################################################################"
+echo "Link config files to root user directories for styling"
+echo "su/root applications"
+echo "################################################################"
 
-    sudo mkdir -p /root/.config/gtk-3.0
-    sudo ln -sf $HOME/.config/gtk-3.0/settings.ini /root/.config/gtk-3.0/settings.ini
+sudo mkdir -p /root/.config
+
+if [ -f "/usr/bin/lxappearance" ]; then
+    sudo ln -sf $HOME/.config/gtk-3.0/ /root/.config/
     sudo ln -sf $HOME/.gtkrc-2.0 /root/.gtkrc-2.0
 fi
 
 if [ -f "/usr/bin/kvantummanager" ]; then
-    echo "################################################################"
-    echo "Link config files to root user directories for styling"
-    echo "su/root applications if using kvantummanager app"
-    echo "################################################################"
-
-    sudo mkdir -p /root/.config/Kvantum
-    sudo ln -sf $HOME/.config/Kvantum/kvantum.kvconfig /root/.config/Kvantum/kvantum.kvconfig
+    sudo ln -sf $HOME/.config/Kvantum/ /root/.config/
 fi
 
 if [ -f "/usr/bin/qt5ct" ]; then
-    echo "################################################################"
-    echo "Link config files to root user directories for styling"
-    echo "su/root applications if using qt5ct app"
-    echo "################################################################"
-
-    sudo mkdir -p /root/.config/qt5ct
-    sudo ln -sf $HOME/.config/qt5ct/qt5ct.conf /root/.config/qt5ct/qt5ct.conf
+    sudo ln -sf $HOME/.config/qt5ct/ /root/.config/
 fi
 
 if [ -f "/usr/bin/qt6ct" ]; then
-    echo "################################################################"
-    echo "Link config files to root user directories for styling"
-    echo "su/root applications if using qt6ct app"
-    echo "################################################################"
-
-    sudo mkdir -p /root/.config/qt6ct
-    sudo ln -sf $HOME/.config/qt6ct/qt6ct.conf /root/.config/qt6ct/qt6ct.conf
+    sudo ln -sf $HOME/.config/qt6ct/ /root/.config/
 fi
 
 echo "################################################################"

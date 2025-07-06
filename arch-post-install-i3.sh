@@ -99,13 +99,12 @@ sudo cp -R $HOME/opt-dots/arch/etc/lightdm /etc
 sudo mkdir -p /boot/grub/fonts
 sudo cp -R /usr/share/grub/ter-* /boot/grub/fonts
 sudo mv /usr/share/wayland-sessions/weston.desktop /usr/share/wayland-sessions/weston.desktop.bak
-sudo mkdir -p /root/.config/gtk-3.0
-sudo mkdir -p /root/.config/qt5ct
-sudo mkdir -p /root/.config/qt6ct
-sudo ln -s $HOME/.config/gtk-3.0/settings.ini /root/.config/gtk-3.0/settings.ini
-sudo ln -s $HOME/.config/qt5ct/qt5ct.conf /root/.config/qt5ct/qt5ct.conf
-sudo ln -s $HOME/.config/qt6ct/qt6ct.conf /root/.config/qt6ct/qt6ct.conf
-sudo ln -s $HOME/.gtkrc-2.0 /root/.gtkrc-2.0
+sudo mkdir -p /root/.config
+sudo ln -sf $HOME/.config/gtk-3.0/ /root/.config/
+sudo ln -sf $HOME/.config/micro/ /root/.config/
+sudo ln -sf $HOME/.config/qt5ct/ /root/.config/
+sudo ln -sf $HOME/.config/qt6ct/ /root/.config/
+sudo ln -sf $HOME/.gtkrc-2.0 /root/.gtkrc-2.0
 
 echo "################################################################"
 echo "Update root .bashrc file"

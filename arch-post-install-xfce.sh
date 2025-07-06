@@ -93,10 +93,10 @@ sudo cp -R $HOME/opt-dots/xfce/usr/bin /usr
 sudo cp -R $HOME/opt-dots/xfce/usr/share /usr
 sudo mkdir -p /boot/grub/fonts
 sudo cp -R /usr/share/grub/ter-* /boot/grub/fonts
-sudo mkdir -p /root/.config/qt5ct
-sudo mkdir -p /root/.config/qt6ct
-sudo ln -s $HOME/.config/qt5ct/qt5ct.conf /root/.config/qt5ct/qt5ct.conf
-sudo ln -s $HOME/.config/qt6ct/qt6ct.conf /root/.config/qt6ct/qt6ct.conf
+sudo mkdir -p /root/.config
+sudo ln -sf $HOME/.config/micro/ /root/.config/
+sudo ln -sf $HOME/.config/qt5ct/ /root/.config/
+sudo ln -sf $HOME/.config/qt6ct/ /root/.config/
 sudo mv /usr/share/backgrounds/xfce/xfce-x.svg /usr/share/backgrounds/xfce/xfce-default.svg
 sudo ln -sf /usr/share/wallpapers/background.png /usr/share/backgrounds/xfce/xfce-x.svg
 
