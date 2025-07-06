@@ -116,11 +116,14 @@ sudo cp -R $HOME/dotfiles/etc/plymouth /etc
 sudo cp -R $HOME/dotfiles/usr/share /usr
 sudo mkdir -p /boot/grub/fonts
 sudo cp -R /usr/share/grub/ter-* /boot/grub/fonts
-sudo mkdir -p /root/.config
-sudo ln -sf $HOME/.config/gtk-3.0/ /root/.config/
-sudo ln -sf $HOME/.config/micro/ /root/.config/
-sudo ln -sf $HOME/.config/qt5ct/ /root/.config/
-sudo ln -sf $HOME/.config/qt6ct/ /root/.config/
+sudo mkdir -p /root/.config/gtk-3.0
+sudo mkdir -p /root/.config/micro
+sudo mkdir -p /root/.config/qt5ct
+sudo mkdir -p /root/.config/qt6ct
+sudo ln -sf $HOME/.config/gtk-3.0/* /root/.config/gtk-3.0
+sudo ln -sf $HOME/.config/micro/* /root/.config/micro
+sudo ln -sf $HOME/.config/qt5ct/* /root/.config/qt5ct
+sudo ln -sf $HOME/.config/qt6ct/* /root/.config/qt6ct
 sudo ln -sf $HOME/.gtkrc-2.0 /root/.gtkrc-2.0
 sudo update-initramfs -u
 sudo update-grub

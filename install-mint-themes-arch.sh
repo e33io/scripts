@@ -82,20 +82,24 @@ echo "################################################################"
 sudo mkdir -p /root/.config
 
 if [ -f "/usr/bin/lxappearance" ]; then
-    sudo ln -sf $HOME/.config/gtk-3.0/ /root/.config/
+    sudo mkdir -p /root/.config/gtk-3.0
+    sudo ln -sf $HOME/.config/gtk-3.0/* /root/.config/gtk-3.0
     sudo ln -sf $HOME/.gtkrc-2.0 /root/.gtkrc-2.0
 fi
 
 if [ -f "/usr/bin/kvantummanager" ]; then
-    sudo ln -sf $HOME/.config/Kvantum/ /root/.config/
+    sudo mkdir -p /root/.config/Kvantum
+    sudo ln -sf $HOME/.config/Kvantum/* /root/.config/Kvantum
 fi
 
 if [ -f "/usr/bin/qt5ct" ]; then
-    sudo ln -sf $HOME/.config/qt5ct/ /root/.config/
+    sudo mkdir -p /root/.config/qt5ct
+    sudo ln -sf $HOME/.config/qt5ct/* /root/.config/qt5ct
 fi
 
 if [ -f "/usr/bin/qt6ct" ]; then
-    sudo ln -sf $HOME/.config/qt6ct/ /root/.config/
+    sudo mkdir -p /root/.config/qt6ct
+    sudo ln -sf $HOME/.config/qt6ct/* /root/.config/qt6ct
 fi
 
 echo "################################################################"
