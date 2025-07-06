@@ -83,24 +83,41 @@ echo "################################################################"
 sudo mkdir -p /root/.config
 
 if [ -f "/usr/bin/lxappearance" ]; then
+    if [ ! -f "$HOME/.config/gtk-3.0/settings.ini" ]; then
+        mkdir -p $HOME/.config/gtk-3.0
+        touch $HOME/.config/gtk-3.0/settings.ini
+    fi
+    if [ ! -f "$HOME/.gtkrc-2.0" ]; then
+        touch $HOME/.gtkrc-2.0
+    fi
     sudo mkdir -p /root/.config/gtk-3.0
     sudo ln -sf $HOME/.config/gtk-3.0/* /root/.config/gtk-3.0
     sudo ln -sf $HOME/.gtkrc-2.0 /root/.gtkrc-2.0
 fi
 
 if [ -f "/usr/bin/kvantummanager" ]; then
-    mkdir -p $HOME/.config/Kvantum
-    touch $HOME/.config/Kvantum/kvantum.kvconfig
+    if [ ! -f "$HOME/.config/Kvantum/kvantum.kvconfig" ]; then
+        mkdir -p $HOME/.config/Kvantum
+        touch $HOME/.config/Kvantum/kvantum.kvconfig
+    fi
     sudo mkdir -p /root/.config/Kvantum
     sudo ln -sf $HOME/.config/Kvantum/* /root/.config/Kvantum
 fi
 
 if [ -f "/usr/bin/qt5ct" ]; then
+    if [ ! -f "$HOME/.config/qt5ct/qt5ct.conf" ]; then
+        sudo mkdir -p $HOME/.config/qt5ct
+        touch $HOME/.config/qt5ct/qt5ct.conf
+    fi
     sudo mkdir -p /root/.config/qt5ct
     sudo ln -sf $HOME/.config/qt5ct/* /root/.config/qt5ct
 fi
 
 if [ -f "/usr/bin/qt6ct" ]; then
+    if [ ! -f "$HOME/.config/qt6ct/qt6ct.conf" ]; then
+        sudo mkdir -p $HOME/.config/qt6ct
+        touch $HOME/.config/qt6ct/qt6ct.conf
+    fi
     sudo mkdir -p /root/.config/qt6ct
     sudo ln -sf $HOME/.config/qt6ct/* /root/.config/qt6ct
 fi
