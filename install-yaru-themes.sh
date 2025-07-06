@@ -103,6 +103,8 @@ if [ -f "/usr/bin/lxappearance" ]; then
 fi
 
 if [ -f "/usr/bin/kvantummanager" ]; then
+    mkdir -p $HOME/.config/Kvantum
+    touch $HOME/.config/Kvantum/kvantum.kvconfig
     sudo mkdir -p /root/.config/Kvantum
     sudo ln -sf $HOME/.config/Kvantum/* /root/.config/Kvantum
 fi
