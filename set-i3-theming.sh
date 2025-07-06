@@ -26,15 +26,10 @@ if ! { [ -f "/etc/debian_version" ] || [ -f "/etc/pacman.conf" ]; }; then
     exit 1
 fi
 
-# install mint themes if needed
+# install dark-mod-themes if needed
 if [ ! -n "$(ls -d /usr/share/themes/Mint-*-Dark-Mod-* 2>/dev/null)" ]; then
     git clone https://github.com/e33io/scripts $HOME/scripts-theming
-    if [ -f "/etc/debian_version" ]; then
-        sh $HOME/scripts-theming/install-mint-themes.sh
-    fi
-    if [ -f "/etc/pacman.conf" ]; then
-        sh $HOME/scripts-theming/install-mint-themes-arch.sh
-    fi
+    sh $HOME/scripts-theming/install-dark-mod-themes.sh
     rm -rf $HOME/scripts-theming
 fi
 

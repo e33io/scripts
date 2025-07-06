@@ -26,16 +26,11 @@ if ! { [ -f "/etc/debian_version" ] || [ -f "/etc/pacman.conf" ]; }; then
     exit 1
 fi
 
-# install mint themes if needed
+# install dark-mod-themes if needed
 if [ ! -n "$(ls -d /usr/share/themes/Mint-*-Dark-Mod-* 2>/dev/null)" ]; then
     git clone https://github.com/e33io/scripts $HOME/scripts-theming
-    if [ -f "/etc/debian_version" ]; then
-        sh $HOME/scripts-theming/install-mint-themes.sh
-    fi
-    if [ -f "/etc/pacman.conf" ]; then
-        sh $HOME/scripts-theming/install-mint-themes-arch.sh
-    fi
-    sudo rm -R $HOME/scripts-theming
+    sh $HOME/scripts-theming/install-dark-mod-themes.sh
+    rm -rf $HOME/scripts-theming
     printf "%s\n" "[Desktop Entry]" "Type=Application" "Version=1.0" "Name=Kvantum Manager" \
     "Comment=A simple GUI for Kvantum themes" "Exec=kvantummanager" "Icon=kvantum" "Terminal=false" \
     "Categories=Qt;Settings;DesktopSettings;LXQt;X-XFCE-SettingsDialog;X-XFCE-PersonalSettings;X-GNOME-PersonalSettings;" \
