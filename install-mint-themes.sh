@@ -31,8 +31,12 @@ echo "Install theming dependencies"
 echo "################################################################"
 
 sudo apt update
-sudo apt -y install gnome-themes-extra gtk2-engines gtk2-engines-murrine gtk2-engines-pixbuf \
-libglib2.0-bin libgtk-3-common libgtk-4-common libgtk2.0-common curl git
+sudo apt -y install gnome-themes-extra gtk2-engines gtk2-engines-murrine gtk2-engines-pixbuf libglib2.0-bin \
+libgtk-3-common libgtk-4-common libgtk2.0-common adwaita-qt* qt5-style-kvantum curl git
+
+if [ ! -f "/bin/lxqt-session" ]; then
+    sudo apt -y install qt*ct
+fi
 
 echo "################################################################"
 echo "Install Linux Mint themes and icons"
@@ -74,17 +78,6 @@ sudo sed -i 's/gtk-small-toolbar.*/#/' /usr/share/themes/Mint*/gtk-2.0/gtkrc
 sudo sed -i 's/gtk-dnd.*/#/' /usr/share/themes/Mint*/gtk-2.0/gtkrc
 sudo sed -i 's/gtk-dialog.*/#/' /usr/share/themes/Mint*/gtk-2.0/gtkrc
 
-if [ -f "/usr/bin/lxappearance" ]; then
-    echo "################################################################"
-    echo "Link config files to root user directories for styling"
-    echo "su/root applications if using lxappearance app"
-    echo "################################################################"
-
-    sudo mkdir -p /root/.config/gtk-3.0
-    sudo ln -sf $HOME/.config/gtk-3.0/settings.ini /root/.config/gtk-3.0/settings.ini
-    sudo ln -sf $HOME/.gtkrc-2.0 /root/.gtkrc-2.0
-fi
-
 echo "################################################################"
 echo "Clone custom theming repo"
 echo "################################################################"
@@ -96,22 +89,18 @@ echo "Copy custom Mint Dark Mod themes"
 echo "################################################################"
 
 sudo cp -R $HOME/theming-temp/gtk/* /usr/share/themes
-
-echo "################################################################"
-echo "Install Qt and Kvantum styling packages"
-echo "################################################################"
-
-sudo apt -y install adwaita-qt* qt5-style-kvantum
-
-if [ ! -f "/bin/lxqt-session" ]; then
-    sudo apt -y install qt*ct
-fi
-
-echo "################################################################"
-echo "Copy custom Kvantum Qt themes"
-echo "################################################################"
-
 sudo cp -R $HOME/theming-temp/Kvantum /usr/share
+
+if [ -f "/usr/bin/lxappearance" ]; then
+    echo "################################################################"
+    echo "Link config files to root user directories for styling"
+    echo "su/root applications if using lxappearance app"
+    echo "################################################################"
+
+    sudo mkdir -p /root/.config/gtk-3.0
+    sudo ln -sf $HOME/.config/gtk-3.0/settings.ini /root/.config/gtk-3.0/settings.ini
+    sudo ln -sf $HOME/.gtkrc-2.0 /root/.gtkrc-2.0
+fi
 
 if [ -f "/usr/bin/kvantummanager" ]; then
     echo "################################################################"

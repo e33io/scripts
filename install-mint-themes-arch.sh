@@ -42,10 +42,12 @@ echo "################################################################"
 echo "Install Mint themes and dependencies"
 echo "################################################################"
 
-sudo pacman -Syu
-sudo pacman -S --noconfirm --needed gnome-themes-extra gtk-engine-murrine less git
+sudo pacman -Syu --noconfirm --needed gnome-themes-extra gtk-engine-murrine kvantum kvantum-qt5 less git
+yay -S --noconfirm --needed --sudoloop mint-x-icons mint-y-icons mint-l-icons mint-themes mint-l-theme adwaita-qt5-git adwaita-qt6-git
 
-yay -S --noconfirm --needed --sudoloop mint-x-icons mint-y-icons mint-l-icons mint-themes mint-l-theme
+if [ ! -f "/bin/lxqt-session" ]; then
+    sudo pacman -S --noconfirm --needed qt5ct qt6ct
+fi
 
 echo "################################################################"
 echo "Remove prespecified GTK2 icon sizes to fix scaling issues"
@@ -58,17 +60,6 @@ sudo sed -i 's/gtk-small-toolbar.*/#/' /usr/share/themes/Mint*/gtk-2.0/gtkrc
 sudo sed -i 's/gtk-dnd.*/#/' /usr/share/themes/Mint*/gtk-2.0/gtkrc
 sudo sed -i 's/gtk-dialog.*/#/' /usr/share/themes/Mint*/gtk-2.0/gtkrc
 
-if [ -f "/usr/bin/lxappearance" ]; then
-    echo "################################################################"
-    echo "Link config files to root user directories for styling"
-    echo "su/root applications if using lxappearance app"
-    echo "################################################################"
-
-    sudo mkdir -p /root/.config/gtk-3.0
-    sudo ln -sf $HOME/.config/gtk-3.0/settings.ini /root/.config/gtk-3.0/settings.ini
-    sudo ln -sf $HOME/.gtkrc-2.0 /root/.gtkrc-2.0
-fi
-
 echo "################################################################"
 echo "Clone custom theming repo"
 echo "################################################################"
@@ -80,26 +71,18 @@ echo "Copy custom Mint Dark Mod themes"
 echo "################################################################"
 
 sudo cp -R $HOME/theming-temp/gtk/* /usr/share/themes
-
-echo "################################################################"
-echo "Install Qt and Kvantum styling packages"
-echo "################################################################"
-
-sudo pacman -S --noconfirm --needed kvantum kvantum-qt5
-
-if [ ! -f "/lib/qt/plugins/styles/adwaita.so" ]; then
-    yay -S --noconfirm --needed --sudoloop adwaita-qt5-git adwaita-qt6-git
-fi
-
-if [ ! -f "/bin/lxqt-session" ]; then
-    sudo pacman -S --noconfirm --needed qt5ct qt6ct
-fi
-
-echo "################################################################"
-echo "Copy custom Kvantum Qt themes"
-echo "################################################################"
-
 sudo cp -R $HOME/theming-temp/Kvantum /usr/share
+
+if [ -f "/usr/bin/lxappearance" ]; then
+    echo "################################################################"
+    echo "Link config files to root user directories for styling"
+    echo "su/root applications if using lxappearance app"
+    echo "################################################################"
+
+    sudo mkdir -p /root/.config/gtk-3.0
+    sudo ln -sf $HOME/.config/gtk-3.0/settings.ini /root/.config/gtk-3.0/settings.ini
+    sudo ln -sf $HOME/.gtkrc-2.0 /root/.gtkrc-2.0
+fi
 
 if [ -f "/usr/bin/kvantummanager" ]; then
     echo "################################################################"
@@ -114,12 +97,20 @@ fi
 if [ -f "/usr/bin/qt5ct" ]; then
     echo "################################################################"
     echo "Link config files to root user directories for styling"
-    echo "su/root applications if using qt5ct and/or qt6ct app"
+    echo "su/root applications if using qt5ct app"
     echo "################################################################"
 
     sudo mkdir -p /root/.config/qt5ct
-    sudo mkdir -p /root/.config/qt6ct
     sudo ln -sf $HOME/.config/qt5ct/qt5ct.conf /root/.config/qt5ct/qt5ct.conf
+fi
+
+if [ -f "/usr/bin/qt6ct" ]; then
+    echo "################################################################"
+    echo "Link config files to root user directories for styling"
+    echo "su/root applications if using qt6ct app"
+    echo "################################################################"
+
+    sudo mkdir -p /root/.config/qt6ct
     sudo ln -sf $HOME/.config/qt6ct/qt6ct.conf /root/.config/qt6ct/qt6ct.conf
 fi
 
