@@ -110,6 +110,7 @@ if [ -f "/bin/gnome-software" ]; then
     echo "Add org.gnome.Software.desktop file to manually"
     echo "start Gnome Software (disable autostart)"
     echo "################################################################"
+
     mkdir -p $HOME/.config/autostart
     echo "X-GNOME-Autostart-enabled=false" > $HOME/.config/autostart/org.gnome.Software.desktop
 fi

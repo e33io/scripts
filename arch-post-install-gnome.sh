@@ -65,7 +65,7 @@ if [ $pc_type = desktop ]; then
     echo "################################################################"
     echo "Install input-remapper"
     echo "################################################################"
-    
+
     yay -S --noconfirm --needed --sudoloop input-remapper
     sudo systemctl enable --now input-remapper
 fi
