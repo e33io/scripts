@@ -41,7 +41,7 @@ if [ -f "/etc/pacman.conf" ]; then
         echo "################################################################"
         echo "Setup Yay for AUR"
         echo "################################################################"
-        
+
         git clone https://aur.archlinux.org/yay-bin.git $HOME/yay-bin
         cd $HOME/yay-bin
         makepkg -si --noconfirm
