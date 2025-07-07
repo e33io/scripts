@@ -56,9 +56,38 @@ theming_files () {
     $HOME/.config/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml
     sed -i "s/\"IconThemeName\" type=\"string\" value=\".*\"/\"IconThemeName\" type=\"string\" value=\"$icon_theme\"/" \
     $HOME/.config/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml
+    # Xfce docklike plugin config and color
     if [ -f $HOME/.config/xfce4/panel/docklike*.rc ]; then
-        sed -i "s/indicatorColor=.*/indicatorColor=$accent_color_rgb/" $HOME/.config/xfce4/panel/docklike*.rc
-        sed -i "s/inactiveColor=.*/inactiveColor=$accent_color_rgb/" $HOME/.config/xfce4/panel/docklike*.rc
+        if ! grep -q ^indicatorStyle= $HOME/.config/xfce4/panel/docklike*.rc; then
+            echo "indicatorStyle=0" \
+            | tee -a $HOME/.config/xfce4/panel/docklike*.rc > /dev/null
+        else
+            sed -i "s/^indicatorStyle=.*/indicatorStyle=0/" $HOME/.config/xfce4/panel/docklike*.rc
+        fi
+        if ! grep -q inactiveIndicatorStyle= $HOME/.config/xfce4/panel/docklike*.rc; then
+            echo "inactiveIndicatorStyle=2" \
+            | tee -a $HOME/.config/xfce4/panel/docklike*.rc > /dev/null
+        else
+            sed -i "s/inactiveIndicatorStyle=.*/inactiveIndicatorStyle=2/" $HOME/.config/xfce4/panel/docklike*.rc
+        fi
+        if ! grep -q indicatorColorFromTheme= $HOME/.config/xfce4/panel/docklike*.rc; then
+            echo "indicatorColorFromTheme=false" \
+            | tee -a $HOME/.config/xfce4/panel/docklike*.rc > /dev/null
+        else
+            sed -i "s/indicatorColorFromTheme=true/indicatorColorFromTheme=false/" $HOME/.config/xfce4/panel/docklike*.rc
+        fi
+        if ! grep -q indicatorColor= $HOME/.config/xfce4/panel/docklike*.rc; then
+            echo "indicatorColor=$accent_color_rgb" \
+            | tee -a $HOME/.config/xfce4/panel/docklike*.rc > /dev/null
+        else
+            sed -i "s/indicatorColor=.*/indicatorColor=$accent_color_rgb/" $HOME/.config/xfce4/panel/docklike*.rc
+        fi
+        if ! grep -q inactiveColor= $HOME/.config/xfce4/panel/docklike*.rc; then
+            echo "inactiveColor=$accent_color_rgb" \
+            | tee -a $HOME/.config/xfce4/panel/docklike*.rc > /dev/null
+        else
+            sed -i "s/inactiveColor=.*/inactiveColor=$accent_color_rgb/" $HOME/.config/xfce4/panel/docklike*.rc
+        fi
     fi
     # Qt5ct theme and icon theme
     sed -i "s/^style=.*/style=$qt_ct_theme/" $HOME/.config/qt5ct/qt5ct.conf
