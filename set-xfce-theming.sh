@@ -56,6 +56,10 @@ theming_files () {
     $HOME/.config/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml
     sed -i "s/\"IconThemeName\" type=\"string\" value=\".*\"/\"IconThemeName\" type=\"string\" value=\"$icon_theme\"/" \
     $HOME/.config/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml
+    if [ -f $HOME/.config/xfce4/panel/docklike*.rc ]; then
+        sed -i "s/indicatorColor=.*/indicatorColor=$accent_color_rgb/" $HOME/.config/xfce4/panel/docklike*.rc
+        sed -i "s/inactiveColor=.*/inactiveColor=$accent_color_rgb/" $HOME/.config/xfce4/panel/docklike*.rc
+    fi
     # Qt5ct theme and icon theme
     sed -i "s/^style=.*/style=$qt_ct_theme/" $HOME/.config/qt5ct/qt5ct.conf
     sed -i "s/icon_theme=.*/icon_theme=$icon_theme/" $HOME/.config/qt5ct/qt5ct.conf
@@ -63,10 +67,7 @@ theming_files () {
     sed -i "s/^style=.*/style=$qt_ct_theme/" $HOME/.config/qt6ct/qt6ct.conf
     sed -i "s/icon_theme=.*/icon_theme=$icon_theme/" $HOME/.config/qt6ct/qt6ct.conf
     # Kvantum theme
-    if [ ! -f "$HOME/.config/Kvantum" ]; then
-        mkdir -p $HOME/.config/Kvantum
-        printf "[General]\ntheme=" | tee $HOME/.config/Kvantum/kvantum.kvconfig > /dev/null
-    fi
+    printf "[General]\ntheme=" | tee $HOME/.config/Kvantum/kvantum.kvconfig > /dev/null
     sed -i "s/theme=.*/theme=$kvantum_theme/" $HOME/.config/Kvantum/kvantum.kvconfig
     # Lightdm background color, GTK theme and icon theme
     if [ -f "/etc/lightdm/lightdm-gtk-greeter.conf" ]; then
@@ -96,6 +97,7 @@ Adwaita_Dark () {
     desktop_bg_color="#202a36"
     # Theme accent color
     accent_color="#15539e"
+    accent_color_rgb="rgb(21,83,158)"
     # Call the theming files
     theming_files
     # Dconf color-scheme preference
@@ -112,6 +114,7 @@ Adwaita_Light () {
     desktop_bg_color="#303e50"
     # Theme accent color
     accent_color="#3584e4"
+    accent_color_rgb="rgb(53,132,228)"
     # Call the theming files
     theming_files
     # Dconf color-scheme preference
@@ -129,6 +132,7 @@ Mint_L_Dark_Mod_Brown () {
     desktop_bg_color="#32271e"
     # Theme accent color
     accent_color="#9c7e65"
+    accent_color_rgb="rgb(156,126,101)"
     # Call the theming files
     theming_files
     # Dconf color-scheme preference
@@ -146,6 +150,7 @@ Mint_L_Dark_Mod_Teal () {
     desktop_bg_color="#1b2d29"
     # Theme accent color
     accent_color="#579c8e"
+    accent_color_rgb="rgb(87,156,142)"
     # Call the theming files
     theming_files
     # Dconf color-scheme preference
@@ -163,6 +168,7 @@ Mint_Y_Dark_Mod_Blue () {
     desktop_bg_color="#202a35"
     # Theme accent color
     accent_color="#0c75de"
+    accent_color_rgb="rgb(12,117,222)"
     # Call the theming files
     theming_files
     # Dconf color-scheme preference
@@ -180,6 +186,7 @@ Mint_Y_Dark_Mod_Green () {
     desktop_bg_color="#1b2d20"
     # Theme accent color
     accent_color="#35a854"
+    accent_color_rgb="rgb(53,168,84)"
     # Call the theming files
     theming_files
     # Dconf color-scheme preference
@@ -197,6 +204,7 @@ Mint_Y_Dark_Mod_Grey () {
     desktop_bg_color="#282a2c"
     # Theme accent color
     accent_color="#8e9197"
+    accent_color_rgb="rgb(142,145,151)"
     # Call the theming files
     theming_files
     # Dconf color-scheme preference
@@ -214,6 +222,7 @@ Mint_Y_Dark_Mod_Orange () {
     desktop_bg_color="#352620"
     # Theme accent color
     accent_color="#ff7139"
+    accent_color_rgb="rgb(255,113,57)"
     # Call the theming files
     theming_files
     # Dconf color-scheme preference
@@ -231,6 +240,7 @@ Mint_Y_Dark_Mod_Purple () {
     desktop_bg_color="#2e253e"
     # Theme accent color
     accent_color="#8c5dd9"
+    accent_color_rgb="rgb(140,93,217)"
     # Call the theming files
     theming_files
     # Dconf color-scheme preference
@@ -248,6 +258,7 @@ Mint_Y_Dark_Mod_Red () {
     desktop_bg_color="#3b2324"
     # Theme accent color
     accent_color="#e82127"
+    accent_color_rgb="rgb(232,33,39)"
     # Call the theming files
     theming_files
     # Dconf color-scheme preference
@@ -265,6 +276,7 @@ Mint_Y_Dark_Mod_Teal () {
     desktop_bg_color="#1b2c2e"
     # Theme accent color
     accent_color="#199ca8"
+    accent_color_rgb="rgb(25,156,168)"
     # Call the theming files
     theming_files
     # Dconf color-scheme preference
