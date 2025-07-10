@@ -102,7 +102,6 @@ sudo cp -R $HOME/dotfiles/usr/share/wallpapers /usr/share
 sudo cp -R $HOME/opt-dots/arch/etc/lightdm /etc
 sudo mkdir -p /boot/grub/fonts
 sudo cp -R /usr/share/grub/ter-* /boot/grub/fonts
-sudo mv /usr/share/wayland-sessions/weston.desktop /usr/share/wayland-sessions/weston.desktop.bak
 sudo mkdir -p /root/.config/gtk-3.0
 sudo mkdir -p /root/.config/micro
 sudo mkdir -p /root/.config/qt5ct
