@@ -16,6 +16,7 @@ linux installation scripts
 
 - use the scripts below with an [Arch](https://wiki.archlinux.org/title/Archinstall) "Minimal" installation
 	- use [`arch-post-install-i3.sh`](https://github.com/e33io/scripts/blob/main/arch-post-install-i3.sh) to [install the i3 window manager](https://github.com/e33io/reference-wiki/blob/main/installation-docs/arch-i3-installation.md)
+	- use [`arch-post-install-jwm.sh`](https://github.com/e33io/scripts/blob/main/arch-post-install-jwm.sh) to [install the JWM window manager](https://github.com/e33io/reference-wiki/blob/main/installation-docs/arch-jwm-installation.md)
 	- use [`arch-post-install-xfce.sh`](https://github.com/e33io/scripts/blob/main/arch-post-install-xfce.sh) to [install the Xfce desktop environment](https://github.com/e33io/reference-wiki/blob/main/installation-docs/arch-xfce-installation.md)
 	- use [`arch-post-install-gnome.sh`](https://github.com/e33io/scripts/blob/main/arch-post-install-gnome.sh) to [install the Gnome desktop environment](https://github.com/e33io/reference-wiki/blob/main/installation-docs/arch-gnome-installation.md)
 
