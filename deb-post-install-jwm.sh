@@ -54,7 +54,7 @@ echo "################################################################"
 sudo apt -y install synaptic dconf-editor dconf-cli gnome-disk-utility mintstick scrot atril imv mpv parole mousepad galculator gpick \
 darktable gimp inkscape filezilla libreoffice-calc libreoffice-draw libreoffice-impress libreoffice-writer libreoffice-gtk3 timeshift xterm \
 htop neofetch cmus cava cmatrix ncal micro ranger ueberzug caca-utils highlight atool w3m poppler-utils mediainfo fzf libimage-exiftool-perl \
-apt-transport-https curl rsync xdotool xbindkeys
+apt-transport-https curl rsync wmctrl xdotool xbindkeys
 
 echo "################################################################"
 echo "Install pipewire and enable wireplumber service"
