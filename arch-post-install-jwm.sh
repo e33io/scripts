@@ -177,6 +177,7 @@ sed -i "s/home\/.*\/\.config/home\/$(whoami)\/\.config/" $HOME/.config/qt6ct/qt6
 sed -i "s/home\/.*\/Desktop/home\/$(whoami)\/Desktop/" $HOME/.config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml
 sed -i "s/~\/\.gtkrc-2\.0\.mine/\/home\/$(whoami)\/\.gtkrc-2\.0\.mine/" $HOME/.gtkrc-2.0
 printf "%s\n" "" "# Set XDG_CURRENT_DESKTOP" "export XDG_CURRENT_DESKTOP=jwm" | tee -a $HOME/.profile > /dev/null
+dconf write /org/gtk/settings/file-chooser/window-size "(1440, 1028)"
 rm -rf $HOME/.config/i3
 rm -rf $HOME/dotfiles
 rm -rf $HOME/opt-dots
