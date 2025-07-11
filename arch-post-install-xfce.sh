@@ -91,6 +91,7 @@ sudo cp -R $HOME/dotfiles/usr/share/wallpapers /usr/share
 sudo cp -R $HOME/opt-dots/arch-xfce/etc/lightdm /etc
 sudo cp -R $HOME/opt-dots/xfce/usr/bin /usr
 sudo cp -R $HOME/opt-dots/xfce/usr/share /usr
+sudo cp -R $HOME/scripts/window-control.sh /usr/bin
 sudo mkdir -p /boot/grub/fonts
 sudo cp -R /usr/share/grub/ter-* /boot/grub/fonts
 sudo mkdir -p /root/.config/micro

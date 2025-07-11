@@ -93,6 +93,7 @@ cp -R $HOME/opt-dots/arch/.profile $HOME
 cp -R $HOME/opt-dots/jwm/.config $HOME
 cp -R $HOME/opt-dots/jwm/.local $HOME
 cp -R $HOME/opt-dots/jwm/.dmrc $HOME
+cp -R $HOME/scripts/window-control.sh $HOME/.local/bin
 sudo cp -R $HOME/dotfiles/etc/plymouth /etc
 sudo cp -R $HOME/dotfiles/usr/share/fonts /usr/share
 sudo cp -R $HOME/dotfiles/usr/share/grub /usr/share
