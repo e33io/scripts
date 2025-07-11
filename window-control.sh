@@ -39,28 +39,28 @@ case $1 in
         x=$(( $x + $shift_win ))
         y=$(( $y - $y_rel ))
         # move window to the new coordinates
-        wmctrl -r :ACTIVE: -e "0,$x,$y,$width,$height"
+        wmctrl -r :ACTIVE: -e "1,$x,$y,$width,$height"
     ;;
     move-left)
         # shift the x coordinates left
         x=$(( $x - $shift_win ))
         y=$(( $y - $y_rel ))
         # move window to the new coordinates
-        wmctrl -r :ACTIVE: -e "0,$x,$y,$width,$height"
+        wmctrl -r :ACTIVE: -e "1,$x,$y,$width,$height"
     ;;
     move-down)
         # shift the y coordinates down
         x=$(( $x - $x_rel ))
         y=$(( $y + $shift_win ))
         # move window to the new coordinates
-        wmctrl -r :ACTIVE: -e "0,$x,$y,$width,$height"
+        wmctrl -r :ACTIVE: -e "1,$x,$y,$width,$height"
     ;;
     move-up)
         # shift the y coordinates up
         x=$(( $x - $x_rel ))
         y=$(( $y - $shift_win ))
         # move window to the new coordinates
-        wmctrl -r :ACTIVE: -e "0,$x,$y,$width,$height"
+        wmctrl -r :ACTIVE: -e "1,$x,$y,$width,$height"
     ;;
     width-more)
         # increase window width (left and right)
@@ -68,7 +68,7 @@ case $1 in
         y=$(( $y - $y_rel ))
         x=$(( $x - $x_rel - $resize_adj ))
         # resize window to the new width
-        wmctrl -r :ACTIVE: -e "0,$x,$y,$width,$height"
+        wmctrl -r :ACTIVE: -e "1,$x,$y,$width,$height"
     ;;
     width-less)
         # decrease window width (left and right)
@@ -76,7 +76,7 @@ case $1 in
         y=$(( $y - $y_rel ))
         x=$(( $x - $x_rel + $resize_adj ))
         # resize window to the new width
-        wmctrl -r :ACTIVE: -e "0,$x,$y,$width,$height"
+        wmctrl -r :ACTIVE: -e "1,$x,$y,$width,$height"
     ;;
     height-more)
         # increase window height (top and bottom)
@@ -84,7 +84,7 @@ case $1 in
         y=$(( $y - $y_rel - $resize_adj ))
         x=$(( $x - $x_rel ))
         # resize window to the new height
-        wmctrl -r :ACTIVE: -e "0,$x,$y,$width,$height"
+        wmctrl -r :ACTIVE: -e "1,$x,$y,$width,$height"
     ;;
     height-less)
         # decrease window height (top and bottom)
@@ -92,6 +92,6 @@ case $1 in
         y=$(( $y - $y_rel + $resize_adj ))
         x=$(( $x - $x_rel ))
         # resize window to the new height
-        wmctrl -r :ACTIVE: -e "0,$x,$y,$width,$height"
+        wmctrl -r :ACTIVE: -e "1,$x,$y,$width,$height"
     ;;
 esac
