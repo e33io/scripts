@@ -114,8 +114,6 @@ if [ -d "$HOME/.config/jwm" ]; then
     sed -i 's/GDK_SCALE=1 signal-desktop/signal-desktop/' $HOME/.config/jwm/jwmrc
     # update rofi/config.rasi (yoffset position)
     sed -i 's/yoffset: -275;/yoffset: -180;/' $HOME/.config/rofi/config.rasi
-    # update dconf user file
-    dconf write /org/gtk/settings/file-chooser/window-size "(720, 514)"
 fi
 
 # Remove unneeded .desktop files
