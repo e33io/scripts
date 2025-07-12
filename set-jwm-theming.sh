@@ -276,7 +276,7 @@ Mint_Y_Dark_Mod_Purple () {
     kvantum_theme=Mint-Y-Dark-Mod-Purple
     rofi_theme=Floating-Mint-Y-Dark-Purple
     icon_theme=Papirus-Dark
-    papirus_folders=green
+    papirus_folders=orange
     # Call the theming files
     theming_files
 }

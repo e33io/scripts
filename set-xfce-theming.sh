@@ -264,7 +264,7 @@ Mint_Y_Dark_Mod_Purple () {
     qt_ct_theme=kvantum-dark
     kvantum_theme=Mint-Y-Dark-Mod-Purple
     icon_theme=Papirus-Dark
-    papirus_folders=green
+    papirus_folders=orange
     # Desktop background color
     desktop_bg_color="#2e253e"
     # Theme accent color
