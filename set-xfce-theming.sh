@@ -62,13 +62,15 @@ theming_files () {
             echo "indicatorStyle=0" \
             | tee -a $HOME/.config/xfce4/panel/docklike*.rc > /dev/null
         else
-            sed -i "s/^indicatorStyle=.*/indicatorStyle=0/" $HOME/.config/xfce4/panel/docklike*.rc
+            sed -i "s/^indicatorStyle=.*/indicatorStyle=0/" \
+            $HOME/.config/xfce4/panel/docklike*.rc
         fi
         if ! grep -q inactiveIndicatorStyle= $HOME/.config/xfce4/panel/docklike*.rc; then
             echo "inactiveIndicatorStyle=2" \
             | tee -a $HOME/.config/xfce4/panel/docklike*.rc > /dev/null
         else
-            sed -i "s/inactiveIndicatorStyle=.*/inactiveIndicatorStyle=2/" $HOME/.config/xfce4/panel/docklike*.rc
+            sed -i "s/inactiveIndicatorStyle=.*/inactiveIndicatorStyle=2/" \
+            $HOME/.config/xfce4/panel/docklike*.rc
         fi
         if ! grep -q indicatorColorFromTheme= $HOME/.config/xfce4/panel/docklike*.rc; then
             echo "indicatorColorFromTheme=false" \
@@ -81,13 +83,15 @@ theming_files () {
             echo "indicatorColor=$accent_color_rgb" \
             | tee -a $HOME/.config/xfce4/panel/docklike*.rc > /dev/null
         else
-            sed -i "s/indicatorColor=.*/indicatorColor=$accent_color_rgb/" $HOME/.config/xfce4/panel/docklike*.rc
+            sed -i "s/indicatorColor=.*/indicatorColor=$accent_color_rgb/" \
+            $HOME/.config/xfce4/panel/docklike*.rc
         fi
         if ! grep -q inactiveColor= $HOME/.config/xfce4/panel/docklike*.rc; then
             echo "inactiveColor=$accent_color_rgb" \
             | tee -a $HOME/.config/xfce4/panel/docklike*.rc > /dev/null
         else
-            sed -i "s/inactiveColor=.*/inactiveColor=$accent_color_rgb/" $HOME/.config/xfce4/panel/docklike*.rc
+            sed -i "s/inactiveColor=.*/inactiveColor=$accent_color_rgb/" \
+            $HOME/.config/xfce4/panel/docklike*.rc
         fi
     fi
     # Qt5ct theme and icon theme
