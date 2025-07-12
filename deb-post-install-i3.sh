@@ -41,20 +41,22 @@ echo "################################################################"
 echo "Install i3 and other core packages"
 echo "################################################################"
 
-sudo apt -y install i3 python3-i3ipc py3status rofi network-manager playerctl xssproxy xsel xclip xinput x11-utils lxappearance qt*ct \
-adwaita-qt* gnome-themes-extra papirus-icon-theme breeze-icon-theme fonts-dejavu fonts-noto-color-emoji nitrogen mate-polkit-bin python3-gi \
-gobject-introspection gir1.2-gtk-3.0 libdbus-glib-1-2 upower lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings plymouth plymouth-themes \
-kitty python3-pypillowfight thunar thunar-archive-plugin tumbler-plugins-extra ffmpegthumbnailer heif-thumbnailer heif-gdk-pixbuf gvfs-fuse \
+sudo apt -y install i3 python3-i3ipc py3status rofi network-manager playerctl xssproxy xsel xclip xinput x11-utils \
+lxappearance qt*ct adwaita-qt* gnome-themes-extra papirus-icon-theme breeze-icon-theme fonts-dejavu \
+fonts-noto-color-emoji nitrogen mate-polkit-bin python3-gi gobject-introspection gir1.2-gtk-3.0 libdbus-glib-1-2 \
+upower lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings plymouth plymouth-themes kitty python3-pypillowfight \
+thunar thunar-archive-plugin tumbler-plugins-extra ffmpegthumbnailer heif-thumbnailer heif-gdk-pixbuf gvfs-fuse \
 gvfs-backends nfs-common cifs-utils engrampa pavucontrol-qt
 
 echo "################################################################"
 echo "Install other packages"
 echo "################################################################"
 
-sudo apt -y install synaptic dconf-editor dconf-cli gnome-disk-utility mintstick scrot atril imv mpv parole mousepad galculator gpick \
-darktable gimp inkscape filezilla libreoffice-calc libreoffice-draw libreoffice-impress libreoffice-writer libreoffice-gtk3 timeshift xterm \
-htop neofetch cmus cava cmatrix ncal micro ranger ueberzug caca-utils highlight atool w3m poppler-utils mediainfo fzf \
-libimage-exiftool-perl apt-transport-https curl rsync xdotool xbindkeys
+sudo apt -y install synaptic dconf-editor dconf-cli gnome-disk-utility mintstick scrot atril imv mpv parole mousepad \
+galculator gpick darktable gimp inkscape filezilla libreoffice-calc libreoffice-draw libreoffice-impress \
+libreoffice-writer libreoffice-gtk3 timeshift xterm htop neofetch cmus cava cmatrix ncal micro ranger ueberzug \
+caca-utils highlight atool w3m poppler-utils mediainfo fzf libimage-exiftool-perl apt-transport-https curl rsync \
+xdotool xbindkeys
 
 echo "################################################################"
 echo "Install pipewire and enable wireplumber service"

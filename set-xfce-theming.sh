@@ -33,7 +33,7 @@ if [ ! -n "$(ls -d /usr/share/themes/Mint-*-Dark-Mod-* 2>/dev/null)" ]; then
     rm -rf $HOME/scripts-theming
     printf "%s\n" "[Desktop Entry]" "Type=Application" "Version=1.0" "Name=Kvantum Manager" \
     "Comment=A simple GUI for Kvantum themes" "Exec=kvantummanager" "Icon=kvantum" "Terminal=false" \
-    "Categories=Qt;Settings;DesktopSettings;LXQt;X-XFCE-SettingsDialog;X-XFCE-PersonalSettings;X-GNOME-PersonalSettings;" \
+    "Categories=Settings;DesktopSettings;LXQt;X-XFCE-SettingsDialog;X-XFCE-PersonalSettings;X-GNOME-PersonalSettings;" \
     "X-KDE-StartupNotify=false" > $HOME/.local/share/applications/kvantummanager.desktop
 fi
 
@@ -74,7 +74,8 @@ theming_files () {
             echo "indicatorColorFromTheme=false" \
             | tee -a $HOME/.config/xfce4/panel/docklike*.rc > /dev/null
         else
-            sed -i "s/indicatorColorFromTheme=true/indicatorColorFromTheme=false/" $HOME/.config/xfce4/panel/docklike*.rc
+            sed -i "s/indicatorColorFromTheme=true/indicatorColorFromTheme=false/" \
+            $HOME/.config/xfce4/panel/docklike*.rc
         fi
         if ! grep -q indicatorColor= $HOME/.config/xfce4/panel/docklike*.rc; then
             echo "indicatorColor=$accent_color_rgb" \

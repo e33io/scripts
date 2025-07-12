@@ -35,19 +35,21 @@ echo "#########################################################"
 echo "Install MATE and other core packages"
 echo "#########################################################"
 
-sudo apt -y install mate-desktop-environment mate-desktop-environment-extras mate-media caja-mediainfo caja-actions network-manager-gnome \
-ayatana-indicator-application ayatana-indicator-keyboard ayatana-indicator-messages ayatana-indicator-notifications ayatana-indicator-power \
-ayatana-indicator-printers ayatana-indicator-session ayatana-indicator-sound ayatana-settings slick-greeter gnome-themes-extra qt*ct \
-adwaita-qt* papirus-icon-theme fonts-noto-color-emoji plank kitty python3-pypillowfight nfs-common cifs-utils xclip plymouth plymouth-themes
+sudo apt -y install mate-desktop-environment mate-desktop-environment-extras mate-media caja-mediainfo caja-actions \
+network-manager-gnome ayatana-indicator-application ayatana-indicator-keyboard ayatana-indicator-messages \
+ayatana-indicator-notifications ayatana-indicator-power ayatana-indicator-printers ayatana-indicator-session \
+ayatana-indicator-sound ayatana-settings slick-greeter gnome-themes-extra qt*ct adwaita-qt* papirus-icon-theme \
+fonts-noto-color-emoji plank kitty python3-pypillowfight nfs-common cifs-utils xclip plymouth plymouth-themes
 
 echo "#########################################################"
 echo "Install other packages"
 echo "#########################################################"
 
-sudo apt -y install xfce4-appfinder parole mpv rhythmbox gnome-disk-utility mintstick synaptic darktable gimp inkscape filezilla \
-libreoffice-calc libreoffice-draw libreoffice-impress libreoffice-writer libreoffice-gtk3 timeshift dconf-editor dconf-cli heif-thumbnailer \
-heif-gdk-pixbuf micro htop neofetch cmus cava cmatrix ncal micro ranger ueberzug caca-utils highlight atool w3m poppler-utils mediainfo fzf \
-libimage-exiftool-perl apt-transport-https curl rsync xdotool xbindkeys
+sudo apt -y install xfce4-appfinder parole mpv rhythmbox gnome-disk-utility mintstick synaptic darktable gimp \
+inkscape filezilla libreoffice-calc libreoffice-draw libreoffice-impress libreoffice-writer libreoffice-gtk3 \
+timeshift dconf-editor dconf-cli heif-thumbnailer heif-gdk-pixbuf micro htop neofetch cmus cava cmatrix ncal micro \
+ranger ueberzug caca-utils highlight atool w3m poppler-utils mediainfo fzf libimage-exiftool-perl \
+apt-transport-https curl rsync xdotool xbindkeys
 
 echo "#########################################################"
 echo "Install pipewire and enable wireplumber service"

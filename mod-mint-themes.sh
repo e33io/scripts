@@ -18,12 +18,18 @@ sudo sed -i 's/#404040/#1e1e1e/g' /usr/share/themes/Mint-*-Dark/cinnamon/cinnamo
 sudo sed -i 's/#404040/#1e1e1e/g' /usr/share/themes/Mint-*-Dark/gtk-2.0/gtkrc
 sudo sed -i 's/#404040/#1e1e1e/g' /usr/share/themes/Mint-*-Dark/gtk-3.0/gtk*
 sudo sed -i 's/#404040/#1e1e1e/g' /usr/share/themes/Mint-*-Dark*/gtk-4.0/gtk*
-sudo sed -i 's/background-color: rgba(103, 103, 103, 0\.4)/background-color: rgba(30, 30, 30, 1)/g' /usr/share/themes/Mint-*-Dark-*/gtk-3.0/gtk*
-sudo sed -i 's/background-color: rgba(103, 103, 103, 0\.4)/background-color: rgba(30, 30, 30, 1)/g' /usr/share/themes/Mint-*-Dark/gtk-3.0/gtk*
-sudo sed -i 's/background-color: rgba(103, 103, 103, 0\.4)/background-color: rgba(30, 30, 30, 1)/g' /usr/share/themes/Mint-*-Dark*/gtk-4.0/gtk*
-sudo sed -i 's/background-color: rgba(99, 99, 99, 0\.4)/background-color: rgba(30, 30, 30, 1)/g' /usr/share/themes/Mint-*-Dark-*/gtk-3.0/gtk*
-sudo sed -i 's/background-color: rgba(99, 99, 99, 0\.4)/background-color: rgba(30, 30, 30, 1)/g' /usr/share/themes/Mint-*-Dark/gtk-3.0/gtk*
-sudo sed -i 's/background-color: rgba(99, 99, 99, 0\.4)/background-color: rgba(30, 30, 30, 1)/g' /usr/share/themes/Mint-*-Dark*/gtk-4.0/gtk*
+sudo sed -i 's/background-color: rgba(103, 103, 103, 0\.4)/background-color: rgba(30, 30, 30, 1)/g' \
+/usr/share/themes/Mint-*-Dark-*/gtk-3.0/gtk*
+sudo sed -i 's/background-color: rgba(103, 103, 103, 0\.4)/background-color: rgba(30, 30, 30, 1)/g' \
+/usr/share/themes/Mint-*-Dark/gtk-3.0/gtk*
+sudo sed -i 's/background-color: rgba(103, 103, 103, 0\.4)/background-color: rgba(30, 30, 30, 1)/g' \
+/usr/share/themes/Mint-*-Dark*/gtk-4.0/gtk*
+sudo sed -i 's/background-color: rgba(99, 99, 99, 0\.4)/background-color: rgba(30, 30, 30, 1)/g' \
+/usr/share/themes/Mint-*-Dark-*/gtk-3.0/gtk*
+sudo sed -i 's/background-color: rgba(99, 99, 99, 0\.4)/background-color: rgba(30, 30, 30, 1)/g' \
+/usr/share/themes/Mint-*-Dark/gtk-3.0/gtk*
+sudo sed -i 's/background-color: rgba(99, 99, 99, 0\.4)/background-color: rgba(30, 30, 30, 1)/g' \
+/usr/share/themes/Mint-*-Dark*/gtk-4.0/gtk*
 
 echo "################################################################"
 echo "Add custom CSS to update colors, borders and padding"

@@ -47,7 +47,8 @@ if [ -d "$HOME/.config/i3" ]; then
 
     echo '# Set default mute and default volume level
 exec --no-startup-id sleep 1 && pactl set-sink-mute @DEFAULT_SINK@ false && $refresh_i3status
-exec --no-startup-id sleep 6 && pactl set-sink-volume @DEFAULT_SINK@ 15% && $refresh_i3status' | tee -a $HOME/.config/i3/config > /dev/null
+exec --no-startup-id sleep 6 && pactl set-sink-volume @DEFAULT_SINK@ 15% && $refresh_i3status' \
+| tee -a $HOME/.config/i3/config > /dev/null
 fi
 
 echo "################################################################"

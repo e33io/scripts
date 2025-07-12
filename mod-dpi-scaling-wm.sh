@@ -36,7 +36,8 @@ sed -i 's/export QT_SCALE_FACTOR=2/#export QT_SCALE_FACTOR=2/' $HOME/.profile
 sed -i 's/export QT_FONT_DPI=96/#export QT_FONT_DPI=96/' $HOME/.profile
 
 # update .gtkrc-2.0* (comments out the HiDPI GTK2 icon sizes)
-sed -i 's/gtk-icon-sizes="gtk-menu=32,32:gtk-button=32,32"/#gtk-icon-sizes="gtk-menu=32,32:gtk-button=32,32"/' $HOME/.gtkrc-2.0*
+sed -i 's/gtk-icon-sizes="gtk-menu=32,32:gtk-button=32,32"/#gtk-icon-sizes="gtk-menu=32,32:gtk-button=32,32"/' \
+$HOME/.gtkrc-2.0*
 
 # update rofi/config.rasi (rofi DPI)
 sed -i 's/dpi: 192;/dpi: 96;/' $HOME/.config/rofi/config.rasi

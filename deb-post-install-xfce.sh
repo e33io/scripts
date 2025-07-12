@@ -40,19 +40,21 @@ echo "################################################################"
 echo "Install Xfce and other core packages"
 echo "################################################################"
 
-sudo apt -y install xfce4 xfce4-terminal xfce4-power-manager xfce4-screenshooter xfce4-taskmanager thunar-archive-plugin engrampa \
-network-manager-gnome light-locker lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings gvfs-fuse gvfs-backends nfs-common cifs-utils \
-tumbler-plugins-extra xclip mousepad menulibre gnome-themes-extra qt*ct adwaita-qt* papirus-icon-theme breeze-icon-theme \
-fonts-noto-color-emoji plymouth plymouth-themes
+sudo apt -y install xfce4 xfce4-terminal xfce4-power-manager xfce4-screenshooter xfce4-taskmanager \
+thunar-archive-plugin engrampa network-manager-gnome light-locker lightdm lightdm-gtk-greeter \
+lightdm-gtk-greeter-settings gvfs-fuse gvfs-backends nfs-common cifs-utils tumbler-plugins-extra xclip mousepad \
+menulibre gnome-themes-extra qt*ct adwaita-qt* papirus-icon-theme breeze-icon-theme fonts-noto-color-emoji \
+plymouth plymouth-themes
 
 echo "################################################################"
 echo "Install other packages"
 echo "################################################################"
 
-sudo apt -y install atril ristretto parole rhythmbox galculator gnome-disk-utility mintstick synaptic dconf-editor dconf-cli gpick darktable \
-gimp inkscape filezilla libreoffice-calc libreoffice-draw libreoffice-impress libreoffice-writer libreoffice-gtk3 timeshift xterm micro imv \
-mpv htop neofetch cmus cava cmatrix ncal ranger ueberzug caca-utils highlight atool w3m poppler-utils mediainfo fzf heif-thumbnailer \
-heif-gdk-pixbuf libimage-exiftool-perl apt-transport-https curl rsync wmctrl xdotool xbindkeys
+sudo apt -y install atril ristretto parole rhythmbox galculator gnome-disk-utility mintstick synaptic dconf-editor \
+dconf-cli gpick darktable gimp inkscape filezilla libreoffice-calc libreoffice-draw libreoffice-impress \
+libreoffice-writer libreoffice-gtk3 timeshift xterm micro imv mpv htop neofetch cmus cava cmatrix ncal ranger \
+ueberzug caca-utils highlight atool w3m poppler-utils mediainfo fzf heif-thumbnailer heif-gdk-pixbuf \
+libimage-exiftool-perl apt-transport-https curl rsync wmctrl xdotool xbindkeys
 
 echo "################################################################"
 echo "Install pipewire and enable wireplumber service"

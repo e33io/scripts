@@ -18,11 +18,14 @@ if [ "$(id -u)" = 0 ]; then
 fi
 
 # update xsettings.xml (cursor size and window scaling)
-sed -i 's/"CursorThemeSize" type="int" value="48"/"CursorThemeSize" type="int" value="24"/' $HOME/.config/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml
-sed -i 's/"WindowScalingFactor" type="int" value="2"/"WindowScalingFactor" type="int" value="1"/' $HOME/.config/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml
+sed -i 's/"CursorThemeSize" type="int" value="48"/"CursorThemeSize" type="int" value="24"/' \
+$HOME/.config/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml
+sed -i 's/"WindowScalingFactor" type="int" value="2"/"WindowScalingFactor" type="int" value="1"/' \
+$HOME/.config/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml
 
 # update xfwm4.xml (window theme)
-sed -i 's/"theme" type="string" value="System-40"/"theme" type="string" value="System-22"/' $HOME/.config/xfce4/xfconf/xfce-perchannel-xml/xfwm4.xml
+sed -i 's/"theme" type="string" value="System-40"/"theme" type="string" value="System-22"/' \
+$HOME/.config/xfce4/xfconf/xfce-perchannel-xml/xfwm4.xml
 
 # update .profile (comments out the Qt HiDPI environment variables)
 sed -i 's/export QT_AUTO_SCREEN_SET_FACTOR=0/#export QT_AUTO_SCREEN_SET_FACTOR=0/' $HOME/.profile
