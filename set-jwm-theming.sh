@@ -258,7 +258,7 @@ Mint_Y_Dark_Mod_Orange () {
     kvantum_theme=Mint-Y-Dark-Mod-Orange
     rofi_theme=Floating-Mint-Y-Dark-Orange
     icon_theme=Papirus-Dark
-    papirus_folders=paleorange
+    papirus_folders=darkcyan
     # Call the theming files
     theming_files
 }
