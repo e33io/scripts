@@ -108,8 +108,9 @@ if [ -d "$HOME/.config/jwm" ]; then
     sed -i 's/<Option>y:312/<Option>y:156/' $HOME/.config/jwm/jwmrc
     sed -i 's/<Option>y:566/<Option>y:283/' $HOME/.config/jwm/jwmrc
     sed -i 's/<Option>y:725/<Option>y:362/' $HOME/.config/jwm/jwmrc
+    sed -i 's/height="41"/height="22"/' $HOME/.config/jwm/jwmrc
     sed -i 's/<Width>4/<Width>2/' $HOME/.config/jwm/themes/*
-    sed -i 's/<Height>37/<Height>19/' $HOME/.config/jwm/themes/*
+    sed -i 's/<Height>39/<Height>20/' $HOME/.config/jwm/themes/*
     # update jwm configs (keybindings)
     sed -i 's/GDK_SCALE=1 brave/brave/' $HOME/.config/jwm/jwmrc
     sed -i 's/GDK_SCALE=1 signal-desktop/signal-desktop/' $HOME/.config/jwm/jwmrc
