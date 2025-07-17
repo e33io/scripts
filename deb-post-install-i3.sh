@@ -56,7 +56,7 @@ lxappearance qt*ct adwaita-qt* gnome-themes-extra papirus-icon-theme breeze-icon
 fonts-noto-color-emoji nitrogen mate-polkit-bin python3-gi gobject-introspection gir1.2-gtk-3.0 libdbus-glib-1-2 \
 upower lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings plymouth plymouth-themes kitty python3-pypillowfight \
 thunar thunar-archive-plugin tumbler-plugins-extra ffmpegthumbnailer heif-thumbnailer heif-gdk-pixbuf gvfs-fuse \
-gvfs-backends nfs-common cifs-utils engrampa pipewire-audio pavucontrol-qt
+gvfs-backends nfs-common cifs-utils engrampa pipewire-audio pulseaudio-utils pavucontrol-qt
 
 echo "################################################################"
 echo "Install other packages"
