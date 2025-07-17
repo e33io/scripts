@@ -57,7 +57,7 @@ else
     echo "environments and window managers other than Gnome"
     echo "################################################################"
 
-    sudo apt -y install adwaita-qt* qt5-style-kvantum git
+    sudo apt -y install adwaita-qt* qt*-style-kvantum git
 
     echo "################################################################"
     echo "Clone and copy Kvantum KvYaru-Colors Qt themes"

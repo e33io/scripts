@@ -33,7 +33,7 @@ echo "################################################################"
 if [ -f "/etc/debian_version" ]; then
     sudo apt update
     sudo apt -y install gnome-themes-extra gtk2-engines gtk2-engines-murrine gtk2-engines-pixbuf libglib2.0-bin \
-    libgtk-3-common libgtk-4-common libgtk2.0-common adwaita-qt* qt5-style-kvantum git
+    libgtk-3-common libgtk-4-common libgtk2.0-common adwaita-qt* qt*-style-kvantum git
 fi
 
 if [ -f "/etc/pacman.conf" ]; then
