@@ -74,8 +74,8 @@ echo "Remove unneeded packages"
 echo "################################################################"
 
 sudo apt -y remove pavucontrol
-sudo apt autoremove
-sudo apt autoclean
+sudo apt -y autoremove
+sudo apt -y autoclean
 
 echo "################################################################"
 echo "Enable wireplumber service (running as user)"
