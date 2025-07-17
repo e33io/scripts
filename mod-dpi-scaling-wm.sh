@@ -114,8 +114,6 @@ if [ -d "$HOME/.config/jwm" ]; then
     # update jwm configs (keybindings)
     sed -i 's/GDK_SCALE=1 brave/brave/' $HOME/.config/jwm/jwmrc
     sed -i 's/GDK_SCALE=1 signal-desktop/signal-desktop/' $HOME/.config/jwm/jwmrc
-    # update rofi/config.rasi (yoffset position)
-    sed -i 's/yoffset: -275;/yoffset: -180;/' $HOME/.config/rofi/config.rasi
 fi
 
 # Remove unneeded .desktop files
