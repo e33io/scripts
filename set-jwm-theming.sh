@@ -51,10 +51,10 @@ theming_files () {
     sed -i "s/jwm\/themes\/.*<\/Include>/jwm\/themes\/$jwm_theme<\/Include>/" $HOME/.config/jwm/jwmrc
     # Polybar colors
     if [ -f "$HOME/.config/polybar/config.ini" ]; then
-        sed -i "s/bg = .*/bg = $background/" $HOME/.config/polybar/config.ini
+        sed -i "s/bg = .*/bg = $polybar_bg/" $HOME/.config/polybar/config.ini
         sed -i "s/bg-act = .*/bg-act = $accent_color/" $HOME/.config/polybar/config.ini
-        sed -i "s/bg-occ = .*/bg-occ = $background/" $HOME/.config/polybar/config.ini
-        sed -i "s/fg = .*/fg = $statusline/" $HOME/.config/polybar/config.ini
+        sed -i "s/bg-occ = .*/bg-occ = $polybar_bg/" $HOME/.config/polybar/config.ini
+        sed -i "s/fg = .*/fg = $polybar_fg/" $HOME/.config/polybar/config.ini
         sed -i "s/\%{F.*}\|\%{F-}/\%{F$accent_color}\|\%{F-}/" $HOME/.config/polybar/config.ini
     fi
     # GTK 2 theme and icon theme
@@ -106,6 +106,9 @@ theming_files () {
 Adwaita_Dark () {
     # JWM theme
     jwm_theme="JWM-Adwaita-Dark"
+    # Polybar colors
+    polybar_bg="#1e1e1e"
+    polybar_fg="#eeeeee"
     # Theme accent color
     accent_color="#1c6dcf"
     # Desktop background color
@@ -124,6 +127,9 @@ Adwaita_Dark () {
 Adwaita_Darker () {
     # JWM theme
     jwm_theme="JWM-Adwaita-Darker"
+    # Polybar colors
+    polybar_bg="#1e1e1e"
+    polybar_fg="#eeeeee"
     # Theme accent color
     accent_color="#15539e"
     # Desktop background color
@@ -142,6 +148,9 @@ Adwaita_Darker () {
 Adwaita_Light () {
     # JWM theme
     jwm_theme="JWM-Adwaita-Light"
+    # Polybar colors
+    polybar_bg="#f6f5f4"
+    polybar_fg="#2e3436"
     # Theme accent color
     accent_color="#3584e4"
     # Desktop background color
@@ -160,6 +169,9 @@ Adwaita_Light () {
 Mint_L_Dark_Mod_Brown () {
     # JWM theme
     jwm_theme="JWM-Mint-L-Dark-Brown"
+    # Polybar colors
+    polybar_bg="#1e1e1e"
+    polybar_fg="#eeeeee"
     # Theme accent color
     accent_color="#9c7e65"
     # Desktop background color
@@ -179,6 +191,9 @@ Mint_L_Dark_Mod_Brown () {
 Mint_L_Dark_Mod_Teal () {
     # JWM theme
     jwm_theme="JWM-Mint-L-Dark-Teal"
+    # Polybar colors
+    polybar_bg="#1e1e1e"
+    polybar_fg="#eeeeee"
     # Theme accent color
     accent_color="#579c8e"
     # Desktop background color
@@ -198,6 +213,9 @@ Mint_L_Dark_Mod_Teal () {
 Mint_Y_Dark_Mod_Blue () {
     # JWM theme
     jwm_theme="JWM-Mint-Y-Dark-Blue"
+    # Polybar colors
+    polybar_bg="#1e1e1e"
+    polybar_fg="#eeeeee"
     # Theme accent color
     accent_color="#0c75de"
     # Desktop background color
@@ -217,6 +235,9 @@ Mint_Y_Dark_Mod_Blue () {
 Mint_Y_Dark_Mod_Green () {
     # JWM theme
     jwm_theme="JWM-Mint-Y-Dark-Green"
+    # Polybar colors
+    polybar_bg="#1e1e1e"
+    polybar_fg="#eeeeee"
     # Theme accent color
     accent_color="#35a854"
     # Desktop background color
@@ -236,6 +257,9 @@ Mint_Y_Dark_Mod_Green () {
 Mint_Y_Dark_Mod_Grey () {
     # JWM theme
     jwm_theme="JWM-Mint-Y-Dark-Grey"
+    # Polybar colors
+    polybar_bg="#1e1e1e"
+    polybar_fg="#eeeeee"
     # Theme accent color
     accent_color="#70737a"
     # Desktop background color
@@ -255,6 +279,9 @@ Mint_Y_Dark_Mod_Grey () {
 Mint_Y_Dark_Mod_Orange () {
     # JWM theme
     jwm_theme="JWM-Mint-Y-Dark-Orange"
+    # Polybar colors
+    polybar_bg="#1e1e1e"
+    polybar_fg="#eeeeee"
     # Theme accent color
     accent_color="#ff7139"
     # Desktop background color
@@ -274,6 +301,9 @@ Mint_Y_Dark_Mod_Orange () {
 Mint_Y_Dark_Mod_Purple () {
     # JWM theme
     jwm_theme="JWM-Mint-Y-Dark-Purple"
+    # Polybar colors
+    polybar_bg="#1e1e1e"
+    polybar_fg="#eeeeee"
     # Theme accent color
     accent_color="#8c5dd9"
     # Desktop background color
@@ -293,6 +323,9 @@ Mint_Y_Dark_Mod_Purple () {
 Mint_Y_Dark_Mod_Red () {
     # JWM theme
     jwm_theme="JWM-Mint-Y-Dark-Red"
+    # Polybar colors
+    polybar_bg="#1e1e1e"
+    polybar_fg="#eeeeee"
     # Theme accent color
     accent_color="#e82127"
     # Desktop background color
@@ -312,6 +345,9 @@ Mint_Y_Dark_Mod_Red () {
 Mint_Y_Dark_Mod_Teal () {
     # JWM theme
     jwm_theme="JWM-Mint-Y-Dark-Teal"
+    # Polybar colors
+    polybar_bg="#1e1e1e"
+    polybar_fg="#eeeeee"
     # Theme accent color
     accent_color="#199ca8"
     # Desktop background color
