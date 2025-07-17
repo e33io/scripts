@@ -51,10 +51,10 @@ echo "Install Xfce and other core packages"
 echo "################################################################"
 
 sudo apt -y install xfce4 xfce4-terminal xfce4-power-manager xfce4-screensaver xfce4-screenshooter \
-xfce4-taskmanager thunar-archive-plugin engrampa network-manager-gnome mate-polkit lightdm lightdm-gtk-greeter \
-lightdm-gtk-greeter-settings gvfs-fuse gvfs-backends nfs-common cifs-utils tumbler-plugins-extra pipewire-audio \
-xclip mousepad menulibre gnome-themes-extra qt*ct adwaita-qt* papirus-icon-theme breeze-icon-theme \
-fonts-noto-color-emoji plymouth plymouth-themes
+xfce4-taskmanager xfce4-docklike-plugin xfce4-windowck-plugin thunar-archive-plugin engrampa network-manager-gnome \
+mate-polkit lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings gvfs-fuse gvfs-backends nfs-common cifs-utils \
+tumbler-plugins-extra pipewire-audio xclip mousepad menulibre gnome-themes-extra qt*ct adwaita-qt* papirus-icon-theme \
+breeze-icon-theme fonts-noto-color-emoji plymouth plymouth-themes
 
 echo "################################################################"
 echo "Install other packages"
