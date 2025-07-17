@@ -6,8 +6,8 @@
 # ---------------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
 # NOTE! For best results only select "standard system utilities" on the
-# Software selection screen (uncheck all the rest) during the
-# Debian install process for a clean minimal install base.
+# Software selection screen (uncheck all the rest) during the Debian
+# install process for a clean minimal install base.
 # Reference screenshot: https://i.e33.io/screenshots/deb-minimal-install.jpg
 # ---------------------------------------------------------------------------
 # Instructions for running this script:
@@ -26,6 +26,16 @@ if [ "$(id -u)" = 0 ]; then
     exit 1
 fi
 
+release="$(lsb_release -a | awk '/Codename:/ { print $2 }')"
+if [ ! $release = trixie ]; then
+    echo "################################################################"
+    echo "Debian Gnome Installation is NOT compatible with"
+    echo "your version of Linux, and it will exit now without"
+    echo "running or making any changes."
+    echo "################################################################"
+    exit 1
+fi
+
 clear
 echo "################################################################"
 echo "Debian Initial Setup (read carefully)"
@@ -40,7 +50,6 @@ echo "        - 8x16 for non-HiDPI and VMs, or 16x32 for HiDPI"
 echo "  - Updates Debian 13 Trixie apt sources.list file"
 echo "  - Installs additional firmware packages"
 echo "  - Makes and sets up a swap file (if one doesn't exist)"
-echo "  - Adds the option to install the newer backports kernel"
 echo "----------------------------------------------------------------"
 
 while true; do
@@ -68,6 +77,8 @@ echo "  0) None, exit script now and install my own"
 echo "  1) i3 Window Manager (tiling WM)"
 echo "  2) JWM Window Manager (floating WM)"
 echo "  3) Xfce Desktop Environment"
+echo "  4) MATE Desktop Environment"
+echo "  5) Gnome Desktop Environment"
 
 while true; do
     read -p "Which window manager or desktop environment do you want to install? " n
@@ -82,6 +93,12 @@ while true; do
            break;;
         3) echo "You chose Xfce Desktop Environment";
            sh deb-post-install-xfce.sh;
+           break;;
+        4) echo "You chose MATE Desktop Environment";
+           sh deb-post-install-mate.sh;
+           break;;
+        5) echo "You chose Gnome Desktop Environment";
+           sh deb-post-install-gnome.sh;
            break;;
         *) echo "Invalid selection, please enter a number from the list.";;
     esac
