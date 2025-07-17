@@ -114,6 +114,11 @@ if [ -d "$HOME/.config/jwm" ]; then
     # update jwm configs (keybindings)
     sed -i 's/GDK_SCALE=1 brave/brave/' $HOME/.config/jwm/jwmrc
     sed -i 's/GDK_SCALE=1 signal-desktop/signal-desktop/' $HOME/.config/jwm/jwmrc
+    # update polybar configs (sizes and scaling)
+    sed -i 's/height = 40/height = 20/' $HOME/.config/polybar/config.ini
+    sed -i 's/;3"/;2"/' $HOME/.config/polybar/config.ini
+    sed -i 's/dpi = 192/dpi = 96/' $HOME/.config/polybar/config.ini
+    ed -i 's/tray-spacing = 12/tray-spacing = 6/' $HOME/.config/polybar/config.ini
 fi
 
 # Remove unneeded .desktop files

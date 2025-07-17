@@ -42,13 +42,6 @@ fi
 if [ -d "$HOME/.config/jwm" ]; then
     # update startup (add lock-suspend.sh to xss-lock command)
     sed -i 's/xss-lock -l/xss-lock -n sh ~\/\.local\/bin\/lock-suspend\.sh -l/' $HOME/.config/jwm/jwmrc
-    # install xfce4-battery-plugin for Xfce Panel
-    if [ -f "/etc/debian_version" ]; then
-        sudo apt -y install xfce4-battery-plugin
-    fi
-    if [ -f "/etc/pacman.conf" ]; then
-        sudo pacman -S --noconfirm --needed xfce4-battery-plugin
-    fi
-    # copy laptop-specific Xfce Panel config files
-    cp -R $HOME/opt-dots/jwm/options/xfce4 $HOME/.config
+    # update polybar config.ini (modules)
+    sed -i 's/time pulseaudio eth tray/time battery pulseaudio wlan tray/' $HOME/.config/polybar/config.ini
 fi

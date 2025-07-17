@@ -49,6 +49,14 @@ clear
 theming_files () {
     # JWM theme
     sed -i "s/jwm\/themes\/.*<\/Include>/jwm\/themes\/$jwm_theme<\/Include>/" $HOME/.config/jwm/jwmrc
+    # Polybar colors
+    if [ -f "$HOME/.config/polybar/config.ini" ]; then
+        sed -i "s/bg = .*/bg = $background/" $HOME/.config/polybar/config.ini
+        sed -i "s/bg-act = .*/bg-act = $accent_color/" $HOME/.config/polybar/config.ini
+        sed -i "s/bg-occ = .*/bg-occ = $background/" $HOME/.config/polybar/config.ini
+        sed -i "s/fg = .*/fg = $statusline/" $HOME/.config/polybar/config.ini
+        sed -i "s/\%{F.*}\|\%{F-}/\%{F$accent_color}\|\%{F-}/" $HOME/.config/polybar/config.ini
+    fi
     # GTK 2 theme and icon theme
     sed -i "s/gtk-theme-name=\".*\"/gtk-theme-name=\"$gtk_theme\"/" $HOME/.gtkrc-2.0
     sed -i "s/gtk-icon-theme-name=\".*\"/gtk-icon-theme-name=\"$icon_theme\"/" $HOME/.gtkrc-2.0
