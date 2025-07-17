@@ -29,6 +29,16 @@ if [ "$(id -u)" = 0 ]; then
     exit 1
 fi
 
+release="$(lsb_release -a | awk '/Codename:/ { print $2 }')"
+if [ ! $release = trixie ]; then
+    echo "################################################################"
+    echo "Debian Gnome Installation is NOT compatible with"
+    echo "your version of Linux, and it will exit now without"
+    echo "running or making any changes."
+    echo "################################################################"
+    exit 1
+fi
+
 echo "################################################################"
 echo "Update and upgrade system"
 echo "################################################################"
@@ -40,11 +50,11 @@ echo "################################################################"
 echo "Install Xfce and other core packages"
 echo "################################################################"
 
-sudo apt -y install xfce4 xfce4-terminal xfce4-power-manager xfce4-screenshooter xfce4-taskmanager \
-thunar-archive-plugin engrampa network-manager-gnome light-locker lightdm lightdm-gtk-greeter \
-lightdm-gtk-greeter-settings gvfs-fuse gvfs-backends nfs-common cifs-utils tumbler-plugins-extra xclip mousepad \
-menulibre gnome-themes-extra qt*ct adwaita-qt* papirus-icon-theme breeze-icon-theme fonts-noto-color-emoji \
-plymouth plymouth-themes
+sudo apt -y install xfce4 xfce4-terminal xfce4-power-manager xfce4-screensaver xfce4-screenshooter \
+xfce4-taskmanager thunar-archive-plugin engrampa network-manager-gnome mate-polkit lightdm lightdm-gtk-greeter \
+lightdm-gtk-greeter-settings gvfs-fuse gvfs-backends nfs-common cifs-utils tumbler-plugins-extra pipewire-audio \
+xclip mousepad menulibre gnome-themes-extra qt*ct adwaita-qt* papirus-icon-theme breeze-icon-theme \
+fonts-noto-color-emoji plymouth plymouth-themes
 
 echo "################################################################"
 echo "Install other packages"
@@ -52,15 +62,14 @@ echo "################################################################"
 
 sudo apt -y install atril ristretto parole rhythmbox galculator gnome-disk-utility mintstick synaptic dconf-editor \
 dconf-cli gpick darktable gimp inkscape filezilla libreoffice-calc libreoffice-draw libreoffice-impress \
-libreoffice-writer libreoffice-gtk3 timeshift xterm micro imv mpv htop neofetch cmus cava cmatrix ncal ranger \
-ueberzug caca-utils highlight atool w3m poppler-utils mediainfo fzf heif-thumbnailer heif-gdk-pixbuf \
+libreoffice-writer libreoffice-gtk3 timeshift xterm micro imv mpv lazygit fastfetch htop cmus cava cmatrix ncal \
+ranger ueberzug caca-utils highlight atool w3m poppler-utils mediainfo fzf heif-thumbnailer heif-gdk-pixbuf \
 libimage-exiftool-perl apt-transport-https curl rsync wmctrl xdotool xbindkeys
 
 echo "################################################################"
-echo "Install pipewire and enable wireplumber service"
+echo "Enable wireplumber service (running as user)"
 echo "################################################################"
 
-sudo apt -y install pipewire-audio pipewire-media-session-
 systemctl --user --now enable wireplumber.service
 
 echo "################################################################"
@@ -180,6 +189,14 @@ if [ $pc_type = vm ]; then
 
     sudo apt -y install spice-vdagent
     sudo sed -i 's/GDK_SCALE=2/GDK_SCALE=1/' /etc/lightdm/Xgsession
+fi
+
+if [ -f "/etc/devuan_version" ]; then
+    echo "################################################################"
+    echo "Update Debian configs for use with Devuan Linux"
+    echo "################################################################"
+
+    sh mod-debian-to-devuan.sh
 fi
 
 echo "################################################################"

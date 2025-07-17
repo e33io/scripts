@@ -30,8 +30,6 @@ linux installation scripts
 
 - use [`install-librewolf-deb.sh`](https://github.com/e33io/scripts/blob/main/install-librewolf-deb.sh) to install [LibreWolf Browser](https://librewolf.net) (.deb package)
 
-- use [`install-lazygit.sh`](https://github.com/e33io/scripts/blob/main/install-lazygit.sh) to install [Lazygit](https://github.com/jesseduffield/lazygit) (tarball build) on Debian 12
-
 - use [`install-flatpak-deb.sh`](https://github.com/e33io/scripts/blob/main/install-flatpak-deb.sh) to install Flatpak and add Flathub on Debian
 
 - use [`ubuntu-remove-snapd.sh`](https://github.com/e33io/scripts/blob/main/ubuntu-remove-snapd.sh) to remove Snap and optionally install Flatpak on Ubuntu

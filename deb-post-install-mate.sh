@@ -16,52 +16,62 @@
 # ===========================================================================
 
 if [ "$(id -u)" = 0 ]; then
-    echo "#########################################################"
+    echo "################################################################"
     echo "This script MUST NOT be run as root user."
     echo "Run this script as a normal user."
     echo "You will be asked for a sudo password when necessary."
-    echo "#########################################################"
+    echo "################################################################"
     exit 1
 fi
 
-echo "#########################################################"
+release="$(lsb_release -a | awk '/Codename:/ { print $2 }')"
+if [ ! $release = trixie ]; then
+    echo "################################################################"
+    echo "Debian Gnome Installation is NOT compatible with"
+    echo "your version of Linux, and it will exit now without"
+    echo "running or making any changes."
+    echo "################################################################"
+    exit 1
+fi
+
+echo "################################################################"
 echo "Update and upgrade system"
-echo "#########################################################"
+echo "################################################################"
 
 sudo apt update
 sudo apt -y upgrade
 
-echo "#########################################################"
+echo "################################################################"
 echo "Install MATE and other core packages"
-echo "#########################################################"
+echo "################################################################"
 
 sudo apt -y install mate-desktop-environment mate-desktop-environment-extras mate-media caja-mediainfo caja-actions \
 network-manager-gnome ayatana-indicator-application ayatana-indicator-keyboard ayatana-indicator-messages \
 ayatana-indicator-notifications ayatana-indicator-power ayatana-indicator-printers ayatana-indicator-session \
-ayatana-indicator-sound ayatana-settings slick-greeter gnome-themes-extra qt*ct adwaita-qt* papirus-icon-theme \
-fonts-noto-color-emoji plank kitty python3-pypillowfight nfs-common cifs-utils xclip plymouth plymouth-themes
+ayatana-indicator-sound ayatana-settings pipewire-audio slick-greeter gnome-themes-extra qt*ct adwaita-qt* \
+papirus-icon-theme fonts-noto-color-emoji plank kitty python3-pypillowfight nfs-common cifs-utils xclip \
+plymouth plymouth-themes
 
-echo "#########################################################"
+echo "################################################################"
 echo "Install other packages"
-echo "#########################################################"
+echo "################################################################"
 
 sudo apt -y install xfce4-appfinder parole mpv rhythmbox gnome-disk-utility mintstick synaptic darktable gimp \
 inkscape filezilla libreoffice-calc libreoffice-draw libreoffice-impress libreoffice-writer libreoffice-gtk3 \
-timeshift dconf-editor dconf-cli heif-thumbnailer heif-gdk-pixbuf micro htop neofetch cmus cava cmatrix ncal micro \
-ranger ueberzug caca-utils highlight atool w3m poppler-utils mediainfo fzf libimage-exiftool-perl \
+timeshift dconf-editor dconf-cli heif-thumbnailer heif-gdk-pixbuf micro lazygit fastfetch htop cmus cava cmatrix \
+ncal micro ranger ueberzug caca-utils highlight atool w3m poppler-utils mediainfo fzf libimage-exiftool-perl \
 apt-transport-https curl rsync xdotool xbindkeys
 
-echo "#########################################################"
-echo "Install pipewire and enable wireplumber service"
-echo "#########################################################"
+echo "################################################################"
+echo "Enable wireplumber service (running as user)"
+echo "################################################################"
 
-sudo apt -y install pipewire-audio pipewire-media-session-
 systemctl --user --now enable wireplumber.service
 
-echo "#########################################################"
+echo "################################################################"
 echo "Run install-yaru-themes.sh script to"
 echo "install Yaru themes and icons"
-echo "#########################################################"
+echo "################################################################"
 
 sh install-yaru-themes.sh
 
@@ -89,16 +99,16 @@ https://updates.signal.org/desktop/apt xenial main" \
 sudo apt update
 sudo apt -y install signal-desktop
 
-echo "#########################################################"
+echo "################################################################"
 echo "Clone custom configuration files"
-echo "#########################################################"
+echo "################################################################"
 
 git clone https://github.com/e33io/dotfiles $HOME/dotfiles
 git clone https://github.com/e33io/opt-dots $HOME/opt-dots
 
-echo "#########################################################"
+echo "################################################################"
 echo "Copy custom configuration files"
-echo "#########################################################"
+echo "################################################################"
 
 mkdir -p $HOME/.config/micro
 cp -R $HOME/dotfiles/.config/micro $HOME/.config
@@ -126,39 +136,39 @@ sudo ln -sf $HOME/.config/qt6ct/* /root/.config/qt6ct
 sudo update-initramfs -u
 sudo update-grub
 
-echo "#########################################################"
+echo "################################################################"
 echo "Add user .bash_profile and .xsessionrc files"
-echo "#########################################################"
+echo "################################################################"
 
 echo "if [ -f ~/.profile ]; then
     . ~/.profile
 fi" | tee $HOME/.bash_profile $HOME/.xsessionrc >/dev/null
 
-echo "#########################################################"
+echo "################################################################"
 echo "Update root .bashrc file"
-echo "#########################################################"
+echo "################################################################"
 
 echo "#
 # Set command prompt
 PS1='\[\e[01;31m\][\u \w]#\[\e[m\] '
 #" | sudo tee -a /root/.bashrc >/dev/null
 
-echo "#########################################################"
+echo "################################################################"
 echo "Remove unneeded default xsession file"
-echo "#########################################################"
+echo "################################################################"
 
 sudo rm -rf /usr/share/xsessions/lightdm-xsession.desktop
 
-echo "#########################################################"
+echo "################################################################"
 echo "Change Papirus folders color"
-echo "#########################################################"
+echo "################################################################"
 
 wget -qO- https://git.io/papirus-folders-install | sh
 papirus-folders -C yaru --theme Papirus-Dark
 
-echo "#########################################################"
+echo "################################################################"
 echo "Modify Plank dock theme"
-echo "#########################################################"
+echo "################################################################"
 
 echo "IndicatorSize=6" | sudo tee -a /usr/share/plank/themes/Transparent/dock.theme
 
@@ -177,9 +187,9 @@ echo "################################################################"
 
 sudo update-alternatives --set x-www-browser /usr/bin/brave-browser-stable
 
-echo "#########################################################"
+echo "################################################################"
 echo "Add bookmarks, add wallpaper and clean up user directory"
-echo "#########################################################"
+echo "################################################################"
 
 xdg-user-dirs-update
 echo "file:///home/$(whoami)/Downloads
@@ -190,11 +200,10 @@ file:///home/$(whoami)/Music" > $HOME/.config/gtk-3.0/bookmarks
 sudo wget -q https://i.e33.io/wp/rancho-twilight-4k.jpg -P /usr/share/backgrounds
 dconf write /org/mate/desktop/background/picture-filename "'/usr/share/backgrounds/rancho-twilight-4k.jpg'"
 dconf write /org/mate/screensaver/picture-filename "'/usr/share/backgrounds/rancho-twilight-4k.jpg'"
-sudo rm -rf /usr/share/applications/imv-folder.desktop
 rm -rf $HOME/dotfiles
 rm -rf $HOME/opt-dots
 rm -rf $HOME/scripts
 
-echo "#########################################################"
+echo "################################################################"
 echo "All done, you can now run other commands or reboot the PC"
-echo "#########################################################"
+echo "################################################################"

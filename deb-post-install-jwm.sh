@@ -30,6 +30,16 @@ if [ "$(id -u)" = 0 ]; then
     exit 1
 fi
 
+release="$(lsb_release -a | awk '/Codename:/ { print $2 }')"
+if [ ! $release = trixie ]; then
+    echo "################################################################"
+    echo "Debian Gnome Installation is NOT compatible with"
+    echo "your version of Linux, and it will exit now without"
+    echo "running or making any changes."
+    echo "################################################################"
+    exit 1
+fi
+
 echo "################################################################"
 echo "Update and upgrade system"
 echo "################################################################"
@@ -46,7 +56,7 @@ xssproxy xsel xclip xinput x11-utils lxappearance qt*ct adwaita-qt* gnome-themes
 breeze-icon-theme fonts-dejavu fonts-noto-color-emoji nitrogen mate-polkit-bin python3-gi gobject-introspection \
 gir1.2-gtk-3.0 libdbus-glib-1-2 upower dex lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings plymouth \
 plymouth-themes kitty python3-pypillowfight thunar thunar-archive-plugin tumbler-plugins-extra ffmpegthumbnailer \
-heif-thumbnailer heif-gdk-pixbuf gvfs-fuse gvfs-backends nfs-common cifs-utils engrampa pavucontrol-qt
+heif-thumbnailer heif-gdk-pixbuf gvfs-fuse gvfs-backends nfs-common cifs-utils engrampa pipewire-audio pavucontrol-qt
 
 echo "################################################################"
 echo "Install other packages"
@@ -54,15 +64,14 @@ echo "################################################################"
 
 sudo apt -y install synaptic dconf-editor dconf-cli gnome-disk-utility mintstick scrot atril imv mpv parole mousepad \
 galculator gpick darktable gimp inkscape filezilla libreoffice-calc libreoffice-draw libreoffice-impress \
-libreoffice-writer libreoffice-gtk3 timeshift xterm htop neofetch cmus cava cmatrix ncal micro ranger ueberzug \
-caca-utils highlight atool w3m poppler-utils mediainfo fzf libimage-exiftool-perl apt-transport-https curl rsync \
-wmctrl xdotool xbindkeys
+libreoffice-writer libreoffice-gtk3 timeshift xterm lazygit fastfetch htop cmus cava cmatrix ncal micro ranger \
+ueberzug caca-utils highlight atool w3m poppler-utils mediainfo fzf libimage-exiftool-perl apt-transport-https curl \
+rsync wmctrl xdotool xbindkeys
 
 echo "################################################################"
-echo "Install pipewire and enable wireplumber service"
+echo "Enable wireplumber service (running as user)"
 echo "################################################################"
 
-sudo apt -y install pipewire-audio pipewire-media-session-
 systemctl --user --now enable wireplumber.service
 
 echo "################################################################"
