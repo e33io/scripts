@@ -70,6 +70,14 @@ ueberzug caca-utils highlight atool w3m poppler-utils mediainfo fzf libimage-exi
 rsync wmctrl xdotool xbindkeys
 
 echo "################################################################"
+echo "Remove unneeded packages"
+echo "################################################################"
+
+sudo apt -y remove pavucontrol
+sudo apt autoremove
+sudo apt autoclean
+
+echo "################################################################"
 echo "Enable wireplumber service (running as user)"
 echo "################################################################"
 
