@@ -118,7 +118,7 @@ if [ -d "$HOME/.config/jwm" ]; then
     sed -i 's/height = 40/height = 20/' $HOME/.config/polybar/config.ini
     sed -i 's/;3"/;2"/' $HOME/.config/polybar/config.ini
     sed -i 's/dpi = 192/dpi = 96/' $HOME/.config/polybar/config.ini
-    ed -i 's/tray-spacing = 12/tray-spacing = 6/' $HOME/.config/polybar/config.ini
+    sed -i 's/tray-spacing = 12/tray-spacing = 6/' $HOME/.config/polybar/config.ini
 fi
 
 # Remove unneeded .desktop files
