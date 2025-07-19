@@ -176,7 +176,7 @@ sed -i "s/home\/.*\/Desktop/home\/$(whoami)\/Desktop/" $HOME/.config/xfce4/xfcon
 sed -i "s/~\/\.gtkrc-2\.0\.mine/\/home\/$(whoami)\/\.gtkrc-2\.0\.mine/" $HOME/.gtkrc-2.0
 printf "%s\n" "[Desktop Entry]" "Type=Application" "Name=audio-default" \
 "Comment=set default volume level" "Icon=xfce4-mixer" \
-"Exec=sh -c 'sleep 2; pactl set-sink-volume @DEFAULT_SINK@ 25%'" \
+"Exec=sh -c 'sleep 2; pactl set-sink-volume @DEFAULT_SINK@ 25%; \$refresh_i3status'" \
 "NoDisplay=true" "Hidden=false" > $HOME/.config/autostart/audio-default.desktop
 chmod +x $HOME/.config/autostart/audio-default.desktop
 rm -rf $HOME/dotfiles
