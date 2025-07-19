@@ -40,17 +40,6 @@ if { [ -d "$HOME/.config/i3" ] || [ -d "$HOME/.config/jwm" ]; }; then
     done
 fi
 
-if [ -d "$HOME/.config/i3" ]; then
-    echo "################################################################"
-    echo "Set default mute and default volume level"
-    echo "################################################################"
-
-    echo '# Set default mute and default volume level
-exec --no-startup-id sleep 1 && pactl set-sink-mute @DEFAULT_SINK@ false && $refresh_i3status
-exec --no-startup-id sleep 6 && pactl set-sink-volume @DEFAULT_SINK@ 15% && $refresh_i3status' \
-| tee -a $HOME/.config/i3/config > /dev/null
-fi
-
 echo "################################################################"
 echo "Replace systemctl with loginctl"
 echo "################################################################"
@@ -71,6 +60,17 @@ sudo apt -y purge pipewire*
 sudo apt -y autoremove
 sudo apt -y autoclean
 sudo apt -y install pulseaudio
+
+echo "################################################################"
+echo "Set default mute and default volume level"
+echo "################################################################"
+
+mkdir -p $HOME/.config/autostart
+printf "%s\n" "[Desktop Entry]" "Type=Application" "Name=audio-default" \
+"Comment=set default mute and volume level" "Icon=xfce4-mixer" \
+"Exec=sh -c 'sleep 1; pactl set-sink-mute @DEFAULT_SINK@ false; sleep 6; pactl set-sink-volume @DEFAULT_SINK@ 25%%'" \
+"NoDisplay=true" "Hidden=false" > $HOME/.config/autostart/audio-default.desktop
+chmod +x $HOME/.config/autostart/audio-default.desktop
 
 echo "################################################################"
 echo "Reboot the system or logout/login now to complete changes"
