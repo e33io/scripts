@@ -42,7 +42,7 @@ lxappearance-gtk3 gnome-themes-extra gtk-engine-murrine qt5ct qt6ct ttf-dejavu n
 breeze-icons plymouth pavucontrol-qt nitrogen kitty python-pillowfight xterm thunar thunar-archive-plugin \
 thunar-volman tumbler ffmpegthumbnailer engrampa scrot atril imv mpv parole mousepad galculator dconf-editor \
 gnome-disk-utility timeshift bash-completion vim nano micro fzf lazygit htop fastfetch cmus cava ranger ueberzug \
-highlight atool w3m mediainfo perl-image-exiftool signal-desktop darktable gimp inkscape filezilla libreoffice
+highlight atool w3m mediainfo perl-image-exiftool signal-desktop gpick darktable gimp inkscape filezilla libreoffice
 
 echo "################################################################"
 echo "Setup Yay for AUR"
