@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # =======================================================================
-# Update Debian configs for use with Devuan
+# Update Debian configs for use with Devuan Linux
 # URL: https://github.com/e33io/scripts/blob/main/mod-debian-to-devuan.sh
 # -----------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
@@ -77,5 +77,5 @@ if { [ -f "/bin/startxfce4" ] || [ -f "/bin/mate-session" ]; }; then
 fi
 
 echo "################################################################"
-echo "Reboot the system or logout/login now to complete changes"
+echo "Reboot the system now to complete changes"
 echo "################################################################"
