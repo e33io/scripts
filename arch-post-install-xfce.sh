@@ -159,6 +159,11 @@ sed -i "s/home\/.*\/\.local/home\/$(whoami)\/\.local/" $HOME/.config/menus/xfce-
 sed -i "s/home\/.*\/\.config/home\/$(whoami)\/\.config/" $HOME/.config/qt5ct/qt5ct.conf
 sed -i "s/home\/.*\/\.config/home\/$(whoami)\/\.config/" $HOME/.config/qt6ct/qt6ct.conf
 sed -i "s/home\/.*\/Desktop/home\/$(whoami)\/Desktop/" $HOME/.config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml
+printf "%s\n" "[Desktop Entry]" "Type=Application" "Name=audio-default" \
+"Comment=set default volume level" "Icon=xfce4-mixer" \
+"Exec=sh -c 'sleep 2; pactl set-sink-volume @DEFAULT_SINK@ 25%%'" \
+"NoDisplay=true" "Hidden=false" > $HOME/.config/autostart/audio-default.desktop
+chmod +x $HOME/.config/autostart/audio-default.desktop
 rm -rf $HOME/dotfiles
 rm -rf $HOME/opt-dots
 rm -rf $HOME/scripts

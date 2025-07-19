@@ -174,9 +174,11 @@ sed -i "s/home\/.*\/\.config/home\/$(whoami)\/\.config/" $HOME/.config/qt5ct/qt5
 sed -i "s/home\/.*\/\.config/home\/$(whoami)\/\.config/" $HOME/.config/qt6ct/qt6ct.conf
 sed -i "s/home\/.*\/Desktop/home\/$(whoami)\/Desktop/" $HOME/.config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml
 sed -i "s/~\/\.gtkrc-2\.0\.mine/\/home\/$(whoami)\/\.gtkrc-2\.0\.mine/" $HOME/.gtkrc-2.0
-echo '# Set default volume level (using pactl)
-exec --no-startup-id sleep 2 && pactl set-sink-volume @DEFAULT_SINK@ 25% && $refresh_i3status' \
-| tee -a $HOME/.config/i3/config > /dev/null
+printf "%s\n" "[Desktop Entry]" "Type=Application" "Name=audio-default" \
+"Comment=set default volume level" "Icon=xfce4-mixer" \
+"Exec=sh -c 'sleep 2; pactl set-sink-volume @DEFAULT_SINK@ 25%'" \
+"NoDisplay=true" "Hidden=false" > $HOME/.config/autostart/audio-default.desktop
+chmod +x $HOME/.config/autostart/audio-default.desktop
 rm -rf $HOME/dotfiles
 rm -rf $HOME/opt-dots
 rm -rf $HOME/scripts
