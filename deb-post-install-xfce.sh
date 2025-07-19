@@ -30,7 +30,7 @@ if [ "$(id -u)" = 0 ]; then
 fi
 
 release="$(lsb_release -a | awk '/Codename:/ { print $2 }')"
-if [ ! $release = trixie ]; then
+if ! { [ $release = trixie ] || [ $release = excalibur ]; }; then
     echo "################################################################"
     echo "Debian Xfce Installation is NOT compatible with"
     echo "your version of Linux, and it will exit now without"
