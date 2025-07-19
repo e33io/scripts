@@ -159,6 +159,11 @@ if [ $pc_type = vm ]; then
 
     sudo pacman -S --noconfirm --needed spice-vdagent
     sudo sed -i 's/GDK_SCALE=2/GDK_SCALE=1/' /etc/lightdm/Xgsession
+    printf "%s\n" "[Desktop Entry]" "Type=Application" "Name=audio-default" \
+    "Comment=set default volume level" "Icon=xfce4-mixer" \
+    "Exec=sh -c 'sleep 2; pactl set-sink-volume @DEFAULT_SINK@ 75%'" \
+    "NoDisplay=true" "Hidden=false" > $HOME/.config/autostart/audio-default.desktop
+    chmod +x $HOME/.config/autostart/audio-default.desktop
 fi
 
 echo "################################################################"
@@ -176,11 +181,6 @@ sed -i "s/home\/.*\/\.config/home\/$(whoami)\/\.config/" $HOME/.config/qt5ct/qt5
 sed -i "s/home\/.*\/\.config/home\/$(whoami)\/\.config/" $HOME/.config/qt6ct/qt6ct.conf
 sed -i "s/home\/.*\/Desktop/home\/$(whoami)\/Desktop/" $HOME/.config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml
 sed -i "s/~\/\.gtkrc-2\.0\.mine/\/home\/$(whoami)\/\.gtkrc-2\.0\.mine/" $HOME/.gtkrc-2.0
-printf "%s\n" "[Desktop Entry]" "Type=Application" "Name=audio-default" \
-"Comment=set default volume level" "Icon=xfce4-mixer" \
-"Exec=sh -c 'sleep 2; pactl set-sink-volume @DEFAULT_SINK@ 25%'" \
-"NoDisplay=true" "Hidden=false" > $HOME/.config/autostart/audio-default.desktop
-chmod +x $HOME/.config/autostart/audio-default.desktop
 printf "%s\n" "" "# Set XDG_CURRENT_DESKTOP" "export XDG_CURRENT_DESKTOP=jwm" \
 | tee -a $HOME/.profile > /dev/null
 rm -rf $HOME/.config/i3

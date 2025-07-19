@@ -128,6 +128,20 @@ echo "#
 PS1='\[\e[01;31m\][\u \w]#\[\e[m\] '
 #" | sudo tee -a /root/.bashrc > /dev/null
 
+pc_type="$(hostnamectl chassis)"
+if [ $pc_type = vm ]; then
+    echo "################################################################"
+    echo "Install spice-vdagent"
+    echo "################################################################"
+
+    sudo apt -y install spice-vdagent
+    printf "%s\n" "[Desktop Entry]" "Type=Application" "Name=audio-default" \
+    "Comment=set default volume level" "Icon=xfce4-mixer" \
+    "Exec=sh -c 'sleep 2; pactl set-sink-volume @DEFAULT_SINK@ 75%%'" \
+    "NoDisplay=true" "Hidden=false" > $HOME/.config/autostart/audio-default.desktop
+    chmod +x $HOME/.config/autostart/audio-default.desktop
+fi
+
 echo "################################################################"
 echo "Update x-www-browser settings"
 echo "################################################################"
