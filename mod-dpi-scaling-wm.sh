@@ -48,12 +48,6 @@ sed -i 's/border:.*4px;/border:           2px;/' $HOME/.config/rofi/themes/float
 # update dunstrc (dunst scaling)
 sed -i 's/scale = 2/scale = 1/' $HOME/.config/dunst/dunstrc
 
-# update slick-greeter.conf (DPI mode and cursor size)
-if [ -f "/etc/lightdm/slick-greeter.conf" ]; then
-    sudo sed -i 's/enable-hidpi=on/enable-hidpi=auto/' /etc/lightdm/slick-greeter.conf
-    sudo sed -i 's/cursor-theme-size=48/cursor-theme-size=24/' /etc/lightdm/slick-greeter.conf
-fi
-
 # update Xgsession script for lightdm-gtk-greeter (GTK scaling)
 if [ -f "/etc/lightdm/Xgsession" ]; then
     sudo sed -i 's/GDK_SCALE=2/GDK_SCALE=1/' /etc/lightdm/Xgsession

@@ -36,12 +36,6 @@ sed -i 's/export QT_FONT_DPI=96/#export QT_FONT_DPI=96/' $HOME/.profile
 sed -i 's/XTerm\*faceSize.*20/XTerm*faceSize:        10/' $HOME/.Xresources
 sed -i 's/XTerm\*internalBorder.*14/XTerm*internalBorder:  7/' $HOME/.Xresources
 
-# update slick-greeter.conf (DPI mode and cursor size)
-if [ -f "/etc/lightdm/slick-greeter.conf" ]; then
-    sudo sed -i 's/enable-hidpi=on/enable-hidpi=auto/' /etc/lightdm/slick-greeter.conf
-    sudo sed -i 's/cursor-theme-size=48/cursor-theme-size=24/' /etc/lightdm/slick-greeter.conf
-fi
-
 # update Xgsession script for lightdm-gtk-greeter (GTK scaling)
 if [ -f "/etc/lightdm/Xgsession" ]; then
     sudo sed -i 's/GDK_SCALE=2/GDK_SCALE=1/' /etc/lightdm/Xgsession

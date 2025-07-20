@@ -48,9 +48,9 @@ echo "################################################################"
 sudo apt -y install mate-desktop-environment mate-desktop-environment-extras mate-media caja-mediainfo caja-actions \
 network-manager-gnome ayatana-indicator-application ayatana-indicator-keyboard ayatana-indicator-messages \
 ayatana-indicator-notifications ayatana-indicator-power ayatana-indicator-printers ayatana-indicator-session \
-ayatana-indicator-sound ayatana-settings pipewire-audio slick-greeter gnome-themes-extra qt*ct adwaita-qt* \
-papirus-icon-theme fonts-noto-color-emoji plank kitty python3-pypillowfight nfs-common cifs-utils xclip \
-plymouth plymouth-themes
+ayatana-indicator-sound ayatana-settings pipewire-audio lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings \
+gnome-themes-extra qt*ct adwaita-qt* papirus-icon-theme fonts-noto-color-emoji plank kitty python3-pypillowfight \
+nfs-common cifs-utils xclip plymouth plymouth-themes
 
 echo "################################################################"
 echo "Install other packages"
@@ -119,12 +119,12 @@ cp -R $HOME/opt-dots/mate/.bashrc $HOME
 cp -R $HOME/opt-dots/mate/.profile $HOME
 cp -R $HOME/opt-dots/mate/.Xresources $HOME
 sudo cp -R $HOME/dotfiles/etc/default /etc
-sudo cp -R $HOME/dotfiles/etc/lightdm /etc
 sudo cp -R $HOME/dotfiles/etc/network /etc
 sudo cp -R $HOME/dotfiles/etc/plymouth /etc
 sudo cp -R $HOME/dotfiles/usr/share /usr
 sudo cp -R $HOME/opt-dots/mate/etc/lightdm /etc
 sudo cp -R $HOME/opt-dots/mate/usr/share /usr
+sudo cp -R $HOME/scripts/window-control.sh /usr/bin
 sudo mkdir -p /boot/grub/fonts
 sudo cp -R /usr/share/grub/ter-* /boot/grub/fonts
 sudo mkdir -p /root/.config/micro
@@ -213,6 +213,8 @@ file:///home/$(whoami)/Music" > $HOME/.config/gtk-3.0/bookmarks
 sudo wget -q https://i.e33.io/wp/rancho-twilight-4k.jpg -P /usr/share/backgrounds
 dconf write /org/mate/desktop/background/picture-filename "'/usr/share/backgrounds/rancho-twilight-4k.jpg'"
 dconf write /org/mate/screensaver/picture-filename "'/usr/share/backgrounds/rancho-twilight-4k.jpg'"
+sudo sed -i "s/^background =.*/background = \/usr\/share\/backgrounds\/rancho-twilight-4k\.jpg/" \
+/etc/lightdm/lightdm-gtk-greeter.conf
 rm -rf $HOME/dotfiles
 rm -rf $HOME/opt-dots
 rm -rf $HOME/scripts
