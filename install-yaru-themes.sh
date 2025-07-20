@@ -120,7 +120,7 @@ fi
 
 if [ -f "/usr/bin/qt5ct" ]; then
     if [ ! -f "$HOME/.config/qt5ct/qt5ct.conf" ]; then
-        sudo mkdir -p $HOME/.config/qt5ct
+        mkdir -p $HOME/.config/qt5ct
         touch $HOME/.config/qt5ct/qt5ct.conf
     fi
     sudo mkdir -p /root/.config/qt5ct
@@ -129,7 +129,7 @@ fi
 
 if [ -f "/usr/bin/qt6ct" ]; then
     if [ ! -f "$HOME/.config/qt6ct/qt6ct.conf" ]; then
-        sudo mkdir -p $HOME/.config/qt6ct
+        mkdir -p $HOME/.config/qt6ct
         touch $HOME/.config/qt6ct/qt6ct.conf
     fi
     sudo mkdir -p /root/.config/qt6ct
