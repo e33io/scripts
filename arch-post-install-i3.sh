@@ -156,12 +156,12 @@ if [ $pc_type = vm ]; then
     echo "################################################################"
 
     sudo pacman -S --noconfirm --needed spice-vdagent
-    sudo sed -i 's/GDK_SCALE=2/GDK_SCALE=1/' /etc/lightdm/Xgsession
     printf "%s\n" "[Desktop Entry]" "Type=Application" "Name=audio-default" \
     "Comment=set default volume level" "Icon=xfce4-mixer" \
     "Exec=sh -c 'sleep 2; pactl set-sink-volume @DEFAULT_SINK@ 75%; \$refresh_i3status'" \
     "NoDisplay=true" "Hidden=false" > $HOME/.config/autostart/audio-default.desktop
     chmod +x $HOME/.config/autostart/audio-default.desktop
+    sudo sed -i 's/GDK_SCALE=2/GDK_SCALE=1/' /etc/lightdm/Xgsession
 fi
 
 echo "################################################################"
