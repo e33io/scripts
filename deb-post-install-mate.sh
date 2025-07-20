@@ -25,7 +25,7 @@ if [ "$(id -u)" = 0 ]; then
 fi
 
 release="$(lsb_release -a | awk '/Codename:/ { print $2 }')"
-if ! { [ $release = trixie ] || [ $release = excalibur ]; }; then
+if [ ! $release = trixie ]; then
     echo "################################################################"
     echo "Debian MATE Installation is NOT compatible with"
     echo "your version of Linux, and it will exit now without"
@@ -60,7 +60,7 @@ sudo apt -y install xfce4-appfinder parole mpv rhythmbox gnome-disk-utility mint
 inkscape filezilla libreoffice-calc libreoffice-draw libreoffice-impress libreoffice-writer libreoffice-gtk3 \
 timeshift dconf-editor dconf-cli heif-thumbnailer heif-gdk-pixbuf micro lazygit fastfetch htop cmus cava cmatrix \
 ncal micro ranger ueberzug caca-utils highlight atool w3m poppler-utils mediainfo fzf libimage-exiftool-perl \
-apt-transport-https curl rsync xdotool xbindkeys
+apt-transport-https curl rsync wmctrl xdotool xbindkeys
 
 echo "################################################################"
 echo "Enable wireplumber service (running as user)"
@@ -184,14 +184,6 @@ if [ $pc_type = vm ]; then
     "Exec=sh -c 'sleep 2; pactl set-sink-volume @DEFAULT_SINK@ 75%%'" \
     "NoDisplay=true" "Hidden=false" > $HOME/.config/autostart/audio-default.desktop
     chmod +x $HOME/.config/autostart/audio-default.desktop
-fi
-
-if [ -f "/etc/devuan_version" ]; then
-    echo "################################################################"
-    echo "Update Debian configs for use with Devuan Linux"
-    echo "################################################################"
-
-    sh mod-debian-to-devuan.sh
 fi
 
 echo "################################################################"

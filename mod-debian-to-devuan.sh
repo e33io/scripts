@@ -72,7 +72,7 @@ printf "%s\n" "[Desktop Entry]" "Type=Application" "Name=audio-default" \
 "NoDisplay=true" "Hidden=false" > $HOME/.config/autostart/audio-default.desktop
 chmod +x $HOME/.config/autostart/audio-default.desktop
 
-if { [ -f "/bin/startxfce4" ] || [ -f "/bin/mate-session" ]; }; then
+if [ -f "/bin/startxfce4" ]; then
     sed -i 's/25%/25%%/' $HOME/.config/autostart/audio-default.desktop
 fi
 
