@@ -77,8 +77,7 @@ echo "  0) None, exit script now and install my own"
 echo "  1) i3 Window Manager (tiling WM)"
 echo "  2) JWM Window Manager (floating WM)"
 echo "  3) Xfce Desktop Environment"
-echo "  4) MATE Desktop Environment"
-echo "  5) Gnome Desktop Environment"
+echo "  4) Gnome Desktop Environment"
 
 while true; do
     read -p "Which window manager or desktop environment do you want to install? " n
@@ -94,10 +93,7 @@ while true; do
         3) echo "You chose Xfce Desktop Environment";
            sh deb-post-install-xfce.sh;
            break;;
-        4) echo "You chose MATE Desktop Environment";
-           sh deb-post-install-mate.sh;
-           break;;
-        5) echo "You chose Gnome Desktop Environment";
+        4) echo "You chose Gnome Desktop Environment";
            sh deb-post-install-gnome.sh;
            break;;
         *) echo "Invalid selection, please enter a number from the list.";;
