@@ -76,6 +76,18 @@ if { [ -f "/bin/startxfce4" ] || [ -f "/bin/mate-session" ]; }; then
     sed -i 's/25%/25%%/' $HOME/.config/autostart/audio-default.desktop
 fi
 
+sys_vendor="$(cat /sys/class/dmi/id/sys_vendor)"
+if [ $sys_vendor = QEMU ]; then
+    echo "################################################################"
+    echo "Install spice-vdagent and update lightdm scaling"
+    echo "################################################################"
+    
+    sudo apt -y install spice-vdagent
+    if [ -f "/etc/lightdm/Xgsession" ]; then
+        sudo sed -i 's/GDK_SCALE=2/GDK_SCALE=1/' /etc/lightdm/Xgsession
+    fi
+fi
+
 echo "################################################################"
 echo "Reboot the system now to complete changes"
 echo "################################################################"
