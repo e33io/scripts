@@ -138,14 +138,14 @@ done
 pc_type="$(hostnamectl chassis)"
 if [ $pc_type = vm ]; then
     echo "################################################################"
-    echo "Install spice-vdagent and update lightdm scaling"
+    echo "Install spice-vdagent and update VM-specific configs"
     echo "################################################################"
 
     sudo pacman -S --noconfirm --needed spice-vdagent
-    printf "%s\n" "[Desktop Entry]" "Type=Application" "Name=audio-default" \
-    "Comment=set default volume level" "Icon=xfce4-mixer" \
-    "Exec=sh -c 'sleep 2; pactl set-sink-volume @DEFAULT_SINK@ 75%%'" \
-    "NoDisplay=true" "Hidden=false" > $HOME/.config/autostart/audio-default.desktop
+    printf "%s\n" "[Desktop Entry]" "Version=1.0" "Type=Application" "Name=audio-default" \
+    "Comment=set default volume level" "Exec=sh -c 'sleep 2; pactl set-sink-volume @DEFAULT_SINK@ 75%%'" \
+    "Icon=xfce4-mixer" "StartupNotify=false" "Terminal=false" "NoDisplay=true" \
+    "Hidden=false" > $HOME/.config/autostart/audio-default.desktop
     chmod +x $HOME/.config/autostart/audio-default.desktop
     sudo sed -i 's/GDK_SCALE=2/GDK_SCALE=1/' /etc/lightdm/Xgsession
 fi

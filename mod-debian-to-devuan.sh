@@ -66,12 +66,12 @@ echo "Set default mute and default volume level"
 echo "################################################################"
 
 mkdir -p $HOME/.config/autostart
-printf "%s\n" "[Desktop Entry]" "Type=Application" "Name=audio-default" \
-"Comment=set default mute and default volume level" "Icon=xfce4-mixer" \
+printf "%s\n" "[Desktop Entry]" "Version=1.0" "Type=Application" \
+"Name=audio-default" "Comment=set default mute and default volume level" \
 "Exec=sh -c 'sleep 1; pactl set-sink-mute @DEFAULT_SINK@ false; sleep 6; pactl set-sink-volume @DEFAULT_SINK@ 25%'" \
-"NoDisplay=true" "Hidden=false" > $HOME/.config/autostart/audio-default.desktop
+"Icon=xfce4-mixer" "StartupNotify=false" "Terminal=false" "NoDisplay=true" \
+"Hidden=false" > $HOME/.config/autostart/audio-default.desktop
 chmod +x $HOME/.config/autostart/audio-default.desktop
-
 if [ -f "/bin/startxfce4" ]; then
     sed -i 's/25%/25%%/' $HOME/.config/autostart/audio-default.desktop
 fi
@@ -79,7 +79,7 @@ fi
 sys_vendor="$(cat /sys/class/dmi/id/sys_vendor)"
 if [ $sys_vendor = QEMU ]; then
     echo "################################################################"
-    echo "Install spice-vdagent and update lightdm scaling"
+    echo "Install spice-vdagent and update VM-specific configs"
     echo "################################################################"
     
     sudo apt -y install spice-vdagent
