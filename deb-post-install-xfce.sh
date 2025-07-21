@@ -188,14 +188,7 @@ if [ $pc_type = vm ]; then
     echo "Install spice-vdagent and update VM-specific configs"
     echo "################################################################"
 
-    sudo apt -y install spice-vdagent
-    mkdir -p $HOME/.config/autostart
-    printf "%s\n" "[Desktop Entry]" "Version=1.0" "Type=Application" "Name=audio-default" \
-    "Comment=set default volume level" "Exec=sh -c 'sleep 2; pactl set-sink-volume @DEFAULT_SINK@ 75%%'" \
-    "Icon=xfce4-mixer" "StartupNotify=false" "Terminal=false" "NoDisplay=true" \
-    "Hidden=false" > $HOME/.config/autostart/audio-default.desktop
-    chmod +x $HOME/.config/autostart/audio-default.desktop
-    sudo sed -i 's/GDK_SCALE=2/GDK_SCALE=1/' /etc/lightdm/Xgsession
+    sh mod-virt-machines.sh
 fi
 
 if [ -f "/etc/devuan_version" ]; then

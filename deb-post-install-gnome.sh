@@ -134,12 +134,7 @@ if [ $pc_type = vm ]; then
     echo "Install spice-vdagent"
     echo "################################################################"
 
-    sudo apt -y install spice-vdagent
-    printf "%s\n" "[Desktop Entry]" "Type=Application" "Name=audio-default" \
-    "Comment=set default volume level" "Icon=xfce4-mixer" \
-    "Exec=sh -c 'sleep 2; pactl set-sink-volume @DEFAULT_SINK@ 75%%'" \
-    "NoDisplay=true" "Hidden=false" > $HOME/.config/autostart/audio-default.desktop
-    chmod +x $HOME/.config/autostart/audio-default.desktop
+    sh mod-virt-machines.sh
 fi
 
 echo "################################################################"
