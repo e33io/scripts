@@ -17,6 +17,7 @@ fi
 
 # i3 configs
 if [ -f "/bin/i3" ]; then
+    mkdir -p $HOME/.config/autostart
     # add audio-default.desktop file
     printf "%s\n" "[Desktop Entry]" "Type=Application" "Name=audio-default" "Comment=set default volume level" \
     "Exec=sh -c 'sleep 2; pactl set-sink-volume @DEFAULT_SINK@ 75%; \$refresh_i3status'" "Icon=xfce4-mixer" \
@@ -38,6 +39,7 @@ fi
 
 # JWM configs
 if [ -f "/bin/jwm" ]; then
+    mkdir -p $HOME/.config/autostart
     # add audio-default.desktop file
     printf "%s\n" "[Desktop Entry]" "Type=Application" "Name=audio-default" "Comment=set default volume level" \
     "Exec=sh -c 'sleep 2; pactl set-sink-volume @DEFAULT_SINK@ 75%'" "Icon=xfce4-mixer" "StartupNotify=false" \
