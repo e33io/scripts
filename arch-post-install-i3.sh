@@ -159,7 +159,7 @@ if [ $pc_type = vm ]; then
 fi
 
 echo "################################################################"
-echo "Clean up user directory"
+echo "Add bookmarks and clean up user directory"
 echo "################################################################"
 
 xdg-user-dirs-update
