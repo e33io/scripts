@@ -79,7 +79,7 @@ theming_files () {
     sed -i "s/icon-theme: \".*\"/icon-theme: \"$icon_theme\"/" $HOME/.config/rofi/config.rasi
     # i3lock background color
     lock_bg_color=$(echo "$desktop_bg_color" | sed 's/^.//')
-    sed -i "s/-n -c .*\"/-n -c $lock_bg_color\"/" $HOME/.config/autostart/xss-lock.desktop
+    sed -i "s/-n -c .*\"/-n -c $lock_bg_color\"/" $HOME/.config/jwm/startup
     sed -i "s/-c .* \&/-c $lock_bg_color \&/" $HOME/.local/bin/lock-suspend.sh
     # XSecureLock background color
     sed -i "s/BACKGROUND_COLOR=\".*\"/BACKGROUND_COLOR=\"$desktop_bg_color\"/" $HOME/.profile

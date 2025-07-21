@@ -24,9 +24,6 @@ if [ -f "/etc/pacman.conf" ]; then
     sudo pacman -S --noconfirm --needed brightnessctl
 fi
 
-# update xss-lock.desktop (add lock-suspend.sh to xss-lock command)
-sed -i 's/xss-lock -l/xss-lock -n sh ~\/\.local\/bin\/lock-suspend\.sh -l/' $HOME/.config/autostart/xss-lock.desktop
-
 # i3wm specific configs
 if [ -d "$HOME/.config/i3" ]; then
     # update i3status.conf (window title width in bar)
@@ -37,10 +34,14 @@ if [ -d "$HOME/.config/i3" ]; then
     sed -i 's/#order += "battery all"/order += "battery all"/' $HOME/.config/i3/i3status.conf
     sed -i 's/order += "ethernet _first_"/#order += "ethernet _first_"/' $HOME/.config/i3/i3status.conf
     sed -i 's/#order += "wireless _first_"/order += "wireless _first_"/' $HOME/.config/i3/i3status.conf
+    # update xss-lock.desktop (add lock-suspend.sh to xss-lock command)
+    sed -i 's/xss-lock -l/xss-lock -n sh ~\/\.local\/bin\/lock-suspend\.sh -l/' $HOME/.config/i3/startup.conf
 fi
 
 # JWM specific configs
 if [ -d "$HOME/.config/jwm" ]; then
     # update polybar config.ini (modules)
     sed -i 's/time pulseaudio eth tray/time battery pulseaudio wlan tray/' $HOME/.config/polybar/config.ini
+    # update xss-lock.desktop (add lock-suspend.sh to xss-lock command)
+    sed -i 's/xss-lock -l/xss-lock -n sh ~\/\.local\/bin\/lock-suspend\.sh -l/' $HOME/.config/jwm/startup
 fi
