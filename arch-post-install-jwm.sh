@@ -136,7 +136,7 @@ while true; do
     read -p "What type of monitor are you using? " n
     case $n in
         1) echo "You chose Standard HD (96 dpi) monitor";
-           sh mod-dpi-scaling-wm.sh;
+           sh $HOME/scripts/mod-dpi-scaling-wm.sh;
            sudo sed -i 's/^greeter-wrapper/#greeter-wrapper/' /etc/lightdm/lightdm.conf;
            break;;
         2) echo "You chose HiDPI (192 dpi) monitor";
@@ -151,14 +151,14 @@ if [ $pc_type = laptop ]; then
     echo "Modify window manager configs for laptop use"
     echo "################################################################"
 
-    sh mod-wm-laptop.sh
+    sh $HOME/scripts/mod-wm-laptop.sh
 fi
 if [ $pc_type = vm ]; then
     echo "################################################################"
     echo "Install spice-vdagent and update VM-specific configs"
     echo "################################################################"
 
-    sh mod-virt-machines.sh
+    sh $HOME/scripts/mod-virt-machines.sh
 fi
 
 echo "################################################################"

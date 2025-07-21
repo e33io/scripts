@@ -33,7 +33,7 @@ if { [ -d "$HOME/.config/i3" ] || [ -d "$HOME/.config/jwm" ]; }; then
             1) echo "You chose Desktop computer";
                break;;
             2) echo "You chose Laptop computer";
-               sh mod-wm-laptop.sh;
+               sh $HOME/scripts/mod-wm-laptop.sh;
                break;;
             *) echo "Invalid selection, please enter a number from the list.";;
         esac

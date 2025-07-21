@@ -134,7 +134,7 @@ if [ $pc_type = vm ]; then
     echo "Install spice-vdagent"
     echo "################################################################"
 
-    sh mod-virt-machines.sh
+    sh $HOME/scripts/mod-virt-machines.sh
 fi
 
 echo "################################################################"
