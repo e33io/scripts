@@ -48,16 +48,16 @@ clear
 
 theming_files () {
     # i3bar colors
-    sed -i "s/background .*/background $background/" $HOME/.config/i3/config
-    sed -i "s/statusline .*/statusline $statusline/" $HOME/.config/i3/config
-    sed -i "s/separator .*/separator  $separator/" $HOME/.config/i3/config
+    sed -i "s/background .*/background $bar_bg/" $HOME/.config/i3/config
+    sed -i "s/statusline .*/statusline $bar_fg/" $HOME/.config/i3/config
+    sed -i "s/separator .*/separator  $accent_color/" $HOME/.config/i3/config
     sed -i "s/focused_workspace .*/focused_workspace  $focused_workspace/" $HOME/.config/i3/config
     sed -i "s/active_workspace .*/active_workspace   $active_workspace/" $HOME/.config/i3/config
     sed -i "s/inactive_workspace .*/inactive_workspace $inactive_workspace/" $HOME/.config/i3/config
     sed -i "s/urgent_workspace .*/urgent_workspace   $urgent_workspace/" $HOME/.config/i3/config
     sed -i "s/binding_mode .*/binding_mode       $binding_mode/" $HOME/.config/i3/config
     # i3status colors
-    sed -i "s/color_good = \".*\"/color_good = \"$status_good\"/" $HOME/.config/i3/i3status.conf
+    sed -i "s/color_good = \".*\"/color_good = \"$bar_fg\"/" $HOME/.config/i3/i3status.conf
     # i3 window colors
     sed -i "s/client\.focused .*/client\.focused          $client_focused/" $HOME/.config/i3/config
     sed -i "s/client\.focused_inactive .*/client\.focused_inactive $client_focused_inactive/" $HOME/.config/i3/config
@@ -112,13 +112,10 @@ theming_files () {
 }
 
 Adwaita_Dark () {
-    # i3bar colors
-    background="#1e1e1e"
-    statusline="#eeeeee"
-    separator="#1c6dcf"
-    # i3status colors
-    status_good="#eeeeee"
-    #                  border  bckgrd  text
+    # bar colors
+    bar_bg="#1e1e1e"
+    bar_fg="#eeeeee"
+    # i3bar colors     border  bckgrd  text
     focused_workspace="#1c6dcf #1c6dcf #ffffff"
     active_workspace="#535353 #535353 #eeeeee"
     inactive_workspace="#1e1e1e #1e1e1e #eeeeee"
@@ -147,13 +144,10 @@ Adwaita_Dark () {
 }
 
 Adwaita_Darker () {
-    # i3bar colors
-    background="#1e1e1e"
-    statusline="#eeeeee"
-    separator="#15539e"
-    # i3status colors
-    status_good="#eeeeee"
-    #                  border  bckgrd  text
+    # bar colors
+    bar_bg="#1e1e1e"
+    bar_fg="#eeeeee"
+    # i3bar colors     border  bckgrd  text
     focused_workspace="#15539e #15539e #f4f4f4"
     active_workspace="#535353 #535353 #eeeeee"
     inactive_workspace="#1e1e1e #1e1e1e #eeeeee"
@@ -182,13 +176,10 @@ Adwaita_Darker () {
 }
 
 Adwaita_Light () {
-    # i3bar colors
-    background="#f6f5f4"
-    statusline="#2e3436"
-    separator="#3584e4"
-    # i3status colors
-    status_good="#2e3436"
-    #                  border  bckgrd  text
+    # bar colors
+    bar_bg="#f6f5f4"
+    bar_fg="#2e3436"
+    # i3bar colors     border  bckgrd  text
     focused_workspace="#3584e4 #3584e4 #ffffff"
     active_workspace="#b3aaa2 #b3aaa2 #453f39"
     inactive_workspace="#f6f5f4 #f6f5f4 #2e3436"
@@ -217,13 +208,10 @@ Adwaita_Light () {
 }
 
 Mint_L_Dark_Mod_Brown () {
-    # i3bar colors
-    background="#1e1e1e"
-    statusline="#eeeeee"
-    separator="#9c7e65"
-    # i3status colors
-    status_good="#eeeeee"
-    #                  border  bckgrd  text
+    # bar colors
+    bar_bg="#1e1e1e"
+    bar_fg="#eeeeee"
+    # i3bar colors     border  bckgrd  text
     focused_workspace="#9c7e65 #9c7e65 #ffffff"
     active_workspace="#565656 #565656 #eeeeee"
     inactive_workspace="#1e1e1e #1e1e1e #eeeeee"
@@ -253,13 +241,10 @@ Mint_L_Dark_Mod_Brown () {
 }
 
 Mint_L_Dark_Mod_Teal () {
-    # i3bar colors
-    background="#1e1e1e"
-    statusline="#eeeeee"
-    separator="#579c8e"
-    # i3status colors
-    status_good="#eeeeee"
-    #                  border  bckgrd  text
+    # bar colors
+    bar_bg="#1e1e1e"
+    bar_fg="#eeeeee"
+    # i3bar colors     border  bckgrd  text
     focused_workspace="#579c8e #579c8e #ffffff"
     active_workspace="#565656 #565656 #eeeeee"
     inactive_workspace="#1e1e1e #1e1e1e #eeeeee"
@@ -289,13 +274,10 @@ Mint_L_Dark_Mod_Teal () {
 }
 
 Mint_Y_Dark_Mod_Blue () {
-    # i3bar colors
-    background="#1e1e1e"
-    statusline="#eeeeee"
-    separator="#0c75de"
-    # i3status colors
-    status_good="#eeeeee"
-    #                  border  bckgrd  text
+    # bar colors
+    bar_bg="#1e1e1e"
+    bar_fg="#eeeeee"
+    # i3bar colors     border  bckgrd  text
     focused_workspace="#0c75de #0c75de #ffffff"
     active_workspace="#565656 #565656 #eeeeee"
     inactive_workspace="#1e1e1e #1e1e1e #eeeeee"
@@ -325,13 +307,10 @@ Mint_Y_Dark_Mod_Blue () {
 }
 
 Mint_Y_Dark_Mod_Green () {
-    # i3bar colors
-    background="#1e1e1e"
-    statusline="#eeeeee"
-    separator="#35a854"
-    # i3status colors
-    status_good="#eeeeee"
-    #                  border  bckgrd  text
+    # bar colors
+    bar_bg="#1e1e1e"
+    bar_fg="#eeeeee"
+    # i3bar colors     border  bckgrd  text
     focused_workspace="#35a854 #35a854 #ffffff"
     active_workspace="#565656 #565656 #eeeeee"
     inactive_workspace="#1e1e1e #1e1e1e #eeeeee"
@@ -361,13 +340,10 @@ Mint_Y_Dark_Mod_Green () {
 }
 
 Mint_Y_Dark_Mod_Grey () {
-    # i3bar colors
-    background="#1e1e1e"
-    statusline="#eeeeee"
-    separator="#70737a"
-    # i3status colors
-    status_good="#eeeeee"
-    #                  border  bckgrd  text
+    # bar colors
+    bar_bg="#1e1e1e"
+    bar_fg="#eeeeee"
+    # i3bar colors     border  bckgrd  text
     focused_workspace="#70737a #70737a #ffffff"
     active_workspace="#494949 #494949 #eeeeee"
     inactive_workspace="#1e1e1e #1e1e1e #eeeeee"
@@ -397,13 +373,10 @@ Mint_Y_Dark_Mod_Grey () {
 }
 
 Mint_Y_Dark_Mod_Orange () {
-    # i3bar colors
-    background="#1e1e1e"
-    statusline="#eeeeee"
-    separator="#ff7139"
-    # i3status colors
-    status_good="#eeeeee"
-    #                  border  bckgrd  text
+    # bar colors
+    bar_bg="#1e1e1e"
+    bar_fg="#eeeeee"
+    # i3bar colors     border  bckgrd  text
     focused_workspace="#ff7139 #ff7139 #ffffff"
     active_workspace="#565656 #565656 #eeeeee"
     inactive_workspace="#1e1e1e #1e1e1e #eeeeee"
@@ -433,13 +406,10 @@ Mint_Y_Dark_Mod_Orange () {
 }
 
 Mint_Y_Dark_Mod_Purple () {
-    # i3bar colors
-    background="#1e1e1e"
-    statusline="#eeeeee"
-    separator="#8c5dd9"
-    # i3status colors
-    status_good="#eeeeee"
-    #                  border  bckgrd  text
+    # bar colors
+    bar_bg="#1e1e1e"
+    bar_fg="#eeeeee"
+    # i3bar colors     border  bckgrd  text
     focused_workspace="#8c5dd9 #8c5dd9 #ffffff"
     active_workspace="#565656 #565656 #eeeeee"
     inactive_workspace="#1e1e1e #1e1e1e #eeeeee"
@@ -469,13 +439,10 @@ Mint_Y_Dark_Mod_Purple () {
 }
 
 Mint_Y_Dark_Mod_Red () {
-    # i3bar colors
-    background="#1e1e1e"
-    statusline="#eeeeee"
-    separator="#e82127"
-    # i3status colors
-    status_good="#eeeeee"
-    #                  border  bckgrd  text
+    # bar colors
+    bar_bg="#1e1e1e"
+    bar_fg="#eeeeee"
+    # i3bar colors     border  bckgrd  text
     focused_workspace="#e82127 #e82127 #ffffff"
     active_workspace="#565656 #565656 #eeeeee"
     inactive_workspace="#1e1e1e #1e1e1e #eeeeee"
@@ -505,13 +472,10 @@ Mint_Y_Dark_Mod_Red () {
 }
 
 Mint_Y_Dark_Mod_Teal () {
-    # i3bar colors
-    background="#1e1e1e"
-    statusline="#eeeeee"
-    separator="#199ca8"
-    # i3status colors
-    status_good="#eeeeee"
-    #                  border  bckgrd  text
+    # bar colors
+    bar_bg="#1e1e1e"
+    bar_fg="#eeeeee"
+    # i3bar colors     border  bckgrd  text
     focused_workspace="#199ca8 #199ca8 #ffffff"
     active_workspace="#565656 #565656 #eeeeee"
     inactive_workspace="#1e1e1e #1e1e1e #eeeeee"
