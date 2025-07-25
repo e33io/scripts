@@ -37,25 +37,25 @@ resize_win=50
 case $1 in
     move-right)
         # shift the x coordinates right
-        x=$(($x_abs + $move_win))
+        x=$(($x + $move_win))
         # move window to the new coordinates
         wmctrl -r :ACTIVE: -e "1,$x,$y,$width,$height"
     ;;
     move-left)
         # shift the x coordinates left
-        x=$(($x_abs - $move_win))
+        x=$(($x - $move_win))
         # move window to the new coordinates
         wmctrl -r :ACTIVE: -e "1,$x,$y,$width,$height"
     ;;
     move-down)
         # shift the y coordinates down
-        y=$(($y_abs + $move_win))
+        y=$(($y + $move_win))
         # move window to the new coordinates
         wmctrl -r :ACTIVE: -e "1,$x,$y,$width,$height"
     ;;
     move-up)
         # shift the y coordinates up
-        y=$(($y_abs - $move_win))
+        y=$(($y - $move_win))
         # move window to the new coordinates
         wmctrl -r :ACTIVE: -e "1,$x,$y,$width,$height"
     ;;
