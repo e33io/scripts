@@ -47,17 +47,6 @@ fi
 clear
 
 theming_files () {
-    # i3bar colors
-    sed -i "s/background .*/background $bar_bg/" $HOME/.config/i3/config
-    sed -i "s/statusline .*/statusline $bar_fg/" $HOME/.config/i3/config
-    sed -i "s/separator .*/separator  $accent_color/" $HOME/.config/i3/config
-    sed -i "s/focused_workspace .*/focused_workspace  $focused_workspace/" $HOME/.config/i3/config
-    sed -i "s/active_workspace .*/active_workspace   $active_workspace/" $HOME/.config/i3/config
-    sed -i "s/inactive_workspace .*/inactive_workspace $inactive_workspace/" $HOME/.config/i3/config
-    sed -i "s/urgent_workspace .*/urgent_workspace   $urgent_workspace/" $HOME/.config/i3/config
-    sed -i "s/binding_mode .*/binding_mode       $binding_mode/" $HOME/.config/i3/config
-    # i3status colors
-    sed -i "s/color_good = \".*\"/color_good = \"$bar_fg\"/" $HOME/.config/i3/i3status.conf
     # i3 window colors
     sed -i "s/client\.focused .*/client\.focused          $client_focused/" $HOME/.config/i3/config
     sed -i "s/client\.focused_inactive .*/client\.focused_inactive $client_focused_inactive/" $HOME/.config/i3/config
@@ -65,6 +54,14 @@ theming_files () {
     sed -i "s/client\.urgent .*/client\.urgent           $client_urgent/" $HOME/.config/i3/config
     sed -i "s/client\.placeholder .*/client\.placeholder      $client_placeholder/" $HOME/.config/i3/config
     sed -i "s/client\.background .*/client\.background       $client_background/" $HOME/.config/i3/config
+    # Polybar colors
+    sed -i "s/bg = .*/bg = $bar_bg/" $HOME/.config/polybar/config.ini
+    sed -i "s/bg-focus = .*/bg-focus = $accent_color/" $HOME/.config/polybar/config.ini
+    sed -i "s/bg-urgent = .*/bg-urgent = $bar_bg_urg/" $HOME/.config/polybar/config.ini
+    sed -i "s/fg = .*/fg = $bar_fg/" $HOME/.config/polybar/config.ini
+    sed -i "s/fg-urgent = .*/fg-urgent = $bar_fg_urg/" $HOME/.config/polybar/config.ini
+    sed -i "s/bindmode = .*/bindmode = $bar_bindmode/" $HOME/.config/polybar/config.ini
+    sed -i "s/\%{F.*}\|\%{F-}/\%{F$accent_color}\|\%{F-}/" $HOME/.config/polybar/config.ini
     # GTK 2 theme and icon theme
     sed -i "s/gtk-theme-name=\".*\"/gtk-theme-name=\"$gtk_theme\"/" $HOME/.gtkrc-2.0
     sed -i "s/gtk-icon-theme-name=\".*\"/gtk-icon-theme-name=\"$icon_theme\"/" $HOME/.gtkrc-2.0
@@ -92,11 +89,9 @@ theming_files () {
     # XSecureLock background color
     sed -i "s/BACKGROUND_COLOR=\".*\"/BACKGROUND_COLOR=\"$desktop_bg_color\"/" $HOME/.profile
     # Lightdm background color, GTK 3 theme and icon theme
-    if [ -f "/etc/lightdm/lightdm-gtk-greeter.conf" ]; then
-        sudo sed -i "s/^background =.*/background = $desktop_bg_color/" /etc/lightdm/lightdm-gtk-greeter.conf
-        sudo sed -i "s/^icon-theme-name =.*/icon-theme-name = $icon_theme/" /etc/lightdm/lightdm-gtk-greeter.conf
-        sudo sed -i "s/^theme-name =.*/theme-name = $gtk_theme/" /etc/lightdm/lightdm-gtk-greeter.conf
-    fi
+    sudo sed -i "s/^background =.*/background = $desktop_bg_color/" /etc/lightdm/lightdm-gtk-greeter.conf
+    sudo sed -i "s/^icon-theme-name =.*/icon-theme-name = $icon_theme/" /etc/lightdm/lightdm-gtk-greeter.conf
+    sudo sed -i "s/^theme-name =.*/theme-name = $gtk_theme/" /etc/lightdm/lightdm-gtk-greeter.conf
     # Nitrogen desktop background color (visible if semi-transparent wallpaper is set)
     if [ -f "$HOME/.config/nitrogen/bg-saved.cfg" ]; then
         sed -i "s/bgcolor=.*/bgcolor=$desktop_bg_color/" $HOME/.config/nitrogen/bg-saved.cfg
@@ -112,22 +107,19 @@ theming_files () {
 }
 
 Adwaita_Dark () {
-    # bar colors
-    bar_bg="#1e1e1e"
-    bar_fg="#eeeeee"
-    # i3bar colors     border  bckgrd  text
-    focused_workspace="#1c6dcf #1c6dcf #ffffff"
-    active_workspace="#535353 #535353 #eeeeee"
-    inactive_workspace="#1e1e1e #1e1e1e #eeeeee"
-    urgent_workspace="#a80e15 #a80e15 #ffffff"
-    binding_mode="#6f3c95 #6f3c95 #ffffff"
-    # i3 colors     border  bckgrd  text    indictr child_border
+    # i3 window colors
     client_focused="#1c6dcf #1c6dcf #ffffff #438de6 #1c6dcf"
     client_focused_inactive="#535353 #1e1e1e #cccccc #6e6e6e #535353"
     client_unfocused="#535353 #1e1e1e #cccccc #6e6e6e #535353"
     client_urgent="#a80e15 #a80e15 #ffffff #dc121b #a80e15"
     client_placeholder="#1e1e1e #1e1e1e #eeeeee #1e1e1e #1e1e1e"
     client_background="#7f7f7f"
+    # Polybar colors
+    bar_bg="#1e1e1e"
+    bar_fg="#eeeeee"
+    bar_bg_urg="#a80e15"
+    bar_fg_urg="#ffffff"
+    bar_bindmode="#6f3c95"
     # Theme accent color
     accent_color="#1c6dcf"
     # Desktop background color
@@ -144,22 +136,19 @@ Adwaita_Dark () {
 }
 
 Adwaita_Darker () {
-    # bar colors
-    bar_bg="#1e1e1e"
-    bar_fg="#eeeeee"
-    # i3bar colors     border  bckgrd  text
-    focused_workspace="#15539e #15539e #f4f4f4"
-    active_workspace="#535353 #535353 #eeeeee"
-    inactive_workspace="#1e1e1e #1e1e1e #eeeeee"
-    urgent_workspace="#a80e15 #a80e15 #f4f4f4"
-    binding_mode="#6f3c95 #6f3c95 #f4f4f4"
-    # i3 colors     border  bckgrd  text    indictr child_border
+    # i3 window colors
     client_focused="#15539e #15539e #f4f4f4 #1961be #15539e"
     client_focused_inactive="#535353 #1e1e1e #cccccc #6e6e6e #535353"
     client_unfocused="#535353 #1e1e1e #cccccc #6e6e6e #535353"
     client_urgent="#a80e15 #a80e15 #f4f4f4 #dc121b #a80e15"
     client_placeholder="#1e1e1e #1e1e1e #eeeeee #1e1e1e #1e1e1e"
     client_background="#7f7f7f"
+    # Polybar colors
+    bar_bg="#1e1e1e"
+    bar_fg="#eeeeee"
+    bar_bg_urg="#a80e15"
+    bar_fg_urg="#f4f4f4"
+    bar_bindmode="#6f3c95"
     # Theme accent color
     accent_color="#15539e"
     # Desktop background color
@@ -176,22 +165,19 @@ Adwaita_Darker () {
 }
 
 Adwaita_Light () {
-    # bar colors
-    bar_bg="#f6f5f4"
-    bar_fg="#2e3436"
-    # i3bar colors     border  bckgrd  text
-    focused_workspace="#3584e4 #3584e4 #ffffff"
-    active_workspace="#b3aaa2 #b3aaa2 #453f39"
-    inactive_workspace="#f6f5f4 #f6f5f4 #2e3436"
-    urgent_workspace="#aa0e15 #aa0e15 #ffffff"
-    binding_mode="#703c97 #703c97 #ffffff"
-    # i3 colors     border  bckgrd  text    indictr child_border
+    # i3 window colors
     client_focused="#3584e4 #3584e4 #ffffff #7bafed #3584e4"
     client_focused_inactive="#b3aaa2 #f6f5f4 #453f39 #8e8175 #b3aaa2"
     client_unfocused="#b3aaa2 #f6f5f4 #453f39 #8e8175 #b3aaa2"
     client_urgent="#aa0e15 #aa0e15 #ffffff #e6131d #aa0e15"
     client_placeholder="#f6f5f4 #f6f5f4 #2e3436 #f6f5f4 #f6f5f4"
     client_background="#7f7f7f"
+    # Polybar colors
+    bar_bg="#f6f5f4"
+    bar_fg="#2e3436"
+    bar_bg_urg="#aa0e15"
+    bar_fg_urg="#ffffff"
+    bar_bindmode="#703c97"
     # Theme accent color
     accent_color="#3584e4"
     # Desktop background color
@@ -208,22 +194,19 @@ Adwaita_Light () {
 }
 
 Mint_L_Dark_Mod_Brown () {
-    # bar colors
-    bar_bg="#1e1e1e"
-    bar_fg="#eeeeee"
-    # i3bar colors     border  bckgrd  text
-    focused_workspace="#9c7e65 #9c7e65 #ffffff"
-    active_workspace="#565656 #565656 #eeeeee"
-    inactive_workspace="#1e1e1e #1e1e1e #eeeeee"
-    urgent_workspace="#ae0e16 #ae0e16 #ffffff"
-    binding_mode="#733d9a #733d9a #ffffff"
-    # i3 colors     border  bckgrd  text    indictr child_border
+    # i3 window colors
     client_focused="#9c7e65 #9c7e65 #ffffff #b6a08d #9c7e65"
     client_focused_inactive="#565656 #1e1e1e #cccccc #717171 #565656"
     client_unfocused="#565656 #1e1e1e #cccccc #717171 #565656"
     client_urgent="#ae0e16 #ae0e16 #ffffff #e2121d #ae0e16"
     client_placeholder="#1e1e1e #1e1e1e #eeeeee #1e1e1e #1e1e1e"
     client_background="#7f7f7f"
+    # Polybar colors
+    bar_bg="#1e1e1e"
+    bar_fg="#eeeeee"
+    bar_bg_urg="#ae0e16"
+    bar_fg_urg="#ffffff"
+    bar_bindmode="#733d9a"
     # Theme accent color
     accent_color="#9c7e65"
     # Desktop background color
@@ -241,22 +224,19 @@ Mint_L_Dark_Mod_Brown () {
 }
 
 Mint_L_Dark_Mod_Teal () {
-    # bar colors
-    bar_bg="#1e1e1e"
-    bar_fg="#eeeeee"
-    # i3bar colors     border  bckgrd  text
-    focused_workspace="#579c8e #579c8e #ffffff"
-    active_workspace="#565656 #565656 #eeeeee"
-    inactive_workspace="#1e1e1e #1e1e1e #eeeeee"
-    urgent_workspace="#ae0e16 #ae0e16 #ffffff"
-    binding_mode="#733d9a #733d9a #ffffff"
-    # i3 colors     border  bckgrd  text    indictr child_border
+    # i3 window colors
     client_focused="#579c8e #579c8e #ffffff #87bcb1 #579c8e"
     client_focused_inactive="#565656 #1e1e1e #cccccc #717171 #565656"
     client_unfocused="#565656 #1e1e1e #cccccc #717171 #565656"
     client_urgent="#ae0e16 #ae0e16 #ffffff #e2121d #ae0e16"
     client_placeholder="#1e1e1e #1e1e1e #eeeeee #1e1e1e #1e1e1e"
     client_background="#7f7f7f"
+    # Polybar colors
+    bar_bg="#1e1e1e"
+    bar_fg="#eeeeee"
+    bar_bg_urg="#ae0e16"
+    bar_fg_urg="#ffffff"
+    bar_bindmode="#733d9a"
     # Theme accent color
     accent_color="#579c8e"
     # Desktop background color
@@ -274,22 +254,19 @@ Mint_L_Dark_Mod_Teal () {
 }
 
 Mint_Y_Dark_Mod_Blue () {
-    # bar colors
-    bar_bg="#1e1e1e"
-    bar_fg="#eeeeee"
-    # i3bar colors     border  bckgrd  text
-    focused_workspace="#0c75de #0c75de #ffffff"
-    active_workspace="#565656 #565656 #eeeeee"
-    inactive_workspace="#1e1e1e #1e1e1e #eeeeee"
-    urgent_workspace="#ae0e16 #ae0e16 #ffffff"
-    binding_mode="#733d9a #733d9a #ffffff"
-    # i3 colors     border  bckgrd  text    indictr child_border
+    # i3 window colors
     client_focused="#0c75de #0c75de #ffffff #3997f4 #0c75de"
     client_focused_inactive="#565656 #1e1e1e #cccccc #717171 #565656"
     client_unfocused="#565656 #1e1e1e #cccccc #717171 #565656"
     client_urgent="#ae0e16 #ae0e16 #ffffff #e2121d #ae0e16"
     client_placeholder="#1e1e1e #1e1e1e #eeeeee #1e1e1e #1e1e1e"
     client_background="#7f7f7f"
+    # Polybar colors
+    bar_bg="#1e1e1e"
+    bar_fg="#eeeeee"
+    bar_bg_urg="#ae0e16"
+    bar_fg_urg="#ffffff"
+    bar_bindmode="#733d9a"
     # Theme accent color
     accent_color="#0c75de"
     # Desktop background color
@@ -307,22 +284,19 @@ Mint_Y_Dark_Mod_Blue () {
 }
 
 Mint_Y_Dark_Mod_Green () {
-    # bar colors
-    bar_bg="#1e1e1e"
-    bar_fg="#eeeeee"
-    # i3bar colors     border  bckgrd  text
-    focused_workspace="#35a854 #35a854 #ffffff"
-    active_workspace="#565656 #565656 #eeeeee"
-    inactive_workspace="#1e1e1e #1e1e1e #eeeeee"
-    urgent_workspace="#ae0e16 #ae0e16 #ffffff"
-    binding_mode="#733d9a #733d9a #ffffff"
-    # i3 colors     border  bckgrd  text    indictr child_border
+    # i3 window colors
     client_focused="#35a854 #35a854 #ffffff #5dcb7b #35a854"
     client_focused_inactive="#565656 #1e1e1e #cccccc #717171 #565656"
     client_unfocused="#565656 #1e1e1e #cccccc #717171 #565656"
     client_urgent="#ae0e16 #ae0e16 #ffffff #e2121d #ae0e16"
     client_placeholder="#1e1e1e #1e1e1e #eeeeee #1e1e1e #1e1e1e"
     client_background="#7f7f7f"
+    # Polybar colors
+    bar_bg="#1e1e1e"
+    bar_fg="#eeeeee"
+    bar_bg_urg="#ae0e16"
+    bar_fg_urg="#ffffff"
+    bar_bindmode="#733d9a"
     # Theme accent color
     accent_color="#35a854"
     # Desktop background color
@@ -340,22 +314,19 @@ Mint_Y_Dark_Mod_Green () {
 }
 
 Mint_Y_Dark_Mod_Grey () {
-    # bar colors
-    bar_bg="#1e1e1e"
-    bar_fg="#eeeeee"
-    # i3bar colors     border  bckgrd  text
-    focused_workspace="#70737a #70737a #ffffff"
-    active_workspace="#494949 #494949 #eeeeee"
-    inactive_workspace="#1e1e1e #1e1e1e #eeeeee"
-    urgent_workspace="#ae0e16 #ae0e16 #ffffff"
-    binding_mode="#733d9a #733d9a #ffffff"
-    # i3 colors     border  bckgrd  text    indictr child_border
+    # i3 window colors
     client_focused="#70737a #70737a #ffffff #8e9197 #70737a"
     client_focused_inactive="#494949 #1e1e1e #cccccc #636363 #494949"
     client_unfocused="#494949 #1e1e1e #cccccc #636363 #494949"
     client_urgent="#ae0e16 #ae0e16 #ffffff #e2121d #ae0e16"
     client_placeholder="#1e1e1e #1e1e1e #eeeeee #1e1e1e #1e1e1e"
     client_background="#7f7f7f"
+    # Polybar colors
+    bar_bg="#1e1e1e"
+    bar_fg="#eeeeee"
+    bar_bg_urg="#ae0e16"
+    bar_fg_urg="#ffffff"
+    bar_bindmode="#733d9a"
     # Theme accent color
     accent_color="#70737a"
     # Desktop background color
@@ -373,22 +344,19 @@ Mint_Y_Dark_Mod_Grey () {
 }
 
 Mint_Y_Dark_Mod_Orange () {
-    # bar colors
-    bar_bg="#1e1e1e"
-    bar_fg="#eeeeee"
-    # i3bar colors     border  bckgrd  text
-    focused_workspace="#ff7139 #ff7139 #ffffff"
-    active_workspace="#565656 #565656 #eeeeee"
-    inactive_workspace="#1e1e1e #1e1e1e #eeeeee"
-    urgent_workspace="#ae0e16 #ae0e16 #ffffff"
-    binding_mode="#733d9a #733d9a #ffffff"
-    # i3 colors     border  bckgrd  text    indictr child_border
+    # i3 window colors
     client_focused="#ff7139 #ff7139 #ffffff #ff9267 #ff7139"
     client_focused_inactive="#565656 #1e1e1e #cccccc #717171 #565656"
     client_unfocused="#565656 #1e1e1e #cccccc #717171 #565656"
     client_urgent="#ae0e16 #ae0e16 #ffffff #e2121d #ae0e16"
     client_placeholder="#1e1e1e #1e1e1e #eeeeee #1e1e1e #1e1e1e"
     client_background="#7f7f7f"
+    # Polybar colors
+    bar_bg="#1e1e1e"
+    bar_fg="#eeeeee"
+    bar_bg_urg="#ae0e16"
+    bar_fg_urg="#ffffff"
+    bar_bindmode="#733d9a"
     # Theme accent color
     accent_color="#ff7139"
     # Desktop background color
@@ -406,22 +374,19 @@ Mint_Y_Dark_Mod_Orange () {
 }
 
 Mint_Y_Dark_Mod_Purple () {
-    # bar colors
-    bar_bg="#1e1e1e"
-    bar_fg="#eeeeee"
-    # i3bar colors     border  bckgrd  text
-    focused_workspace="#8c5dd9 #8c5dd9 #ffffff"
-    active_workspace="#565656 #565656 #eeeeee"
-    inactive_workspace="#1e1e1e #1e1e1e #eeeeee"
-    urgent_workspace="#ae0e16 #ae0e16 #ffffff"
-    binding_mode="#0855a2 #0855a2 #ffffff"
-    # i3 colors     border  bckgrd  text    indictr child_border
+    # i3 window colors
     client_focused="#8c5dd9 #8c5dd9 #ffffff #a784e2 #8c5dd9"
     client_focused_inactive="#565656 #1e1e1e #cccccc #717171 #565656"
     client_unfocused="#565656 #1e1e1e #cccccc #717171 #565656"
     client_urgent="#ae0e16 #ae0e16 #ffffff #e2121d #ae0e16"
     client_placeholder="#1e1e1e #1e1e1e #eeeeee #1e1e1e #1e1e1e"
     client_background="#7f7f7f"
+    # Polybar colors
+    bar_bg="#1e1e1e"
+    bar_fg="#eeeeee"
+    bar_bg_urg="#ae0e16"
+    bar_fg_urg="#ffffff"
+    bar_bindmode="#0855a2"
     # Theme accent color
     accent_color="#8c5dd9"
     # Desktop background color
@@ -439,22 +404,19 @@ Mint_Y_Dark_Mod_Purple () {
 }
 
 Mint_Y_Dark_Mod_Red () {
-    # bar colors
-    bar_bg="#1e1e1e"
-    bar_fg="#eeeeee"
-    # i3bar colors     border  bckgrd  text
-    focused_workspace="#e82127 #e82127 #ffffff"
-    active_workspace="#565656 #565656 #eeeeee"
-    inactive_workspace="#1e1e1e #1e1e1e #eeeeee"
-    urgent_workspace="#eeeeee #eeeeee #c9161a"
-    binding_mode="#7941a2 #7941a2 #ffffff"
-    # i3 colors     border  bckgrd  text    indictr child_border
+    # i3 window colors
     client_focused="#e82127 #e82127 #ffffff #ed5055 #e82127"
     client_focused_inactive="#565656 #1e1e1e #cccccc #717171 #565656"
     client_unfocused="#565656 #1e1e1e #cccccc #717171 #565656"
     client_urgent="#eeeeee #eeeeee #c9161a #c4c4c4 #eeeeee"
     client_placeholder="#1e1e1e #1e1e1e #eeeeee #1e1e1e #1e1e1e"
     client_background="#7f7f7f"
+    # Polybar colors
+    bar_bg="#1e1e1e"
+    bar_fg="#eeeeee"
+    bar_bg_urg="#eeeeee"
+    bar_fg_urg="#c9161a"
+    bar_bindmode="#7941a2"
     # Theme accent color
     accent_color="#e82127"
     # Desktop background color
@@ -472,22 +434,19 @@ Mint_Y_Dark_Mod_Red () {
 }
 
 Mint_Y_Dark_Mod_Teal () {
-    # bar colors
-    bar_bg="#1e1e1e"
-    bar_fg="#eeeeee"
-    # i3bar colors     border  bckgrd  text
-    focused_workspace="#199ca8 #199ca8 #ffffff"
-    active_workspace="#565656 #565656 #eeeeee"
-    inactive_workspace="#1e1e1e #1e1e1e #eeeeee"
-    urgent_workspace="#ae0e16 #ae0e16 #ffffff"
-    binding_mode="#733d9a #733d9a #ffffff"
-    # i3 colors     border  bckgrd  text    indictr child_border
+    # i3 window colors
     client_focused="#199ca8 #199ca8 #ffffff #1fc2d0 #199ca8"
     client_focused_inactive="#565656 #1e1e1e #cccccc #717171 #565656"
     client_unfocused="#565656 #1e1e1e #cccccc #717171 #565656"
     client_urgent="#ae0e16 #ae0e16 #ffffff #e2121d #ae0e16"
     client_placeholder="#1e1e1e #1e1e1e #eeeeee #1e1e1e #1e1e1e"
     client_background="#7f7f7f"
+    # Polybar colors
+    bar_bg="#1e1e1e"
+    bar_fg="#eeeeee"
+    bar_bg_urg="#ae0e16"
+    bar_fg_urg="#ffffff"
+    bar_bindmode="#733d9a"
     # Theme accent color
     accent_color="#199ca8"
     # Desktop background color

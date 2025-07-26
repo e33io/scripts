@@ -50,13 +50,11 @@ theming_files () {
     # JWM theme
     sed -i "s/jwm\/themes\/.*<\/Include>/jwm\/themes\/$jwm_theme<\/Include>/" $HOME/.config/jwm/jwmrc
     # Polybar colors
-    if [ -f "$HOME/.config/polybar/config.ini" ]; then
-        sed -i "s/bg = .*/bg = $bar_bg/" $HOME/.config/polybar/config.ini
-        sed -i "s/bg-act = .*/bg-act = $accent_color/" $HOME/.config/polybar/config.ini
-        sed -i "s/bg-occ = .*/bg-occ = $bar_bg/" $HOME/.config/polybar/config.ini
-        sed -i "s/fg = .*/fg = $bar_fg/" $HOME/.config/polybar/config.ini
-        sed -i "s/\%{F.*}\|\%{F-}/\%{F$accent_color}\|\%{F-}/" $HOME/.config/polybar/config.ini
-    fi
+    sed -i "s/bg = .*/bg = $bar_bg/" $HOME/.config/polybar/config.ini
+    sed -i "s/bg-act = .*/bg-act = $accent_color/" $HOME/.config/polybar/config.ini
+    sed -i "s/bg-occ = .*/bg-occ = $bar_bg/" $HOME/.config/polybar/config.ini
+    sed -i "s/fg = .*/fg = $bar_fg/" $HOME/.config/polybar/config.ini
+    sed -i "s/\%{F.*}\|\%{F-}/\%{F$accent_color}\|\%{F-}/" $HOME/.config/polybar/config.ini
     # GTK 2 theme and icon theme
     sed -i "s/gtk-theme-name=\".*\"/gtk-theme-name=\"$gtk_theme\"/" $HOME/.gtkrc-2.0
     sed -i "s/gtk-icon-theme-name=\".*\"/gtk-icon-theme-name=\"$icon_theme\"/" $HOME/.gtkrc-2.0
@@ -84,11 +82,9 @@ theming_files () {
     # XSecureLock background color
     sed -i "s/BACKGROUND_COLOR=\".*\"/BACKGROUND_COLOR=\"$desktop_bg_color\"/" $HOME/.profile
     # Lightdm background color, GTK 3 theme and icon theme
-    if [ -f "/etc/lightdm/lightdm-gtk-greeter.conf" ]; then
-        sudo sed -i "s/^background =.*/background = $desktop_bg_color/" /etc/lightdm/lightdm-gtk-greeter.conf
-        sudo sed -i "s/^icon-theme-name =.*/icon-theme-name = $icon_theme/" /etc/lightdm/lightdm-gtk-greeter.conf
-        sudo sed -i "s/^theme-name =.*/theme-name = $gtk_theme/" /etc/lightdm/lightdm-gtk-greeter.conf
-    fi
+    sudo sed -i "s/^background =.*/background = $desktop_bg_color/" /etc/lightdm/lightdm-gtk-greeter.conf
+    sudo sed -i "s/^icon-theme-name =.*/icon-theme-name = $icon_theme/" /etc/lightdm/lightdm-gtk-greeter.conf
+    sudo sed -i "s/^theme-name =.*/theme-name = $gtk_theme/" /etc/lightdm/lightdm-gtk-greeter.conf
     # Nitrogen desktop background color (visible if semi-transparent wallpaper is set)
     if [ -f "$HOME/.config/nitrogen/bg-saved.cfg" ]; then
         sed -i "s/bgcolor=.*/bgcolor=$desktop_bg_color/" $HOME/.config/nitrogen/bg-saved.cfg
