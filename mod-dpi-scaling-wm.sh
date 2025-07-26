@@ -80,8 +80,11 @@ if [ -d "$HOME/.config/i3" ]; then
     # update i3/config (keybindings)
     sed -i 's/GDK_SCALE=1 brave/brave/' $HOME/.config/i3/config
     sed -i 's/GDK_SCALE=1 signal-desktop/signal-desktop/' $HOME/.config/i3/config
-    # update i3status.conf (window title width in bar)
-    sed -i 's/min_width = 2990/min_width = 1495/' $HOME/.config/i3/i3status.conf
+    # update polybar configs (sizes and scaling)
+    sed -i 's/height = 40/height = 20/' $HOME/.config/polybar/config.ini
+    sed -i 's/;3"/;2"/' $HOME/.config/polybar/config.ini
+    sed -i 's/dpi = 192/dpi = 96/' $HOME/.config/polybar/config.ini
+    sed -i 's/tray-spacing = 12/tray-spacing = 6/' $HOME/.config/polybar/config.ini
 fi
 
 # JWM specific configs
