@@ -85,6 +85,8 @@ if [ -d "$HOME/.config/i3" ]; then
     sed -i 's/;3"/;2"/' $HOME/.config/polybar/config.ini
     sed -i 's/dpi = 192/dpi = 96/' $HOME/.config/polybar/config.ini
     sed -i 's/tray-spacing = 12/tray-spacing = 6/' $HOME/.config/polybar/config.ini
+    # update rofi/config.rasi (rofi font size)
+    sed -i 's/sans-serif 9"/sans-serif 9.5"/' $HOME/.config/rofi/config.rasi
 fi
 
 # JWM specific configs
