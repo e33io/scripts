@@ -63,11 +63,11 @@ echo "################################################################"
 echo "Install other packages"
 echo "################################################################"
 
-sudo apt -y install synaptic dconf-editor dconf-cli gnome-disk-utility mintstick scrot atril imv mpv \
-parole mousepad galculator gpick darktable gimp inkscape filezilla libreoffice-calc libreoffice-draw \
-libreoffice-impress libreoffice-writer libreoffice-gtk3 timeshift xterm lazygit fastfetch htop cmus \
-cava cmatrix ncal micro ranger ueberzug caca-utils highlight atool w3m poppler-utils mediainfo fzf \
-libimage-exiftool-perl apt-transport-https curl rsync wmctrl xdotool xbindkeys
+sudo apt -y install synaptic dconf-cli mintstick scrot atril imv mpv parole mousepad galculator gpick \
+darktable gimp inkscape filezilla libreoffice-calc libreoffice-draw libreoffice-impress libreoffice-writer \
+libreoffice-gtk3 timeshift xterm lazygit fastfetch htop cmus cava cmatrix ncal micro ranger ueberzug \
+caca-utils highlight atool w3m poppler-utils mediainfo fzf libimage-exiftool-perl apt-transport-https \
+curl rsync wmctrl xdotool xbindkeys
 
 echo "################################################################"
 echo "Enable wireplumber service (running as user)"
@@ -119,8 +119,6 @@ cp -R $HOME/dotfiles/.profile $HOME
 cp -R $HOME/dotfiles/.xbindkeysrc $HOME
 cp -R $HOME/dotfiles/.Xresources $HOME
 cp -R $HOME/opt-dots/jwm/.config $HOME
-cp -R $HOME/opt-dots/jwm/.local $HOME
-cp -R $HOME/opt-dots/jwm/.dmrc $HOME
 cp -R $HOME/scripts/window-control.sh $HOME/.local/bin
 sudo cp -R $HOME/dotfiles/etc/default /etc
 sudo cp -R $HOME/dotfiles/etc/lightdm /etc

@@ -40,9 +40,9 @@ cifs-utils fuse rsync cronie git curl wget tar less 7zip base-devel xsel xclip p
 xdg-desktop-portal-gtk xdg-user-dirs wmctrl xbindkeys xdotool lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings \
 lxappearance-gtk3 gnome-themes-extra gtk-engine-murrine qt5ct qt6ct ttf-dejavu noto-fonts-emoji papirus-icon-theme \
 breeze-icons plymouth pavucontrol-qt nitrogen kitty python-pillowfight xterm thunar thunar-archive-plugin \
-thunar-volman tumbler ffmpegthumbnailer engrampa scrot atril imv mpv parole mousepad galculator dconf-editor \
-gnome-disk-utility timeshift bash-completion vim nano micro fzf lazygit htop fastfetch cmus cava ranger ueberzug \
-highlight atool w3m mediainfo perl-image-exiftool signal-desktop gpick darktable gimp inkscape filezilla libreoffice
+thunar-volman tumbler ffmpegthumbnailer engrampa scrot atril imv mpv parole mousepad galculator timeshift \
+bash-completion vim nano micro fzf lazygit htop fastfetch cmus cava ranger ueberzug highlight atool w3m mediainfo \
+perl-image-exiftool signal-desktop gpick darktable gimp inkscape filezilla libreoffice
 
 echo "################################################################"
 echo "Setup Yay for AUR"
@@ -91,8 +91,6 @@ cp -R $HOME/opt-dots/arch/.bash_profile $HOME
 cp -R $HOME/opt-dots/arch/.bashrc $HOME
 cp -R $HOME/opt-dots/arch/.profile $HOME
 cp -R $HOME/opt-dots/jwm/.config $HOME
-cp -R $HOME/opt-dots/jwm/.local $HOME
-cp -R $HOME/opt-dots/jwm/.dmrc $HOME
 cp -R $HOME/opt-dots/arch-jwm/.config $HOME
 cp -R $HOME/scripts/window-control.sh $HOME/.local/bin
 sudo cp -R $HOME/dotfiles/etc/plymouth /etc
