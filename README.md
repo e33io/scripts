@@ -71,4 +71,4 @@ linux installation scripts
 &nbsp;
 
 ### License
-[BSD Zero Clause License](https://github.com/e33io/scripts/blob/main/LICENSE)
+[The Unlicense](https://github.com/e33io/scripts/blob/main/LICENSE)
