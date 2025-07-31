@@ -51,6 +51,8 @@ linux installation scripts
 
 - use [`install-yaru-themes.sh`](https://github.com/e33io/scripts/blob/main/install-yaru-themes.sh) to install Yaru themes and icons on Debian
 
+- use [`install-yaru-themes-arch.sh`](https://github.com/e33io/scripts/blob/main/install-yaru-themes-arch.sh) to install Yaru themes and icons on Arch
+
 &nbsp;
 
 ## utilities
