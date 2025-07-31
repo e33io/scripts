@@ -73,7 +73,7 @@ echo "################################################################"
 
 sudo cp -R $HOME/theming-temp/gtk/* /usr/share/themes
 sudo mkdir -p /usr/share/Kvantum
-sudo cp -R $HOME/theming-temp/Kvantum/Mint-*-Dark-Mod-* /usr/share/Kvantum
+sudo cp -R $HOME/theming-temp/Kvantum/Mint* /usr/share/Kvantum
 
 echo "################################################################"
 echo "Link config files to root user directories for styling"

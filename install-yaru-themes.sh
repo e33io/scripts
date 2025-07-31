@@ -51,39 +51,32 @@ if [ -f "/bin/gnome-shell" ]; then
     echo "################################################################"
 
     sudo apt -y install yaru-theme-gnome-shell yaru-theme-sound
-else
-    echo "################################################################"
-    echo "Install Qt and Kvantum styling packages for desktop"
-    echo "environments and window managers other than Gnome"
-    echo "################################################################"
-
-    sudo apt -y install adwaita-qt* qt*-style-kvantum git
-
-    echo "################################################################"
-    echo "Clone and copy Kvantum KvYaru-Colors Qt themes"
-    echo "################################################################"
-
-    git clone https://github.com/GabePoel/KvYaru-Colors.git $HOME/KvYaru-Colors
-    sudo cp -R $HOME/KvYaru-Colors/src/* /usr/share/Kvantum
-    rm -rf $HOME/KvYaru-Colors
-
-    echo "################################################################"
-    echo "Update Kvantum KvYaru theme colors to correctly match"
-    echo "Yaru GTK theme colors, and update window tabs from"
-    echo "center-alignment to the standard left-alignment"
-    echo "################################################################"
-
-    sudo sed -i 's/#208fe9/#0073e5/g' /usr/share/Kvantum/KvYaru-Blue/KvYaru-Blue*
-    sudo sed -i 's/#3eb34f/#03875b/g' /usr/share/Kvantum/KvYaru-Green/KvYaru-Green*
-    sudo sed -i 's/#924d8b/#7764d8/g' /usr/share/Kvantum/KvYaru-Purple/KvYaru-Purple*
-    sudo sed -i 's/#16a085/#308280/g' /usr/share/Kvantum/KvYaru-Teal/KvYaru-Teal*
-    sudo sed -i 's/left_tabs=false/left_tabs=true/g' /usr/share/Kvantum/KvYaru*/KvYaru*
 fi
 
-if ! { [ -f "/bin/gnome-shell" ] || [ -f "/bin/lxqt-session" ]; }; then
+echo "################################################################"
+echo "Install Qt and Kvantum styling packages"
+echo "################################################################"
+
+sudo apt -y install adwaita-qt* qt*-style-kvantum git
+
+echo "################################################################"
+echo "Clone custom theming repo"
+echo "################################################################"
+
+git clone https://github.com/e33io/theming $HOME/theming-temp
+
+echo "################################################################"
+echo "Copy custom Yaru Kvantum themes"
+echo "################################################################"
+
+sudo mkdir -p /usr/share/Kvantum
+sudo cp -R $HOME/theming-temp/Kvantum/Yaru* /usr/share/Kvantum
+rm -rf $HOME/theming-temp
+
+if [ ! -f "/bin/lxqt-session" ]; then
     echo "################################################################"
     echo "Install Qt packages for desktop environments and"
-    echo "window managers other than Gnome or LXQt"
+    echo "window managers other than LXQt"
     echo "################################################################"
 
     sudo apt -y install qt*ct
