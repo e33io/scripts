@@ -99,5 +99,3 @@ while true; do
         *) echo "Invalid selection, please enter a number from the list.";;
     esac
 done
-
-echo "Initial setup and WM or DE was installed: $(date)" > $HOME/.install-info
