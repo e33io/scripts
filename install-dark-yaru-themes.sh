@@ -73,6 +73,7 @@ echo "################################################################"
 
 sudo cp -R $HOME/theming-temp/gtk/Yaru* /usr/share/themes
 sudo mkdir -p /usr/share/Kvantum
+# copy only selected theme variants
 sudo cp -R $HOME/theming-temp/Kvantum/Yaru-blue-dark /usr/share/Kvantum
 sudo cp -R $HOME/theming-temp/Kvantum/Yaru-orange-dark /usr/share/Kvantum
 sudo cp -R $HOME/theming-temp/Kvantum/Yaru-prussiangreen-dark /usr/share/Kvantum
