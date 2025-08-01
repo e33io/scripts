@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # ===========================================================================
-# Install Yaru Dark Themes
+# Install Yaru Dark Themes (blue,orange,prussiangreen,purple,sage,viridian)
 # URL: https://github.com/e33io/scripts/blob/main/install-dark-yaru-themes.sh
 # ---------------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
