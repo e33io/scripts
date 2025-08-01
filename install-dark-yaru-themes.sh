@@ -73,8 +73,12 @@ echo "################################################################"
 
 sudo cp -R $HOME/theming-temp/gtk/Yaru* /usr/share/themes
 sudo mkdir -p /usr/share/Kvantum
-sudo cp -R $HOME/theming-temp/Kvantum/Yaru-\
-{blue,orange,prussiangreen,purple,sage,viridian}-dark /usr/share/Kvantum
+sudo cp -R $HOME/theming-temp/Kvantum/Yaru-blue-dark /usr/share/Kvantum
+sudo cp -R $HOME/theming-temp/Kvantum/Yaru-orange-dark /usr/share/Kvantum
+sudo cp -R $HOME/theming-temp/Kvantum/Yaru-prussiangreen-dark /usr/share/Kvantum
+sudo cp -R $HOME/theming-temp/Kvantum/Yaru-purple-dark /usr/share/Kvantum
+sudo cp -R $HOME/theming-temp/Kvantum/Yaru-sage-dark /usr/share/Kvantum
+sudo cp -R $HOME/theming-temp/Kvantum/Yaru-viridian-dark /usr/share/Kvantum
 
 echo "################################################################"
 echo "Link config files to root user directories for styling"
