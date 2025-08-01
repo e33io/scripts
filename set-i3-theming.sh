@@ -552,7 +552,7 @@ Yaru_Orange_Dark () {
     prefer_dark_theme="1"
     gtk_theme=Yaru-dark
     qt_ct_theme=kvantum-dark
-    kvantum_theme=Yaru-dark
+    kvantum_theme=Yaru-orange-dark
     rofi_theme=Dmenu-Yaru-Orange-Dark
     icon_theme=Papirus-Dark
     papirus_folders=yaru

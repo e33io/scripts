@@ -362,7 +362,7 @@ Yaru_Orange_Dark () {
     # GUI and TUI theme names
     gtk_theme=Yaru-dark
     qt_ct_theme=kvantum-dark
-    kvantum_theme=Yaru-dark
+    kvantum_theme=Yaru-orange-dark
     icon_theme=Papirus-Dark
     papirus_folders=yaru
     # Desktop background color
