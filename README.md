@@ -45,6 +45,8 @@ linux installation scripts
 
 - use [`install-dark-mod-themes.sh`](https://github.com/e33io/scripts/blob/main/install-dark-mod-themes.sh) to install Mint Dark Mod themes on Debian or Arch
 
+- use [`install-dark-yaru-themes.sh`](https://github.com/e33io/scripts/blob/main/install-dark-yaru-themes.sh) to install selected Yaru Dark themes on Debian or Arch
+
 - use [`install-mint-themes.sh`](https://github.com/e33io/scripts/blob/main/install-mint-themes.sh) to install Linux Mint themes and icons on Debian
 
 - use [`install-mint-themes-arch.sh`](https://github.com/e33io/scripts/blob/main/install-mint-themes-arch.sh) to install Linux Mint themes and icons on Arch
