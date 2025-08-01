@@ -37,6 +37,13 @@ if [ ! -n "$(ls -d /usr/share/themes/Mint-*-Dark-Mod-* 2>/dev/null)" ]; then
     "X-KDE-StartupNotify=false" > $HOME/.local/share/applications/kvantummanager.desktop
 fi
 
+# install yaru dark themes if needed
+if [ ! -n "$(ls -d /usr/share/Kvantum/Yaru* 2>/dev/null)" ]; then
+    git clone https://github.com/e33io/scripts $HOME/scripts-theming
+    sh $HOME/scripts-theming/install-dark-yaru-themes.sh
+    rm -rf $HOME/scripts-theming
+fi
+
 # install papirus-icon-theme and papirus-folders if needed
 if [ ! -n "$(ls -d /usr/bin/papirus-folders 2>/dev/null)" ]; then
     if [ -f "/etc/debian_version" ]; then
@@ -315,6 +322,114 @@ Mint_Y_Dark_Mod_Teal () {
     dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
 }
 
+Yaru_Blue_Dark () {
+    # GUI and TUI theme names
+    gtk_theme=Yaru-blue-dark
+    qt_ct_theme=kvantum-dark
+    kvantum_theme=Yaru-blue-dark
+    icon_theme=Papirus-Dark
+    papirus_folders=blue
+    # Desktop background color
+    desktop_bg_color="#202b35"
+    # Theme accent color
+    accent_color="#0073e5"
+    accent_color_rgb="rgb(0,115,229)"
+    # Call the theming files
+    theming_files
+    # Dconf color-scheme preference
+    dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
+}
+
+Yaru_Green_Dark () {
+    # GUI and TUI theme names
+    gtk_theme=Yaru-viridian-dark
+    qt_ct_theme=kvantum-dark
+    kvantum_theme=Yaru-viridian-dark
+    icon_theme=Papirus-Dark
+    papirus_folders=orange
+    # Desktop background color
+    desktop_bg_color="#1b2d27"
+    # Theme accent color
+    accent_color="#03875b"
+    accent_color_rgb="rgb(3,135,91)"
+    # Call the theming files
+    theming_files
+    # Dconf color-scheme preference
+    dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
+}
+
+Yaru_Orange_Dark () {
+    # GUI and TUI theme names
+    gtk_theme=Yaru-dark
+    qt_ct_theme=kvantum-dark
+    kvantum_theme=Yaru-dark
+    icon_theme=Papirus-Dark
+    papirus_folders=yaru
+    # Desktop background color
+    desktop_bg_color="#362620"
+    # Theme accent color
+    accent_color="#e95420"
+    accent_color_rgb="rgb(233,84,32)"
+    # Call the theming files
+    theming_files
+    # Dconf color-scheme preference
+    dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
+}
+
+Yaru_Purple_Dark () {
+    # GUI and TUI theme names
+    gtk_theme=Yaru-purple-dark
+    qt_ct_theme=kvantum-dark
+    kvantum_theme=Yaru-purple-dark
+    icon_theme=Papirus-Dark
+    papirus_folders=orange
+    # Desktop background color
+    desktop_bg_color="#2b2640"
+    # Theme accent color
+    accent_color="#7764d8"
+    accent_color_rgb="rgb(119,100,216)"
+    # Call the theming files
+    theming_files
+    # Dconf color-scheme preference
+    dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
+}
+
+Yaru_Sage_Dark () {
+    # GUI and TUI theme names
+    gtk_theme=Yaru-sage-dark
+    qt_ct_theme=kvantum-dark
+    kvantum_theme=Yaru-sage-dark
+    icon_theme=Papirus-Dark
+    papirus_folders=paleorange
+    # Desktop background color
+    desktop_bg_color="#232b25"
+    # Theme accent color
+    accent_color="#657b69"
+    accent_color_rgb="rgb(101,123,105)"
+    # Call the theming files
+    theming_files
+    # Dconf color-scheme preference
+    dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
+}
+
+Yaru_Teal_Dark () {
+    # GUI and TUI theme names
+    gtk_theme=Yaru-prussiangreen-dark
+    qt_ct_theme=kvantum-dark
+    kvantum_theme=Yaru-prussiangreen-dark
+    icon_theme=Papirus-Dark
+    papirus_folders=orange
+    # Desktop background color
+    desktop_bg_color="#1b2d2d"
+    # Theme accent color
+    accent_color="#308280"
+    accent_color_rgb="rgb(48,130,128)"
+    # Call the theming files
+    theming_files
+    # Dconf color-scheme preference
+    dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
+}
+
 while true; do
     echo "################################################################"
     echo "Select and set theming for Xfce and applications"
@@ -332,6 +447,12 @@ while true; do
     echo "   9) Mint-Y-Dark-Mod-Purple"
     echo "  10) Mint-Y-Dark-Mod-Red"
     echo "  11) Mint-Y-Dark-Mod-Teal"
+    echo "  12) Yaru-Blue-Dark"
+    echo "  13) Yaru-Green-Dark"
+    echo "  14) Yaru-Orange-Dark"
+    echo "  15) Yaru-Purple-Dark"
+    echo "  16) Yaru-Sage-Dark"
+    echo "  17) Yaru-Teal-Dark"
 
     read -p "Which theme do you want to use? " n
     case $n in
@@ -369,6 +490,24 @@ while true; do
            break;;
         11) echo "You chose Mint-Y-Dark-Mod-Teal";
            Mint_Y_Dark_Mod_Teal;
+           break;;
+        12) echo "You chose Yaru-Blue-Dark";
+           Yaru_Blue_Dark;
+           break;;
+        13) echo "You chose Yaru-Green-Dark";
+           Yaru_Green_Dark;
+           break;;
+        14) echo "You chose Yaru-Orange-Dark";
+           Yaru_Orange_Dark;
+           break;;
+        15) echo "You chose Yaru-Purple-Dark";
+           Yaru_Purple_Dark;
+           break;;
+        16) echo "You chose Yaru-Sage-Dark";
+           Yaru_Sage_Dark;
+           break;;
+        17) echo "You chose Yaru-Teal-Dark";
+           Yaru_Teal_Dark;
            break;;
         *) echo "Invalid selection, please enter a number from the list.";;
     esac

@@ -33,6 +33,13 @@ if [ ! -n "$(ls -d /usr/share/themes/Mint-*-Dark-Mod-* 2>/dev/null)" ]; then
     rm -rf $HOME/scripts-theming
 fi
 
+# install yaru dark themes if needed
+if [ ! -n "$(ls -d /usr/share/Kvantum/Yaru* 2>/dev/null)" ]; then
+    git clone https://github.com/e33io/scripts $HOME/scripts-theming
+    sh $HOME/scripts-theming/install-dark-yaru-themes.sh
+    rm -rf $HOME/scripts-theming
+fi
+
 # install papirus-icon-theme and papirus-folders if needed
 if [ ! -n "$(ls -d /usr/bin/papirus-folders 2>/dev/null)" ]; then
     if [ -f "/etc/debian_version" ]; then
@@ -360,6 +367,138 @@ Mint_Y_Dark_Mod_Teal () {
     theming_files
 }
 
+Yaru_Blue_Dark () {
+    # JWM theme
+    jwm_theme="JWM-Yaru-Blue-Dark"
+    # Polybar colors
+    bar_bg="#1e1e1e"
+    bar_fg="#eeeeee"
+    # Theme accent color
+    accent_color="#0073e5"
+    # Desktop background color
+    desktop_bg_color="#202b35"
+    # GUI and TUI theme names
+    prefer_dark_theme="1"
+    gtk_theme=Yaru-blue-dark
+    qt_ct_theme=kvantum-dark
+    kvantum_theme=Yaru-blue-dark
+    rofi_theme=Floating-Yaru-Blue-Dark
+    icon_theme=Papirus-Dark
+    papirus_folders=blue
+    # Call the theming files
+    theming_files
+}
+
+Yaru_Green_Dark () {
+    # JWM theme
+    jwm_theme="JWM-Yaru-Green-Dark"
+    # Polybar colors
+    bar_bg="#1e1e1e"
+    bar_fg="#eeeeee"
+    # Theme accent color
+    accent_color="#03875b"
+    # Desktop background color
+    desktop_bg_color="#1b2d27"
+    # GUI and TUI theme names
+    prefer_dark_theme="1"
+    gtk_theme=Yaru-viridian-dark
+    qt_ct_theme=kvantum-dark
+    kvantum_theme=Yaru-viridian-dark
+    rofi_theme=Floating-Yaru-Green-Dark
+    icon_theme=Papirus-Dark
+    papirus_folders=orange
+    # Call the theming files
+    theming_files
+}
+
+Yaru_Orange_Dark () {
+    # JWM theme
+    jwm_theme="JWM-Yaru-Orange-Dark"
+    # Polybar colors
+    bar_bg="#1e1e1e"
+    bar_fg="#eeeeee"
+    # Theme accent color
+    accent_color="#e95420"
+    # Desktop background color
+    desktop_bg_color="#362620"
+    # GUI and TUI theme names
+    prefer_dark_theme="1"
+    gtk_theme=Yaru-dark
+    qt_ct_theme=kvantum-dark
+    kvantum_theme=Yaru-dark
+    rofi_theme=Floating-Yaru-Orange-Dark
+    icon_theme=Papirus-Dark
+    papirus_folders=yaru
+    # Call the theming files
+    theming_files
+}
+
+Yaru_Purple_Dark () {
+    # JWM theme
+    jwm_theme="JWM-Yaru-Purple-Dark"
+    # Polybar colors
+    bar_bg="#1e1e1e"
+    bar_fg="#eeeeee"
+    # Theme accent color
+    accent_color="#7764d8"
+    # Desktop background color
+    desktop_bg_color="#2b2640"
+    # GUI and TUI theme names
+    prefer_dark_theme="1"
+    gtk_theme=Yaru-purple-dark
+    qt_ct_theme=kvantum-dark
+    kvantum_theme=Yaru-purple-dark
+    rofi_theme=Floating-Yaru-Purple-Dark
+    icon_theme=Papirus-Dark
+    papirus_folders=orange
+    # Call the theming files
+    theming_files
+}
+
+Yaru_Sage_Dark () {
+    # JWM theme
+    jwm_theme="JWM-Yaru-Sage-Dark"
+    # Polybar colors
+    bar_bg="#1e1e1e"
+    bar_fg="#eeeeee"
+    # Theme accent color
+    accent_color="#657b69"
+    # Desktop background color
+    desktop_bg_color="#232b25"
+    # GUI and TUI theme names
+    prefer_dark_theme="1"
+    gtk_theme=Yaru-sage-dark
+    qt_ct_theme=kvantum-dark
+    kvantum_theme=Yaru-sage-dark
+    rofi_theme=Floating-Yaru-Sage-Dark
+    icon_theme=Papirus-Dark
+    papirus_folders=paleorange
+    # Call the theming files
+    theming_files
+}
+
+Yaru_Teal_Dark () {
+    # JWM theme
+    jwm_theme="JWM-Yaru-Teal-Dark"
+    # Polybar colors
+    bar_bg="#1e1e1e"
+    bar_fg="#eeeeee"
+    # Theme accent color
+    accent_color="#308280"
+    # Desktop background color
+    desktop_bg_color="#1b2d2d"
+    # GUI and TUI theme names
+    prefer_dark_theme="1"
+    gtk_theme=Yaru-prussiangreen-dark
+    qt_ct_theme=kvantum-dark
+    kvantum_theme=Yaru-prussiangreen-dark
+    rofi_theme=Floating-Yaru-Teal-Dark
+    icon_theme=Papirus-Dark
+    papirus_folders=orange
+    # Call the theming files
+    theming_files
+}
+
 while true; do
     echo "################################################################"
     echo "Select and set theming for JWM and applications"
@@ -378,6 +517,12 @@ while true; do
     echo "  10) Mint-Y-Dark-Mod-Purple"
     echo "  11) Mint-Y-Dark-Mod-Red"
     echo "  12) Mint-Y-Dark-Mod-Teal"
+    echo "  13) Yaru-Blue-Dark"
+    echo "  14) Yaru-Green-Dark"
+    echo "  15) Yaru-Orange-Dark"
+    echo "  16) Yaru-Purple-Dark"
+    echo "  17) Yaru-Sage-Dark"
+    echo "  18) Yaru-Teal-Dark"
 
     read -p "Which theme do you want to use? " n
     case $n in
@@ -418,6 +563,24 @@ while true; do
            break;;
         12) echo "You chose Mint-Y-Dark-Mod-Teal";
            Mint_Y_Dark_Mod_Teal;
+           break;;
+        13) echo "You chose Yaru-Blue-Dark";
+           Yaru_Blue_Dark;
+           break;;
+        14) echo "You chose Yaru-Green-Dark";
+           Yaru_Green_Dark;
+           break;;
+        15) echo "You chose Yaru-Orange-Dark";
+           Yaru_Orange_Dark;
+           break;;
+        16) echo "You chose Yaru-Purple-Dark";
+           Yaru_Purple_Dark;
+           break;;
+        17) echo "You chose Yaru-Sage-Dark";
+           Yaru_Sage_Dark;
+           break;;
+        18) echo "You chose Yaru-Teal-Dark";
+           Yaru_Teal_Dark;
            break;;
         *) echo "Invalid selection, please enter a number from the list.";;
     esac
