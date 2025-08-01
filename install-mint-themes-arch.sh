@@ -71,7 +71,7 @@ echo "################################################################"
 echo "Copy custom Mint Dark Mod themes"
 echo "################################################################"
 
-sudo cp -R $HOME/theming-temp/gtk/* /usr/share/themes
+sudo cp -R $HOME/theming-temp/gtk/Mint* /usr/share/themes
 sudo mkdir -p /usr/share/Kvantum
 sudo cp -R $HOME/theming-temp/Kvantum/Mint* /usr/share/Kvantum
 
