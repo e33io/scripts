@@ -10,6 +10,7 @@ dconf write /ca/desrt/dconf-editor/window-is-maximized "false"
 dconf write /ca/desrt/dconf-editor/window-width "900"
 
 dconf write /com/ftpix/transparentbar/transparency "75"
+dconf write /com/ftpix/transparentbar/disable-text-shadow "true"
 
 dconf write /org/gnome/Music/window-maximized "false"
 dconf write /org/gnome/Music/window-size "[1061, 773]"
