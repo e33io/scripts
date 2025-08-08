@@ -57,7 +57,7 @@ if [ $pc_type = desktop ]; then
     sudo apt -y install input-remapper-gtk
 fi
 
-if ! command -v brave-browser > /dev/null 2>&1; then
+if ! command -v brave-browser &>/dev/null; then
     echo "################################################################"
     echo "Install Brave Browser"
     echo "################################################################"
@@ -71,7 +71,7 @@ if ! command -v brave-browser > /dev/null 2>&1; then
     sudo apt -y install brave-browser
 fi
 
-if ! command -v signal-desktop > /dev/null 2>&1; then
+if ! command -v signal-desktop &>/dev/null; then
     echo "################################################################"
     echo "Install Signal App"
     echo "################################################################"
