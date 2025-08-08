@@ -40,7 +40,7 @@ mousepad galculator dconf-editor gnome-disk-utility timeshift xterm bash-complet
 fastfetch cmus cava ranger ueberzug highlight atool w3m mediainfo perl-image-exiftool signal-desktop gpick darktable \
 gimp inkscape filezilla libreoffice
 
-if ! command -v yay &>/dev/null; then
+if ! command -v yay > /dev/null 2>&1; then
     echo "################################################################"
     echo "Setup Yay for AUR"
     echo "################################################################"

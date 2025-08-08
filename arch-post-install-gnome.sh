@@ -45,7 +45,7 @@ flatpak install -y --noninteractive com.mattjakeman.ExtensionManager
 flatpak install -y --noninteractive org.gtk.Gtk3theme.Adwaita-dark
 flatpak install -y --noninteractive org.torproject.torbrowser-launcher
 
-if ! command -v yay &>/dev/null; then
+if ! command -v yay > /dev/null 2>&1; then
     echo "################################################################"
     echo "Setup Yay for AUR"
     echo "################################################################"

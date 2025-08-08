@@ -69,7 +69,7 @@ echo "################################################################"
 
 systemctl --user --now enable wireplumber.service
 
-if ! command -v brave-browser &>/dev/null; then
+if ! command -v brave-browser > /dev/null 2>&1; then
     echo "################################################################"
     echo "Install Brave Browser"
     echo "################################################################"
@@ -83,7 +83,7 @@ if ! command -v brave-browser &>/dev/null; then
     sudo apt -y install brave-browser
 fi
 
-if ! command -v signal-desktop &>/dev/null; then
+if ! command -v signal-desktop > /dev/null 2>&1; then
     echo "################################################################"
     echo "Install Signal App"
     echo "################################################################"

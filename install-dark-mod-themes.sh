@@ -37,7 +37,7 @@ if [ -f "/etc/debian_version" ]; then
 fi
 
 if [ -f "/etc/pacman.conf" ]; then
-    if ! command -v yay &>/dev/null; then
+    if ! command -v yay > /dev/null 2>&1; then
         echo "################################################################"
         echo "Setup Yay for AUR"
         echo "################################################################"
