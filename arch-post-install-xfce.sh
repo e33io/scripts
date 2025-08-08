@@ -40,15 +40,17 @@ mousepad galculator dconf-editor gnome-disk-utility timeshift xterm bash-complet
 fastfetch cmus cava ranger ueberzug highlight atool w3m mediainfo perl-image-exiftool signal-desktop gpick darktable \
 gimp inkscape filezilla libreoffice
 
-echo "################################################################"
-echo "Setup Yay for AUR"
-echo "################################################################"
+if ! command -v yay &>/dev/null; then
+    echo "################################################################"
+    echo "Setup Yay for AUR"
+    echo "################################################################"
 
-git clone https://aur.archlinux.org/yay-bin.git $HOME/yay-bin
-cd $HOME/yay-bin
-makepkg -si --noconfirm
-cd
-rm -rf $HOME/yay-bin
+    git clone https://aur.archlinux.org/yay-bin.git $HOME/yay-bin
+    cd $HOME/yay-bin
+    makepkg -si --noconfirm
+    cd
+    rm -rf $HOME/yay-bin
+fi
 
 echo "################################################################"
 echo "Install packages from AUR"

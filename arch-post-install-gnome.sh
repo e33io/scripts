@@ -45,15 +45,17 @@ flatpak install -y --noninteractive com.mattjakeman.ExtensionManager
 flatpak install -y --noninteractive org.gtk.Gtk3theme.Adwaita-dark
 flatpak install -y --noninteractive org.torproject.torbrowser-launcher
 
-echo "################################################################"
-echo "Setup Yay for AUR"
-echo "################################################################"
+if ! command -v yay &>/dev/null; then
+    echo "################################################################"
+    echo "Setup Yay for AUR"
+    echo "################################################################"
 
-git clone https://aur.archlinux.org/yay-bin.git $HOME/yay-bin
-cd $HOME/yay-bin
-makepkg -si --noconfirm
-cd
-rm -rf $HOME/yay-bin
+    git clone https://aur.archlinux.org/yay-bin.git $HOME/yay-bin
+    cd $HOME/yay-bin
+    makepkg -si --noconfirm
+    cd
+    rm -rf $HOME/yay-bin
+fi
 
 echo "################################################################"
 echo "Install packages from AUR"
