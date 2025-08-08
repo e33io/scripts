@@ -222,7 +222,7 @@ file:///home/$(whoami)/Videos
 file:///home/$(whoami)/Music" > $HOME/.config/gtk-3.0/bookmarks
 sed -i "s/~\/\.gtkrc-2\.0\.mine/\/home\/$(whoami)\/\.gtkrc-2\.0\.mine/" $HOME/.gtkrc-2.0
 sed -i "s/home\/.*\/Desktop/home\/$(whoami)\/Desktop/" $HOME/.config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml
-echo "i3-wm was installed via e33io script, $(date)" > $HOME/.install-info
+echo "i3-wm was installed via e33io script: $(date '+%B %d, %Y, %H:%M')" > $HOME/.install-info
 rm -rf $HOME/dotfiles
 rm -rf $HOME/scripts
 
