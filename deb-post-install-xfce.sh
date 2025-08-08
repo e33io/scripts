@@ -66,29 +66,33 @@ echo "################################################################"
 
 systemctl --user --now enable wireplumber.service
 
-echo "################################################################"
-echo "Install Brave Browser"
-echo "################################################################"
+if ! command -v brave-browser > /dev/null 2>&1; then
+    echo "################################################################"
+    echo "Install Brave Browser"
+    echo "################################################################"
 
-sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg \
-https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
-echo "deb [arch=amd64 signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] \
-https://brave-browser-apt-release.s3.brave.com/ stable main" \
-| sudo tee /etc/apt/sources.list.d/brave-browser-release.list
-sudo apt update
-sudo apt -y install brave-browser
+    sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg \
+    https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
+    echo "deb [arch=amd64 signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] \
+    https://brave-browser-apt-release.s3.brave.com/ stable main" \
+    | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
+    sudo apt update
+    sudo apt -y install brave-browser
+fi
 
-echo "################################################################"
-echo "Install Signal App"
-echo "################################################################"
+if ! command -v signal-desktop > /dev/null 2>&1; then
+    echo "################################################################"
+    echo "Install Signal App"
+    echo "################################################################"
 
-curl -fsSL https://updates.signal.org/desktop/apt/keys.asc \
-| sudo gpg --dearmor -o /usr/share/keyrings/signal-desktop-keyring.gpg
-echo "deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] \
-https://updates.signal.org/desktop/apt xenial main" \
-| sudo tee /etc/apt/sources.list.d/signal-xenial.list
-sudo apt update
-sudo apt -y install signal-desktop
+    curl -fsSL https://updates.signal.org/desktop/apt/keys.asc \
+    | sudo gpg --dearmor -o /usr/share/keyrings/signal-desktop-keyring.gpg
+    echo "deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] \
+    https://updates.signal.org/desktop/apt xenial main" \
+    | sudo tee /etc/apt/sources.list.d/signal-xenial.list
+    sudo apt update
+    sudo apt -y install signal-desktop
+fi
 
 echo "################################################################"
 echo "Clone custom configuration files"
