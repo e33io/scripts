@@ -57,7 +57,7 @@ echo "################################################################"
 echo "Install Qt and Kvantum styling packages"
 echo "################################################################"
 
-sudo apt -y install adwaita-qt* qt*-style-kvantum git
+sudo apt -y install adwaita-qt* qt-style-kvantum git
 
 echo "################################################################"
 echo "Clone custom theming repo"
