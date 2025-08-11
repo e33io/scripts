@@ -117,10 +117,10 @@ echo "################################################################"
 echo "Update root .bashrc file"
 echo "################################################################"
 
-echo "#
+echo '#
 # Set command prompt
-PS1='\[\e[01;31m\][\u \w]#\[\e[m\] '
-#" | sudo tee -a /root/.bashrc > /dev/null
+PS1="\[\e[01;31m\]\u \w/#\[\e[m\] "
+#' | sudo tee -a /root/.bashrc > /dev/null
 
 echo "################################################################"
 echo "Add bookmarks, run dconf script and clean up files"
