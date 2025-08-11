@@ -37,7 +37,7 @@ echo "################################################################"
 
 sudo pacman -S --noconfirm --needed xorg-server xorg-apps i3-wm i3status i3lock polybar xss-lock dmenu rofi \
 dunst gvfs nfs-utils cifs-utils fuse rsync cronie git curl wget tar less 7zip base-devel xsel xclip playerctl \
-dex mate-polkit xdg-desktop-portal-gtk xdg-user-dirs xbindkeys xdotool lightdm lightdm-gtk-greeter upower \
+dex mate-polkit upower xdg-desktop-portal-gtk xdg-user-dirs xbindkeys xdotool lightdm lightdm-gtk-greeter \
 lightdm-gtk-greeter-settings lxappearance-gtk3 gnome-themes-extra gtk-engine-murrine qt5ct qt6ct ttf-dejavu \
 noto-fonts-emoji papirus-icon-theme breeze-icons plymouth pavucontrol-qt nitrogen kitty python-pillowfight \
 xterm thunar thunar-archive-plugin thunar-volman tumbler ffmpegthumbnailer engrampa scrot atril imv mpv \
@@ -102,8 +102,6 @@ sudo cp -R $HOME/dotfiles/usr/share/wallpapers /usr/share
 sudo cp -R $HOME/opt-dots/arch/etc/lightdm /etc
 sudo mkdir -p /boot/grub/fonts
 sudo cp -R /usr/share/grub/ter-* /boot/grub/fonts
-sudo mv /usr/share/wayland-sessions/weston.desktop \
-/usr/share/wayland-sessions/weston.desktop.bak
 sudo mkdir -p /root/.config/gtk-3.0
 sudo mkdir -p /root/.config/micro
 sudo mkdir -p /root/.config/qt5ct
