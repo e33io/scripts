@@ -189,14 +189,6 @@ if [ $pc_type = vm ]; then
     sh $HOME/scripts/mod-virt-machines.sh
 fi
 
-if [ -f "/etc/devuan_version" ]; then
-    echo "################################################################"
-    echo "Update Debian configs for use with Devuan Linux"
-    echo "################################################################"
-
-    sh $HOME/scripts/mod-debian-to-devuan.sh
-fi
-
 echo "################################################################"
 echo "Update x-www-browser settings"
 echo "################################################################"
