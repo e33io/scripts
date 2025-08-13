@@ -26,16 +26,6 @@ if [ "$(id -u)" = 0 ]; then
     exit 1
 fi
 
-release="$(lsb_release -a | awk '/Codename:/ { print $2 }')"
-if [ ! $release = trixie ]; then
-    echo "################################################################"
-    echo "Debian Initial Setup and WM or DE Installation is NOT"
-    echo "compatible with your version of Linux, and it will exit now"
-    echo "without running or making any changes."
-    echo "################################################################"
-    exit 1
-fi
-
 clear
 echo "################################################################"
 echo "Debian Initial Setup (read carefully)"

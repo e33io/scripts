@@ -24,16 +24,6 @@ if [ "$(id -u)" = 0 ]; then
     exit 1
 fi
 
-release="$(lsb_release -a | awk '/Codename:/ { print $2 }')"
-if [ ! $release = trixie ]; then
-    echo "################################################################"
-    echo "Debian Gnome Installation is NOT compatible with"
-    echo "your version of Linux, and it will exit now without"
-    echo "running or making any changes."
-    echo "################################################################"
-    exit 1
-fi
-
 echo "################################################################"
 echo "Update and upgrade system"
 echo "################################################################"
