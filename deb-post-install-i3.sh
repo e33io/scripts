@@ -192,6 +192,14 @@ echo "################################################################"
 sudo update-alternatives --set x-terminal-emulator /usr/bin/kitty
 sudo update-alternatives --set x-www-browser /usr/bin/brave-browser-stable
 
+if [ -f "/etc/devuan_version" ]; then
+    echo "################################################################"
+    echo "Update Debian configs for use with Devuan Linux"
+    echo "################################################################"
+
+    sh $HOME/scripts/mod-debian-to-devuan.sh
+fi
+
 echo "################################################################"
 echo "Add bookmarks and clean up user directory"
 echo "################################################################"

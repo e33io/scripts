@@ -40,6 +40,15 @@ if { [ -d "$HOME/.config/i3" ] || [ -d "$HOME/.config/jwm" ]; }; then
 fi
 
 echo "################################################################"
+echo "Replace pipewire with pulseaudio"
+echo "################################################################"
+
+sudo apt -y purge pipewire*
+sudo apt -y autoremove
+sudo apt -y autoclean
+sudo apt -y install pulseaudio
+
+echo "################################################################"
 echo "Replace systemctl with loginctl"
 echo "################################################################"
 
@@ -51,14 +60,14 @@ if [ -f "$HOME/.local/bin/rofi-power.sh" ]; then
 fi
 sed -i 's/systemctl/loginctl/g' $HOME/.bashrc
 
-echo "################################################################"
-echo "Replace pipewire with pulseaudio"
-echo "################################################################"
+sys_vendor="$(cat /sys/class/dmi/id/sys_vendor)"
+if [ $sys_vendor = QEMU ]; then
+    echo "################################################################"
+    echo "Install spice-vdagent and update VM-specific configs"
+    echo "################################################################"
 
-sudo apt -y purge pipewire*
-sudo apt -y autoremove
-sudo apt -y autoclean
-sudo apt -y install pulseaudio
+    curl -s https://raw.githubusercontent.com/e33io/scripts/refs/heads/main/mod-virt-machines.sh | sh
+fi
 
 echo "################################################################"
 echo "Set default mute and default volume level"
@@ -73,29 +82,6 @@ printf "%s\n" "[Desktop Entry]" "Version=1.0" "Type=Application" \
 chmod +x $HOME/.config/autostart/audio-default.desktop
 if [ -f "/bin/startxfce4" ]; then
     sed -i 's/25%/25%%/' $HOME/.config/autostart/audio-default.desktop
-fi
-
-sys_vendor="$(cat /sys/class/dmi/id/sys_vendor)"
-if [ $sys_vendor = QEMU ]; then
-    echo "################################################################"
-    echo "Install spice-vdagent and update VM-specific configs"
-    echo "################################################################"
-    
-    sudo apt -y install spice-vdagent
-    # add xrandr-vm.desktop file
-    printf "%s\n" "[Desktop Entry]" "Version=1.0" "Type=Application" "Name=xrandr-vm" \
-    "Comment=Set xrandr resolution" "Exec=sh -c 'xrandr -s 3840x2160'" "StartupNotify=false" \
-    "Terminal=false" "NoDisplay=true" > $HOME/.config/autostart/xrandr-vm.desktop
-    chmod +x $HOME/.config/autostart/xrandr-vm.desktop
-    # update xrandr monitor resolution if needed
-    Xft_dpi=$(grep Xft.dpi ~/.Xresources | grep -Eo '[0-9]+')
-    if [ $Xft_dpi = 96 ]; then
-        sed -i 's/3840x2160/1920x1080/' $HOME/.config/autostart/xrandr-vm.desktop
-    fi
-    # update lightdm Xgsession file
-    if [ -f "/etc/lightdm/Xgsession" ]; then
-        sudo sed -i 's/GDK_SCALE=2/GDK_SCALE=1/' /etc/lightdm/Xgsession
-    fi
 fi
 
 echo "################################################################"
