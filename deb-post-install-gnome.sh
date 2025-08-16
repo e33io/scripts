@@ -39,8 +39,8 @@ sudo apt -y install gnome-core gnome-tweaks gnome-shell-extension-manager gnome-
 file-roller ptyxis loupe gnome-snapshot gnome-themes-extra adwaita-qt* qt*ct papirus-icon-theme plymouth-themes \
 dconf-editor synaptic epiphany-browser rhythmbox darktable gimp inkscape gcolor3 soundconverter filezilla \
 libreoffice-calc libreoffice-draw libreoffice-impress libreoffice-writer libreoffice-gtk3 mintstick timeshift \
-nfs-common cifs-utils libimage-exiftool-perl micro fzf lazygit htop fastfetch cmus cava cmatrix \
-apt-transport-https curl xclip
+pulseaudio-utils nfs-common cifs-utils libimage-exiftool-perl micro fzf lazygit htop fastfetch cmus cava \
+cmatrix apt-transport-https curl xclip
 
 pc_type="$(hostnamectl chassis)"
 if [ $pc_type = desktop ]; then
