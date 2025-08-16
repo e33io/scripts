@@ -45,19 +45,15 @@ sudo sed -i 's/gtk-small-toolbar.*/#/' /usr/share/themes/Yaru*/gtk-2.0/gtkrc
 sudo sed -i 's/gtk-dnd.*/#/' /usr/share/themes/Yaru*/gtk-2.0/gtkrc
 sudo sed -i 's/gtk-dialog.*/#/' /usr/share/themes/Yaru*/gtk-2.0/gtkrc
 
-if [ -f "/bin/gnome-shell" ]; then
-    echo "################################################################"
-    echo "Install Yaru Gnome shell theme and Yaru sound theme"
-    echo "################################################################"
-
-    sudo apt -y install yaru-theme-gnome-shell yaru-theme-sound
-fi
-
 echo "################################################################"
 echo "Install Qt and Kvantum styling packages"
 echo "################################################################"
 
 sudo apt -y install adwaita-qt* qt-style-kvantum git
+
+if [ ! -f "/bin/lxqt-session" ]; then
+    sudo apt -y install qt*ct
+fi
 
 echo "################################################################"
 echo "Clone custom theming repo"
@@ -72,15 +68,6 @@ echo "################################################################"
 sudo mkdir -p /usr/share/Kvantum
 sudo cp -R $HOME/theming-temp/Kvantum/Yaru* /usr/share/Kvantum
 rm -rf $HOME/theming-temp
-
-if [ ! -f "/bin/lxqt-session" ]; then
-    echo "################################################################"
-    echo "Install Qt packages for desktop environments and"
-    echo "window managers other than LXQt"
-    echo "################################################################"
-
-    sudo apt -y install qt*ct
-fi
 
 echo "################################################################"
 echo "Link config files to root user directories for styling"
