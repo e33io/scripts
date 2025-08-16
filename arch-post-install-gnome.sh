@@ -65,16 +65,12 @@ yay -S --noconfirm --needed --sudoloop adwaita-qt5-git adwaita-qt6-git mintstick
 
 pc_type="$(hostnamectl chassis)"
 if [ $pc_type = desktop ]; then
-    echo "################################################################"
-    echo "Install input-remapper"
-    echo "################################################################"
-
     yay -S --noconfirm --needed --sudoloop input-remapper
     sudo systemctl enable --now input-remapper
 fi
 if [ $pc_type = vm ]; then
     echo "################################################################"
-    echo "Install spice-vdagent"
+    echo "Install spice-vdagent and update VM-specific configs"
     echo "################################################################"
 
     sh $HOME/scripts/mod-virt-machines.sh

@@ -46,6 +46,13 @@ pc_type="$(hostnamectl chassis)"
 if [ $pc_type = desktop ]; then
     sudo apt -y install input-remapper-gtk
 fi
+if [ $pc_type = vm ]; then
+    echo "################################################################"
+    echo "Install spice-vdagent and update VM-specific configs"
+    echo "################################################################"
+
+    sh $HOME/scripts/mod-virt-machines.sh
+fi
 
 if ! command -v brave-browser > /dev/null 2>&1; then
     echo "################################################################"
@@ -121,15 +128,6 @@ echo '#
 # Set command prompt
 PS1="\[\e[01;31m\]\u \w/#\[\e[m\] "
 #' | sudo tee -a /root/.bashrc > /dev/null
-
-pc_type="$(hostnamectl chassis)"
-if [ $pc_type = vm ]; then
-    echo "################################################################"
-    echo "Install spice-vdagent"
-    echo "################################################################"
-
-    sh $HOME/scripts/mod-virt-machines.sh
-fi
 
 echo "################################################################"
 echo "Update x-www-browser settings"
