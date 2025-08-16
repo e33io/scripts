@@ -179,18 +179,9 @@ dconf write /org/gnome/settings-daemon/plugins/color/night-light-schedule-automa
 dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/']"
 dconf write /org/gnome/settings-daemon/plugins/media-keys/screensaver "['<Super>x', '<Super>l']"
 dconf write /org/gnome/settings-daemon/plugins/media-keys/www "['<Super>b']"
-# Debian specific settings
-if [ -f "/etc/debian_version" ]; then
-    dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/binding "'<Super>Return'"
-    dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/command "'ptyxis --new-window'"
-    dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/name "'Gnome Terminal'"
-fi
-# Arch specific settings
-if [ -f "/etc/pacman.conf" ]; then
-    dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/binding "'<Super>Return'"
-    dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/command "'ghostty'"
-    dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/name "'Ghostty Terminal'"
-fi
+dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/binding "'<Super>Return'"
+dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/command "'ptyxis --new-window'"
+dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/name "'Gnome Terminal'"
 dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/binding "'<Shift><Super>Return'"
 dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/command "'nautilus --new-window'"
 dconf write /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/name "'Gnome File Manager'"
@@ -221,7 +212,7 @@ if [ -f "/etc/pacman.conf" ]; then
 
     dconf write /org/gnome/shell/enabled-extensions "['appindicatorsupport@rgcjonas.gmail.com', 'dash-to-dock@micxgx.gmail.com', 'transparent-top-bar@ftpix.com', 'disable-workspace-switcher-overlay@cleardevice', 'disable-workspace-animation@ethnarque', 'space-bar@luchrioh', 'window-title-is-back@fthx', 'overviewbackground@github.com.orbitcorrection', 'impatience@gfxmonk.net', 'tiling-assistant@leleat-on-github']"
 
-    dconf write /org/gnome/shell/favorite-apps "['org.gnome.Nautilus.desktop', 'brave-browser.desktop', 'org.torproject.torbrowser-launcher.desktop', 'signal-desktop.desktop', 'org.gnome.Music.desktop', 'org.darktable.darktable.desktop', 'gimp.desktop', 'org.inkscape.Inkscape.desktop', 'org.gnome.TextEditor.desktop', 'com.mitchellh.ghostty.desktop']"
+    dconf write /org/gnome/shell/favorite-apps "['org.gnome.Nautilus.desktop', 'brave-browser.desktop', 'org.torproject.torbrowser-launcher.desktop', 'signal-desktop.desktop', 'org.gnome.Music.desktop', 'org.darktable.darktable.desktop', 'gimp.desktop', 'org.inkscape.Inkscape.desktop', 'org.gnome.TextEditor.desktop', 'org.gnome.Ptyxis.desktop']"
 fi
 
 dconf write /org/gnome/shell/last-selected-power-profile "'performance'"

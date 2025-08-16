@@ -30,10 +30,10 @@ echo "################################################################"
 echo "Install Gnome and other packages"
 echo "################################################################"
 
-sudo pacman -S --noconfirm --needed gnome gnome-tweaks gnome-shell-extension-appindicator nautilus-python file-roller \
-dconf-editor gnome-themes-extra papirus-icon-theme qt5ct qt6ct less wget nfs-utils bash-completion vim nano micro fzf \
-lazygit htop fastfetch cmus cava perl-image-exiftool timeshift ghostty signal-desktop filezilla gimp darktable \
-inkscape gcolor3 libreoffice
+sudo pacman -S --noconfirm --needed gnome gnome-tweaks gnome-shell-extension-appindicator nautilus-python \
+file-roller ptyxis dconf-editor gnome-themes-extra papirus-icon-theme qt5ct qt6ct less wget nfs-utils \
+bash-completion vim nano micro fzf lazygit htop fastfetch cmus cava perl-image-exiftool timeshift \
+signal-desktop filezilla gimp darktable inkscape gcolor3 libreoffice
 sudo pacman -R --noconfirm gnome-software
 
 echo "################################################################"
