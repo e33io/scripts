@@ -69,7 +69,7 @@ if [ -f "/etc/pacman.conf" ]; then
     dconf write /org/gnome/desktop/app-folders/folders/Pardus/categories "['X-Pardus-Apps']"
     dconf write /org/gnome/desktop/app-folders/folders/Pardus/name "'X-Pardus-Apps.directory'"
     dconf write /org/gnome/desktop/app-folders/folders/Pardus/translate "true"
-    dconf write /org/gnome/desktop/app-folders/folders/System/apps "['org.gnome.SystemMonitor.desktop', 'org.gnome.baobab.desktop', 'org.gnome.DiskUtility.desktop', 'qt5ct.desktop', 'qt6ct.desktop', 'org.gnome.Logs.desktop', 'nm-connection-editor.desktop', 'input-remapper-gtk.desktop', 'org.torproject.torbrowser-launcher.settings.desktop', 'octopi-cachecleaner.desktop', 'octopi-repoeditor.desktop', 'octopi-notifier.desktop', 'org.freedesktop.MalcontentControl.desktop']"
+    dconf write /org/gnome/desktop/app-folders/folders/System/apps "['org.gnome.SystemMonitor.desktop', 'org.gnome.baobab.desktop', 'org.gnome.DiskUtility.desktop', 'qt5ct.desktop', 'qt6ct.desktop', 'org.gnome.Logs.desktop', 'nm-connection-editor.desktop', 'input-remapper-gtk.desktop', 'octopi-cachecleaner.desktop', 'octopi-repoeditor.desktop', 'octopi-notifier.desktop', 'org.freedesktop.MalcontentControl.desktop']"
     dconf write /org/gnome/desktop/app-folders/folders/System/name "'X-GNOME-Shell-System.directory'"
     dconf write /org/gnome/desktop/app-folders/folders/System/translate "true"
     dconf write /org/gnome/desktop/app-folders/folders/Utilities/apps "['org.gnome.Connections.desktop', 'org.gnome.Evince.desktop', 'org.gnome.Loupe.desktop', 'org.gnome.SimpleScan.desktop', 'org.gnome.FileRoller.desktop', 'org.gnome.Snapshot.desktop', 'org.gnome.font-viewer.desktop', 'org.gnome.Characters.desktop', 'yelp.desktop', 'org.gnome.Tour.desktop']"
@@ -212,7 +212,7 @@ if [ -f "/etc/pacman.conf" ]; then
 
     dconf write /org/gnome/shell/enabled-extensions "['appindicatorsupport@rgcjonas.gmail.com', 'dash-to-dock@micxgx.gmail.com', 'transparent-top-bar@ftpix.com', 'disable-workspace-switcher-overlay@cleardevice', 'disable-workspace-animation@ethnarque', 'space-bar@luchrioh', 'window-title-is-back@fthx', 'overviewbackground@github.com.orbitcorrection', 'impatience@gfxmonk.net', 'tiling-assistant@leleat-on-github']"
 
-    dconf write /org/gnome/shell/favorite-apps "['org.gnome.Nautilus.desktop', 'brave-browser.desktop', 'org.torproject.torbrowser-launcher.desktop', 'signal-desktop.desktop', 'org.gnome.Music.desktop', 'org.darktable.darktable.desktop', 'gimp.desktop', 'org.inkscape.Inkscape.desktop', 'org.gnome.TextEditor.desktop', 'org.gnome.Ptyxis.desktop']"
+    dconf write /org/gnome/shell/favorite-apps "['org.gnome.Nautilus.desktop', 'brave-browser.desktop', 'signal-desktop.desktop', 'org.gnome.Music.desktop', 'org.darktable.darktable.desktop', 'gimp.desktop', 'org.inkscape.Inkscape.desktop', 'org.gnome.TextEditor.desktop', 'org.gnome.Ptyxis.desktop']"
 fi
 
 dconf write /org/gnome/shell/last-selected-power-profile "'performance'"
