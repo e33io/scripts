@@ -203,7 +203,7 @@ if [ -f "/etc/debian_version" ]; then
 
     dconf write /org/gnome/shell/enabled-extensions "['ubuntu-appindicators@ubuntu.com', 'dash-to-dock@micxgx.gmail.com', 'transparent-top-bar@ftpix.com', 'disable-workspace-switcher-overlay@cleardevice', 'disable-workspace-animation@ethnarque', 'space-bar@luchrioh', 'window-title-is-back@fthx', 'overviewbackground@github.com.orbitcorrection', 'impatience@gfxmonk.net', 'tiling-assistant@leleat-on-github']"
 
-    dconf write /org/gnome/shell/favorite-apps "['org.gnome.Nautilus.desktop', 'brave-browser.desktop', 'signal-desktop.desktop', 'org.gnome.Rhythmbox3.desktop', 'org.darktable.darktable.desktop', 'gimp.desktop', 'org.inkscape.Inkscape.desktop', 'org.gnome.TextEditor.desktop', 'org.gnome.Ptyxis.desktop']"
+    dconf write /org/gnome/shell/favorite-apps "['org.gnome.Nautilus.desktop', 'brave-browser.desktop', 'signal-desktop.desktop', 'org.gnome.Music.desktop', 'org.darktable.darktable.desktop', 'gimp.desktop', 'org.inkscape.Inkscape.desktop', 'org.gnome.TextEditor.desktop', 'org.gnome.Ptyxis.desktop']"
 fi
 
 # Arch specific settings

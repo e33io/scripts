@@ -37,7 +37,7 @@ echo "################################################################"
 
 sudo apt -y install gnome-core gnome-tweaks gnome-shell-extension-manager gnome-shell-extension-appindicator \
 file-roller ptyxis loupe gnome-snapshot gnome-themes-extra adwaita-qt* qt*ct papirus-icon-theme plymouth-themes \
-dconf-editor synaptic epiphany-browser rhythmbox darktable gimp inkscape gcolor3 filezilla libreoffice-calc \
+dconf-editor synaptic epiphany-browser gnome-music darktable gimp inkscape gcolor3 filezilla libreoffice-calc \
 libreoffice-draw libreoffice-impress libreoffice-writer libreoffice-gtk3 mintstick timeshift pulseaudio-utils \
 nfs-common cifs-utils libimage-exiftool-perl micro fzf lazygit htop fastfetch cmus cava cmatrix \
 apt-transport-https curl xclip
