@@ -34,7 +34,7 @@ sudo pacman -S --noconfirm --needed gnome gnome-tweaks gnome-shell-extension-app
 gnome-themes-extra papirus-icon-theme qt5ct qt6ct dconf-editor signal-desktop gimp darktable inkscape gcolor3 \
 filezilla libreoffice timeshift nfs-utils bash-completion perl-image-exiftool vim nano micro fzf lazygit \
 htop fastfetch cmus cava less wget
-sudo pacman -R --noconfirm gnome-software
+sudo pacman -R --noconfirm gnome-software gnome-console
 
 echo "################################################################"
 echo "Install flatpak packages"
