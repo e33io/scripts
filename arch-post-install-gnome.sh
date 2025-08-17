@@ -34,16 +34,12 @@ sudo pacman -S --noconfirm --needed gnome gnome-tweaks gnome-shell-extension-app
 gnome-themes-extra papirus-icon-theme qt5ct qt6ct dconf-editor signal-desktop gimp darktable inkscape gcolor3 \
 filezilla libreoffice timeshift nfs-utils bash-completion perl-image-exiftool vim nano micro fzf lazygit \
 htop fastfetch cmus cava less wget
+
+echo "################################################################"
+echo "Remove unneeded/redundant packages"
+echo "################################################################"
+
 sudo pacman -R --noconfirm gnome-software gnome-console
-
-echo "################################################################"
-echo "Install flatpak packages"
-echo "################################################################"
-
-sudo -k
-flatpak install -y --noninteractive com.mattjakeman.ExtensionManager
-flatpak install -y --noninteractive org.gtk.Gtk3theme.Adwaita-dark
-flatpak install -y --noninteractive org.torproject.torbrowser-launcher
 
 if ! command -v yay > /dev/null 2>&1; then
     echo "################################################################"
@@ -61,7 +57,7 @@ echo "################################################################"
 echo "Install packages from AUR"
 echo "################################################################"
 
-yay -S --noconfirm --needed --sudoloop adwaita-qt5-git adwaita-qt6-git mintstick brave-bin octopi
+yay -S --noconfirm --needed --sudoloop extension-manager adwaita-qt5-git adwaita-qt6-git mintstick brave-bin octopi
 
 pc_type="$(hostnamectl chassis)"
 if [ $pc_type = desktop ]; then
