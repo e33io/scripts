@@ -8,16 +8,16 @@ linux installation scripts
 
 - use the scripts below with a [Debian minimal installation](https://e33.io/913)
 	- use [`deb-post-install-options.sh`](https://github.com/e33io/scripts/blob/main/deb-post-install-options.sh) to run initial setup and select a WM or DE to install
-	- use [`deb-post-install-i3.sh`](https://github.com/e33io/scripts/blob/main/deb-post-install-i3.sh) to [install the i3 window manager](https://e33.io/1121)
-	- use [`deb-post-install-jwm.sh`](https://github.com/e33io/scripts/blob/main/deb-post-install-jwm.sh) to [install the JWM window manager](https://e33.io/1398)
-	- use [`deb-post-install-xfce.sh`](https://github.com/e33io/scripts/blob/main/deb-post-install-xfce.sh) to [install the Xfce desktop environment](https://e33.io/1541)
-	- use [`deb-post-install-gnome.sh`](https://github.com/e33io/scripts/blob/main/deb-post-install-gnome.sh) to [install the Gnome desktop environment](https://github.com/e33io/reference-wiki/blob/main/installation-docs/debian-gnome-installation.md)
+	- use [`debian-install-i3.sh`](https://github.com/e33io/scripts/blob/main/debian-install-i3.sh) to [install the i3 window manager](https://e33.io/1121)
+	- use [`debian-install-jwm.sh`](https://github.com/e33io/scripts/blob/main/debian-install-jwm.sh) to [install the JWM window manager](https://e33.io/1398)
+	- use [`debian-install-xfce.sh`](https://github.com/e33io/scripts/blob/main/debian-install-xfce.sh) to [install the Xfce desktop environment](https://e33.io/1541)
+	- use [`debian-install-gnome.sh`](https://github.com/e33io/scripts/blob/main/debian-install-gnome.sh) to [install the Gnome desktop environment](https://github.com/e33io/reference-wiki/blob/main/installation-docs/debian-gnome-installation.md)
 
 - use the scripts below with an [Arch](https://wiki.archlinux.org/title/Archinstall) "Minimal" installation
-	- use [`arch-post-install-i3.sh`](https://github.com/e33io/scripts/blob/main/arch-post-install-i3.sh) to [install the i3 window manager](https://github.com/e33io/reference-wiki/blob/main/installation-docs/arch-i3-installation.md)
-	- use [`arch-post-install-jwm.sh`](https://github.com/e33io/scripts/blob/main/arch-post-install-jwm.sh) to [install the JWM window manager](https://github.com/e33io/reference-wiki/blob/main/installation-docs/arch-jwm-installation.md)
-	- use [`arch-post-install-xfce.sh`](https://github.com/e33io/scripts/blob/main/arch-post-install-xfce.sh) to [install the Xfce desktop environment](https://github.com/e33io/reference-wiki/blob/main/installation-docs/arch-xfce-installation.md)
-	- use [`arch-post-install-gnome.sh`](https://github.com/e33io/scripts/blob/main/arch-post-install-gnome.sh) to [install the Gnome desktop environment](https://github.com/e33io/reference-wiki/blob/main/installation-docs/arch-gnome-installation.md)
+	- use [`arch-install-i3.sh`](https://github.com/e33io/scripts/blob/main/arch-install-i3.sh) to [install the i3 window manager](https://github.com/e33io/reference-wiki/blob/main/installation-docs/arch-i3-installation.md)
+	- use [`arch-install-jwm.sh`](https://github.com/e33io/scripts/blob/main/arch-install-jwm.sh) to [install the JWM window manager](https://github.com/e33io/reference-wiki/blob/main/installation-docs/arch-jwm-installation.md)
+	- use [`arch-install-xfce.sh`](https://github.com/e33io/scripts/blob/main/arch-install-xfce.sh) to [install the Xfce desktop environment](https://github.com/e33io/reference-wiki/blob/main/installation-docs/arch-xfce-installation.md)
+	- use [`arch-install-gnome.sh`](https://github.com/e33io/scripts/blob/main/arch-install-gnome.sh) to [install the Gnome desktop environment](https://github.com/e33io/reference-wiki/blob/main/installation-docs/arch-gnome-installation.md)
 
 &nbsp;
 

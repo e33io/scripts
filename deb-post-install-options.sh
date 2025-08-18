@@ -75,16 +75,16 @@ while true; do
         0) echo "You chose to exit the script and install your own";
            exit 1;;
         1) echo "You chose i3 Window Manager";
-           sh deb-post-install-i3.sh;
+           sh debian-install-i3.sh;
            break;;
         2) echo "You chose JWM Window Manager";
-           sh deb-post-install-jwm.sh;
+           sh debian-install-jwm.sh;
            break;;
         3) echo "You chose Xfce Desktop Environment";
-           sh deb-post-install-xfce.sh;
+           sh debian-install-xfce.sh;
            break;;
         4) echo "You chose Gnome Desktop Environment";
-           sh deb-post-install-gnome.sh;
+           sh debian-install-gnome.sh;
            break;;
         *) echo "Invalid selection, please enter a number from the list.";;
     esac
