@@ -8,9 +8,9 @@ linux installation scripts
 
 - use the scripts below with a [Debian minimal installation](https://e33.io/913)
 	- use [`debian-options.sh`](https://github.com/e33io/scripts/blob/main/debian-options.sh) to run initial setup and select a WM or DE to install
-	- use [`debian-install-i3.sh`](https://github.com/e33io/scripts/blob/main/debian-install-i3.sh) to [install the i3 window manager](https://e33.io/1121)
-	- use [`debian-install-jwm.sh`](https://github.com/e33io/scripts/blob/main/debian-install-jwm.sh) to [install the JWM window manager](https://e33.io/1398)
-	- use [`debian-install-xfce.sh`](https://github.com/e33io/scripts/blob/main/debian-install-xfce.sh) to [install the Xfce desktop environment](https://e33.io/1541)
+	- use [`debian-install-i3.sh`](https://github.com/e33io/scripts/blob/main/debian-install-i3.sh) to [install the i3 window manager](https://github.com/e33io/reference-wiki/blob/main/installation-docs/debian-i3-installation.md)
+	- use [`debian-install-jwm.sh`](https://github.com/e33io/scripts/blob/main/debian-install-jwm.sh) to [install the JWM window manager](https://github.com/e33io/reference-wiki/blob/main/installation-docs/debian-jwm-installation.md)
+	- use [`debian-install-xfce.sh`](https://github.com/e33io/scripts/blob/main/debian-install-xfce.sh) to [install the Xfce desktop environment](https://github.com/e33io/reference-wiki/blob/main/installation-docs/debian-xfce-installation.md)
 	- use [`debian-install-gnome.sh`](https://github.com/e33io/scripts/blob/main/debian-install-gnome.sh) to [install the Gnome desktop environment](https://github.com/e33io/reference-wiki/blob/main/installation-docs/debian-gnome-installation.md)
 
 - use the scripts below with an [Arch](https://wiki.archlinux.org/title/Archinstall) "Minimal" installation
