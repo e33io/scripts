@@ -2,7 +2,7 @@
 
 # =========================================================================
 # Debian 13 Trixie (post-install) Initial Setup
-# URL: https://github.com/e33io/scripts/blob/main/deb-post-install-setup.sh
+# URL: https://github.com/e33io/scripts/blob/main/debian-setup.sh
 # -------------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
 # -------------------------------------------------------------------------
@@ -10,7 +10,7 @@
 #   sudo apt install git
 #   git clone https://github.com/e33io/scripts
 #   cd scripts
-#   sh deb-post-install-setup.sh
+#   sh debian-setup.sh
 # =========================================================================
 
 if [ "$(id -u)" = 0 ]; then

@@ -7,7 +7,7 @@ linux installation scripts
 ## window managers and desktop environments
 
 - use the scripts below with a [Debian minimal installation](https://e33.io/913)
-	- use [`deb-post-install-options.sh`](https://github.com/e33io/scripts/blob/main/deb-post-install-options.sh) to run initial setup and select a WM or DE to install
+	- use [`debian-options.sh`](https://github.com/e33io/scripts/blob/main/debian-options.sh) to run initial setup and select a WM or DE to install
 	- use [`debian-install-i3.sh`](https://github.com/e33io/scripts/blob/main/debian-install-i3.sh) to [install the i3 window manager](https://e33.io/1121)
 	- use [`debian-install-jwm.sh`](https://github.com/e33io/scripts/blob/main/debian-install-jwm.sh) to [install the JWM window manager](https://e33.io/1398)
 	- use [`debian-install-xfce.sh`](https://github.com/e33io/scripts/blob/main/debian-install-xfce.sh) to [install the Xfce desktop environment](https://e33.io/1541)

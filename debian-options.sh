@@ -2,7 +2,7 @@
 
 # ===========================================================================
 # Debian (post-install) Initial Setup and WM or DE Installation
-# URL: https://github.com/e33io/scripts/blob/main/deb-post-install-options.sh
+# URL: https://github.com/e33io/scripts/blob/main/debian-options.sh
 # ---------------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
 # NOTE! For best results only select "standard system utilities" on the
@@ -14,7 +14,7 @@
 #   sudo apt install git
 #   git clone https://github.com/e33io/scripts
 #   cd scripts
-#   sh deb-post-install-options.sh
+#   sh debian-options.sh
 # ===========================================================================
 
 if [ "$(id -u)" = 0 ]; then
@@ -46,7 +46,7 @@ while true; do
     read -p "Do you want to run the initial setup option? (y/n) " yn
     case $yn in
         [Yy]* ) echo "You chose to run the initial setup option";
-                sh deb-post-install-setup.sh;
+                sh debian-setup.sh;
                 break;;
         [Nn]* ) echo "You chose NOT to run the initial setup option";
                 break;;
