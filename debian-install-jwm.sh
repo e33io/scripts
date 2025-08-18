@@ -3,7 +3,6 @@
 # =========================================================================
 # Debian Linux - Install JWM
 # URL: https://github.com/e33io/scripts/blob/main/debian-install-jwm.sh
-# Installation steps and other configuration options: https://e33.io/1398
 # -------------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
 # Use with a minimal installation of Debian Linux to install the JWM window

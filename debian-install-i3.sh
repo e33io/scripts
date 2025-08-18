@@ -3,7 +3,6 @@
 # ========================================================================
 # Debian Linux - Install i3
 # URL: https://github.com/e33io/scripts/blob/main/debian-install-i3.sh
-# Installation steps and other configuration options: https://e33.io/1121
 # ------------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
 # Use with a minimal installation of Debian Linux to install the i3 window
