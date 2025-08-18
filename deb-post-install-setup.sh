@@ -38,14 +38,14 @@ echo "# Reference: https://wiki.debian.org/SourcesList
 deb http://deb.debian.org/debian trixie main contrib non-free non-free-firmware
 deb-src http://deb.debian.org/debian trixie main contrib non-free non-free-firmware
 
-deb http://deb.debian.org/debian-security/ trixie-security main contrib non-free non-free-firmware
-deb-src http://deb.debian.org/debian-security/ trixie-security main contrib non-free non-free-firmware
-
 deb http://deb.debian.org/debian trixie-updates main contrib non-free non-free-firmware
 deb-src http://deb.debian.org/debian trixie-updates main contrib non-free non-free-firmware
 
 #deb http://deb.debian.org/debian trixie-backports main contrib non-free non-free-firmware
-#deb-src http://deb.debian.org/debian trixie-backports main contrib non-free non-free-firmware" \
+#deb-src http://deb.debian.org/debian trixie-backports main contrib non-free non-free-firmware
+
+deb http://deb.debian.org/debian-security/ trixie-security main contrib non-free non-free-firmware
+deb-src http://deb.debian.org/debian-security/ trixie-security main contrib non-free non-free-firmware" \
 | sudo tee /etc/apt/sources.list > /dev/null
 
 echo "################################################################"
