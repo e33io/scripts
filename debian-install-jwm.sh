@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # =========================================================================
-# Debian (post-install) JWM Installation
-# URL: https://github.com/e33io/scripts/blob/main/deb-post-install-jwm.sh
+# Debian Linux - Install JWM
+# URL: https://github.com/e33io/scripts/blob/main/debian-install-jwm.sh
 # Installation steps and other configuration options: https://e33.io/1398
 # -------------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
@@ -18,7 +18,7 @@
 #   sudo apt install git
 #   git clone https://github.com/e33io/scripts
 #   cd scripts
-#   sh deb-post-install-jwm.sh
+#   sh debian-install-jwm.sh
 # =========================================================================
 
 if [ "$(id -u)" = 0 ]; then

@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # ========================================================================
-# Debian (post-install) i3 Installation
-# URL: https://github.com/e33io/scripts/blob/main/deb-post-install-i3.sh
+# Debian Linux - Install i3
+# URL: https://github.com/e33io/scripts/blob/main/debian-install-i3.sh
 # Installation steps and other configuration options: https://e33.io/1121
 # ------------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
@@ -18,7 +18,7 @@
 #   sudo apt install git
 #   git clone https://github.com/e33io/scripts
 #   cd scripts
-#   sh deb-post-install-i3.sh
+#   sh debian-install-i3.sh
 # ========================================================================
 
 if [ "$(id -u)" = 0 ]; then
