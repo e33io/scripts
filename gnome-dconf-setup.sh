@@ -345,11 +345,8 @@ dconf write /org/gnome/shell/keybindings/switch-to-application-9 "@as []"
 dconf write /org/gnome/shell/keybindings/toggle-application-view "['<Super>d', '<Super>a']"
 dconf write /org/gnome/shell/keybindings/toggle-overview "['<Super>o']"
 
-# Debian specific settings
-if [ -f "/etc/debian_version" ]; then
-    dconf write /org/gnome/software/download-updates "false"
-    dconf write /org/gnome/software/download-updates-notify "false"
-fi
+dconf write /org/gnome/software/download-updates "false"
+dconf write /org/gnome/software/download-updates-notify "false"
 dconf write /org/gnome/software/first-run "false"
 
 dconf write /org/gnome/tweaks/show-extensions-notice "false"
