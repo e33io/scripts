@@ -1,10 +1,11 @@
 #!/bin/bash
 
 # ======================================================================
-# Ubuntu Remove Snaps, Disable Snapd and Install Flatpak
+# Ubuntu Linux - Remove Snaps, Disable Snapd and Install Flatpak
 # URL: https://github.com/e33io/scripts/blob/main/ubuntu-remove-snapd.sh
 # ----------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
+# NOTE: The system will automatically reboot at the end of script.
 # ======================================================================
 
 if [ "$(id -u)" = 0 ]; then
