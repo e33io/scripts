@@ -118,5 +118,13 @@ if [ -f "/bin/gnome-software" ]; then
 fi
 
 echo "################################################################"
+echo "Revert fonts to classic Ubuntu fonts"
+echo "################################################################"
+
+sudo apt -y install fonts-ubuntu-classic fonts-ubuntu-console
+dconf write /org/gnome/desktop/interface/font-name "'Ubuntu 11'"
+dconf write /org/gnome/desktop/interface/monospace-font-name "'Ubuntu Mono 13'"
+
+echo "################################################################"
 echo "All done, you can now run other commands or reboot the PC"
 echo "################################################################"
