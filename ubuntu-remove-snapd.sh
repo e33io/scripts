@@ -112,7 +112,9 @@ if [ -f "/bin/gnome-software" ]; then
     echo "################################################################"
 
     mkdir -p $HOME/.config/autostart
-    echo "X-GNOME-Autostart-enabled=false" > $HOME/.config/autostart/org.gnome.Software.desktop
+    cp -R /etc/xdg/autostart/org.gnome.Software.desktop $HOME/.config/autostart
+    echo "X-GNOME-Autostart-enabled=false" \
+    | tee -a $HOME/.config/autostart/org.gnome.Software.desktop > /dev/null
 fi
 
 echo "################################################################"
