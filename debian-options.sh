@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # =====================================================================
-# Debian Options For Initial Setup and WM or DE Installation
+# Debian Options for Initial Setup and WM or DE Installation
 # URL: https://github.com/e33io/scripts/blob/main/debian-options.sh
 # ---------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
@@ -47,7 +47,7 @@ while true; do
     read -p "Do you want to run the initial setup option? (y/n) " yn
     case $yn in
         [Yy]* ) echo "You chose to run the initial setup option";
-                sh debian-setup.sh;
+                sh $HOME/scripts/debian-setup.sh;
                 break;;
         [Nn]* ) echo "You chose NOT to run the initial setup option";
                 break;;
@@ -76,16 +76,16 @@ while true; do
         0) echo "You chose to exit the script and install your own";
            exit 1;;
         1) echo "You chose i3 Window Manager";
-           sh debian-install-i3.sh;
+           sh $HOME/scripts/debian-install-i3.sh;
            break;;
         2) echo "You chose JWM Window Manager";
-           sh debian-install-jwm.sh;
+           sh $HOME/scripts/debian-install-jwm.sh;
            break;;
         3) echo "You chose Xfce Desktop Environment";
-           sh debian-install-xfce.sh;
+           sh $HOME/scripts/debian-install-xfce.sh;
            break;;
         4) echo "You chose Gnome Desktop Environment";
-           sh debian-install-gnome.sh;
+           sh $HOME/scripts/debian-install-gnome.sh;
            break;;
         *) echo "Invalid selection, please enter a number from the list.";;
     esac
