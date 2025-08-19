@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # ======================================================================
-# Ubuntu Remove Snaps, Disable Snapd and Optionally Install Flatpak
+# Ubuntu Remove Snaps, Disable Snapd and Install Flatpak
 # URL: https://github.com/e33io/scripts/blob/main/ubuntu-remove-snapd.sh
 # ----------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
@@ -87,35 +87,21 @@ Pin: release a=*
 Pin-Priority: -10" | sudo tee /etc/apt/preferences.d/nosnap.pref > /dev/null
 
 echo "################################################################"
-echo "Flatpak package and Flathub repository option"
-echo "----------------------------------------------------------------"
+echo "Install Flatpak package and add Flathub repository"
+echo "################################################################"
 
-while true; do
-    read -p "Do you want to install Flatpak and add Flathub repository (y/n) " yn
-    case $yn in
-        [Yy]* ) sudo apt -y install flatpak;
-                if { [ -f "/bin/gnome-shell" ] || [ -f "/bin/gnome-software" ]; }; then
-                    sudo apt -y install gnome-software-plugin-flatpak
-                fi
-                flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo;
-                break;;
-        [Nn]* ) echo "You chose to NOT install Flatpak and add Flathub repository";
-                break;;
-        * ) echo "Please answer y (for yes) or n (for no)";;
-    esac
-done
+sudo apt -y install flatpak gnome-software-plugin-flatpak
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
-if [ -f "/bin/gnome-software" ]; then
-    echo "################################################################"
-    echo "Add org.gnome.Software.desktop file to manually"
-    echo "start Gnome Software (disable autostart)"
-    echo "################################################################"
+echo "################################################################"
+echo "Add org.gnome.Software.desktop file to manually"
+echo "start Gnome Software (disable autostart)"
+echo "################################################################"
 
-    mkdir -p $HOME/.config/autostart
-    cp -R /etc/xdg/autostart/org.gnome.Software.desktop $HOME/.config/autostart
-    echo "X-GNOME-Autostart-enabled=false" \
-    | tee -a $HOME/.config/autostart/org.gnome.Software.desktop > /dev/null
-fi
+mkdir -p $HOME/.config/autostart
+cp -R /etc/xdg/autostart/org.gnome.Software.desktop $HOME/.config/autostart
+echo "X-GNOME-Autostart-enabled=false" \
+| tee -a $HOME/.config/autostart/org.gnome.Software.desktop > /dev/null
 
 echo "################################################################"
 echo "Revert fonts to classic Ubuntu fonts"
