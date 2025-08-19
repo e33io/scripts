@@ -115,6 +115,7 @@ echo "Revert fonts to classic Ubuntu fonts and reboot system"
 echo "################################################################"
 
 sudo apt -y install fonts-ubuntu-classic fonts-ubuntu-console
+fc-cache -f
 
 if [ -f "/bin/gnome-shell" ]; then
     dconf write /org/gnome/desktop/interface/font-name "'Ubuntu 11'"
