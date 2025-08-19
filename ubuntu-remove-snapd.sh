@@ -90,26 +90,36 @@ echo "################################################################"
 echo "Install Flatpak package and add Flathub repository"
 echo "################################################################"
 
-sudo apt -y install flatpak gnome-software-plugin-flatpak
+sudo apt -y install flatpak
+
+if { [ -f "/bin/gnome-shell" ] || [ -f "/bin/gnome-software" ]; }; then
+    sudo apt -y install gnome-software-plugin-flatpak
+fi
+
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
-echo "################################################################"
-echo "Add org.gnome.Software.desktop file to manually"
-echo "start Gnome Software (disable autostart)"
-echo "################################################################"
+if [ -f "/bin/gnome-software" ]; then
+    echo "################################################################"
+    echo "Add org.gnome.Software.desktop file to manually"
+    echo "start Gnome Software (disable autostart)"
+    echo "################################################################"
 
-mkdir -p $HOME/.config/autostart
-cp -R /etc/xdg/autostart/org.gnome.Software.desktop $HOME/.config/autostart
-echo "X-GNOME-Autostart-enabled=false" \
-| tee -a $HOME/.config/autostart/org.gnome.Software.desktop > /dev/null
+    mkdir -p $HOME/.config/autostart
+    cp -R /etc/xdg/autostart/org.gnome.Software.desktop $HOME/.config/autostart
+    echo "X-GNOME-Autostart-enabled=false" \
+    | tee -a $HOME/.config/autostart/org.gnome.Software.desktop > /dev/null
+fi
 
 echo "################################################################"
 echo "Revert fonts to classic Ubuntu fonts"
 echo "################################################################"
 
 sudo apt -y install fonts-ubuntu-classic fonts-ubuntu-console
-dconf write /org/gnome/desktop/interface/font-name "'Ubuntu 11'"
-dconf write /org/gnome/desktop/interface/monospace-font-name "'Ubuntu Mono 13'"
+
+if [ -f "/bin/gnome-shell" ]; then
+    dconf write /org/gnome/desktop/interface/font-name "'Ubuntu 11'"
+    dconf write /org/gnome/desktop/interface/monospace-font-name "'Ubuntu Mono 13'"
+fi
 
 echo "################################################################"
 echo "All done, you can now run other commands or reboot the PC"
