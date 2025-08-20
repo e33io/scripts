@@ -179,6 +179,7 @@ sed -i "s/home\/.*\/Desktop/home\/$(whoami)\/Desktop/" $HOME/.config/xfce4/xfcon
 sed -i "s/~\/\.gtkrc-2\.0\.mine/\/home\/$(whoami)\/\.gtkrc-2\.0\.mine/" $HOME/.gtkrc-2.0
 printf "%s\n" "" "# Set XDG_CURRENT_DESKTOP" "export XDG_CURRENT_DESKTOP=jwm" \
 | tee -a $HOME/.profile > /dev/null
+cp -R $HOME/scripts/set-jwm-theming.sh $HOME/.local/bin/set-theming
 echo "JWM was installed via e33io script: $(date '+%B %d, %Y, %H:%M')" > $HOME/.install-info
 rm -rf $HOME/.config/i3
 rm -rf $HOME/dotfiles
