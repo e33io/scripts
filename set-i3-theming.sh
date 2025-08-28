@@ -87,7 +87,14 @@ theming_files () {
     printf "[General]\ntheme=" | tee $HOME/.config/Kvantum/kvantum.kvconfig > /dev/null
     sed -i "s/theme=.*/theme=$kvantum_theme/" $HOME/.config/Kvantum/kvantum.kvconfig
     # Rofi theme and icon theme
-    sed -i "s/rofi\/themes\/.*\"/rofi\/themes\/$rofi_theme\.rasi\"/" $HOME/.config/rofi/config.rasi
+    if grep -q "Dmenu" $HOME/.config/rofi/config.rasi; then
+        rofi_style=Dmenu
+    elif grep -q "Floating" $HOME/.config/rofi/config.rasi; then
+        rofi_style=Floating
+    elif grep -q "Panel" $HOME/.config/rofi/config.rasi; then
+        rofi_style=Panel
+    fi
+    sed -i "s/rofi\/themes\/.*\"/rofi\/themes\/$rofi_style-$rofi_theme\.rasi\"/" $HOME/.config/rofi/config.rasi
     sed -i "s/icon-theme: \".*\"/icon-theme: \"$icon_theme\"/" $HOME/.config/rofi/config.rasi
     # i3lock background color
     lock_bg_color=$(echo "$desktop_bg_color" | sed 's/^.//')
@@ -135,7 +142,7 @@ Adwaita_Dark () {
     prefer_dark_theme="1"
     gtk_theme=Adwaita-dark
     qt_ct_theme=Adwaita-Dark
-    rofi_theme=Dmenu-Adwaita-Dark
+    rofi_theme=Adwaita-Dark
     icon_theme=Papirus-Dark
     papirus_folders=adwaita
     # Call the theming files
@@ -164,7 +171,7 @@ Adwaita_Darker () {
     prefer_dark_theme="1"
     gtk_theme=Adwaita-dark
     qt_ct_theme=Adwaita-Dark
-    rofi_theme=Dmenu-Adwaita-Darker
+    rofi_theme=Adwaita-Darker
     icon_theme=Papirus-Dark
     papirus_folders=adwaita
     # Call the theming files
@@ -193,7 +200,7 @@ Adwaita_Light () {
     prefer_dark_theme="0"
     gtk_theme=Adwaita
     qt_ct_theme=Adwaita
-    rofi_theme=Dmenu-Adwaita-Light
+    rofi_theme=Adwaita-Light
     icon_theme=Papirus-Light
     papirus_folders=blue
     # Call the theming files
@@ -223,7 +230,7 @@ Mint_L_Dark_Mod_Brown () {
     gtk_theme=Mint-L-Dark-Mod-Brown
     qt_ct_theme=kvantum-dark
     kvantum_theme=Mint-L-Dark-Mod-Brown
-    rofi_theme=Dmenu-Mint-L-Dark-Brown
+    rofi_theme=Mint-L-Dark-Brown
     icon_theme=Papirus-Dark
     papirus_folders=palebrown
     # Call the theming files
@@ -253,7 +260,7 @@ Mint_L_Dark_Mod_Teal () {
     gtk_theme=Mint-L-Dark-Mod-Teal
     qt_ct_theme=kvantum-dark
     kvantum_theme=Mint-L-Dark-Mod-Teal
-    rofi_theme=Dmenu-Mint-L-Dark-Teal
+    rofi_theme=Mint-L-Dark-Teal
     icon_theme=Papirus-Dark
     papirus_folders=orange
     # Call the theming files
@@ -283,7 +290,7 @@ Mint_Y_Dark_Mod_Blue () {
     gtk_theme=Mint-Y-Dark-Mod-Blue
     qt_ct_theme=kvantum-dark
     kvantum_theme=Mint-Y-Dark-Mod-Blue
-    rofi_theme=Dmenu-Mint-Y-Dark-Blue
+    rofi_theme=Mint-Y-Dark-Blue
     icon_theme=Papirus-Dark
     papirus_folders=blue
     # Call the theming files
@@ -313,7 +320,7 @@ Mint_Y_Dark_Mod_Green () {
     gtk_theme=Mint-Y-Dark-Mod-Green
     qt_ct_theme=kvantum-dark
     kvantum_theme=Mint-Y-Dark-Mod-Green
-    rofi_theme=Dmenu-Mint-Y-Dark-Green
+    rofi_theme=Mint-Y-Dark-Green
     icon_theme=Papirus-Dark
     papirus_folders=orange
     # Call the theming files
@@ -343,7 +350,7 @@ Mint_Y_Dark_Mod_Grey () {
     gtk_theme=Mint-Y-Dark-Mod-Grey
     qt_ct_theme=kvantum-dark
     kvantum_theme=Mint-Y-Dark-Mod-Grey
-    rofi_theme=Dmenu-Mint-Y-Dark-Grey
+    rofi_theme=Mint-Y-Dark-Grey
     icon_theme=Papirus-Dark
     papirus_folders=white
     # Call the theming files
@@ -373,7 +380,7 @@ Mint_Y_Dark_Mod_Orange () {
     gtk_theme=Mint-Y-Dark-Mod-Orange
     qt_ct_theme=kvantum-dark
     kvantum_theme=Mint-Y-Dark-Mod-Orange
-    rofi_theme=Dmenu-Mint-Y-Dark-Orange
+    rofi_theme=Mint-Y-Dark-Orange
     icon_theme=Papirus-Dark
     papirus_folders=darkcyan
     # Call the theming files
@@ -403,7 +410,7 @@ Mint_Y_Dark_Mod_Purple () {
     gtk_theme=Mint-Y-Dark-Mod-Purple
     qt_ct_theme=kvantum-dark
     kvantum_theme=Mint-Y-Dark-Mod-Purple
-    rofi_theme=Dmenu-Mint-Y-Dark-Purple
+    rofi_theme=Mint-Y-Dark-Purple
     icon_theme=Papirus-Dark
     papirus_folders=orange
     # Call the theming files
@@ -433,7 +440,7 @@ Mint_Y_Dark_Mod_Red () {
     gtk_theme=Mint-Y-Dark-Mod-Red
     qt_ct_theme=kvantum-dark
     kvantum_theme=Mint-Y-Dark-Mod-Red
-    rofi_theme=Dmenu-Mint-Y-Dark-Red
+    rofi_theme=Mint-Y-Dark-Red
     icon_theme=Papirus-Dark
     papirus_folders=palebrown
     # Call the theming files
@@ -463,7 +470,7 @@ Mint_Y_Dark_Mod_Teal () {
     gtk_theme=Mint-Y-Dark-Mod-Teal
     qt_ct_theme=kvantum-dark
     kvantum_theme=Mint-Y-Dark-Mod-Teal
-    rofi_theme=Dmenu-Mint-Y-Dark-Teal
+    rofi_theme=Mint-Y-Dark-Teal
     icon_theme=Papirus-Dark
     papirus_folders=orange
     # Call the theming files
@@ -493,7 +500,7 @@ Yaru_Blue_Dark () {
     gtk_theme=Yaru-blue-dark
     qt_ct_theme=kvantum-dark
     kvantum_theme=Yaru-blue-dark
-    rofi_theme=Dmenu-Yaru-Blue-Dark
+    rofi_theme=Yaru-Blue-Dark
     icon_theme=Papirus-Dark
     papirus_folders=blue
     # Call the theming files
@@ -523,7 +530,7 @@ Yaru_Green_Dark () {
     gtk_theme=Yaru-viridian-dark
     qt_ct_theme=kvantum-dark
     kvantum_theme=Yaru-viridian-dark
-    rofi_theme=Dmenu-Yaru-Green-Dark
+    rofi_theme=Yaru-Green-Dark
     icon_theme=Papirus-Dark
     papirus_folders=orange
     # Call the theming files
@@ -553,7 +560,7 @@ Yaru_Orange_Dark () {
     gtk_theme=Yaru-dark
     qt_ct_theme=kvantum-dark
     kvantum_theme=Yaru-orange-dark
-    rofi_theme=Dmenu-Yaru-Orange-Dark
+    rofi_theme=Yaru-Orange-Dark
     icon_theme=Papirus-Dark
     papirus_folders=yaru
     # Call the theming files
@@ -583,7 +590,7 @@ Yaru_Purple_Dark () {
     gtk_theme=Yaru-purple-dark
     qt_ct_theme=kvantum-dark
     kvantum_theme=Yaru-purple-dark
-    rofi_theme=Dmenu-Yaru-Purple-Dark
+    rofi_theme=Yaru-Purple-Dark
     icon_theme=Papirus-Dark
     papirus_folders=orange
     # Call the theming files
@@ -613,7 +620,7 @@ Yaru_Sage_Dark () {
     gtk_theme=Yaru-sage-dark
     qt_ct_theme=kvantum-dark
     kvantum_theme=Yaru-sage-dark
-    rofi_theme=Dmenu-Yaru-Sage-Dark
+    rofi_theme=Yaru-Sage-Dark
     icon_theme=Papirus-Dark
     papirus_folders=paleorange
     # Call the theming files
@@ -643,7 +650,7 @@ Yaru_Teal_Dark () {
     gtk_theme=Yaru-prussiangreen-dark
     qt_ct_theme=kvantum-dark
     kvantum_theme=Yaru-prussiangreen-dark
-    rofi_theme=Dmenu-Yaru-Teal-Dark
+    rofi_theme=Yaru-Teal-Dark
     icon_theme=Papirus-Dark
     papirus_folders=orange
     # Call the theming files
