@@ -14,6 +14,7 @@ linux installation scripts
 	- use [`debian-install-gnome.sh`](https://github.com/e33io/scripts/blob/main/debian-install-gnome.sh) to [install the Gnome desktop environment](https://github.com/e33io/reference-wiki/blob/main/installation-docs/debian-gnome-installation.md)
 
 - use the scripts below with an [Arch](https://wiki.archlinux.org/title/Archinstall) "Minimal" installation
+	- use [`arch-options.sh`](https://github.com/e33io/scripts/blob/main/arch-options.sh) to select a WM or DE to install
 	- use [`arch-install-i3.sh`](https://github.com/e33io/scripts/blob/main/arch-install-i3.sh) to [install the i3 window manager](https://github.com/e33io/reference-wiki/blob/main/installation-docs/arch-i3-installation.md)
 	- use [`arch-install-jwm.sh`](https://github.com/e33io/scripts/blob/main/arch-install-jwm.sh) to [install the JWM window manager](https://github.com/e33io/reference-wiki/blob/main/installation-docs/arch-jwm-installation.md)
 	- use [`arch-install-xfce.sh`](https://github.com/e33io/scripts/blob/main/arch-install-xfce.sh) to [install the Xfce desktop environment](https://github.com/e33io/reference-wiki/blob/main/installation-docs/arch-xfce-installation.md)
