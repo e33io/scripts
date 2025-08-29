@@ -9,34 +9,34 @@
 # ======================================================================
 
 if [ "$(id -u)" = 0 ]; then
-    echo "################################################################"
+    echo "======================================================================="
     echo "This script MUST NOT be run as root user."
     echo "Run this script as a normal user."
     echo "You will be asked for a sudo password when necessary."
-    echo "################################################################"
+    echo "======================================================================="
     exit 1
 fi
 
 if [ ! -f "/etc/debian_version" ]; then
-    echo "################################################################"
+    echo "======================================================================="
     echo "This script is NOT compatible with your version of Linux!"
     echo "It only works with Debian or Ubuntu Linux, and it will"
     echo "exit now without running or making any changes."
-    echo "################################################################"
+    echo "======================================================================="
     exit 1
 fi
 
-echo "################################################################"
+echo "======================================================================="
 echo "Install Yaru themes, icons and dependencies"
-echo "################################################################"
+echo "======================================================================="
 
 sudo apt update
 sudo apt -y install yaru-theme-gtk yaru-theme-icon gnome-themes-extra gtk2-engines gtk2-engines-murrine \
 gtk2-engines-pixbuf libglib2.0-bin libgtk-3-common libgtk-4-common libgtk2.0-common
 
-echo "################################################################"
+echo "======================================================================="
 echo "Remove prespecified GTK2 icon sizes to fix scaling issues"
-echo "################################################################"
+echo "======================================================================="
 
 sudo sed -i 's/gtk-icon-sizes.*/#/' /usr/share/themes/Yaru*/gtk-2.0/gtkrc
 sudo sed -i 's/gtk-menu.*/#/' /usr/share/themes/Yaru*/gtk-2.0/gtkrc
@@ -45,9 +45,9 @@ sudo sed -i 's/gtk-small-toolbar.*/#/' /usr/share/themes/Yaru*/gtk-2.0/gtkrc
 sudo sed -i 's/gtk-dnd.*/#/' /usr/share/themes/Yaru*/gtk-2.0/gtkrc
 sudo sed -i 's/gtk-dialog.*/#/' /usr/share/themes/Yaru*/gtk-2.0/gtkrc
 
-echo "################################################################"
+echo "======================================================================="
 echo "Install Qt and Kvantum styling packages"
-echo "################################################################"
+echo "======================================================================="
 
 sudo apt -y install adwaita-qt* qt-style-kvantum git
 
@@ -55,24 +55,24 @@ if [ ! -f "/bin/lxqt-session" ]; then
     sudo apt -y install qt*ct
 fi
 
-echo "################################################################"
+echo "======================================================================="
 echo "Clone custom theming repo"
-echo "################################################################"
+echo "======================================================================="
 
 git clone https://github.com/e33io/theming $HOME/theming-temp
 
-echo "################################################################"
+echo "======================================================================="
 echo "Copy custom Yaru Kvantum themes"
-echo "################################################################"
+echo "======================================================================="
 
 sudo mkdir -p /usr/share/Kvantum
 sudo cp -R $HOME/theming-temp/Kvantum/Yaru* /usr/share/Kvantum
 rm -rf $HOME/theming-temp
 
-echo "################################################################"
+echo "======================================================================="
 echo "Link config files to root user directories for styling"
 echo "su/root applications"
-echo "################################################################"
+echo "======================================================================="
 
 sudo mkdir -p /root/.config
 
@@ -116,6 +116,6 @@ if [ -f "/usr/bin/qt6ct" ]; then
     sudo ln -sf $HOME/.config/qt6ct/* /root/.config/qt6ct
 fi
 
-echo "################################################################"
+echo "======================================================================="
 echo "All done, themes and icons are now installed"
-echo "################################################################"
+echo "======================================================================="

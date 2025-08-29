@@ -9,27 +9,27 @@
 # ===========================================================================
 
 if [ "$(id -u)" = 0 ]; then
-    echo "################################################################"
+    echo "======================================================================="
     echo "This script MUST NOT be run as root user."
     echo "Run this script as a normal user."
     echo "You will be asked for a sudo password when necessary."
-    echo "################################################################"
+    echo "======================================================================="
     exit 1
 fi
 
 if [ ! -f "/etc/pacman.conf" ]; then
-    echo "################################################################"
+    echo "======================================================================="
     echo "This script is NOT compatible with your version of Linux!"
     echo "It only works with Arch Linux, and it will exit now"
     echo "without running or making any changes."
-    echo "################################################################"
+    echo "======================================================================="
     exit 1
 fi
 
 if ! command -v yay > /dev/null 2>&1; then
-    echo "################################################################"
+    echo "======================================================================="
     echo "Setup Yay for AUR"
-    echo "################################################################"
+    echo "======================================================================="
 
     git clone https://aur.archlinux.org/yay-bin.git $HOME/yay-bin
     cd $HOME/yay-bin
@@ -38,16 +38,16 @@ if ! command -v yay > /dev/null 2>&1; then
     rm -rf $HOME/yay-bin
 fi
 
-echo "################################################################"
+echo "======================================================================="
 echo "Install Yaru themes and dependencies"
-echo "################################################################"
+echo "======================================================================="
 
 sudo pacman -Syu --noconfirm --needed gnome-themes-extra gtk-engine-murrine less git
 yay -S --noconfirm --needed --sudoloop yaru-gtk-theme yaru-icon-theme
 
-echo "################################################################"
+echo "======================================================================="
 echo "Remove prespecified GTK2 icon sizes to fix scaling issues"
-echo "################################################################"
+echo "======================================================================="
 
 sudo sed -i 's/gtk-icon-sizes.*/#/' /usr/share/themes/Yaru*/gtk-2.0/gtkrc
 sudo sed -i 's/gtk-menu.*/#/' /usr/share/themes/Yaru*/gtk-2.0/gtkrc
@@ -56,9 +56,9 @@ sudo sed -i 's/gtk-small-toolbar.*/#/' /usr/share/themes/Yaru*/gtk-2.0/gtkrc
 sudo sed -i 's/gtk-dnd.*/#/' /usr/share/themes/Yaru*/gtk-2.0/gtkrc
 sudo sed -i 's/gtk-dialog.*/#/' /usr/share/themes/Yaru*/gtk-2.0/gtkrc
 
-echo "################################################################"
+echo "======================================================================="
 echo "Install Qt and Kvantum styling packages"
-echo "################################################################"
+echo "======================================================================="
 
 sudo pacman -Syu --noconfirm --needed kvantum kvantum-qt5
 yay -S --noconfirm --needed --sudoloop adwaita-qt5-git adwaita-qt6-git
@@ -67,24 +67,24 @@ if [ ! -f "/bin/lxqt-session" ]; then
     sudo pacman -S --noconfirm --needed qt5ct qt6ct
 fi
 
-echo "################################################################"
+echo "======================================================================="
 echo "Clone custom theming repo"
-echo "################################################################"
+echo "======================================================================="
 
 git clone https://github.com/e33io/theming $HOME/theming-temp
 
-echo "################################################################"
+echo "======================================================================="
 echo "Copy custom Yaru Kvantum themes"
-echo "################################################################"
+echo "======================================================================="
 
 sudo mkdir -p /usr/share/Kvantum
 sudo cp -R $HOME/theming-temp/Kvantum/Yaru* /usr/share/Kvantum
 rm -rf $HOME/theming-temp
 
-echo "################################################################"
+echo "======================================================================="
 echo "Link config files to root user directories for styling"
 echo "su/root applications"
-echo "################################################################"
+echo "======================================================================="
 
 sudo mkdir -p /root/.config
 
@@ -128,6 +128,6 @@ if [ -f "/usr/bin/qt6ct" ]; then
     sudo ln -sf $HOME/.config/qt6ct/* /root/.config/qt6ct
 fi
 
-echo "################################################################"
+echo "======================================================================="
 echo "All done, themes and icons are now installed"
-echo "################################################################"
+echo "======================================================================="

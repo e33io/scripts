@@ -19,18 +19,18 @@
 # =====================================================================
 
 if [ "$(id -u)" = 0 ]; then
-    echo "################################################################"
+    echo "======================================================================="
     echo "This script MUST NOT be run as root user."
     echo "Run this script as a normal user."
     echo "You will be asked for a sudo password when necessary."
-    echo "################################################################"
+    echo "======================================================================="
     exit 1
 fi
 
 clear
-echo "################################################################"
+echo "======================================================================="
 echo "Debian Initial Setup (read carefully)"
-echo "################################################################"
+echo "======================================================================="
 echo "The initial setup option below does the following things:"
 echo "  - Runs console-setup to set TTY font and font size"
 echo "      Suggested selections:"
@@ -56,9 +56,9 @@ while true; do
 done
 
 clear
-echo "################################################################"
+echo "======================================================================="
 echo "Window Manager or Desktop Environment Installation"
-echo "################################################################"
+echo "======================================================================="
 echo "The options below will install a selected window manager"
 echo "or desktop environment and a base set of apps for a"
 echo "ready-to-use desktop session."

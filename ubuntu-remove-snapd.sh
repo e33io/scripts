@@ -9,25 +9,25 @@
 # ======================================================================
 
 if [ "$(id -u)" = 0 ]; then
-    echo "################################################################"
+    echo "======================================================================="
     echo "This script MUST NOT be run as root user."
     echo "Run this script as a normal user."
     echo "You will be asked for a sudo password when necessary."
-    echo "################################################################"
+    echo "======================================================================="
     exit 1
 fi
 
-echo "################################################################"
+echo "======================================================================="
 echo "Update and upgrade system"
-echo "################################################################"
+echo "======================================================================="
 
 sudo apt update
 sudo apt -y upgrade
 
-echo "################################################################"
+echo "======================================================================="
 echo "Disable and remove snapd, then de-prioritize snapd"
 echo "packages to avoid snap(s) installation"
-echo "################################################################"
+echo "======================================================================="
 
 if [ -d "/snap/firefox" ]; then
     sudo snap remove firefox
@@ -87,9 +87,9 @@ echo "Package: snapd
 Pin: release a=*
 Pin-Priority: -10" | sudo tee /etc/apt/preferences.d/nosnap.pref > /dev/null
 
-echo "################################################################"
+echo "======================================================================="
 echo "Install Flatpak package and add Flathub repository"
-echo "################################################################"
+echo "======================================================================="
 
 sudo apt -y install flatpak
 
@@ -100,10 +100,10 @@ fi
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 if [ -f "/bin/gnome-software" ]; then
-    echo "################################################################"
+    echo "======================================================================="
     echo "Add org.gnome.Software.desktop file to manually"
     echo "start Gnome Software (disable autostart)"
-    echo "################################################################"
+    echo "======================================================================="
 
     mkdir -p $HOME/.config/autostart
     cp -R /etc/xdg/autostart/org.gnome.Software.desktop $HOME/.config/autostart
@@ -111,9 +111,9 @@ if [ -f "/bin/gnome-software" ]; then
     | tee -a $HOME/.config/autostart/org.gnome.Software.desktop > /dev/null
 fi
 
-echo "################################################################"
+echo "======================================================================="
 echo "Revert fonts to classic Ubuntu fonts and reboot system"
-echo "################################################################"
+echo "======================================================================="
 
 sudo apt -y install fonts-ubuntu-classic fonts-ubuntu-console
 fc-cache -f
