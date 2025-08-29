@@ -1,21 +1,21 @@
 #!/bin/bash
 
-# ======================================================================
+# =============================================================================
 # Arch Linux - Install Gnome
 # URL: https://github.com/e33io/scripts/blob/main/arch-install-gnome.sh
-# ----------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
 # Only use with a fresh "Minimal" archinstall (Profile > Type > Minimal)
 # to install the Gnome desktop environment and a base set of apps for a
 # ready-to-use desktop session.
-# ----------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 # Instructions for running this script:
 #   sudo pacman -Syu
 #   sudo pacman -S git
 #   git clone https://github.com/e33io/scripts
 #   cd scripts
 #   sh arch-install-gnome.sh
-# ======================================================================
+# =============================================================================
 
 if [ "$(id -u)" = 0 ]; then
     echo "======================================================================="

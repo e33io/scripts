@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# ====================================================================
+# =============================================================================
 # Gnome Dconf Setup
 # URL: https://github.com/e33io/scripts/blob/main/gnome-dconf-setup.sh
-# ====================================================================
+# =============================================================================
 
 dconf write /ca/desrt/dconf-editor/window-height "700"
 dconf write /ca/desrt/dconf-editor/window-is-maximized "false"

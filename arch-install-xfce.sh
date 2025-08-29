@@ -1,21 +1,21 @@
 #!/bin/bash
 
-# ======================================================================
+# =============================================================================
 # Arch Linux - Install Xfce
 # URL: https://github.com/e33io/scripts/blob/main/arch-install-xfce.sh
-# ----------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
 # Only use with a fresh "Minimal" archinstall (Profile > Type > Minimal)
 # to install the Xfce desktop environment and a base set of apps for a
 # ready-to-use desktop session.
-# ----------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 # Instructions for running this script:
 #   sudo pacman -Syu
 #   sudo pacman -S git
 #   git clone https://github.com/e33io/scripts
 #   cd scripts
 #   sh arch-install-xfce.sh
-# ======================================================================
+# =============================================================================
 
 if [ "$(id -u)" = 0 ]; then
     echo "======================================================================="

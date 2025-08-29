@@ -1,22 +1,22 @@
 #!/bin/bash
 
-# =====================================================================
+# =============================================================================
 # Debian Options for Initial Setup and WM or DE Installation
 # URL: https://github.com/e33io/scripts/blob/main/debian-options.sh
-# ---------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
 # NOTE! For best results only select "standard system utilities" on the
 # Software selection screen (uncheck all the rest) during the Debian
 # install process for a clean minimal install base.
 # Reference screenshot:
 #   https://i.e33.io/screenshots/deb-minimal-install.jpg
-# ---------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 # Instructions for running this script:
 #   sudo apt install git
 #   git clone https://github.com/e33io/scripts
 #   cd scripts
 #   sh debian-options.sh
-# =====================================================================
+# =============================================================================
 
 if [ "$(id -u)" = 0 ]; then
     echo "======================================================================="
