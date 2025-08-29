@@ -149,9 +149,9 @@ while true; do
     echo "The option below lets you select a configuration specific"
     echo "to your monitor type for proper display scaling."
     echo "======================================================================="
-    echo "   1) Standard HD (96 dpi settings for 1x scaling)"
-    echo "   2) HiDPI (192 dpi settings for 2x scaling)"
-    echo "----------------------------------------------------------------"
+    echo "  1) Standard HD (96 dpi settings for 1x scaling)"
+    echo "  2) HiDPI (192 dpi settings for 2x scaling)"
+    echo "-----------------------------------------------------------------------"
 
     read -p "What type of monitor are you using? " n
     case $n in

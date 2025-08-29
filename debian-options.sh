@@ -41,7 +41,7 @@ echo "        - 8x16 for non-HiDPI and VMs, or 16x32 for HiDPI"
 echo "  - Updates Debian 13 Trixie apt sources.list file"
 echo "  - Installs additional firmware packages"
 echo "  - Makes and sets up a swap file (if one doesn't exist)"
-echo "----------------------------------------------------------------"
+echo "-----------------------------------------------------------------------"
 
 while true; do
     read -p "Do you want to run the initial setup option? (y/n) " yn
@@ -62,7 +62,7 @@ echo "======================================================================="
 echo "The options below will install a selected window manager"
 echo "or desktop environment and a base set of apps for a"
 echo "ready-to-use desktop session."
-echo "----------------------------------------------------------------"
+echo "-----------------------------------------------------------------------"
 echo "List of window managers and desktop environments:"
 echo "  0) None, exit script now and install my own"
 echo "  1) i3 Window Manager (tiling WM)"

@@ -23,9 +23,9 @@ if { [ -d "$HOME/.config/i3" ] || [ -d "$HOME/.config/jwm" ]; }; then
         echo "The option below lets you select a configuration"
         echo "specific to your computer type."
         echo "======================================================================="
-        echo "   1) Desktop"
-        echo "   2) Laptop"
-        echo "----------------------------------------------------------------"
+        echo "  1) Desktop"
+        echo "  2) Laptop"
+        echo "-----------------------------------------------------------------------"
 
         read -p "What type of computer are you using? " n
         case $n in

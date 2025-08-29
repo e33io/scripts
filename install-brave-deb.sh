@@ -37,7 +37,7 @@ sudo apt -y install brave-browser
 echo "======================================================================="
 echo "Option to set Brave as the default DebianAlternatives"
 echo "(x-www-browser) web browser"
-echo "----------------------------------------------------------------"
+echo "-----------------------------------------------------------------------"
 
 while true; do
     read -p "Do you want to set Brave as the default DebianAlternatives (x-www-browser) browser? (y/n) " yn

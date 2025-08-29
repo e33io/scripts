@@ -37,7 +37,7 @@ sudo update-alternatives --install /usr/bin/x-www-browser x-www-browser /usr/bin
 echo "======================================================================="
 echo "Option to set LibreWolf as the default DebianAlternatives"
 echo "(x-www-browser) web browser"
-echo "----------------------------------------------------------------"
+echo "-----------------------------------------------------------------------"
 
 while true; do
     read -p "Do you want to set LibreWolf as the default DebianAlternatives (x-www-browser) browser? (y/n) " yn
