@@ -7,9 +7,9 @@
 # Use this script at your own risk, it will overwrite existing files!
 # =============================================================================
 
-echo "======================================================================="
+echo "========================================================================"
 echo "Update lighter gray theme colors to darker gray color"
-echo "======================================================================="
+echo "========================================================================"
 
 sudo sed -i 's/#404040/#1e1e1e/g' /usr/share/themes/Mint-*-Dark-*/cinnamon/cinnamon.css
 sudo sed -i 's/#404040/#1e1e1e/g' /usr/share/themes/Mint-*-Dark-*/gtk-2.0/gtkrc
@@ -31,9 +31,9 @@ sudo sed -i 's/background-color: rgba(99, 99, 99, 0\.4)/background-color: rgba(3
 sudo sed -i 's/background-color: rgba(99, 99, 99, 0\.4)/background-color: rgba(30, 30, 30, 1)/g' \
 /usr/share/themes/Mint-*-Dark*/gtk-4.0/gtk*
 
-echo "======================================================================="
+echo "========================================================================"
 echo "Add custom CSS to update colors, borders and padding"
-echo "======================================================================="
+echo "========================================================================"
 
 echo '.primary-toolbar toolbar, .primary-toolbar .inline-toolbar,
 .primary-toolbar:not(.libreoffice-toolbar) {
@@ -89,6 +89,6 @@ tooltip * {
                  /usr/share/themes/Mint-*-Dark/gtk-3.0/gtk* \
                  /usr/share/themes/Mint-*-Dark*/gtk-4.0/gtk* > /dev/null
 
-echo "======================================================================="
+echo "========================================================================"
 echo "Logout or reboot the PC for changes to take effect"
-echo "======================================================================="
+echo "========================================================================"

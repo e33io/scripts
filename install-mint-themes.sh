@@ -9,26 +9,26 @@
 # =============================================================================
 
 if [ "$(id -u)" = 0 ]; then
-    echo "======================================================================="
+    echo "========================================================================"
     echo "This script MUST NOT be run as root user."
     echo "Run this script as a normal user."
     echo "You will be asked for a sudo password when necessary."
-    echo "======================================================================="
+    echo "========================================================================"
     exit 1
 fi
 
 if [ ! -f "/etc/debian_version" ]; then
-    echo "======================================================================="
+    echo "========================================================================"
     echo "This script is NOT compatible with your version of Linux!"
     echo "It only works with Debian or Ubuntu Linux, and it will"
     echo "exit now without running or making any changes."
-    echo "======================================================================="
+    echo "========================================================================"
     exit 1
 fi
 
-echo "======================================================================="
+echo "========================================================================"
 echo "Install theming dependencies"
-echo "======================================================================="
+echo "========================================================================"
 
 sudo apt update
 sudo apt -y install gnome-themes-extra gtk2-engines gtk2-engines-murrine gtk2-engines-pixbuf libglib2.0-bin \
@@ -38,9 +38,9 @@ if [ ! -f "/bin/lxqt-session" ]; then
     sudo apt -y install qt*ct
 fi
 
-echo "======================================================================="
+echo "========================================================================"
 echo "Install Linux Mint themes and icons"
-echo "======================================================================="
+echo "========================================================================"
 
 echo "Download mint-x-icons..."
 curl -kOL# http://packages.linuxmint.com/pool/main/m/mint-x-icons/mint-x-icons_1.7.2_all.deb
@@ -67,9 +67,9 @@ curl -kOL# http://packages.linuxmint.com/pool/main/m/mint-l-theme/mint-l-theme_1
 sudo apt-get -yq install ./mint-l-theme_1.9.9_all.deb
 rm mint-l-theme_1.9.9_all.deb
 
-echo "======================================================================="
+echo "========================================================================"
 echo "Remove prespecified GTK2 icon sizes to fix scaling issues"
-echo "======================================================================="
+echo "========================================================================"
 
 sudo sed -i 's/gtk-icon-sizes.*/#/' /usr/share/themes/Mint*/gtk-2.0/gtkrc
 sudo sed -i 's/gtk-menu.*/#/' /usr/share/themes/Mint*/gtk-2.0/gtkrc
@@ -78,24 +78,24 @@ sudo sed -i 's/gtk-small-toolbar.*/#/' /usr/share/themes/Mint*/gtk-2.0/gtkrc
 sudo sed -i 's/gtk-dnd.*/#/' /usr/share/themes/Mint*/gtk-2.0/gtkrc
 sudo sed -i 's/gtk-dialog.*/#/' /usr/share/themes/Mint*/gtk-2.0/gtkrc
 
-echo "======================================================================="
+echo "========================================================================"
 echo "Clone custom theming repo"
-echo "======================================================================="
+echo "========================================================================"
 
 git clone https://github.com/e33io/theming $HOME/theming-temp
 
-echo "======================================================================="
+echo "========================================================================"
 echo "Copy custom Mint Dark Mod themes"
-echo "======================================================================="
+echo "========================================================================"
 
 sudo cp -R $HOME/theming-temp/gtk/Mint* /usr/share/themes
 sudo mkdir -p /usr/share/Kvantum
 sudo cp -R $HOME/theming-temp/Kvantum/Mint* /usr/share/Kvantum
 
-echo "======================================================================="
+echo "========================================================================"
 echo "Link config files to root user directories for styling"
 echo "su/root applications"
-echo "======================================================================="
+echo "========================================================================"
 
 sudo mkdir -p /root/.config
 
@@ -139,12 +139,12 @@ if [ -f "/usr/bin/qt6ct" ]; then
     sudo ln -sf $HOME/.config/qt6ct/* /root/.config/qt6ct
 fi
 
-echo "======================================================================="
+echo "========================================================================"
 echo "Clean up user directory"
-echo "======================================================================="
+echo "========================================================================"
 
 rm -rf $HOME/theming-temp
 
-echo "======================================================================="
+echo "========================================================================"
 echo "All done, themes and icons are now installed"
-echo "======================================================================="
+echo "========================================================================"

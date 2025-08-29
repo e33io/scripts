@@ -21,24 +21,24 @@
 # =============================================================================
 
 if [ "$(id -u)" = 0 ]; then
-    echo "======================================================================="
+    echo "========================================================================"
     echo "This script MUST NOT be run as root user."
     echo "Run this script as a normal user."
     echo "You will be asked for a sudo password when necessary."
-    echo "======================================================================="
+    echo "========================================================================"
     exit 1
 fi
 
-echo "======================================================================="
+echo "========================================================================"
 echo "Update and upgrade system"
-echo "======================================================================="
+echo "========================================================================"
 
 sudo apt update
 sudo apt -y upgrade
 
-echo "======================================================================="
+echo "========================================================================"
 echo "Install JWM and other packages"
-echo "======================================================================="
+echo "========================================================================"
 
 sudo apt -y install jwm polybar network-manager i3lock rofi dunst playerctl xssproxy xsel xclip xinput \
 x11-utils lxappearance qt*ct adwaita-qt* gnome-themes-extra papirus-icon-theme breeze-icon-theme \
@@ -52,16 +52,16 @@ libreoffice-impress libreoffice-writer libreoffice-gtk3 timeshift xterm lazygit 
 cmatrix ncal micro ranger ueberzug caca-utils highlight atool w3m poppler-utils mediainfo fzf \
 libimage-exiftool-perl apt-transport-https curl rsync wmctrl xdotool xbindkeys
 
-echo "======================================================================="
+echo "========================================================================"
 echo "Enable wireplumber service (running as user)"
-echo "======================================================================="
+echo "========================================================================"
 
 systemctl --user --now enable wireplumber.service
 
 if ! command -v brave-browser > /dev/null 2>&1; then
-    echo "======================================================================="
+    echo "========================================================================"
     echo "Install Brave Browser"
-    echo "======================================================================="
+    echo "========================================================================"
 
     sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg \
     https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
@@ -73,9 +73,9 @@ if ! command -v brave-browser > /dev/null 2>&1; then
 fi
 
 if ! command -v signal-desktop > /dev/null 2>&1; then
-    echo "======================================================================="
+    echo "========================================================================"
     echo "Install Signal App"
-    echo "======================================================================="
+    echo "========================================================================"
 
     curl -fsSL https://updates.signal.org/desktop/apt/keys.asc \
     | sudo gpg --dearmor -o /usr/share/keyrings/signal-desktop-keyring.gpg
@@ -86,16 +86,16 @@ if ! command -v signal-desktop > /dev/null 2>&1; then
     sudo apt -y install signal-desktop
 fi
 
-echo "======================================================================="
+echo "========================================================================"
 echo "Clone custom configuration files"
-echo "======================================================================="
+echo "========================================================================"
 
 git clone https://github.com/e33io/dotfiles $HOME/dotfiles
 git clone https://github.com/e33io/opt-dots $HOME/opt-dots
 
-echo "======================================================================="
+echo "========================================================================"
 echo "Copy custom configuration files"
-echo "======================================================================="
+echo "========================================================================"
 
 cp -R $HOME/dotfiles/.config $HOME
 cp -R $HOME/dotfiles/.icons $HOME
@@ -126,17 +126,17 @@ sudo ln -sf $HOME/.gtkrc-2.0 /root/.gtkrc-2.0
 sudo update-initramfs -u
 sudo update-grub
 
-echo "======================================================================="
+echo "========================================================================"
 echo "Add user .bash_profile and .xsessionrc files"
-echo "======================================================================="
+echo "========================================================================"
 
 echo "if [ -f ~/.profile ]; then
     . ~/.profile
 fi" | tee $HOME/.bash_profile $HOME/.xsessionrc > /dev/null
 
-echo "======================================================================="
+echo "========================================================================"
 echo "Update root .bashrc file"
-echo "======================================================================="
+echo "========================================================================"
 
 echo '#
 # Set command prompt
@@ -145,13 +145,13 @@ PS1="\[\e[01;31m\]\u \w/#\[\e[m\] "
 
 clear
 while true; do
-    echo "======================================================================="
+    echo "========================================================================"
     echo "The option below lets you select a configuration specific"
     echo "to your monitor type for proper display scaling."
-    echo "======================================================================="
+    echo "========================================================================"
     echo "  1) Standard HD (96 dpi settings for 1x scaling)"
     echo "  2) HiDPI (192 dpi settings for 2x scaling)"
-    echo "-----------------------------------------------------------------------"
+    echo "------------------------------------------------------------------------"
 
     read -p "What type of monitor are you using? " n
     case $n in
@@ -166,38 +166,38 @@ done
 
 pc_type="$(hostnamectl chassis)"
 if [ $pc_type = laptop ]; then
-    echo "======================================================================="
+    echo "========================================================================"
     echo "Modify window manager configs for laptop use"
-    echo "======================================================================="
+    echo "========================================================================"
 
     sh $HOME/scripts/mod-wm-laptop.sh
 fi
 if [ $pc_type = vm ]; then
-    echo "======================================================================="
+    echo "========================================================================"
     echo "Install spice-vdagent and update VM-specific configs"
-    echo "======================================================================="
+    echo "========================================================================"
 
     sh $HOME/scripts/mod-virt-machines.sh
 fi
 
-echo "======================================================================="
+echo "========================================================================"
 echo "Update x-terminal-emulator and x-www-browser settings"
-echo "======================================================================="
+echo "========================================================================"
 
 sudo update-alternatives --set x-terminal-emulator /usr/bin/kitty
 sudo update-alternatives --set x-www-browser /usr/bin/brave-browser-stable
 
 if [ -f "/etc/devuan_version" ]; then
-    echo "======================================================================="
+    echo "========================================================================"
     echo "Update Debian configs for use with Devuan Linux"
-    echo "======================================================================="
+    echo "========================================================================"
 
     sh $HOME/scripts/mod-debian-to-devuan.sh
 fi
 
-echo "======================================================================="
+echo "========================================================================"
 echo "Add bookmarks and clean up user directory"
-echo "======================================================================="
+echo "========================================================================"
 
 xdg-user-dirs-update
 echo "file:///home/$(whoami)/Downloads
@@ -216,6 +216,6 @@ rm -rf $HOME/dotfiles
 rm -rf $HOME/opt-dots
 rm -rf $HOME/scripts
 
-echo "======================================================================="
+echo "========================================================================"
 echo "All done, you can now run other commands or reboot the PC"
-echo "======================================================================="
+echo "========================================================================"

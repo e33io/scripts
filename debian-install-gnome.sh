@@ -16,24 +16,24 @@
 # =============================================================================
 
 if [ "$(id -u)" = 0 ]; then
-    echo "======================================================================="
+    echo "========================================================================"
     echo "This script MUST NOT be run as root user."
     echo "Run this script as a normal user."
     echo "You will be asked for a sudo password when necessary."
-    echo "======================================================================="
+    echo "========================================================================"
     exit 1
 fi
 
-echo "======================================================================="
+echo "========================================================================"
 echo "Update and upgrade system"
-echo "======================================================================="
+echo "========================================================================"
 
 sudo apt update
 sudo apt -y upgrade
 
-echo "======================================================================="
+echo "========================================================================"
 echo "Install Gnome and other packages"
-echo "======================================================================="
+echo "========================================================================"
 
 sudo apt -y install gnome-core gnome-tweaks gnome-shell-extension-manager gnome-shell-extension-appindicator \
 file-roller ptyxis loupe gnome-snapshot gnome-themes-extra adwaita-qt* qt*ct papirus-icon-theme plymouth-themes \
@@ -47,17 +47,17 @@ if [ $pc_type = desktop ]; then
     sudo apt -y install input-remapper-gtk
 fi
 if [ $pc_type = vm ]; then
-    echo "======================================================================="
+    echo "========================================================================"
     echo "Install spice-vdagent and update VM-specific configs"
-    echo "======================================================================="
+    echo "========================================================================"
 
     sh $HOME/scripts/mod-virt-machines.sh
 fi
 
 if ! command -v brave-browser > /dev/null 2>&1; then
-    echo "======================================================================="
+    echo "========================================================================"
     echo "Install Brave Browser"
-    echo "======================================================================="
+    echo "========================================================================"
 
     sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg \
     https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
@@ -69,9 +69,9 @@ if ! command -v brave-browser > /dev/null 2>&1; then
 fi
 
 if ! command -v signal-desktop > /dev/null 2>&1; then
-    echo "======================================================================="
+    echo "========================================================================"
     echo "Install Signal App"
-    echo "======================================================================="
+    echo "========================================================================"
 
     curl -fsSL https://updates.signal.org/desktop/apt/keys.asc \
     | sudo gpg --dearmor -o /usr/share/keyrings/signal-desktop-keyring.gpg
@@ -82,16 +82,16 @@ if ! command -v signal-desktop > /dev/null 2>&1; then
     sudo apt -y install signal-desktop
 fi
 
-echo "======================================================================="
+echo "========================================================================"
 echo "Clone custom configuration files"
-echo "======================================================================="
+echo "========================================================================"
 
 git clone https://github.com/e33io/dotfiles $HOME/dotfiles
 git clone https://github.com/e33io/opt-dots $HOME/opt-dots
 
-echo "======================================================================="
+echo "========================================================================"
 echo "Copy custom configuration files"
-echo "======================================================================="
+echo "========================================================================"
 
 mkdir -p $HOME/.config/micro
 cp -R $HOME/dotfiles/.config/micro $HOME/.config
@@ -112,32 +112,32 @@ sudo cp -R /usr/share/gtksourceview-4/* /usr/share/gtksourceview-5
 sudo update-initramfs -u
 sudo update-grub
 
-echo "======================================================================="
+echo "========================================================================"
 echo "Add user .bash_profile and .xsessionrc files"
-echo "======================================================================="
+echo "========================================================================"
 
 echo "if [ -f ~/.profile ]; then
     . ~/.profile
 fi" | tee $HOME/.bash_profile $HOME/.xsessionrc > /dev/null
 
-echo "======================================================================="
+echo "========================================================================"
 echo "Update root .bashrc file"
-echo "======================================================================="
+echo "========================================================================"
 
 echo '#
 # Set command prompt
 PS1="\[\e[01;31m\]\u \w/#\[\e[m\] "
 #' | sudo tee -a /root/.bashrc > /dev/null
 
-echo "======================================================================="
+echo "========================================================================"
 echo "Update x-www-browser settings"
-echo "======================================================================="
+echo "========================================================================"
 
 sudo update-alternatives --set x-www-browser /usr/bin/brave-browser-stable
 
-echo "======================================================================="
+echo "========================================================================"
 echo "Add bookmarks, run dconf script and clean up files"
-echo "======================================================================="
+echo "========================================================================"
 
 xdg-user-dirs-update
 echo "file:///home/$(whoami)/Downloads
@@ -157,6 +157,6 @@ rm -rf $HOME/dotfiles
 rm -rf $HOME/opt-dots
 rm -rf $HOME/scripts
 
-echo "======================================================================="
+echo "========================================================================"
 echo "All done, you can now run other commands or reboot the PC"
-echo "======================================================================="
+echo "========================================================================"

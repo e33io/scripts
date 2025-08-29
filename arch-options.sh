@@ -18,22 +18,22 @@
 # =============================================================================
 
 if [ "$(id -u)" = 0 ]; then
-    echo "======================================================================="
+    echo "========================================================================"
     echo "This script MUST NOT be run as root user."
     echo "Run this script as a normal user."
     echo "You will be asked for a sudo password when necessary."
-    echo "======================================================================="
+    echo "========================================================================"
     exit 1
 fi
 
 clear
-echo "======================================================================="
+echo "========================================================================"
 echo "Window Manager or Desktop Environment Installation"
-echo "======================================================================="
+echo "========================================================================"
 echo "The options below will install a selected window manager"
 echo "or desktop environment and a base set of apps for a"
 echo "ready-to-use desktop session."
-echo "-----------------------------------------------------------------------"
+echo "------------------------------------------------------------------------"
 echo "List of window managers and desktop environments:"
 echo "  0) None, exit script now and install my own"
 echo "  1) i3 Window Manager (tiling WM)"

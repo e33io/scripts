@@ -23,17 +23,17 @@
 # =============================================================================
 
 if [ "$(id -u)" = 0 ]; then
-    echo "======================================================================="
+    echo "========================================================================"
     echo "This script MUST NOT be run as root user."
     echo "Run this script as a normal user."
     echo "You will be asked for a sudo password when necessary."
-    echo "======================================================================="
+    echo "========================================================================"
     exit 1
 fi
 
-echo "======================================================================="
+echo "========================================================================"
 echo "Install Xorg and other packages"
-echo "======================================================================="
+echo "========================================================================"
 
 sudo pacman -S --noconfirm --needed xorg-server xorg-apps polybar i3lock xss-lock dmenu rofi dunst gvfs nfs-utils \
 cifs-utils fuse rsync cronie git curl wget tar less 7zip base-devel xsel xclip playerctl dex mate-polkit upower \
@@ -45,9 +45,9 @@ bash-completion vim nano micro fzf lazygit htop fastfetch cmus cava ranger ueber
 perl-image-exiftool signal-desktop gpick darktable gimp inkscape filezilla libreoffice
 
 if ! command -v yay > /dev/null 2>&1; then
-    echo "======================================================================="
+    echo "========================================================================"
     echo "Setup Yay for AUR"
-    echo "======================================================================="
+    echo "========================================================================"
 
     git clone https://aur.archlinux.org/yay-bin.git $HOME/yay-bin
     cd $HOME/yay-bin
@@ -56,29 +56,29 @@ if ! command -v yay > /dev/null 2>&1; then
     rm -rf $HOME/yay-bin
 fi
 
-echo "======================================================================="
+echo "========================================================================"
 echo "Install JWM and other packages from AUR"
-echo "======================================================================="
+echo "========================================================================"
 
 yay -S --noconfirm --needed --sudoloop jwm xssproxy adwaita-qt5-git adwaita-qt6-git mintstick brave-bin octopi
 
-echo "======================================================================="
+echo "========================================================================"
 echo "Enable LightDM"
-echo "======================================================================="
+echo "========================================================================"
 
 sudo systemctl set-default graphical.target
 sudo systemctl enable lightdm.service
 
-echo "======================================================================="
+echo "========================================================================"
 echo "Clone custom configuration files"
-echo "======================================================================="
+echo "========================================================================"
 
 git clone https://github.com/e33io/dotfiles $HOME/dotfiles
 git clone https://github.com/e33io/opt-dots $HOME/opt-dots
 
-echo "======================================================================="
+echo "========================================================================"
 echo "Copy custom configuration files"
-echo "======================================================================="
+echo "========================================================================"
 
 mkdir -p $HOME/.local/bin
 cp -R $HOME/dotfiles/.config $HOME
@@ -114,9 +114,9 @@ sudo ln -sf $HOME/.config/qt5ct/* /root/.config/qt5ct
 sudo ln -sf $HOME/.config/qt6ct/* /root/.config/qt6ct
 sudo ln -sf $HOME/.gtkrc-2.0 /root/.gtkrc-2.0
 
-echo "======================================================================="
+echo "========================================================================"
 echo "Update root .bashrc file"
-echo "======================================================================="
+echo "========================================================================"
 
 echo '#
 # Set command prompt
@@ -125,13 +125,13 @@ PS1="\[\e[01;31m\]\u \w/#\[\e[m\] "
 
 clear
 while true; do
-    echo "======================================================================="
+    echo "========================================================================"
     echo "The option below lets you select a configuration specific"
     echo "to your monitor type for proper display scaling."
-    echo "======================================================================="
+    echo "========================================================================"
     echo "  1) Standard HD (96 dpi settings for 1x scaling)"
     echo "  2) HiDPI (192 dpi settings for 2x scaling)"
-    echo "-----------------------------------------------------------------------"
+    echo "------------------------------------------------------------------------"
 
     read -p "What type of monitor are you using? " n
     case $n in
@@ -147,23 +147,23 @@ done
 
 pc_type="$(hostnamectl chassis)"
 if [ $pc_type = laptop ]; then
-    echo "======================================================================="
+    echo "========================================================================"
     echo "Modify window manager configs for laptop use"
-    echo "======================================================================="
+    echo "========================================================================"
 
     sh $HOME/scripts/mod-wm-laptop.sh
 fi
 if [ $pc_type = vm ]; then
-    echo "======================================================================="
+    echo "========================================================================"
     echo "Install spice-vdagent and update VM-specific configs"
-    echo "======================================================================="
+    echo "========================================================================"
 
     sh $HOME/scripts/mod-virt-machines.sh
 fi
 
-echo "======================================================================="
+echo "========================================================================"
 echo "Add bookmarks and clean up user directory"
-echo "======================================================================="
+echo "========================================================================"
 
 xdg-user-dirs-update
 echo "file:///home/$(whoami)/Downloads
@@ -186,6 +186,6 @@ rm -rf $HOME/dotfiles
 rm -rf $HOME/opt-dots
 rm -rf $HOME/scripts
 
-echo "======================================================================="
+echo "========================================================================"
 echo "All done, you can now run other commands or reboot the PC"
-echo "======================================================================="
+echo "========================================================================"

@@ -18,33 +18,33 @@
 # =============================================================================
 
 if [ "$(id -u)" = 0 ]; then
-    echo "======================================================================="
+    echo "========================================================================"
     echo "This script MUST NOT be run as root user."
     echo "Run this script as a normal user."
     echo "You will be asked for a sudo password when necessary."
-    echo "======================================================================="
+    echo "========================================================================"
     exit 1
 fi
 
-echo "======================================================================="
+echo "========================================================================"
 echo "Install Gnome and other packages"
-echo "======================================================================="
+echo "========================================================================"
 
 sudo pacman -S --noconfirm --needed gnome gnome-tweaks gnome-shell-extension-appindicator file-roller ptyxis \
 gnome-themes-extra papirus-icon-theme qt5ct qt6ct dconf-editor signal-desktop gimp darktable inkscape gcolor3 \
 filezilla libreoffice timeshift nfs-utils bash-completion perl-image-exiftool vim nano micro fzf lazygit \
 htop fastfetch cmus cava less wget
 
-echo "======================================================================="
+echo "========================================================================"
 echo "Remove unneeded/redundant packages"
-echo "======================================================================="
+echo "========================================================================"
 
 sudo pacman -R --noconfirm gnome-software gnome-console
 
 if ! command -v yay > /dev/null 2>&1; then
-    echo "======================================================================="
+    echo "========================================================================"
     echo "Setup Yay for AUR"
-    echo "======================================================================="
+    echo "========================================================================"
 
     git clone https://aur.archlinux.org/yay-bin.git $HOME/yay-bin
     cd $HOME/yay-bin
@@ -53,9 +53,9 @@ if ! command -v yay > /dev/null 2>&1; then
     rm -rf $HOME/yay-bin
 fi
 
-echo "======================================================================="
+echo "========================================================================"
 echo "Install packages from AUR"
-echo "======================================================================="
+echo "========================================================================"
 
 yay -S --noconfirm --needed --sudoloop extension-manager adwaita-qt5-git adwaita-qt6-git mintstick brave-bin octopi
 
@@ -65,30 +65,30 @@ if [ $pc_type = desktop ]; then
     sudo systemctl enable --now input-remapper
 fi
 if [ $pc_type = vm ]; then
-    echo "======================================================================="
+    echo "========================================================================"
     echo "Install spice-vdagent and update VM-specific configs"
-    echo "======================================================================="
+    echo "========================================================================"
 
     sh $HOME/scripts/mod-virt-machines.sh
 fi
 
-echo "======================================================================="
+echo "========================================================================"
 echo "Enable GDM"
-echo "======================================================================="
+echo "========================================================================"
 
 sudo systemctl set-default graphical.target
 sudo systemctl enable gdm.service
 
-echo "======================================================================="
+echo "========================================================================"
 echo "Clone custom configuration files"
-echo "======================================================================="
+echo "========================================================================"
 
 git clone https://github.com/e33io/dotfiles $HOME/dotfiles
 git clone https://github.com/e33io/opt-dots $HOME/opt-dots
 
-echo "======================================================================="
+echo "========================================================================"
 echo "Copy custom configuration files"
-echo "======================================================================="
+echo "========================================================================"
 
 mkdir -p $HOME/.config/micro
 cp -R $HOME/dotfiles/.config/micro $HOME/.config
@@ -105,18 +105,18 @@ sudo mkdir -p /boot/grub/fonts
 sudo cp -R /usr/share/grub/ter-* /boot/grub/fonts
 fc-cache -f
 
-echo "======================================================================="
+echo "========================================================================"
 echo "Update root .bashrc file"
-echo "======================================================================="
+echo "========================================================================"
 
 echo '#
 # Set command prompt
 PS1="\[\e[01;31m\]\u \w/#\[\e[m\] "
 #' | sudo tee -a /root/.bashrc > /dev/null
 
-echo "======================================================================="
+echo "========================================================================"
 echo "Add bookmarks, run dconf script and clean up files"
-echo "======================================================================="
+echo "========================================================================"
 
 echo "file:///home/$(whoami)/Downloads
 file:///home/$(whoami)/Documents
@@ -137,6 +137,6 @@ rm -rf $HOME/dotfiles
 rm -rf $HOME/opt-dots
 rm -rf $HOME/scripts
 
-echo "======================================================================="
+echo "========================================================================"
 echo "All done, you can now run other commands or reboot the PC"
-echo "======================================================================="
+echo "========================================================================"
