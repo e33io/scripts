@@ -10,7 +10,6 @@
 # for a ready-to-use desktop session.
 # -----------------------------------------------------------------------------
 # Instructions for running this script:
-#   sudo pacman -Syu
 #   sudo pacman -S git
 #   git clone https://github.com/e33io/scripts
 #   cd scripts
