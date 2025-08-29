@@ -10,7 +10,6 @@
 # ready-to-use desktop session.
 # -----------------------------------------------------------------------------
 # Instructions for running this script:
-#   sudo pacman -Syu
 #   sudo pacman -S git
 #   git clone https://github.com/e33io/scripts
 #   cd scripts
@@ -25,6 +24,12 @@ if [ "$(id -u)" = 0 ]; then
     echo "========================================================================"
     exit 1
 fi
+
+echo "========================================================================"
+echo "Update package list and upgrade system"
+echo "========================================================================"
+
+sudo pacman -Syu --noconfirm
 
 echo "========================================================================"
 echo "Install Xfce and other packages"
