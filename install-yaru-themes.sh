@@ -96,9 +96,10 @@ echo "========================================================================"
 git clone https://github.com/e33io/theming $HOME/theming-temp
 
 echo "========================================================================"
-echo "Copy custom Yaru Kvantum themes"
+echo "Copy custom Yaru themes"
 echo "========================================================================"
 
+sudo cp -R $HOME/theming-temp/gtk/Yaru* /usr/share/themes
 sudo mkdir -p /usr/share/Kvantum
 sudo cp -R $HOME/theming-temp/Kvantum/Yaru* /usr/share/Kvantum
 rm -rf $HOME/theming-temp
