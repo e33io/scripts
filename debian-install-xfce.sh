@@ -95,6 +95,7 @@ echo "Copy custom configuration files"
 echo "========================================================================"
 
 mkdir -p $HOME/.config/micro
+mkdir -p $HOME/.local/bin
 cp -R $HOME/dotfiles/.config/micro $HOME/.config
 cp -R $HOME/dotfiles/.xbindkeysrc $HOME
 cp -R $HOME/opt-dots/xfce/.config $HOME
