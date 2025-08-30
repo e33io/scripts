@@ -340,6 +340,24 @@ Yaru_Blue_Dark () {
     dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
 }
 
+Yaru_Brown_Dark () {
+    # GUI and TUI theme names
+    gtk_theme=Yaru-wartybrown-dark
+    qt_ct_theme=kvantum-dark
+    kvantum_theme=Yaru-wartybrown-dark
+    icon_theme=Papirus-Dark
+    papirus_folders=palebrown
+    # Desktop background color
+    desktop_bg_color="#32291e"
+    # Theme accent color
+    accent_color="#8c6c47"
+    accent_color_rgb="rgb(140,108,71)"
+    # Call the theming files
+    theming_files
+    # Dconf color-scheme preference
+    dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
+}
+
 Yaru_Green_Dark () {
     # GUI and TUI theme names
     gtk_theme=Yaru-viridian-dark
@@ -448,11 +466,12 @@ while true; do
     printf "  10) Mint-Y-Dark-Red      \e[38;5;237m▇▇▇\e[0m\e[38;5;160m▇▇▇\e[0m\n"
     printf "  11) Mint-Y-Dark-Teal     \e[38;5;237m▇▇▇\e[0m\e[38;5;037m▇▇▇\e[0m\n"
     printf "  12) Yaru-Blue-Dark       \e[38;5;236m▇▇▇\e[0m\e[38;5;027m▇▇▇\e[0m\n"
-    printf "  13) Yaru-Green-Dark      \e[38;5;236m▇▇▇\e[0m\e[38;5;029m▇▇▇\e[0m\n"
-    printf "  14) Yaru-Orange-Dark     \e[38;5;236m▇▇▇\e[0m\e[38;5;166m▇▇▇\e[0m\n"
-    printf "  15) Yaru-Purple-Dark     \e[38;5;236m▇▇▇\e[0m\e[38;5;099m▇▇▇\e[0m\n"
-    printf "  16) Yaru-Sage-Dark       \e[38;5;236m▇▇▇\e[0m\e[38;5;065m▇▇▇\e[0m\n"
-    printf "  17) Yaru-Teal-Dark       \e[38;5;236m▇▇▇\e[0m\e[38;5;030m▇▇▇\e[0m\n"
+    printf "  13) Yaru-Brown-Dark      \e[38;5;236m▇▇▇\e[0m\e[38;5;094m▇▇▇\e[0m\n"
+    printf "  14) Yaru-Green-Dark      \e[38;5;236m▇▇▇\e[0m\e[38;5;029m▇▇▇\e[0m\n"
+    printf "  15) Yaru-Orange-Dark     \e[38;5;236m▇▇▇\e[0m\e[38;5;166m▇▇▇\e[0m\n"
+    printf "  16) Yaru-Purple-Dark     \e[38;5;236m▇▇▇\e[0m\e[38;5;099m▇▇▇\e[0m\n"
+    printf "  17) Yaru-Sage-Dark       \e[38;5;236m▇▇▇\e[0m\e[38;5;065m▇▇▇\e[0m\n"
+    printf "  18) Yaru-Teal-Dark       \e[38;5;236m▇▇▇\e[0m\e[38;5;030m▇▇▇\e[0m\n"
     echo ""
 
     read -p "Which theme do you want to use? " n
@@ -495,19 +514,22 @@ while true; do
         12) echo "You chose Yaru-Blue-Dark";
            Yaru_Blue_Dark;
            break;;
-        13) echo "You chose Yaru-Green-Dark";
+        13) echo "You chose Yaru-Brown-Dark";
+           Yaru_Brown_Dark;
+           break;;
+        14) echo "You chose Yaru-Green-Dark";
            Yaru_Green_Dark;
            break;;
-        14) echo "You chose Yaru-Orange-Dark";
+        15) echo "You chose Yaru-Orange-Dark";
            Yaru_Orange_Dark;
            break;;
-        15) echo "You chose Yaru-Purple-Dark";
+        16) echo "You chose Yaru-Purple-Dark";
            Yaru_Purple_Dark;
            break;;
-        16) echo "You chose Yaru-Sage-Dark";
+        17) echo "You chose Yaru-Sage-Dark";
            Yaru_Sage_Dark;
            break;;
-        17) echo "You chose Yaru-Teal-Dark";
+        18) echo "You chose Yaru-Teal-Dark";
            Yaru_Teal_Dark;
            break;;
         *) echo "Invalid selection, please enter a number from the list.";;
