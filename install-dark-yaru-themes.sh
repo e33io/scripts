@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # =============================================================================
-# Install Yaru Dark Themes (blue,orange,prussiangreen,purple,sage,viridian)
+# Install Selected Yaru Dark Themes
+# (blue, orange, prussiangreen, purple, sage, viridian, wartybrown)
 # URL: https://github.com/e33io/scripts/blob/main/install-dark-yaru-themes.sh
 # -----------------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
@@ -80,6 +81,7 @@ sudo cp -R $HOME/theming-temp/Kvantum/Yaru-prussiangreen-dark /usr/share/Kvantum
 sudo cp -R $HOME/theming-temp/Kvantum/Yaru-purple-dark /usr/share/Kvantum
 sudo cp -R $HOME/theming-temp/Kvantum/Yaru-sage-dark /usr/share/Kvantum
 sudo cp -R $HOME/theming-temp/Kvantum/Yaru-viridian-dark /usr/share/Kvantum
+sudo cp -R $HOME/theming-temp/Kvantum/Yaru-wartybrown-dark /usr/share/Kvantum
 
 echo "========================================================================"
 echo "Link config files to root user directories for styling"
