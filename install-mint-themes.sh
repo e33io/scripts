@@ -5,7 +5,7 @@
 # URL: https://github.com/e33io/scripts/blob/main/install-mint-themes.sh
 # -----------------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
-# NOTE: Only use with Debian/Ubuntu Linux!
+# NOTE: Only use with Debian or Arch Linux!
 # =============================================================================
 
 if [ "$(id -u)" = 0 ]; then
@@ -17,55 +17,83 @@ if [ "$(id -u)" = 0 ]; then
     exit 1
 fi
 
-if [ ! -f "/etc/debian_version" ]; then
+if ! { [ -f "/etc/debian_version" ] || [ -f "/etc/pacman.conf" ]; }; then
     echo "========================================================================"
     echo "This script is NOT compatible with your version of Linux!"
-    echo "It only works with Debian or Ubuntu Linux, and it will"
-    echo "exit now without running or making any changes."
+    echo "It only works with Debian or Arch Linux and it will"
+    echo "exit now without running."
     echo "========================================================================"
     exit 1
 fi
 
-echo "========================================================================"
-echo "Install theming dependencies"
-echo "========================================================================"
+if [ -f "/etc/debian_version" ]; then
+    echo "========================================================================"
+    echo "Install theming dependencies"
+    echo "========================================================================"
 
-sudo apt update
-sudo apt -y install gnome-themes-extra gtk2-engines gtk2-engines-murrine gtk2-engines-pixbuf libglib2.0-bin \
-libgtk-3-common libgtk-4-common libgtk2.0-common adwaita-qt* qt-style-kvantum curl git
+    sudo apt update
+    sudo apt -y install gnome-themes-extra gtk2-engines gtk2-engines-murrine gtk2-engines-pixbuf libglib2.0-bin \
+    libgtk-3-common libgtk-4-common libgtk2.0-common adwaita-qt* qt-style-kvantum curl git
 
-if [ ! -f "/bin/lxqt-session" ]; then
-    sudo apt -y install qt*ct
+    if [ ! -f "/bin/lxqt-session" ]; then
+        sudo apt -y install qt*ct
+    fi
+
+    echo "========================================================================"
+    echo "Install Linux Mint themes and icons"
+    echo "========================================================================"
+
+    echo "Download mint-x-icons..."
+    curl -kOL# http://packages.linuxmint.com/pool/main/m/mint-x-icons/mint-x-icons_1.7.2_all.deb
+    sudo apt-get -yq install ./mint-x-icons_1.7.2_all.deb
+    rm mint-x-icons_1.7.2_all.deb
+
+    echo "Download mint-y-icons..."
+    curl -kOL# http://packages.linuxmint.com/pool/main/m/mint-y-icons/mint-y-icons_1.8.3_all.deb
+    sudo apt-get -yq install ./mint-y-icons_1.8.3_all.deb
+    rm mint-y-icons_1.8.3_all.deb
+
+    echo "Download mint-l-icons..."
+    curl -kOL# http://packages.linuxmint.com/pool/main/m/mint-l-icons/mint-l-icons_1.7.4_all.deb
+    sudo apt-get -yq install ./mint-l-icons_1.7.4_all.deb
+    rm mint-l-icons_1.7.4_all.deb
+
+    echo "Download mint-themes..."
+    curl -kOL# http://packages.linuxmint.com/pool/main/m/mint-themes/mint-themes_2.2.3_all.deb
+    sudo apt-get -yq install ./mint-themes_2.2.3_all.deb
+    rm mint-themes_2.2.3_all.deb
+
+    echo "Download mint-l-theme..."
+    curl -kOL# http://packages.linuxmint.com/pool/main/m/mint-l-theme/mint-l-theme_1.9.9_all.deb
+    sudo apt-get -yq install ./mint-l-theme_1.9.9_all.deb
+    rm mint-l-theme_1.9.9_all.deb
 fi
 
-echo "========================================================================"
-echo "Install Linux Mint themes and icons"
-echo "========================================================================"
+if [ -f "/etc/pacman.conf" ]; then
+    if ! command -v yay > /dev/null 2>&1; then
+        echo "========================================================================"
+        echo "Setup Yay for AUR"
+        echo "========================================================================"
 
-echo "Download mint-x-icons..."
-curl -kOL# http://packages.linuxmint.com/pool/main/m/mint-x-icons/mint-x-icons_1.7.2_all.deb
-sudo apt-get -yq install ./mint-x-icons_1.7.2_all.deb
-rm mint-x-icons_1.7.2_all.deb
+        git clone https://aur.archlinux.org/yay-bin.git $HOME/yay-bin
+        cd $HOME/yay-bin
+        makepkg -si --noconfirm
+        cd
+        rm -rf $HOME/yay-bin
+    fi
 
-echo "Download mint-y-icons..."
-curl -kOL# http://packages.linuxmint.com/pool/main/m/mint-y-icons/mint-y-icons_1.8.3_all.deb
-sudo apt-get -yq install ./mint-y-icons_1.8.3_all.deb
-rm mint-y-icons_1.8.3_all.deb
+    echo "========================================================================"
+    echo "Install Mint themes and dependencies"
+    echo "========================================================================"
 
-echo "Download mint-l-icons..."
-curl -kOL# http://packages.linuxmint.com/pool/main/m/mint-l-icons/mint-l-icons_1.7.4_all.deb
-sudo apt-get -yq install ./mint-l-icons_1.7.4_all.deb
-rm mint-l-icons_1.7.4_all.deb
+    sudo pacman -Syu --noconfirm --needed gnome-themes-extra gtk-engine-murrine kvantum kvantum-qt5 less git
+    yay -S --noconfirm --needed --sudoloop mint-x-icons mint-y-icons mint-l-icons mint-themes mint-l-theme \
+    adwaita-qt5-git adwaita-qt6-git
 
-echo "Download mint-themes..."
-curl -kOL# http://packages.linuxmint.com/pool/main/m/mint-themes/mint-themes_2.2.3_all.deb
-sudo apt-get -yq install ./mint-themes_2.2.3_all.deb
-rm mint-themes_2.2.3_all.deb
-
-echo "Download mint-l-theme..."
-curl -kOL# http://packages.linuxmint.com/pool/main/m/mint-l-theme/mint-l-theme_1.9.9_all.deb
-sudo apt-get -yq install ./mint-l-theme_1.9.9_all.deb
-rm mint-l-theme_1.9.9_all.deb
+    if [ ! -f "/bin/lxqt-session" ]; then
+        sudo pacman -S --noconfirm --needed qt5ct qt6ct
+    fi
+fi
 
 echo "========================================================================"
 echo "Remove prespecified GTK2 icon sizes to fix scaling issues"

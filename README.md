@@ -48,13 +48,9 @@ linux installation scripts
 
 - use [`install-dark-yaru-themes.sh`](https://github.com/e33io/scripts/blob/main/install-dark-yaru-themes.sh) to install selected Yaru Dark themes on Debian or Arch
 
-- use [`install-mint-themes.sh`](https://github.com/e33io/scripts/blob/main/install-mint-themes.sh) to install Linux Mint themes and icons on Debian
+- use [`install-mint-themes.sh`](https://github.com/e33io/scripts/blob/main/install-mint-themes.sh) to install Linux Mint themes and icons on Debian or Arch
 
-- use [`install-mint-themes-arch.sh`](https://github.com/e33io/scripts/blob/main/install-mint-themes-arch.sh) to install Linux Mint themes and icons on Arch
-
-- use [`install-yaru-themes.sh`](https://github.com/e33io/scripts/blob/main/install-yaru-themes.sh) to install Yaru themes and icons on Debian
-
-- use [`install-yaru-themes-arch.sh`](https://github.com/e33io/scripts/blob/main/install-yaru-themes-arch.sh) to install Yaru themes and icons on Arch
+- use [`install-yaru-themes.sh`](https://github.com/e33io/scripts/blob/main/install-yaru-themes.sh) to install Yaru themes and icons on Debian or Arch
 
 &nbsp;
 
