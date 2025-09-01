@@ -17,7 +17,7 @@ if [ "$(id -u)" = 0 ]; then
 fi
 
 clear
-if { [ -d "$HOME/.config/i3" ] || [ -d "$HOME/.config/jwm" ]; }; then
+if { [ -d "$HOME/.config/i3" ] || [ -d "$HOME/.config/jwm" ] || [ -d "$HOME/.config/spectrwm" ]; }; then
     while true; do
         echo "========================================================================"
         echo "The option below lets you select a configuration"

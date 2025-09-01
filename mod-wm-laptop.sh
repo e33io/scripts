@@ -41,3 +41,11 @@ if [ -d "$HOME/.config/jwm" ]; then
     sed -i 's/time pulseaudio eth tray/time battery pulseaudio wlan tray/' $HOME/.config/polybar/config.ini
     sed -i 's/label-maxlen = .*/label-maxlen = 140/' $HOME/.config/polybar/config.ini
 fi
+
+# spectrwm specific configs
+if [ -d "$HOME/.config/spectrwm" ]; then
+    # update xss-lock.desktop (add lock-suspend.sh to xss-lock command)
+    sed -i 's/xss-lock -l/xss-lock -n sh ~\/\.local\/bin\/lock-suspend\.sh -l/' $HOME/spectrwm/autostart.sh
+    # update spectrwm baraction script (modules)
+    sed -i 's/#print_battery/print_battery/' $HOME/spectrwm/baraction.sh
+fi
