@@ -56,43 +56,43 @@ clear
 theming_files () {
     # spectrwm theme
     sed -i "s/^color_focus.*/color_focus                   = $swm_accent_color/" \
-    $HOME/spectrwm/spectrwm.conf
+    $HOME/.config/spectrwm/spectrwm.conf
     sed -i "s/^color_focus_maximized.*/color_focus_maximized         = $swm_accent_color/" \
-    $HOME/spectrwm/spectrwm.conf
+    $HOME/.config/spectrwm/spectrwm.conf
     sed -i "s/^color_unfocus.*/color_unfocus                 = $swm_unfocus_color/" \
-    $HOME/spectrwm/spectrwm.conf
+    $HOME/.config/spectrwm/spectrwm.conf
     sed -i "s/^color_unfocus_maximized.*/color_unfocus_maximized       = $swm_unfocus_color/" \
-    $HOME/spectrwm/spectrwm.conf
+    $HOME/.config/spectrwm/spectrwm.conf
     sed -i "s/^color_focus_free.*/color_focus_free              = $swm_accent_color/" \
-    $HOME/spectrwm/spectrwm.conf
+    $HOME/.config/spectrwm/spectrwm.conf
     sed -i "s/^color_focus_maximized_free.*/color_focus_maximized_free    = $swm_accent_color/" \
-    $HOME/spectrwm/spectrwm.conf
+    $HOME/.config/spectrwm/spectrwm.conf
     sed -i "s/^color_unfocus_free.*/color_unfocus_free            = $swm_unfocus_color/" \
-    $HOME/spectrwm/spectrwm.conf
+    $HOME/.config/spectrwm/spectrwm.conf
     sed -i "s/^color_unfocus_maximized_free.*/color_unfocus_maximized_free  = $swm_unfocus_color/" \
-    $HOME/spectrwm/spectrwm.conf
-    sed -i "s/^bar_border[1].*/bar_border[1]                      = $swm_accent_color/" \
-    $HOME/spectrwm/spectrwm.conf
-    sed -i "s/^bar_border_unfocus[1].*/bar_border_unfocus[1]              = $swm_unfocus_color/" \
-    $HOME/spectrwm/spectrwm.conf
-    sed -i "s/^bar_border_free[1].*/bar_border_free[1]                 = $swm_accent_color/" \
-    $HOME/spectrwm/spectrwm.conf
-    sed -i "s/^bar_color[1].*/bar_color[1]                       = $swm_bg_color/" \
-    $HOME/spectrwm/spectrwm.conf
-    sed -i "s/^bar_color_unfocus[1].*/bar_color_unfocus[1]               = $swm_bg_color/" \
-    $HOME/spectrwm/spectrwm.conf
-    sed -i "s/^bar_color_free[1].*/bar_color_free[1]                  = $swm_accent_color/" \
-    $HOME/spectrwm/spectrwm.conf
-    sed -i "s/^bar_color_selected[1].*/bar_color_selected[1]              = $swm_accent_color/" \
-    $HOME/spectrwm/spectrwm.conf
-    sed -i "s/^bar_font_color[1].*/bar_font_color[1]                  = $swm_fg_color/" \
-    $HOME/spectrwm/spectrwm.conf
-    sed -i "s/^bar_font_color_unfocus[1].*/bar_font_color_unfocus[1]          = $swm_fg_color/" \
-    $HOME/spectrwm/spectrwm.conf
-    sed -i "s/^bar_font_color_free[1].*/bar_font_color_free[1]             = $swm_fg_selected_color/" \
-    $HOME/spectrwm/spectrwm.conf
+    $HOME/.config/spectrwm/spectrwm.conf
+    sed -i "s/^bar_border\[1\].*/bar_border\[1\]                      = $swm_accent_color/" \
+    $HOME/.config/spectrwm/spectrwm.conf
+    sed -i "s/^bar_border_unfocus\[1\].*/bar_border_unfocus\[1\]              = $swm_unfocus_color/" \
+    $HOME/.config/spectrwm/spectrwm.conf
+    sed -i "s/^bar_border_free\[1\].*/bar_border_free\[1\]                 = $swm_accent_color/" \
+    $HOME/.config/spectrwm/spectrwm.conf
+    sed -i "s/^bar_color\[1\].*/bar_color\[1\]                       = $swm_bg_color/" \
+    $HOME/.config/spectrwm/spectrwm.conf
+    sed -i "s/^bar_color_unfocus\[1\].*/bar_color_unfocus\[1\]               = $swm_bg_color/" \
+    $HOME/.config/spectrwm/spectrwm.conf
+    sed -i "s/^bar_color_free\[1\].*/bar_color_free\[1\]                  = $swm_accent_color/" \
+    $HOME/.config/spectrwm/spectrwm.conf
+    sed -i "s/^bar_color_selected\[1\].*/bar_color_selected\[1\]              = $swm_accent_color/" \
+    $HOME/.config/spectrwm/spectrwm.conf
+    sed -i "s/^bar_font_color\[1\].*/bar_font_color\[1\]                  = $swm_fg_color/" \
+    $HOME/.config/spectrwm/spectrwm.conf
+    sed -i "s/^bar_font_color_unfocus\[1\].*/bar_font_color_unfocus\[1\]          = $swm_fg_color/" \
+    $HOME/.config/spectrwm/spectrwm.conf
+    sed -i "s/^bar_font_color_free\[1\].*/bar_font_color_free\[1\]             = $swm_fg_selected_color/" \
+    $HOME/.config/spectrwm/spectrwm.conf
     sed -i "s/^bar_font_color_selected.*/bar_font_color_selected            = $swm_fg_selected_color/" \
-    $HOME/spectrwm/spectrwm.conf
+    $HOME/.config/spectrwm/spectrwm.conf
     # GTK 2 theme and icon theme
     sed -i "s/gtk-theme-name=\".*\"/gtk-theme-name=\"$gtk_theme\"/" $HOME/.gtkrc-2.0
     sed -i "s/gtk-icon-theme-name=\".*\"/gtk-icon-theme-name=\"$icon_theme\"/" $HOME/.gtkrc-2.0
@@ -122,7 +122,7 @@ theming_files () {
     sed -i "s/icon-theme: \".*\"/icon-theme: \"$icon_theme\"/" $HOME/.config/rofi/config.rasi
     # i3lock background color
     lock_bg_color=$(echo "$desktop_bg_color" | sed 's/^.//')
-    sed -i "s/-n -c .*</-n -c $lock_bg_color</" $HOME/.config/spectrwm/startup
+    sed -i "s/-n -c .*</-n -c $lock_bg_color</" $HOME/.config/spectrwm/autostart.sh
     sed -i "s/-c .* \&/-c $lock_bg_color \&/" $HOME/.local/bin/lock-suspend.sh
     # XSecureLock background color
     sed -i "s/BACKGROUND_COLOR=\".*\"/BACKGROUND_COLOR=\"$desktop_bg_color\"/" $HOME/.profile
@@ -146,11 +146,11 @@ theming_files () {
 
 Adwaita_Dark () {
     # spectrwm theme
-    swm_accent_color="rgb:1c/6d/cf"
-    swm_unfocus_color="rgb:53/53/53"
-    swm_bg_color="rgb:1e/1e/1e"
-    swm_fg_color="rgb:ee/ee/ee"
-    swm_fg_selected_color="rgb:ff/ff/ff"
+    swm_accent_color="rgb:1c\/6d\/cf"
+    swm_unfocus_color="rgb:53\/53\/53"
+    swm_bg_color="rgb:1e\/1e\/1e"
+    swm_fg_color="rgb:ee\/ee\/ee"
+    swm_fg_selected_color="rgb:ff\/ff\/ff"
     # Theme accent color
     accent_color="#1c6dcf"
     # Desktop background color
@@ -168,11 +168,11 @@ Adwaita_Dark () {
 
 Adwaita_Darker () {
     # spectrwm theme
-    swm_accent_color="rgb:15/53/9e"
-    swm_unfocus_color="rgb:53/53/53"
-    swm_bg_color="rgb:1e/1e/1e"
-    swm_fg_color="rgb:ee/ee/ee"
-    swm_fg_selected_color="rgb:ff/ff/ff"
+    swm_accent_color="rgb:15\/53\/9e"
+    swm_unfocus_color="rgb:53\/53\/53"
+    swm_bg_color="rgb:1e\/1e\/1e"
+    swm_fg_color="rgb:ee\/ee\/ee"
+    swm_fg_selected_color="rgb:ff\/ff\/ff"
     # Theme accent color
     accent_color="#15539e"
     # Desktop background color
@@ -190,11 +190,11 @@ Adwaita_Darker () {
 
 Adwaita_Light () {
     # spectrwm theme
-    swm_accent_color="rgb:35/84/e4"
-    swm_unfocus_color="rgb:b3/aa/a2"
-    swm_bg_color="rgb:f6/f5/f4"
-    swm_fg_color="rgb:2e/34/36"
-    swm_fg_selected_color="rgb:2e/34/36"
+    swm_accent_color="rgb:35\/84\/e4"
+    swm_unfocus_color="rgb:b3\/aa\/a2"
+    swm_bg_color="rgb:f6\/f5\/f4"
+    swm_fg_color="rgb:2e\/34\/36"
+    swm_fg_selected_color="rgb:2e\/34\/36"
     # Theme accent color
     accent_color="#3584e4"
     # Desktop background color
@@ -212,11 +212,11 @@ Adwaita_Light () {
 
 Mint_L_Dark_Mod_Brown () {
     # spectrwm theme
-    swm_accent_color="rgb:9c/7e/65"
-    swm_unfocus_color="rgb:56/56/56"
-    swm_bg_color="rgb:1e/1e/1e"
-    swm_fg_color="rgb:ee/ee/ee"
-    swm_fg_selected_color="rgb:ff/ff/ff"
+    swm_accent_color="rgb:9c\/7e\/65"
+    swm_unfocus_color="rgb:56\/56\/56"
+    swm_bg_color="rgb:1e\/1e\/1e"
+    swm_fg_color="rgb:ee\/ee\/ee"
+    swm_fg_selected_color="rgb:ff\/ff\/ff"
     # Theme accent color
     accent_color="#9c7e65"
     # Desktop background color
@@ -235,11 +235,11 @@ Mint_L_Dark_Mod_Brown () {
 
 Mint_L_Dark_Mod_Teal () {
     # spectrwm theme
-    swm_accent_color="rgb:57/9c/8e"
-    swm_unfocus_color="rgb:56/56/56"
-    swm_bg_color="rgb:1e/1e/1e"
-    swm_fg_color="rgb:ee/ee/ee"
-    swm_fg_selected_color="rgb:ff/ff/ff"
+    swm_accent_color="rgb:57\/9c\/8e"
+    swm_unfocus_color="rgb:56\/56\/56"
+    swm_bg_color="rgb:1e\/1e\/1e"
+    swm_fg_color="rgb:ee\/ee\/ee"
+    swm_fg_selected_color="rgb:ff\/ff\/ff"
     # Theme accent color
     accent_color="#579c8e"
     # Desktop background color
@@ -258,11 +258,11 @@ Mint_L_Dark_Mod_Teal () {
 
 Mint_Y_Dark_Mod_Blue () {
     # spectrwm theme
-    swm_accent_color="rgb:0c/75/de"
-    swm_unfocus_color="rgb:56/56/56"
-    swm_bg_color="rgb:1e/1e/1e"
-    swm_fg_color="rgb:ee/ee/ee"
-    swm_fg_selected_color="rgb:ff/ff/ff"
+    swm_accent_color="rgb:0c\/75\/de"
+    swm_unfocus_color="rgb:56\/56\/56"
+    swm_bg_color="rgb:1e\/1e\/1e"
+    swm_fg_color="rgb:ee\/ee\/ee"
+    swm_fg_selected_color="rgb:ff\/ff\/ff"
     # Theme accent color
     accent_color="#0c75de"
     # Desktop background color
@@ -281,11 +281,11 @@ Mint_Y_Dark_Mod_Blue () {
 
 Mint_Y_Dark_Mod_Green () {
     # spectrwm theme
-    swm_accent_color="rgb:35/a8/54"
-    swm_unfocus_color="rgb:56/56/56"
-    swm_bg_color="rgb:1e/1e/1e"
-    swm_fg_color="rgb:ee/ee/ee"
-    swm_fg_selected_color="rgb:ff/ff/ff"
+    swm_accent_color="rgb:35\/a8\/54"
+    swm_unfocus_color="rgb:56\/56\/56"
+    swm_bg_color="rgb:1e\/1e\/1e"
+    swm_fg_color="rgb:ee\/ee\/ee"
+    swm_fg_selected_color="rgb:ff\/ff\/ff"
     # Theme accent color
     accent_color="#35a854"
     # Desktop background color
@@ -304,11 +304,11 @@ Mint_Y_Dark_Mod_Green () {
 
 Mint_Y_Dark_Mod_Grey () {
     # spectrwm theme
-    swm_accent_color="rgb:70/73/7a"
-    swm_unfocus_color="rgb:56/56/56"
-    swm_bg_color="rgb:1e/1e/1e"
-    swm_fg_color="rgb:ee/ee/ee"
-    swm_fg_selected_color="rgb:ff/ff/ff"
+    swm_accent_color="rgb:70\/73\/7a"
+    swm_unfocus_color="rgb:56\/56\/56"
+    swm_bg_color="rgb:1e\/1e\/1e"
+    swm_fg_color="rgb:ee\/ee\/ee"
+    swm_fg_selected_color="rgb:ff\/ff\/ff"
     # Theme accent color
     accent_color="#70737a"
     # Desktop background color
@@ -327,11 +327,11 @@ Mint_Y_Dark_Mod_Grey () {
 
 Mint_Y_Dark_Mod_Orange () {
     # spectrwm theme
-    swm_accent_color="rgb:ff/71/39"
-    swm_unfocus_color="rgb:56/56/56"
-    swm_bg_color="rgb:1e/1e/1e"
-    swm_fg_color="rgb:ee/ee/ee"
-    swm_fg_selected_color="rgb:ff/ff/ff"
+    swm_accent_color="rgb:ff\/71\/39"
+    swm_unfocus_color="rgb:56\/56\/56"
+    swm_bg_color="rgb:1e\/1e\/1e"
+    swm_fg_color="rgb:ee\/ee\/ee"
+    swm_fg_selected_color="rgb:ff\/ff\/ff"
     # Theme accent color
     accent_color="#ff7139"
     # Desktop background color
@@ -350,11 +350,11 @@ Mint_Y_Dark_Mod_Orange () {
 
 Mint_Y_Dark_Mod_Purple () {
     # spectrwm theme
-    swm_accent_color="rgb:8c/5d/d9"
-    swm_unfocus_color="rgb:56/56/56"
-    swm_bg_color="rgb:1e/1e/1e"
-    swm_fg_color="rgb:ee/ee/ee"
-    swm_fg_selected_color="rgb:ff/ff/ff"
+    swm_accent_color="rgb:8c\/5d\/d9"
+    swm_unfocus_color="rgb:56\/56\/56"
+    swm_bg_color="rgb:1e\/1e\/1e"
+    swm_fg_color="rgb:ee\/ee\/ee"
+    swm_fg_selected_color="rgb:ff\/ff\/ff"
     # Theme accent color
     accent_color="#8c5dd9"
     # Desktop background color
@@ -373,11 +373,11 @@ Mint_Y_Dark_Mod_Purple () {
 
 Mint_Y_Dark_Mod_Red () {
     # spectrwm theme
-    swm_accent_color="rgb:e8/21/27"
-    swm_unfocus_color="rgb:56/56/56"
-    swm_bg_color="rgb:1e/1e/1e"
-    swm_fg_color="rgb:ee/ee/ee"
-    swm_fg_selected_color="rgb:ff/ff/ff"
+    swm_accent_color="rgb:e8\/21\/27"
+    swm_unfocus_color="rgb:56\/56\/56"
+    swm_bg_color="rgb:1e\/1e\/1e"
+    swm_fg_color="rgb:ee\/ee\/ee"
+    swm_fg_selected_color="rgb:ff\/ff\/ff"
     # Theme accent color
     accent_color="#e82127"
     # Desktop background color
@@ -396,11 +396,11 @@ Mint_Y_Dark_Mod_Red () {
 
 Mint_Y_Dark_Mod_Teal () {
     # spectrwm theme
-    swm_accent_color="rgb:19/9c/a8"
-    swm_unfocus_color="rgb:56/56/56"
-    swm_bg_color="rgb:1e/1e/1e"
-    swm_fg_color="rgb:ee/ee/ee"
-    swm_fg_selected_color="rgb:ff/ff/ff"
+    swm_accent_color="rgb:19\/9c\/a8"
+    swm_unfocus_color="rgb:56\/56\/56"
+    swm_bg_color="rgb:1e\/1e\/1e"
+    swm_fg_color="rgb:ee\/ee\/ee"
+    swm_fg_selected_color="rgb:ff\/ff\/ff"
     # Theme accent color
     accent_color="#199ca8"
     # Desktop background color
@@ -419,11 +419,11 @@ Mint_Y_Dark_Mod_Teal () {
 
 Yaru_Blue_Dark () {
     # spectrwm theme
-    swm_accent_color="rgb:00/73/e5"
-    swm_unfocus_color="rgb:55/55/55"
-    swm_bg_color="rgb:1e/1e/1e"
-    swm_fg_color="rgb:ee/ee/ee"
-    swm_fg_selected_color="rgb:ff/ff/ff"
+    swm_accent_color="rgb:00\/73\/e5"
+    swm_unfocus_color="rgb:55\/55\/55"
+    swm_bg_color="rgb:1e\/1e\/1e"
+    swm_fg_color="rgb:ee\/ee\/ee"
+    swm_fg_selected_color="rgb:ff\/ff\/ff"
     # Theme accent color
     accent_color="#0073e5"
     # Desktop background color
@@ -442,11 +442,11 @@ Yaru_Blue_Dark () {
 
 Yaru_Brown_Dark () {
     # spectrwm theme
-    swm_accent_color="rgb:8c/6c/47"
-    swm_unfocus_color="rgb:55/55/55"
-    swm_bg_color="rgb:1e/1e/1e"
-    swm_fg_color="rgb:ee/ee/ee"
-    swm_fg_selected_color="rgb:ff/ff/ff"
+    swm_accent_color="rgb:8c\/6c\/47"
+    swm_unfocus_color="rgb:55\/55\/55"
+    swm_bg_color="rgb:1e\/1e\/1e"
+    swm_fg_color="rgb:ee\/ee\/ee"
+    swm_fg_selected_color="rgb:ff\/ff\/ff"
     # Theme accent color
     accent_color="#8c6c47"
     # Desktop background color
@@ -465,11 +465,11 @@ Yaru_Brown_Dark () {
 
 Yaru_Green_Dark () {
     # spectrwm theme
-    swm_accent_color="rgb:03/87/5b"
-    swm_unfocus_color="rgb:55/55/55"
-    swm_bg_color="rgb:1e/1e/1e"
-    swm_fg_color="rgb:ee/ee/ee"
-    swm_fg_selected_color="rgb:ff/ff/ff"
+    swm_accent_color="rgb:03\/87\/5b"
+    swm_unfocus_color="rgb:55\/55\/55"
+    swm_bg_color="rgb:1e\/1e\/1e"
+    swm_fg_color="rgb:ee\/ee\/ee"
+    swm_fg_selected_color="rgb:ff\/ff\/ff"
     # Theme accent color
     accent_color="#03875b"
     # Desktop background color
@@ -488,11 +488,11 @@ Yaru_Green_Dark () {
 
 Yaru_Orange_Dark () {
     # spectrwm theme
-    swm_accent_color="rgb:e9/54/20"
-    swm_unfocus_color="rgb:55/55/55"
-    swm_bg_color="rgb:1e/1e/1e"
-    swm_fg_color="rgb:ee/ee/ee"
-    swm_fg_selected_color="rgb:ff/ff/ff"
+    swm_accent_color="rgb:e9\/54\/20"
+    swm_unfocus_color="rgb:55\/55\/55"
+    swm_bg_color="rgb:1e\/1e\/1e"
+    swm_fg_color="rgb:ee\/ee\/ee"
+    swm_fg_selected_color="rgb:ff\/ff\/ff"
     # Theme accent color
     accent_color="#e95420"
     # Desktop background color
@@ -511,11 +511,11 @@ Yaru_Orange_Dark () {
 
 Yaru_Purple_Dark () {
     # spectrwm theme
-    swm_accent_color="rgb:77/64/d8"
-    swm_unfocus_color="rgb:55/55/55"
-    swm_bg_color="rgb:1e/1e/1e"
-    swm_fg_color="rgb:ee/ee/ee"
-    swm_fg_selected_color="rgb:ff/ff/ff"
+    swm_accent_color="rgb:77\/64\/d8"
+    swm_unfocus_color="rgb:55\/55\/55"
+    swm_bg_color="rgb:1e\/1e\/1e"
+    swm_fg_color="rgb:ee\/ee\/ee"
+    swm_fg_selected_color="rgb:ff\/ff\/ff"
     # Theme accent color
     accent_color="#7764d8"
     # Desktop background color
@@ -534,11 +534,11 @@ Yaru_Purple_Dark () {
 
 Yaru_Sage_Dark () {
     # spectrwm theme
-    swm_accent_color="rgb:65/7b/69"
-    swm_unfocus_color="rgb:55/55/55"
-    swm_bg_color="rgb:1e/1e/1e"
-    swm_fg_color="rgb:ee/ee/ee"
-    swm_fg_selected_color="rgb:ff/ff/ff"
+    swm_accent_color="rgb:65\/7b\/69"
+    swm_unfocus_color="rgb:55\/55\/55"
+    swm_bg_color="rgb:1e\/1e\/1e"
+    swm_fg_color="rgb:ee\/ee\/ee"
+    swm_fg_selected_color="rgb:ff\/ff\/ff"
     # Theme accent color
     accent_color="#657b69"
     # Desktop background color
@@ -557,11 +557,11 @@ Yaru_Sage_Dark () {
 
 Yaru_Teal_Dark () {
     # spectrwm theme
-    swm_accent_color="rgb:30/82/80"
-    swm_unfocus_color="rgb:55/55/55"
-    swm_bg_color="rgb:1e/1e/1e"
-    swm_fg_color="rgb:ee/ee/ee"
-    swm_fg_selected_color="rgb:ff/ff/ff"
+    swm_accent_color="rgb:30\/82\/80"
+    swm_unfocus_color="rgb:55\/55\/55"
+    swm_bg_color="rgb:1e\/1e\/1e"
+    swm_fg_color="rgb:ee\/ee\/ee"
+    swm_fg_selected_color="rgb:ff\/ff\/ff"
     # Theme accent color
     accent_color="#308280"
     # Desktop background color
