@@ -36,19 +36,11 @@ echo "========================================================================"
 sudo apt update
 sudo apt -y upgrade
 
-if ! command -v spectrwm > /dev/null 2>&1; then
-    echo "========================================================================"
-    echo "Install spectrwm from source"
-    echo "========================================================================"
-
-    sh $HOME/scripts/install-spectrwm-deb.sh
-fi
-
 echo "========================================================================"
-echo "Install other packages"
+echo "Install Xorg and other packages"
 echo "========================================================================"
 
-sudo apt -y install network-manager i3lock rofi dunst playerctl xssproxy xsel xclip xinput \
+sudo apt -y install xorg xserver-xorg network-manager i3lock rofi dunst playerctl xssproxy xsel xclip xinput \
 x11-utils lxappearance qt*ct adwaita-qt* gnome-themes-extra papirus-icon-theme breeze-icon-theme \
 fonts-dejavu fonts-noto-color-emoji nitrogen mate-polkit-bin python3-gi gobject-introspection \
 gir1.2-gtk-3.0 libdbus-glib-1-2 upower dex lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings \
@@ -59,6 +51,14 @@ mpv parole mousepad galculator gpick darktable gimp inkscape filezilla libreoffi
 libreoffice-impress libreoffice-writer libreoffice-gtk3 timeshift xterm lazygit fastfetch htop cmus cava \
 cmatrix ncal micro ranger ueberzug caca-utils highlight atool w3m poppler-utils mediainfo fzf \
 libimage-exiftool-perl apt-transport-https curl rsync wmctrl xdotool xbindkeys
+
+if ! command -v spectrwm > /dev/null 2>&1; then
+    echo "========================================================================"
+    echo "Install spectrwm from source"
+    echo "========================================================================"
+
+    sh $HOME/scripts/install-spectrwm-deb.sh
+fi
 
 echo "========================================================================"
 echo "Enable wireplumber service (running as user)"
