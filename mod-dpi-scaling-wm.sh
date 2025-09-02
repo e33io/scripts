@@ -123,13 +123,13 @@ fi
 # spectrwm specific configs
 if [ -d "$HOME/.config/spectrwm" ]; then
     # update spectrwm configs (border sizes and window gaps)
-    sed -i 's/^border_width.*/border_width                  = 2/' $HOME/spectrwm/spectrwm.conf
-    sed -i 's/^region_padding.*/region_padding                = 8/' $HOME/spectrwm/spectrwm.conf
-    sed -i 's/^tile_gap.*/tile_gap                      = 8/' $HOME/spectrwm/spectrwm.conf
-    sed -i 's/^bar_padding_vertical.*/bar_padding_vertical               = 3/' $HOME/spectrwm/spectrwm.conf
+    sed -i 's/^border_width.*/border_width                  = 2/' $HOME/.config/spectrwm/spectrwm.conf
+    sed -i 's/^region_padding.*/region_padding                = 8/' $HOME/.config/spectrwm/spectrwm.conf
+    sed -i 's/^tile_gap.*/tile_gap                      = 8/' $HOME/.config/spectrwm/spectrwm.conf
+    sed -i 's/^bar_padding_vertical.*/bar_padding_vertical               = 3/' $HOME/.config/spectrwm/spectrwm.conf
     # update spectrwm configs (keybindings)
-    sed -i 's/GDK_SCALE=1 brave/brave/' $HOME/spectrwm/spectrwm.conf
-    sed -i 's/GDK_SCALE=1 signal-desktop/signal-desktop/' $HOME/spectrwm/spectrwm.conf
+    sed -i "s/sh -c 'GDK_SCALE=1 brave-browser'/brave-browser/" $HOME/.config/spectrwm/spectrwm.conf
+    sed -i "s/sh -c 'GDK_SCALE=1 signal-desktop'/signal-desktop/" $HOME/.config/spectrwm/spectrwm.conf
     # update rofi/config.rasi (rofi font size)
     sed -i 's/sans-serif 9"/sans-serif 9.5"/' $HOME/.config/rofi/config.rasi
 fi
