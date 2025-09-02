@@ -128,6 +128,9 @@ if [ -d "$HOME/.config/spectrwm" ]; then
     sed -i 's/^tile_gap.*/tile_gap                      = 8/' $HOME/.config/spectrwm/spectrwm.conf
     sed -i 's/^bar_padding_vertical.*/bar_padding_vertical               = 3/' $HOME/.config/spectrwm/spectrwm.conf
     # update spectrwm configs (keybindings)
+    if [ -f "/etc/pacman.conf" ]; then
+        sed -i "s/sh -c 'GDK_SCALE=1 brave'/brave/" $HOME/.config/spectrwm/spectrwm.conf
+    fi
     sed -i "s/sh -c 'GDK_SCALE=1 brave-browser'/brave-browser/" $HOME/.config/spectrwm/spectrwm.conf
     sed -i "s/sh -c 'GDK_SCALE=1 signal-desktop'/signal-desktop/" $HOME/.config/spectrwm/spectrwm.conf
     # update rofi/config.rasi (rofi font size)
