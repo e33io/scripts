@@ -176,6 +176,7 @@ file:///home/$(whoami)/Pictures
 file:///home/$(whoami)/Videos
 file:///home/$(whoami)/Music" > $HOME/.config/gtk-3.0/bookmarks
 sed -i 's/"top": 1,/"top": 0,/' $HOME/.config/fastfetch/config.jsonc
+sed -i 's/#initial_window/initial_window/' $HOME/.config/kitty/kitty.conf
 sed -i 's/brave-browser/brave/' $HOME/.config/spectrwm/spectrwm.conf
 sed -i "s/home\/.*\/\.config/home\/$(whoami)\/\.config/" $HOME/.config/qt5ct/qt5ct.conf
 sed -i "s/home\/.*\/\.config/home\/$(whoami)\/\.config/" $HOME/.config/qt6ct/qt6ct.conf
