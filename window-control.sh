@@ -1,86 +1,108 @@
 #!/usr/bin/env bash
 
 # =============================================================================
-# Window Control - move and/or resize active window
+# Window Control - move, resize, or center active window
 # URL: https://github.com/e33io/scripts/blob/main/window-control.sh
 # -----------------------------------------------------------------------------
-# NOTE: requires xdotool, xwininfo and wmctrl
+# NOTE: requires xdotool, xwininfo, xdpyinfo and wmctrl
 # -----------------------------------------------------------------------------
 # Call script with:
 #   `window-control.sh move-right`  `window-control.sh width-more`
 #   `window-control.sh move-left`   `window-control.sh width-less`
 #   `window-control.sh move-down`   `window-control.sh height-more`
 #   `window-control.sh move-up`     `window-control.sh height-less`
+#   `window-control.sh center`
 # =============================================================================
 
 set -eu
 
-# x and y coordinates for active window
+# Absolute & relative coordinates for active window
 win_id="$(xdotool getwindowfocus)"
-x_abs=$(xwininfo -id $win_id | awk '/Abs.+X/ { sub(/^.+\s/,""); print }')
-y_abs=$(xwininfo -id $win_id | awk '/Abs.+Y/ { sub(/^.+\s/,""); print }')
-x_rel=$(xwininfo -id $win_id | awk '/Rel.+X/ { sub(/^.+\s/,""); print }')
-y_rel=$(xwininfo -id $win_id | awk '/Rel.+Y/ { sub(/^.+\s/,""); print }')
-x=$(($x_abs - $x_rel))
-y=$(($y_abs - $y_rel))
+x_abs=$(xwininfo -id "$win_id" | awk '/Abs.+X/ { sub(/^.+\s/,""); print }')
+y_abs=$(xwininfo -id "$win_id" | awk '/Abs.+Y/ { sub(/^.+\s/,""); print }')
+x_rel=$(xwininfo -id "$win_id" | awk '/Rel.+X/ { sub(/^.+\s/,""); print }')
+y_rel=$(xwininfo -id "$win_id" | awk '/Rel.+Y/ { sub(/^.+\s/,""); print }')
+x=$((x_abs - x_rel))
+y=$((y_abs - y_rel))
 
-# width and height for active window
+# Width & height for active window
 width=$(xdotool getactivewindow getwindowgeometry --shell | head -4 | tail -1 | sed 's/[^0-9]*//')
 height=$(xdotool getactivewindow getwindowgeometry --shell | head -5 | tail -1 | sed 's/[^0-9]*//')
 
-# move window distance (pixels)
+# Move & resize step sizes (pixels)
 move_win=100
-
-# resize window distance (pixels)
 resize_win=50
 
-case $1 in
+print_usage() {
+    echo "Usage: $0 <command>"
+    echo
+    echo "Commands:"
+    echo "  move-right    Move window right by $move_win px"
+    echo "  move-left     Move window left by $move_win px"
+    echo "  move-up       Move window up by $move_win px"
+    echo "  move-down     Move window down by $move_win px"
+    echo "  width-more    Increase window width by $resize_win px"
+    echo "  width-less    Decrease window width by $resize_win px"
+    echo "  height-more   Increase window height by $resize_win px"
+    echo "  height-less   Decrease window height by $resize_win px"
+    echo "  center        Center window on screen"
+    echo "  -h, --help    Show this help message"
+    echo
+}
+
+# Require at least one argument
+if [ $# -eq 0 ]; then
+    print_usage
+    exit 1
+fi
+
+case "$1" in
     move-right)
-        # shift the x coordinates right
-        x=$(($x + $move_win))
-        # move window to the new coordinates
+        x=$((x + move_win))
         wmctrl -r :ACTIVE: -e "1,$x,$y,$width,$height"
     ;;
     move-left)
-        # shift the x coordinates left
-        x=$(($x - $move_win))
-        # move window to the new coordinates
+        x=$((x - move_win))
         wmctrl -r :ACTIVE: -e "1,$x,$y,$width,$height"
     ;;
     move-down)
-        # shift the y coordinates down
-        y=$(($y + $move_win))
-        # move window to the new coordinates
+        y=$((y + move_win))
         wmctrl -r :ACTIVE: -e "1,$x,$y,$width,$height"
     ;;
     move-up)
-        # shift the y coordinates up
-        y=$(($y - $move_win))
-        # move window to the new coordinates
+        y=$((y - move_win))
         wmctrl -r :ACTIVE: -e "1,$x,$y,$width,$height"
     ;;
     width-more)
-        # increase window width (from right side)
-        width=$(($width + $resize_win))
-        # resize window to the new width
+        width=$((width + resize_win))
         wmctrl -r :ACTIVE: -e "1,$x,$y,$width,$height"
     ;;
     width-less)
-        # decrease window width (from right side)
-        width=$(($width - $resize_win))
-        # resize window to the new width
+        width=$((width - resize_win))
         wmctrl -r :ACTIVE: -e "1,$x,$y,$width,$height"
     ;;
     height-more)
-        # increase window height (from bottom side)
-        height=$(($height + $resize_win))
-        # resize window to the new height
+        height=$((height + resize_win))
         wmctrl -r :ACTIVE: -e "1,$x,$y,$width,$height"
     ;;
     height-less)
-        # decrease window height (from bottom side)
-        height=$(($height - $resize_win))
-        # resize window to the new height
+        height=$((height - resize_win))
         wmctrl -r :ACTIVE: -e "1,$x,$y,$width,$height"
+    ;;
+    center)
+        IFS='x' read screenWidth screenHeight < <(xdpyinfo | grep dimensions | grep -o '[0-9x]*' | head -n1)
+        newPosX=$((screenWidth / 2 - width / 2))
+        newPosY=$((screenHeight / 2 - height / 2))
+        xdotool getactivewindow windowmove "$newPosX" "$newPosY"
+    ;;
+    -h|--help)
+        print_usage
+        exit 0
+    ;;
+    *)
+        echo "Unknown option: $1"
+        echo
+        print_usage
+        exit 1
     ;;
 esac
