@@ -691,7 +691,7 @@ while true; do
     echo "========================================================================"
     echo "Select and set theming for i3 and applications"
     echo "========================================================================"
-    echo ""
+    echo
     printf "   0) Keep current theming\n"
     printf "   1) Adwaita-Dark         \e[38;5;236m▇▇▇\e[0m\e[38;5;026m▇▇▇\e[0m\n"
     printf "   2) Adwaita-Darker       \e[38;5;236m▇▇▇\e[0m\e[38;5;025m▇▇▇\e[0m\n"
@@ -712,7 +712,7 @@ while true; do
     printf "  17) Yaru-Purple-Dark     \e[38;5;236m▇▇▇\e[0m\e[38;5;099m▇▇▇\e[0m\n"
     printf "  18) Yaru-Sage-Dark       \e[38;5;236m▇▇▇\e[0m\e[38;5;065m▇▇▇\e[0m\n"
     printf "  19) Yaru-Teal-Dark       \e[38;5;236m▇▇▇\e[0m\e[38;5;030m▇▇▇\e[0m\n"
-    echo ""
+    echo
 
     read -p "Which theme do you want to use? " n
     case $n in
