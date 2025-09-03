@@ -1,7 +1,7 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # =============================================================================
-# Active Window Control - move and/or resize windows
+# Window Control - move and/or resize active window
 # URL: https://github.com/e33io/scripts/blob/main/window-control.sh
 # -----------------------------------------------------------------------------
 # NOTE: requires xdotool, xwininfo and wmctrl
