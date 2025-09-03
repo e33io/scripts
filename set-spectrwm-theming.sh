@@ -305,7 +305,7 @@ Mint_Y_Dark_Mod_Green () {
 Mint_Y_Dark_Mod_Grey () {
     # spectrwm theme
     swm_accent_color="rgb:70\/73\/7a"
-    swm_unfocus_color="rgb:56\/56\/56"
+    swm_unfocus_color="rgb:49\/49\/49"
     swm_bg_color="rgb:1e\/1e\/1e"
     swm_fg_color="rgb:ee\/ee\/ee"
     swm_fg_selected_color="rgb:ff\/ff\/ff"
