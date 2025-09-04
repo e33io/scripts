@@ -172,7 +172,7 @@ Adwaita_Darker () {
     swm_unfocus_color="rgb:53\/53\/53"
     swm_bg_color="rgb:1e\/1e\/1e"
     swm_fg_color="rgb:ee\/ee\/ee"
-    swm_fg_selected_color="rgb:ff\/ff\/ff"
+    swm_fg_selected_color="rgb:f4\/f4\/f4"
     # Theme accent color
     accent_color="#15539e"
     # Desktop background color
