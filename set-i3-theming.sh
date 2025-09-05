@@ -202,7 +202,7 @@ Adwaita_Light () {
     qt_ct_theme=Adwaita
     rofi_theme=Adwaita-Light
     icon_theme=Papirus-Light
-    papirus_folders=blue
+    papirus_folders=yellow
     # Call the theming files
     theming_files
 }
@@ -292,7 +292,7 @@ Mint_Y_Dark_Mod_Blue () {
     kvantum_theme=Mint-Y-Dark-Mod-Blue
     rofi_theme=Mint-Y-Dark-Blue
     icon_theme=Papirus-Dark
-    papirus_folders=blue
+    papirus_folders=adwaita
     # Call the theming files
     theming_files
 }
@@ -502,7 +502,7 @@ Yaru_Blue_Dark () {
     kvantum_theme=Yaru-blue-dark
     rofi_theme=Yaru-Blue-Dark
     icon_theme=Papirus-Dark
-    papirus_folders=blue
+    papirus_folders=adwaita
     # Call the theming files
     theming_files
 }

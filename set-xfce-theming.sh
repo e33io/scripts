@@ -148,7 +148,7 @@ Adwaita_Light () {
     gtk_theme=Adwaita
     qt_ct_theme=Adwaita
     icon_theme=Papirus-Light
-    papirus_folders=blue
+    papirus_folders=yellow
     # Desktop background color
     desktop_bg_color="#303e50"
     # Theme accent color
@@ -202,7 +202,7 @@ Mint_Y_Dark_Mod_Blue () {
     qt_ct_theme=kvantum-dark
     kvantum_theme=Mint-Y-Dark-Mod-Blue
     icon_theme=Papirus-Dark
-    papirus_folders=blue
+    papirus_folders=adwaita
     # Desktop background color
     desktop_bg_color="#202a35"
     # Theme accent color
@@ -328,7 +328,7 @@ Yaru_Blue_Dark () {
     qt_ct_theme=kvantum-dark
     kvantum_theme=Yaru-blue-dark
     icon_theme=Papirus-Dark
-    papirus_folders=blue
+    papirus_folders=adwaita
     # Desktop background color
     desktop_bg_color="#202b35"
     # Theme accent color
