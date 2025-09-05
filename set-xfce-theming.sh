@@ -150,7 +150,7 @@ Adwaita_Light () {
     icon_theme=Papirus-Light
     papirus_folders=yellow
     # Desktop background color
-    desktop_bg_color="#303e50"
+    desktop_bg_color="#2d3b4c"
     # Theme accent color
     accent_color="#3584e4"
     accent_color_rgb="rgb(53,132,228)"

@@ -195,7 +195,7 @@ Adwaita_Light () {
     # Theme accent color
     accent_color="#3584e4"
     # Desktop background color
-    desktop_bg_color="#303e50"
+    desktop_bg_color="#2d3b4c"
     # GUI and TUI theme names
     prefer_dark_theme="0"
     gtk_theme=Adwaita
