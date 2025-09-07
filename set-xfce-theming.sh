@@ -33,7 +33,7 @@ if [ ! -n "$(ls -d /usr/share/themes/Mint-*-Dark-Mod-* 2>/dev/null)" ]; then
     rm -rf $HOME/scripts-theming
     printf "%s\n" "[Desktop Entry]" "Type=Application" "Version=1.0" "Name=Kvantum Manager" \
     "Comment=A simple GUI for Kvantum themes" "Exec=kvantummanager" "Icon=kvantum" "Terminal=false" \
-    "Categories=Settings;DesktopSettings;LXQt;X-XFCE-SettingsDialog;X-XFCE-PersonalSettings;X-GNOME-PersonalSettings;" \
+    "Categories=Settings;DesktopSettings;X-XFCE-SettingsDialog;X-XFCE-PersonalSettings;X-GNOME-PersonalSettings;" \
     "X-KDE-StartupNotify=false" > $HOME/.local/share/applications/kvantummanager.desktop
 fi
 
@@ -59,10 +59,8 @@ clear
 
 theming_files () {
     # Xfce GTK theme and icon theme
-    sed -i "s/\"ThemeName\" type=\"string\" value=\".*\"/\"ThemeName\" type=\"string\" value=\"$gtk_theme\"/" \
-    $HOME/.config/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml
-    sed -i "s/\"IconThemeName\" type=\"string\" value=\".*\"/\"IconThemeName\" type=\"string\" value=\"$icon_theme\"/" \
-    $HOME/.config/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml
+    xfconf-query -c xsettings -p /Net/ThemeName -s "$gtk_theme"
+    xfconf-query -c xsettings -p /Net/IconThemeName -s "$icon_theme"
     # Xfce docklike plugin config and color
     if [ -f $HOME/.config/xfce4/panel/docklike*.rc ]; then
         if ! grep -q ^indicatorStyle= $HOME/.config/xfce4/panel/docklike*.rc; then
@@ -122,8 +120,6 @@ theming_files () {
     if [ -f "/usr/bin/papirus-folders" ]; then
         papirus-folders -C $papirus_folders --theme $icon_theme
     fi
-    # Reload Xfce xfdesktop settings
-    xfdesktop --reload
 }
 
 Adwaita_Dark () {
