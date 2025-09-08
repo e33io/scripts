@@ -108,6 +108,7 @@ sudo cp -R $HOME/dotfiles/etc/network /etc
 sudo cp -R $HOME/dotfiles/etc/plymouth /etc
 sudo cp -R $HOME/dotfiles/usr/share /usr
 sudo cp -R $HOME/opt-dots/xfce/etc/lightdm /etc
+sudo cp -R $HOME/opt-dots/xfce/usr/bin /usr
 sudo cp -R $HOME/opt-dots/xfce/usr/share /usr
 sudo cp -R $HOME/scripts/window-control.sh /usr/bin
 sudo mkdir -p /boot/grub/fonts
