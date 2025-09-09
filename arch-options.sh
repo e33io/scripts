@@ -5,8 +5,8 @@
 # URL: https://github.com/e33io/scripts/blob/main/arch-options.sh
 # -----------------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
-# Only use with a fresh "Minimal" archinstall (Profile > Type > Minimal)
-# to select and install i3, JWM, Xfce or Gnome plus a base set of apps
+# Works best with a fresh "Minimal" archinstall (Profile > Type > Minimal)
+# to select and install i3, JWM, Xfce or Gnome, plus a base set of apps
 # for a ready-to-use desktop session.
 # -----------------------------------------------------------------------------
 # Instructions for running this script:
@@ -18,7 +18,7 @@
 
 if [ "$(id -u)" = 0 ]; then
     echo "========================================================================"
-    echo "This script MUST NOT be run as root user."
+    echo "This script will not run as the root user!"
     echo "Run this script as a normal user."
     echo "You will be asked for a sudo password when necessary."
     echo "========================================================================"
