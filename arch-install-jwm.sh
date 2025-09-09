@@ -5,7 +5,7 @@
 # URL: https://github.com/e33io/scripts/blob/main/arch-install-jwm.sh
 # -----------------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
-# Only use with a fresh "Minimal" archinstall (Profile > Type > Minimal)
+# Works best with a fresh "Minimal" archinstall (Profile > Type > Minimal)
 # to install the JWM window manager and a base set of apps for a
 # ready-to-use desktop session.
 # -----------------------------------------------------------------------------
