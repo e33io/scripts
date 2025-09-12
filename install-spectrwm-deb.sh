@@ -23,7 +23,7 @@ echo "========================================================================"
 sudo apt -y install build-essential pkg-config libxcb1-dev libxcb-util-dev \
 libxcb-randr0-dev libxcb-keysyms1-dev libxcb-icccm4-dev libxcb-xinput-dev \
 libxcb-xtest0-dev libfontconfig1-dev libxft-dev libxcursor-dev libbsd-dev \
-libx11-xcb-dev xorg xserver-xorg x11-utils suckless-tools
+libx11-xcb-dev xserver-xorg x11-utils suckless-tools
 sudo apt -y build-dep spectrwm
 
 echo "========================================================================"
