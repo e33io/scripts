@@ -52,6 +52,8 @@ linux installation scripts
 
 - use [`install-yaru-themes.sh`](https://github.com/e33io/scripts/blob/main/install-yaru-themes.sh) to install Yaru themes and icons on Debian or Arch
 
+- use [`install-sovran-fonts.sh`](https://github.com/e33io/scripts/blob/main/install-sovran-fonts.sh) to install [Sovran](https://sovranfonts.e33.io) fonts
+
 &nbsp;
 
 ## utilities
@@ -61,6 +63,8 @@ linux installation scripts
 - use [`setup-tearfree-amd.sh`](https://github.com/e33io/scripts/blob/main/setup-tearfree-amd.sh) to setup TearFree for AMD GPUs
 
 - use [`setup-tearfree-intel.sh`](https://github.com/e33io/scripts/blob/main/setup-tearfree-intel.sh) to setup TearFree for Intel GPUs
+
+- use [`window-control.sh`](https://github.com/e33io/scripts/blob/main/window-control.sh) to move, resize, or center active window
 
 &nbsp;
 
