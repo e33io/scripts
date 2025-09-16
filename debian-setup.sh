@@ -30,7 +30,7 @@ sudo dpkg-reconfigure console-setup
 clear
 
 echo "========================================================================"
-echo "Update Debian 13 Trixie apt sources.list file"
+echo "Update the apt sources.list file"
 echo "========================================================================"
 
 echo "# Reference: https://wiki.debian.org/SourcesList
@@ -82,18 +82,20 @@ else
     echo "Swap file was added to the system."
 fi
 
-#echo "========================================================================"
-#
-#while true; do
-#    read -p "Do you want to install the backports kernel? (y/n) " yn
-#    case $yn in
-#        [Yy]* ) sudo apt -t trixie-backports -y install linux-image-amd64;
-#                break;;
-#        [Nn]* ) echo "You chose NOT to install the backports kernel";
-#                break;;
-#        * ) echo "Please answer y (for yes) or n (for no)";;
-#    esac
-#done
+echo "========================================================================"
+echo "Option to install the backports kernel for newer hardware"
+echo "========================================================================"
+
+while true; do
+    read -p "Do you want to install the backports kernel? (y/n) " yn
+    case $yn in
+        [Yy]* ) sudo apt -t trixie-backports -y install linux-image-amd64;
+                break;;
+        [Nn]* ) echo "You chose NOT to install the backports kernel";
+                break;;
+        * ) echo "Please answer y (for yes) or n (for no)";;
+    esac
+done
 
 echo "========================================================================"
 echo "Remove and clean up unneeded packages"
