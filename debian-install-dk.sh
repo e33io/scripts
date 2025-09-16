@@ -40,7 +40,7 @@ echo "========================================================================"
 echo "Install Xorg and other packages"
 echo "========================================================================"
 
-sudo apt -y install xserver-xorg network-manager i3lock rofi dunst playerctl xssproxy xsel xclip \
+sudo apt -y install xserver-xorg polybar network-manager i3lock rofi dunst playerctl xssproxy xsel xclip \
 xinput x11-utils lxappearance qt*ct adwaita-qt* gnome-themes-extra papirus-icon-theme breeze-icon-theme \
 fonts-dejavu fonts-noto-color-emoji nitrogen mate-polkit-bin python3-gi gobject-introspection gir1.2-gtk-3.0 \
 libdbus-glib-1-2 upower dex lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings plymouth plymouth-themes \
