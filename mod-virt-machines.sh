@@ -37,8 +37,8 @@ if [ -f "/bin/i3" ]; then
     sudo sed -i 's/GDK_SCALE=2/GDK_SCALE=1/' /etc/lightdm/Xgsession
 fi
 
-# JWM and spectrwm configs
-if { [ -d "$HOME/.config/jwm" ] || [ -d "$HOME/.config/spectrwm" ]; }; then
+# JWM, spectrwm and dk configs
+if { [ -d "$HOME/.config/jwm" ] || [ -d "$HOME/.config/spectrwm" ] || [ -d "$HOME/.config/dk" ]; }; then
     mkdir -p $HOME/.config/autostart
     # add audio-default.desktop file
     printf "%s\n" "[Desktop Entry]" "Type=Application" "Name=audio-default" "Comment=set default volume level" \
