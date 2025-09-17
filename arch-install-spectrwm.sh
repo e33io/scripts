@@ -98,8 +98,6 @@ cp -R $HOME/opt-dots/arch/.bash_profile $HOME
 cp -R $HOME/opt-dots/arch/.bashrc $HOME
 cp -R $HOME/opt-dots/arch/.profile $HOME
 cp -R $HOME/opt-dots/spectrwm/.config $HOME
-cp -R $HOME/opt-dots/arch-spectrwm/.config $HOME
-cp -R $HOME/opt-dots/arch-spectrwm/.local $HOME
 sudo cp -R $HOME/dotfiles/etc/plymouth /etc
 sudo cp -R $HOME/dotfiles/usr/share/fonts /usr/share
 sudo cp -R $HOME/dotfiles/usr/share/grub /usr/share
@@ -178,10 +176,15 @@ file:///home/$(whoami)/Videos
 file:///home/$(whoami)/Music" > $HOME/.config/gtk-3.0/bookmarks
 sed -i 's/"top": 1,/"top": 0,/' $HOME/.config/fastfetch/config.jsonc
 sed -i 's/#initial_window/initial_window/' $HOME/.config/kitty/kitty.conf
+sed -i '/libexec/d' $HOME/.config/spectrwm/autostart.sh
+sed -i 's/#\/usr\/lib/\/usr\/lib/' $HOME/.config/spectrwm/autostart.sh
+sed -i 's/#xbindkeys/xbindkeys/' $HOME/.config/spectrwm/autostart.sh
 sed -i 's/brave-browser/brave/' $HOME/.config/spectrwm/spectrwm.conf
 sed -i "s/home\/.*\/\.config/home\/$(whoami)\/\.config/" $HOME/.config/qt5ct/qt5ct.conf
 sed -i "s/home\/.*\/\.config/home\/$(whoami)\/\.config/" $HOME/.config/qt6ct/qt6ct.conf
 sed -i "s/home\/.*\/Desktop/home\/$(whoami)\/Desktop/" $HOME/.config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml
+printf "%s\n" "[Desktop Entry]" "Type=Application" "Name=NoDisplay" "Exec=true" \
+"NoDisplay=true" > $HOME/.local/share/applications/gmic_qt.desktop
 sed -i "s/~\/\.gtkrc-2\.0\.mine/\/home\/$(whoami)\/\.gtkrc-2\.0\.mine/" $HOME/.gtkrc-2.0
 printf "%s\n" "" "# Set XDG_CURRENT_DESKTOP" "export XDG_CURRENT_DESKTOP=spectrwm" \
 | tee -a $HOME/.profile > /dev/null
