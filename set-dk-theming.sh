@@ -403,7 +403,7 @@ Mint_Y_Dark_Mod_Teal () {
 Yaru_Blue_Dark () {
     # dk window colors
     dk_focus="#0073e5"
-    dk_unfocus="#555555"
+    dk_unfocus="#4e4e4e"
     dk_urgent="#ac0e16"
     # Polybar colors
     bar_bg="#1e1e1e"
@@ -427,7 +427,7 @@ Yaru_Blue_Dark () {
 Yaru_Brown_Dark () {
     # dk window colors
     dk_focus="#8c6c47"
-    dk_unfocus="#555555"
+    dk_unfocus="#4e4e4e"
     dk_urgent="#ac0e16"
     # Polybar colors
     bar_bg="#1e1e1e"
@@ -451,7 +451,7 @@ Yaru_Brown_Dark () {
 Yaru_Green_Dark () {
     # dk window colors
     dk_focus="#03875b"
-    dk_unfocus="#555555"
+    dk_unfocus="#4e4e4e"
     dk_urgent="#ac0e16"
     # Polybar colors
     bar_bg="#1e1e1e"
@@ -475,7 +475,7 @@ Yaru_Green_Dark () {
 Yaru_Orange_Dark () {
     # dk window colors
     dk_focus="#e95420"
-    dk_unfocus="#555555"
+    dk_unfocus="#4e4e4e"
     dk_urgent="#ac0e16"
     # Polybar colors
     bar_bg="#1e1e1e"
@@ -499,7 +499,7 @@ Yaru_Orange_Dark () {
 Yaru_Purple_Dark () {
     # dk window colors
     dk_focus="#7764d8"
-    dk_unfocus="#555555"
+    dk_unfocus="#4e4e4e"
     dk_urgent="#ac0e16"
     # Polybar colors
     bar_bg="#1e1e1e"
@@ -523,7 +523,7 @@ Yaru_Purple_Dark () {
 Yaru_Sage_Dark () {
     # dk window colors
     dk_focus="#657b69"
-    dk_unfocus="#555555"
+    dk_unfocus="#4e4e4e"
     dk_urgent="#ac0e16"
     # Polybar colors
     bar_bg="#1e1e1e"
@@ -547,7 +547,7 @@ Yaru_Sage_Dark () {
 Yaru_Teal_Dark () {
     # dk window colors
     dk_focus="#308280"
-    dk_unfocus="#555555"
+    dk_unfocus="#4e4e4e"
     dk_urgent="#ac0e16"
     # Polybar colors
     bar_bg="#1e1e1e"

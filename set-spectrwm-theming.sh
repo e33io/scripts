@@ -420,7 +420,7 @@ Mint_Y_Dark_Mod_Teal () {
 Yaru_Blue_Dark () {
     # spectrwm theme
     swm_accent_color="rgb:00\/73\/e5"
-    swm_unfocus_color="rgb:55\/55\/55"
+    swm_unfocus_color="rgb:4e\/4e\/4e"
     swm_bg_color="rgb:1e\/1e\/1e"
     swm_fg_color="rgb:ee\/ee\/ee"
     swm_fg_selected_color="rgb:ff\/ff\/ff"
@@ -443,7 +443,7 @@ Yaru_Blue_Dark () {
 Yaru_Brown_Dark () {
     # spectrwm theme
     swm_accent_color="rgb:8c\/6c\/47"
-    swm_unfocus_color="rgb:55\/55\/55"
+    swm_unfocus_color="rgb:4e\/4e\/4e"
     swm_bg_color="rgb:1e\/1e\/1e"
     swm_fg_color="rgb:ee\/ee\/ee"
     swm_fg_selected_color="rgb:ff\/ff\/ff"
@@ -466,7 +466,7 @@ Yaru_Brown_Dark () {
 Yaru_Green_Dark () {
     # spectrwm theme
     swm_accent_color="rgb:03\/87\/5b"
-    swm_unfocus_color="rgb:55\/55\/55"
+    swm_unfocus_color="rgb:4e\/4e\/4e"
     swm_bg_color="rgb:1e\/1e\/1e"
     swm_fg_color="rgb:ee\/ee\/ee"
     swm_fg_selected_color="rgb:ff\/ff\/ff"
@@ -489,7 +489,7 @@ Yaru_Green_Dark () {
 Yaru_Orange_Dark () {
     # spectrwm theme
     swm_accent_color="rgb:e9\/54\/20"
-    swm_unfocus_color="rgb:55\/55\/55"
+    swm_unfocus_color="rgb:4e\/4e\/4e"
     swm_bg_color="rgb:1e\/1e\/1e"
     swm_fg_color="rgb:ee\/ee\/ee"
     swm_fg_selected_color="rgb:ff\/ff\/ff"
@@ -512,7 +512,7 @@ Yaru_Orange_Dark () {
 Yaru_Purple_Dark () {
     # spectrwm theme
     swm_accent_color="rgb:77\/64\/d8"
-    swm_unfocus_color="rgb:55\/55\/55"
+    swm_unfocus_color="rgb:4e\/4e\/4e"
     swm_bg_color="rgb:1e\/1e\/1e"
     swm_fg_color="rgb:ee\/ee\/ee"
     swm_fg_selected_color="rgb:ff\/ff\/ff"
@@ -535,7 +535,7 @@ Yaru_Purple_Dark () {
 Yaru_Sage_Dark () {
     # spectrwm theme
     swm_accent_color="rgb:65\/7b\/69"
-    swm_unfocus_color="rgb:55\/55\/55"
+    swm_unfocus_color="rgb:4e\/4e\/4e"
     swm_bg_color="rgb:1e\/1e\/1e"
     swm_fg_color="rgb:ee\/ee\/ee"
     swm_fg_selected_color="rgb:ff\/ff\/ff"
@@ -558,7 +558,7 @@ Yaru_Sage_Dark () {
 Yaru_Teal_Dark () {
     # spectrwm theme
     swm_accent_color="rgb:30\/82\/80"
-    swm_unfocus_color="rgb:55\/55\/55"
+    swm_unfocus_color="rgb:4e\/4e\/4e"
     swm_bg_color="rgb:1e\/1e\/1e"
     swm_fg_color="rgb:ee\/ee\/ee"
     swm_fg_selected_color="rgb:ff\/ff\/ff"

@@ -480,8 +480,8 @@ Mint_Y_Dark_Mod_Teal () {
 Yaru_Blue_Dark () {
     # i3 window colors
     client_focused="#0073e5 #0073e5 #ffffff #2c96ff #0073e5"
-    client_focused_inactive="#555555 #1e1e1e #cccccc #707070 #555555"
-    client_unfocused="#555555 #1e1e1e #cccccc #707070 #555555"
+    client_focused_inactive="#4e4e4e #1e1e1e #cccccc #696969 #4e4e4e"
+    client_unfocused="#4e4e4e #1e1e1e #cccccc #696969 #4e4e4e"
     client_urgent="#ac0e16 #ac0e16 #ffffff #c8101a #ac0e16"
     client_placeholder="#1e1e1e #1e1e1e #eeeeee #1e1e1e #1e1e1e"
     client_background="#7f7f7f"
@@ -510,8 +510,8 @@ Yaru_Blue_Dark () {
 Yaru_Brown_Dark () {
     # i3 window colors
     client_focused="#8c6c47 #8c6c47 #ffffff #ae895f #8c6c47"
-    client_focused_inactive="#555555 #1e1e1e #cccccc #707070 #555555"
-    client_unfocused="#555555 #1e1e1e #cccccc #707070 #555555"
+    client_focused_inactive="#4e4e4e #1e1e1e #cccccc #696969 #4e4e4e"
+    client_unfocused="#4e4e4e #1e1e1e #cccccc #696969 #4e4e4e"
     client_urgent="#ac0e16 #ac0e16 #ffffff #c8101a #ac0e16"
     client_placeholder="#1e1e1e #1e1e1e #eeeeee #1e1e1e #1e1e1e"
     client_background="#7f7f7f"
@@ -540,8 +540,8 @@ Yaru_Brown_Dark () {
 Yaru_Green_Dark () {
     # i3 window colors
     client_focused="#03875b #03875b #ffffff #04aa73 #03875b"
-    client_focused_inactive="#555555 #1e1e1e #cccccc #707070 #555555"
-    client_unfocused="#555555 #1e1e1e #cccccc #707070 #555555"
+    client_focused_inactive="#4e4e4e #1e1e1e #cccccc #696969 #4e4e4e"
+    client_unfocused="#4e4e4e #1e1e1e #cccccc #696969 #4e4e4e"
     client_urgent="#ac0e16 #ac0e16 #ffffff #c8101a #ac0e16"
     client_placeholder="#1e1e1e #1e1e1e #eeeeee #1e1e1e #1e1e1e"
     client_background="#7f7f7f"
@@ -570,8 +570,8 @@ Yaru_Green_Dark () {
 Yaru_Orange_Dark () {
     # i3 window colors
     client_focused="#e95420 #e95420 #ffffff #f08b69 #e95420"
-    client_focused_inactive="#555555 #1e1e1e #cccccc #707070 #555555"
-    client_unfocused="#555555 #1e1e1e #cccccc #707070 #555555"
+    client_focused_inactive="#4e4e4e #1e1e1e #cccccc #696969 #4e4e4e"
+    client_unfocused="#4e4e4e #1e1e1e #cccccc #696969 #4e4e4e"
     client_urgent="#ac0e16 #ac0e16 #ffffff #c8101a #ac0e16"
     client_placeholder="#1e1e1e #1e1e1e #eeeeee #1e1e1e #1e1e1e"
     client_background="#7f7f7f"
@@ -600,8 +600,8 @@ Yaru_Orange_Dark () {
 Yaru_Purple_Dark () {
     # i3 window colors
     client_focused="#7764d8 #7764d8 #ffffff #9789e1 #7764d8"
-    client_focused_inactive="#555555 #1e1e1e #cccccc #707070 #555555"
-    client_unfocused="#555555 #1e1e1e #cccccc #707070 #555555"
+    client_focused_inactive="#4e4e4e #1e1e1e #cccccc #696969 #4e4e4e"
+    client_unfocused="#4e4e4e #1e1e1e #cccccc #696969 #4e4e4e"
     client_urgent="#ac0e16 #ac0e16 #ffffff #c8101a #ac0e16"
     client_placeholder="#1e1e1e #1e1e1e #eeeeee #1e1e1e #1e1e1e"
     client_background="#7f7f7f"
@@ -630,8 +630,8 @@ Yaru_Purple_Dark () {
 Yaru_Sage_Dark () {
     # i3 window colors
     client_focused="#657b69 #657b69 #ffffff #839987 #657b69"
-    client_focused_inactive="#555555 #1e1e1e #cccccc #707070 #555555"
-    client_unfocused="#555555 #1e1e1e #cccccc #707070 #555555"
+    client_focused_inactive="#4e4e4e #1e1e1e #cccccc #696969 #4e4e4e"
+    client_unfocused="#4e4e4e #1e1e1e #cccccc #696969 #4e4e4e"
     client_urgent="#ac0e16 #ac0e16 #ffffff #c8101a #ac0e16"
     client_placeholder="#1e1e1e #1e1e1e #eeeeee #1e1e1e #1e1e1e"
     client_background="#7f7f7f"
@@ -660,8 +660,8 @@ Yaru_Sage_Dark () {
 Yaru_Teal_Dark () {
     # i3 window colors
     client_focused="#308280 #308280 #ffffff #3da3a0 #308280"
-    client_focused_inactive="#555555 #1e1e1e #cccccc #707070 #555555"
-    client_unfocused="#555555 #1e1e1e #cccccc #707070 #555555"
+    client_focused_inactive="#4e4e4e #1e1e1e #cccccc #696969 #4e4e4e"
+    client_unfocused="#4e4e4e #1e1e1e #cccccc #696969 #4e4e4e"
     client_urgent="#ac0e16 #ac0e16 #ffffff #c8101a #ac0e16"
     client_placeholder="#1e1e1e #1e1e1e #eeeeee #1e1e1e #1e1e1e"
     client_background="#7f7f7f"
