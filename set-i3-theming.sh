@@ -62,13 +62,13 @@ theming_files () {
     sed -i "s/client\.placeholder .*/client\.placeholder      $client_placeholder/" $HOME/.config/i3/config
     sed -i "s/client\.background .*/client\.background       $client_background/" $HOME/.config/i3/config
     # Polybar colors
-    sed -i "s/bg = .*/bg = $bar_bg/" $HOME/.config/polybar/config.ini
-    sed -i "s/bg-focus = .*/bg-focus = $accent_color/" $HOME/.config/polybar/config.ini
-    sed -i "s/bg-urgent = .*/bg-urgent = $bar_bg_urg/" $HOME/.config/polybar/config.ini
-    sed -i "s/fg = .*/fg = $bar_fg/" $HOME/.config/polybar/config.ini
-    sed -i "s/fg-urgent = .*/fg-urgent = $bar_fg_urg/" $HOME/.config/polybar/config.ini
-    sed -i "s/bindmode = .*/bindmode = $bar_bindmode/" $HOME/.config/polybar/config.ini
-    sed -i "s/\%{F.*}\|\%{F-}/\%{F$accent_color}\|\%{F-}/" $HOME/.config/polybar/config.ini
+    sed -i "s/bg = .*/bg = $bar_bg/" $HOME/.config/i3/polybar/config.ini
+    sed -i "s/bg-focus = .*/bg-focus = $accent_color/" $HOME/.config/i3/polybar/config.ini
+    sed -i "s/bg-urgent = .*/bg-urgent = $bar_bg_urg/" $HOME/.config/i3/polybar/config.ini
+    sed -i "s/fg = .*/fg = $bar_fg/" $HOME/.config/i3/polybar/config.ini
+    sed -i "s/fg-urgent = .*/fg-urgent = $bar_fg_urg/" $HOME/.config/i3/polybar/config.ini
+    sed -i "s/bindmode = .*/bindmode = $bar_bindmode/" $HOME/.config/i3/polybar/config.ini
+    sed -i "s/\%{F.*}\|\%{F-}/\%{F$accent_color}\|\%{F-}/" $HOME/.config/i3/polybar/config.ini
     # GTK 2 theme and icon theme
     sed -i "s/gtk-theme-name=\".*\"/gtk-theme-name=\"$gtk_theme\"/" $HOME/.gtkrc-2.0
     sed -i "s/gtk-icon-theme-name=\".*\"/gtk-icon-theme-name=\"$icon_theme\"/" $HOME/.gtkrc-2.0

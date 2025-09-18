@@ -81,10 +81,10 @@ if [ -d "$HOME/.config/i3" ]; then
     sed -i 's/GDK_SCALE=1 brave/brave/' $HOME/.config/i3/config
     sed -i 's/GDK_SCALE=1 signal-desktop/signal-desktop/' $HOME/.config/i3/config
     # update polybar configs (sizes and scaling)
-    sed -i 's/height = 40/height = 20/' $HOME/.config/polybar/config.ini
-    sed -i 's/;3"/;2"/' $HOME/.config/polybar/config.ini
-    sed -i 's/dpi = 192/dpi = 96/' $HOME/.config/polybar/config.ini
-    sed -i 's/tray-spacing = 12/tray-spacing = 6/' $HOME/.config/polybar/config.ini
+    sed -i 's/height = 40/height = 20/' $HOME/.config/i3/polybar/config.ini
+    sed -i 's/;3"/;2"/' $HOME/.config/i3/polybar/config.ini
+    sed -i 's/dpi = 192/dpi = 96/' $HOME/.config/i3/polybar/config.ini
+    sed -i 's/tray-spacing = 12/tray-spacing = 6/' $HOME/.config/i3/polybar/config.ini
     # update rofi/config.rasi (rofi font size)
     sed -i 's/sans-serif 9"/sans-serif 9.5"/' $HOME/.config/rofi/config.rasi
 fi
@@ -114,10 +114,10 @@ if [ -d "$HOME/.config/jwm" ]; then
     sed -i 's/GDK_SCALE=1 brave/brave/' $HOME/.config/jwm/jwmrc
     sed -i 's/GDK_SCALE=1 signal-desktop/signal-desktop/' $HOME/.config/jwm/jwmrc
     # update polybar configs (sizes and scaling)
-    sed -i 's/height = 40/height = 20/' $HOME/.config/polybar/config.ini
-    sed -i 's/;3"/;2"/' $HOME/.config/polybar/config.ini
-    sed -i 's/dpi = 192/dpi = 96/' $HOME/.config/polybar/config.ini
-    sed -i 's/tray-spacing = 12/tray-spacing = 6/' $HOME/.config/polybar/config.ini
+    sed -i 's/height = 40/height = 20/' $HOME/.config/jwm/polybar/config.ini
+    sed -i 's/;3"/;2"/' $HOME/.config/jwm/polybar/config.ini
+    sed -i 's/dpi = 192/dpi = 96/' $HOME/.config/jwm/polybar/config.ini
+    sed -i 's/tray-spacing = 12/tray-spacing = 6/' $HOME/.config/jwm/polybar/config.ini
 fi
 
 # spectrwm specific configs
@@ -160,10 +160,10 @@ if [ -d "$HOME/.config/dk" ]; then
     sed -i "s/sh -c 'GDK_SCALE=1 brave-browser'/brave-browser/" $HOME/.config/dk/sxhkdrc
     sed -i "s/sh -c 'GDK_SCALE=1 signal-desktop'/signal-desktop/" $HOME/.config/dk/sxhkdrc
     # update polybar configs (sizes and scaling)
-    sed -i 's/height = 40/height = 20/' $HOME/.config/polybar/config.ini
-    sed -i 's/;3"/;2"/' $HOME/.config/polybar/config.ini
-    sed -i 's/dpi = 192/dpi = 96/' $HOME/.config/polybar/config.ini
-    sed -i 's/tray-spacing = 12/tray-spacing = 6/' $HOME/.config/polybar/config.ini
+    sed -i 's/height = 40/height = 20/' $HOME/.config/dk/polybar/config.ini
+    sed -i 's/;3"/;2"/' $HOME/.config/dk/polybar/config.ini
+    sed -i 's/dpi = 192/dpi = 96/' $HOME/.config/dk/polybar/config.ini
+    sed -i 's/tray-spacing = 12/tray-spacing = 6/' $HOME/.config/dk/polybar/config.ini
     # update rofi/config.rasi (rofi font size)
     sed -i 's/sans-serif 9"/sans-serif 9.5"/' $HOME/.config/rofi/config.rasi
 fi

@@ -59,11 +59,11 @@ theming_files () {
     sed -i "s/unfocus='.*'/unfocus='$dk_unfocus'/" $HOME/.config/dk/dkrc
     sed -i "s/urgent='.*'/urgent='$dk_urgent'/" $HOME/.config/dk/dkrc
     # Polybar colors
-    sed -i "s/bg = .*/bg = $bar_bg/" $HOME/.config/polybar/config.ini
-    sed -i "s/bg-act = .*/bg-act = $accent_color/" $HOME/.config/polybar/config.ini
-    sed -i "s/bg-occ = .*/bg-occ = $bar_bg/" $HOME/.config/polybar/config.ini
-    sed -i "s/fg = .*/fg = $bar_fg/" $HOME/.config/polybar/config.ini
-    sed -i "s/\%{F.*}\|\%{F-}/\%{F$accent_color}\|\%{F-}/" $HOME/.config/polybar/config.ini
+    sed -i "s/bg = .*/bg = $bar_bg/" $HOME/.config/dk/polybar/config.ini
+    sed -i "s/bg-act = .*/bg-act = $accent_color/" $HOME/.config/dk/polybar/config.ini
+    sed -i "s/bg-occ = .*/bg-occ = $bar_bg/" $HOME/.config/dk/polybar/config.ini
+    sed -i "s/fg = .*/fg = $bar_fg/" $HOME/.config/dk/polybar/config.ini
+    sed -i "s/\%{F.*}\|\%{F-}/\%{F$accent_color}\|\%{F-}/" $HOME/.config/dk/polybar/config.ini
     # GTK 2 theme and icon theme
     sed -i "s/gtk-theme-name=\".*\"/gtk-theme-name=\"$gtk_theme\"/" $HOME/.gtkrc-2.0
     sed -i "s/gtk-icon-theme-name=\".*\"/gtk-icon-theme-name=\"$icon_theme\"/" $HOME/.gtkrc-2.0

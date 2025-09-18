@@ -29,8 +29,8 @@ if [ -d "$HOME/.config/i3" ]; then
     # update xss-lock.desktop (add lock-suspend.sh to xss-lock command)
     sed -i 's/xss-lock -l/xss-lock -n sh ~\/\.local\/bin\/lock-suspend\.sh -l/' $HOME/.config/i3/startup.conf
     # update polybar config.ini (modules)
-    sed -i 's/time pulseaudio eth tray/time battery pulseaudio wlan tray/' $HOME/.config/polybar/config.ini
-    sed -i 's/label-maxlen = .*/label-maxlen = 140/' $HOME/.config/polybar/config.ini
+    sed -i 's/time pulseaudio eth tray/time battery pulseaudio wlan tray/' $HOME/.config/i3/polybar/config.ini
+    sed -i 's/label-maxlen = .*/label-maxlen = 140/' $HOME/.config/i3/polybar/config.ini
 fi
 
 # JWM specific configs
@@ -38,8 +38,8 @@ if [ -d "$HOME/.config/jwm" ]; then
     # update xss-lock.desktop (add lock-suspend.sh to xss-lock command)
     sed -i 's/xss-lock -l/xss-lock -n sh ~\/\.local\/bin\/lock-suspend\.sh -l/' $HOME/.config/jwm/autostart
     # update polybar config.ini (modules)
-    sed -i 's/time pulseaudio eth tray/time battery pulseaudio wlan tray/' $HOME/.config/polybar/config.ini
-    sed -i 's/label-maxlen = .*/label-maxlen = 140/' $HOME/.config/polybar/config.ini
+    sed -i 's/time pulseaudio eth tray/time battery pulseaudio wlan tray/' $HOME/.config/jwm/polybar/config.ini
+    sed -i 's/label-maxlen = .*/label-maxlen = 140/' $HOME/.config/jwm/polybar/config.ini
 fi
 
 # spectrwm specific configs
@@ -55,6 +55,6 @@ if [ -d "$HOME/.config/dk" ]; then
     # update xss-lock.desktop (add lock-suspend.sh to xss-lock command)
     sed -i 's/xss-lock -l/xss-lock -n sh ~\/\.local\/bin\/lock-suspend\.sh -l/' $HOME/.config/dk/dkrc
     # update polybar config.ini (modules)
-    sed -i 's/time pulseaudio eth tray/time battery pulseaudio wlan tray/' $HOME/.config/polybar/config.ini
-    sed -i 's/label-maxlen = .*/label-maxlen = 140/' $HOME/.config/polybar/config.ini
+    sed -i 's/time pulseaudio eth tray/time battery pulseaudio wlan tray/' $HOME/.config/dk/polybar/config.ini
+    sed -i 's/label-maxlen = .*/label-maxlen = 140/' $HOME/.config/dk/polybar/config.ini
 fi
