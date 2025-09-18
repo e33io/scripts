@@ -222,6 +222,9 @@ printf "%s\n" "" "# Set XDG_CURRENT_DESKTOP" "export XDG_CURRENT_DESKTOP=dk" \
 | tee -a $HOME/.profile > /dev/null
 cp -R $HOME/scripts/set-dk-theming.sh $HOME/.local/bin/set-theming
 echo "dk was installed via e33io script: $(date '+%B %d, %Y, %H:%M')" > $HOME/.install-info
+if ! command -v i3 > /dev/null 2>&1; then
+    rm -rf $HOME/.config/i3
+fi
 rm -rf $HOME/dotfiles
 rm -rf $HOME/opt-dots
 rm -rf $HOME/scripts
