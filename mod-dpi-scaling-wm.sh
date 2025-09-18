@@ -97,7 +97,7 @@ if [ -d "$HOME/.config/jwm" ]; then
     sed -i 's/<Option>height:1296/<Option>height:648/' $HOME/.config/jwm/jwmrc
     sed -i 's/<Option>height:1536/<Option>height:768/' $HOME/.config/jwm/jwmrc
     sed -i 's/<Option>height:1728/<Option>height:864/' $HOME/.config/jwm/jwmrc
-    sed -i 's/<Option>width:1364/<Option>width:682/' $HOME/.config/jwm/jwmrc
+    sed -i 's/<Option>width:1350/<Option>width:675/' $HOME/.config/jwm/jwmrc
     sed -i 's/<Option>width:1440/<Option>width:720/' $HOME/.config/jwm/jwmrc
     sed -i 's/<Option>width:1536/<Option>width:768/' $HOME/.config/jwm/jwmrc
     sed -i 's/<Option>width:1728/<Option>width:864/' $HOME/.config/jwm/jwmrc

@@ -175,6 +175,7 @@ file:///home/$(whoami)/Documents
 file:///home/$(whoami)/Pictures
 file:///home/$(whoami)/Videos
 file:///home/$(whoami)/Music" > $HOME/.config/gtk-3.0/bookmarks
+sed -i 's/16, 37/16, 56/' $HOME/.config/dunst/dunstrc
 sed -i 's/"top": 1,/"top": 0,/' $HOME/.config/fastfetch/config.jsonc
 sed -i '/libexec/d' $HOME/.config/jwm/autostart
 sed -i 's/#\/usr\/lib/\/usr\/lib/' $HOME/.config/jwm/autostart
@@ -182,6 +183,7 @@ sed -i 's/#xbindkeys/xbindkeys/' $HOME/.config/jwm/autostart
 sed -i 's/brave-browser/brave/' $HOME/.config/jwm/jwmrc
 sed -i "s/home\/.*\/\.config/home\/$(whoami)\/\.config/" $HOME/.config/qt5ct/qt5ct.conf
 sed -i "s/home\/.*\/\.config/home\/$(whoami)\/\.config/" $HOME/.config/qt6ct/qt6ct.conf
+sed -i 's/Dmenu/Floating/' $HOME/.config/rofi/config.rasi
 sed -i "s/home\/.*\/Desktop/home\/$(whoami)\/Desktop/" $HOME/.config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml
 sed -i "s/~\/\.gtkrc-2\.0\.mine/\/home\/$(whoami)\/\.gtkrc-2\.0\.mine/" $HOME/.gtkrc-2.0
 printf "%s\n" "" "# Set XDG_CURRENT_DESKTOP" "export XDG_CURRENT_DESKTOP=jwm" \
