@@ -2,7 +2,7 @@
 
 # =============================================================================
 # Select and Set Theming for Xfce and Applications
-# URL: https://github.com/e33io/scripts/blob/main/set-xfce-theming.sh
+# URL: https://github.com/e33io/scripts/blob/main/set-theming-xfce.sh
 # -----------------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
 # NOTE: Only use with Debian or Arch Linux!

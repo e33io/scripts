@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # =============================================================================
-# Select and Set Theming for dk and applications
-# URL: https://github.com/e33io/scripts/blob/main/set-dk-theming.sh
+# Select and Set Theming for JWM and Applications
+# URL: https://github.com/e33io/scripts/blob/main/set-theming-jwm.sh
 # -----------------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
 # NOTE: Only use with Debian or Arch Linux!
@@ -54,16 +54,14 @@ fi
 clear
 
 theming_files () {
-    # dk window colors
-    sed -i "s/focus='.*'/focus='$dk_focus'/" $HOME/.config/dk/dkrc
-    sed -i "s/unfocus='.*'/unfocus='$dk_unfocus'/" $HOME/.config/dk/dkrc
-    sed -i "s/urgent='.*'/urgent='$dk_urgent'/" $HOME/.config/dk/dkrc
+    # JWM theme
+    sed -i "s/jwm\/themes\/.*<\/Include>/jwm\/themes\/$jwm_theme<\/Include>/" $HOME/.config/jwm/jwmrc
     # Polybar colors
-    sed -i "s/bg = .*/bg = $bar_bg/" $HOME/.config/dk/polybar/config.ini
-    sed -i "s/bg-act = .*/bg-act = $accent_color/" $HOME/.config/dk/polybar/config.ini
-    sed -i "s/bg-occ = .*/bg-occ = $bar_bg/" $HOME/.config/dk/polybar/config.ini
-    sed -i "s/fg = .*/fg = $bar_fg/" $HOME/.config/dk/polybar/config.ini
-    sed -i "s/\%{F.*}\|\%{F-}/\%{F$accent_color}\|\%{F-}/" $HOME/.config/dk/polybar/config.ini
+    sed -i "s/bg = .*/bg = $bar_bg/" $HOME/.config/jwm/polybar/config.ini
+    sed -i "s/bg-act = .*/bg-act = $accent_color/" $HOME/.config/jwm/polybar/config.ini
+    sed -i "s/bg-occ = .*/bg-occ = $bar_bg/" $HOME/.config/jwm/polybar/config.ini
+    sed -i "s/fg = .*/fg = $bar_fg/" $HOME/.config/jwm/polybar/config.ini
+    sed -i "s/\%{F.*}\|\%{F-}/\%{F$accent_color}\|\%{F-}/" $HOME/.config/jwm/polybar/config.ini
     # GTK 2 theme and icon theme
     sed -i "s/gtk-theme-name=\".*\"/gtk-theme-name=\"$gtk_theme\"/" $HOME/.gtkrc-2.0
     sed -i "s/gtk-icon-theme-name=\".*\"/gtk-icon-theme-name=\"$icon_theme\"/" $HOME/.gtkrc-2.0
@@ -93,7 +91,7 @@ theming_files () {
     sed -i "s/icon-theme: \".*\"/icon-theme: \"$icon_theme\"/" $HOME/.config/rofi/config.rasi
     # i3lock background color
     lock_bg_color=$(echo "$desktop_bg_color" | sed 's/^.//')
-    sed -i "s/-n -c .* \&/-n -c $lock_bg_color \&/" $HOME/.config/dk/dkrc
+    sed -i "s/-n -c .* \&/-n -c $lock_bg_color \&/" $HOME/.config/jwm/autostart
     sed -i "s/-c .* \&/-c $lock_bg_color \&/" $HOME/.local/bin/lock-suspend.sh
     # XSecureLock background color
     sed -i "s/BACKGROUND_COLOR=\".*\"/BACKGROUND_COLOR=\"$desktop_bg_color\"/" $HOME/.profile
@@ -116,10 +114,8 @@ theming_files () {
 }
 
 Adwaita_Dark () {
-    # dk window colors
-    dk_focus="#1c6dcf"
-    dk_unfocus="#535353"
-    dk_urgent="#a80e15"
+    # JWM theme
+    jwm_theme="JWM-Adwaita-Dark"
     # Polybar colors
     bar_bg="#1e1e1e"
     bar_fg="#eeeeee"
@@ -139,10 +135,8 @@ Adwaita_Dark () {
 }
 
 Adwaita_Darker () {
-    # dk window colors
-    dk_focus="#15539e"
-    dk_unfocus="#535353"
-    dk_urgent="#a80e15"
+    # JWM theme
+    jwm_theme="JWM-Adwaita-Darker"
     # Polybar colors
     bar_bg="#1e1e1e"
     bar_fg="#eeeeee"
@@ -162,10 +156,8 @@ Adwaita_Darker () {
 }
 
 Adwaita_Light () {
-    # dk window colors
-    dk_focus="#3584e4"
-    dk_unfocus="#b3aaa2"
-    dk_urgent="#aa0e15"
+    # JWM theme
+    jwm_theme="JWM-Adwaita-Light"
     # Polybar colors
     bar_bg="#f6f5f4"
     bar_fg="#2e3436"
@@ -185,10 +177,8 @@ Adwaita_Light () {
 }
 
 Mint_L_Dark_Mod_Brown () {
-    # dk window colors
-    dk_focus="#9c7e65"
-    dk_unfocus="#565656"
-    dk_urgent="#ae0e16"
+    # JWM theme
+    jwm_theme="JWM-Mint-L-Dark-Brown"
     # Polybar colors
     bar_bg="#1e1e1e"
     bar_fg="#eeeeee"
@@ -209,10 +199,8 @@ Mint_L_Dark_Mod_Brown () {
 }
 
 Mint_L_Dark_Mod_Teal () {
-    # dk window colors
-    dk_focus="#579c8e"
-    dk_unfocus="#565656"
-    dk_urgent="#ae0e16"
+    # JWM theme
+    jwm_theme="JWM-Mint-L-Dark-Teal"
     # Polybar colors
     bar_bg="#1e1e1e"
     bar_fg="#eeeeee"
@@ -233,10 +221,8 @@ Mint_L_Dark_Mod_Teal () {
 }
 
 Mint_Y_Dark_Mod_Blue () {
-    # dk window colors
-    dk_focus="#0c75de"
-    dk_unfocus="#565656"
-    dk_urgent="#ae0e16"
+    # JWM theme
+    jwm_theme="JWM-Mint-Y-Dark-Blue"
     # Polybar colors
     bar_bg="#1e1e1e"
     bar_fg="#eeeeee"
@@ -257,10 +243,8 @@ Mint_Y_Dark_Mod_Blue () {
 }
 
 Mint_Y_Dark_Mod_Green () {
-    # dk window colors
-    dk_focus="#35a854"
-    dk_unfocus="#565656"
-    dk_urgent="#ae0e16"
+    # JWM theme
+    jwm_theme="JWM-Mint-Y-Dark-Green"
     # Polybar colors
     bar_bg="#1e1e1e"
     bar_fg="#eeeeee"
@@ -281,10 +265,8 @@ Mint_Y_Dark_Mod_Green () {
 }
 
 Mint_Y_Dark_Mod_Grey () {
-    # dk window colors
-    dk_focus="#70737a"
-    dk_unfocus="#494949"
-    dk_urgent="#ae0e16"
+    # JWM theme
+    jwm_theme="JWM-Mint-Y-Dark-Grey"
     # Polybar colors
     bar_bg="#1e1e1e"
     bar_fg="#eeeeee"
@@ -305,10 +287,8 @@ Mint_Y_Dark_Mod_Grey () {
 }
 
 Mint_Y_Dark_Mod_Orange () {
-    # dk window colors
-    dk_focus="#ff7139"
-    dk_unfocus="#565656"
-    dk_urgent="#ae0e16"
+    # JWM theme
+    jwm_theme="JWM-Mint-Y-Dark-Orange"
     # Polybar colors
     bar_bg="#1e1e1e"
     bar_fg="#eeeeee"
@@ -329,10 +309,8 @@ Mint_Y_Dark_Mod_Orange () {
 }
 
 Mint_Y_Dark_Mod_Purple () {
-    # dk window colors
-    dk_focus="#8c5dd9"
-    dk_unfocus="#565656"
-    dk_urgent="#ae0e16"
+    # JWM theme
+    jwm_theme="JWM-Mint-Y-Dark-Purple"
     # Polybar colors
     bar_bg="#1e1e1e"
     bar_fg="#eeeeee"
@@ -353,10 +331,8 @@ Mint_Y_Dark_Mod_Purple () {
 }
 
 Mint_Y_Dark_Mod_Red () {
-    # dk window colors
-    dk_focus="#e82127"
-    dk_unfocus="#565656"
-    dk_urgent="#eeeeee"
+    # JWM theme
+    jwm_theme="JWM-Mint-Y-Dark-Red"
     # Polybar colors
     bar_bg="#1e1e1e"
     bar_fg="#eeeeee"
@@ -377,10 +353,8 @@ Mint_Y_Dark_Mod_Red () {
 }
 
 Mint_Y_Dark_Mod_Teal () {
-    # dk window colors
-    dk_focus="#199ca8"
-    dk_unfocus="#565656"
-    dk_urgent="#ae0e16"
+    # JWM theme
+    jwm_theme="JWM-Mint-Y-Dark-Teal"
     # Polybar colors
     bar_bg="#1e1e1e"
     bar_fg="#eeeeee"
@@ -401,10 +375,8 @@ Mint_Y_Dark_Mod_Teal () {
 }
 
 Yaru_Blue_Dark () {
-    # dk window colors
-    dk_focus="#0073e5"
-    dk_unfocus="#4e4e4e"
-    dk_urgent="#ac0e16"
+    # JWM theme
+    jwm_theme="JWM-Yaru-Blue-Dark"
     # Polybar colors
     bar_bg="#1e1e1e"
     bar_fg="#eeeeee"
@@ -425,10 +397,8 @@ Yaru_Blue_Dark () {
 }
 
 Yaru_Brown_Dark () {
-    # dk window colors
-    dk_focus="#8c6c47"
-    dk_unfocus="#4e4e4e"
-    dk_urgent="#ac0e16"
+    # JWM theme
+    jwm_theme="JWM-Yaru-Brown-Dark"
     # Polybar colors
     bar_bg="#1e1e1e"
     bar_fg="#eeeeee"
@@ -449,10 +419,8 @@ Yaru_Brown_Dark () {
 }
 
 Yaru_Green_Dark () {
-    # dk window colors
-    dk_focus="#03875b"
-    dk_unfocus="#4e4e4e"
-    dk_urgent="#ac0e16"
+    # JWM theme
+    jwm_theme="JWM-Yaru-Green-Dark"
     # Polybar colors
     bar_bg="#1e1e1e"
     bar_fg="#eeeeee"
@@ -473,10 +441,8 @@ Yaru_Green_Dark () {
 }
 
 Yaru_Orange_Dark () {
-    # dk window colors
-    dk_focus="#e95420"
-    dk_unfocus="#4e4e4e"
-    dk_urgent="#ac0e16"
+    # JWM theme
+    jwm_theme="JWM-Yaru-Orange-Dark"
     # Polybar colors
     bar_bg="#1e1e1e"
     bar_fg="#eeeeee"
@@ -497,10 +463,8 @@ Yaru_Orange_Dark () {
 }
 
 Yaru_Purple_Dark () {
-    # dk window colors
-    dk_focus="#7764d8"
-    dk_unfocus="#4e4e4e"
-    dk_urgent="#ac0e16"
+    # JWM theme
+    jwm_theme="JWM-Yaru-Purple-Dark"
     # Polybar colors
     bar_bg="#1e1e1e"
     bar_fg="#eeeeee"
@@ -521,10 +485,8 @@ Yaru_Purple_Dark () {
 }
 
 Yaru_Sage_Dark () {
-    # dk window colors
-    dk_focus="#657b69"
-    dk_unfocus="#4e4e4e"
-    dk_urgent="#ac0e16"
+    # JWM theme
+    jwm_theme="JWM-Yaru-Sage-Dark"
     # Polybar colors
     bar_bg="#1e1e1e"
     bar_fg="#eeeeee"
@@ -545,10 +507,8 @@ Yaru_Sage_Dark () {
 }
 
 Yaru_Teal_Dark () {
-    # dk window colors
-    dk_focus="#308280"
-    dk_unfocus="#4e4e4e"
-    dk_urgent="#ac0e16"
+    # JWM theme
+    jwm_theme="JWM-Yaru-Teal-Dark"
     # Polybar colors
     bar_bg="#1e1e1e"
     bar_fg="#eeeeee"
@@ -570,7 +530,7 @@ Yaru_Teal_Dark () {
 
 while true; do
     echo "========================================================================"
-    echo "Select and set theming for dk and applications"
+    echo "Select and set theming for JWM and applications"
     echo "========================================================================"
     echo
     printf "   0) Keep current theming\n"

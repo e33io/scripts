@@ -180,7 +180,7 @@ sed -i "s/home\/.*\/\.config/home\/$(whoami)\/\.config/" $HOME/.config/qt5ct/qt5
 sed -i "s/home\/.*\/\.config/home\/$(whoami)\/\.config/" $HOME/.config/qt6ct/qt6ct.conf
 sed -i "s/home\/.*\/Desktop/home\/$(whoami)\/Desktop/" $HOME/.config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml
 sed -i "s/~\/\.gtkrc-2\.0\.mine/\/home\/$(whoami)\/\.gtkrc-2\.0\.mine/" $HOME/.gtkrc-2.0
-cp -R $HOME/scripts/set-i3-theming.sh $HOME/.local/bin/set-theming
+cp -R $HOME/scripts/set-theming-i3.sh $HOME/.local/bin/set-theming
 echo "i3-wm was installed via e33io script: $(date '+%B %d, %Y, %H:%M')" > $HOME/.install-info
 rm -rf $HOME/dotfiles
 rm -rf $HOME/opt-dots

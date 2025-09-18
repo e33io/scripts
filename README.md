@@ -38,11 +38,11 @@ linux installation scripts
 
 ## theming
 
-- use [`set-i3-theming.sh`](https://github.com/e33io/scripts/blob/main/set-i3-theming.sh) to select and set theming for i3 and applications
+- use [`set-theming-i3.sh`](https://github.com/e33io/scripts/blob/main/set-theming-i3.sh) to select and set theming for i3 and applications
 
-- use [`set-jwm-theming.sh`](https://github.com/e33io/scripts/blob/main/set-jwm-theming.sh) to select and set theming for JWM and applications
+- use [`set-theming-jwm.sh`](https://github.com/e33io/scripts/blob/main/set-theming-jwm.sh) to select and set theming for JWM and applications
 
-- use [`set-xfce-theming.sh`](https://github.com/e33io/scripts/blob/main/set-xfce-theming.sh) to select and set theming for Xfce and applications
+- use [`set-theming-xfce.sh`](https://github.com/e33io/scripts/blob/main/set-theming-xfce.sh) to select and set theming for Xfce and applications
 
 - use [`install-dark-mod-themes.sh`](https://github.com/e33io/scripts/blob/main/install-dark-mod-themes.sh) to install Mint Dark Mod themes on Debian or Arch
 

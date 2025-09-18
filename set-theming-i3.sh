@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # =============================================================================
-# Select and Set Theming for JWM and Applications
-# URL: https://github.com/e33io/scripts/blob/main/set-jwm-theming.sh
+# Select and Set Theming for i3 and Applications
+# URL: https://github.com/e33io/scripts/blob/main/set-theming-i3.sh
 # -----------------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
 # NOTE: Only use with Debian or Arch Linux!
@@ -54,14 +54,21 @@ fi
 clear
 
 theming_files () {
-    # JWM theme
-    sed -i "s/jwm\/themes\/.*<\/Include>/jwm\/themes\/$jwm_theme<\/Include>/" $HOME/.config/jwm/jwmrc
+    # i3 window colors
+    sed -i "s/client\.focused .*/client\.focused          $client_focused/" $HOME/.config/i3/config
+    sed -i "s/client\.focused_inactive .*/client\.focused_inactive $client_focused_inactive/" $HOME/.config/i3/config
+    sed -i "s/client\.unfocused .*/client\.unfocused        $client_unfocused/" $HOME/.config/i3/config
+    sed -i "s/client\.urgent .*/client\.urgent           $client_urgent/" $HOME/.config/i3/config
+    sed -i "s/client\.placeholder .*/client\.placeholder      $client_placeholder/" $HOME/.config/i3/config
+    sed -i "s/client\.background .*/client\.background       $client_background/" $HOME/.config/i3/config
     # Polybar colors
-    sed -i "s/bg = .*/bg = $bar_bg/" $HOME/.config/jwm/polybar/config.ini
-    sed -i "s/bg-act = .*/bg-act = $accent_color/" $HOME/.config/jwm/polybar/config.ini
-    sed -i "s/bg-occ = .*/bg-occ = $bar_bg/" $HOME/.config/jwm/polybar/config.ini
-    sed -i "s/fg = .*/fg = $bar_fg/" $HOME/.config/jwm/polybar/config.ini
-    sed -i "s/\%{F.*}\|\%{F-}/\%{F$accent_color}\|\%{F-}/" $HOME/.config/jwm/polybar/config.ini
+    sed -i "s/bg = .*/bg = $bar_bg/" $HOME/.config/i3/polybar/config.ini
+    sed -i "s/bg-focus = .*/bg-focus = $accent_color/" $HOME/.config/i3/polybar/config.ini
+    sed -i "s/bg-urgent = .*/bg-urgent = $bar_bg_urg/" $HOME/.config/i3/polybar/config.ini
+    sed -i "s/fg = .*/fg = $bar_fg/" $HOME/.config/i3/polybar/config.ini
+    sed -i "s/fg-urgent = .*/fg-urgent = $bar_fg_urg/" $HOME/.config/i3/polybar/config.ini
+    sed -i "s/bindmode = .*/bindmode = $bar_bindmode/" $HOME/.config/i3/polybar/config.ini
+    sed -i "s/\%{F.*}\|\%{F-}/\%{F$accent_color}\|\%{F-}/" $HOME/.config/i3/polybar/config.ini
     # GTK 2 theme and icon theme
     sed -i "s/gtk-theme-name=\".*\"/gtk-theme-name=\"$gtk_theme\"/" $HOME/.gtkrc-2.0
     sed -i "s/gtk-icon-theme-name=\".*\"/gtk-icon-theme-name=\"$icon_theme\"/" $HOME/.gtkrc-2.0
@@ -91,7 +98,7 @@ theming_files () {
     sed -i "s/icon-theme: \".*\"/icon-theme: \"$icon_theme\"/" $HOME/.config/rofi/config.rasi
     # i3lock background color
     lock_bg_color=$(echo "$desktop_bg_color" | sed 's/^.//')
-    sed -i "s/-n -c .* \&/-n -c $lock_bg_color \&/" $HOME/.config/jwm/autostart
+    sed -i "s/-n -c .*/-n -c $lock_bg_color/" $HOME/.config/i3/startup.conf
     sed -i "s/-c .* \&/-c $lock_bg_color \&/" $HOME/.local/bin/lock-suspend.sh
     # XSecureLock background color
     sed -i "s/BACKGROUND_COLOR=\".*\"/BACKGROUND_COLOR=\"$desktop_bg_color\"/" $HOME/.profile
@@ -114,11 +121,19 @@ theming_files () {
 }
 
 Adwaita_Dark () {
-    # JWM theme
-    jwm_theme="JWM-Adwaita-Dark"
+    # i3 window colors
+    client_focused="#1c6dcf #1c6dcf #ffffff #438de6 #1c6dcf"
+    client_focused_inactive="#535353 #1e1e1e #cccccc #6e6e6e #535353"
+    client_unfocused="#535353 #1e1e1e #cccccc #6e6e6e #535353"
+    client_urgent="#a80e15 #a80e15 #ffffff #dc121b #a80e15"
+    client_placeholder="#1e1e1e #1e1e1e #eeeeee #1e1e1e #1e1e1e"
+    client_background="#7f7f7f"
     # Polybar colors
     bar_bg="#1e1e1e"
     bar_fg="#eeeeee"
+    bar_bg_urg="#a80e15"
+    bar_fg_urg="#ffffff"
+    bar_bindmode="#6f3c95"
     # Theme accent color
     accent_color="#1c6dcf"
     # Desktop background color
@@ -135,11 +150,19 @@ Adwaita_Dark () {
 }
 
 Adwaita_Darker () {
-    # JWM theme
-    jwm_theme="JWM-Adwaita-Darker"
+    # i3 window colors
+    client_focused="#15539e #15539e #f4f4f4 #1961be #15539e"
+    client_focused_inactive="#535353 #1e1e1e #cccccc #6e6e6e #535353"
+    client_unfocused="#535353 #1e1e1e #cccccc #6e6e6e #535353"
+    client_urgent="#a80e15 #a80e15 #f4f4f4 #dc121b #a80e15"
+    client_placeholder="#1e1e1e #1e1e1e #eeeeee #1e1e1e #1e1e1e"
+    client_background="#7f7f7f"
     # Polybar colors
     bar_bg="#1e1e1e"
     bar_fg="#eeeeee"
+    bar_bg_urg="#a80e15"
+    bar_fg_urg="#f4f4f4"
+    bar_bindmode="#6f3c95"
     # Theme accent color
     accent_color="#15539e"
     # Desktop background color
@@ -156,11 +179,19 @@ Adwaita_Darker () {
 }
 
 Adwaita_Light () {
-    # JWM theme
-    jwm_theme="JWM-Adwaita-Light"
+    # i3 window colors
+    client_focused="#3584e4 #3584e4 #ffffff #7bafed #3584e4"
+    client_focused_inactive="#b3aaa2 #f6f5f4 #453f39 #8e8175 #b3aaa2"
+    client_unfocused="#b3aaa2 #f6f5f4 #453f39 #8e8175 #b3aaa2"
+    client_urgent="#aa0e15 #aa0e15 #ffffff #e6131d #aa0e15"
+    client_placeholder="#f6f5f4 #f6f5f4 #2e3436 #f6f5f4 #f6f5f4"
+    client_background="#7f7f7f"
     # Polybar colors
     bar_bg="#f6f5f4"
     bar_fg="#2e3436"
+    bar_bg_urg="#aa0e15"
+    bar_fg_urg="#ffffff"
+    bar_bindmode="#703c97"
     # Theme accent color
     accent_color="#3584e4"
     # Desktop background color
@@ -177,11 +208,19 @@ Adwaita_Light () {
 }
 
 Mint_L_Dark_Mod_Brown () {
-    # JWM theme
-    jwm_theme="JWM-Mint-L-Dark-Brown"
+    # i3 window colors
+    client_focused="#9c7e65 #9c7e65 #ffffff #b6a08d #9c7e65"
+    client_focused_inactive="#565656 #1e1e1e #cccccc #717171 #565656"
+    client_unfocused="#565656 #1e1e1e #cccccc #717171 #565656"
+    client_urgent="#ae0e16 #ae0e16 #ffffff #e2121d #ae0e16"
+    client_placeholder="#1e1e1e #1e1e1e #eeeeee #1e1e1e #1e1e1e"
+    client_background="#7f7f7f"
     # Polybar colors
     bar_bg="#1e1e1e"
     bar_fg="#eeeeee"
+    bar_bg_urg="#ae0e16"
+    bar_fg_urg="#ffffff"
+    bar_bindmode="#733d9a"
     # Theme accent color
     accent_color="#9c7e65"
     # Desktop background color
@@ -199,11 +238,19 @@ Mint_L_Dark_Mod_Brown () {
 }
 
 Mint_L_Dark_Mod_Teal () {
-    # JWM theme
-    jwm_theme="JWM-Mint-L-Dark-Teal"
+    # i3 window colors
+    client_focused="#579c8e #579c8e #ffffff #87bcb1 #579c8e"
+    client_focused_inactive="#565656 #1e1e1e #cccccc #717171 #565656"
+    client_unfocused="#565656 #1e1e1e #cccccc #717171 #565656"
+    client_urgent="#ae0e16 #ae0e16 #ffffff #e2121d #ae0e16"
+    client_placeholder="#1e1e1e #1e1e1e #eeeeee #1e1e1e #1e1e1e"
+    client_background="#7f7f7f"
     # Polybar colors
     bar_bg="#1e1e1e"
     bar_fg="#eeeeee"
+    bar_bg_urg="#ae0e16"
+    bar_fg_urg="#ffffff"
+    bar_bindmode="#733d9a"
     # Theme accent color
     accent_color="#579c8e"
     # Desktop background color
@@ -221,11 +268,19 @@ Mint_L_Dark_Mod_Teal () {
 }
 
 Mint_Y_Dark_Mod_Blue () {
-    # JWM theme
-    jwm_theme="JWM-Mint-Y-Dark-Blue"
+    # i3 window colors
+    client_focused="#0c75de #0c75de #ffffff #3997f4 #0c75de"
+    client_focused_inactive="#565656 #1e1e1e #cccccc #717171 #565656"
+    client_unfocused="#565656 #1e1e1e #cccccc #717171 #565656"
+    client_urgent="#ae0e16 #ae0e16 #ffffff #e2121d #ae0e16"
+    client_placeholder="#1e1e1e #1e1e1e #eeeeee #1e1e1e #1e1e1e"
+    client_background="#7f7f7f"
     # Polybar colors
     bar_bg="#1e1e1e"
     bar_fg="#eeeeee"
+    bar_bg_urg="#ae0e16"
+    bar_fg_urg="#ffffff"
+    bar_bindmode="#733d9a"
     # Theme accent color
     accent_color="#0c75de"
     # Desktop background color
@@ -243,11 +298,19 @@ Mint_Y_Dark_Mod_Blue () {
 }
 
 Mint_Y_Dark_Mod_Green () {
-    # JWM theme
-    jwm_theme="JWM-Mint-Y-Dark-Green"
+    # i3 window colors
+    client_focused="#35a854 #35a854 #ffffff #5dcb7b #35a854"
+    client_focused_inactive="#565656 #1e1e1e #cccccc #717171 #565656"
+    client_unfocused="#565656 #1e1e1e #cccccc #717171 #565656"
+    client_urgent="#ae0e16 #ae0e16 #ffffff #e2121d #ae0e16"
+    client_placeholder="#1e1e1e #1e1e1e #eeeeee #1e1e1e #1e1e1e"
+    client_background="#7f7f7f"
     # Polybar colors
     bar_bg="#1e1e1e"
     bar_fg="#eeeeee"
+    bar_bg_urg="#ae0e16"
+    bar_fg_urg="#ffffff"
+    bar_bindmode="#733d9a"
     # Theme accent color
     accent_color="#35a854"
     # Desktop background color
@@ -265,11 +328,19 @@ Mint_Y_Dark_Mod_Green () {
 }
 
 Mint_Y_Dark_Mod_Grey () {
-    # JWM theme
-    jwm_theme="JWM-Mint-Y-Dark-Grey"
+    # i3 window colors
+    client_focused="#70737a #70737a #ffffff #8e9197 #70737a"
+    client_focused_inactive="#494949 #1e1e1e #cccccc #636363 #494949"
+    client_unfocused="#494949 #1e1e1e #cccccc #636363 #494949"
+    client_urgent="#ae0e16 #ae0e16 #ffffff #e2121d #ae0e16"
+    client_placeholder="#1e1e1e #1e1e1e #eeeeee #1e1e1e #1e1e1e"
+    client_background="#7f7f7f"
     # Polybar colors
     bar_bg="#1e1e1e"
     bar_fg="#eeeeee"
+    bar_bg_urg="#ae0e16"
+    bar_fg_urg="#ffffff"
+    bar_bindmode="#733d9a"
     # Theme accent color
     accent_color="#70737a"
     # Desktop background color
@@ -287,11 +358,19 @@ Mint_Y_Dark_Mod_Grey () {
 }
 
 Mint_Y_Dark_Mod_Orange () {
-    # JWM theme
-    jwm_theme="JWM-Mint-Y-Dark-Orange"
+    # i3 window colors
+    client_focused="#ff7139 #ff7139 #ffffff #ff9267 #ff7139"
+    client_focused_inactive="#565656 #1e1e1e #cccccc #717171 #565656"
+    client_unfocused="#565656 #1e1e1e #cccccc #717171 #565656"
+    client_urgent="#ae0e16 #ae0e16 #ffffff #e2121d #ae0e16"
+    client_placeholder="#1e1e1e #1e1e1e #eeeeee #1e1e1e #1e1e1e"
+    client_background="#7f7f7f"
     # Polybar colors
     bar_bg="#1e1e1e"
     bar_fg="#eeeeee"
+    bar_bg_urg="#ae0e16"
+    bar_fg_urg="#ffffff"
+    bar_bindmode="#733d9a"
     # Theme accent color
     accent_color="#ff7139"
     # Desktop background color
@@ -309,11 +388,19 @@ Mint_Y_Dark_Mod_Orange () {
 }
 
 Mint_Y_Dark_Mod_Purple () {
-    # JWM theme
-    jwm_theme="JWM-Mint-Y-Dark-Purple"
+    # i3 window colors
+    client_focused="#8c5dd9 #8c5dd9 #ffffff #a784e2 #8c5dd9"
+    client_focused_inactive="#565656 #1e1e1e #cccccc #717171 #565656"
+    client_unfocused="#565656 #1e1e1e #cccccc #717171 #565656"
+    client_urgent="#ae0e16 #ae0e16 #ffffff #e2121d #ae0e16"
+    client_placeholder="#1e1e1e #1e1e1e #eeeeee #1e1e1e #1e1e1e"
+    client_background="#7f7f7f"
     # Polybar colors
     bar_bg="#1e1e1e"
     bar_fg="#eeeeee"
+    bar_bg_urg="#ae0e16"
+    bar_fg_urg="#ffffff"
+    bar_bindmode="#0855a2"
     # Theme accent color
     accent_color="#8c5dd9"
     # Desktop background color
@@ -331,11 +418,19 @@ Mint_Y_Dark_Mod_Purple () {
 }
 
 Mint_Y_Dark_Mod_Red () {
-    # JWM theme
-    jwm_theme="JWM-Mint-Y-Dark-Red"
+    # i3 window colors
+    client_focused="#e82127 #e82127 #ffffff #ed5055 #e82127"
+    client_focused_inactive="#565656 #1e1e1e #cccccc #717171 #565656"
+    client_unfocused="#565656 #1e1e1e #cccccc #717171 #565656"
+    client_urgent="#eeeeee #eeeeee #c9161a #c4c4c4 #eeeeee"
+    client_placeholder="#1e1e1e #1e1e1e #eeeeee #1e1e1e #1e1e1e"
+    client_background="#7f7f7f"
     # Polybar colors
     bar_bg="#1e1e1e"
     bar_fg="#eeeeee"
+    bar_bg_urg="#eeeeee"
+    bar_fg_urg="#c9161a"
+    bar_bindmode="#7941a2"
     # Theme accent color
     accent_color="#e82127"
     # Desktop background color
@@ -353,11 +448,19 @@ Mint_Y_Dark_Mod_Red () {
 }
 
 Mint_Y_Dark_Mod_Teal () {
-    # JWM theme
-    jwm_theme="JWM-Mint-Y-Dark-Teal"
+    # i3 window colors
+    client_focused="#199ca8 #199ca8 #ffffff #1fc2d0 #199ca8"
+    client_focused_inactive="#565656 #1e1e1e #cccccc #717171 #565656"
+    client_unfocused="#565656 #1e1e1e #cccccc #717171 #565656"
+    client_urgent="#ae0e16 #ae0e16 #ffffff #e2121d #ae0e16"
+    client_placeholder="#1e1e1e #1e1e1e #eeeeee #1e1e1e #1e1e1e"
+    client_background="#7f7f7f"
     # Polybar colors
     bar_bg="#1e1e1e"
     bar_fg="#eeeeee"
+    bar_bg_urg="#ae0e16"
+    bar_fg_urg="#ffffff"
+    bar_bindmode="#733d9a"
     # Theme accent color
     accent_color="#199ca8"
     # Desktop background color
@@ -375,11 +478,19 @@ Mint_Y_Dark_Mod_Teal () {
 }
 
 Yaru_Blue_Dark () {
-    # JWM theme
-    jwm_theme="JWM-Yaru-Blue-Dark"
+    # i3 window colors
+    client_focused="#0073e5 #0073e5 #ffffff #2c96ff #0073e5"
+    client_focused_inactive="#4e4e4e #1e1e1e #cccccc #696969 #4e4e4e"
+    client_unfocused="#4e4e4e #1e1e1e #cccccc #696969 #4e4e4e"
+    client_urgent="#ac0e16 #ac0e16 #ffffff #c8101a #ac0e16"
+    client_placeholder="#1e1e1e #1e1e1e #eeeeee #1e1e1e #1e1e1e"
+    client_background="#7f7f7f"
     # Polybar colors
     bar_bg="#1e1e1e"
     bar_fg="#eeeeee"
+    bar_bg_urg="#ae0e16"
+    bar_fg_urg="#ffffff"
+    bar_bindmode="#723c99"
     # Theme accent color
     accent_color="#0073e5"
     # Desktop background color
@@ -397,11 +508,19 @@ Yaru_Blue_Dark () {
 }
 
 Yaru_Brown_Dark () {
-    # JWM theme
-    jwm_theme="JWM-Yaru-Brown-Dark"
+    # i3 window colors
+    client_focused="#8c6c47 #8c6c47 #ffffff #ae895f #8c6c47"
+    client_focused_inactive="#4e4e4e #1e1e1e #cccccc #696969 #4e4e4e"
+    client_unfocused="#4e4e4e #1e1e1e #cccccc #696969 #4e4e4e"
+    client_urgent="#ac0e16 #ac0e16 #ffffff #c8101a #ac0e16"
+    client_placeholder="#1e1e1e #1e1e1e #eeeeee #1e1e1e #1e1e1e"
+    client_background="#7f7f7f"
     # Polybar colors
     bar_bg="#1e1e1e"
     bar_fg="#eeeeee"
+    bar_bg_urg="#ae0e16"
+    bar_fg_urg="#ffffff"
+    bar_bindmode="#723c99"
     # Theme accent color
     accent_color="#8c6c47"
     # Desktop background color
@@ -419,11 +538,19 @@ Yaru_Brown_Dark () {
 }
 
 Yaru_Green_Dark () {
-    # JWM theme
-    jwm_theme="JWM-Yaru-Green-Dark"
+    # i3 window colors
+    client_focused="#03875b #03875b #ffffff #04aa73 #03875b"
+    client_focused_inactive="#4e4e4e #1e1e1e #cccccc #696969 #4e4e4e"
+    client_unfocused="#4e4e4e #1e1e1e #cccccc #696969 #4e4e4e"
+    client_urgent="#ac0e16 #ac0e16 #ffffff #c8101a #ac0e16"
+    client_placeholder="#1e1e1e #1e1e1e #eeeeee #1e1e1e #1e1e1e"
+    client_background="#7f7f7f"
     # Polybar colors
     bar_bg="#1e1e1e"
     bar_fg="#eeeeee"
+    bar_bg_urg="#ae0e16"
+    bar_fg_urg="#ffffff"
+    bar_bindmode="#723c99"
     # Theme accent color
     accent_color="#03875b"
     # Desktop background color
@@ -441,11 +568,19 @@ Yaru_Green_Dark () {
 }
 
 Yaru_Orange_Dark () {
-    # JWM theme
-    jwm_theme="JWM-Yaru-Orange-Dark"
+    # i3 window colors
+    client_focused="#e95420 #e95420 #ffffff #f08b69 #e95420"
+    client_focused_inactive="#4e4e4e #1e1e1e #cccccc #696969 #4e4e4e"
+    client_unfocused="#4e4e4e #1e1e1e #cccccc #696969 #4e4e4e"
+    client_urgent="#ac0e16 #ac0e16 #ffffff #c8101a #ac0e16"
+    client_placeholder="#1e1e1e #1e1e1e #eeeeee #1e1e1e #1e1e1e"
+    client_background="#7f7f7f"
     # Polybar colors
     bar_bg="#1e1e1e"
     bar_fg="#eeeeee"
+    bar_bg_urg="#ae0e16"
+    bar_fg_urg="#ffffff"
+    bar_bindmode="#723c99"
     # Theme accent color
     accent_color="#e95420"
     # Desktop background color
@@ -463,11 +598,19 @@ Yaru_Orange_Dark () {
 }
 
 Yaru_Purple_Dark () {
-    # JWM theme
-    jwm_theme="JWM-Yaru-Purple-Dark"
+    # i3 window colors
+    client_focused="#7764d8 #7764d8 #ffffff #9789e1 #7764d8"
+    client_focused_inactive="#4e4e4e #1e1e1e #cccccc #696969 #4e4e4e"
+    client_unfocused="#4e4e4e #1e1e1e #cccccc #696969 #4e4e4e"
+    client_urgent="#ac0e16 #ac0e16 #ffffff #c8101a #ac0e16"
+    client_placeholder="#1e1e1e #1e1e1e #eeeeee #1e1e1e #1e1e1e"
+    client_background="#7f7f7f"
     # Polybar colors
     bar_bg="#1e1e1e"
     bar_fg="#eeeeee"
+    bar_bg_urg="#ae0e16"
+    bar_fg_urg="#ffffff"
+    bar_bindmode="#16549f"
     # Theme accent color
     accent_color="#7764d8"
     # Desktop background color
@@ -485,11 +628,19 @@ Yaru_Purple_Dark () {
 }
 
 Yaru_Sage_Dark () {
-    # JWM theme
-    jwm_theme="JWM-Yaru-Sage-Dark"
+    # i3 window colors
+    client_focused="#657b69 #657b69 #ffffff #839987 #657b69"
+    client_focused_inactive="#4e4e4e #1e1e1e #cccccc #696969 #4e4e4e"
+    client_unfocused="#4e4e4e #1e1e1e #cccccc #696969 #4e4e4e"
+    client_urgent="#ac0e16 #ac0e16 #ffffff #c8101a #ac0e16"
+    client_placeholder="#1e1e1e #1e1e1e #eeeeee #1e1e1e #1e1e1e"
+    client_background="#7f7f7f"
     # Polybar colors
     bar_bg="#1e1e1e"
     bar_fg="#eeeeee"
+    bar_bg_urg="#ae0e16"
+    bar_fg_urg="#ffffff"
+    bar_bindmode="#723c99"
     # Theme accent color
     accent_color="#657b69"
     # Desktop background color
@@ -507,11 +658,19 @@ Yaru_Sage_Dark () {
 }
 
 Yaru_Teal_Dark () {
-    # JWM theme
-    jwm_theme="JWM-Yaru-Teal-Dark"
+    # i3 window colors
+    client_focused="#308280 #308280 #ffffff #3da3a0 #308280"
+    client_focused_inactive="#4e4e4e #1e1e1e #cccccc #696969 #4e4e4e"
+    client_unfocused="#4e4e4e #1e1e1e #cccccc #696969 #4e4e4e"
+    client_urgent="#ac0e16 #ac0e16 #ffffff #c8101a #ac0e16"
+    client_placeholder="#1e1e1e #1e1e1e #eeeeee #1e1e1e #1e1e1e"
+    client_background="#7f7f7f"
     # Polybar colors
     bar_bg="#1e1e1e"
     bar_fg="#eeeeee"
+    bar_bg_urg="#ae0e16"
+    bar_fg_urg="#ffffff"
+    bar_bindmode="#723c99"
     # Theme accent color
     accent_color="#308280"
     # Desktop background color
@@ -530,7 +689,7 @@ Yaru_Teal_Dark () {
 
 while true; do
     echo "========================================================================"
-    echo "Select and set theming for JWM and applications"
+    echo "Select and set theming for i3 and applications"
     echo "========================================================================"
     echo
     printf "   0) Keep current theming\n"
