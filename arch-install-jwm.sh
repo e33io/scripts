@@ -189,7 +189,8 @@ sed -i "s/~\/\.gtkrc-2\.0\.mine/\/home\/$(whoami)\/\.gtkrc-2\.0\.mine/" $HOME/.g
 printf "%s\n" "" "# Set XDG_CURRENT_DESKTOP" "export XDG_CURRENT_DESKTOP=jwm" \
 | tee -a $HOME/.profile > /dev/null
 cp -R $HOME/scripts/set-theming-jwm.sh $HOME/.local/bin/set-theming-jwm
-echo "JWM was installed via e33io script: $(date '+%B %d, %Y, %H:%M')" > $HOME/.install-info
+echo "JWM was installed via e33io script: $(date '+%B %d, %Y, %H:%M')" \
+| tee -a $HOME/.install-info > /dev/null
 if ! command -v i3 > /dev/null 2>&1; then
     rm -rf $HOME/.config/i3
 fi
