@@ -212,7 +212,6 @@ file:///home/$(whoami)/Documents
 file:///home/$(whoami)/Pictures
 file:///home/$(whoami)/Videos
 file:///home/$(whoami)/Music" > $HOME/.config/gtk-3.0/bookmarks
-sed -i 's/#initial_window/initial_window/' $HOME/.config/kitty/kitty.conf
 sed -i '/mate-polkit/d' $HOME/.config/spectrwm/autostart.sh
 sed -i '/xbindkeys/d' $HOME/.config/spectrwm/autostart.sh
 sed -i '/at-spi/d' $HOME/.config/spectrwm/autostart.sh && sed -i '31d' $HOME/.config/spectrwm/autostart.sh
