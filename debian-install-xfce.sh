@@ -120,7 +120,7 @@ sudo ln -sf $HOME/.config/micro/* /root/.config/micro
 sudo ln -sf $HOME/.config/qt5ct/* /root/.config/qt5ct
 sudo ln -sf $HOME/.config/qt6ct/* /root/.config/qt6ct
 sudo mv /usr/share/backgrounds/xfce/xfce-x.svg /usr/share/backgrounds/xfce/xfce-default.svg
-sudo ln -sf /usr/share/wallpapers/background.png /usr/share/backgrounds/xfce/xfce-x.svg
+sudo ln -sf /usr/share/wallpapers/background-2.png /usr/share/backgrounds/xfce/xfce-x.svg
 sudo update-initramfs -u
 sudo update-grub
 
