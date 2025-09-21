@@ -151,6 +151,18 @@ if [ -d "$HOME/.config/dk" ]; then
     sed -i 's/sans-serif 9"/sans-serif 9.5"/' $HOME/.config/rofi/config.rasi
 fi
 
+# Openbox specific configs
+if [ -d "$HOME/.config/openbox" ]; then
+    # update openbox configs (keybindings)
+    sed -i 's/GDK_SCALE=1 brave/brave/' $HOME/.config/openbox/rc.xml
+    sed -i 's/GDK_SCALE=1 signal-desktop/signal-desktop/' $HOME/.config/openbox/rc.xml
+    # update polybar configs (sizes and scaling)
+    sed -i 's/height = 40/height = 20/' $HOME/.config/openbox/polybar/config.ini
+    sed -i 's/;3"/;2"/' $HOME/.config/openbox/polybar/config.ini
+    sed -i 's/dpi = 192/dpi = 96/' $HOME/.config/openbox/polybar/config.ini
+    sed -i 's/tray-spacing = 12/tray-spacing = 6/' $HOME/.config/openbox/polybar/config.ini
+fi
+
 # Remove unneeded .desktop files
 if [ -f "$HOME/.local/share/applications/brave-browser.desktop" ]; then
     rm -rf $HOME/.local/share/applications/brave-browser.desktop

@@ -38,7 +38,7 @@ if [ -f "/bin/i3" ]; then
 fi
 
 # JWM and dk configs
-if { [ -d "$HOME/.config/jwm" ] || [ -d "$HOME/.config/dk" ]; }; then
+if { [ -d "$HOME/.config/jwm" ] || [ -d "$HOME/.config/dk" ] || [ -d "$HOME/.config/openbox" ]; }; then
     mkdir -p $HOME/.config/autostart
     # add audio-default.desktop file
     printf "%s\n" "[Desktop Entry]" "Type=Application" "Name=audio-default" "Comment=set default volume level" \
