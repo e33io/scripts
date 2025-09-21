@@ -42,14 +42,6 @@ if [ -d "$HOME/.config/jwm" ]; then
     sed -i 's/label-maxlen = .*/label-maxlen = 140/' $HOME/.config/jwm/polybar/config.ini
 fi
 
-# spectrwm specific configs
-if [ -d "$HOME/.config/spectrwm" ]; then
-    # update xss-lock.desktop (add lock-suspend.sh to xss-lock command)
-    sed -i 's/xss-lock -l/xss-lock -n sh ~\/\.local\/bin\/lock-suspend\.sh -l/' $HOME/spectrwm/autostart.sh
-    # update spectrwm baraction script (modules)
-    sed -i 's/#print_battery/print_battery/' $HOME/spectrwm/baraction.sh
-fi
-
 # dk specific configs
 if [ -d "$HOME/.config/dk" ]; then
     # update xss-lock.desktop (add lock-suspend.sh to xss-lock command)
