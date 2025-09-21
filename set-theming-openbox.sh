@@ -61,6 +61,44 @@ theming_files () {
     else
         sed -i "s/<name>Openbox-.*<\/name>/<name>Openbox-$openbox_theme<\/name>/" $HOME/.config/openbox/rc.xml
     fi
+    # Xfce docklike plugin config and color
+    if [ -f $HOME/.config/xfce4/panel/docklike*.rc ]; then
+        if ! grep -q ^indicatorStyle= $HOME/.config/xfce4/panel/docklike*.rc; then
+            echo "indicatorStyle=0" \
+            | tee -a $HOME/.config/xfce4/panel/docklike*.rc > /dev/null
+        else
+            sed -i "s/^indicatorStyle=.*/indicatorStyle=0/" \
+            $HOME/.config/xfce4/panel/docklike*.rc
+        fi
+        if ! grep -q inactiveIndicatorStyle= $HOME/.config/xfce4/panel/docklike*.rc; then
+            echo "inactiveIndicatorStyle=2" \
+            | tee -a $HOME/.config/xfce4/panel/docklike*.rc > /dev/null
+        else
+            sed -i "s/inactiveIndicatorStyle=.*/inactiveIndicatorStyle=2/" \
+            $HOME/.config/xfce4/panel/docklike*.rc
+        fi
+        if ! grep -q indicatorColorFromTheme= $HOME/.config/xfce4/panel/docklike*.rc; then
+            echo "indicatorColorFromTheme=false" \
+            | tee -a $HOME/.config/xfce4/panel/docklike*.rc > /dev/null
+        else
+            sed -i "s/indicatorColorFromTheme=true/indicatorColorFromTheme=false/" \
+            $HOME/.config/xfce4/panel/docklike*.rc
+        fi
+        if ! grep -q indicatorColor= $HOME/.config/xfce4/panel/docklike*.rc; then
+            echo "indicatorColor=$accent_color_rgb" \
+            | tee -a $HOME/.config/xfce4/panel/docklike*.rc > /dev/null
+        else
+            sed -i "s/indicatorColor=.*/indicatorColor=$accent_color_rgb/" \
+            $HOME/.config/xfce4/panel/docklike*.rc
+        fi
+        if ! grep -q inactiveColor= $HOME/.config/xfce4/panel/docklike*.rc; then
+            echo "inactiveColor=$accent_color_rgb" \
+            | tee -a $HOME/.config/xfce4/panel/docklike*.rc > /dev/null
+        else
+            sed -i "s/inactiveColor=.*/inactiveColor=$accent_color_rgb/" \
+            $HOME/.config/xfce4/panel/docklike*.rc
+        fi
+    fi
     # GTK 2 theme and icon theme
     sed -i "s/gtk-theme-name=\".*\"/gtk-theme-name=\"$gtk_theme\"/" $HOME/.gtkrc-2.0
     sed -i "s/gtk-icon-theme-name=\".*\"/gtk-icon-theme-name=\"$icon_theme\"/" $HOME/.gtkrc-2.0
@@ -117,6 +155,7 @@ Adwaita_Dark () {
     openbox_theme="Adwaita-Dark"
     # Theme accent color
     accent_color="#15539e"
+    accent_color_rgb="rgb(21,83,158)"
     # Desktop background color
     desktop_bg_color="#202a36"
     # GUI and TUI theme names
@@ -135,6 +174,7 @@ Adwaita_Light () {
     openbox_theme="Adwaita-Light"
     # Theme accent color
     accent_color="#3584e4"
+    accent_color_rgb="rgb(53,132,228)"
     # Desktop background color
     desktop_bg_color="#2d3b4c"
     # GUI and TUI theme names
@@ -153,6 +193,7 @@ Mint_L_Dark_Mod_Brown () {
     openbox_theme="Mint-L-Dark-Brown"
     # Theme accent color
     accent_color="#9c7e65"
+    accent_color_rgb="rgb(156,126,101)"
     # Desktop background color
     desktop_bg_color="#32271e"
     # GUI and TUI theme names
@@ -172,6 +213,7 @@ Mint_L_Dark_Mod_Teal () {
     openbox_theme="Mint-L-Dark-Teal"
     # Theme accent color
     accent_color="#579c8e"
+    accent_color_rgb="rgb(87,156,142)"
     # Desktop background color
     desktop_bg_color="#1b2d29"
     # GUI and TUI theme names
@@ -191,6 +233,7 @@ Mint_Y_Dark_Mod_Blue () {
     openbox_theme="Mint-Y-Dark-Blue"
     # Theme accent color
     accent_color="#0c75de"
+    accent_color_rgb="rgb(12,117,222)"
     # Desktop background color
     desktop_bg_color="#202a35"
     # GUI and TUI theme names
@@ -210,6 +253,7 @@ Mint_Y_Dark_Mod_Green () {
     openbox_theme="Mint-Y-Dark-Green"
     # Theme accent color
     accent_color="#35a854"
+    accent_color_rgb="rgb(53,168,84)"
     # Desktop background color
     desktop_bg_color="#1b2d20"
     # GUI and TUI theme names
@@ -228,7 +272,8 @@ Mint_Y_Dark_Mod_Grey () {
     # Openbox theme
     openbox_theme="Mint-Y-Dark-Grey"
     # Theme accent color
-    accent_color="#70737a"
+    accent_color="#8e9197"
+    accent_color_rgb="rgb(142,145,151)"
     # Desktop background color
     desktop_bg_color="#282a2c"
     # GUI and TUI theme names
@@ -248,6 +293,7 @@ Mint_Y_Dark_Mod_Orange () {
     openbox_theme="Mint-Y-Dark-Orange"
     # Theme accent color
     accent_color="#ff7139"
+    accent_color_rgb="rgb(255,113,57)"
     # Desktop background color
     desktop_bg_color="#352620"
     # GUI and TUI theme names
@@ -267,6 +313,7 @@ Mint_Y_Dark_Mod_Purple () {
     openbox_theme="Mint-Y-Dark-Purple"
     # Theme accent color
     accent_color="#8c5dd9"
+    accent_color_rgb="rgb(140,93,217)"
     # Desktop background color
     desktop_bg_color="#2e253e"
     # GUI and TUI theme names
@@ -286,6 +333,7 @@ Mint_Y_Dark_Mod_Red () {
     openbox_theme="Mint-Y-Dark-Red"
     # Theme accent color
     accent_color="#e82127"
+    accent_color_rgb="rgb(232,33,39)"
     # Desktop background color
     desktop_bg_color="#441e20"
     # GUI and TUI theme names
@@ -305,6 +353,7 @@ Mint_Y_Dark_Mod_Teal () {
     openbox_theme="Mint-Y-Dark-Teal"
     # Theme accent color
     accent_color="#199ca8"
+    accent_color_rgb="rgb(25,156,168)"
     # Desktop background color
     desktop_bg_color="#1b2c2e"
     # GUI and TUI theme names
@@ -324,6 +373,7 @@ Yaru_Blue_Dark () {
     openbox_theme="Yaru-Blue-Dark"
     # Theme accent color
     accent_color="#0073e5"
+    accent_color_rgb="rgb(0,115,229)"
     # Desktop background color
     desktop_bg_color="#202b35"
     # GUI and TUI theme names
@@ -343,6 +393,7 @@ Yaru_Brown_Dark () {
     openbox_theme="Yaru-Brown-Dark"
     # Theme accent color
     accent_color="#8c6c47"
+    accent_color_rgb="rgb(140,108,71)"
     # Desktop background color
     desktop_bg_color="#32291e"
     # GUI and TUI theme names
@@ -362,6 +413,7 @@ Yaru_Green_Dark () {
     openbox_theme="Yaru-Green-Dark"
     # Theme accent color
     accent_color="#03875b"
+    accent_color_rgb="rgb(3,135,91)"
     # Desktop background color
     desktop_bg_color="#1b2d27"
     # GUI and TUI theme names
@@ -381,6 +433,7 @@ Yaru_Orange_Dark () {
     openbox_theme="Yaru-Orange-Dark"
     # Theme accent color
     accent_color="#e95420"
+    accent_color_rgb="rgb(233,84,32)"
     # Desktop background color
     desktop_bg_color="#362620"
     # GUI and TUI theme names
@@ -400,6 +453,7 @@ Yaru_Purple_Dark () {
     openbox_theme="Yaru-Purple-Dark"
     # Theme accent color
     accent_color="#7764d8"
+    accent_color_rgb="rgb(119,100,216)"
     # Desktop background color
     desktop_bg_color="#2b2640"
     # GUI and TUI theme names
@@ -419,6 +473,7 @@ Yaru_Sage_Dark () {
     openbox_theme="Yaru-Sage-Dark"
     # Theme accent color
     accent_color="#657b69"
+    accent_color_rgb="rgb(101,123,105)"
     # Desktop background color
     desktop_bg_color="#232b25"
     # GUI and TUI theme names
@@ -438,6 +493,7 @@ Yaru_Teal_Dark () {
     openbox_theme="Yaru-Teal-Dark"
     # Theme accent color
     accent_color="#308280"
+    accent_color_rgb="rgb(48,130,128)"
     # Desktop background color
     desktop_bg_color="#1b2d2d"
     # GUI and TUI theme names
