@@ -116,24 +116,6 @@ Adwaita_Dark () {
     # Openbox theme
     openbox_theme="Adwaita-Dark"
     # Theme accent color
-    accent_color="#1c6dcf"
-    # Desktop background color
-    desktop_bg_color="#202a36"
-    # GUI and TUI theme names
-    prefer_dark_theme="1"
-    gtk_theme=Adwaita-dark
-    qt_ct_theme=Adwaita-Dark
-    rofi_theme=Adwaita-Dark
-    icon_theme=Papirus-Dark
-    papirus_folders=adwaita
-    # Call the theming files
-    theming_files
-}
-
-Adwaita_Darker () {
-    # Openbox theme
-    openbox_theme="Adwaita-Darker"
-    # Theme accent color
     accent_color="#15539e"
     # Desktop background color
     desktop_bg_color="#202a36"
@@ -476,25 +458,24 @@ while true; do
     echo "========================================================================"
     echo
     printf "   0) Keep current theming\n"
-    printf "   1) Adwaita-Dark         \e[38;5;236m▇▇▇\e[0m\e[38;5;026m▇▇▇\e[0m\n"
-    printf "   2) Adwaita-Darker       \e[38;5;236m▇▇▇\e[0m\e[38;5;025m▇▇▇\e[0m\n"
-    printf "   3) Adwaita-Light        \e[38;5;255m▇▇▇\e[0m\e[38;5;032m▇▇▇\e[0m\n"
-    printf "   4) Mint-L-Dark-Brown    \e[38;5;237m▇▇▇\e[0m\e[38;5;137m▇▇▇\e[0m\n"
-    printf "   5) Mint-L-Dark-Teal     \e[38;5;237m▇▇▇\e[0m\e[38;5;066m▇▇▇\e[0m\n"
-    printf "   6) Mint-Y-Dark-Blue     \e[38;5;237m▇▇▇\e[0m\e[38;5;033m▇▇▇\e[0m\n"
-    printf "   7) Mint-Y-Dark-Green    \e[38;5;237m▇▇▇\e[0m\e[38;5;035m▇▇▇\e[0m\n"
-    printf "   8) Mint-Y-Dark-Grey     \e[38;5;237m▇▇▇\e[0m\e[38;5;243m▇▇▇\e[0m\n"
-    printf "   9) Mint-Y-Dark-Orange   \e[38;5;237m▇▇▇\e[0m\e[38;5;208m▇▇▇\e[0m\n"
-    printf "  10) Mint-Y-Dark-Purple   \e[38;5;237m▇▇▇\e[0m\e[38;5;098m▇▇▇\e[0m\n"
-    printf "  11) Mint-Y-Dark-Red      \e[38;5;237m▇▇▇\e[0m\e[38;5;160m▇▇▇\e[0m\n"
-    printf "  12) Mint-Y-Dark-Teal     \e[38;5;237m▇▇▇\e[0m\e[38;5;037m▇▇▇\e[0m\n"
-    printf "  13) Yaru-Blue-Dark       \e[38;5;236m▇▇▇\e[0m\e[38;5;027m▇▇▇\e[0m\n"
-    printf "  14) Yaru-Brown-Dark      \e[38;5;236m▇▇▇\e[0m\e[38;5;094m▇▇▇\e[0m\n"
-    printf "  15) Yaru-Green-Dark      \e[38;5;236m▇▇▇\e[0m\e[38;5;029m▇▇▇\e[0m\n"
-    printf "  16) Yaru-Orange-Dark     \e[38;5;236m▇▇▇\e[0m\e[38;5;166m▇▇▇\e[0m\n"
-    printf "  17) Yaru-Purple-Dark     \e[38;5;236m▇▇▇\e[0m\e[38;5;099m▇▇▇\e[0m\n"
-    printf "  18) Yaru-Sage-Dark       \e[38;5;236m▇▇▇\e[0m\e[38;5;065m▇▇▇\e[0m\n"
-    printf "  19) Yaru-Teal-Dark       \e[38;5;236m▇▇▇\e[0m\e[38;5;030m▇▇▇\e[0m\n"
+    printf "   1) Adwaita-Dark         \e[38;5;236m▇▇▇\e[0m\e[38;5;025m▇▇▇\e[0m\n"
+    printf "   2) Adwaita-Light        \e[38;5;255m▇▇▇\e[0m\e[38;5;032m▇▇▇\e[0m\n"
+    printf "   3) Mint-L-Dark-Brown    \e[38;5;237m▇▇▇\e[0m\e[38;5;137m▇▇▇\e[0m\n"
+    printf "   4) Mint-L-Dark-Teal     \e[38;5;237m▇▇▇\e[0m\e[38;5;066m▇▇▇\e[0m\n"
+    printf "   5) Mint-Y-Dark-Blue     \e[38;5;237m▇▇▇\e[0m\e[38;5;033m▇▇▇\e[0m\n"
+    printf "   6) Mint-Y-Dark-Green    \e[38;5;237m▇▇▇\e[0m\e[38;5;035m▇▇▇\e[0m\n"
+    printf "   7) Mint-Y-Dark-Grey     \e[38;5;237m▇▇▇\e[0m\e[38;5;243m▇▇▇\e[0m\n"
+    printf "   8) Mint-Y-Dark-Orange   \e[38;5;237m▇▇▇\e[0m\e[38;5;208m▇▇▇\e[0m\n"
+    printf "   9) Mint-Y-Dark-Purple   \e[38;5;237m▇▇▇\e[0m\e[38;5;098m▇▇▇\e[0m\n"
+    printf "  10) Mint-Y-Dark-Red      \e[38;5;237m▇▇▇\e[0m\e[38;5;160m▇▇▇\e[0m\n"
+    printf "  11) Mint-Y-Dark-Teal     \e[38;5;237m▇▇▇\e[0m\e[38;5;037m▇▇▇\e[0m\n"
+    printf "  12) Yaru-Blue-Dark       \e[38;5;236m▇▇▇\e[0m\e[38;5;027m▇▇▇\e[0m\n"
+    printf "  13) Yaru-Brown-Dark      \e[38;5;236m▇▇▇\e[0m\e[38;5;094m▇▇▇\e[0m\n"
+    printf "  14) Yaru-Green-Dark      \e[38;5;236m▇▇▇\e[0m\e[38;5;029m▇▇▇\e[0m\n"
+    printf "  15) Yaru-Orange-Dark     \e[38;5;236m▇▇▇\e[0m\e[38;5;166m▇▇▇\e[0m\n"
+    printf "  16) Yaru-Purple-Dark     \e[38;5;236m▇▇▇\e[0m\e[38;5;099m▇▇▇\e[0m\n"
+    printf "  17) Yaru-Sage-Dark       \e[38;5;236m▇▇▇\e[0m\e[38;5;065m▇▇▇\e[0m\n"
+    printf "  18) Yaru-Teal-Dark       \e[38;5;236m▇▇▇\e[0m\e[38;5;030m▇▇▇\e[0m\n"
     echo
 
     read -p "Which theme do you want to use? " n
@@ -502,60 +483,57 @@ while true; do
         0) echo "You chose to keep current theming";
            exit 1;;
         1) echo "You chose Adwaita-Dark";
-           Adwaita_Dark;
-           break;;
-        2) echo "You chose Adwaita-Darker";
            Adwaita_Darker;
            break;;
-        3) echo "You chose Adwaita-Light";
+        2) echo "You chose Adwaita-Light";
            Adwaita_Light;
            break;;
-        4) echo "You chose Mint-L-Dark-Mod-Brown";
+        3) echo "You chose Mint-L-Dark-Mod-Brown";
            Mint_L_Dark_Mod_Brown;
            break;;
-        5) echo "You chose Mint-L-Dark-Mod-Teal";
+        4) echo "You chose Mint-L-Dark-Mod-Teal";
            Mint_L_Dark_Mod_Teal;
            break;;
-        6) echo "You chose Mint-Y-Dark-Mod-Blue";
+        5) echo "You chose Mint-Y-Dark-Mod-Blue";
            Mint_Y_Dark_Mod_Blue;
            break;;
-        7) echo "You chose Mint-Y-Dark-Mod-Green";
+        6) echo "You chose Mint-Y-Dark-Mod-Green";
            Mint_Y_Dark_Mod_Green;
            break;;
-        8) echo "You chose Mint-Y-Dark-Mod-Grey";
+        7) echo "You chose Mint-Y-Dark-Mod-Grey";
            Mint_Y_Dark_Mod_Grey;
            break;;
-        9) echo "You chose Mint-Y-Dark-Mod-Orange";
+        8) echo "You chose Mint-Y-Dark-Mod-Orange";
            Mint_Y_Dark_Mod_Orange;
            break;;
-        10) echo "You chose Mint-Y-Dark-Mod-Purple";
+        9) echo "You chose Mint-Y-Dark-Mod-Purple";
            Mint_Y_Dark_Mod_Purple;
            break;;
-        11) echo "You chose Mint-Y-Dark-Mod-Red";
+        10) echo "You chose Mint-Y-Dark-Mod-Red";
            Mint_Y_Dark_Mod_Red;
            break;;
-        12) echo "You chose Mint-Y-Dark-Mod-Teal";
+        11) echo "You chose Mint-Y-Dark-Mod-Teal";
            Mint_Y_Dark_Mod_Teal;
            break;;
-        13) echo "You chose Yaru-Blue-Dark";
+        12) echo "You chose Yaru-Blue-Dark";
            Yaru_Blue_Dark;
            break;;
-        14) echo "You chose Yaru-Brown-Dark";
+        13) echo "You chose Yaru-Brown-Dark";
            Yaru_Brown_Dark;
            break;;
-        15) echo "You chose Yaru-Green-Dark";
+        14) echo "You chose Yaru-Green-Dark";
            Yaru_Green_Dark;
            break;;
-        16) echo "You chose Yaru-Orange-Dark";
+        15) echo "You chose Yaru-Orange-Dark";
            Yaru_Orange_Dark;
            break;;
-        17) echo "You chose Yaru-Purple-Dark";
+        16) echo "You chose Yaru-Purple-Dark";
            Yaru_Purple_Dark;
            break;;
-        18) echo "You chose Yaru-Sage-Dark";
+        17) echo "You chose Yaru-Sage-Dark";
            Yaru_Sage_Dark;
            break;;
-        19) echo "You chose Yaru-Teal-Dark";
+        18) echo "You chose Yaru-Teal-Dark";
            Yaru_Teal_Dark;
            break;;
         *) echo "Invalid selection, please enter a number from the list.";;
