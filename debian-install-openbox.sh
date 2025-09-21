@@ -58,6 +58,8 @@ echo "Remove unneeded/redundant packages"
 echo "========================================================================"
 
 sudo apt -y remove pavucontrol
+sudo apt -y autoremove
+sudo apt -y autoclean
 
 echo "========================================================================"
 echo "Enable wireplumber service (running as user)"
