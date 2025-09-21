@@ -181,7 +181,7 @@ sed -i 's/"top": 1,/"top": 0,/' $HOME/.config/fastfetch/config.jsonc
 sed -i '/libexec/d' $HOME/.config/openbox/autostart
 sed -i 's/#\/usr\/lib/\/usr\/lib/' $HOME/.config/openbox/autostart
 sed -i 's/#xbindkeys/xbindkeys/' $HOME/.config/openbox/autostart
-sed -i 's/brave-browser/brave/' $HOME/.config/openbox/openboxrc
+sed -i 's/brave-browser/brave/' $HOME/.config/openbox/rc.xml
 sed -i "s/home\/.*\/\.config/home\/$(whoami)\/\.config/" $HOME/.config/qt5ct/qt5ct.conf
 sed -i "s/home\/.*\/\.config/home\/$(whoami)\/\.config/" $HOME/.config/qt6ct/qt6ct.conf
 sed -i 's/Dmenu/Floating/' $HOME/.config/rofi/config.rasi
