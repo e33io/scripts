@@ -158,8 +158,8 @@ if [ -d "$HOME/.config/openbox" ]; then
     # update openbox configs (window font size)
     sed -i 's/size>8\.5<\/size/size>9<\/size/' $HOME/.config/openbox/rc.xml
     # update openbox configs (keybindings)
-    sed -i 's/GDK_SCALE=1 brave/brave/' $HOME/.config/openbox/rc.xml
-    sed -i 's/GDK_SCALE=1 signal-desktop/signal-desktop/' $HOME/.config/openbox/rc.xml
+    sed -i "s/sh -c 'GDK_SCALE=1 brave-browser'/brave-browser/" $HOME/.config/openbox/rc.xml
+    sed -i "s/sh -c 'GDK_SCALE=1 signal-desktop'/signal-desktop/" $HOME/.config/openbox/rc.xml
     # update xfce4-panel (height)
     sed -i 's/value="20"/value="21"/' $HOME/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml
 fi
