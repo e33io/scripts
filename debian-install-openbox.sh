@@ -40,15 +40,15 @@ echo "========================================================================"
 echo "Install Openbox and other packages"
 echo "========================================================================"
 
-sudo apt -y install openbox xfce4-panel xfce4-pulseaudio-plugin xfce4-battery-plugin xfce4-docklike-plugin \
-xfce4-windowck-plugin network-manager-gnome i3lock rofi dunst playerctl xssproxy xsel xclip xinput x11-utils \
-lxappearance qt*ct adwaita-qt* gnome-themes-extra papirus-icon-theme breeze-icon-theme fonts-dejavu \
-fonts-noto-color-emoji nitrogen mate-polkit-bin python3-gi gobject-introspection gir1.2-gtk-3.0 \
+sudo apt -y install openbox lxappearance-obconf xfce4-panel xfce4-pulseaudio-plugin xfce4-battery-plugin \
+xfce4-docklike-plugin xfce4-windowck-plugin network-manager-gnome i3lock rofi dunst playerctl xssproxy xsel \
+xclip xinput x11-utils lxappearance qt*ct adwaita-qt* gnome-themes-extra papirus-icon-theme breeze-icon-theme \
+fonts-dejavu fonts-noto-color-emoji nitrogen mate-polkit-bin python3-gi gobject-introspection gir1.2-gtk-3.0 \
 libdbus-glib-1-2 upower dex lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings plymouth plymouth-themes \
 kitty python3-pypillowfight thunar thunar-archive-plugin tumbler-plugins-extra ffmpegthumbnailer \
 heif-thumbnailer heif-gdk-pixbuf gvfs-fuse gvfs-backends nfs-common cifs-utils engrampa pipewire-audio \
-pulseaudio-utils pavucontrol-qt synaptic dconf-cli mintstick scrot atril imv mpv parole mousepad galculator \
-gpick darktable gimp inkscape filezilla libreoffice-calc libreoffice-draw libreoffice-impress \
+pulseaudio-utils pavucontrol-qt synaptic dconf-cli mintstick scrot atril imv mpv parole mousepad \
+galculator gpick darktable gimp inkscape filezilla libreoffice-calc libreoffice-draw libreoffice-impress \
 libreoffice-writer libreoffice-gtk3 timeshift xterm lazygit fastfetch htop cmus cava cmatrix ncal micro \
 ranger ueberzug caca-utils highlight atool w3m poppler-utils mediainfo fzf libimage-exiftool-perl \
 apt-transport-https curl rsync wmctrl xdotool xbindkeys
@@ -209,7 +209,7 @@ file:///home/$(whoami)/Music" > $HOME/.config/gtk-3.0/bookmarks
 sed -i 's/16, 37/16, 56/' $HOME/.config/dunst/dunstrc
 sed -i '/mate-polkit/d' $HOME/.config/openbox/autostart
 sed -i '/xbindkeys/d' $HOME/.config/openbox/autostart
-sed -i '/at-spi/d' $HOME/.config/openbox/autostart # && sed -i '31d' $HOME/.config/openbox/autostart
+sed -i '/at-spi/d' $HOME/.config/openbox/autostart && sed -i '32d' $HOME/.config/openbox/autostart
 sed -i 's/Dmenu/Floating/' $HOME/.config/rofi/config.rasi
 sed -i "s/home\/.*\/Desktop/home\/$(whoami)\/Desktop/" $HOME/.config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml
 sed -i "s/~\/\.gtkrc-2\.0\.mine/\/home\/$(whoami)\/\.gtkrc-2\.0\.mine/" $HOME/.gtkrc-2.0
