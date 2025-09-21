@@ -55,7 +55,6 @@ fi
 if [ -d "$HOME/.config/openbox" ]; then
     # update xss-lock.desktop (add lock-suspend.sh to xss-lock command)
     sed -i 's/xss-lock -l/xss-lock -n sh ~\/\.local\/bin\/lock-suspend\.sh -l/' $HOME/.config/openbox/autostart
-    # update polybar config.ini (modules)
-    sed -i 's/time pulseaudio eth tray/time battery pulseaudio wlan tray/' $HOME/.config/openbox/polybar/config.ini
-    sed -i 's/label-maxlen = .*/label-maxlen = 140/' $HOME/.config/openbox/polybar/config.ini
+    # copy laptop-specific Xfce Panel config files
+    cp -R $HOME/opt-dots/openbox/options/xfce4 $HOME/.config
 fi

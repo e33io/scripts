@@ -61,12 +61,6 @@ theming_files () {
     else
         sed -i "s/<name>Openbox-.*<\/name>/<name>Openbox-$openbox_theme<\/name>/" $HOME/.config/openbox/rc.xml
     fi
-    # Polybar colors
-    sed -i "s/bg = .*/bg = $bar_bg/" $HOME/.config/openbox/polybar/config.ini
-    sed -i "s/bg-act = .*/bg-act = $accent_color/" $HOME/.config/openbox/polybar/config.ini
-    sed -i "s/bg-occ = .*/bg-occ = $bar_bg/" $HOME/.config/openbox/polybar/config.ini
-    sed -i "s/fg = .*/fg = $bar_fg/" $HOME/.config/openbox/polybar/config.ini
-    sed -i "s/\%{F.*}\|\%{F-}/\%{F$accent_color}\|\%{F-}/" $HOME/.config/openbox/polybar/config.ini
     # GTK 2 theme and icon theme
     sed -i "s/gtk-theme-name=\".*\"/gtk-theme-name=\"$gtk_theme\"/" $HOME/.gtkrc-2.0
     sed -i "s/gtk-icon-theme-name=\".*\"/gtk-icon-theme-name=\"$icon_theme\"/" $HOME/.gtkrc-2.0
@@ -121,9 +115,6 @@ theming_files () {
 Adwaita_Dark () {
     # Openbox theme
     openbox_theme="Adwaita-Dark"
-    # Polybar colors
-    bar_bg="#1e1e1e"
-    bar_fg="#eeeeee"
     # Theme accent color
     accent_color="#1c6dcf"
     # Desktop background color
@@ -142,9 +133,6 @@ Adwaita_Dark () {
 Adwaita_Darker () {
     # Openbox theme
     openbox_theme="Adwaita-Darker"
-    # Polybar colors
-    bar_bg="#1e1e1e"
-    bar_fg="#eeeeee"
     # Theme accent color
     accent_color="#15539e"
     # Desktop background color
@@ -163,9 +151,6 @@ Adwaita_Darker () {
 Adwaita_Light () {
     # Openbox theme
     openbox_theme="Adwaita-Light"
-    # Polybar colors
-    bar_bg="#f6f5f4"
-    bar_fg="#2e3436"
     # Theme accent color
     accent_color="#3584e4"
     # Desktop background color
@@ -184,9 +169,6 @@ Adwaita_Light () {
 Mint_L_Dark_Mod_Brown () {
     # Openbox theme
     openbox_theme="Mint-L-Dark-Brown"
-    # Polybar colors
-    bar_bg="#1e1e1e"
-    bar_fg="#eeeeee"
     # Theme accent color
     accent_color="#9c7e65"
     # Desktop background color
@@ -206,9 +188,6 @@ Mint_L_Dark_Mod_Brown () {
 Mint_L_Dark_Mod_Teal () {
     # Openbox theme
     openbox_theme="Mint-L-Dark-Teal"
-    # Polybar colors
-    bar_bg="#1e1e1e"
-    bar_fg="#eeeeee"
     # Theme accent color
     accent_color="#579c8e"
     # Desktop background color
@@ -228,9 +207,6 @@ Mint_L_Dark_Mod_Teal () {
 Mint_Y_Dark_Mod_Blue () {
     # Openbox theme
     openbox_theme="Mint-Y-Dark-Blue"
-    # Polybar colors
-    bar_bg="#1e1e1e"
-    bar_fg="#eeeeee"
     # Theme accent color
     accent_color="#0c75de"
     # Desktop background color
@@ -250,9 +226,6 @@ Mint_Y_Dark_Mod_Blue () {
 Mint_Y_Dark_Mod_Green () {
     # Openbox theme
     openbox_theme="Mint-Y-Dark-Green"
-    # Polybar colors
-    bar_bg="#1e1e1e"
-    bar_fg="#eeeeee"
     # Theme accent color
     accent_color="#35a854"
     # Desktop background color
@@ -272,9 +245,6 @@ Mint_Y_Dark_Mod_Green () {
 Mint_Y_Dark_Mod_Grey () {
     # Openbox theme
     openbox_theme="Mint-Y-Dark-Grey"
-    # Polybar colors
-    bar_bg="#1e1e1e"
-    bar_fg="#eeeeee"
     # Theme accent color
     accent_color="#70737a"
     # Desktop background color
@@ -294,9 +264,6 @@ Mint_Y_Dark_Mod_Grey () {
 Mint_Y_Dark_Mod_Orange () {
     # Openbox theme
     openbox_theme="Mint-Y-Dark-Orange"
-    # Polybar colors
-    bar_bg="#1e1e1e"
-    bar_fg="#eeeeee"
     # Theme accent color
     accent_color="#ff7139"
     # Desktop background color
@@ -316,9 +283,6 @@ Mint_Y_Dark_Mod_Orange () {
 Mint_Y_Dark_Mod_Purple () {
     # Openbox theme
     openbox_theme="Mint-Y-Dark-Purple"
-    # Polybar colors
-    bar_bg="#1e1e1e"
-    bar_fg="#eeeeee"
     # Theme accent color
     accent_color="#8c5dd9"
     # Desktop background color
@@ -338,9 +302,6 @@ Mint_Y_Dark_Mod_Purple () {
 Mint_Y_Dark_Mod_Red () {
     # Openbox theme
     openbox_theme="Mint-Y-Dark-Red"
-    # Polybar colors
-    bar_bg="#1e1e1e"
-    bar_fg="#eeeeee"
     # Theme accent color
     accent_color="#e82127"
     # Desktop background color
@@ -360,9 +321,6 @@ Mint_Y_Dark_Mod_Red () {
 Mint_Y_Dark_Mod_Teal () {
     # Openbox theme
     openbox_theme="Mint-Y-Dark-Teal"
-    # Polybar colors
-    bar_bg="#1e1e1e"
-    bar_fg="#eeeeee"
     # Theme accent color
     accent_color="#199ca8"
     # Desktop background color
@@ -382,9 +340,6 @@ Mint_Y_Dark_Mod_Teal () {
 Yaru_Blue_Dark () {
     # Openbox theme
     openbox_theme="Yaru-Blue-Dark"
-    # Polybar colors
-    bar_bg="#1e1e1e"
-    bar_fg="#eeeeee"
     # Theme accent color
     accent_color="#0073e5"
     # Desktop background color
@@ -404,9 +359,6 @@ Yaru_Blue_Dark () {
 Yaru_Brown_Dark () {
     # Openbox theme
     openbox_theme="Yaru-Brown-Dark"
-    # Polybar colors
-    bar_bg="#1e1e1e"
-    bar_fg="#eeeeee"
     # Theme accent color
     accent_color="#8c6c47"
     # Desktop background color
@@ -426,9 +378,6 @@ Yaru_Brown_Dark () {
 Yaru_Green_Dark () {
     # Openbox theme
     openbox_theme="Yaru-Green-Dark"
-    # Polybar colors
-    bar_bg="#1e1e1e"
-    bar_fg="#eeeeee"
     # Theme accent color
     accent_color="#03875b"
     # Desktop background color
@@ -448,9 +397,6 @@ Yaru_Green_Dark () {
 Yaru_Orange_Dark () {
     # Openbox theme
     openbox_theme="Yaru-Orange-Dark"
-    # Polybar colors
-    bar_bg="#1e1e1e"
-    bar_fg="#eeeeee"
     # Theme accent color
     accent_color="#e95420"
     # Desktop background color
@@ -470,9 +416,6 @@ Yaru_Orange_Dark () {
 Yaru_Purple_Dark () {
     # Openbox theme
     openbox_theme="Yaru-Purple-Dark"
-    # Polybar colors
-    bar_bg="#1e1e1e"
-    bar_fg="#eeeeee"
     # Theme accent color
     accent_color="#7764d8"
     # Desktop background color
@@ -492,9 +435,6 @@ Yaru_Purple_Dark () {
 Yaru_Sage_Dark () {
     # Openbox theme
     openbox_theme="Yaru-Sage-Dark"
-    # Polybar colors
-    bar_bg="#1e1e1e"
-    bar_fg="#eeeeee"
     # Theme accent color
     accent_color="#657b69"
     # Desktop background color
@@ -514,9 +454,6 @@ Yaru_Sage_Dark () {
 Yaru_Teal_Dark () {
     # Openbox theme
     openbox_theme="Yaru-Teal-Dark"
-    # Polybar colors
-    bar_bg="#1e1e1e"
-    bar_fg="#eeeeee"
     # Theme accent color
     accent_color="#308280"
     # Desktop background color
