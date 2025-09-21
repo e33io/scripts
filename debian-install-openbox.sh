@@ -54,6 +54,12 @@ ranger ueberzug caca-utils highlight atool w3m poppler-utils mediainfo fzf libim
 apt-transport-https curl rsync wmctrl xdotool xbindkeys
 
 echo "========================================================================"
+echo "Remove unneeded/redundant packages"
+echo "========================================================================"
+
+sudo apt -y remove pavucontrol
+
+echo "========================================================================"
 echo "Enable wireplumber service (running as user)"
 echo "========================================================================"
 
