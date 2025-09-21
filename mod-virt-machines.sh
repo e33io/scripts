@@ -37,7 +37,7 @@ if [ -f "/bin/i3" ]; then
     sudo sed -i 's/GDK_SCALE=2/GDK_SCALE=1/' /etc/lightdm/Xgsession
 fi
 
-# JWM and dk configs
+# JWM, dk and Openbox configs
 if { [ -d "$HOME/.config/jwm" ] || [ -d "$HOME/.config/dk" ] || [ -d "$HOME/.config/openbox" ]; }; then
     mkdir -p $HOME/.config/autostart
     # add audio-default.desktop file
