@@ -55,9 +55,9 @@ clear
 
 theming_files () {
     # dk window colors
-    sed -i "s/focus='.*'/focus='$dk_focus'/" $HOME/.config/dk/dkrc
-    sed -i "s/unfocus='.*'/unfocus='$dk_unfocus'/" $HOME/.config/dk/dkrc
-    sed -i "s/urgent='.*'/urgent='$dk_urgent'/" $HOME/.config/dk/dkrc
+    sed -i "s/^    focus='.*'/    focus='$dk_focus'/" $HOME/.config/dk/dkrc
+    sed -i "s/^    unfocus='.*'/    unfocus='$dk_unfocus'/" $HOME/.config/dk/dkrc
+    sed -i "s/^    urgent='.*'/    urgent='$dk_urgent'/" $HOME/.config/dk/dkrc
     # Polybar colors
     sed -i "s/bg = .*/bg = $bar_bg/" $HOME/.config/dk/polybar/config.ini
     sed -i "s/bg-act = .*/bg-act = $accent_color/" $HOME/.config/dk/polybar/config.ini
