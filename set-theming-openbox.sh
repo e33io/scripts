@@ -539,7 +539,7 @@ while true; do
         0) echo "You chose to keep current theming";
            exit 1;;
         1) echo "You chose Adwaita-Dark";
-           Adwaita_Darker;
+           Adwaita_Dark;
            break;;
         2) echo "You chose Adwaita-Light";
            Adwaita_Light;
