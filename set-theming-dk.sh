@@ -283,7 +283,7 @@ Mint_Y_Dark_Mod_Green () {
 Mint_Y_Light_Mod_Green () {
     # dk window colors
     dk_focus="#35a854"
-    dk_unfocus="#d8d8d8"
+    dk_unfocus="#bfbfbf"
     dk_urgent="#aa0e15"
     # Polybar colors
     bar_bg="#f5f5f5"
@@ -523,7 +523,7 @@ Yaru_Orange_Dark () {
 Yaru_Orange_Light () {
     # dk window colors
     dk_focus="#e95420"
-    dk_unfocus="#dadada"
+    dk_unfocus="#afafaf"
     dk_urgent="#aa0e15"
     # Polybar colors
     bar_bg="#f7f7f7"
