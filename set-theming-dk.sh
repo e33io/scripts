@@ -283,11 +283,11 @@ Mint_Y_Dark_Mod_Green () {
 Mint_Y_Light_Mod_Green () {
     # dk window colors
     dk_focus="#35a854"
-    dk_unfocus="#dddddd"
+    dk_unfocus="#d8d8d8"
     dk_urgent="#aa0e15"
     # Polybar colors
     bar_bg="#f5f5f5"
-    bar_fg="#303030"
+    bar_fg="#222222"
     # Theme accent color
     accent_color="#35a854"
     # Desktop background color
@@ -523,11 +523,11 @@ Yaru_Orange_Dark () {
 Yaru_Orange_Light () {
     # dk window colors
     dk_focus="#e95420"
-    dk_unfocus="#dedede"
+    dk_unfocus="#dadada"
     dk_urgent="#aa0e15"
     # Polybar colors
     bar_bg="#f7f7f7"
-    bar_fg="#303030"
+    bar_fg="#222222"
     # Theme accent color
     accent_color="#e95420"
     # Desktop background color
