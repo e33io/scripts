@@ -9,14 +9,18 @@ linux installation scripts
 - use the scripts below with a [Debian minimal installation](https://e33.io/913)
 	- use [`debian-options.sh`](https://github.com/e33io/scripts/blob/main/debian-options.sh) to run initial setup and select a WM or DE to install
 	- use [`debian-install-i3.sh`](https://github.com/e33io/scripts/blob/main/debian-install-i3.sh) to [install the i3 window manager](https://github.com/e33io/reference-wiki/blob/main/installation-docs/debian-i3-installation.md)
+	- use [`debian-install-dk.sh`](https://github.com/e33io/scripts/blob/main/debian-install-dk.sh) to [install the dk window manager](https://github.com/e33io/reference-wiki/blob/main/installation-docs/debian-dk-installation.md)
 	- use [`debian-install-jwm.sh`](https://github.com/e33io/scripts/blob/main/debian-install-jwm.sh) to [install the JWM window manager](https://github.com/e33io/reference-wiki/blob/main/installation-docs/debian-jwm-installation.md)
+	- use [`debian-install-openbox.sh`](https://github.com/e33io/scripts/blob/main/debian-install-openbox.sh) to [install the Openbox window manager](https://github.com/e33io/reference-wiki/blob/main/installation-docs/debian-openbox-installation.md)
 	- use [`debian-install-xfce.sh`](https://github.com/e33io/scripts/blob/main/debian-install-xfce.sh) to [install the Xfce desktop environment](https://github.com/e33io/reference-wiki/blob/main/installation-docs/debian-xfce-installation.md)
 	- use [`debian-install-gnome.sh`](https://github.com/e33io/scripts/blob/main/debian-install-gnome.sh) to [install the Gnome desktop environment](https://github.com/e33io/reference-wiki/blob/main/installation-docs/debian-gnome-installation.md)
 
 - use the scripts below with an [Arch](https://wiki.archlinux.org/title/Archinstall) "Minimal" installation
 	- use [`arch-options.sh`](https://github.com/e33io/scripts/blob/main/arch-options.sh) to select a WM or DE to install
 	- use [`arch-install-i3.sh`](https://github.com/e33io/scripts/blob/main/arch-install-i3.sh) to [install the i3 window manager](https://github.com/e33io/reference-wiki/blob/main/installation-docs/arch-i3-installation.md)
+	- use [`arch-install-dk.sh`](https://github.com/e33io/scripts/blob/main/arch-install-dk.sh) to [install the dk window manager](https://github.com/e33io/reference-wiki/blob/main/installation-docs/arch-dk-installation.md)
 	- use [`arch-install-jwm.sh`](https://github.com/e33io/scripts/blob/main/arch-install-jwm.sh) to [install the JWM window manager](https://github.com/e33io/reference-wiki/blob/main/installation-docs/arch-jwm-installation.md)
+	- use [`arch-install-openbox.sh`](https://github.com/e33io/scripts/blob/main/arch-install-openbox.sh) to [install the Openbox window manager](https://github.com/e33io/reference-wiki/blob/main/installation-docs/arch-openbox-installation.md)
 	- use [`arch-install-xfce.sh`](https://github.com/e33io/scripts/blob/main/arch-install-xfce.sh) to [install the Xfce desktop environment](https://github.com/e33io/reference-wiki/blob/main/installation-docs/arch-xfce-installation.md)
 	- use [`arch-install-gnome.sh`](https://github.com/e33io/scripts/blob/main/arch-install-gnome.sh) to [install the Gnome desktop environment](https://github.com/e33io/reference-wiki/blob/main/installation-docs/arch-gnome-installation.md)
 
