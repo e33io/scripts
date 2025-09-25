@@ -168,7 +168,7 @@ Adwaita_Light () {
     dk_urgent="#aa0e15"
     # Polybar colors
     bar_bg="#f6f5f4"
-    bar_fg="#2e3436"
+    bar_fg="#131211"
     # Theme accent color
     accent_color="#3584e4"
     # Desktop background color
@@ -287,7 +287,7 @@ Mint_Y_Light_Mod_Green () {
     dk_urgent="#aa0e15"
     # Polybar colors
     bar_bg="#f5f5f5"
-    bar_fg="#222222"
+    bar_fg="#111111"
     # Theme accent color
     accent_color="#35a854"
     # Desktop background color
@@ -527,7 +527,7 @@ Yaru_Orange_Light () {
     dk_urgent="#aa0e15"
     # Polybar colors
     bar_bg="#f7f7f7"
-    bar_fg="#222222"
+    bar_fg="#111111"
     # Theme accent color
     accent_color="#e95420"
     # Desktop background color
