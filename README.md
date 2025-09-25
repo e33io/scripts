@@ -44,7 +44,11 @@ linux installation scripts
 
 - use [`set-theming-i3.sh`](https://github.com/e33io/scripts/blob/main/set-theming-i3.sh) to select and set theming for i3 and applications
 
+- use [`set-theming-dk.sh`](https://github.com/e33io/scripts/blob/main/set-theming-dk.sh) to select and set theming for dk and applications
+
 - use [`set-theming-jwm.sh`](https://github.com/e33io/scripts/blob/main/set-theming-jwm.sh) to select and set theming for JWM and applications
+
+- use [`set-theming-openbox.sh`](https://github.com/e33io/scripts/blob/main/set-theming-openbox.sh) to select and set theming for Openbox and applications
 
 - use [`set-theming-xfce.sh`](https://github.com/e33io/scripts/blob/main/set-theming-xfce.sh) to select and set theming for Xfce and applications
 
