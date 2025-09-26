@@ -298,7 +298,7 @@ Mint_Y_Light_Mod_Green () {
     qt_ct_theme=kvantum
     kvantum_theme=Mint-Y-Light-Mod-Green
     rofi_theme=Mint-Y-Light-Green
-    icon_theme=Papirus
+    icon_theme=Papirus-Light
     papirus_folders=orange
     # Call the theming files
     theming_files
@@ -538,7 +538,7 @@ Yaru_Orange_Light () {
     qt_ct_theme=kvantum
     kvantum_theme=Yaru-orange
     rofi_theme=Yaru-Orange-Light
-    icon_theme=Papirus
+    icon_theme=Papirus-Light
     papirus_folders=yaru
     # Call the theming files
     theming_files
