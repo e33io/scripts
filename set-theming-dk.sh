@@ -524,7 +524,7 @@ Yaru_Orange_Light () {
     # dk window colors
     dk_focus="#e95420"
     dk_unfocus="#afafaf"
-    dk_urgent="#aa0e15"
+    dk_urgent="#ae0e16"
     # Polybar colors
     bar_bg="#f7f7f7"
     bar_fg="#111111"
