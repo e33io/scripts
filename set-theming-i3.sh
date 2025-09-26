@@ -116,7 +116,7 @@ theming_files () {
     fi
     # Papirus folders color
     if [ -f "/usr/bin/papirus-folders" ]; then
-        papirus-folders -C $papirus_folders --theme $icon_theme
+        papirus-folders -C $papirus_folders --theme $icon_theme > /dev/null
     fi
 }
 
