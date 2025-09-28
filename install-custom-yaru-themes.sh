@@ -131,11 +131,12 @@ if [ -f "/usr/bin/qt6ct" ]; then
 fi
 
 echo "========================================================================"
-echo "Clean up user directory"
+echo "Clean up directories"
 echo "========================================================================"
 
 echo "Custom Yaru themes installed via e33io script: $(date '+%B %d, %Y, %H:%M')" \
 | tee -a $HOME/.install-info > /dev/null
+sudo rm -rf /usr/share/Kvantum/KvYaru*
 rm -rf $HOME/theming-temp
 
 echo "========================================================================"

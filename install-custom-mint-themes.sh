@@ -123,11 +123,14 @@ if [ -f "/usr/bin/qt6ct" ]; then
 fi
 
 echo "========================================================================"
-echo "Clean up user directory"
+echo "Clean up directories"
 echo "========================================================================"
 
 echo "Custom Mint themes installed via e33io script: $(date '+%B %d, %Y, %H:%M')" \
 | tee -a $HOME/.install-info > /dev/null
+sudo rm -rf /usr/share/Kvantum/Mint-L-*
+sudo rm -rf /usr/share/Kvantum/Mint-Y-*
+sudo rm -rf /usr/share/themes/Mint-*Mod-*
 rm -rf $HOME/theming-temp
 
 echo "========================================================================"
