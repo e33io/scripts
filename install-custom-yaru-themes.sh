@@ -134,6 +134,8 @@ echo "========================================================================"
 echo "Clean up user directory"
 echo "========================================================================"
 
+echo "Custom Yaru themes installed via e33io script: $(date '+%B %d, %Y, %H:%M')" \
+| tee -a $HOME/.install-info > /dev/null
 rm -rf $HOME/theming-temp
 
 echo "========================================================================"

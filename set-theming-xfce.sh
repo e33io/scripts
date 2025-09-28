@@ -26,26 +26,30 @@ if ! { [ -f "/etc/debian_version" ] || [ -f "/etc/pacman.conf" ]; }; then
     exit 1
 fi
 
-# install dark-mod-themes if needed
-if [ ! -n "$(ls -d /usr/share/themes/Mint-*-Dark-Mod-* 2>/dev/null)" ]; then
+# install custom-mint-themes if needed
+if ! grep -q Mint $HOME/.install-info; then
     git clone https://github.com/e33io/scripts $HOME/scripts-theming
     sh $HOME/scripts-theming/install-custom-mint-themes.sh
     rm -rf $HOME/scripts-theming
+fi
+
+# install custom-yaru-themes if needed
+if ! grep -q Yaru $HOME/.install-info; then
+    git clone https://github.com/e33io/scripts $HOME/scripts-theming
+    sh $HOME/scripts-theming/install-custom-yaru-themes.sh
+    rm -rf $HOME/scripts-theming
+fi
+
+# add custom kvantummanager.desktop file
+if command -v kvantummanager > /dev/null 2>&1; then
     printf "%s\n" "[Desktop Entry]" "Type=Application" "Version=1.0" "Name=Kvantum Manager" \
     "Comment=A simple GUI for Kvantum themes" "Exec=kvantummanager" "Icon=kvantum" "Terminal=false" \
     "Categories=Settings;DesktopSettings;X-XFCE-SettingsDialog;X-XFCE-PersonalSettings;X-GNOME-PersonalSettings;" \
     "X-KDE-StartupNotify=false" > $HOME/.local/share/applications/kvantummanager.desktop
 fi
 
-# install yaru dark themes if needed
-if [ ! -n "$(ls -d /usr/share/Kvantum/Yaru* 2>/dev/null)" ]; then
-    git clone https://github.com/e33io/scripts $HOME/scripts-theming
-    sh $HOME/scripts-theming/install-custom-yaru-themes.sh
-    rm -rf $HOME/scripts-theming
-fi
-
 # install papirus-icon-theme and papirus-folders if needed
-if [ ! -n "$(ls -d /usr/bin/papirus-folders 2>/dev/null)" ]; then
+if ! command -v papirus-folders > /dev/null 2>&1; then
     if [ -f "/etc/debian_version" ]; then
         sudo apt -y install papirus-icon-theme
     fi
