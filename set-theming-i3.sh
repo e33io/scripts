@@ -287,9 +287,9 @@ Mint_Y_Dark_Mod_Blue () {
     desktop_bg_color="#202a35"
     # GUI and TUI theme names
     prefer_dark_theme="1"
-    gtk_theme=Mint-Y-Dark-Mod-Blue
+    gtk_theme=Mint-Blue-Dark
     qt_ct_theme=kvantum-dark
-    kvantum_theme=Mint-Y-Dark-Mod-Blue
+    kvantum_theme=Mint-Blue-Dark
     rofi_theme=Mint-Y-Dark-Blue
     icon_theme=Papirus-Dark
     papirus_folders=adwaita
@@ -317,9 +317,9 @@ Mint_Y_Dark_Mod_Green () {
     desktop_bg_color="#1b2d20"
     # GUI and TUI theme names
     prefer_dark_theme="1"
-    gtk_theme=Mint-Y-Dark-Mod-Green
+    gtk_theme=Mint-Green-Dark
     qt_ct_theme=kvantum-dark
-    kvantum_theme=Mint-Y-Dark-Mod-Green
+    kvantum_theme=Mint-Green-Dark
     rofi_theme=Mint-Y-Dark-Green
     icon_theme=Papirus-Dark
     papirus_folders=orange
@@ -347,9 +347,9 @@ Mint_Y_Light_Mod_Green () {
     desktop_bg_color="#2f4e37"
     # GUI and TUI theme names
     prefer_dark_theme="0"
-    gtk_theme=Mint-Y-Light-Mod-Green
+    gtk_theme=Mint-Green-Light
     qt_ct_theme=kvantum
-    kvantum_theme=Mint-Y-Light-Mod-Green
+    kvantum_theme=Mint-Green-Light
     rofi_theme=Mint-Y-Light-Green
     icon_theme=Papirus-Light
     papirus_folders=orange
@@ -377,9 +377,9 @@ Mint_Y_Dark_Mod_Grey () {
     desktop_bg_color="#282a2c"
     # GUI and TUI theme names
     prefer_dark_theme="1"
-    gtk_theme=Mint-Y-Dark-Mod-Grey
+    gtk_theme=Mint-Grey-Dark
     qt_ct_theme=kvantum-dark
-    kvantum_theme=Mint-Y-Dark-Mod-Grey
+    kvantum_theme=Mint-Grey-Dark
     rofi_theme=Mint-Y-Dark-Grey
     icon_theme=Papirus-Dark
     papirus_folders=white
@@ -407,9 +407,9 @@ Mint_Y_Dark_Mod_Orange () {
     desktop_bg_color="#352620"
     # GUI and TUI theme names
     prefer_dark_theme="1"
-    gtk_theme=Mint-Y-Dark-Mod-Orange
+    gtk_theme=Mint-Orange-Dark
     qt_ct_theme=kvantum-dark
-    kvantum_theme=Mint-Y-Dark-Mod-Orange
+    kvantum_theme=Mint-Orange-Dark
     rofi_theme=Mint-Y-Dark-Orange
     icon_theme=Papirus-Dark
     papirus_folders=darkcyan
@@ -437,9 +437,9 @@ Mint_Y_Dark_Mod_Purple () {
     desktop_bg_color="#2e253e"
     # GUI and TUI theme names
     prefer_dark_theme="1"
-    gtk_theme=Mint-Y-Dark-Mod-Purple
+    gtk_theme=Mint-Purple-Dark
     qt_ct_theme=kvantum-dark
-    kvantum_theme=Mint-Y-Dark-Mod-Purple
+    kvantum_theme=Mint-Purple-Dark
     rofi_theme=Mint-Y-Dark-Purple
     icon_theme=Papirus-Dark
     papirus_folders=orange
@@ -467,9 +467,9 @@ Mint_Y_Dark_Mod_Red () {
     desktop_bg_color="#441e20"
     # GUI and TUI theme names
     prefer_dark_theme="1"
-    gtk_theme=Mint-Y-Dark-Mod-Red
+    gtk_theme=Mint-Red-Dark
     qt_ct_theme=kvantum-dark
-    kvantum_theme=Mint-Y-Dark-Mod-Red
+    kvantum_theme=Mint-Red-Dark
     rofi_theme=Mint-Y-Dark-Red
     icon_theme=Papirus-Dark
     papirus_folders=palebrown
@@ -497,9 +497,9 @@ Mint_Y_Dark_Mod_Teal () {
     desktop_bg_color="#1b2c2e"
     # GUI and TUI theme names
     prefer_dark_theme="1"
-    gtk_theme=Mint-Y-Dark-Mod-Teal
+    gtk_theme=Mint-Teal-Dark
     qt_ct_theme=kvantum-dark
-    kvantum_theme=Mint-Y-Dark-Mod-Teal
+    kvantum_theme=Mint-Teal-Dark
     rofi_theme=Mint-Y-Dark-Teal
     icon_theme=Papirus-Dark
     papirus_folders=orange
@@ -795,28 +795,28 @@ while true; do
         5) echo "You chose Mint-L-Dark-Mod-Teal, applying changes...";
            Mint_L_Dark_Mod_Teal;
            break;;
-        6) echo "You chose Mint-Y-Dark-Mod-Blue, applying changes...";
+        6) echo "You chose Mint-Blue-Dark, applying changes...";
            Mint_Y_Dark_Mod_Blue;
            break;;
-        7) echo "You chose Mint-Y-Dark-Mod-Green, applying changes...";
+        7) echo "You chose Mint-Green-Dark, applying changes...";
            Mint_Y_Dark_Mod_Green;
            break;;
-        8) echo "You chose Mint-Y-Light-Mod-Green, applying changes...";
+        8) echo "You chose Mint-Green-Light, applying changes...";
            Mint_Y_Light_Mod_Green;
            break;;
-        9) echo "You chose Mint-Y-Dark-Mod-Grey, applying changes...";
+        9) echo "You chose Mint-Grey-Dark, applying changes...";
            Mint_Y_Dark_Mod_Grey;
            break;;
-        10) echo "You chose Mint-Y-Dark-Mod-Orange, applying changes...";
+        10) echo "You chose Mint-Orange-Dark, applying changes...";
            Mint_Y_Dark_Mod_Orange;
            break;;
-        11) echo "You chose Mint-Y-Dark-Mod-Purple, applying changes...";
+        11) echo "You chose Mint-Purple-Dark, applying changes...";
            Mint_Y_Dark_Mod_Purple;
            break;;
-        12) echo "You chose Mint-Y-Dark-Mod-Red, applying changes...";
+        12) echo "You chose Mint-Red-Dark, applying changes...";
            Mint_Y_Dark_Mod_Red;
            break;;
-        13) echo "You chose Mint-Y-Dark-Mod-Teal, applying changes...";
+        13) echo "You chose Mint-Teal-Dark, applying changes...";
            Mint_Y_Dark_Mod_Teal;
            break;;
         14) echo "You chose Yaru-Blue-Dark, applying changes...";
