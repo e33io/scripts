@@ -52,9 +52,9 @@ linux installation scripts
 
 - use [`set-theming-xfce.sh`](https://github.com/e33io/scripts/blob/main/set-theming-xfce.sh) to select and set theming for Xfce and applications
 
-- use [`install-custom-mint-themes.sh`](https://github.com/e33io/scripts/blob/main/install-custom-mint-themes.sh) to install Mint Dark Mod themes on Debian or Arch
+- use [`install-custom-mint-themes.sh`](https://github.com/e33io/scripts/blob/main/install-custom-mint-themes.sh) to install custom Mint themes on Debian or Arch
 
-- use [`install-custom-yaru-themes.sh`](https://github.com/e33io/scripts/blob/main/install-custom-yaru-themes.sh) to install selected Yaru Dark themes on Debian or Arch
+- use [`install-custom-yaru-themes.sh`](https://github.com/e33io/scripts/blob/main/install-custom-yaru-themes.sh) to install custom Yaru themes on Debian or Arch
 
 - use [`install-mint-themes.sh`](https://github.com/e33io/scripts/blob/main/install-mint-themes.sh) to install Linux Mint themes and icons on Debian or Arch
 
