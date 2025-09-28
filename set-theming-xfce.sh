@@ -156,7 +156,7 @@ Adwaita_Light () {
     dconf write /org/gnome/desktop/interface/color-scheme "'prefer-light'"
 }
 
-Mint_Y_Dark_Mod_Blue () {
+Mint_Blue_Dark () {
     # GUI and TUI theme names
     gtk_theme=Mint-Blue-Dark
     qt_ct_theme=kvantum-dark
@@ -174,7 +174,7 @@ Mint_Y_Dark_Mod_Blue () {
     dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
 }
 
-Mint_Y_Dark_Mod_Green () {
+Mint_Green_Dark () {
     # GUI and TUI theme names
     gtk_theme=Mint-Green-Dark
     qt_ct_theme=kvantum-dark
@@ -192,7 +192,7 @@ Mint_Y_Dark_Mod_Green () {
     dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
 }
 
-Mint_Y_Light_Mod_Green () {
+Mint_Green_Light () {
     # GUI and TUI theme names
     gtk_theme=Mint-Green-Light
     qt_ct_theme=kvantum
@@ -210,7 +210,7 @@ Mint_Y_Light_Mod_Green () {
     dconf write /org/gnome/desktop/interface/color-scheme "'prefer-light'"
 }
 
-Mint_Y_Dark_Mod_Grey () {
+Mint_Grey_Dark () {
     # GUI and TUI theme names
     gtk_theme=Mint-Grey-Dark
     qt_ct_theme=kvantum-dark
@@ -228,7 +228,7 @@ Mint_Y_Dark_Mod_Grey () {
     dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
 }
 
-Mint_Y_Dark_Mod_Orange () {
+Mint_Orange_Dark () {
     # GUI and TUI theme names
     gtk_theme=Mint-Orange-Dark
     qt_ct_theme=kvantum-dark
@@ -246,7 +246,7 @@ Mint_Y_Dark_Mod_Orange () {
     dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
 }
 
-Mint_Y_Dark_Mod_Purple () {
+Mint_Purple_Dark () {
     # GUI and TUI theme names
     gtk_theme=Mint-Purple-Dark
     qt_ct_theme=kvantum-dark
@@ -264,7 +264,7 @@ Mint_Y_Dark_Mod_Purple () {
     dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
 }
 
-Mint_Y_Dark_Mod_Red () {
+Mint_Red_Dark () {
     # GUI and TUI theme names
     gtk_theme=Mint-Red-Dark
     qt_ct_theme=kvantum-dark
@@ -282,7 +282,7 @@ Mint_Y_Dark_Mod_Red () {
     dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
 }
 
-Mint_Y_Dark_Mod_Teal () {
+Mint_Teal_Dark () {
     # GUI and TUI theme names
     gtk_theme=Mint-Teal-Dark
     qt_ct_theme=kvantum-dark
@@ -481,28 +481,28 @@ while true; do
            Adwaita_Light;
            break;;
         5) echo "You chose Mint-Blue-Dark, applying changes...";
-           Mint_Y_Dark_Mod_Blue;
+           Mint_Blue_Dark;
            break;;
         6) echo "You chose Mint-Green-Dark, applying changes...";
-           Mint_Y_Dark_Mod_Green;
+           Mint_Green_Dark;
            break;;
         7) echo "You chose Mint-Green-Light, applying changes...";
-           Mint_Y_Light_Mod_Green;
+           Mint_Green_Light;
            break;;
         8) echo "You chose Mint-Grey-Dark, applying changes...";
-           Mint_Y_Dark_Mod_Grey;
+           Mint_Grey_Dark;
            break;;
         9) echo "You chose Mint-Orange-Dark, applying changes...";
-           Mint_Y_Dark_Mod_Orange;
+           Mint_Orange_Dark;
            break;;
         10) echo "You chose Mint-Purple-Dark, applying changes...";
-           Mint_Y_Dark_Mod_Purple;
+           Mint_Purple_Dark;
            break;;
         11) echo "You chose Mint-Red-Dark, applying changes...";
-           Mint_Y_Dark_Mod_Red;
+           Mint_Red_Dark;
            break;;
         12) echo "You chose Mint-Teal-Dark, applying changes...";
-           Mint_Y_Dark_Mod_Teal;
+           Mint_Teal_Dark;
            break;;
         13) echo "You chose Yaru-Blue-Dark, applying changes...";
            Yaru_Blue_Dark;

@@ -207,7 +207,7 @@ Adwaita_Light () {
     theming_files
 }
 
-Mint_Y_Dark_Mod_Blue () {
+Mint_Blue_Dark () {
     # i3 window colors
     client_focused="#0c75de #0c75de #ffffff #3997f4 #0c75de"
     client_focused_inactive="#565656 #1e1e1e #cccccc #717171 #565656"
@@ -237,7 +237,7 @@ Mint_Y_Dark_Mod_Blue () {
     theming_files
 }
 
-Mint_Y_Dark_Mod_Green () {
+Mint_Green_Dark () {
     # i3 window colors
     client_focused="#35a854 #35a854 #ffffff #5dcb7b #35a854"
     client_focused_inactive="#565656 #1e1e1e #cccccc #717171 #565656"
@@ -267,7 +267,7 @@ Mint_Y_Dark_Mod_Green () {
     theming_files
 }
 
-Mint_Y_Light_Mod_Green () {
+Mint_Green_Light () {
     # i3 window colors
     client_focused="#35a854 #35a854 #ffffff #72d38c #35a854"
     client_focused_inactive="#bfbfbf #f5f5f5 #444444 #949494 #bfbfbf"
@@ -297,7 +297,7 @@ Mint_Y_Light_Mod_Green () {
     theming_files
 }
 
-Mint_Y_Dark_Mod_Grey () {
+Mint_Grey_Dark () {
     # i3 window colors
     client_focused="#70737a #70737a #ffffff #8e9197 #70737a"
     client_focused_inactive="#494949 #1e1e1e #cccccc #636363 #494949"
@@ -327,7 +327,7 @@ Mint_Y_Dark_Mod_Grey () {
     theming_files
 }
 
-Mint_Y_Dark_Mod_Orange () {
+Mint_Orange_Dark () {
     # i3 window colors
     client_focused="#ff7139 #ff7139 #ffffff #ff9267 #ff7139"
     client_focused_inactive="#565656 #1e1e1e #cccccc #717171 #565656"
@@ -357,7 +357,7 @@ Mint_Y_Dark_Mod_Orange () {
     theming_files
 }
 
-Mint_Y_Dark_Mod_Purple () {
+Mint_Purple_Dark () {
     # i3 window colors
     client_focused="#8c5dd9 #8c5dd9 #ffffff #a784e2 #8c5dd9"
     client_focused_inactive="#565656 #1e1e1e #cccccc #717171 #565656"
@@ -387,7 +387,7 @@ Mint_Y_Dark_Mod_Purple () {
     theming_files
 }
 
-Mint_Y_Dark_Mod_Red () {
+Mint_Red_Dark () {
     # i3 window colors
     client_focused="#e82127 #e82127 #ffffff #ed5055 #e82127"
     client_focused_inactive="#565656 #1e1e1e #cccccc #717171 #565656"
@@ -417,7 +417,7 @@ Mint_Y_Dark_Mod_Red () {
     theming_files
 }
 
-Mint_Y_Dark_Mod_Teal () {
+Mint_Teal_Dark () {
     # i3 window colors
     client_focused="#199ca8 #199ca8 #ffffff #1fc2d0 #199ca8"
     client_focused_inactive="#565656 #1e1e1e #cccccc #717171 #565656"
@@ -728,28 +728,28 @@ while true; do
            Adwaita_Light;
            break;;
         6) echo "You chose Mint-Blue-Dark, applying changes...";
-           Mint_Y_Dark_Mod_Blue;
+           Mint_Blue_Dark;
            break;;
         7) echo "You chose Mint-Green-Dark, applying changes...";
-           Mint_Y_Dark_Mod_Green;
+           Mint_Green_Dark;
            break;;
         8) echo "You chose Mint-Green-Light, applying changes...";
-           Mint_Y_Light_Mod_Green;
+           Mint_Green_Light;
            break;;
         9) echo "You chose Mint-Grey-Dark, applying changes...";
-           Mint_Y_Dark_Mod_Grey;
+           Mint_Grey_Dark;
            break;;
         10) echo "You chose Mint-Orange-Dark, applying changes...";
-           Mint_Y_Dark_Mod_Orange;
+           Mint_Orange_Dark;
            break;;
         11) echo "You chose Mint-Purple-Dark, applying changes...";
-           Mint_Y_Dark_Mod_Purple;
+           Mint_Purple_Dark;
            break;;
         12) echo "You chose Mint-Red-Dark, applying changes...";
-           Mint_Y_Dark_Mod_Red;
+           Mint_Red_Dark;
            break;;
         13) echo "You chose Mint-Teal-Dark, applying changes...";
-           Mint_Y_Dark_Mod_Teal;
+           Mint_Teal_Dark;
            break;;
         14) echo "You chose Yaru-Blue-Dark, applying changes...";
            Yaru_Blue_Dark;

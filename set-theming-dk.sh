@@ -184,7 +184,7 @@ Adwaita_Light () {
     theming_files
 }
 
-Mint_Y_Dark_Mod_Blue () {
+Mint_Blue_Dark () {
     # dk window colors
     dk_focus="#0c75de"
     dk_unfocus="#565656"
@@ -208,7 +208,7 @@ Mint_Y_Dark_Mod_Blue () {
     theming_files
 }
 
-Mint_Y_Dark_Mod_Green () {
+Mint_Green_Dark () {
     # dk window colors
     dk_focus="#35a854"
     dk_unfocus="#565656"
@@ -232,7 +232,7 @@ Mint_Y_Dark_Mod_Green () {
     theming_files
 }
 
-Mint_Y_Light_Mod_Green () {
+Mint_Green_Light () {
     # dk window colors
     dk_focus="#35a854"
     dk_unfocus="#bfbfbf"
@@ -256,7 +256,7 @@ Mint_Y_Light_Mod_Green () {
     theming_files
 }
 
-Mint_Y_Dark_Mod_Grey () {
+Mint_Grey_Dark () {
     # dk window colors
     dk_focus="#70737a"
     dk_unfocus="#494949"
@@ -280,7 +280,7 @@ Mint_Y_Dark_Mod_Grey () {
     theming_files
 }
 
-Mint_Y_Dark_Mod_Orange () {
+Mint_Orange_Dark () {
     # dk window colors
     dk_focus="#ff7139"
     dk_unfocus="#565656"
@@ -304,7 +304,7 @@ Mint_Y_Dark_Mod_Orange () {
     theming_files
 }
 
-Mint_Y_Dark_Mod_Purple () {
+Mint_Purple_Dark () {
     # dk window colors
     dk_focus="#8c5dd9"
     dk_unfocus="#565656"
@@ -328,7 +328,7 @@ Mint_Y_Dark_Mod_Purple () {
     theming_files
 }
 
-Mint_Y_Dark_Mod_Red () {
+Mint_Red_Dark () {
     # dk window colors
     dk_focus="#e82127"
     dk_unfocus="#565656"
@@ -352,7 +352,7 @@ Mint_Y_Dark_Mod_Red () {
     theming_files
 }
 
-Mint_Y_Dark_Mod_Teal () {
+Mint_Teal_Dark () {
     # dk window colors
     dk_focus="#199ca8"
     dk_unfocus="#565656"
@@ -609,28 +609,28 @@ while true; do
            Adwaita_Light;
            break;;
         6) echo "You chose Mint-Blue-Dark, applying changes...";
-           Mint_Y_Dark_Mod_Blue;
+           Mint_Blue_Dark;
            break;;
         7) echo "You chose Mint-Green-Dark, applying changes...";
-           Mint_Y_Dark_Mod_Green;
+           Mint_Green_Dark;
            break;;
         8) echo "You chose Mint-Green-Light, applying changes...";
-           Mint_Y_Light_Mod_Green;
+           Mint_Green_Light;
            break;;
         9) echo "You chose Mint-Grey-Dark, applying changes...";
-           Mint_Y_Dark_Mod_Grey;
+           Mint_Grey_Dark;
            break;;
         10) echo "You chose Mint-Orange-Dark, applying changes...";
-           Mint_Y_Dark_Mod_Orange;
+           Mint_Orange_Dark;
            break;;
         11) echo "You chose Mint-Purple-Dark, applying changes...";
-           Mint_Y_Dark_Mod_Purple;
+           Mint_Purple_Dark;
            break;;
         12) echo "You chose Mint-Red-Dark, applying changes...";
-           Mint_Y_Dark_Mod_Red;
+           Mint_Red_Dark;
            break;;
         13) echo "You chose Mint-Teal-Dark, applying changes...";
-           Mint_Y_Dark_Mod_Teal;
+           Mint_Teal_Dark;
            break;;
         14) echo "You chose Yaru-Blue-Dark, applying changes...";
            Yaru_Blue_Dark;
