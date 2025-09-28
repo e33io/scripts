@@ -115,7 +115,7 @@ theming_files () {
 
 Adwaita_Dark () {
     # JWM theme
-    jwm_theme="JWM-Adwaita-Darker"
+    jwm_theme="JWM-Adwaita-Dark"
     # Polybar colors
     bar_bg="#1e1e1e"
     bar_fg="#eeeeee"
@@ -127,7 +127,7 @@ Adwaita_Dark () {
     prefer_dark_theme="1"
     gtk_theme=Adwaita-dark
     qt_ct_theme=Adwaita-Dark
-    rofi_theme=Adwaita-Darker
+    rofi_theme=Adwaita-Dark
     icon_theme=Papirus-Dark
     papirus_folders=adwaita
     # Call the theming files

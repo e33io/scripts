@@ -154,7 +154,7 @@ fi
 # Openbox specific configs
 if [ -d "$HOME/.config/openbox" ]; then
     # update openbox configs (theme version)
-    sed -i 's/Openbox-Adwaita-Darker-HiDPI/Openbox-Adwaita-Darker/' $HOME/.config/openbox/rc.xml
+    sed -i 's/Openbox-Adwaita-Dark-HiDPI/Openbox-Adwaita-Dark/' $HOME/.config/openbox/rc.xml
     # update openbox configs (window font size)
     sed -i 's/size>8\.5<\/size/size>9<\/size/' $HOME/.config/openbox/rc.xml
     # update openbox configs (keybindings)

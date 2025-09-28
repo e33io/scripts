@@ -162,7 +162,7 @@ Adwaita_Dark () {
     prefer_dark_theme="1"
     gtk_theme=Adwaita-dark
     qt_ct_theme=Adwaita-Dark
-    rofi_theme=Adwaita-Darker
+    rofi_theme=Adwaita-Dark
     icon_theme=Papirus-Dark
     papirus_folders=adwaita
     # Call the theming files
