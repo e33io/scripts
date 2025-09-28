@@ -68,7 +68,7 @@ echo "========================================================================"
 git clone https://github.com/e33io/theming $HOME/theming-temp
 
 echo "========================================================================"
-echo "Copy Yaru Dark themes"
+echo "Copy custom Yaru themes"
 echo "========================================================================"
 
 sudo cp -R $HOME/theming-temp/gtk/Yaru* /usr/share/themes
