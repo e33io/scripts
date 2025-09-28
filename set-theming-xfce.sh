@@ -29,7 +29,7 @@ fi
 # install dark-mod-themes if needed
 if [ ! -n "$(ls -d /usr/share/themes/Mint-*-Dark-Mod-* 2>/dev/null)" ]; then
     git clone https://github.com/e33io/scripts $HOME/scripts-theming
-    sh $HOME/scripts-theming/install-dark-mod-themes.sh
+    sh $HOME/scripts-theming/install-custom-mint-themes.sh
     rm -rf $HOME/scripts-theming
     printf "%s\n" "[Desktop Entry]" "Type=Application" "Version=1.0" "Name=Kvantum Manager" \
     "Comment=A simple GUI for Kvantum themes" "Exec=kvantummanager" "Icon=kvantum" "Terminal=false" \
@@ -40,7 +40,7 @@ fi
 # install yaru dark themes if needed
 if [ ! -n "$(ls -d /usr/share/Kvantum/Yaru* 2>/dev/null)" ]; then
     git clone https://github.com/e33io/scripts $HOME/scripts-theming
-    sh $HOME/scripts-theming/install-dark-yaru-themes.sh
+    sh $HOME/scripts-theming/install-custom-yaru-themes.sh
     rm -rf $HOME/scripts-theming
 fi
 

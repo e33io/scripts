@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # =============================================================================
-# Install Mint Dark Mod Themes
-# URL: https://github.com/e33io/scripts/blob/main/install-dark-mod-themes.sh
+# Install Custom Yaru Themes
+# URL: https://github.com/e33io/scripts/blob/main/install-custom-yaru-themes.sh
 # -----------------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
 # NOTE: Only use with Debian or Arch Linux!
@@ -62,18 +62,26 @@ if [ ! -f "/bin/lxqt-session" ]; then
 fi
 
 echo "========================================================================"
-echo "Clone custom theming repo"
+echo "Clone theming repo"
 echo "========================================================================"
 
 git clone https://github.com/e33io/theming $HOME/theming-temp
 
 echo "========================================================================"
-echo "Copy custom Mint Dark Mod themes"
+echo "Copy Yaru Dark themes"
 echo "========================================================================"
 
-sudo cp -R $HOME/theming-temp/gtk/Mint* /usr/share/themes
+sudo cp -R $HOME/theming-temp/gtk/Yaru* /usr/share/themes
 sudo mkdir -p /usr/share/Kvantum
-sudo cp -R $HOME/theming-temp/Kvantum/Mint* /usr/share/Kvantum
+# copy only selected theme variants
+sudo cp -R $HOME/theming-temp/Kvantum/Yaru-blue-dark /usr/share/Kvantum
+sudo cp -R $HOME/theming-temp/Kvantum/Yaru-orange /usr/share/Kvantum
+sudo cp -R $HOME/theming-temp/Kvantum/Yaru-orange-dark /usr/share/Kvantum
+sudo cp -R $HOME/theming-temp/Kvantum/Yaru-prussiangreen-dark /usr/share/Kvantum
+sudo cp -R $HOME/theming-temp/Kvantum/Yaru-purple-dark /usr/share/Kvantum
+sudo cp -R $HOME/theming-temp/Kvantum/Yaru-sage-dark /usr/share/Kvantum
+sudo cp -R $HOME/theming-temp/Kvantum/Yaru-viridian-dark /usr/share/Kvantum
+sudo cp -R $HOME/theming-temp/Kvantum/Yaru-wartybrown-dark /usr/share/Kvantum
 
 echo "========================================================================"
 echo "Link config files to root user directories for styling"
