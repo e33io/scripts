@@ -156,42 +156,6 @@ Adwaita_Light () {
     dconf write /org/gnome/desktop/interface/color-scheme "'prefer-light'"
 }
 
-Mint_L_Dark_Mod_Brown () {
-    # GUI and TUI theme names
-    gtk_theme=Mint-L-Dark-Mod-Brown
-    qt_ct_theme=kvantum-dark
-    kvantum_theme=Mint-L-Dark-Mod-Brown
-    icon_theme=Papirus-Dark
-    papirus_folders=palebrown
-    # Desktop background color
-    desktop_bg_color="#32271e"
-    # Theme accent color
-    accent_color="#9c7e65"
-    accent_color_rgb="rgb(156,126,101)"
-    # Call the theming files
-    theming_files
-    # Dconf color-scheme preference
-    dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
-}
-
-Mint_L_Dark_Mod_Teal () {
-    # GUI and TUI theme names
-    gtk_theme=Mint-L-Dark-Mod-Teal
-    qt_ct_theme=kvantum-dark
-    kvantum_theme=Mint-L-Dark-Mod-Teal
-    icon_theme=Papirus-Dark
-    papirus_folders=orange
-    # Desktop background color
-    desktop_bg_color="#1b2d29"
-    # Theme accent color
-    accent_color="#579c8e"
-    accent_color_rgb="rgb(87,156,142)"
-    # Call the theming files
-    theming_files
-    # Dconf color-scheme preference
-    dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
-}
-
 Mint_Y_Dark_Mod_Blue () {
     # GUI and TUI theme names
     gtk_theme=Mint-Blue-Dark
@@ -488,8 +452,6 @@ while true; do
     printf "   0) Keep current theming\n"
     printf "   1) Adwaita-Dark         \e[38;5;236m▇▇▇\e[0m\e[38;5;025m▇▇▇\e[0m\n"
     printf "   2) Adwaita-Light        \e[38;5;255m▇▇▇\e[0m\e[38;5;032m▇▇▇\e[0m\n"
-    printf "   3) Mint-L-Dark-Brown    \e[38;5;237m▇▇▇\e[0m\e[38;5;137m▇▇▇\e[0m\n"
-    printf "   4) Mint-L-Dark-Teal     \e[38;5;237m▇▇▇\e[0m\e[38;5;066m▇▇▇\e[0m\n"
     printf "   5) Mint-Y-Dark-Blue     \e[38;5;237m▇▇▇\e[0m\e[38;5;033m▇▇▇\e[0m\n"
     printf "   6) Mint-Y-Dark-Green    \e[38;5;237m▇▇▇\e[0m\e[38;5;035m▇▇▇\e[0m\n"
     printf "   7) Mint-Y-Light-Green   \e[38;5;255m▇▇▇\e[0m\e[38;5;035m▇▇▇\e[0m\n"
@@ -517,12 +479,6 @@ while true; do
            break;;
         2) echo "You chose Adwaita-Light, applying changes...";
            Adwaita_Light;
-           break;;
-        3) echo "You chose Mint-L-Dark-Mod-Brown, applying changes...";
-           Mint_L_Dark_Mod_Brown;
-           break;;
-        4) echo "You chose Mint-L-Dark-Mod-Teal, applying changes...";
-           Mint_L_Dark_Mod_Teal;
            break;;
         5) echo "You chose Mint-Blue-Dark, applying changes...";
            Mint_Y_Dark_Mod_Blue;

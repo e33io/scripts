@@ -188,49 +188,9 @@ Adwaita_Light () {
     theming_files
 }
 
-Mint_L_Dark_Mod_Brown () {
-    # Openbox theme
-    openbox_theme="Mint-L-Dark-Brown"
-    # Theme accent color
-    accent_color="#9c7e65"
-    accent_color_rgb="rgb(156,126,101)"
-    # Desktop background color
-    desktop_bg_color="#32271e"
-    # GUI and TUI theme names
-    prefer_dark_theme="1"
-    gtk_theme=Mint-L-Dark-Mod-Brown
-    qt_ct_theme=kvantum-dark
-    kvantum_theme=Mint-L-Dark-Mod-Brown
-    rofi_theme=Mint-L-Dark-Brown
-    icon_theme=Papirus-Dark
-    papirus_folders=palebrown
-    # Call the theming files
-    theming_files
-}
-
-Mint_L_Dark_Mod_Teal () {
-    # Openbox theme
-    openbox_theme="Mint-L-Dark-Teal"
-    # Theme accent color
-    accent_color="#579c8e"
-    accent_color_rgb="rgb(87,156,142)"
-    # Desktop background color
-    desktop_bg_color="#1b2d29"
-    # GUI and TUI theme names
-    prefer_dark_theme="1"
-    gtk_theme=Mint-L-Dark-Mod-Teal
-    qt_ct_theme=kvantum-dark
-    kvantum_theme=Mint-L-Dark-Mod-Teal
-    rofi_theme=Mint-L-Dark-Teal
-    icon_theme=Papirus-Dark
-    papirus_folders=orange
-    # Call the theming files
-    theming_files
-}
-
 Mint_Y_Dark_Mod_Blue () {
     # Openbox theme
-    openbox_theme="Mint-Y-Dark-Blue"
+    openbox_theme="Mint-Blue-Dark"
     # Theme accent color
     accent_color="#0c75de"
     accent_color_rgb="rgb(12,117,222)"
@@ -250,7 +210,7 @@ Mint_Y_Dark_Mod_Blue () {
 
 Mint_Y_Dark_Mod_Green () {
     # Openbox theme
-    openbox_theme="Mint-Y-Dark-Green"
+    openbox_theme="Mint-Green-Dark"
     # Theme accent color
     accent_color="#35a854"
     accent_color_rgb="rgb(53,168,84)"
@@ -270,7 +230,7 @@ Mint_Y_Dark_Mod_Green () {
 
 Mint_Y_Light_Mod_Green () {
     # Openbox theme
-    openbox_theme="Mint-Y-Light-Green"
+    openbox_theme="Mint-Green-Light"
     # Theme accent color
     accent_color="#35a854"
     accent_color_rgb="rgb(53,168,84)"
@@ -290,7 +250,7 @@ Mint_Y_Light_Mod_Green () {
 
 Mint_Y_Dark_Mod_Grey () {
     # Openbox theme
-    openbox_theme="Mint-Y-Dark-Grey"
+    openbox_theme="Mint-Grey-Dark"
     # Theme accent color
     accent_color="#8e9197"
     accent_color_rgb="rgb(142,145,151)"
@@ -310,7 +270,7 @@ Mint_Y_Dark_Mod_Grey () {
 
 Mint_Y_Dark_Mod_Orange () {
     # Openbox theme
-    openbox_theme="Mint-Y-Dark-Orange"
+    openbox_theme="Mint-Orange-Dark"
     # Theme accent color
     accent_color="#ff7139"
     accent_color_rgb="rgb(255,113,57)"
@@ -330,7 +290,7 @@ Mint_Y_Dark_Mod_Orange () {
 
 Mint_Y_Dark_Mod_Purple () {
     # Openbox theme
-    openbox_theme="Mint-Y-Dark-Purple"
+    openbox_theme="Mint-Purple-Dark"
     # Theme accent color
     accent_color="#8c5dd9"
     accent_color_rgb="rgb(140,93,217)"
@@ -350,7 +310,7 @@ Mint_Y_Dark_Mod_Purple () {
 
 Mint_Y_Dark_Mod_Red () {
     # Openbox theme
-    openbox_theme="Mint-Y-Dark-Red"
+    openbox_theme="Mint-Red-Dark"
     # Theme accent color
     accent_color="#e82127"
     accent_color_rgb="rgb(232,33,39)"
@@ -370,7 +330,7 @@ Mint_Y_Dark_Mod_Red () {
 
 Mint_Y_Dark_Mod_Teal () {
     # Openbox theme
-    openbox_theme="Mint-Y-Dark-Teal"
+    openbox_theme="Mint-Teal-Dark"
     # Theme accent color
     accent_color="#199ca8"
     accent_color_rgb="rgb(25,156,168)"
@@ -556,8 +516,6 @@ while true; do
     printf "   0) Keep current theming\n"
     printf "   1) Adwaita-Dark         \e[38;5;236m▇▇▇\e[0m\e[38;5;025m▇▇▇\e[0m\n"
     printf "   2) Adwaita-Light        \e[38;5;255m▇▇▇\e[0m\e[38;5;032m▇▇▇\e[0m\n"
-    printf "   3) Mint-L-Dark-Brown    \e[38;5;237m▇▇▇\e[0m\e[38;5;137m▇▇▇\e[0m\n"
-    printf "   4) Mint-L-Dark-Teal     \e[38;5;237m▇▇▇\e[0m\e[38;5;066m▇▇▇\e[0m\n"
     printf "   5) Mint-Y-Dark-Blue     \e[38;5;237m▇▇▇\e[0m\e[38;5;033m▇▇▇\e[0m\n"
     printf "   6) Mint-Y-Dark-Green    \e[38;5;237m▇▇▇\e[0m\e[38;5;035m▇▇▇\e[0m\n"
     printf "   7) Mint-Y-Light-Green   \e[38;5;255m▇▇▇\e[0m\e[38;5;035m▇▇▇\e[0m\n"
@@ -585,12 +543,6 @@ while true; do
            break;;
         2) echo "You chose Adwaita-Light, applying changes...";
            Adwaita_Light;
-           break;;
-        3) echo "You chose Mint-L-Dark-Mod-Brown, applying changes...";
-           Mint_L_Dark_Mod_Brown;
-           break;;
-        4) echo "You chose Mint-L-Dark-Mod-Teal, applying changes...";
-           Mint_L_Dark_Mod_Teal;
            break;;
         5) echo "You chose Mint-Blue-Dark, applying changes...";
            Mint_Y_Dark_Mod_Blue;

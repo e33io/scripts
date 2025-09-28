@@ -176,53 +176,9 @@ Adwaita_Light () {
     theming_files
 }
 
-Mint_L_Dark_Mod_Brown () {
+Mint_Blue_Dark () {
     # JWM theme
-    jwm_theme="JWM-Mint-L-Dark-Brown"
-    # Polybar colors
-    bar_bg="#1e1e1e"
-    bar_fg="#eeeeee"
-    # Theme accent color
-    accent_color="#9c7e65"
-    # Desktop background color
-    desktop_bg_color="#32271e"
-    # GUI and TUI theme names
-    prefer_dark_theme="1"
-    gtk_theme=Mint-L-Dark-Mod-Brown
-    qt_ct_theme=kvantum-dark
-    kvantum_theme=Mint-L-Dark-Mod-Brown
-    rofi_theme=Mint-L-Dark-Brown
-    icon_theme=Papirus-Dark
-    papirus_folders=palebrown
-    # Call the theming files
-    theming_files
-}
-
-Mint_L_Dark_Mod_Teal () {
-    # JWM theme
-    jwm_theme="JWM-Mint-L-Dark-Teal"
-    # Polybar colors
-    bar_bg="#1e1e1e"
-    bar_fg="#eeeeee"
-    # Theme accent color
-    accent_color="#579c8e"
-    # Desktop background color
-    desktop_bg_color="#1b2d29"
-    # GUI and TUI theme names
-    prefer_dark_theme="1"
-    gtk_theme=Mint-L-Dark-Mod-Teal
-    qt_ct_theme=kvantum-dark
-    kvantum_theme=Mint-L-Dark-Mod-Teal
-    rofi_theme=Mint-L-Dark-Teal
-    icon_theme=Papirus-Dark
-    papirus_folders=orange
-    # Call the theming files
-    theming_files
-}
-
-Mint_Y_Dark_Mod_Blue () {
-    # JWM theme
-    jwm_theme="JWM-Mint-Y-Dark-Blue"
+    jwm_theme="JWM-Mint-Blue-Dark"
     # Polybar colors
     bar_bg="#1e1e1e"
     bar_fg="#eeeeee"
@@ -242,9 +198,9 @@ Mint_Y_Dark_Mod_Blue () {
     theming_files
 }
 
-Mint_Y_Dark_Mod_Green () {
+Mint_Green_Dark () {
     # JWM theme
-    jwm_theme="JWM-Mint-Y-Dark-Green"
+    jwm_theme="JWM-Mint-Green-Dark"
     # Polybar colors
     bar_bg="#1e1e1e"
     bar_fg="#eeeeee"
@@ -264,9 +220,9 @@ Mint_Y_Dark_Mod_Green () {
     theming_files
 }
 
-Mint_Y_Light_Mod_Green () {
+Mint_Green_Light () {
     # JWM theme
-    jwm_theme="JWM-Mint-Y-Light-Green"
+    jwm_theme="JWM-Mint-Green-Light"
     # Polybar colors
     bar_bg="#f5f5f5"
     bar_fg="#111111"
@@ -288,7 +244,7 @@ Mint_Y_Light_Mod_Green () {
 
 Mint_Y_Dark_Mod_Grey () {
     # JWM theme
-    jwm_theme="JWM-Mint-Y-Dark-Grey"
+    jwm_theme="JWM-Mint-Grey-Dark"
     # Polybar colors
     bar_bg="#1e1e1e"
     bar_fg="#eeeeee"
@@ -310,7 +266,7 @@ Mint_Y_Dark_Mod_Grey () {
 
 Mint_Y_Dark_Mod_Orange () {
     # JWM theme
-    jwm_theme="JWM-Mint-Y-Dark-Orange"
+    jwm_theme="JWM-Mint-Orange-Dark"
     # Polybar colors
     bar_bg="#1e1e1e"
     bar_fg="#eeeeee"
@@ -332,7 +288,7 @@ Mint_Y_Dark_Mod_Orange () {
 
 Mint_Y_Dark_Mod_Purple () {
     # JWM theme
-    jwm_theme="JWM-Mint-Y-Dark-Purple"
+    jwm_theme="JWM-Mint-Purple-Dark"
     # Polybar colors
     bar_bg="#1e1e1e"
     bar_fg="#eeeeee"
@@ -354,7 +310,7 @@ Mint_Y_Dark_Mod_Purple () {
 
 Mint_Y_Dark_Mod_Red () {
     # JWM theme
-    jwm_theme="JWM-Mint-Y-Dark-Red"
+    jwm_theme="JWM-Mint-Red-Dark"
     # Polybar colors
     bar_bg="#1e1e1e"
     bar_fg="#eeeeee"
@@ -376,7 +332,7 @@ Mint_Y_Dark_Mod_Red () {
 
 Mint_Y_Dark_Mod_Teal () {
     # JWM theme
-    jwm_theme="JWM-Mint-Y-Dark-Teal"
+    jwm_theme="JWM-Mint-Teal-Dark"
     # Polybar colors
     bar_bg="#1e1e1e"
     bar_fg="#eeeeee"
@@ -581,8 +537,6 @@ while true; do
     printf "   1) Adwaita-Dark         \e[38;5;236m▇▇▇\e[0m\e[38;5;026m▇▇▇\e[0m\n"
     printf "   2) Adwaita-Darker       \e[38;5;236m▇▇▇\e[0m\e[38;5;025m▇▇▇\e[0m\n"
     printf "   3) Adwaita-Light        \e[38;5;255m▇▇▇\e[0m\e[38;5;032m▇▇▇\e[0m\n"
-    printf "   4) Mint-L-Dark-Brown    \e[38;5;237m▇▇▇\e[0m\e[38;5;137m▇▇▇\e[0m\n"
-    printf "   5) Mint-L-Dark-Teal     \e[38;5;237m▇▇▇\e[0m\e[38;5;066m▇▇▇\e[0m\n"
     printf "   6) Mint-Y-Dark-Blue     \e[38;5;237m▇▇▇\e[0m\e[38;5;033m▇▇▇\e[0m\n"
     printf "   7) Mint-Y-Dark-Green    \e[38;5;237m▇▇▇\e[0m\e[38;5;035m▇▇▇\e[0m\n"
     printf "   8) Mint-Y-Light-Green   \e[38;5;255m▇▇▇\e[0m\e[38;5;035m▇▇▇\e[0m\n"
@@ -614,20 +568,14 @@ while true; do
         3) echo "You chose Adwaita-Light, applying changes...";
            Adwaita_Light;
            break;;
-        4) echo "You chose Mint-L-Dark-Mod-Brown, applying changes...";
-           Mint_L_Dark_Mod_Brown;
-           break;;
-        5) echo "You chose Mint-L-Dark-Mod-Teal, applying changes...";
-           Mint_L_Dark_Mod_Teal;
-           break;;
         6) echo "You chose Mint-Blue-Dark, applying changes...";
-           Mint_Y_Dark_Mod_Blue;
+           Mint_Blue_Dark;
            break;;
         7) echo "You chose Mint-Green-Dark, applying changes...";
-           Mint_Y_Dark_Mod_Green;
+           Mint_Green_Dark;
            break;;
         8) echo "You chose Mint-Green-Light, applying changes...";
-           Mint_Y_Light_Mod_Green;
+           Mint_Green_Light;
            break;;
         9) echo "You chose Mint-Grey-Dark, applying changes...";
            Mint_Y_Dark_Mod_Grey;

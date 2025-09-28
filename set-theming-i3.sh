@@ -207,66 +207,6 @@ Adwaita_Light () {
     theming_files
 }
 
-Mint_L_Dark_Mod_Brown () {
-    # i3 window colors
-    client_focused="#9c7e65 #9c7e65 #ffffff #b6a08d #9c7e65"
-    client_focused_inactive="#565656 #1e1e1e #cccccc #717171 #565656"
-    client_unfocused="#565656 #1e1e1e #cccccc #717171 #565656"
-    client_urgent="#ae0e16 #ae0e16 #ffffff #e2121d #ae0e16"
-    client_placeholder="#1e1e1e #1e1e1e #eeeeee #1e1e1e #1e1e1e"
-    client_background="#7f7f7f"
-    # Polybar colors
-    bar_bg="#1e1e1e"
-    bar_fg="#eeeeee"
-    bar_bg_urg="#ae0e16"
-    bar_fg_urg="#ffffff"
-    bar_bindmode="#733d9a"
-    # Theme accent color
-    accent_color="#9c7e65"
-    # Desktop background color
-    desktop_bg_color="#32271e"
-    # GUI and TUI theme names
-    prefer_dark_theme="1"
-    gtk_theme=Mint-L-Dark-Mod-Brown
-    qt_ct_theme=kvantum-dark
-    kvantum_theme=Mint-L-Dark-Mod-Brown
-    rofi_theme=Mint-L-Dark-Brown
-    icon_theme=Papirus-Dark
-    papirus_folders=palebrown
-    # Call the theming files
-    theming_files
-}
-
-Mint_L_Dark_Mod_Teal () {
-    # i3 window colors
-    client_focused="#579c8e #579c8e #ffffff #87bcb1 #579c8e"
-    client_focused_inactive="#565656 #1e1e1e #cccccc #717171 #565656"
-    client_unfocused="#565656 #1e1e1e #cccccc #717171 #565656"
-    client_urgent="#ae0e16 #ae0e16 #ffffff #e2121d #ae0e16"
-    client_placeholder="#1e1e1e #1e1e1e #eeeeee #1e1e1e #1e1e1e"
-    client_background="#7f7f7f"
-    # Polybar colors
-    bar_bg="#1e1e1e"
-    bar_fg="#eeeeee"
-    bar_bg_urg="#ae0e16"
-    bar_fg_urg="#ffffff"
-    bar_bindmode="#733d9a"
-    # Theme accent color
-    accent_color="#579c8e"
-    # Desktop background color
-    desktop_bg_color="#1b2d29"
-    # GUI and TUI theme names
-    prefer_dark_theme="1"
-    gtk_theme=Mint-L-Dark-Mod-Teal
-    qt_ct_theme=kvantum-dark
-    kvantum_theme=Mint-L-Dark-Mod-Teal
-    rofi_theme=Mint-L-Dark-Teal
-    icon_theme=Papirus-Dark
-    papirus_folders=orange
-    # Call the theming files
-    theming_files
-}
-
 Mint_Y_Dark_Mod_Blue () {
     # i3 window colors
     client_focused="#0c75de #0c75de #ffffff #3997f4 #0c75de"
@@ -756,8 +696,6 @@ while true; do
     printf "   1) Adwaita-Dark         \e[38;5;236m▇▇▇\e[0m\e[38;5;026m▇▇▇\e[0m\n"
     printf "   2) Adwaita-Darker       \e[38;5;236m▇▇▇\e[0m\e[38;5;025m▇▇▇\e[0m\n"
     printf "   3) Adwaita-Light        \e[38;5;255m▇▇▇\e[0m\e[38;5;032m▇▇▇\e[0m\n"
-    printf "   4) Mint-L-Dark-Brown    \e[38;5;237m▇▇▇\e[0m\e[38;5;137m▇▇▇\e[0m\n"
-    printf "   5) Mint-L-Dark-Teal     \e[38;5;237m▇▇▇\e[0m\e[38;5;066m▇▇▇\e[0m\n"
     printf "   6) Mint-Y-Dark-Blue     \e[38;5;237m▇▇▇\e[0m\e[38;5;033m▇▇▇\e[0m\n"
     printf "   7) Mint-Y-Dark-Green    \e[38;5;237m▇▇▇\e[0m\e[38;5;035m▇▇▇\e[0m\n"
     printf "   8) Mint-Y-Light-Green   \e[38;5;255m▇▇▇\e[0m\e[38;5;035m▇▇▇\e[0m\n"
@@ -788,12 +726,6 @@ while true; do
            break;;
         3) echo "You chose Adwaita-Light, applying changes...";
            Adwaita_Light;
-           break;;
-        4) echo "You chose Mint-L-Dark-Mod-Brown, applying changes...";
-           Mint_L_Dark_Mod_Brown;
-           break;;
-        5) echo "You chose Mint-L-Dark-Mod-Teal, applying changes...";
-           Mint_L_Dark_Mod_Teal;
            break;;
         6) echo "You chose Mint-Blue-Dark, applying changes...";
            Mint_Y_Dark_Mod_Blue;
