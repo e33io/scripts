@@ -113,7 +113,7 @@ echo "========================================================================"
 git clone https://github.com/e33io/theming $HOME/theming-temp
 
 echo "========================================================================"
-echo "Copy custom Mint Dark Mod themes"
+echo "Copy custom Mint themes"
 echo "========================================================================"
 
 sudo cp -R $HOME/theming-temp/gtk/Mint* /usr/share/themes
