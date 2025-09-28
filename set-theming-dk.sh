@@ -178,7 +178,7 @@ Mint_Blue_Dark () {
     gtk_theme=Mint-Blue-Dark
     qt_ct_theme=kvantum-dark
     kvantum_theme=Mint-Blue-Dark
-    rofi_theme=Mint-Y-Dark-Blue
+    rofi_theme=Mint-Blue-Dark
     icon_theme=Papirus-Dark
     papirus_folders=adwaita
     # Call the theming files
@@ -202,7 +202,7 @@ Mint_Green_Dark () {
     gtk_theme=Mint-Green-Dark
     qt_ct_theme=kvantum-dark
     kvantum_theme=Mint-Green-Dark
-    rofi_theme=Mint-Y-Dark-Green
+    rofi_theme=Mint-Green-Dark
     icon_theme=Papirus-Dark
     papirus_folders=orange
     # Call the theming files
@@ -226,7 +226,7 @@ Mint_Green_Light () {
     gtk_theme=Mint-Green-Light
     qt_ct_theme=kvantum
     kvantum_theme=Mint-Green-Light
-    rofi_theme=Mint-Y-Light-Green
+    rofi_theme=Mint-Green-Light
     icon_theme=Papirus-Light
     papirus_folders=orange
     # Call the theming files
@@ -250,7 +250,7 @@ Mint_Grey_Dark () {
     gtk_theme=Mint-Grey-Dark
     qt_ct_theme=kvantum-dark
     kvantum_theme=Mint-Grey-Dark
-    rofi_theme=Mint-Y-Dark-Grey
+    rofi_theme=Mint-Grey-Dark
     icon_theme=Papirus-Dark
     papirus_folders=white
     # Call the theming files
@@ -274,7 +274,7 @@ Mint_Orange_Dark () {
     gtk_theme=Mint-Orange-Dark
     qt_ct_theme=kvantum-dark
     kvantum_theme=Mint-Orange-Dark
-    rofi_theme=Mint-Y-Dark-Orange
+    rofi_theme=Mint-Orange-Dark
     icon_theme=Papirus-Dark
     papirus_folders=darkcyan
     # Call the theming files
@@ -298,7 +298,7 @@ Mint_Purple_Dark () {
     gtk_theme=Mint-Purple-Dark
     qt_ct_theme=kvantum-dark
     kvantum_theme=Mint-Purple-Dark
-    rofi_theme=Mint-Y-Dark-Purple
+    rofi_theme=Mint-Purple-Dark
     icon_theme=Papirus-Dark
     papirus_folders=orange
     # Call the theming files
@@ -322,7 +322,7 @@ Mint_Red_Dark () {
     gtk_theme=Mint-Red-Dark
     qt_ct_theme=kvantum-dark
     kvantum_theme=Mint-Red-Dark
-    rofi_theme=Mint-Y-Dark-Red
+    rofi_theme=Mint-Red-Dark
     icon_theme=Papirus-Dark
     papirus_folders=palebrown
     # Call the theming files
@@ -346,7 +346,7 @@ Mint_Teal_Dark () {
     gtk_theme=Mint-Teal-Dark
     qt_ct_theme=kvantum-dark
     kvantum_theme=Mint-Teal-Dark
-    rofi_theme=Mint-Y-Dark-Teal
+    rofi_theme=Mint-Teal-Dark
     icon_theme=Papirus-Dark
     papirus_folders=orange
     # Call the theming files
