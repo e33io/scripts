@@ -168,7 +168,7 @@ sed -i "s/home\/.*\/\.config/home\/$(whoami)\/\.config/" $HOME/.config/qt5ct/qt5
 sed -i "s/home\/.*\/\.config/home\/$(whoami)\/\.config/" $HOME/.config/qt6ct/qt6ct.conf
 sed -i "s/home\/.*\/Desktop/home\/$(whoami)\/Desktop/" $HOME/.config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml
 cp -R $HOME/scripts/set-theming-xfce.sh $HOME/.local/bin/set-theming-xfce
-echo "Xfce was installed via e33io script: $(date '+%B %d, %Y, %H:%M')" \
+echo "Xfce installed via e33io script: $(date '+%B %d, %Y, %H:%M')" \
 | tee -a $HOME/.install-info > /dev/null
 rm -rf $HOME/dotfiles
 rm -rf $HOME/opt-dots

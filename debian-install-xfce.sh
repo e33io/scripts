@@ -206,7 +206,7 @@ file:///home/$(whoami)/Music" > $HOME/.config/gtk-3.0/bookmarks
 sed -i "s/home\/.*\/\.local/home\/$(whoami)\/\.local/" $HOME/.config/menus/xfce-applications.menu
 sed -i "s/home\/.*\/Desktop/home\/$(whoami)\/Desktop/" $HOME/.config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml
 cp -R $HOME/scripts/set-theming-xfce.sh $HOME/.local/bin/set-theming-xfce
-echo "Xfce was installed via e33io script: $(date '+%B %d, %Y, %H:%M')" \
+echo "Xfce installed via e33io script: $(date '+%B %d, %Y, %H:%M')" \
 | tee -a $HOME/.install-info > /dev/null
 rm -rf $HOME/dotfiles
 rm -rf $HOME/opt-dots

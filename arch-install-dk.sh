@@ -187,7 +187,7 @@ sed -i "s/~\/\.gtkrc-2\.0\.mine/\/home\/$(whoami)\/\.gtkrc-2\.0\.mine/" $HOME/.g
 printf "%s\n" "" "# Set XDG_CURRENT_DESKTOP" "export XDG_CURRENT_DESKTOP=dk" \
 | tee -a $HOME/.profile > /dev/null
 cp -R $HOME/scripts/set-theming-dk.sh $HOME/.local/bin/set-theming-dk
-echo "dk was installed via e33io script: $(date '+%B %d, %Y, %H:%M')" \
+echo "dk installed via e33io script: $(date '+%B %d, %Y, %H:%M')" \
 | tee -a $HOME/.install-info > /dev/null
 if ! command -v i3 > /dev/null 2>&1; then
     rm -rf $HOME/.config/i3
