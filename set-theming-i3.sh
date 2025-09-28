@@ -122,17 +122,17 @@ theming_files () {
 
 Adwaita_Dark () {
     # i3 window colors
-    client_focused="#15539e #15539e #f4f4f4 #1961be #15539e"
+    client_focused="#15539e #15539e #ffffff #1961be #15539e"
     client_focused_inactive="#535353 #1e1e1e #cccccc #6e6e6e #535353"
     client_unfocused="#535353 #1e1e1e #cccccc #6e6e6e #535353"
-    client_urgent="#a80e15 #a80e15 #f4f4f4 #dc121b #a80e15"
+    client_urgent="#a80e15 #a80e15 #ffffff #dc121b #a80e15"
     client_placeholder="#1e1e1e #1e1e1e #eeeeee #1e1e1e #1e1e1e"
     client_background="#7f7f7f"
     # Polybar colors
     bar_bg="#1e1e1e"
     bar_fg="#eeeeee"
     bar_bg_urg="#a80e15"
-    bar_fg_urg="#f4f4f4"
+    bar_fg_urg="#ffffff"
     bar_bindmode="#6f3c95"
     # Theme accent color
     accent_color="#15539e"
