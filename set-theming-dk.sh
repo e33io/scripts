@@ -118,7 +118,7 @@ theming_files () {
 Adwaita_Dark () {
     # dk window colors
     dk_focus="#15539e"
-    dk_unfocus="#535353"
+    dk_unfocus="#4f4f4f"
     dk_urgent="#a80e15"
     # Polybar colors
     bar_bg="#1e1e1e"
@@ -141,7 +141,7 @@ Adwaita_Dark () {
 Adwaita_Light () {
     # dk window colors
     dk_focus="#3584e4"
-    dk_unfocus="#b3aaa2"
+    dk_unfocus="#cec9c5"
     dk_urgent="#aa0e15"
     # Polybar colors
     bar_bg="#f6f5f4"
@@ -164,7 +164,7 @@ Adwaita_Light () {
 Mint_Blue_Dark () {
     # dk window colors
     dk_focus="#0c75de"
-    dk_unfocus="#565656"
+    dk_unfocus="#525252"
     dk_urgent="#ae0e16"
     # Polybar colors
     bar_bg="#1e1e1e"
@@ -188,7 +188,7 @@ Mint_Blue_Dark () {
 Mint_Green_Dark () {
     # dk window colors
     dk_focus="#35a854"
-    dk_unfocus="#565656"
+    dk_unfocus="#525252"
     dk_urgent="#ae0e16"
     # Polybar colors
     bar_bg="#1e1e1e"
@@ -212,7 +212,7 @@ Mint_Green_Dark () {
 Mint_Green_Light () {
     # dk window colors
     dk_focus="#35a854"
-    dk_unfocus="#bfbfbf"
+    dk_unfocus="#cacaca"
     dk_urgent="#aa0e15"
     # Polybar colors
     bar_bg="#f5f5f5"
@@ -260,7 +260,7 @@ Mint_Grey_Dark () {
 Mint_Orange_Dark () {
     # dk window colors
     dk_focus="#ff7139"
-    dk_unfocus="#565656"
+    dk_unfocus="#525252"
     dk_urgent="#ae0e16"
     # Polybar colors
     bar_bg="#1e1e1e"
@@ -284,7 +284,7 @@ Mint_Orange_Dark () {
 Mint_Purple_Dark () {
     # dk window colors
     dk_focus="#8c5dd9"
-    dk_unfocus="#565656"
+    dk_unfocus="#525252"
     dk_urgent="#ae0e16"
     # Polybar colors
     bar_bg="#1e1e1e"
@@ -308,7 +308,7 @@ Mint_Purple_Dark () {
 Mint_Red_Dark () {
     # dk window colors
     dk_focus="#e82127"
-    dk_unfocus="#565656"
+    dk_unfocus="#525252"
     dk_urgent="#eeeeee"
     # Polybar colors
     bar_bg="#1e1e1e"
@@ -332,7 +332,7 @@ Mint_Red_Dark () {
 Mint_Teal_Dark () {
     # dk window colors
     dk_focus="#199ca8"
-    dk_unfocus="#565656"
+    dk_unfocus="#525252"
     dk_urgent="#ae0e16"
     # Polybar colors
     bar_bg="#1e1e1e"
@@ -356,7 +356,7 @@ Mint_Teal_Dark () {
 Yaru_Blue_Dark () {
     # dk window colors
     dk_focus="#0073e5"
-    dk_unfocus="#4e4e4e"
+    dk_unfocus="#4a4a4a"
     dk_urgent="#ac0e16"
     # Polybar colors
     bar_bg="#1e1e1e"
@@ -380,7 +380,7 @@ Yaru_Blue_Dark () {
 Yaru_Brown_Dark () {
     # dk window colors
     dk_focus="#8c6c47"
-    dk_unfocus="#4e4e4e"
+    dk_unfocus="#4a4a4a"
     dk_urgent="#ac0e16"
     # Polybar colors
     bar_bg="#1e1e1e"
@@ -404,7 +404,7 @@ Yaru_Brown_Dark () {
 Yaru_Green_Dark () {
     # dk window colors
     dk_focus="#03875b"
-    dk_unfocus="#4e4e4e"
+    dk_unfocus="#4a4a4a"
     dk_urgent="#ac0e16"
     # Polybar colors
     bar_bg="#1e1e1e"
@@ -428,7 +428,7 @@ Yaru_Green_Dark () {
 Yaru_Orange_Dark () {
     # dk window colors
     dk_focus="#e95420"
-    dk_unfocus="#4e4e4e"
+    dk_unfocus="#4a4a4a"
     dk_urgent="#ac0e16"
     # Polybar colors
     bar_bg="#1e1e1e"
@@ -452,7 +452,7 @@ Yaru_Orange_Dark () {
 Yaru_Orange_Light () {
     # dk window colors
     dk_focus="#e95420"
-    dk_unfocus="#afafaf"
+    dk_unfocus="#cccccc"
     dk_urgent="#ae0e16"
     # Polybar colors
     bar_bg="#f7f7f7"
@@ -476,7 +476,7 @@ Yaru_Orange_Light () {
 Yaru_Purple_Dark () {
     # dk window colors
     dk_focus="#7764d8"
-    dk_unfocus="#4e4e4e"
+    dk_unfocus="#4a4a4a"
     dk_urgent="#ac0e16"
     # Polybar colors
     bar_bg="#1e1e1e"
@@ -500,7 +500,7 @@ Yaru_Purple_Dark () {
 Yaru_Sage_Dark () {
     # dk window colors
     dk_focus="#657b69"
-    dk_unfocus="#4e4e4e"
+    dk_unfocus="#4a4a4a"
     dk_urgent="#ac0e16"
     # Polybar colors
     bar_bg="#1e1e1e"
@@ -524,7 +524,7 @@ Yaru_Sage_Dark () {
 Yaru_Teal_Dark () {
     # dk window colors
     dk_focus="#308280"
-    dk_unfocus="#4e4e4e"
+    dk_unfocus="#4a4a4a"
     dk_urgent="#ac0e16"
     # Polybar colors
     bar_bg="#1e1e1e"
