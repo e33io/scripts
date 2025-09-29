@@ -162,9 +162,9 @@ Adwaita_Light () {
 
 Mint_Blue_Dark () {
     # GUI and TUI theme names
-    gtk_theme=Mint-Blue-Dark
+    gtk_theme=Mint-Mod-Blue-Dark
     qt_ct_theme=kvantum-dark
-    kvantum_theme=Mint-Blue-Dark
+    kvantum_theme=Mint-Mod-Blue-Dark
     icon_theme=Papirus-Dark
     papirus_folders=adwaita
     # Desktop background color
@@ -180,9 +180,9 @@ Mint_Blue_Dark () {
 
 Mint_Green_Dark () {
     # GUI and TUI theme names
-    gtk_theme=Mint-Green-Dark
+    gtk_theme=Mint-Mod-Green-Dark
     qt_ct_theme=kvantum-dark
-    kvantum_theme=Mint-Green-Dark
+    kvantum_theme=Mint-Mod-Green-Dark
     icon_theme=Papirus-Dark
     papirus_folders=orange
     # Desktop background color
@@ -198,9 +198,9 @@ Mint_Green_Dark () {
 
 Mint_Green_Light () {
     # GUI and TUI theme names
-    gtk_theme=Mint-Green-Light
+    gtk_theme=Mint-Mod-Green-Light
     qt_ct_theme=kvantum
-    kvantum_theme=Mint-Green-Light
+    kvantum_theme=Mint-Mod-Green-Light
     icon_theme=Papirus-Light
     papirus_folders=orange
     # Desktop background color
@@ -216,9 +216,9 @@ Mint_Green_Light () {
 
 Mint_Grey_Dark () {
     # GUI and TUI theme names
-    gtk_theme=Mint-Grey-Dark
+    gtk_theme=Mint-Mod-Grey-Dark
     qt_ct_theme=kvantum-dark
-    kvantum_theme=Mint-Grey-Dark
+    kvantum_theme=Mint-Mod-Grey-Dark
     icon_theme=Papirus-Dark
     papirus_folders=white
     # Desktop background color
@@ -234,9 +234,9 @@ Mint_Grey_Dark () {
 
 Mint_Orange_Dark () {
     # GUI and TUI theme names
-    gtk_theme=Mint-Orange-Dark
+    gtk_theme=Mint-Mod-Orange-Dark
     qt_ct_theme=kvantum-dark
-    kvantum_theme=Mint-Orange-Dark
+    kvantum_theme=Mint-Mod-Orange-Dark
     icon_theme=Papirus-Dark
     papirus_folders=darkcyan
     # Desktop background color
@@ -252,9 +252,9 @@ Mint_Orange_Dark () {
 
 Mint_Purple_Dark () {
     # GUI and TUI theme names
-    gtk_theme=Mint-Purple-Dark
+    gtk_theme=Mint-Mod-Purple-Dark
     qt_ct_theme=kvantum-dark
-    kvantum_theme=Mint-Purple-Dark
+    kvantum_theme=Mint-Mod-Purple-Dark
     icon_theme=Papirus-Dark
     papirus_folders=orange
     # Desktop background color
@@ -270,9 +270,9 @@ Mint_Purple_Dark () {
 
 Mint_Red_Dark () {
     # GUI and TUI theme names
-    gtk_theme=Mint-Red-Dark
+    gtk_theme=Mint-Mod-Red-Dark
     qt_ct_theme=kvantum-dark
-    kvantum_theme=Mint-Red-Dark
+    kvantum_theme=Mint-Mod-Red-Dark
     icon_theme=Papirus-Dark
     papirus_folders=palebrown
     # Desktop background color
@@ -288,9 +288,9 @@ Mint_Red_Dark () {
 
 Mint_Teal_Dark () {
     # GUI and TUI theme names
-    gtk_theme=Mint-Teal-Dark
+    gtk_theme=Mint-Mod-Teal-Dark
     qt_ct_theme=kvantum-dark
-    kvantum_theme=Mint-Teal-Dark
+    kvantum_theme=Mint-Mod-Teal-Dark
     icon_theme=Papirus-Dark
     papirus_folders=orange
     # Desktop background color
@@ -454,24 +454,24 @@ while true; do
     echo "========================================================================"
     echo
     printf "   0) Keep current theming\n"
-    printf "   1) Adwaita-Dark        \e[38;5;236m▇▇▇\e[0m\e[38;5;025m▇▇▇\e[0m\n"
-    printf "   2) Adwaita-Light       \e[38;5;255m▇▇▇\e[0m\e[38;5;032m▇▇▇\e[0m\n"
-    printf "   3) Mint-Blue-Dark      \e[38;5;237m▇▇▇\e[0m\e[38;5;033m▇▇▇\e[0m\n"
-    printf "   4) Mint-Green-Dark     \e[38;5;237m▇▇▇\e[0m\e[38;5;035m▇▇▇\e[0m\n"
-    printf "   5) Mint-Green-Light    \e[38;5;255m▇▇▇\e[0m\e[38;5;035m▇▇▇\e[0m\n"
-    printf "   6) Mint-Grey-Dark      \e[38;5;237m▇▇▇\e[0m\e[38;5;243m▇▇▇\e[0m\n"
-    printf "   7) Mint-Orange-Dark    \e[38;5;237m▇▇▇\e[0m\e[38;5;208m▇▇▇\e[0m\n"
-    printf "   8) Mint-Purple-Dark    \e[38;5;237m▇▇▇\e[0m\e[38;5;098m▇▇▇\e[0m\n"
-    printf "   9) Mint-Red-Dark       \e[38;5;237m▇▇▇\e[0m\e[38;5;160m▇▇▇\e[0m\n"
-    printf "  10) Mint-Teal-Dark      \e[38;5;237m▇▇▇\e[0m\e[38;5;037m▇▇▇\e[0m\n"
-    printf "  11) Yaru-Blue-Dark      \e[38;5;236m▇▇▇\e[0m\e[38;5;027m▇▇▇\e[0m\n"
-    printf "  12) Yaru-Brown-Dark     \e[38;5;236m▇▇▇\e[0m\e[38;5;094m▇▇▇\e[0m\n"
-    printf "  13) Yaru-Green-Dark     \e[38;5;236m▇▇▇\e[0m\e[38;5;029m▇▇▇\e[0m\n"
-    printf "  14) Yaru-Orange-Dark    \e[38;5;236m▇▇▇\e[0m\e[38;5;166m▇▇▇\e[0m\n"
-    printf "  15) Yaru-Orange-Light   \e[38;5;255m▇▇▇\e[0m\e[38;5;166m▇▇▇\e[0m\n"
-    printf "  16) Yaru-Purple-Dark    \e[38;5;236m▇▇▇\e[0m\e[38;5;099m▇▇▇\e[0m\n"
-    printf "  17) Yaru-Sage-Dark      \e[38;5;236m▇▇▇\e[0m\e[38;5;065m▇▇▇\e[0m\n"
-    printf "  18) Yaru-Teal-Dark      \e[38;5;236m▇▇▇\e[0m\e[38;5;030m▇▇▇\e[0m\n"
+    printf "   1) Adwaita-Dark           \e[38;5;236m▇▇▇\e[0m\e[38;5;025m▇▇▇\e[0m\n"
+    printf "   2) Adwaita-Light          \e[38;5;255m▇▇▇\e[0m\e[38;5;032m▇▇▇\e[0m\n"
+    printf "   3) Mint-Mod-Blue-Dark     \e[38;5;237m▇▇▇\e[0m\e[38;5;033m▇▇▇\e[0m\n"
+    printf "   4) Mint-Mod-Green-Dark    \e[38;5;237m▇▇▇\e[0m\e[38;5;035m▇▇▇\e[0m\n"
+    printf "   5) Mint-Mod-Green-Light   \e[38;5;255m▇▇▇\e[0m\e[38;5;035m▇▇▇\e[0m\n"
+    printf "   6) Mint-Mod-Grey-Dark     \e[38;5;237m▇▇▇\e[0m\e[38;5;243m▇▇▇\e[0m\n"
+    printf "   7) Mint-Mod-Orange-Dark   \e[38;5;237m▇▇▇\e[0m\e[38;5;208m▇▇▇\e[0m\n"
+    printf "   8) Mint-Mod-Purple-Dark   \e[38;5;237m▇▇▇\e[0m\e[38;5;098m▇▇▇\e[0m\n"
+    printf "   9) Mint-Mod-Red-Dark      \e[38;5;237m▇▇▇\e[0m\e[38;5;160m▇▇▇\e[0m\n"
+    printf "  10) Mint-Mod-Teal-Dark     \e[38;5;237m▇▇▇\e[0m\e[38;5;037m▇▇▇\e[0m\n"
+    printf "  11) Yaru-Blue-Dark         \e[38;5;236m▇▇▇\e[0m\e[38;5;027m▇▇▇\e[0m\n"
+    printf "  12) Yaru-Brown-Dark        \e[38;5;236m▇▇▇\e[0m\e[38;5;094m▇▇▇\e[0m\n"
+    printf "  13) Yaru-Green-Dark        \e[38;5;236m▇▇▇\e[0m\e[38;5;029m▇▇▇\e[0m\n"
+    printf "  14) Yaru-Orange-Dark       \e[38;5;236m▇▇▇\e[0m\e[38;5;166m▇▇▇\e[0m\n"
+    printf "  15) Yaru-Orange-Light      \e[38;5;255m▇▇▇\e[0m\e[38;5;166m▇▇▇\e[0m\n"
+    printf "  16) Yaru-Purple-Dark       \e[38;5;236m▇▇▇\e[0m\e[38;5;099m▇▇▇\e[0m\n"
+    printf "  17) Yaru-Sage-Dark         \e[38;5;236m▇▇▇\e[0m\e[38;5;065m▇▇▇\e[0m\n"
+    printf "  18) Yaru-Teal-Dark         \e[38;5;236m▇▇▇\e[0m\e[38;5;030m▇▇▇\e[0m\n"
     echo
 
     read -p "Which theme do you want to use? " n
@@ -484,28 +484,28 @@ while true; do
         2) echo "You chose Adwaita-Light, applying changes...";
            Adwaita_Light;
            break;;
-        3) echo "You chose Mint-Blue-Dark, applying changes...";
+        3) echo "You chose Mint-Mod-Blue-Dark, applying changes...";
            Mint_Blue_Dark;
            break;;
-        4) echo "You chose Mint-Green-Dark, applying changes...";
+        4) echo "You chose Mint-Mod-Green-Dark, applying changes...";
            Mint_Green_Dark;
            break;;
-        5) echo "You chose Mint-Green-Light, applying changes...";
+        5) echo "You chose Mint-Mod-Green-Light, applying changes...";
            Mint_Green_Light;
            break;;
-        6) echo "You chose Mint-Grey-Dark, applying changes...";
+        6) echo "You chose Mint-Mod-Grey-Dark, applying changes...";
            Mint_Grey_Dark;
            break;;
-        7) echo "You chose Mint-Orange-Dark, applying changes...";
+        7) echo "You chose Mint-Mod-Orange-Dark, applying changes...";
            Mint_Orange_Dark;
            break;;
-        8) echo "You chose Mint-Purple-Dark, applying changes...";
+        8) echo "You chose Mint-Mod-Purple-Dark, applying changes...";
            Mint_Purple_Dark;
            break;;
-        9) echo "You chose Mint-Red-Dark, applying changes...";
+        9) echo "You chose Mint-Mod-Red-Dark, applying changes...";
            Mint_Red_Dark;
            break;;
-        10) echo "You chose Mint-Teal-Dark, applying changes...";
+        10) echo "You chose Mint-Mod-Teal-Dark, applying changes...";
            Mint_Teal_Dark;
            break;;
         11) echo "You chose Yaru-Blue-Dark, applying changes...";
