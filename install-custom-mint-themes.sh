@@ -27,6 +27,14 @@ if ! { [ -f "/etc/debian_version" ] || [ -f "/etc/pacman.conf" ]; }; then
 fi
 
 echo "========================================================================"
+echo "Remove obsolete themes"
+echo "========================================================================"
+
+sudo rm -rf /usr/share/Kvantum/Mint-L-*
+sudo rm -rf /usr/share/Kvantum/Mint-Y-*
+sudo rm -rf /usr/share/themes/Mint-*Mod-*
+
+echo "========================================================================"
 echo "Install theming dependencies"
 echo "========================================================================"
 
@@ -128,9 +136,6 @@ echo "========================================================================"
 
 echo "Custom Mint themes installed via e33io script: $(date '+%B %d, %Y, %H:%M')" \
 | tee -a $HOME/.install-info > /dev/null
-sudo rm -rf /usr/share/Kvantum/Mint-L-*
-sudo rm -rf /usr/share/Kvantum/Mint-Y-*
-sudo rm -rf /usr/share/themes/Mint-*Mod-*
 rm -rf $HOME/theming-temp
 
 echo "========================================================================"
