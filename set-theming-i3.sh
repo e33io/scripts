@@ -155,11 +155,11 @@ Adwaita_Light () {
     client_focused_inactive="#cec9c5 #f6f5f4 #444444 #aca49d #cec9c5"
     client_unfocused="#cec9c5 #f6f5f4 #444444 #aca49d #cec9c5"
     client_urgent="#aa0e15 #aa0e15 #ffffff #e6131d #aa0e15"
-    client_placeholder="#f6f5f4 #f6f5f4 #131211 #f6f5f4 #f6f5f4"
+    client_placeholder="#f6f5f4 #f6f5f4 #111111 #f6f5f4 #f6f5f4"
     client_background="#7f7f7f"
     # Polybar colors
     bar_bg="#f6f5f4"
-    bar_fg="#131211"
+    bar_fg="#111111"
     bar_bg_urg="#aa0e15"
     bar_fg_urg="#ffffff"
     bar_bindmode="#703c97"

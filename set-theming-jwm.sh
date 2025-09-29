@@ -139,7 +139,7 @@ Adwaita_Light () {
     jwm_theme="JWM-Adwaita-Light"
     # Polybar colors
     bar_bg="#f6f5f4"
-    bar_fg="#131211"
+    bar_fg="#111111"
     # Theme accent color
     accent_color="#3584e4"
     # Desktop background color
