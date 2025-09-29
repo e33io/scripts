@@ -152,8 +152,8 @@ Adwaita_Dark () {
 Adwaita_Light () {
     # i3 window colors
     client_focused="#3584e4 #3584e4 #ffffff #6fa7eb #3584e4"
-    client_focused_inactive="#cec9c5 #f6f5f4 #444444 #aca49d #cec9c5"
-    client_unfocused="#cec9c5 #f6f5f4 #444444 #aca49d #cec9c5"
+    client_focused_inactive="#aba29a #f6f5f4 #444444 #8d8176 #aba29a"
+    client_unfocused="#aba29a #f6f5f4 #444444 #8d8176 #aba29a"
     client_urgent="#aa0e15 #aa0e15 #ffffff #e6131d #aa0e15"
     client_placeholder="#f6f5f4 #f6f5f4 #111111 #f6f5f4 #f6f5f4"
     client_background="#7f7f7f"
@@ -241,8 +241,8 @@ Mint_Green_Dark () {
 Mint_Green_Light () {
     # i3 window colors
     client_focused="#35a854 #35a854 #ffffff #5dcc7a #35a854"
-    client_focused_inactive="#cacaca #f5f5f5 #444444 #a5a5a5 #cacaca"
-    client_unfocused="#cacaca #f5f5f5 #444444 #a5a5a5 #cacaca"
+    client_focused_inactive="#b6b6b6 #f5f5f5 #444444 #949494 #b6b6b6"
+    client_unfocused="#b6b6b6 #f5f5f5 #444444 #949494 #b6b6b6"
     client_urgent="#aa0e15 #aa0e15 #ffffff #e6131d #aa0e15"
     client_placeholder="#f5f5f5 #f5f5f5 #111111 #f5f5f5 #f5f5f5"
     client_background="#7f7f7f"
@@ -541,8 +541,8 @@ Yaru_Orange_Dark () {
 Yaru_Orange_Light () {
     # i3 window colors
     client_focused="#e95420 #e95420 #ffffff #f08b69 #e95420"
-    client_focused_inactive="#cccccc #f7f7f7 #444444 #a7a7a7 #cccccc"
-    client_unfocused="#cccccc #f7f7f7 #444444 #a7a7a7 #cccccc"
+    client_focused_inactive="#a6a6a6 #f7f7f7 #444444 #868686 #a6a6a6"
+    client_unfocused="#a6a6a6 #f7f7f7 #444444 #868686 #a6a6a6"
     client_urgent="#ac0e16 #ac0e16 #ffffff #c8101a #ac0e16"
     client_placeholder="#f7f7f7 #f7f7f7 #111111 #f7f7f7 #f7f7f7"
     client_background="#7f7f7f"

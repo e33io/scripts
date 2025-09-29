@@ -141,7 +141,7 @@ Adwaita_Dark () {
 Adwaita_Light () {
     # dk window colors
     dk_focus="#3584e4"
-    dk_unfocus="#cec9c5"
+    dk_unfocus="#aba29a"
     dk_urgent="#aa0e15"
     # Polybar colors
     bar_bg="#f6f5f4"
@@ -212,7 +212,7 @@ Mint_Green_Dark () {
 Mint_Green_Light () {
     # dk window colors
     dk_focus="#35a854"
-    dk_unfocus="#cacaca"
+    dk_unfocus="#b6b6b6"
     dk_urgent="#aa0e15"
     # Polybar colors
     bar_bg="#f5f5f5"
@@ -452,7 +452,7 @@ Yaru_Orange_Dark () {
 Yaru_Orange_Light () {
     # dk window colors
     dk_focus="#e95420"
-    dk_unfocus="#cccccc"
+    dk_unfocus="#a6a6a6"
     dk_urgent="#ae0e16"
     # Polybar colors
     bar_bg="#f7f7f7"
