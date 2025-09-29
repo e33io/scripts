@@ -122,7 +122,7 @@ theming_files () {
 
 Adwaita_Dark () {
     # i3 window colors
-    client_focused="#15539e #15539e #ffffff #1961be #15539e"
+    client_focused="#15539e #15539e #ffffff #1c6dcf #15539e"
     client_focused_inactive="#4f4f4f #1e1e1e #cccccc #6a6a6a #4f4f4f"
     client_unfocused="#4f4f4f #1e1e1e #cccccc #6a6a6a #4f4f4f"
     client_urgent="#a80e15 #a80e15 #ffffff #dc121b #a80e15"
@@ -151,7 +151,7 @@ Adwaita_Dark () {
 
 Adwaita_Light () {
     # i3 window colors
-    client_focused="#3584e4 #3584e4 #ffffff #7bafed #3584e4"
+    client_focused="#3584e4 #3584e4 #ffffff #6fa7eb #3584e4"
     client_focused_inactive="#cec9c5 #f6f5f4 #444444 #aca49d #cec9c5"
     client_unfocused="#cec9c5 #f6f5f4 #444444 #aca49d #cec9c5"
     client_urgent="#aa0e15 #aa0e15 #ffffff #e6131d #aa0e15"
@@ -240,7 +240,7 @@ Mint_Green_Dark () {
 
 Mint_Green_Light () {
     # i3 window colors
-    client_focused="#35a854 #35a854 #ffffff #72d38c #35a854"
+    client_focused="#35a854 #35a854 #ffffff #5dcc7a #35a854"
     client_focused_inactive="#cacaca #f5f5f5 #444444 #a5a5a5 #cacaca"
     client_unfocused="#cacaca #f5f5f5 #444444 #a5a5a5 #cacaca"
     client_urgent="#aa0e15 #aa0e15 #ffffff #e6131d #aa0e15"
