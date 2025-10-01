@@ -5,9 +5,12 @@
 # URL: https://github.com/e33io/scripts/blob/main/debian-options.sh
 # -----------------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
-# NOTE! For best results only select "standard system utilities" on the
+# Select and install i3, JWM or Xfce, plus a base set of apps for a
+# ready-to-use desktop session.
+# -----------------------------------------------------------------------------
+# NOTE! For best results ONLY select "standard system utilities" on the
 # Software selection screen (uncheck all the rest) during the Debian
-# install process for a clean minimal install base.
+# install process for a clean and minimal install base.
 # Reference screenshot:
 #   https://i.e33.io/screenshots/deb-minimal-install.jpg
 # -----------------------------------------------------------------------------
@@ -41,6 +44,7 @@ echo "        - 8x16 for non-HiDPI and VMs, or 16x32 for HiDPI"
 echo "  - Updates Debian 13 Trixie apt sources.list file"
 echo "  - Installs additional firmware packages"
 echo "  - Makes and sets up a swap file (if one doesn't exist)"
+echo "  - Option to install the backports kernel"
 echo "------------------------------------------------------------------------"
 
 while true; do
@@ -68,7 +72,7 @@ echo "  0) None, exit script now and install my own"
 echo "  1) i3 Window Manager (tiling WM)"
 echo "  2) JWM Window Manager (floating WM)"
 echo "  3) Xfce Desktop Environment"
-echo "  4) Gnome Desktop Environment"
+echo "------------------------------------------------------------------------"
 
 while true; do
     read -p "Which window manager or desktop environment do you want to install? " n
@@ -83,9 +87,6 @@ while true; do
            break;;
         3) echo "You chose Xfce Desktop Environment";
            sh $HOME/scripts/debian-install-xfce.sh;
-           break;;
-        4) echo "You chose Gnome Desktop Environment";
-           sh $HOME/scripts/debian-install-gnome.sh;
            break;;
         *) echo "Invalid selection, please enter a number from the list.";;
     esac

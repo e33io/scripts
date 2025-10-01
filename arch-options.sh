@@ -5,9 +5,10 @@
 # URL: https://github.com/e33io/scripts/blob/main/arch-options.sh
 # -----------------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
+# Select and install i3, JWM or Xfce, plus a base set of apps for a
+# ready-to-use desktop session.
+# -----------------------------------------------------------------------------
 # Works best with a fresh "Minimal" archinstall (Profile > Type > Minimal)
-# to select and install i3, JWM, Xfce or Gnome, plus a base set of apps
-# for a ready-to-use desktop session.
 # -----------------------------------------------------------------------------
 # Instructions for running this script:
 #   sudo pacman -S git
@@ -38,7 +39,7 @@ echo "  0) None, exit script now and install my own"
 echo "  1) i3 Window Manager (tiling WM)"
 echo "  2) JWM Window Manager (floating WM)"
 echo "  3) Xfce Desktop Environment"
-echo "  4) Gnome Desktop Environment"
+echo "------------------------------------------------------------------------"
 
 while true; do
     read -p "Which window manager or desktop environment do you want to install? " n
@@ -53,9 +54,6 @@ while true; do
            break;;
         3) echo "You chose Xfce Desktop Environment";
            sh $HOME/scripts/arch-install-xfce.sh;
-           break;;
-        4) echo "You chose Gnome Desktop Environment";
-           sh $HOME/scripts/arch-install-gnome.sh;
            break;;
         *) echo "Invalid selection, please enter a number from the list.";;
     esac
