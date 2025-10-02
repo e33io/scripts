@@ -65,7 +65,7 @@ if command -v systemctl > /dev/null 2>&1; then
     echo "========================================================================"
     echo "Enable wireplumber service (running as user)"
     echo "========================================================================"
-    
+
     systemctl --user --now enable wireplumber.service
 fi
 
