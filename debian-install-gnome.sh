@@ -136,6 +136,16 @@ echo "========================================================================"
 sudo update-alternatives --set x-www-browser /usr/bin/brave-browser-stable
 
 echo "========================================================================"
+echo "Change Papirus folders color"
+echo "========================================================================"
+
+if ! command -v papirus-folders > /dev/null 2>&1; then
+    wget -qO- https://git.io/papirus-folders-install | sh
+fi
+
+papirus-folders -C adwaita --theme Papirus-Dark
+
+echo "========================================================================"
 echo "Add bookmarks, run dconf script and clean up files"
 echo "========================================================================"
 

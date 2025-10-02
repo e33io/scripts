@@ -194,6 +194,16 @@ if [ -f "/etc/devuan_version" ]; then
 fi
 
 echo "========================================================================"
+echo "Change Papirus folders color"
+echo "========================================================================"
+
+if ! command -v papirus-folders > /dev/null 2>&1; then
+    wget -qO- https://git.io/papirus-folders-install | sh
+fi
+
+papirus-folders -C adwaita --theme Papirus-Dark
+
+echo "========================================================================"
 echo "Add bookmarks and clean up user directory"
 echo "========================================================================"
 
