@@ -208,7 +208,7 @@ file:///home/$(whoami)/Music" > $HOME/.config/gtk-3.0/bookmarks
 sed -i 's/16, 37/16, 56/' $HOME/.config/dunst/dunstrc
 sed -i '/mate-polkit/d' $HOME/.config/jwm/autostart
 sed -i '/xbindkeys/d' $HOME/.config/jwm/autostart
-sed -i '/at-spi/d' $HOME/.config/jwm/autostart && sed -i '31d' $HOME/.config/jwm/autostart
+sed -i '/at-spi/d' $HOME/.config/jwm/autostart && sed -i '30d;31d' $HOME/.config/jwm/autostart
 sed -i 's/Dmenu/Floating/' $HOME/.config/rofi/config.rasi
 sed -i "s/home\/.*\/Desktop/home\/$(whoami)\/Desktop/" $HOME/.config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml
 sed -i "s/~\/\.gtkrc-2\.0\.mine/\/home\/$(whoami)\/\.gtkrc-2\.0\.mine/" $HOME/.gtkrc-2.0
