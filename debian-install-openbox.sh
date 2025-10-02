@@ -61,11 +61,13 @@ sudo apt -y remove pavucontrol
 sudo apt -y autoremove
 sudo apt -y autoclean
 
-echo "========================================================================"
-echo "Enable wireplumber service (running as user)"
-echo "========================================================================"
-
-systemctl --user --now enable wireplumber.service
+if command -v systemctl > /dev/null 2>&1; then
+    echo "========================================================================"
+    echo "Enable wireplumber service (running as user)"
+    echo "========================================================================"
+    
+    systemctl --user --now enable wireplumber.service
+fi
 
 if ! command -v brave-browser > /dev/null 2>&1; then
     echo "========================================================================"
@@ -139,18 +141,17 @@ echo "========================================================================"
 echo "Add user .bash_profile and .xsessionrc files"
 echo "========================================================================"
 
-echo "if [ -f ~/.profile ]; then
-    . ~/.profile
-fi" | tee $HOME/.bash_profile $HOME/.xsessionrc > /dev/null
+printf '%s\n' 'if [ -f ~/.profile ]; then' '    . ~/.profile' 'fi' \
+| tee $HOME/.bash_profile $HOME/.xsessionrc > /dev/null
 
-echo "========================================================================"
-echo "Update root .bashrc file"
-echo "========================================================================"
+if [ ! -f "$HOME/.install-info" ]; then
+    echo "========================================================================"
+    echo "Update root .bashrc file"
+    echo "========================================================================"
 
-echo '#
-# Set command prompt
-PS1="\[\e[01;31m\]\u \w/#\[\e[m\] "
-#' | sudo tee -a /root/.bashrc > /dev/null
+    printf '%s\n' '' '# Set command prompt' 'PS1="\[\e[01;31m\]\u \w/#\[\e[m\] "' \
+    | sudo tee -a /root/.bashrc > /dev/null
+fi
 
 clear
 while true; do

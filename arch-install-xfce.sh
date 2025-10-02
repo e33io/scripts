@@ -113,14 +113,14 @@ sudo ln -sf $HOME/.config/qt6ct/* /root/.config/qt6ct
 sudo mv /usr/share/backgrounds/xfce/xfce-x.svg /usr/share/backgrounds/xfce/xfce-default.svg
 sudo ln -sf /usr/share/wallpapers/background-2.png /usr/share/backgrounds/xfce/xfce-x.svg
 
-echo "========================================================================"
-echo "Update root .bashrc file"
-echo "========================================================================"
+if [ ! -f "$HOME/.install-info" ]; then
+    echo "========================================================================"
+    echo "Update root .bashrc file"
+    echo "========================================================================"
 
-echo '#
-# Set command prompt
-PS1="\[\e[01;31m\]\u \w/#\[\e[m\] "
-#' | sudo tee -a /root/.bashrc > /dev/null
+    printf '%s\n' '' '# Set command prompt' 'PS1="\[\e[01;31m\]\u \w/#\[\e[m\] "' \
+    | sudo tee -a /root/.bashrc > /dev/null
+fi
 
 clear
 while true; do

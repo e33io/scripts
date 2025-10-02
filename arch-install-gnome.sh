@@ -110,14 +110,14 @@ sudo mkdir -p /boot/grub/fonts
 sudo cp -R /usr/share/grub/ter-* /boot/grub/fonts
 fc-cache -f
 
-echo "========================================================================"
-echo "Update root .bashrc file"
-echo "========================================================================"
+if [ ! -f "$HOME/.install-info" ]; then
+    echo "========================================================================"
+    echo "Update root .bashrc file"
+    echo "========================================================================"
 
-echo '#
-# Set command prompt
-PS1="\[\e[01;31m\]\u \w/#\[\e[m\] "
-#' | sudo tee -a /root/.bashrc > /dev/null
+    printf '%s\n' '' '# Set command prompt' 'PS1="\[\e[01;31m\]\u \w/#\[\e[m\] "' \
+    | sudo tee -a /root/.bashrc > /dev/null
+fi
 
 echo "========================================================================"
 echo "Change Papirus folders color"

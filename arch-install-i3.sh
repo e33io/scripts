@@ -117,14 +117,14 @@ sudo ln -sf $HOME/.config/qt5ct/* /root/.config/qt5ct
 sudo ln -sf $HOME/.config/qt6ct/* /root/.config/qt6ct
 sudo ln -sf $HOME/.gtkrc-2.0 /root/.gtkrc-2.0
 
-echo "========================================================================"
-echo "Update root .bashrc file"
-echo "========================================================================"
+if [ ! -f "$HOME/.install-info" ]; then
+    echo "========================================================================"
+    echo "Update root .bashrc file"
+    echo "========================================================================"
 
-echo '#
-# Set command prompt
-PS1="\[\e[01;31m\]\u \w/#\[\e[m\] "
-#' | sudo tee -a /root/.bashrc > /dev/null
+    printf '%s\n' '' '# Set command prompt' 'PS1="\[\e[01;31m\]\u \w/#\[\e[m\] "' \
+    | sudo tee -a /root/.bashrc > /dev/null
+fi
 
 clear
 while true; do
