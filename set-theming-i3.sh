@@ -375,7 +375,7 @@ Mint_Red_Dark () {
     # Theme accent color
     accent_color="#e82127"
     # Desktop background color
-    desktop_bg_color="#441e20"
+    desktop_bg_color="#451718"
     # GUI and TUI theme names
     prefer_dark_theme="1"
     gtk_theme=Mint-Mod-Red-Dark
