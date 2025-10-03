@@ -89,7 +89,7 @@ echo "========================================================================"
 echo "Update grub file"
 echo "========================================================================"
 
-sudo sed -i 's/loglevel=2 splash/loglevel=2/' /etc/default/grub
+sudo cp -R $HOME/opt-dots/devuan/etc/default/grub /etc/default
 sudo update-grub
 
 echo "========================================================================"
