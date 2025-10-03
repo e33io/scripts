@@ -274,7 +274,7 @@ Mint_Red_Dark () {
     qt_ct_theme=kvantum-dark
     kvantum_theme=Mint-Mod-Red-Dark
     icon_theme=Papirus-Dark
-    papirus_folders=palebrown
+    papirus_folders=paleorange
     # Desktop background color
     desktop_bg_color="#3b2324"
     # Theme accent color
