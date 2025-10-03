@@ -86,5 +86,12 @@ if [ -f "/bin/startxfce4" ]; then
 fi
 
 echo "========================================================================"
+echo "Update grub file"
+echo "========================================================================"
+
+sudo sed -i 's/loglevel=2 splash/loglevel=2/' /etc/default/grub
+sudo update-grub
+
+echo "========================================================================"
 echo "Reboot the system now to complete changes"
 echo "========================================================================"
