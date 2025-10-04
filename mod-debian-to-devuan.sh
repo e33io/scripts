@@ -41,6 +41,15 @@ if { [ -d "$HOME/.config/i3" ] || [ -d "$HOME/.config/jwm" ] || [ -d "$HOME/.con
 fi
 
 echo "========================================================================"
+echo "Replace pipewire with pulseaudio"
+echo "========================================================================"
+
+sudo apt -y purge pipewire*
+sudo apt -y autoremove
+sudo apt -y autoclean
+sudo apt -y install pulseaudio
+
+echo "========================================================================"
 echo "Replace systemctl with loginctl"
 echo "========================================================================"
 
