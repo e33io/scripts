@@ -52,15 +52,6 @@ if [ -f "$HOME/.local/bin/rofi-power.sh" ]; then
 fi
 sed -i 's/systemctl/loginctl/g' $HOME/.bashrc
 
-sys_vendor="$(cat /sys/class/dmi/id/sys_vendor)"
-if [ $sys_vendor = QEMU ]; then
-    echo "========================================================================"
-    echo "Install spice-vdagent and update VM-specific configs"
-    echo "========================================================================"
-
-    curl -s https://raw.githubusercontent.com/e33io/scripts/refs/heads/main/mod-virt-machines.sh | sh
-fi
-
 echo "========================================================================"
 echo "Update grub file"
 echo "========================================================================"
@@ -82,4 +73,13 @@ printf "%s\n" "[Desktop Entry]" "Version=1.0" "Type=Application" \
 chmod +x $HOME/.config/autostart/audio-default.desktop
 if [ -f "/bin/startxfce4" ]; then
     sed -i 's/25%/25%%/' $HOME/.config/autostart/audio-default.desktop
+fi
+
+sys_vendor="$(cat /sys/class/dmi/id/sys_vendor)"
+if [ $sys_vendor = QEMU ]; then
+    echo "========================================================================"
+    echo "Install spice-vdagent and update VM-specific configs"
+    echo "========================================================================"
+
+    curl -s https://raw.githubusercontent.com/e33io/scripts/refs/heads/main/mod-virt-machines.sh | sh
 fi
