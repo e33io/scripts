@@ -2,6 +2,7 @@
 
 # =============================================================================
 # Install Helium Browser (AppImage)
+# URL: https://github.com/e33io/scripts/blob/main/install-helium-browser.sh
 # =============================================================================
 
 # download current AppImage
@@ -10,7 +11,7 @@ HELIUM_VERSION=$(curl -s "https://api.github.com/repos/imputnet/helium-linux/rel
 mkdir -p $HOME/.local/applications
 wget -qO $HOME/.local/applications/helium.AppImage \
 https://github.com/imputnet/helium-linux/releases/download/${HELIUM_VERSION}/helium-${HELIUM_VERSION}-x86_64.AppImage
-chmod a+x $HOME/.local/applications/helium.AppImage
+chmod a+x $HOME/.local/applications/helium.AppImage && echo "Helium Browser is now installed."
 
 # add launch script with GTK environment variable
 mkdir -p $HOME/.local/bin
