@@ -54,7 +54,7 @@ libimage-exiftool-perl apt-transport-https curl rsync wmctrl xdotool xbindkeys
 
 if command -v systemctl > /dev/null 2>&1; then
     echo "========================================================================"
-    echo "Enable wireplumber service (running as user)"
+    echo "Install pipewire and enable wireplumber service (running as user)"
     echo "========================================================================"
 
     sudo apt -y install pipewire-audio
