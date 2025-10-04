@@ -65,6 +65,9 @@ echo "========================================================================"
 echo "Update grub file"
 echo "========================================================================"
 
+if [ ! -d "$HOME/opt-dots" ]; then
+    git clone https://github.com/e33io/opt-dots $HOME/opt-dots
+fi
 sudo cp -R $HOME/opt-dots/devuan/etc/default/grub /etc/default
 sudo update-grub
 
