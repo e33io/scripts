@@ -190,7 +190,7 @@ sudo update-alternatives --set x-www-browser /usr/bin/brave-browser-stable
 
 if [ -f "/etc/devuan_version" ]; then
     echo "========================================================================"
-    echo "Update Debian configs for use with Devuan Linux"
+    echo "Modify Debian configs for use with Devuan Linux"
     echo "========================================================================"
 
     sh $HOME/scripts/mod-debian-to-devuan.sh
