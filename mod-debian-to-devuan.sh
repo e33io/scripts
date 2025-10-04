@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # =============================================================================
-# Update Debian configs for use with Devuan Linux
+# Modify Debian configs for use with Devuan Linux
 # URL: https://github.com/e33io/scripts/blob/main/mod-debian-to-devuan.sh
 # -----------------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
@@ -85,7 +85,3 @@ chmod +x $HOME/.config/autostart/audio-default.desktop
 if [ -f "/bin/startxfce4" ]; then
     sed -i 's/25%/25%%/' $HOME/.config/autostart/audio-default.desktop
 fi
-
-echo "========================================================================"
-echo "Reboot the system now to complete changes"
-echo "========================================================================"
