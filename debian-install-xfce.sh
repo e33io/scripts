@@ -56,7 +56,6 @@ if command -v systemctl > /dev/null 2>&1; then
 
     sudo apt -y install pipewire-audio
     systemctl --user --now enable wireplumber.service
-    sudo apt -y autoremove && sudo apt -y autoclean
 fi
 
 if ! command -v brave-browser > /dev/null 2>&1; then
