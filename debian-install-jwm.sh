@@ -46,7 +46,7 @@ fonts-dejavu fonts-noto-color-emoji nitrogen mate-polkit-bin python3-gi gobject-
 gir1.2-gtk-3.0 libdbus-glib-1-2 upower dex lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings \
 plymouth plymouth-themes kitty python3-pypillowfight thunar thunar-archive-plugin tumbler-plugins-extra \
 ffmpegthumbnailer heif-thumbnailer heif-gdk-pixbuf gvfs-fuse gvfs-backends nfs-common cifs-utils \
-engrampa pipewire-audio pulseaudio-utils pavucontrol-qt synaptic dconf-cli mintstick scrot atril imv \
+engrampa pulseaudio pulseaudio-utils pavucontrol-qt synaptic dconf-cli mintstick scrot atril imv \
 mpv parole mousepad galculator gpick darktable gimp inkscape filezilla libreoffice-calc libreoffice-draw \
 libreoffice-impress libreoffice-writer libreoffice-gtk3 timeshift xterm lazygit fastfetch htop cmus cava \
 cmatrix ncal micro ranger ueberzug caca-utils highlight atool w3m poppler-utils mediainfo fzf \
@@ -57,7 +57,9 @@ if command -v systemctl > /dev/null 2>&1; then
     echo "Enable wireplumber service (running as user)"
     echo "========================================================================"
 
+    sudo apt -y install pipewire-audio
     systemctl --user --now enable wireplumber.service
+    sudo apt -y autoremove && sudo apt -y autoclean
 fi
 
 if ! command -v brave-browser > /dev/null 2>&1; then

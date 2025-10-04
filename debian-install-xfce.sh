@@ -42,7 +42,7 @@ echo "========================================================================"
 sudo apt -y install xfce4 xfce4-terminal xfce4-power-manager xfce4-screensaver xfce4-screenshooter \
 xfce4-taskmanager xfce4-docklike-plugin xfce4-windowck-plugin thunar-archive-plugin engrampa network-manager-gnome \
 mate-polkit lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings gvfs-fuse gvfs-backends nfs-common cifs-utils \
-tumbler-plugins-extra pipewire-audio xclip mousepad menulibre gnome-themes-extra qt*ct adwaita-qt* papirus-icon-theme \
+tumbler-plugins-extra pulseaudio xclip mousepad menulibre gnome-themes-extra qt*ct adwaita-qt* papirus-icon-theme \
 breeze-icon-theme fonts-noto-color-emoji plymouth plymouth-themes atril ristretto parole rhythmbox galculator \
 gnome-disk-utility mintstick synaptic dconf-editor dconf-cli gpick darktable gimp inkscape filezilla libreoffice-calc \
 libreoffice-draw libreoffice-impress libreoffice-writer libreoffice-gtk3 timeshift xterm micro imv mpv lazygit \
@@ -54,7 +54,9 @@ if command -v systemctl > /dev/null 2>&1; then
     echo "Enable wireplumber service (running as user)"
     echo "========================================================================"
 
+    sudo apt -y install pipewire-audio
     systemctl --user --now enable wireplumber.service
+    sudo apt -y autoremove && sudo apt -y autoclean
 fi
 
 if ! command -v brave-browser > /dev/null 2>&1; then
