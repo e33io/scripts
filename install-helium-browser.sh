@@ -9,7 +9,7 @@ HELIUM_VERSION=$(curl -s "https://api.github.com/repos/imputnet/helium-linux/rel
 | grep -Po '"tag_name": "\K[^"]*')
 mkdir -p $HOME/.local/applications
 wget -qO $HOME/.local/applications/helium.AppImage \
-https://github.com/imputnet/helium-linux/releases/download/0.4.12.1/helium-${HELIUM_VERSION}-x86_64.AppImage
+https://github.com/imputnet/helium-linux/releases/download/${HELIUM_VERSION}/helium-${HELIUM_VERSION}-x86_64.AppImage
 chmod a+x $HOME/.local/applications/helium.AppImage
 
 # add launch script with GTK environment variable
