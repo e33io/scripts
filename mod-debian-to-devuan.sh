@@ -60,6 +60,15 @@ sudo wget -qO /etc/default/grub \
 https://raw.githubusercontent.com/e33io/opt-dots/refs/heads/main/devuan/etc/default/grub
 sudo update-grub
 
+sys_vendor="$(cat /sys/class/dmi/id/sys_vendor)"
+if [ $sys_vendor = QEMU ]; then
+    echo "========================================================================"
+    echo "Install spice-vdagent and update VM-specific configs"
+    echo "========================================================================"
+
+    curl -s https://raw.githubusercontent.com/e33io/scripts/refs/heads/main/mod-virt-machines.sh | sh
+fi
+
 echo "========================================================================"
 echo "Set default mute and default volume level"
 echo "========================================================================"
@@ -74,12 +83,6 @@ chmod +x $HOME/.config/autostart/audio-default.desktop
 if [ -f "/bin/startxfce4" ]; then
     sed -i 's/25%/25%%/' $HOME/.config/autostart/audio-default.desktop
 fi
-
-sys_vendor="$(cat /sys/class/dmi/id/sys_vendor)"
 if [ $sys_vendor = QEMU ]; then
-    echo "========================================================================"
-    echo "Install spice-vdagent and update VM-specific configs"
-    echo "========================================================================"
-
-    curl -s https://raw.githubusercontent.com/e33io/scripts/refs/heads/main/mod-virt-machines.sh | sh
+    sed -i 's/@DEFAULT_SINK@ 25/@DEFAULT_SINK@ 75/' $HOME/.config/autostart/audio-default.desktop
 fi
