@@ -323,7 +323,7 @@ Mint_Red_Dark () {
     kvantum_theme=Mint-Mod-Red-Dark
     rofi_theme=Mint-Mod-Red-Dark
     icon_theme=Papirus-Dark
-    papirus_folders=paleorange
+    papirus_folders=palebrown
     # Call the theming files
     theming_files
 }
