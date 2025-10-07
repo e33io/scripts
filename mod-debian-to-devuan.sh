@@ -16,28 +16,18 @@ if [ "$(id -u)" = 0 ]; then
     exit 1
 fi
 
-clear
 if { [ -d "$HOME/.config/i3" ] || [ -d "$HOME/.config/jwm" ] || [ -d "$HOME/.config/dk" ] \
     || [ -d "$HOME/.config/openbox" ]; }; then
-    while true; do
+    if ! command -v laptop-detect > /dev/null 2>&1; then
+        sudo apt -y install laptop-detect
+    fi
+    if laptop-detect > /dev/null 2>&1; then
         echo "========================================================================"
-        echo "The option below lets you select a configuration"
-        echo "specific to your computer type."
+        echo "Modify window manager configs for laptop use"
         echo "========================================================================"
-        echo "  1) Desktop"
-        echo "  2) Laptop"
-        echo "------------------------------------------------------------------------"
 
-        read -p "What type of computer are you using? " n
-        case $n in
-            1) echo "You chose Desktop computer";
-               break;;
-            2) echo "You chose Laptop computer";
-               curl -s https://raw.githubusercontent.com/e33io/scripts/refs/heads/main/mod-wm-laptop.sh | sh;
-               break;;
-            *) echo "Invalid selection, please enter a number from the list.";;
-        esac
-    done
+        curl -s https://raw.githubusercontent.com/e33io/scripts/refs/heads/main/mod-wm-laptop.sh | sh
+    fi
 fi
 
 echo "========================================================================"
