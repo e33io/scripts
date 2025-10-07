@@ -172,20 +172,22 @@ while true; do
     esac
 done
 
-pc_type="$(hostnamectl chassis)"
-if [ $pc_type = laptop ]; then
-    echo "========================================================================"
-    echo "Modify window manager configs for laptop use"
-    echo "========================================================================"
+if command -v hostnamectl > /dev/null 2>&1; then
+    pc_type="$(hostnamectl chassis)"
+    if [ $pc_type = laptop ]; then
+        echo "========================================================================"
+        echo "Modify window manager configs for laptop use"
+        echo "========================================================================"
 
-    sh $HOME/scripts/mod-wm-laptop.sh
-fi
-if [ $pc_type = vm ]; then
-    echo "========================================================================"
-    echo "Install spice-vdagent and update VM-specific configs"
-    echo "========================================================================"
+        sh $HOME/scripts/mod-wm-laptop.sh
+    fi
+    if [ $pc_type = vm ]; then
+        echo "========================================================================"
+        echo "Install spice-vdagent and update VM-specific configs"
+        echo "========================================================================"
 
-    sh $HOME/scripts/mod-virt-machines.sh
+        sh $HOME/scripts/mod-virt-machines.sh
+    fi
 fi
 
 echo "========================================================================"

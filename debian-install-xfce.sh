@@ -171,13 +171,15 @@ while true; do
     esac
 done
 
-pc_type="$(hostnamectl chassis)"
-if [ $pc_type = vm ]; then
-    echo "========================================================================"
-    echo "Install spice-vdagent and update VM-specific configs"
-    echo "========================================================================"
+if command -v hostnamectl > /dev/null 2>&1; then
+    pc_type="$(hostnamectl chassis)"
+    if [ $pc_type = vm ]; then
+        echo "========================================================================"
+        echo "Install spice-vdagent and update VM-specific configs"
+        echo "========================================================================"
 
-    sh $HOME/scripts/mod-virt-machines.sh
+        sh $HOME/scripts/mod-virt-machines.sh
+    fi
 fi
 
 echo "========================================================================"
