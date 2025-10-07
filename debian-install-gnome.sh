@@ -24,6 +24,15 @@ if [ "$(id -u)" = 0 ]; then
     exit 1
 fi
 
+if [ -f "/etc/devuan_version" ]; then
+    echo "========================================================================"
+    echo "This script is NOT compatible with Devuan Linux!"
+    echo "It only works with Debian Linux and it will"
+    echo "exit now without running."
+    echo "========================================================================"
+    exit 1
+fi
+
 echo "========================================================================"
 echo "Update and upgrade system"
 echo "========================================================================"
