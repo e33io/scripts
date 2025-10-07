@@ -73,6 +73,7 @@ echo "========================================================================"
 
 sudo wget -qO /etc/default/grub \
 https://raw.githubusercontent.com/e33io/opt-dots/refs/heads/main/devuan/etc/default/grub
+sudo update-initramfs -u
 sudo update-grub
 
 sys_vendor="$(cat /sys/class/dmi/id/sys_vendor)"
