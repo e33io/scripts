@@ -92,3 +92,10 @@ fi
 if [ $sys_vendor = QEMU ]; then
     sed -i 's/@DEFAULT_SINK@ 25/@DEFAULT_SINK@ 75/' $HOME/.config/autostart/audio-default.desktop
 fi
+
+echo "========================================================================"
+echo "Update user config files"
+echo "========================================================================"
+
+sed -i 's/; method = pulse/method = pulse/' $HOME/.config/cava/config
+sed -i 's/; source = auto/source = auto/' $HOME/.config/cava/config
