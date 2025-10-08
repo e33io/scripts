@@ -60,12 +60,6 @@ echo "========================================================================"
 sudo apt -y remove pavucontrol
 sudo apt -y autoremove && sudo apt -y autoclean
 
-echo "========================================================================"
-echo "Enable wireplumber service (running as user)"
-echo "========================================================================"
-
-systemctl --user --now enable wireplumber.service
-
 if ! command -v brave-browser > /dev/null 2>&1; then
     echo "========================================================================"
     echo "Install Brave Browser"

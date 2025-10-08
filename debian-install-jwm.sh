@@ -52,12 +52,6 @@ libreoffice-impress libreoffice-writer libreoffice-gtk3 timeshift xterm lazygit 
 cmatrix ncal micro ranger ueberzug caca-utils highlight atool w3m poppler-utils mediainfo fzf \
 libimage-exiftool-perl apt-transport-https curl rsync wmctrl xdotool xbindkeys
 
-echo "========================================================================"
-echo "Enable wireplumber service (running as user)"
-echo "========================================================================"
-
-systemctl --user --now enable wireplumber.service
-
 if ! command -v brave-browser > /dev/null 2>&1; then
     echo "========================================================================"
     echo "Install Brave Browser"

@@ -60,12 +60,6 @@ if ! command -v dk > /dev/null 2>&1; then
     sh $HOME/scripts/install-dk-deb.sh
 fi
 
-echo "========================================================================"
-echo "Enable wireplumber service (running as user)"
-echo "========================================================================"
-
-systemctl --user --now enable wireplumber.service
-
 if ! command -v brave-browser > /dev/null 2>&1; then
     echo "========================================================================"
     echo "Install Brave Browser"

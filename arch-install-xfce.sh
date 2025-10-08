@@ -64,12 +64,6 @@ echo "========================================================================"
 yay -S --noconfirm --needed --sudoloop menulibre adwaita-qt5-git adwaita-qt6-git mintstick brave-bin octopi
 
 echo "========================================================================"
-echo "Enable wireplumber service (running as user)"
-echo "========================================================================"
-
-systemctl --user --now enable wireplumber.service
-
-echo "========================================================================"
 echo "Enable LightDM"
 echo "========================================================================"
 
