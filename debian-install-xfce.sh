@@ -49,13 +49,11 @@ libreoffice-draw libreoffice-impress libreoffice-writer libreoffice-gtk3 timeshi
 fastfetch htop cmus cava cmatrix ncal ranger ueberzug caca-utils highlight atool w3m poppler-utils mediainfo fzf \
 heif-thumbnailer heif-gdk-pixbuf libimage-exiftool-perl apt-transport-https curl rsync wmctrl xdotool xbindkeys
 
-if command -v systemctl > /dev/null 2>&1; then
-    echo "========================================================================"
-    echo "Enable wireplumber service (running as user)"
-    echo "========================================================================"
+echo "========================================================================"
+echo "Enable wireplumber service (running as user)"
+echo "========================================================================"
 
-    systemctl --user --now enable wireplumber.service
-fi
+systemctl --user --now enable wireplumber.service
 
 if ! command -v brave-browser > /dev/null 2>&1; then
     echo "========================================================================"
@@ -171,15 +169,13 @@ while true; do
     esac
 done
 
-if command -v hostnamectl > /dev/null 2>&1; then
-    pc_type="$(hostnamectl chassis)"
-    if [ $pc_type = vm ]; then
-        echo "========================================================================"
-        echo "Install spice-vdagent and update VM-specific configs"
-        echo "========================================================================"
+pc_type="$(hostnamectl chassis)"
+if [ $pc_type = vm ]; then
+    echo "========================================================================"
+    echo "Install spice-vdagent and update VM-specific configs"
+    echo "========================================================================"
 
-        sh $HOME/scripts/mod-virt-machines.sh
-    fi
+    sh $HOME/scripts/mod-virt-machines.sh
 fi
 
 echo "========================================================================"
@@ -188,14 +184,6 @@ echo "========================================================================"
 
 sudo update-alternatives --set x-www-browser /usr/bin/brave-browser-stable
 
-if [ -f "/etc/devuan_version" ]; then
-    echo "========================================================================"
-    echo "Modify Debian configs for use with Devuan Linux"
-    echo "========================================================================"
-
-    sh $HOME/scripts/mod-debian-to-devuan.sh
-fi
-
 echo "========================================================================"
 echo "Change Papirus folders color"
 echo "========================================================================"
@@ -203,7 +191,6 @@ echo "========================================================================"
 if ! command -v papirus-folders > /dev/null 2>&1; then
     wget -qO- https://git.io/papirus-folders-install | sh
 fi
-
 papirus-folders -C adwaita --theme Papirus-Dark
 
 echo "========================================================================"

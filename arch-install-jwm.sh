@@ -68,6 +68,12 @@ echo "========================================================================"
 yay -S --noconfirm --needed --sudoloop jwm xssproxy adwaita-qt5-git adwaita-qt6-git mintstick brave-bin octopi
 
 echo "========================================================================"
+echo "Enable wireplumber service (running as user)"
+echo "========================================================================"
+
+systemctl --user --now enable wireplumber.service
+
+echo "========================================================================"
 echo "Enable LightDM"
 echo "========================================================================"
 
@@ -172,7 +178,6 @@ echo "========================================================================"
 if ! command -v papirus-folders > /dev/null 2>&1; then
     wget -qO- https://git.io/papirus-folders-install | sh
 fi
-
 papirus-folders -C adwaita --theme Papirus-Dark
 
 echo "========================================================================"

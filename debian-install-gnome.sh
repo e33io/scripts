@@ -24,15 +24,6 @@ if [ "$(id -u)" = 0 ]; then
     exit 1
 fi
 
-if ! command -v systemctl > /dev/null 2>&1; then
-    echo "========================================================================"
-    echo "This script is NOT compatible with your version of Linux!"
-    echo "It only works with systemd-based Linux distributions"
-    echo "and it will exit now without running."
-    echo "========================================================================"
-    exit 1
-fi
-
 echo "========================================================================"
 echo "Update and upgrade system"
 echo "========================================================================"
@@ -51,18 +42,16 @@ libreoffice-draw libreoffice-impress libreoffice-writer libreoffice-gtk3 mintsti
 nfs-common cifs-utils libimage-exiftool-perl micro fzf lazygit htop fastfetch cmus cava cmatrix \
 apt-transport-https curl xclip
 
-if command -v hostnamectl > /dev/null 2>&1; then
-    pc_type="$(hostnamectl chassis)"
-    if [ $pc_type = desktop ]; then
-        sudo apt -y install input-remapper-gtk
-    fi
-    if [ $pc_type = vm ]; then
-        echo "========================================================================"
-        echo "Install spice-vdagent and update VM-specific configs"
-        echo "========================================================================"
+pc_type="$(hostnamectl chassis)"
+if [ $pc_type = desktop ]; then
+    sudo apt -y install input-remapper-gtk
+fi
+if [ $pc_type = vm ]; then
+    echo "========================================================================"
+    echo "Install spice-vdagent and update VM-specific configs"
+    echo "========================================================================"
 
-        sh $HOME/scripts/mod-virt-machines.sh
-    fi
+    sh $HOME/scripts/mod-virt-machines.sh
 fi
 
 if ! command -v brave-browser > /dev/null 2>&1; then
@@ -152,7 +141,6 @@ echo "========================================================================"
 if ! command -v papirus-folders > /dev/null 2>&1; then
     wget -qO- https://git.io/papirus-folders-install | sh
 fi
-
 papirus-folders -C adwaita --theme Papirus-Dark
 
 echo "========================================================================"

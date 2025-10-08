@@ -51,13 +51,11 @@ libreoffice-calc libreoffice-draw libreoffice-impress libreoffice-writer libreof
 lazygit fastfetch htop cmus cava cmatrix ncal micro ranger ueberzug caca-utils highlight atool w3m \
 poppler-utils mediainfo fzf libimage-exiftool-perl apt-transport-https curl rsync xdotool xbindkeys
 
-if command -v systemctl > /dev/null 2>&1; then
-    echo "========================================================================"
-    echo "Enable wireplumber service (running as user)"
-    echo "========================================================================"
+echo "========================================================================"
+echo "Enable wireplumber service (running as user)"
+echo "========================================================================"
 
-    systemctl --user --now enable wireplumber.service
-fi
+systemctl --user --now enable wireplumber.service
 
 if ! command -v brave-browser > /dev/null 2>&1; then
     echo "========================================================================"
@@ -169,22 +167,20 @@ while true; do
     esac
 done
 
-if command -v hostnamectl > /dev/null 2>&1; then
-    pc_type="$(hostnamectl chassis)"
-    if [ $pc_type = laptop ]; then
-        echo "========================================================================"
-        echo "Modify window manager configs for laptop use"
-        echo "========================================================================"
+pc_type="$(hostnamectl chassis)"
+if [ $pc_type = laptop ]; then
+    echo "========================================================================"
+    echo "Modify window manager configs for laptop use"
+    echo "========================================================================"
 
-        sh $HOME/scripts/mod-wm-laptop.sh
-    fi
-    if [ $pc_type = vm ]; then
-        echo "========================================================================"
-        echo "Install spice-vdagent and update VM-specific configs"
-        echo "========================================================================"
+    sh $HOME/scripts/mod-wm-laptop.sh
+fi
+if [ $pc_type = vm ]; then
+    echo "========================================================================"
+    echo "Install spice-vdagent and update VM-specific configs"
+    echo "========================================================================"
 
-        sh $HOME/scripts/mod-virt-machines.sh
-    fi
+    sh $HOME/scripts/mod-virt-machines.sh
 fi
 
 echo "========================================================================"
@@ -194,14 +190,6 @@ echo "========================================================================"
 sudo update-alternatives --set x-terminal-emulator /usr/bin/kitty
 sudo update-alternatives --set x-www-browser /usr/bin/brave-browser-stable
 
-if [ -f "/etc/devuan_version" ]; then
-    echo "========================================================================"
-    echo "Modify Debian configs for use with Devuan Linux"
-    echo "========================================================================"
-
-    sh $HOME/scripts/mod-debian-to-devuan.sh
-fi
-
 echo "========================================================================"
 echo "Change Papirus folders color"
 echo "========================================================================"
@@ -209,7 +197,6 @@ echo "========================================================================"
 if ! command -v papirus-folders > /dev/null 2>&1; then
     wget -qO- https://git.io/papirus-folders-install | sh
 fi
-
 papirus-folders -C adwaita --theme Papirus-Dark
 
 echo "========================================================================"

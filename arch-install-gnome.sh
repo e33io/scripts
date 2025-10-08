@@ -78,6 +78,12 @@ if [ $pc_type = vm ]; then
 fi
 
 echo "========================================================================"
+echo "Enable wireplumber service (running as user)"
+echo "========================================================================"
+
+systemctl --user --now enable wireplumber.service
+
+echo "========================================================================"
 echo "Enable GDM"
 echo "========================================================================"
 
@@ -126,7 +132,6 @@ echo "========================================================================"
 if ! command -v papirus-folders > /dev/null 2>&1; then
     wget -qO- https://git.io/papirus-folders-install | sh
 fi
-
 papirus-folders -C adwaita --theme Papirus-Dark
 
 echo "========================================================================"
