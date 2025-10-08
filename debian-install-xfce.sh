@@ -163,13 +163,15 @@ while true; do
     esac
 done
 
-pc_type="$(hostnamectl chassis)"
-if [ $pc_type = vm ]; then
-    echo "========================================================================"
-    echo "Install spice-vdagent and update VM-specific configs"
-    echo "========================================================================"
+if command -v hostnamectl > /dev/null 2>&1; then
+    pc_type="$(hostnamectl chassis)"
+    if [ $pc_type = vm ]; then
+        echo "========================================================================"
+        echo "Install spice-vdagent and update VM-specific configs"
+        echo "========================================================================"
 
-    sh $HOME/scripts/mod-virt-machines.sh
+        sh $HOME/scripts/mod-virt-machines.sh
+    fi
 fi
 
 echo "========================================================================"
@@ -177,6 +179,14 @@ echo "Update x-www-browser settings"
 echo "========================================================================"
 
 sudo update-alternatives --set x-www-browser /usr/bin/brave-browser-stable
+
+if [ -f "/etc/devuan_version" ]; then
+    echo "========================================================================"
+    echo "Modify Debian configs for use with Devuan Linux"
+    echo "========================================================================"
+
+    sh $HOME/scripts/mod-debian-to-devuan.sh
+fi
 
 echo "========================================================================"
 echo "Change Papirus folders color"
