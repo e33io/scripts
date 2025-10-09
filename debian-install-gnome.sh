@@ -42,16 +42,18 @@ libreoffice-draw libreoffice-impress libreoffice-writer libreoffice-gtk3 mintsti
 nfs-common cifs-utils libimage-exiftool-perl micro fzf lazygit htop fastfetch cmus cava cmatrix \
 apt-transport-https curl xclip
 
-pc_type="$(hostnamectl chassis)"
-if [ $pc_type = desktop ]; then
-    sudo apt -y install input-remapper-gtk
-fi
-if [ $pc_type = vm ]; then
-    echo "========================================================================"
-    echo "Install spice-vdagent and update VM-specific configs"
-    echo "========================================================================"
+if command -v hostnamectl > /dev/null 2>&1; then
+    pc_type="$(hostnamectl chassis)"
+    if [ $pc_type = desktop ]; then
+        sudo apt -y install input-remapper-gtk
+    fi
+    if [ $pc_type = vm ]; then
+        echo "========================================================================"
+        echo "Install spice-vdagent and update VM-specific configs"
+        echo "========================================================================"
 
-    sh $HOME/scripts/mod-virt-machines.sh
+        sh $HOME/scripts/mod-virt-machines.sh
+    fi
 fi
 
 if ! command -v brave-browser > /dev/null 2>&1; then
