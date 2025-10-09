@@ -40,7 +40,7 @@ echo "========================================================================"
 echo "Install Xorg and other packages"
 echo "========================================================================"
 
-sudo pacman -S --noconfirm --needed xorg-server xorg-apps polybar i3lock xss-lock dmenu rofi dunst gvfs nfs-utils \
+sudo pacman -S --noconfirm --needed xorg-server xorg-apps polybar i3lock xss-lock rofi dunst gvfs nfs-utils \
 cifs-utils fuse rsync cronie git curl wget tar less 7zip base-devel xsel xclip playerctl dex mate-polkit upower \
 xdg-desktop-portal-gtk xdg-user-dirs wmctrl xbindkeys xdotool lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings \
 lxappearance-gtk3 gnome-themes-extra gtk-engine-murrine qt5ct qt6ct ttf-dejavu noto-fonts-emoji papirus-icon-theme \
@@ -65,7 +65,7 @@ echo "========================================================================"
 echo "Install JWM and other packages from AUR"
 echo "========================================================================"
 
-yay -S --noconfirm --needed --sudoloop jwm xssproxy adwaita-qt5-git adwaita-qt6-git mintstick brave-bin octopi
+yay -S --noconfirm --needed --sudoloop jwm xssproxy adwaita-qt5 adwaita-qt6 mintstick brave-bin
 
 echo "========================================================================"
 echo "Enable LightDM"

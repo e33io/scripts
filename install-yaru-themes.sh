@@ -71,7 +71,7 @@ if [ -f "/etc/pacman.conf" ]; then
     echo "========================================================================"
 
     sudo pacman -Syu --noconfirm --needed kvantum kvantum-qt5
-    yay -S --noconfirm --needed --sudoloop adwaita-qt5-git adwaita-qt6-git
+    yay -S --noconfirm --needed --sudoloop adwaita-qt5 adwaita-qt6
 
     if [ ! -f "/bin/lxqt-session" ]; then
         sudo pacman -S --noconfirm --needed qt5ct qt6ct

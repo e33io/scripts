@@ -88,7 +88,7 @@ if [ -f "/etc/pacman.conf" ]; then
 
     sudo pacman -Syu --noconfirm --needed gnome-themes-extra gtk-engine-murrine kvantum kvantum-qt5 less git
     yay -S --noconfirm --needed --sudoloop mint-x-icons mint-y-icons mint-l-icons mint-themes mint-l-theme \
-    adwaita-qt5-git adwaita-qt6-git
+    adwaita-qt5 adwaita-qt6
 
     if [ ! -f "/bin/lxqt-session" ]; then
         sudo pacman -S --noconfirm --needed qt5ct qt6ct

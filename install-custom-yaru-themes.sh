@@ -55,7 +55,7 @@ if [ -f "/etc/pacman.conf" ]; then
         rm -rf $HOME/yay-bin
     fi
     sudo pacman -Syu --noconfirm --needed gnome-themes-extra gtk-engine-murrine kvantum kvantum-qt5 less git
-    yay -S --noconfirm --needed --sudoloop adwaita-qt5-git adwaita-qt6-git
+    yay -S --noconfirm --needed --sudoloop adwaita-qt5 adwaita-qt6
 fi
 
 if [ ! -f "/bin/lxqt-session" ]; then
