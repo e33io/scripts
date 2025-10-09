@@ -24,6 +24,15 @@ if [ "$(id -u)" = 0 ]; then
     exit 1
 fi
 
+if ! command -v systemctl > /dev/null 2>&1; then
+    echo "========================================================================"
+    echo "This script is NOT compatible with your version of Linux!"
+    echo "It only works with systemd-based Linux distributions"
+    echo "and it will exit now without running."
+    echo "========================================================================"
+    exit 1
+fi
+
 echo "========================================================================"
 echo "Update and upgrade system"
 echo "========================================================================"
