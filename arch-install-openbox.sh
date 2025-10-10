@@ -41,17 +41,16 @@ echo "Install Openbox and other packages"
 echo "========================================================================"
 
 sudo pacman -S --noconfirm --needed xorg-server xorg-apps openbox lxappearance-obconf-gtk3 \
-xfce4-panel xfce4-pulseaudio-plugin xfce4-battery-plugin xfce4-docklike-plugin \
-xfce4-windowck-plugin network-manager-applet i3lock xss-lock rofi dunst gvfs nfs-utils \
-cifs-utils fuse rsync cronie git curl wget tar less 7zip base-devel xsel xclip playerctl \
-dex mate-polkit upower xdg-desktop-portal-gtk xdg-user-dirs wmctrl xbindkeys xdotool \
-lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings lxappearance-gtk3 gnome-themes-extra \
-gtk-engine-murrine qt5ct qt6ct ttf-dejavu noto-fonts-emoji papirus-icon-theme breeze-icons \
-plymouth pavucontrol-qt nitrogen kitty python-pillowfight python-pyxdg xterm thunar \
-thunar-archive-plugin thunar-volman tumbler ffmpegthumbnailer engrampa scrot atril imv mpv \
+xfce4-panel xfce4-pulseaudio-plugin xfce4-battery-plugin xfce4-docklike-plugin xfce4-windowck-plugin \
+network-manager-applet i3lock xss-lock rofi dunst gvfs nfs-utils cifs-utils fuse rsync cronie git \
+curl wget tar less 7zip base-devel xsel xclip playerctl dex mate-polkit upower xdg-desktop-portal-gtk \
+xdg-user-dirs wmctrl xbindkeys xdotool lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings \
+lxappearance-gtk3 gnome-themes-extra gtk-engine-murrine qt5ct qt6ct ttf-dejavu noto-fonts-emoji \
+papirus-icon-theme breeze-icons plymouth pavucontrol-qt nitrogen kitty python-pillowfight xterm \
+thunar thunar-archive-plugin thunar-volman tumbler ffmpegthumbnailer engrampa scrot atril imv mpv \
 parole mousepad galculator timeshift bash-completion vim nano micro fzf lazygit htop fastfetch \
-cmus cava ranger ueberzug highlight atool w3m mediainfo perl-image-exiftool \
-signal-desktop gpick darktable gimp inkscape filezilla libreoffice
+cmus cava ranger ueberzug highlight atool w3m mediainfo perl-image-exiftool signal-desktop \
+gpick darktable gimp inkscape filezilla libreoffice
 
 if ! command -v yay > /dev/null 2>&1; then
     echo "========================================================================"

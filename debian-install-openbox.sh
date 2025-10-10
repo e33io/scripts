@@ -45,7 +45,7 @@ xfce4-docklike-plugin xfce4-windowck-plugin network-manager-gnome i3lock rofi du
 xclip xinput x11-utils lxappearance qt*ct adwaita-qt* gnome-themes-extra papirus-icon-theme breeze-icon-theme \
 fonts-dejavu fonts-noto-color-emoji nitrogen mate-polkit-bin python3-gi gobject-introspection gir1.2-gtk-3.0 \
 libdbus-glib-1-2 upower dex lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings plymouth plymouth-themes \
-kitty python3-pypillowfight python3-xdg thunar thunar-archive-plugin tumbler-plugins-extra ffmpegthumbnailer \
+kitty python3-pypillowfight thunar thunar-archive-plugin tumbler-plugins-extra ffmpegthumbnailer \
 heif-thumbnailer heif-gdk-pixbuf gvfs-fuse gvfs-backends nfs-common cifs-utils engrampa pipewire-audio \
 pulseaudio-utils pavucontrol-qt synaptic dconf-cli mintstick scrot atril imv mpv parole mousepad \
 galculator gpick darktable gimp inkscape filezilla libreoffice-calc libreoffice-draw libreoffice-impress \
