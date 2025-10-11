@@ -82,7 +82,7 @@ echo "Clone custom configuration files"
 echo "========================================================================"
 
 git clone https://github.com/e33io/dotfiles $HOME/dotfiles
-git clone https://github.com/e33io/opt-dots $HOME/opt-dots
+git clone https://github.com/e33io/extra $HOME/extra
 
 echo "========================================================================"
 echo "Copy custom configuration files"
@@ -92,18 +92,18 @@ mkdir -p $HOME/.config/micro
 mkdir -p $HOME/.local/bin
 cp -R $HOME/dotfiles/.config/micro $HOME/.config
 cp -R $HOME/dotfiles/.xbindkeysrc $HOME
-cp -R $HOME/opt-dots/xfce/.config $HOME
-cp -R $HOME/opt-dots/xfce/.local $HOME
-cp -R $HOME/opt-dots/xfce/.bashrc $HOME
-cp -R $HOME/opt-dots/xfce/.profile $HOME
-cp -R $HOME/opt-dots/xfce/.Xresources $HOME
+cp -R $HOME/extra/xfce/.config $HOME
+cp -R $HOME/extra/xfce/.local $HOME
+cp -R $HOME/extra/xfce/.bashrc $HOME
+cp -R $HOME/extra/xfce/.profile $HOME
+cp -R $HOME/extra/xfce/.Xresources $HOME
 sudo cp -R $HOME/dotfiles/etc/default /etc
 sudo cp -R $HOME/dotfiles/etc/network /etc
 sudo cp -R $HOME/dotfiles/etc/plymouth /etc
 sudo cp -R $HOME/dotfiles/usr/share /usr
-sudo cp -R $HOME/opt-dots/xfce/etc/lightdm /etc
-sudo cp -R $HOME/opt-dots/xfce/usr/bin /usr
-sudo cp -R $HOME/opt-dots/xfce/usr/share /usr
+sudo cp -R $HOME/extra/xfce/etc/lightdm /etc
+sudo cp -R $HOME/extra/xfce/usr/bin /usr
+sudo cp -R $HOME/extra/xfce/usr/share /usr
 sudo cp -R $HOME/scripts/window-control.sh /usr/bin
 sudo mkdir -p /boot/grub/fonts
 sudo cp -R /usr/share/grub/ter-* /boot/grub/fonts
@@ -213,7 +213,7 @@ cp -R $HOME/scripts/set-theming-xfce.sh $HOME/.local/bin/set-theming-xfce
 echo "Xfce installed via e33io script: $(date '+%B %d, %Y, %H:%M')" \
 | tee -a $HOME/.install-info > /dev/null
 rm -rf $HOME/dotfiles
-rm -rf $HOME/opt-dots
+rm -rf $HOME/extra
 rm -rf $HOME/scripts
 
 echo "========================================================================"

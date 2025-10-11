@@ -82,7 +82,7 @@ echo "Clone custom configuration files"
 echo "========================================================================"
 
 git clone https://github.com/e33io/dotfiles $HOME/dotfiles
-git clone https://github.com/e33io/opt-dots $HOME/opt-dots
+git clone https://github.com/e33io/extra $HOME/extra
 
 echo "========================================================================"
 echo "Copy custom configuration files"
@@ -95,20 +95,20 @@ cp -R $HOME/dotfiles/.local/bin $HOME/.local
 cp -R $HOME/dotfiles/.gtkrc* $HOME
 cp -R $HOME/dotfiles/.xbindkeysrc $HOME
 cp -R $HOME/dotfiles/.Xresources $HOME
-cp -R $HOME/opt-dots/arch/.config $HOME
-cp -R $HOME/opt-dots/arch/.local $HOME
-cp -R $HOME/opt-dots/arch/.bash_profile $HOME
-cp -R $HOME/opt-dots/arch/.bashrc $HOME
-cp -R $HOME/opt-dots/arch/.profile $HOME
-cp -R $HOME/opt-dots/openbox/.config $HOME
-cp -R $HOME/opt-dots/openbox/.themes $HOME
+cp -R $HOME/extra/arch/.config $HOME
+cp -R $HOME/extra/arch/.local $HOME
+cp -R $HOME/extra/arch/.bash_profile $HOME
+cp -R $HOME/extra/arch/.bashrc $HOME
+cp -R $HOME/extra/arch/.profile $HOME
+cp -R $HOME/extra/openbox/.config $HOME
+cp -R $HOME/extra/openbox/.themes $HOME
 sudo cp -R $HOME/dotfiles/etc/plymouth /etc
 sudo cp -R $HOME/dotfiles/usr/share/fonts /usr/share
 sudo cp -R $HOME/dotfiles/usr/share/grub /usr/share
 sudo cp -R $HOME/dotfiles/usr/share/gtksourceview-4 /usr/share
 sudo cp -R $HOME/dotfiles/usr/share/pixmaps /usr/share
 sudo cp -R $HOME/dotfiles/usr/share/wallpapers /usr/share
-sudo cp -R $HOME/opt-dots/arch/etc/lightdm /etc
+sudo cp -R $HOME/extra/arch/etc/lightdm /etc
 sudo mkdir -p /boot/grub/fonts
 sudo cp -R /usr/share/grub/ter-* /boot/grub/fonts
 sudo mkdir -p /root/.config/gtk-3.0
@@ -207,7 +207,7 @@ if ! command -v i3 > /dev/null 2>&1; then
     rm -rf $HOME/.config/i3
 fi
 rm -rf $HOME/dotfiles
-rm -rf $HOME/opt-dots
+rm -rf $HOME/extra
 rm -rf $HOME/scripts
 
 echo "========================================================================"

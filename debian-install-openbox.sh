@@ -93,7 +93,7 @@ echo "Clone custom configuration files"
 echo "========================================================================"
 
 git clone https://github.com/e33io/dotfiles $HOME/dotfiles
-git clone https://github.com/e33io/opt-dots $HOME/opt-dots
+git clone https://github.com/e33io/extra $HOME/extra
 
 echo "========================================================================"
 echo "Copy custom configuration files"
@@ -107,8 +107,8 @@ cp -R $HOME/dotfiles/.gtkrc* $HOME
 cp -R $HOME/dotfiles/.profile $HOME
 cp -R $HOME/dotfiles/.xbindkeysrc $HOME
 cp -R $HOME/dotfiles/.Xresources $HOME
-cp -R $HOME/opt-dots/openbox/.config $HOME
-cp -R $HOME/opt-dots/openbox/.themes $HOME
+cp -R $HOME/extra/openbox/.config $HOME
+cp -R $HOME/extra/openbox/.themes $HOME
 sudo cp -R $HOME/dotfiles/etc/default /etc
 sudo cp -R $HOME/dotfiles/etc/lightdm /etc
 sudo cp -R $HOME/dotfiles/etc/network /etc
@@ -233,7 +233,7 @@ if ! command -v i3 > /dev/null 2>&1; then
     rm -rf $HOME/.config/i3
 fi
 rm -rf $HOME/dotfiles
-rm -rf $HOME/opt-dots
+rm -rf $HOME/extra
 rm -rf $HOME/scripts
 
 echo "========================================================================"

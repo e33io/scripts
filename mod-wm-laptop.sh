@@ -56,5 +56,5 @@ if [ -d "$HOME/.config/openbox" ]; then
     # update xss-lock.desktop (add lock-suspend.sh to xss-lock command)
     sed -i 's/xss-lock -l/xss-lock -n sh ~\/\.local\/bin\/lock-suspend\.sh -l/' $HOME/.config/openbox/autostart
     # copy laptop-specific Xfce Panel config files
-    cp -R $HOME/opt-dots/openbox/options/xfce4 $HOME/.config
+    cp -R $HOME/extra/openbox/options/xfce4 $HOME/.config
 fi

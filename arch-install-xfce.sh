@@ -75,7 +75,7 @@ echo "Clone custom configuration files"
 echo "========================================================================"
 
 git clone https://github.com/e33io/dotfiles $HOME/dotfiles
-git clone https://github.com/e33io/opt-dots $HOME/opt-dots
+git clone https://github.com/e33io/extra $HOME/extra
 
 echo "========================================================================"
 echo "Copy custom configuration files"
@@ -85,22 +85,22 @@ mkdir -p $HOME/.config/micro
 mkdir -p $HOME/.local/bin
 cp -R $HOME/dotfiles/.config/micro $HOME/.config
 cp -R $HOME/dotfiles/.xbindkeysrc $HOME
-cp -R $HOME/opt-dots/xfce/.config $HOME
-cp -R $HOME/opt-dots/arch-xfce/.config $HOME
-cp -R $HOME/opt-dots/arch-xfce/.local $HOME
-cp -R $HOME/opt-dots/arch-xfce/.bash_profile $HOME
-cp -R $HOME/opt-dots/arch-xfce/.bashrc $HOME
-cp -R $HOME/opt-dots/arch-xfce/.profile $HOME
-cp -R $HOME/opt-dots/xfce/.Xresources $HOME
+cp -R $HOME/extra/xfce/.config $HOME
+cp -R $HOME/extra/arch-xfce/.config $HOME
+cp -R $HOME/extra/arch-xfce/.local $HOME
+cp -R $HOME/extra/arch-xfce/.bash_profile $HOME
+cp -R $HOME/extra/arch-xfce/.bashrc $HOME
+cp -R $HOME/extra/arch-xfce/.profile $HOME
+cp -R $HOME/extra/xfce/.Xresources $HOME
 sudo cp -R $HOME/dotfiles/etc/plymouth /etc
 sudo cp -R $HOME/dotfiles/usr/share/fonts /usr/share
 sudo cp -R $HOME/dotfiles/usr/share/grub /usr/share
 sudo cp -R $HOME/dotfiles/usr/share/gtksourceview-4 /usr/share
 sudo cp -R $HOME/dotfiles/usr/share/pixmaps /usr/share
 sudo cp -R $HOME/dotfiles/usr/share/wallpapers /usr/share
-sudo cp -R $HOME/opt-dots/arch-xfce/etc/lightdm /etc
-sudo cp -R $HOME/opt-dots/xfce/usr/bin /usr
-sudo cp -R $HOME/opt-dots/xfce/usr/share /usr
+sudo cp -R $HOME/extra/arch-xfce/etc/lightdm /etc
+sudo cp -R $HOME/extra/xfce/usr/bin /usr
+sudo cp -R $HOME/extra/xfce/usr/share /usr
 sudo cp -R $HOME/scripts/window-control.sh /usr/bin
 sudo mkdir -p /boot/grub/fonts
 sudo cp -R /usr/share/grub/ter-* /boot/grub/fonts
@@ -180,7 +180,7 @@ cp -R $HOME/scripts/set-theming-xfce.sh $HOME/.local/bin/set-theming-xfce
 echo "Xfce installed via e33io script: $(date '+%B %d, %Y, %H:%M')" \
 | tee -a $HOME/.install-info > /dev/null
 rm -rf $HOME/dotfiles
-rm -rf $HOME/opt-dots
+rm -rf $HOME/extra
 rm -rf $HOME/scripts
 
 echo "========================================================================"
