@@ -36,9 +36,10 @@ echo "Install COSMIC and other packages"
 echo "========================================================================"
 
 sudo pacman -S --noconfirm --needed cosmic plymouth xdg-desktop-portal-gtk xdg-user-dirs \
-gvfs nfs-utils cifs-utils fuse rsync cronie git curl wget tar 7zip less base-devel bash-completion \
-vim nano micro fzf lazygit htop fastfetch cmus cava ranger ueberzug highlight atool w3m mediainfo \
-perl-image-exiftool mpv timeshift signal-desktop darktable gimp inkscape filezilla libreoffice
+gvfs gvfs-nfs gvfs-smb nfs-utils cifs-utils fuse rsync cronie git curl wget tar 7zip less \
+base-devel bash-completion vim nano micro fzf lazygit htop fastfetch cmus cava ranger \
+ueberzug highlight atool w3m mediainfo perl-image-exiftool mpv timeshift signal-desktop \
+darktable gimp inkscape filezilla libreoffice
 
 if ! command -v yay > /dev/null 2>&1; then
     echo "========================================================================"
