@@ -35,11 +35,11 @@ echo "========================================================================"
 echo "Install COSMIC and other packages"
 echo "========================================================================"
 
-sudo pacman -S --noconfirm --needed cosmic plymouth xdg-desktop-portal-gtk xdg-user-dirs \
-gvfs gvfs-nfs gvfs-smb nfs-utils cifs-utils fuse rsync cronie git curl wget tar 7zip less \
-base-devel bash-completion vim nano micro fzf lazygit htop fastfetch cmus cava ranger \
-ueberzug highlight atool w3m mediainfo perl-image-exiftool mpv timeshift signal-desktop \
-darktable gimp inkscape filezilla libreoffice
+sudo pacman -S --noconfirm --needed cosmic plymouth papirus-icon-theme breeze-icons \
+xdg-desktop-portal-gtk xdg-user-dirs gvfs gvfs-nfs gvfs-smb nfs-utils cifs-utils fuse rsync \
+cronie git curl wget tar 7zip less base-devel bash-completion vim nano micro fzf lazygit htop \
+fastfetch cmus cava ranger ueberzug highlight atool w3m mediainfo perl-image-exiftool mpv \
+timeshift signal-desktop darktable gimp inkscape filezilla libreoffice
 
 if ! command -v yay > /dev/null 2>&1; then
     echo "========================================================================"
@@ -96,6 +96,16 @@ if [ ! -f "$HOME/.install-info" ]; then
     printf '%s\n' '' '# Set command prompt' 'PS1="\[\e[01;31m\]\u \w/#\[\e[m\] "' \
     | sudo tee -a /root/.bashrc > /dev/null
 fi
+
+echo "========================================================================"
+echo "Change Papirus folders color"
+echo "========================================================================"
+
+if ! command -v papirus-folders > /dev/null 2>&1; then
+    wget -qO- https://git.io/papirus-folders-install | sh
+fi
+papirus-folders -C darkcyan --theme Papirus-Light
+papirus-folders -C darkcyan --theme Papirus-Dark
 
 echo "========================================================================"
 echo "Clean up user directory"
