@@ -82,7 +82,7 @@ cp -R $HOME/dotfiles/.config/micro $HOME/.config
 sudo cp -R $HOME/dotfiles/etc/plymouth /etc
 sudo cp -R $HOME/dotfiles/usr/share/fonts /usr/share
 sudo cp -R $HOME/dotfiles/usr/share/grub /usr/share
-sudo cp -R $HOME/dotfiles/usr/share/wallpapers /usr/share
+sudo cp -R $HOME/dotfiles/usr/share/wallpapers/* /usr/share/backgrounds
 sudo mkdir -p /boot/grub/fonts
 sudo cp -R /usr/share/grub/ter-* /boot/grub/fonts
 sudo mkdir -p /root/.config/micro
