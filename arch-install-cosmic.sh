@@ -9,6 +9,8 @@
 # to install the COSMIC desktop environment and a base set of apps for
 # a ready-to-use desktop session.
 # -----------------------------------------------------------------------------
+# NOTE: Default COSMIC theming is used, custom theming configs are WIP
+# -----------------------------------------------------------------------------
 # Instructions for running this script:
 #   sudo pacman -S git
 #   git clone https://github.com/e33io/scripts
@@ -91,7 +93,6 @@ cp -R $HOME/extra/arch-cosmic/.local $HOME
 cp -R $HOME/extra/arch-cosmic/.bash_profile $HOME
 cp -R $HOME/extra/arch-cosmic/.bashrc $HOME
 cp -R $HOME/extra/arch-cosmic/.profile $HOME
-sudo cp -R $HOME/dotfiles/etc/plymouth /etc
 sudo cp -R $HOME/dotfiles/usr/share/fonts /usr/share
 sudo cp -R $HOME/dotfiles/usr/share/grub /usr/share
 sudo cp -R $HOME/dotfiles/usr/share/wallpapers/* /usr/share/backgrounds
