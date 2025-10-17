@@ -71,6 +71,7 @@ echo "Clone custom configuration files"
 echo "========================================================================"
 
 git clone https://github.com/e33io/dotfiles $HOME/dotfiles
+git clone https://github.com/e33io/extra $HOME/extra
 
 echo "========================================================================"
 echo "Copy custom configuration files"
@@ -81,6 +82,20 @@ cp -R $HOME/dotfiles/.config/micro $HOME/.config
 sudo cp -R $HOME/dotfiles/etc/plymouth /etc
 sudo cp -R $HOME/dotfiles/usr/share/fonts /usr/share
 sudo cp -R $HOME/dotfiles/usr/share/grub /usr/share
+sudo cp -R $HOME/dotfiles/usr/share/wallpapers /usr/share
+sudo mkdir -p /boot/grub/fonts
+sudo cp -R /usr/share/grub/ter-* /boot/grub/fonts
+sudo mkdir -p /root/.config/micro
+sudo ln -sf $HOME/.config/micro/* /root/.config/micro
+
+if [ ! -f "$HOME/.install-info" ]; then
+    echo "========================================================================"
+    echo "Update root .bashrc file"
+    echo "========================================================================"
+
+    printf '%s\n' '' '# Set command prompt' 'PS1="\[\e[01;31m\]\u \w/#\[\e[m\] "' \
+    | sudo tee -a /root/.bashrc > /dev/null
+fi
 
 echo "========================================================================"
 echo "Clean up user directory"
@@ -90,6 +105,7 @@ xdg-user-dirs-update
 echo "COSMIC installed via e33io script: $(date '+%B %d, %Y, %H:%M')" \
 | tee -a $HOME/.install-info > /dev/null
 rm -rf $HOME/dotfiles
+rm -rf $HOME/extra
 rm -rf $HOME/scripts
 
 echo "========================================================================"
