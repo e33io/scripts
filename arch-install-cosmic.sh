@@ -79,6 +79,11 @@ echo "========================================================================"
 
 mkdir -p $HOME/.config/micro
 cp -R $HOME/dotfiles/.config/micro $HOME/.config
+cp -R $HOME/extra/arch-cosmic/.config $HOME
+cp -R $HOME/extra/arch-cosmic/.local $HOME
+cp -R $HOME/extra/arch-cosmic/.bash_profile $HOME
+cp -R $HOME/extra/arch-cosmic/.bashrc $HOME
+cp -R $HOME/extra/arch-cosmic/.profile $HOME
 sudo cp -R $HOME/dotfiles/etc/plymouth /etc
 sudo cp -R $HOME/dotfiles/usr/share/fonts /usr/share
 sudo cp -R $HOME/dotfiles/usr/share/grub /usr/share
