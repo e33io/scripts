@@ -39,7 +39,8 @@ sudo pacman -S --noconfirm --needed cosmic plymouth papirus-icon-theme breeze-ic
 xdg-desktop-portal-gtk xdg-user-dirs gvfs gvfs-nfs gvfs-smb nfs-utils cifs-utils fuse rsync \
 cronie git curl wget tar 7zip less base-devel bash-completion vim nano micro fzf lazygit htop \
 fastfetch cmus cava ranger ueberzug highlight atool w3m mediainfo perl-image-exiftool imv mpv \
-timeshift signal-desktop darktable gimp inkscape filezilla libreoffice
+timeshift file-roller loupe papers gnome-disk-utility dconf-editor signal-desktop \
+darktable gimp inkscape filezilla libreoffice
 
 if ! command -v yay > /dev/null 2>&1; then
     echo "========================================================================"
