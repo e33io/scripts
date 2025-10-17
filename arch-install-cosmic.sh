@@ -43,6 +43,11 @@ fastfetch cmus cava ranger ueberzug highlight atool w3m mediainfo perl-image-exi
 imv mpv timeshift file-roller loupe papers gnome-disk-utility dconf-editor \
 signal-desktop darktable gimp inkscape filezilla libreoffice
 
+pc_type="$(hostnamectl chassis)"
+if [ $pc_type = vm ]; then
+    sudo pacman -S --noconfirm --needed spice-vdagent
+fi
+
 if ! command -v yay > /dev/null 2>&1; then
     echo "========================================================================"
     echo "Setup Yay for AUR"
