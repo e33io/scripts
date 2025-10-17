@@ -38,7 +38,7 @@ echo "========================================================================"
 sudo pacman -S --noconfirm --needed cosmic plymouth papirus-icon-theme breeze-icons \
 xdg-desktop-portal-gtk xdg-user-dirs gvfs gvfs-nfs gvfs-smb nfs-utils cifs-utils fuse rsync \
 cronie git curl wget tar 7zip less base-devel bash-completion vim nano micro fzf lazygit htop \
-fastfetch cmus cava ranger ueberzug highlight atool w3m mediainfo perl-image-exiftool mpv \
+fastfetch cmus cava ranger ueberzug highlight atool w3m mediainfo perl-image-exiftool imv mpv \
 timeshift signal-desktop darktable gimp inkscape filezilla libreoffice
 
 if ! command -v yay > /dev/null 2>&1; then
