@@ -42,7 +42,7 @@ power-profiles-daemon plymouth papirus-icon-theme breeze-icons xdg-desktop-porta
 xdg-user-dirs gvfs gvfs-nfs gvfs-smb nfs-utils cifs-utils fuse rsync cronie git \
 curl wget tar 7zip less base-devel bash-completion vim nano micro fzf lazygit htop \
 fastfetch cmus cava ranger ueberzug highlight atool w3m mediainfo perl-image-exiftool \
-imv mpv timeshift file-roller loupe papers gnome-disk-utility dconf-editor \
+imv mpv timeshift gnome-disk-utility dconf-editor file-roller gthumb evince rhythmbox \
 signal-desktop darktable gimp inkscape filezilla libreoffice
 
 pc_type="$(hostnamectl chassis)"
