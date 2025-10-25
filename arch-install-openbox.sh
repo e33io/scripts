@@ -42,7 +42,7 @@ echo "========================================================================"
 
 sudo pacman -S --noconfirm --needed xorg-server xorg-apps openbox lxappearance-obconf \
 xfce4-panel xfce4-pulseaudio-plugin xfce4-battery-plugin xfce4-docklike-plugin xfce4-windowck-plugin \
-network-manager-applet i3lock xss-lock rofi dunst gvfs nfs-utils cifs-utils fuse rsync cronie git \
+network-manager-applet i3lock xss-lock rofi dunst gvfs nfs-utils cifs-utils rsync cronie git \
 curl wget tar less 7zip base-devel xsel xclip playerctl dex mate-polkit upower xdg-desktop-portal-gtk \
 xdg-user-dirs wmctrl xbindkeys xdotool lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings \
 lxappearance gnome-themes-extra gtk-engine-murrine qt5ct qt6ct ttf-dejavu noto-fonts-emoji \
