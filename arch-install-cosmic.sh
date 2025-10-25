@@ -66,7 +66,7 @@ echo "========================================================================"
 echo "Install other packages from AUR"
 echo "========================================================================"
 
-yay -S --noconfirm --needed --sudoloop mintstick brave-bin
+yay -S --noconfirm --needed --sudoloop adwaita-qt5 adwaita-qt6 mintstick brave-bin
 
 echo "========================================================================"
 echo "Enable cosmic-greeter"
