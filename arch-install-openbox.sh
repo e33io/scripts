@@ -190,6 +190,7 @@ file:///home/$(whoami)/Music" > $HOME/.config/gtk-3.0/bookmarks
 sed -i 's/16, 37/16, 56/' $HOME/.config/dunst/dunstrc
 sed -i 's/"top": 1,/"top": 0,/' $HOME/.config/fastfetch/config.jsonc
 sed -i '/libexec/d' $HOME/.config/openbox/autostart
+sed -i '/nitrogen/d' $HOME/.config/openbox/autostart
 sed -i 's/#\/usr\/lib/\/usr\/lib/' $HOME/.config/openbox/autostart
 sed -i 's/#xbindkeys/xbindkeys/' $HOME/.config/openbox/autostart
 sed -i 's/brave-browser/brave/' $HOME/.config/openbox/rc.xml
