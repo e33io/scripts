@@ -50,7 +50,7 @@ engrampa pipewire-audio pulseaudio-utils pavucontrol-qt synaptic dconf-cli mints
 mpv parole mousepad galculator gpick darktable gimp inkscape filezilla libreoffice-calc libreoffice-draw \
 libreoffice-impress libreoffice-writer libreoffice-gtk3 timeshift xterm lazygit fastfetch htop cmus \
 cava cmatrix ncal micro ranger ueberzug caca-utils highlight atool w3m poppler-utils mediainfo fzf \
-libimage-exiftool-perl apt-transport-https curl rsync wmctrl xdotool xbindkeys
+libimage-exiftool-perl apt-transport-https curl rsync wmctrl xdotool xbindkeys xwallpaper
 
 if ! command -v brave-browser > /dev/null 2>&1; then
     echo "========================================================================"

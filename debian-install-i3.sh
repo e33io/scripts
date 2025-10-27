@@ -47,9 +47,9 @@ lightdm-gtk-greeter lightdm-gtk-greeter-settings plymouth plymouth-themes kitty 
 thunar-archive-plugin tumbler-plugins-extra ffmpegthumbnailer heif-thumbnailer heif-gdk-pixbuf gvfs-fuse \
 gvfs-backends nfs-common cifs-utils engrampa pipewire-audio pulseaudio-utils pavucontrol-qt synaptic \
 dconf-cli mintstick scrot atril imv mpv parole mousepad galculator gpick darktable gimp inkscape filezilla \
-libreoffice-calc libreoffice-draw libreoffice-impress libreoffice-writer libreoffice-gtk3 timeshift xterm \
-lazygit fastfetch htop cmus cava cmatrix ncal micro ranger ueberzug caca-utils highlight atool w3m \
-poppler-utils mediainfo fzf libimage-exiftool-perl apt-transport-https curl rsync xdotool xbindkeys
+libreoffice-calc libreoffice-draw libreoffice-impress libreoffice-writer libreoffice-gtk3 timeshift xterm lazygit \
+fastfetch htop cmus cava cmatrix ncal micro ranger ueberzug caca-utils highlight atool w3m poppler-utils \
+mediainfo fzf libimage-exiftool-perl apt-transport-https curl rsync xdotool xbindkeys xwallpaper
 
 if ! command -v brave-browser > /dev/null 2>&1; then
     echo "========================================================================"
