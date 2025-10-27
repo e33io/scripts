@@ -137,7 +137,7 @@ theming_files () {
     sudo sed -i "s/^icon-theme-name =.*/icon-theme-name = $icon_theme/" /etc/lightdm/lightdm-gtk-greeter.conf
     sudo sed -i "s/^theme-name =.*/theme-name = $gtk_theme/" /etc/lightdm/lightdm-gtk-greeter.conf
     # Set desktop background color (only visible if no wallpaper is set)
-    sed -i "s/xsetroot -solid \".*\"/xsetroot -solid \"$desktop_bg_color\"/" $HOME/.profile
+    sed -i "s/xsetroot -solid \".*\"/xsetroot -solid \"$desktop_bg_color\"/" $HOME/.config/openbox/autostart
     # CAVA foreground color
     if [ -f "$HOME/.config/cava/config" ]; then
         sed -i "s/^foreground = .*/foreground = '$accent_color'/" $HOME/.config/cava/config
