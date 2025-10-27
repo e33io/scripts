@@ -41,7 +41,7 @@ echo "Install i3 and other packages"
 echo "========================================================================"
 
 sudo apt -y install i3 polybar rofi network-manager playerctl xssproxy xsel xclip xinput x11-utils \
-lxappearance qt*ct adwaita-qt* gnome-themes-extra papirus-icon-theme breeze-icon-theme fonts-dejavu \
+feh lxappearance qt*ct adwaita-qt* gnome-themes-extra papirus-icon-theme breeze-icon-theme fonts-dejavu \
 fonts-noto-color-emoji mate-polkit-bin python3-gi gobject-introspection gir1.2-gtk-3.0 libdbus-glib-1-2 \
 upower lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings plymouth plymouth-themes kitty \
 python3-pypillowfight thunar thunar-archive-plugin tumbler-plugins-extra ffmpegthumbnailer heif-thumbnailer \
