@@ -185,7 +185,6 @@ file:///home/$(whoami)/Pictures
 file:///home/$(whoami)/Videos
 file:///home/$(whoami)/Music" > $HOME/.config/gtk-3.0/bookmarks
 sed -i '/libexec/d' $HOME/.config/dk/dkrc
-sed -i '/nitrogen/d' $HOME/.config/dk/dkrc
 sed -i 's/#\/usr\/lib/\/usr\/lib/' $HOME/.config/dk/dkrc
 sed -i 's/#xbindkeys/xbindkeys/' $HOME/.config/dk/dkrc
 sed -i 's/brave-browser/brave/' $HOME/.config/dk/sxhkdrc

@@ -42,7 +42,7 @@ echo "========================================================================"
 
 sudo apt -y install xserver-xorg polybar network-manager i3lock rofi dunst playerctl xssproxy xsel xclip \
 xinput x11-utils lxappearance qt*ct adwaita-qt* gnome-themes-extra papirus-icon-theme breeze-icon-theme \
-fonts-dejavu fonts-noto-color-emoji nitrogen mate-polkit-bin python3-gi gobject-introspection gir1.2-gtk-3.0 \
+fonts-dejavu fonts-noto-color-emoji mate-polkit-bin python3-gi gobject-introspection gir1.2-gtk-3.0 \
 libdbus-glib-1-2 upower dex lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings plymouth plymouth-themes \
 kitty python3-pypillowfight thunar thunar-archive-plugin tumbler-plugins-extra ffmpegthumbnailer \
 heif-thumbnailer heif-gdk-pixbuf gvfs-fuse gvfs-backends nfs-common cifs-utils engrampa pipewire-audio \
@@ -218,7 +218,7 @@ file:///home/$(whoami)/Videos
 file:///home/$(whoami)/Music" > $HOME/.config/gtk-3.0/bookmarks
 sed -i '/mate-polkit/d' $HOME/.config/dk/dkrc
 sed -i '/xbindkeys/d' $HOME/.config/dk/dkrc
-sed -i '/at-spi/d' $HOME/.config/dk/dkrc && sed -i '77d;78d' $HOME/.config/dk/dkrc
+sed -i '/at-spi/d' $HOME/.config/dk/dkrc
 sed -i "s/home\/.*\/Desktop/home\/$(whoami)\/Desktop/" $HOME/.config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml
 sed -i "s/~\/\.gtkrc-2\.0\.mine/\/home\/$(whoami)\/\.gtkrc-2\.0\.mine/" $HOME/.gtkrc-2.0
 printf "%s\n" "" "# Set XDG_CURRENT_DESKTOP" "export XDG_CURRENT_DESKTOP=dk" \
