@@ -136,10 +136,6 @@ theming_files () {
     sudo sed -i "s/^background =.*/background = $desktop_bg_color/" /etc/lightdm/lightdm-gtk-greeter.conf
     sudo sed -i "s/^icon-theme-name =.*/icon-theme-name = $icon_theme/" /etc/lightdm/lightdm-gtk-greeter.conf
     sudo sed -i "s/^theme-name =.*/theme-name = $gtk_theme/" /etc/lightdm/lightdm-gtk-greeter.conf
-    # Nitrogen desktop background color (visible if semi-transparent wallpaper is set)
-    if [ -f "$HOME/.config/nitrogen/bg-saved.cfg" ]; then
-        sed -i "s/bgcolor=.*/bgcolor=$desktop_bg_color/" $HOME/.config/nitrogen/bg-saved.cfg
-    fi
     # CAVA foreground color
     if [ -f "$HOME/.config/cava/config" ]; then
         sed -i "s/^foreground = .*/foreground = '$accent_color'/" $HOME/.config/cava/config
