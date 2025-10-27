@@ -50,7 +50,7 @@ pulseaudio-utils pavucontrol-qt synaptic dconf-cli mintstick scrot atril imv mpv
 gpick darktable gimp inkscape filezilla libreoffice-calc libreoffice-draw libreoffice-impress \
 libreoffice-writer libreoffice-gtk3 timeshift xterm lazygit fastfetch htop cmus cava cmatrix ncal \
 micro ranger ueberzug caca-utils highlight atool w3m poppler-utils mediainfo fzf libimage-exiftool-perl \
-apt-transport-https curl rsync xdotool xbindkeys xwallpaper
+apt-transport-https curl rsync xdotool xbindkeys
 
 if ! command -v dk > /dev/null 2>&1; then
     echo "========================================================================"

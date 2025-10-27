@@ -50,7 +50,7 @@ pavucontrol-qt synaptic dconf-cli mintstick scrot atril imv mpv parole mousepad 
 gimp inkscape filezilla libreoffice-calc libreoffice-draw libreoffice-impress libreoffice-writer \
 libreoffice-gtk3 timeshift xterm lazygit fastfetch htop cmus cava cmatrix ncal micro ranger ueberzug \
 caca-utils highlight atool w3m poppler-utils mediainfo fzf libimage-exiftool-perl apt-transport-https \
-curl rsync xdotool xbindkeys xwallpaper
+curl rsync xdotool xbindkeys
 
 if ! command -v brave-browser > /dev/null 2>&1; then
     echo "========================================================================"
