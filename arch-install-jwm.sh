@@ -90,6 +90,7 @@ mkdir -p $HOME/.local/bin
 cp -R $HOME/dotfiles/.config $HOME
 cp -R $HOME/dotfiles/.icons $HOME
 cp -R $HOME/dotfiles/.local/bin $HOME/.local
+cp -R $HOME/dotfiles/.fehbg $HOME
 cp -R $HOME/dotfiles/.gtkrc* $HOME
 cp -R $HOME/dotfiles/.xbindkeysrc $HOME
 cp -R $HOME/dotfiles/.Xresources $HOME

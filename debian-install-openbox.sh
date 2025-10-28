@@ -103,6 +103,7 @@ cp -R $HOME/dotfiles/.config $HOME
 cp -R $HOME/dotfiles/.icons $HOME
 cp -R $HOME/dotfiles/.local $HOME
 cp -R $HOME/dotfiles/.bashrc $HOME
+cp -R $HOME/dotfiles/.fehbg $HOME
 cp -R $HOME/dotfiles/.gtkrc* $HOME
 cp -R $HOME/dotfiles/.profile $HOME
 cp -R $HOME/dotfiles/.xbindkeysrc $HOME
