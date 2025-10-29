@@ -54,7 +54,7 @@ if [ -f "/etc/pacman.conf" ]; then
         cd
         rm -rf $HOME/yay-bin
     fi
-    sudo pacman -Syu --noconfirm --needed gnome-themes-extra gtk-engine-murrine kvantum kvantum-qt5 less git
+    sudo pacman -Syu --noconfirm --needed gnome-themes-extra kvantum kvantum-qt5 less git
     yay -S --noconfirm --needed --sudoloop adwaita-qt5 adwaita-qt6
 fi
 

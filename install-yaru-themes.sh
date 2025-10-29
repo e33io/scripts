@@ -63,7 +63,7 @@ if [ -f "/etc/pacman.conf" ]; then
     echo "Install Yaru themes and dependencies"
     echo "========================================================================"
 
-    sudo pacman -Syu --noconfirm --needed gnome-themes-extra gtk-engine-murrine less git
+    sudo pacman -Syu --noconfirm --needed gnome-themes-extra less git
     yay -S --noconfirm --needed --sudoloop yaru-gtk-theme yaru-icon-theme
 
     echo "========================================================================"

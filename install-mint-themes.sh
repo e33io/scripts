@@ -86,7 +86,7 @@ if [ -f "/etc/pacman.conf" ]; then
     echo "Install Mint themes and dependencies"
     echo "========================================================================"
 
-    sudo pacman -Syu --noconfirm --needed gnome-themes-extra gtk-engine-murrine kvantum kvantum-qt5 less git
+    sudo pacman -Syu --noconfirm --needed gnome-themes-extra kvantum kvantum-qt5 less git
     yay -S --noconfirm --needed --sudoloop mint-x-icons mint-y-icons mint-l-icons mint-themes mint-l-theme \
     adwaita-qt5 adwaita-qt6
 
