@@ -40,15 +40,15 @@ echo "========================================================================"
 echo "Install Xorg and other packages"
 echo "========================================================================"
 
-sudo pacman -S --noconfirm --needed xorg-server xorg-apps sxhkd polybar i3lock xss-lock \
-dmenu rofi dunst gvfs nfs-utils cifs-utils rsync cronie git curl wget tar less 7zip base-devel \
-xsel xclip playerctl dex mate-polkit upower xdg-desktop-portal-gtk xdg-user-dirs xbindkeys xdotool \
-lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings feh lxappearance gnome-themes-extra qt5ct \
-qt6ct ttf-dejavu noto-fonts-emoji papirus-icon-theme breeze-icons plymouth pavucontrol-qt kitty \
-python-pillowfight xterm thunar thunar-archive-plugin thunar-volman tumbler ffmpegthumbnailer engrampa \
-scrot atril imv mpv parole mousepad galculator timeshift bash-completion vim nano micro fzf lazygit \
-htop fastfetch cmus cava ranger ueberzug highlight atool w3m mediainfo perl-image-exiftool \
-signal-desktop gpick darktable gimp inkscape filezilla libreoffice
+sudo pacman -S --noconfirm --needed xorg-server xorg-apps sxhkd polybar i3lock dmenu xss-lock \
+rofi dunst base-devel upower gvfs nfs-utils cifs-utils rsync cronie git curl wget tar less 7zip \
+xsel xclip xbindkeys xdotool playerctl dex xdg-desktop-portal-gtk xdg-user-dirs mate-polkit lightdm \
+lightdm-gtk-greeter lightdm-gtk-greeter-settings feh lxappearance gnome-themes-extra qt5ct qt6ct \
+ttf-dejavu noto-fonts-emoji papirus-icon-theme breeze-icons plymouth pavucontrol-qt kitty \
+python-pillowfight xterm bash-completion vim nano micro fzf lazygit htop fastfetch cmus cava \
+ranger ueberzug highlight atool w3m mediainfo perl-image-exiftool thunar thunar-archive-plugin \
+thunar-volman tumbler ffmpegthumbnailer engrampa scrot atril imv mpv parole mousepad galculator \
+timeshift signal-desktop gpick darktable gimp inkscape filezilla libreoffice
 
 if ! command -v yay > /dev/null 2>&1; then
     echo "========================================================================"

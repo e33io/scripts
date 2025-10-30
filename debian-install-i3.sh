@@ -40,16 +40,17 @@ echo "========================================================================"
 echo "Install i3 and other packages"
 echo "========================================================================"
 
-sudo apt -y install i3 polybar rofi network-manager playerctl xssproxy xsel xclip xinput x11-utils \
-feh lxappearance qt*ct adwaita-qt* gnome-themes-extra papirus-icon-theme breeze-icon-theme fonts-dejavu \
-fonts-noto-color-emoji mate-polkit-bin upower lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings \
-plymouth plymouth-themes kitty python3-pypillowfight thunar thunar-archive-plugin tumbler-plugins-extra \
-ffmpegthumbnailer heif-thumbnailer heif-gdk-pixbuf gvfs-fuse gvfs-backends nfs-common cifs-utils engrampa \
-pipewire-audio pulseaudio-utils pavucontrol-qt synaptic dconf-cli mintstick scrot atril imv mpv parole \
-mousepad galculator gpick darktable gimp inkscape filezilla libreoffice-calc libreoffice-draw \
-libreoffice-impress libreoffice-writer libreoffice-gtk3 timeshift xterm lazygit fastfetch htop cmus \
-cava cmatrix ncal micro ranger ueberzug caca-utils highlight atool w3m poppler-utils mediainfo fzf \
-libimage-exiftool-perl apt-transport-https curl rsync xdotool xbindkeys
+sudo apt -y install i3 polybar rofi network-manager xdotool xbindkeys xssproxy xsel xclip \
+xinput x11-utils upower gvfs-fuse gvfs-backends nfs-common cifs-utils playerctl feh lxappearance \
+qt*ct adwaita-qt* gnome-themes-extra papirus-icon-theme breeze-icon-theme fonts-dejavu \
+fonts-noto-color-emoji mate-polkit-bin lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings \
+plymouth plymouth-themes kitty python3-pypillowfight xterm lazygit fastfetch htop cmus cava \
+cmatrix ncal micro ranger ueberzug caca-utils highlight atool w3m poppler-utils mediainfo fzf \
+libimage-exiftool-perl apt-transport-https curl rsync dconf-cli thunar thunar-archive-plugin \
+tumbler-plugins-extra ffmpegthumbnailer heif-thumbnailer heif-gdk-pixbuf engrampa pipewire-audio \
+pulseaudio-utils pavucontrol-qt synaptic timeshift mintstick scrot atril imv mpv parole mousepad \
+galculator filezilla gpick darktable gimp inkscape libreoffice-calc libreoffice-draw \
+libreoffice-impress libreoffice-writer libreoffice-gtk3
 
 if ! command -v brave-browser > /dev/null 2>&1; then
     echo "========================================================================"
