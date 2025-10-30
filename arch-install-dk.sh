@@ -40,7 +40,7 @@ echo "========================================================================"
 echo "Install Xorg and other packages"
 echo "========================================================================"
 
-sudo pacman -S --noconfirm --needed xorg-server xorg-apps sxhkd polybar i3lock dmenu xss-lock \
+sudo pacman -S --noconfirm --needed xorg-server xorg-apps sxhkd polybar i3lock xss-lock dmenu \
 rofi dunst base-devel upower gvfs nfs-utils cifs-utils rsync cronie git curl wget tar less 7zip \
 xsel xclip xbindkeys xdotool playerctl dex xdg-desktop-portal-gtk xdg-user-dirs mate-polkit lightdm \
 lightdm-gtk-greeter lightdm-gtk-greeter-settings feh lxappearance gnome-themes-extra qt5ct qt6ct \
