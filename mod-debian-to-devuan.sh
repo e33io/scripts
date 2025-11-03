@@ -16,11 +16,17 @@ if [ "$(id -u)" = 0 ]; then
     exit 1
 fi
 
+echo "========================================================================"
+echo "Remove pipewire and install pulseaudio and other packages"
+echo "========================================================================"
+
+sudo apt -y purge pipewire*
+sudo apt -y autoremove
+sudo apt -y autoclean
+sudo apt -y install pulseaudio laptop-detect
+
 if { [ -d "$HOME/.config/i3" ] || [ -d "$HOME/.config/jwm" ] || [ -d "$HOME/.config/dk" ] \
     || [ -d "$HOME/.config/openbox" ]; }; then
-    if ! command -v laptop-detect > /dev/null 2>&1; then
-        sudo apt -y install laptop-detect
-    fi
     if laptop-detect > /dev/null 2>&1; then
         echo "========================================================================"
         echo "Modify window manager configs for laptop use"
@@ -29,15 +35,6 @@ if { [ -d "$HOME/.config/i3" ] || [ -d "$HOME/.config/jwm" ] || [ -d "$HOME/.con
         curl -s https://raw.githubusercontent.com/e33io/scripts/refs/heads/main/mod-wm-laptop.sh | sh
     fi
 fi
-
-echo "========================================================================"
-echo "Replace pipewire with pulseaudio"
-echo "========================================================================"
-
-sudo apt -y purge pipewire*
-sudo apt -y autoremove
-sudo apt -y autoclean
-sudo apt -y install pulseaudio
 
 echo "========================================================================"
 echo "Replace systemctl with loginctl"
