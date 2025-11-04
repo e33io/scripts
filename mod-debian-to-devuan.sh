@@ -36,6 +36,15 @@ if { [ -d "$HOME/.config/i3" ] || [ -d "$HOME/.config/jwm" ] || [ -d "$HOME/.con
     fi
 fi
 
+sys_vendor="$(cat /sys/class/dmi/id/sys_vendor)"
+if [ $sys_vendor = QEMU ]; then
+    echo "========================================================================"
+    echo "Install spice-vdagent and update VM-specific configs"
+    echo "========================================================================"
+
+    curl -s https://raw.githubusercontent.com/e33io/scripts/refs/heads/main/mod-virt-machines.sh | sh
+fi
+
 echo "========================================================================"
 echo "Replace systemctl with loginctl"
 echo "========================================================================"
@@ -65,15 +74,6 @@ printf '%s\n' 'GRUB_DEFAULT=0' 'GRUB_TIMEOUT=5' 'GRUB_DISTRIBUTOR=`( . /etc/os-r
 '#GRUB_INIT_TUNE="480 440 1"' | sudo tee /etc/default/grub > /dev/null
 sudo update-initramfs -u
 sudo update-grub
-
-sys_vendor="$(cat /sys/class/dmi/id/sys_vendor)"
-if [ $sys_vendor = QEMU ]; then
-    echo "========================================================================"
-    echo "Install spice-vdagent and update VM-specific configs"
-    echo "========================================================================"
-
-    curl -s https://raw.githubusercontent.com/e33io/scripts/refs/heads/main/mod-virt-machines.sh | sh
-fi
 
 echo "========================================================================"
 echo "Set default mute and default volume level"
