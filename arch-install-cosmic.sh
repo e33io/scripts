@@ -39,11 +39,11 @@ echo "========================================================================"
 
 sudo pacman -S --noconfirm --needed cosmic system76-scheduler system76-firmware \
 power-profiles-daemon plymouth papirus-icon-theme breeze-icons xdg-desktop-portal-gtk \
-xdg-user-dirs gvfs gvfs-nfs gvfs-smb nfs-utils cifs-utils rsync cronie git curl wget tar \
-7zip less base-devel bash-completion vim nano micro fzf lazygit htop fastfetch cmus cava \
-ranger highlight atool w3m mediainfo perl-image-exiftool kitty python-pillowfight imv mpv \
-timeshift gnome-disk-utility dconf-editor file-roller gthumb evince rhythmbox \
-signal-desktop darktable gimp inkscape filezilla libreoffice
+xdg-user-dirs gvfs gvfs-nfs gvfs-smb nfs-utils cifs-utils libpulse libmad rsync cronie \
+git curl wget tar 7zip less base-devel bash-completion vim nano micro fzf lazygit htop \
+fastfetch cmus cava ranger highlight atool w3m mediainfo perl-image-exiftool kitty \
+python-pillowfight imv mpv timeshift gnome-disk-utility dconf-editor file-roller \
+gthumb evince rhythmbox signal-desktop darktable gimp inkscape filezilla libreoffice
 
 pc_type="$(hostnamectl chassis)"
 if [ $pc_type = vm ]; then
