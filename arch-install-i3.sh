@@ -41,14 +41,14 @@ echo "Install i3 and other packages"
 echo "========================================================================"
 
 sudo pacman -S --noconfirm --needed xorg-server xorg-apps i3-wm i3status i3lock xss-lock polybar \
-dmenu rofi dunst base-devel upower gvfs nfs-utils cifs-utils libpulse libmad rsync cronie git curl \
-wget tar less 7zip xsel xclip xbindkeys xdotool playerctl dex xdg-desktop-portal-gtk xdg-user-dirs \
-mate-polkit lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings feh lxappearance gnome-themes-extra \
-qt5ct qt6ct ttf-dejavu noto-fonts-emoji papirus-icon-theme breeze-icons plymouth pavucontrol-qt kitty \
-python-pillowfight xterm bash-completion vim nano micro fzf lazygit htop fastfetch cmus cava ranger \
-ueberzug highlight atool w3m mediainfo perl-image-exiftool thunar thunar-archive-plugin thunar-volman \
-tumbler ffmpegthumbnailer engrampa scrot atril imv mpv parole mousepad galculator timeshift \
-signal-desktop gpick darktable gimp inkscape filezilla libreoffice
+dmenu rofi dunst base-devel upower gvfs nfs-utils cifs-utils libmad rsync cronie git curl wget tar \
+less 7zip xsel xclip xbindkeys xdotool playerctl dex xdg-desktop-portal-gtk xdg-user-dirs mate-polkit \
+lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings feh lxappearance gnome-themes-extra qt5ct \
+qt6ct ttf-dejavu noto-fonts-emoji papirus-icon-theme breeze-icons plymouth pavucontrol-qt kitty \
+python-pillowfight xterm bash-completion vim nano micro fzf lazygit htop fastfetch cmus cava \
+ranger ueberzug highlight atool w3m mediainfo perl-image-exiftool thunar thunar-archive-plugin \
+thunar-volman tumbler ffmpegthumbnailer engrampa scrot atril imv mpv parole mousepad galculator \
+timeshift signal-desktop gpick darktable gimp inkscape filezilla libreoffice
 
 if ! command -v yay > /dev/null 2>&1; then
     echo "========================================================================"
