@@ -44,19 +44,19 @@ if [ -f "/etc/debian_version" ]; then
     echo "========================================================================"
 
     echo "Download mint-x-icons..."
-    curl -kOL# http://packages.linuxmint.com/pool/main/m/mint-x-icons/mint-x-icons_1.7.3_all.deb
-    sudo apt-get -yq install ./mint-x-icons_1.7.3_all.deb
-    rm mint-x-icons_1.7.3_all.deb
+    curl -kOL# http://packages.linuxmint.com/pool/main/m/mint-x-icons/mint-x-icons_1.7.4_all.deb
+    sudo apt-get -yq install ./mint-x-icons_1.7.4_all.deb
+    rm mint-x-icons_1.7.4_all.deb
 
     echo "Download mint-y-icons..."
-    curl -kOL# http://packages.linuxmint.com/pool/main/m/mint-y-icons/mint-y-icons_1.8.6_all.deb
-    sudo apt-get -yq install ./mint-y-icons_1.8.6_all.deb
-    rm mint-y-icons_1.8.6_all.deb
+    curl -kOL# http://packages.linuxmint.com/pool/main/m/mint-y-icons/mint-y-icons_1.8.8_all.deb
+    sudo apt-get -yq install ./mint-y-icons_1.8.8_all.deb
+    rm mint-y-icons_1.8.8_all.deb
 
     echo "Download mint-l-icons..."
-    curl -kOL# http://packages.linuxmint.com/pool/main/m/mint-l-icons/mint-l-icons_1.7.6_all.deb
-    sudo apt-get -yq install ./mint-l-icons_1.7.6_all.deb
-    rm mint-l-icons_1.7.6_all.deb
+    curl -kOL# http://packages.linuxmint.com/pool/main/m/mint-l-icons/mint-l-icons_1.7.8_all.deb
+    sudo apt-get -yq install ./mint-l-icons_1.7.8_all.deb
+    rm mint-l-icons_1.7.8_all.deb
 
     echo "Download mint-themes..."
     curl -kOL# http://packages.linuxmint.com/pool/main/m/mint-themes/mint-themes_2.3.3_all.deb
