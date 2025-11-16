@@ -189,6 +189,7 @@ sed -i 's/brave-browser/brave/' $HOME/.config/i3/config
 sed -i "s/home\/.*\/\.config/home\/$(whoami)\/\.config/" $HOME/.config/qt5ct/qt5ct.conf
 sed -i "s/home\/.*\/\.config/home\/$(whoami)\/\.config/" $HOME/.config/qt6ct/qt6ct.conf
 sed -i "s/home\/.*\/Desktop/home\/$(whoami)\/Desktop/" $HOME/.config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml
+sed -i 's/gif=imv/gif=mpv/' $HOME/.config/mimeapps.list
 sed -i "s/~\/\.gtkrc-2\.0\.mine/\/home\/$(whoami)\/\.gtkrc-2\.0\.mine/" $HOME/.gtkrc-2.0
 cp -R $HOME/scripts/set-theming-i3.sh $HOME/.local/bin/set-theming-i3
 echo "i3 installed via e33io script: $(date '+%B %d, %Y, %H:%M')" \
