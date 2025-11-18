@@ -69,11 +69,12 @@ echo "========================================================================"
 yay -S --noconfirm --needed --sudoloop xssproxy adwaita-qt5 adwaita-qt6 mintstick brave-bin
 
 echo "========================================================================"
-echo "Enable LightDM"
+echo "Set boot target to graphical UI and enable system services"
 echo "========================================================================"
 
 sudo systemctl set-default graphical.target
 sudo systemctl enable lightdm.service
+sudo systemctl enable cronie.service
 
 echo "========================================================================"
 echo "Clone custom configuration files"

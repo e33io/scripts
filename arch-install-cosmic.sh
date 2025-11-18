@@ -68,11 +68,12 @@ echo "========================================================================"
 yay -S --noconfirm --needed --sudoloop adwaita-qt5 adwaita-qt6 mintstick brave-bin
 
 echo "========================================================================"
-echo "Enable cosmic-greeter"
+echo "Set boot target to graphical UI and enable system services"
 echo "========================================================================"
 
 sudo systemctl set-default graphical.target
 sudo systemctl enable cosmic-greeter.service
+sudo systemctl enable cronie.service
 
 echo "========================================================================"
 echo "Clone custom configuration files"
