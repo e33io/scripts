@@ -215,6 +215,9 @@ file:///home/$(whoami)/Documents
 file:///home/$(whoami)/Pictures
 file:///home/$(whoami)/Videos
 file:///home/$(whoami)/Music" > $HOME/.config/gtk-3.0/bookmarks
+sed -i '/mate-polkit/d' $HOME/.config/i3/startup.conf
+sed -i '/xbindkeys/d' $HOME/.config/i3/startup.conf
+sed -i '/at-spi/d' $HOME/.config/i3/startup.conf
 sed -i "s/~\/\.gtkrc-2\.0\.mine/\/home\/$(whoami)\/\.gtkrc-2\.0\.mine/" $HOME/.gtkrc-2.0
 sed -i "s/home\/.*\/Desktop/home\/$(whoami)\/Desktop/" $HOME/.config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml
 cp -R $HOME/scripts/set-theming-i3.sh $HOME/.local/bin/set-theming-i3
