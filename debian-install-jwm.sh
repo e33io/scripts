@@ -215,6 +215,7 @@ sed -i '/mate-polkit/d' $HOME/.config/jwm/autostart
 sed -i '/xbindkeys/d' $HOME/.config/jwm/autostart
 sed -i '/at-spi/d' $HOME/.config/jwm/autostart
 sed -i 's/Dmenu/Floating/' $HOME/.config/rofi/config.rasi
+sed -i 's/has imv, .* X, flag f = imv/X, flag f = \/usr\/libexec\/imv\/imv/' $HOME/.config/ranger/rifle.conf
 sed -i "s/home\/.*\/Desktop/home\/$(whoami)\/Desktop/" $HOME/.config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml
 sed -i "s/~\/\.gtkrc-2\.0\.mine/\/home\/$(whoami)\/\.gtkrc-2\.0\.mine/" $HOME/.gtkrc-2.0
 printf "%s\n" "" "# Set XDG_CURRENT_DESKTOP" "export XDG_CURRENT_DESKTOP=jwm" \

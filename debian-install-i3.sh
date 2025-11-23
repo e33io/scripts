@@ -218,8 +218,9 @@ file:///home/$(whoami)/Music" > $HOME/.config/gtk-3.0/bookmarks
 sed -i '/mate-polkit/d' $HOME/.config/i3/startup.conf
 sed -i '/xbindkeys/d' $HOME/.config/i3/startup.conf
 sed -i '/at-spi/d' $HOME/.config/i3/startup.conf
-sed -i "s/~\/\.gtkrc-2\.0\.mine/\/home\/$(whoami)\/\.gtkrc-2\.0\.mine/" $HOME/.gtkrc-2.0
+sed -i 's/has imv, .* X, flag f = imv/X, flag f = \/usr\/libexec\/imv\/imv/' $HOME/.config/ranger/rifle.conf
 sed -i "s/home\/.*\/Desktop/home\/$(whoami)\/Desktop/" $HOME/.config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml
+sed -i "s/~\/\.gtkrc-2\.0\.mine/\/home\/$(whoami)\/\.gtkrc-2\.0\.mine/" $HOME/.gtkrc-2.0
 cp -R $HOME/scripts/set-theming-i3.sh $HOME/.local/bin/set-theming-i3
 echo "i3 installed via e33io script: $(date '+%B %d, %Y, %H:%M')" \
 | tee -a $HOME/.install-info > /dev/null

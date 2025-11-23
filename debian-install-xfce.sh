@@ -208,6 +208,7 @@ file:///home/$(whoami)/Documents
 file:///home/$(whoami)/Pictures
 file:///home/$(whoami)/Videos
 file:///home/$(whoami)/Music" > $HOME/.config/gtk-3.0/bookmarks
+sed -i 's/has imv, .* X, flag f = imv/X, flag f = \/usr\/libexec\/imv\/imv/' $HOME/.config/ranger/rifle.conf
 sed -i "s/home\/.*\/\.local/home\/$(whoami)\/\.local/" $HOME/.config/menus/xfce-applications.menu
 sed -i "s/home\/.*\/Desktop/home\/$(whoami)\/Desktop/" $HOME/.config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml
 cp -R $HOME/scripts/set-theming-xfce.sh $HOME/.local/bin/set-theming-xfce
