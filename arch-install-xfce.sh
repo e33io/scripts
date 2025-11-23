@@ -37,13 +37,14 @@ echo "========================================================================"
 
 sudo pacman -S --noconfirm --needed xfce4 xfce4-screensaver xfce4-screenshooter xfce4-taskmanager \
 xfce4-notifyd xfce4-battery-plugin xfce4-pulseaudio-plugin xfce4-docklike-plugin xfce4-windowck-plugin \
-thunar-archive-plugin network-manager-applet ffmpegthumbnailer base-devel gvfs nfs-utils cifs-utils libmad \
-rsync cronie git curl wget tar 7zip less xsel xclip xdg-desktop-portal-gtk xdg-user-dirs xiccd xorg-apps \
-wmctrl xdotool xbindkeys plymouth lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings gnome-themes-extra \
-qt5ct qt6ct ttf-dejavu noto-fonts-emoji papirus-icon-theme breeze-icons pavucontrol engrampa atril ristretto \
-imv mpv parole rhythmbox mousepad galculator dconf-editor gnome-disk-utility timeshift xterm bash-completion \
-vim nano micro fzf lazygit htop fastfetch cmus cava ranger ueberzug highlight atool w3m mediainfo \
-perl-image-exiftool signal-desktop gpick darktable gimp inkscape filezilla libreoffice
+thunar-archive-plugin network-manager-applet ffmpegthumbnailer base-devel gvfs nfs-utils cifs-utils \
+libmad gst-libav rsync cronie git curl wget tar 7zip less xsel xclip xdg-desktop-portal-gtk xdg-user-dirs \
+xiccd xorg-apps wmctrl xdotool xbindkeys plymouth lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings \
+gnome-themes-extra qt5ct qt6ct ttf-dejavu noto-fonts-emoji papirus-icon-theme breeze-icons pavucontrol \
+engrampa atril ristretto imv mpv parole rhythmbox mousepad galculator dconf-editor gnome-disk-utility \
+timeshift xterm bash-completion vim nano micro fzf lazygit htop fastfetch cmus cava ranger ueberzug \
+highlight atool w3m mediainfo perl-image-exiftool signal-desktop gpick darktable gimp inkscape \
+filezilla libreoffice
 
 if ! command -v yay > /dev/null 2>&1; then
     echo "========================================================================"
