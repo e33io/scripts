@@ -8,16 +8,12 @@ linux installation scripts
 
 - use the scripts below with a [Debian minimal installation](https://e33.io/913)
 	- use [`debian-install-i3.sh`](https://github.com/e33io/scripts/blob/main/debian-install-i3.sh) to [install the i3 window manager](https://github.com/e33io/reference-wiki/blob/main/installation-docs/debian-i3-installation.md)
-	- use [`debian-install-dk.sh`](https://github.com/e33io/scripts/blob/main/debian-install-dk.sh) to [install the dk window manager](https://github.com/e33io/reference-wiki/blob/main/installation-docs/debian-dk-installation.md)
 	- use [`debian-install-jwm.sh`](https://github.com/e33io/scripts/blob/main/debian-install-jwm.sh) to [install the JWM window manager](https://github.com/e33io/reference-wiki/blob/main/installation-docs/debian-jwm-installation.md)
-	- use [`debian-install-openbox.sh`](https://github.com/e33io/scripts/blob/main/debian-install-openbox.sh) to [install the Openbox window manager](https://github.com/e33io/reference-wiki/blob/main/installation-docs/debian-openbox-installation.md)
 	- use [`debian-install-xfce.sh`](https://github.com/e33io/scripts/blob/main/debian-install-xfce.sh) to [install the Xfce desktop environment](https://github.com/e33io/reference-wiki/blob/main/installation-docs/debian-xfce-installation.md)
 
 - use the scripts below with an [Arch](https://wiki.archlinux.org/title/Archinstall) "Minimal" installation
 	- use [`arch-install-i3.sh`](https://github.com/e33io/scripts/blob/main/arch-install-i3.sh) to [install the i3 window manager](https://github.com/e33io/reference-wiki/blob/main/installation-docs/arch-i3-installation.md)
-	- use [`arch-install-dk.sh`](https://github.com/e33io/scripts/blob/main/arch-install-dk.sh) to [install the dk window manager](https://github.com/e33io/reference-wiki/blob/main/installation-docs/arch-dk-installation.md)
 	- use [`arch-install-jwm.sh`](https://github.com/e33io/scripts/blob/main/arch-install-jwm.sh) to [install the JWM window manager](https://github.com/e33io/reference-wiki/blob/main/installation-docs/arch-jwm-installation.md)
-	- use [`arch-install-openbox.sh`](https://github.com/e33io/scripts/blob/main/arch-install-openbox.sh) to [install the Openbox window manager](https://github.com/e33io/reference-wiki/blob/main/installation-docs/arch-openbox-installation.md)
 	- use [`arch-install-xfce.sh`](https://github.com/e33io/scripts/blob/main/arch-install-xfce.sh) to [install the Xfce desktop environment](https://github.com/e33io/reference-wiki/blob/main/installation-docs/arch-xfce-installation.md)
 
 &nbsp;
@@ -40,11 +36,7 @@ linux installation scripts
 
 - use [`set-theming-i3.sh`](https://github.com/e33io/scripts/blob/main/set-theming-i3.sh) to select and set theming for i3 and applications
 
-- use [`set-theming-dk.sh`](https://github.com/e33io/scripts/blob/main/set-theming-dk.sh) to select and set theming for dk and applications
-
 - use [`set-theming-jwm.sh`](https://github.com/e33io/scripts/blob/main/set-theming-jwm.sh) to select and set theming for JWM and applications
-
-- use [`set-theming-openbox.sh`](https://github.com/e33io/scripts/blob/main/set-theming-openbox.sh) to select and set theming for Openbox and applications
 
 - use [`set-theming-xfce.sh`](https://github.com/e33io/scripts/blob/main/set-theming-xfce.sh) to select and set theming for Xfce and applications
 

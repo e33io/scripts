@@ -25,8 +25,7 @@ sudo apt -y autoremove
 sudo apt -y autoclean
 sudo apt -y install pulseaudio laptop-detect
 
-if { [ -d "$HOME/.config/i3" ] || [ -d "$HOME/.config/jwm" ] || [ -d "$HOME/.config/dk" ] \
-    || [ -d "$HOME/.config/openbox" ]; }; then
+if { [ -d "$HOME/.config/i3" ] || [ -d "$HOME/.config/jwm" ]; }; then
     if laptop-detect > /dev/null 2>&1; then
         echo "========================================================================"
         echo "Modify window manager configs for laptop use"

@@ -40,22 +40,6 @@ if [ -d "$HOME/.config/jwm" ]; then
     sed -i 's/loginctl lock-session/xset s activate/' $HOME/.config/jwm/jwmrc
 fi
 
-# dk specific configs
-if [ -d "$HOME/.config/dk" ]; then
-    # update xss-lock command to use xsecurelock
-    sed -i 's/xss-lock -l .*/xss-lock -l -- xsecurelock/' $HOME/.config/dk/dkrc
-    # update lock session keybinding to use xset
-    sed -i 's/loginctl lock-session/xset s activate/' $HOME/.config/dk/sxhkdrc
-fi
-
-# Openbox specific configs
-if [ -d "$HOME/.config/openbox" ]; then
-    # update xss-lock command to use xsecurelock
-    sed -i 's/xss-lock -l .*/xss-lock -l -- xsecurelock/' $HOME/.config/openbox/autostart
-    # update lock session keybinding to use xset
-    sed -i 's/loginctl lock-session/xset s activate/' $HOME/.config/openbox/rc.xml
-fi
-
 # update rofi-power.sh lock option to use xset
 if [ -f "$HOME/.local/bin/rofi-power.sh" ]; then
     sed -i 's/loginctl lock-session/xset s activate/' $HOME/.local/bin/rofi-power.sh

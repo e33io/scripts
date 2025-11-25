@@ -37,8 +37,8 @@ if [ -f "/bin/i3" ]; then
     sudo sed -i 's/GDK_SCALE=2/GDK_SCALE=1/' /etc/lightdm/Xgsession
 fi
 
-# JWM, dk and Openbox configs
-if { [ -d "$HOME/.config/jwm" ] || [ -d "$HOME/.config/dk" ] || [ -d "$HOME/.config/openbox" ]; }; then
+# JWM configs
+if [ -d "$HOME/.config/jwm" ]; then
     mkdir -p $HOME/.config/autostart
     # add audio-default.desktop file
     printf "%s\n" "[Desktop Entry]" "Type=Application" "Name=audio-default" "Comment=set default volume level" \
@@ -70,15 +70,4 @@ if [ -f "/bin/startxfce4" ]; then
     chmod +x $HOME/.config/autostart/audio-default.desktop
     # update lightdm Xgsession file
     sudo sed -i 's/GDK_SCALE=2/GDK_SCALE=1/' /etc/lightdm/Xgsession
-fi
-
-# Gnome configs
-if [ -f "/bin/gnome-shell" ]; then
-    mkdir -p $HOME/.config/autostart
-    # add audio-default.desktop file
-    printf "%s\n" "[Desktop Entry]" "Version=1.0" "Type=Application" "Name=audio-default" \
-    "Comment=set default volume level" "Exec=sh -c 'sleep 2; pactl set-sink-volume @DEFAULT_SINK@ 75%%'" \
-    "Icon=xfce4-mixer" "StartupNotify=false" "Terminal=false" "NoDisplay=true" \
-    "Hidden=false" > $HOME/.config/autostart/audio-default.desktop
-    chmod +x $HOME/.config/autostart/audio-default.desktop
 fi

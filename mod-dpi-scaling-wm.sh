@@ -120,50 +120,6 @@ if [ -d "$HOME/.config/jwm" ]; then
     sed -i 's/tray-spacing = 12/tray-spacing = 6/' $HOME/.config/jwm/polybar/config.ini
 fi
 
-# dk specific configs
-if [ -d "$HOME/.config/dk" ]; then
-    # update dk dkrc configs (window sizes and window decorations)
-    sed -i 's/w=1080 h=1080/w=540 h=540/' $HOME/.config/dk/dkrc
-    sed -i 's/w=1280 h=1080/w=640 h=540/' $HOME/.config/dk/dkrc
-    sed -i 's/w=1440 h=1080/w=720 h=540/' $HOME/.config/dk/dkrc
-    sed -i 's/w=1440 h=1152/w=720 h=576/' $HOME/.config/dk/dkrc
-    sed -i 's/w=1440 h=1280/w=720 h=640/' $HOME/.config/dk/dkrc
-    sed -i 's/w=1440 h=900/w=720 h=450/' $HOME/.config/dk/dkrc
-    sed -i 's/w=1600 h=1600/w=800 h=800/' $HOME/.config/dk/dkrc
-    sed -i 's/w=1728 h=1188/w=864 h=594/' $HOME/.config/dk/dkrc
-    sed -i 's/w=1920 h=1280/w=960 h=640/' $HOME/.config/dk/dkrc
-    sed -i 's/w=1920 h=1920/w=960 h=960/' $HOME/.config/dk/dkrc
-    sed -i 's/w=3000 h=2000/w=1500 h=1000/' $HOME/.config/dk/dkrc
-    sed -i 's/gap=16/gap=8/' $HOME/.config/dk/dkrc
-    sed -i 's/border width=4/border width=2/' $HOME/.config/dk/dkrc
-    # update dk sxhkdrc configs (keybindings)
-    if [ -f "/etc/pacman.conf" ]; then
-        sed -i "s/sh -c 'GDK_SCALE=1 brave'/brave/" $HOME/.config/dk/sxhkdrc
-    fi
-    sed -i "s/sh -c 'GDK_SCALE=1 brave-browser'/brave-browser/" $HOME/.config/dk/sxhkdrc
-    sed -i "s/sh -c 'GDK_SCALE=1 signal-desktop'/signal-desktop/" $HOME/.config/dk/sxhkdrc
-    # update polybar configs (sizes and scaling)
-    sed -i 's/height = 40/height = 20/' $HOME/.config/dk/polybar/config.ini
-    sed -i 's/;3"/;2"/' $HOME/.config/dk/polybar/config.ini
-    sed -i 's/dpi = 192/dpi = 96/' $HOME/.config/dk/polybar/config.ini
-    sed -i 's/tray-spacing = 12/tray-spacing = 6/' $HOME/.config/dk/polybar/config.ini
-    # update rofi/config.rasi (rofi font size)
-    sed -i 's/sans-serif 9"/sans-serif 9.5"/' $HOME/.config/rofi/config.rasi
-fi
-
-# Openbox specific configs
-if [ -d "$HOME/.config/openbox" ]; then
-    # update openbox configs (theme version)
-    sed -i 's/Openbox-Adwaita-Dark-HiDPI/Openbox-Adwaita-Dark/' $HOME/.config/openbox/rc.xml
-    # update openbox configs (window font size)
-    sed -i 's/size>8\.5<\/size/size>9<\/size/' $HOME/.config/openbox/rc.xml
-    # update openbox configs (keybindings)
-    sed -i "s/sh -c 'GDK_SCALE=1 brave-browser'/brave-browser/" $HOME/.config/openbox/rc.xml
-    sed -i "s/sh -c 'GDK_SCALE=1 signal-desktop'/signal-desktop/" $HOME/.config/openbox/rc.xml
-    # update xfce4-panel (height)
-    sed -i 's/value="20"/value="21"/' $HOME/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml
-fi
-
 # Remove unneeded .desktop files
 if [ -f "$HOME/.local/share/applications/brave-browser.desktop" ]; then
     rm -rf $HOME/.local/share/applications/brave-browser.desktop
