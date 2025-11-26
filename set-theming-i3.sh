@@ -499,7 +499,7 @@ Yaru_Green_Dark () {
     kvantum_theme=Yaru-viridian-dark
     rofi_theme=Yaru-Green-Dark
     icon_theme=Papirus-Dark
-    papirus_folders=orange
+    papirus_folders=paleorange
     # Call the theming files
     theming_files
 }

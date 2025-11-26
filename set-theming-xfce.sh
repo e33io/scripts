@@ -346,7 +346,7 @@ Yaru_Green_Dark () {
     qt_ct_theme=kvantum-dark
     kvantum_theme=Yaru-viridian-dark
     icon_theme=Papirus-Dark
-    papirus_folders=orange
+    papirus_folders=paleorange
     # Desktop background color
     desktop_bg_color="#1b2d27"
     # Theme accent color
