@@ -6,12 +6,17 @@
 # -----------------------------------------------------------------------------
 # NOTE: requires xdotool, xwininfo, xdpyinfo and wmctrl
 # -----------------------------------------------------------------------------
-# Call script with:
-#   `window-control.sh move-right`  `window-control.sh width-more`
-#   `window-control.sh move-left`   `window-control.sh width-less`
-#   `window-control.sh move-down`   `window-control.sh height-more`
-#   `window-control.sh move-up`     `window-control.sh height-less`
-#   `window-control.sh center`
+# Usage: window-control.sh <command>
+# Commands:
+#   move-right     Move window right by 100 px
+#   move-left      Move window left by 100 px
+#   move-up        Move window up by 100 px
+#   move-down      Move window down by 100 px
+#   width-more     Increase window width by 50 px
+#   width-less     Decrease window width by 50 px
+#   height-more    Increase window height by 50 px
+#   height-less    Decrease window height by 50 px
+#   center         Center window on screen
 # =============================================================================
 
 set -eu
