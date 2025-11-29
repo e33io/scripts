@@ -90,8 +90,8 @@ echo "========================================================================"
 echo "Copy custom configuration files"
 echo "========================================================================"
 
-cp -R $HOME/core/home/.* $HOME/
-cp -R $HOME/core/debian/home/.* $HOME/
+cp -R $HOME/core/home/.[a-zA-Z]* $HOME/
+cp -R $HOME/core/debian/home/.[a-zA-Z]* $HOME/
 sudo cp -R $HOME/core/root/* /
 sudo cp -R $HOME/core/debian/root/* /
 sudo mkdir -p /boot/grub/fonts
