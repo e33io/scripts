@@ -80,20 +80,35 @@ echo "========================================================================"
 echo "Clone custom configuration files"
 echo "========================================================================"
 
-git clone https://github.com/e33io/core $HOME/core
+git clone https://github.com/e33io/dotfiles $HOME/dotfiles
+git clone https://github.com/e33io/extra $HOME/extra
 
 echo "========================================================================"
 echo "Copy custom configuration files"
 echo "========================================================================"
 
-cp -rf $HOME/core/home/* $HOME/
-cp -rf $HOME/core/arch/home/* $HOME/
-sudo cp -rf $HOME/core/root/* /
-sudo cp -rf $HOME/core/arch/root/* /
+mkdir -p $HOME/.local/bin
+cp -R $HOME/dotfiles/.config $HOME
+cp -R $HOME/dotfiles/.icons $HOME
+cp -R $HOME/dotfiles/.local/bin $HOME/.local
+cp -R $HOME/dotfiles/.fehbg $HOME
+cp -R $HOME/dotfiles/.gtkrc* $HOME
+cp -R $HOME/dotfiles/.xbindkeysrc $HOME
+cp -R $HOME/dotfiles/.Xresources $HOME
+cp -R $HOME/extra/arch/.config $HOME
+cp -R $HOME/extra/arch/.local $HOME
+cp -R $HOME/extra/arch/.bash_profile $HOME
+cp -R $HOME/extra/arch/.bashrc $HOME
+cp -R $HOME/extra/arch/.profile $HOME
+sudo cp -R $HOME/dotfiles/etc/plymouth /etc
+sudo cp -R $HOME/dotfiles/usr/share/fonts /usr/share
+sudo cp -R $HOME/dotfiles/usr/share/grub /usr/share
+sudo cp -R $HOME/dotfiles/usr/share/gtksourceview-4 /usr/share
+sudo cp -R $HOME/dotfiles/usr/share/pixmaps /usr/share
+sudo cp -R $HOME/dotfiles/usr/share/wallpapers /usr/share
+sudo cp -R $HOME/extra/arch/etc/lightdm /etc
 sudo mkdir -p /boot/grub/fonts
-sudo cp -rf /usr/share/grub/ter-* /boot/grub/fonts
-sudo mkdir -p /boot/grub/fonts
-sudo cp -rf /usr/share/grub/ter-* /boot/grub/fonts
+sudo cp -R /usr/share/grub/ter-* /boot/grub/fonts
 sudo mkdir -p /root/.config/gtk-3.0
 sudo mkdir -p /root/.config/micro
 sudo mkdir -p /root/.config/qt5ct
@@ -103,6 +118,15 @@ sudo ln -sf $HOME/.config/micro/* /root/.config/micro
 sudo ln -sf $HOME/.config/qt5ct/* /root/.config/qt5ct
 sudo ln -sf $HOME/.config/qt6ct/* /root/.config/qt6ct
 sudo ln -sf $HOME/.gtkrc-2.0 /root/.gtkrc-2.0
+
+if [ ! -f "$HOME/.install-info" ]; then
+    echo "========================================================================"
+    echo "Update root .bashrc file"
+    echo "========================================================================"
+
+    printf '%s\n' '' '# Set command prompt' 'PS1="\[\e[01;31m\]\u \w/#\[\e[m\] "' \
+    | sudo tee -a /root/.bashrc > /dev/null
+fi
 
 clear
 while true; do
@@ -174,7 +198,8 @@ sed -i "s/~\/\.gtkrc-2\.0\.mine/\/home\/$(whoami)\/\.gtkrc-2\.0\.mine/" $HOME/.g
 cp -R $HOME/scripts/set-theming-i3.sh $HOME/.local/bin/set-theming-i3
 echo "i3 installed via e33io script: $(date '+%B %d, %Y, %H:%M')" \
 | tee -a $HOME/.install-info > /dev/null
-rm -rf $HOME/core
+rm -rf $HOME/dotfiles
+rm -rf $HOME/extra
 rm -rf $HOME/scripts
 
 echo "========================================================================"
