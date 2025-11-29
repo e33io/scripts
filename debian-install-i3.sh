@@ -84,26 +84,16 @@ echo "========================================================================"
 echo "Clone custom configuration files"
 echo "========================================================================"
 
-git clone https://github.com/e33io/dotfiles $HOME/dotfiles
+git clone https://github.com/e33io/core $HOME/core
 
 echo "========================================================================"
 echo "Copy custom configuration files"
 echo "========================================================================"
 
-cp -R $HOME/dotfiles/.config $HOME
-cp -R $HOME/dotfiles/.icons $HOME
-cp -R $HOME/dotfiles/.local $HOME
-cp -R $HOME/dotfiles/.bashrc $HOME
-cp -R $HOME/dotfiles/.fehbg $HOME
-cp -R $HOME/dotfiles/.gtkrc* $HOME
-cp -R $HOME/dotfiles/.profile $HOME
-cp -R $HOME/dotfiles/.xbindkeysrc $HOME
-cp -R $HOME/dotfiles/.Xresources $HOME
-sudo cp -R $HOME/dotfiles/etc/default /etc
-sudo cp -R $HOME/dotfiles/etc/lightdm /etc
-sudo cp -R $HOME/dotfiles/etc/network /etc
-sudo cp -R $HOME/dotfiles/etc/plymouth /etc
-sudo cp -R $HOME/dotfiles/usr/share /usr
+cp -R $HOME/core/home/.* $HOME/
+cp -R $HOME/core/debian/home/.* $HOME/
+sudo cp -R $HOME/core/root/* /
+sudo cp -R $HOME/core/debian/root/* /
 sudo mkdir -p /boot/grub/fonts
 sudo cp -R /usr/share/grub/ter-* /boot/grub/fonts
 sudo mkdir -p /root/.config/gtk-3.0
@@ -117,22 +107,6 @@ sudo ln -sf $HOME/.config/qt6ct/* /root/.config/qt6ct
 sudo ln -sf $HOME/.gtkrc-2.0 /root/.gtkrc-2.0
 sudo update-initramfs -u
 sudo update-grub
-
-echo "========================================================================"
-echo "Add user .bash_profile and .xsessionrc files"
-echo "========================================================================"
-
-printf '%s\n' 'if [ -f ~/.profile ]; then' '    . ~/.profile' 'fi' \
-| tee $HOME/.bash_profile $HOME/.xsessionrc > /dev/null
-
-if [ ! -f "$HOME/.install-info" ]; then
-    echo "========================================================================"
-    echo "Update root .bashrc file"
-    echo "========================================================================"
-
-    printf '%s\n' '' '# Set command prompt' 'PS1="\[\e[01;31m\]\u \w/#\[\e[m\] "' \
-    | sudo tee -a /root/.bashrc > /dev/null
-fi
 
 if [ -f "/usr/share/xsessions/lightdm-xsession.desktop" ]; then
     echo "========================================================================"
@@ -224,7 +198,7 @@ sed -i "s/~\/\.gtkrc-2\.0\.mine/\/home\/$(whoami)\/\.gtkrc-2\.0\.mine/" $HOME/.g
 cp -R $HOME/scripts/set-theming-i3.sh $HOME/.local/bin/set-theming-i3
 echo "i3 installed via e33io script: $(date '+%B %d, %Y, %H:%M')" \
 | tee -a $HOME/.install-info > /dev/null
-rm -rf $HOME/dotfiles
+rm -rf $HOME/core
 rm -rf $HOME/scripts
 
 echo "========================================================================"
