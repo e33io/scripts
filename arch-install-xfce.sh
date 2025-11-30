@@ -86,7 +86,6 @@ echo "========================================================================"
 cp -R $HOME/extra/xfce/home/.[a-zA-Z]* $HOME/
 cp -R $HOME/extra/xfce/arch/home/.[a-zA-Z]* $HOME/
 sudo cp -R $HOME/core/root/* /
-sudo cp -R $HOME/core/arch/root/* /
 sudo cp -R $HOME/extra/xfce/root/* /
 sudo cp -R $HOME/extra/xfce/arch/root/* /
 sudo cp -R $HOME/scripts/window-control.sh /usr/bin
