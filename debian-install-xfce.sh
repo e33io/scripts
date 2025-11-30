@@ -98,7 +98,7 @@ sudo cp -R $HOME/extra/xfce/debian/root/* /
 sudo cp -R $HOME/scripts/window-control.sh /usr/bin
 sudo mkdir -p /boot/grub/fonts
 sudo cp -R /usr/share/grub/ter-* /boot/grub/fonts
-sudo mkdir -p /root/.config/{micro,qt5ct,qt6ct}
+bash -c 'sudo mkdir -p /root/.config/{micro,qt5ct,qt6ct}'
 for dir in micro qt5ct qt6ct; do
     sudo ln -sf $HOME/.config/$dir/* /root/.config/$dir/
 done

@@ -96,7 +96,7 @@ sudo cp -R $HOME/core/root/* /
 sudo cp -R $HOME/core/debian/root/* /
 sudo mkdir -p /boot/grub/fonts
 sudo cp -R /usr/share/grub/ter-* /boot/grub/fonts
-sudo mkdir -p /root/.config/{gtk-3.0,micro,qt5ct,qt6ct}
+bash -c 'sudo mkdir -p /root/.config/{gtk-3.0,micro,qt5ct,qt6ct}'
 for dir in gtk-3.0 micro qt5ct qt6ct; do
     sudo ln -sf $HOME/.config/$dir/* /root/.config/$dir/
 done
