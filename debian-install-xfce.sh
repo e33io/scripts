@@ -82,29 +82,19 @@ echo "========================================================================"
 echo "Clone custom configuration files"
 echo "========================================================================"
 
-git clone https://github.com/e33io/dotfiles $HOME/dotfiles
+git clone https://github.com/e33io/core $HOME/core
 git clone https://github.com/e33io/extra $HOME/extra
 
 echo "========================================================================"
 echo "Copy custom configuration files"
 echo "========================================================================"
 
-mkdir -p $HOME/.config/micro
-mkdir -p $HOME/.local/bin
-cp -R $HOME/dotfiles/.config/micro $HOME/.config
-cp -R $HOME/dotfiles/.xbindkeysrc $HOME
-cp -R $HOME/extra/xfce/.config $HOME
-cp -R $HOME/extra/xfce/.local $HOME
-cp -R $HOME/extra/xfce/.bashrc $HOME
-cp -R $HOME/extra/xfce/.profile $HOME
-cp -R $HOME/extra/xfce/.Xresources $HOME
-sudo cp -R $HOME/dotfiles/etc/default /etc
-sudo cp -R $HOME/dotfiles/etc/network /etc
-sudo cp -R $HOME/dotfiles/etc/plymouth /etc
-sudo cp -R $HOME/dotfiles/usr/share /usr
-sudo cp -R $HOME/extra/xfce/etc/lightdm /etc
-sudo cp -R $HOME/extra/xfce/usr/bin /usr
-sudo cp -R $HOME/extra/xfce/usr/share /usr
+cp -R $HOME/extra/xfce/home/.[a-zA-Z]* $HOME/
+cp -R $HOME/extra/xfce/debian/home/.[a-zA-Z]* $HOME/
+sudo cp -R $HOME/core/root/* /
+sudo cp -R $HOME/core/debian/root/* /
+sudo cp -R $HOME/extra/xfce/root/* /
+sudo cp -R $HOME/extra/xfce/debian/root/* /
 sudo cp -R $HOME/scripts/window-control.sh /usr/bin
 sudo mkdir -p /boot/grub/fonts
 sudo cp -R /usr/share/grub/ter-* /boot/grub/fonts
@@ -118,22 +108,6 @@ sudo mv /usr/share/backgrounds/xfce/xfce-x.svg /usr/share/backgrounds/xfce/xfce-
 sudo ln -sf /usr/share/wallpapers/background-0.png /usr/share/backgrounds/xfce/xfce-x.svg
 sudo update-initramfs -u
 sudo update-grub
-
-echo "========================================================================"
-echo "Add user .bash_profile and .xsessionrc files"
-echo "========================================================================"
-
-printf '%s\n' 'if [ -f ~/.profile ]; then' '    . ~/.profile' 'fi' \
-| tee $HOME/.bash_profile $HOME/.xsessionrc > /dev/null
-
-if [ ! -f "$HOME/.install-info" ]; then
-    echo "========================================================================"
-    echo "Update root .bashrc file"
-    echo "========================================================================"
-
-    printf '%s\n' '' '# Set command prompt' 'PS1="\[\e[01;31m\]\u \w/#\[\e[m\] "' \
-    | sudo tee -a /root/.bashrc > /dev/null
-fi
 
 if [ -f "/usr/share/xsessions/lightdm-xsession.desktop" ]; then
     echo "========================================================================"
@@ -214,7 +188,7 @@ sed -i "s/home\/.*\/Desktop/home\/$(whoami)\/Desktop/" $HOME/.config/xfce4/xfcon
 cp -R $HOME/scripts/set-theming-xfce.sh $HOME/.local/bin/set-theming-xfce
 echo "Xfce installed via e33io script: $(date '+%B %d, %Y, %H:%M')" \
 | tee -a $HOME/.install-info > /dev/null
-rm -rf $HOME/dotfiles
+rm -rf $HOME/core
 rm -rf $HOME/extra
 rm -rf $HOME/scripts
 

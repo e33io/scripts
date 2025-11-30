@@ -76,33 +76,19 @@ echo "========================================================================"
 echo "Clone custom configuration files"
 echo "========================================================================"
 
-git clone https://github.com/e33io/dotfiles $HOME/dotfiles
+git clone https://github.com/e33io/core $HOME/core
 git clone https://github.com/e33io/extra $HOME/extra
 
 echo "========================================================================"
 echo "Copy custom configuration files"
 echo "========================================================================"
 
-mkdir -p $HOME/.config/micro
-mkdir -p $HOME/.local/bin
-cp -R $HOME/dotfiles/.config/micro $HOME/.config
-cp -R $HOME/dotfiles/.xbindkeysrc $HOME
-cp -R $HOME/extra/xfce/.config $HOME
-cp -R $HOME/extra/arch-xfce/.config $HOME
-cp -R $HOME/extra/arch-xfce/.local $HOME
-cp -R $HOME/extra/arch-xfce/.bash_profile $HOME
-cp -R $HOME/extra/arch-xfce/.bashrc $HOME
-cp -R $HOME/extra/arch-xfce/.profile $HOME
-cp -R $HOME/extra/xfce/.Xresources $HOME
-sudo cp -R $HOME/dotfiles/etc/plymouth /etc
-sudo cp -R $HOME/dotfiles/usr/share/fonts /usr/share
-sudo cp -R $HOME/dotfiles/usr/share/grub /usr/share
-sudo cp -R $HOME/dotfiles/usr/share/gtksourceview-4 /usr/share
-sudo cp -R $HOME/dotfiles/usr/share/pixmaps /usr/share
-sudo cp -R $HOME/dotfiles/usr/share/wallpapers /usr/share
-sudo cp -R $HOME/extra/arch-xfce/etc/lightdm /etc
-sudo cp -R $HOME/extra/xfce/usr/bin /usr
-sudo cp -R $HOME/extra/xfce/usr/share /usr
+cp -R $HOME/extra/xfce/home/.[a-zA-Z]* $HOME/
+cp -R $HOME/extra/xfce/arch/home/.[a-zA-Z]* $HOME/
+sudo cp -R $HOME/core/root/* /
+sudo cp -R $HOME/core/arch/root/* /
+sudo cp -R $HOME/extra/xfce/root/* /
+sudo cp -R $HOME/extra/xfce/arch/root/* /
 sudo cp -R $HOME/scripts/window-control.sh /usr/bin
 sudo mkdir -p /boot/grub/fonts
 sudo cp -R /usr/share/grub/ter-* /boot/grub/fonts
@@ -114,15 +100,6 @@ sudo ln -sf $HOME/.config/qt5ct/* /root/.config/qt5ct
 sudo ln -sf $HOME/.config/qt6ct/* /root/.config/qt6ct
 sudo mv /usr/share/backgrounds/xfce/xfce-x.svg /usr/share/backgrounds/xfce/xfce-default.svg
 sudo ln -sf /usr/share/wallpapers/background-0.png /usr/share/backgrounds/xfce/xfce-x.svg
-
-if [ ! -f "$HOME/.install-info" ]; then
-    echo "========================================================================"
-    echo "Update root .bashrc file"
-    echo "========================================================================"
-
-    printf '%s\n' '' '# Set command prompt' 'PS1="\[\e[01;31m\]\u \w/#\[\e[m\] "' \
-    | sudo tee -a /root/.bashrc > /dev/null
-fi
 
 clear
 while true; do
@@ -181,7 +158,7 @@ sed -i "s/home\/.*\/Desktop/home\/$(whoami)\/Desktop/" $HOME/.config/xfce4/xfcon
 cp -R $HOME/scripts/set-theming-xfce.sh $HOME/.local/bin/set-theming-xfce
 echo "Xfce installed via e33io script: $(date '+%B %d, %Y, %H:%M')" \
 | tee -a $HOME/.install-info > /dev/null
-rm -rf $HOME/dotfiles
+rm -rf $HOME/core
 rm -rf $HOME/extra
 rm -rf $HOME/scripts
 

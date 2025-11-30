@@ -79,36 +79,21 @@ echo "========================================================================"
 echo "Clone custom configuration files"
 echo "========================================================================"
 
-git clone https://github.com/e33io/dotfiles $HOME/dotfiles
+git clone https://github.com/e33io/core $HOME/core
 git clone https://github.com/e33io/extra $HOME/extra
 
 echo "========================================================================"
 echo "Copy custom configuration files"
 echo "========================================================================"
 
-mkdir -p $HOME/.config/micro
-cp -R $HOME/dotfiles/.config/micro $HOME/.config
-cp -R $HOME/extra/arch-cosmic/.config $HOME
-cp -R $HOME/extra/arch-cosmic/.local $HOME
-cp -R $HOME/extra/arch-cosmic/.bash_profile $HOME
-cp -R $HOME/extra/arch-cosmic/.bashrc $HOME
-cp -R $HOME/extra/arch-cosmic/.profile $HOME
-sudo cp -R $HOME/dotfiles/usr/share/fonts /usr/share
-sudo cp -R $HOME/dotfiles/usr/share/grub /usr/share
-sudo cp -R $HOME/dotfiles/usr/share/wallpapers/* /usr/share/backgrounds
+cp -R $HOME/extra/cosmic/home/.[a-zA-Z]* $HOME/
+cp -R $HOME/extra/cosmic/arch/home/.[a-zA-Z]* $HOME/
+sudo cp -R $HOME/core/root/* /
+sudo cp -R $HOME/usr/share/wallpapers/* /usr/share/backgrounds
 sudo mkdir -p /boot/grub/fonts
 sudo cp -R /usr/share/grub/ter-* /boot/grub/fonts
 sudo mkdir -p /root/.config/micro
 sudo ln -sf $HOME/.config/micro/* /root/.config/micro
-
-if [ ! -f "$HOME/.install-info" ]; then
-    echo "========================================================================"
-    echo "Update root .bashrc file"
-    echo "========================================================================"
-
-    printf '%s\n' '' '# Set command prompt' 'PS1="\[\e[01;31m\]\u \w/#\[\e[m\] "' \
-    | sudo tee -a /root/.bashrc > /dev/null
-fi
 
 echo "========================================================================"
 echo "Change Papirus folders color"
@@ -127,7 +112,7 @@ echo "========================================================================"
 xdg-user-dirs-update
 echo "COSMIC installed via e33io script: $(date '+%B %d, %Y, %H:%M')" \
 | tee -a $HOME/.install-info > /dev/null
-rm -rf $HOME/dotfiles
+rm -rf $HOME/core
 rm -rf $HOME/extra
 rm -rf $HOME/scripts
 
