@@ -96,15 +96,14 @@ sudo cp -R $HOME/core/root/* /
 sudo cp -R $HOME/core/debian/root/* /
 sudo mkdir -p /boot/grub/fonts
 sudo cp -R /usr/share/grub/ter-* /boot/grub/fonts
-sudo mkdir -p /root/.config/gtk-3.0
-sudo mkdir -p /root/.config/micro
-sudo mkdir -p /root/.config/qt5ct
-sudo mkdir -p /root/.config/qt6ct
-sudo ln -sf $HOME/.config/gtk-3.0/* /root/.config/gtk-3.0
-sudo ln -sf $HOME/.config/micro/* /root/.config/micro
-sudo ln -sf $HOME/.config/qt5ct/* /root/.config/qt5ct
-sudo ln -sf $HOME/.config/qt6ct/* /root/.config/qt6ct
-sudo ln -sf $HOME/.gtkrc-2.0 /root/.gtkrc-2.0
+sudo mkdir -p /root/.config/{gtk-3.0,micro,qt5ct,qt6ct}
+for dir in gtk-3.0 micro qt5ct qt6ct; do
+    sudo ln -sf $HOME/.config/$dir/* /root/.config/$dir/
+done
+if [ ! -f "$HOME/.install-info" ]; then
+    printf '%s\n' '# Set command prompt' 'PS1="\[\e[01;31m\]\u \w/#\[\e[m\] "' \
+    | sudo tee -a /root/.bashrc > /dev/null
+fi
 sudo update-initramfs -u
 sudo update-grub
 

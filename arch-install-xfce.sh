@@ -91,12 +91,14 @@ sudo cp -R $HOME/extra/xfce/arch/root/* /
 sudo cp -R $HOME/scripts/window-control.sh /usr/bin
 sudo mkdir -p /boot/grub/fonts
 sudo cp -R /usr/share/grub/ter-* /boot/grub/fonts
-sudo mkdir -p /root/.config/micro
-sudo mkdir -p /root/.config/qt5ct
-sudo mkdir -p /root/.config/qt6ct
-sudo ln -sf $HOME/.config/micro/* /root/.config/micro
-sudo ln -sf $HOME/.config/qt5ct/* /root/.config/qt5ct
-sudo ln -sf $HOME/.config/qt6ct/* /root/.config/qt6ct
+sudo mkdir -p /root/.config/{micro,qt5ct,qt6ct}
+for dir in micro qt5ct qt6ct; do
+    sudo ln -sf $HOME/.config/$dir/* /root/.config/$dir/
+done
+if [ ! -f "$HOME/.install-info" ]; then
+    printf '%s\n' '# Set command prompt' 'PS1="\[\e[01;31m\]\u \w/#\[\e[m\] "' \
+    | sudo tee -a /root/.bashrc > /dev/null
+fi
 sudo mv /usr/share/backgrounds/xfce/xfce-x.svg /usr/share/backgrounds/xfce/xfce-default.svg
 sudo ln -sf /usr/share/wallpapers/background-0.png /usr/share/backgrounds/xfce/xfce-x.svg
 

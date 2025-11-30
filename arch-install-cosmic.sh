@@ -94,6 +94,10 @@ sudo mkdir -p /boot/grub/fonts
 sudo cp -R /usr/share/grub/ter-* /boot/grub/fonts
 sudo mkdir -p /root/.config/micro
 sudo ln -sf $HOME/.config/micro/* /root/.config/micro
+if [ ! -f "$HOME/.install-info" ]; then
+    printf '%s\n' '# Set command prompt' 'PS1="\[\e[01;31m\]\u \w/#\[\e[m\] "' \
+    | sudo tee -a /root/.bashrc > /dev/null
+fi
 
 echo "========================================================================"
 echo "Change Papirus folders color"
