@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # =============================================================================
-# Arch Linux - Install COSMIC (desktop environment)
+# Arch Linux - Install COSMIC
 # URL: https://github.com/e33io/scripts/blob/main/arch-install-cosmic.sh
 # -----------------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
@@ -65,7 +65,7 @@ echo "========================================================================"
 echo "Install other packages from AUR"
 echo "========================================================================"
 
-yay -S --noconfirm --needed --sudoloop adwaita-qt5 adwaita-qt6 mintstick brave-bin
+yay -S --noconfirm --needed --sudoloop mintstick brave-bin
 
 echo "========================================================================"
 echo "Set boot target to graphical UI and enable system services"
