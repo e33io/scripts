@@ -89,8 +89,8 @@ echo "========================================================================"
 echo "Copy custom configuration files"
 echo "========================================================================"
 
-cp -R $HOME/extra/xfce/home/.[a-zA-Z]* $HOME/
-cp -R $HOME/extra/xfce/debian/home/.[a-zA-Z]* $HOME/
+cp -R $HOME/extra/xfce/home/.??* $HOME/
+cp -R $HOME/extra/xfce/debian/home/.??* $HOME/
 sudo cp -R $HOME/core/root/* /
 sudo cp -R $HOME/core/debian/root/* /
 sudo cp -R $HOME/extra/xfce/root/* /

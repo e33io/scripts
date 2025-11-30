@@ -86,8 +86,8 @@ echo "========================================================================"
 echo "Copy custom configuration files"
 echo "========================================================================"
 
-cp -R $HOME/extra/cosmic/home/.[a-zA-Z]* $HOME/
-cp -R $HOME/extra/cosmic/arch/home/.[a-zA-Z]* $HOME/
+cp -R $HOME/extra/cosmic/home/.??* $HOME/
+cp -R $HOME/extra/cosmic/arch/home/.??* $HOME/
 sudo cp -R $HOME/core/root/* /
 sudo cp -R /usr/share/wallpapers/* /usr/share/backgrounds
 sudo mkdir -p /boot/grub/fonts
