@@ -89,7 +89,7 @@ echo "========================================================================"
 cp -R $HOME/extra/cosmic/home/.[a-zA-Z]* $HOME/
 cp -R $HOME/extra/cosmic/arch/home/.[a-zA-Z]* $HOME/
 sudo cp -R $HOME/core/root/* /
-sudo cp -R $HOME/usr/share/wallpapers/* /usr/share/backgrounds
+sudo cp -R /usr/share/wallpapers/* /usr/share/backgrounds
 sudo mkdir -p /boot/grub/fonts
 sudo cp -R /usr/share/grub/ter-* /boot/grub/fonts
 sudo mkdir -p /root/.config/micro
