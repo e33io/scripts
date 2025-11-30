@@ -9,11 +9,6 @@
 # to install the JWM window manager and a base set of apps for a
 # ready-to-use desktop session.
 # -----------------------------------------------------------------------------
-# The default configuration is for use with HiDPI monitors
-# (192 dpi settings for 2x scaling), but there is an option
-# at the end of the script that lets you change to standard
-# HD monitors (96 dpi settings for 1x scaling).
-# -----------------------------------------------------------------------------
 # Instructions for running this script:
 #   sudo pacman -S git
 #   git clone https://github.com/e33io/scripts
@@ -168,7 +163,6 @@ sed -i "s/home\/.*\/\.config/home\/$(whoami)\/\.config/" $HOME/.config/qt5ct/qt5
 sed -i "s/home\/.*\/\.config/home\/$(whoami)\/\.config/" $HOME/.config/qt6ct/qt6ct.conf
 sed -i 's/Dmenu/Floating/' $HOME/.config/rofi/config.rasi
 sed -i "s/home\/.*\/Desktop/home\/$(whoami)\/Desktop/" $HOME/.config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml
-sed -i 's/gif=imv/gif=mpv/' $HOME/.config/mimeapps.list
 sed -i "s/~\/\.gtkrc-2\.0\.mine/\/home\/$(whoami)\/\.gtkrc-2\.0\.mine/" $HOME/.gtkrc-2.0
 printf "%s\n" "" "# Set XDG_CURRENT_DESKTOP" "export XDG_CURRENT_DESKTOP=jwm" \
 | tee -a $HOME/.profile > /dev/null

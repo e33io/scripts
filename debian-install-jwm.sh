@@ -8,11 +8,6 @@
 # Use with a minimal installation of Debian Linux to install the JWM window
 # manager and a base set of apps for a ready-to-use desktop session.
 # -----------------------------------------------------------------------------
-# The default configuration is for use with HiDPI monitors
-# (192 dpi settings for 2x scaling), but there is an option
-# at the end of the script that lets you change to standard
-# HD monitors (96 dpi settings for 1x scaling).
-# -----------------------------------------------------------------------------
 # Instructions for running this script:
 #   sudo apt install git
 #   git clone https://github.com/e33io/scripts
