@@ -36,7 +36,7 @@ echo "Install Xfce and other packages"
 echo "========================================================================"
 
 sudo apt -y install xfce4 xfce4-terminal xfce4-power-manager xfce4-screensaver xfce4-screenshooter \
-xfce4-taskmanager xfce4-docklike-plugin xfce4-windowck-plugin thunar-archive-plugin engrampa tumbler-plugins-extra \
+xfce4-taskmanager xfce4-docklike-plugin xfce4-windowck-plugin thunar-archive-plugin xarchiver tumbler-plugins-extra \
 network-manager-gnome mate-polkit lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings wmctrl xdotool \
 xbindkeys xclip gvfs-fuse gvfs-backends nfs-common cifs-utils pipewire-audio apt-transport-https curl rsync \
 gnome-themes-extra qt*ct adwaita-qt* papirus-icon-theme breeze-icon-theme fonts-noto-color-emoji plymouth \

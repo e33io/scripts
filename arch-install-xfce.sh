@@ -41,7 +41,7 @@ thunar-archive-plugin network-manager-applet ffmpegthumbnailer base-devel gvfs n
 libmad gst-libav rsync cronie git curl wget tar 7zip less xsel xclip xdg-desktop-portal-gtk xdg-user-dirs \
 xiccd xorg-apps wmctrl xdotool xbindkeys plymouth lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings \
 gnome-themes-extra qt5ct qt6ct ttf-dejavu noto-fonts-emoji papirus-icon-theme breeze-icons pavucontrol \
-engrampa atril ristretto imv mpv parole rhythmbox mousepad galculator dconf-editor gnome-disk-utility \
+xarchiver atril ristretto imv mpv parole rhythmbox mousepad galculator dconf-editor gnome-disk-utility \
 timeshift xterm bash-completion vim nano micro fzf lazygit htop fastfetch cmus cava ranger ueberzug \
 highlight atool w3m mediainfo perl-image-exiftool signal-desktop gpick darktable gimp inkscape \
 filezilla libreoffice
