@@ -83,6 +83,7 @@ echo "========================================================================"
 
 cp -R $HOME/core/home/.??* $HOME/
 cp -R $HOME/core/arch/home/.??* $HOME/
+cp -R $HOME/scripts/window-control.sh $HOME/.local/bin
 sudo cp -R $HOME/core/root/* /
 sudo cp -R $HOME/core/arch/root/* /
 sudo mkdir -p /boot/grub/fonts
