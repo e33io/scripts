@@ -28,7 +28,7 @@ linux installation scripts
 
 - use [`install-flatpak-deb.sh`](https://github.com/e33io/scripts/blob/main/install-flatpak-deb.sh) to install Flatpak and add Flathub on Debian
 
-- use [`ubuntu-remove-snapd.sh`](https://github.com/e33io/scripts/blob/main/ubuntu-remove-snapd.sh) to remove Snap and optionally install Flatpak on Ubuntu
+- use [`ubuntu-remove-snapd.sh`](https://github.com/e33io/scripts/blob/main/ubuntu-remove-snapd.sh) to remove Snap and install Flatpak on Ubuntu
 
 &nbsp;
 
