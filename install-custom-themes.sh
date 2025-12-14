@@ -150,7 +150,7 @@ echo "========================================================================"
 echo "Clean up directories"
 echo "========================================================================"
 
-echo "Custom Mint and Yaru themes installed via e33io script: $(date '+%B %d, %Y, %H:%M')" \
+echo "Custom themes installed via e33io script: $(date '+%B %d, %Y, %H:%M')" \
 | tee -a $HOME/.install-info > /dev/null
 rm -rf $HOME/theming-temp
 
