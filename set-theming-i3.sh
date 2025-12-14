@@ -5,7 +5,7 @@
 # URL: https://github.com/e33io/scripts/blob/main/set-theming-i3.sh
 # -----------------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
-# NOTE: Only use with Debian or Arch Linux!
+# NOTE: Only use with i3 installed via e33io script!
 # =============================================================================
 
 if [ "$(id -u)" = 0 ]; then
@@ -15,40 +15,6 @@ if [ "$(id -u)" = 0 ]; then
     echo "You will be asked for a sudo password when necessary."
     echo "========================================================================"
     exit 1
-fi
-
-if ! { [ -f "/etc/debian_version" ] || [ -f "/etc/pacman.conf" ]; }; then
-    echo "========================================================================"
-    echo "This script is NOT compatible with your version of Linux!"
-    echo "It only works with Debian or Arch Linux and it will"
-    echo "exit now without running."
-    echo "========================================================================"
-    exit 1
-fi
-
-# install custom-mint-themes if needed
-if ! grep -q Mint $HOME/.install-info; then
-    git clone https://github.com/e33io/scripts $HOME/scripts-theming
-    sh $HOME/scripts-theming/install-custom-mint-themes.sh
-    rm -rf $HOME/scripts-theming
-fi
-
-# install custom-yaru-themes if needed
-if ! grep -q Yaru $HOME/.install-info; then
-    git clone https://github.com/e33io/scripts $HOME/scripts-theming
-    sh $HOME/scripts-theming/install-custom-yaru-themes.sh
-    rm -rf $HOME/scripts-theming
-fi
-
-# install papirus-icon-theme and papirus-folders if needed
-if ! command -v papirus-folders > /dev/null 2>&1; then
-    if [ -f "/etc/debian_version" ]; then
-        sudo apt -y install papirus-icon-theme
-    fi
-    if [ -f "/etc/pacman.conf" ]; then
-        sudo pacman -S --noconfirm --needed papirus-icon-theme
-    fi
-    wget -qO- https://git.io/papirus-folders-install | sh
 fi
 
 clear
@@ -106,13 +72,11 @@ theming_files () {
     sudo sed -i "s/^background =.*/background = $desktop_bg_color/" /etc/lightdm/lightdm-gtk-greeter.conf
     sudo sed -i "s/^icon-theme-name =.*/icon-theme-name = $icon_theme/" /etc/lightdm/lightdm-gtk-greeter.conf
     sudo sed -i "s/^theme-name =.*/theme-name = $gtk_theme/" /etc/lightdm/lightdm-gtk-greeter.conf
+    # Papirus folders color
+    papirus-folders -C $papirus_folders --theme $icon_theme > /dev/null
     # CAVA foreground color
     if [ -f "$HOME/.config/cava/config" ]; then
         sed -i "s/^foreground = .*/foreground = '$accent_color'/" $HOME/.config/cava/config
-    fi
-    # Papirus folders color
-    if [ -f "/usr/bin/papirus-folders" ]; then
-        papirus-folders -C $papirus_folders --theme $icon_theme > /dev/null
     fi
 }
 

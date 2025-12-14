@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # =============================================================================
-# Install Custom Mint Themes
-# URL: https://github.com/e33io/scripts/blob/main/install-custom-mint-themes.sh
+# Install Custom Mint and Yaru Themes
+# URL: https://github.com/e33io/scripts/blob/main/install-custom-themes.sh
 # -----------------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
 # NOTE: Only use with Debian or Arch Linux!
@@ -32,6 +32,7 @@ echo "========================================================================"
 
 sudo rm -rf /usr/share/Kvantum/Mint-L-*
 sudo rm -rf /usr/share/Kvantum/Mint-Y-*
+sudo rm -rf /usr/share/Kvantum/KvYaru*
 sudo rm -rf /usr/share/themes/Mint-*Mod-*
 
 echo "========================================================================"
@@ -84,6 +85,21 @@ sudo mkdir -p /usr/share/Kvantum
 sudo cp -R $HOME/theming-temp/Kvantum/Mint* /usr/share/Kvantum
 
 echo "========================================================================"
+echo "Copy custom Yaru themes"
+echo "========================================================================"
+
+sudo cp -R $HOME/theming-temp/gtk/Yaru* /usr/share/themes
+# copy only selected theme variants
+sudo cp -R $HOME/theming-temp/Kvantum/Yaru-blue-dark /usr/share/Kvantum
+sudo cp -R $HOME/theming-temp/Kvantum/Yaru-orange /usr/share/Kvantum
+sudo cp -R $HOME/theming-temp/Kvantum/Yaru-orange-dark /usr/share/Kvantum
+sudo cp -R $HOME/theming-temp/Kvantum/Yaru-prussiangreen-dark /usr/share/Kvantum
+sudo cp -R $HOME/theming-temp/Kvantum/Yaru-purple-dark /usr/share/Kvantum
+sudo cp -R $HOME/theming-temp/Kvantum/Yaru-sage-dark /usr/share/Kvantum
+sudo cp -R $HOME/theming-temp/Kvantum/Yaru-viridian-dark /usr/share/Kvantum
+sudo cp -R $HOME/theming-temp/Kvantum/Yaru-wartybrown-dark /usr/share/Kvantum
+
+echo "========================================================================"
 echo "Link config files to root user directories for styling"
 echo "su/root applications"
 echo "========================================================================"
@@ -134,10 +150,10 @@ echo "========================================================================"
 echo "Clean up directories"
 echo "========================================================================"
 
-echo "Custom Mint themes installed via e33io script: $(date '+%B %d, %Y, %H:%M')" \
+echo "Custom Mint and Yaru themes installed via e33io script: $(date '+%B %d, %Y, %H:%M')" \
 | tee -a $HOME/.install-info > /dev/null
 rm -rf $HOME/theming-temp
 
 echo "========================================================================"
-echo "All done, themes and icons are now installed"
+echo "All done, custom themes are now installed"
 echo "========================================================================"

@@ -133,9 +133,10 @@ if [ $pc_type = vm ]; then
 fi
 
 echo "========================================================================"
-echo "Change Papirus folders color"
+echo "Install custom themes and change Papirus folders color"
 echo "========================================================================"
 
+sh $HOME/scripts/install-custom-themes.sh
 if ! command -v papirus-folders > /dev/null 2>&1; then
     wget -qO- https://git.io/papirus-folders-install | sh
 fi
