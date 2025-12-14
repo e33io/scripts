@@ -190,6 +190,7 @@ echo "i3 installed via e33io script: $(date '+%B %d, %Y, %H:%M')" \
 rm -rf $HOME/core
 rm -rf $HOME/scripts
 
+clear
 echo "========================================================================"
 echo "All done, you can now run other commands or reboot the PC"
 echo "========================================================================"

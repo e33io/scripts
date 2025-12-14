@@ -163,6 +163,7 @@ rm -rf $HOME/core
 rm -rf $HOME/extra
 rm -rf $HOME/scripts
 
+clear
 echo "========================================================================"
 echo "All done, you can now run other commands or reboot the PC"
 echo "========================================================================"
