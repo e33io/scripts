@@ -46,6 +46,12 @@ rhythmbox mousepad galculator dconf-editor gnome-disk-utility timeshift xterm ba
 micro fzf lazygit htop fastfetch cmus cava ranger ueberzug highlight atool w3m mediainfo \
 perl-image-exiftool signal-desktop gpick darktable gimp inkscape filezilla libreoffice
 
+echo "========================================================================"
+echo "Install graphics drivers"
+echo "========================================================================"
+
+bash $HOME/scripts/install-gpu-packages.sh
+
 if ! command -v yay > /dev/null 2>&1; then
     echo "========================================================================"
     echo "Setup Yay for AUR"

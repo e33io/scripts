@@ -49,6 +49,12 @@ if [ $pc_type = vm ]; then
     sudo pacman -S --noconfirm --needed spice-vdagent
 fi
 
+echo "========================================================================"
+echo "Install graphics drivers"
+echo "========================================================================"
+
+bash $HOME/scripts/install-gpu-packages.sh
+
 if ! command -v yay > /dev/null 2>&1; then
     echo "========================================================================"
     echo "Setup Yay for AUR"

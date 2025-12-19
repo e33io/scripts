@@ -45,6 +45,12 @@ cmus cava ranger ueberzug highlight atool w3m mediainfo perl-image-exiftool thun
 thunar-volman tumbler ffmpegthumbnailer xarchiver scrot atril imv mpv parole mousepad galculator \
 timeshift signal-desktop gpick darktable gimp inkscape filezilla libreoffice
 
+echo "========================================================================"
+echo "Install graphics drivers"
+echo "========================================================================"
+
+bash $HOME/scripts/install-gpu-packages.sh
+
 if ! command -v yay > /dev/null 2>&1; then
     echo "========================================================================"
     echo "Setup Yay for AUR"
