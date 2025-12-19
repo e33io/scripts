@@ -15,7 +15,7 @@ gpu_info=$(lspci | grep -Ei 'VGA|3D|Display')
 # AMD GPU
 if echo "$gpu_info" | grep -Ei 'amd' > /dev/null; then
     echo "AMD GPU detected – installing drivers..."
-    sudo pacman -S --needed --noconfirm mesa vulkan-radeon
+    sudo pacman -S --noconfirm --needed mesa vulkan-radeon
 fi
 
 # Intel GPU
@@ -27,10 +27,10 @@ if [[ -n "$INTEL_GPU" ]]; then
        [[ "$GPU_LOWER" == *"iris"* ]] ||
        [[ "$GPU_LOWER" == *"xe"* ]]; then
         echo "Intel HD/Iris/Xe GPU detected – installing drivers..."
-        sudo pacman -S --needed --noconfirm intel-media-driver vulkan-intel
+        sudo pacman -S --noconfirm --needed intel-media-driver vulkan-intel
     # Older Intel graphics (GMA generations)
     elif [[ "$GPU_LOWER" == *"gma"* ]]; then
         echo "Older Intel GMA GPU detected – installing drivers..."
-        sudo pacman -S --needed --noconfirm libva-intel-driver vulkan-intel
+        sudo pacman -S --noconfirm --needed libva-intel-driver vulkan-intel
     fi
 fi
