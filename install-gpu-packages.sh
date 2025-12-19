@@ -3,8 +3,6 @@
 # =============================================================================
 # Install graphics drivers for AMD and Intel GPUs on Arch Linux
 # URL: https://github.com/e33io/scripts/blob/main/install-gpu-packages.sh
-# -----------------------------------------------------------------------------
-# Call script: bash /path/to/install-gpu-packages.sh
 # =============================================================================
 
 set -e
