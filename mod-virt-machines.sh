@@ -24,8 +24,8 @@ if [ -f "/etc/pacman.conf" ]; then
     sudo pacman -S --noconfirm --needed spice-vdagent
 fi
 
-# i3 and JWM configs
-if { [ -d "$HOME/.config/i3" ] || [ -d "$HOME/.config/jwm" ]; }; then
+# i3, JWM and dk configs
+if { [ -d "$HOME/.config/i3" ] || [ -d "$HOME/.config/jwm" ] || [ -d "$HOME/.config/dk" ]; }; then
     mkdir -p $HOME/.config/autostart
     # add audio-default.desktop file
     printf "%s\n" "[Desktop Entry]" "Type=Application" "Name=audio-default" "Comment=set default volume level" \
