@@ -65,12 +65,9 @@ if ! command -v dk > /dev/null 2>&1; then
     echo "Add dk.desktop file"
     echo "========================================================================"
 
-    printf "%s\n" "[Desktop Entry]" "Encoding=UTF-8" "Type=Application" \
-    "Name=dk" "Comment=a dynamic tiling window manager" "TryExec=dk" \
-    "Exec=dk" "NoDisplay=false" "Hidden=false" "StartupNotify=false" \
-    "DesktopNames=dk" "X-LightDM-DesktopName=dk" \
-    "Keywords=tiling;window;manager;wm;windowmanager;" " " "[Window Manager]" \
-    "Name=dk" "SessionManaged=true" "StartupNotification=false" \
+    printf "%s\n" "[Desktop Entry]" "Type=Application" "Name=dk" \
+    "Comment=A dynamic tiling window manager" "Exec=dk" "TryExec=dk" \
+    "DesktopNames=dk" "X-LightDM-DesktopName=dk" "StartupNotify=false" \
     | sudo tee /usr/share/xsessions/dk.desktop > /dev/null
 fi
 
