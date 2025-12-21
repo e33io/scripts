@@ -35,16 +35,18 @@ echo "========================================================================"
 echo "Install Xorg and other packages"
 echo "========================================================================"
 
-sudo apt -y install xserver-xorg polybar i3lock rofi dunst dex network-manager xdotool \
-xbindkeys xssproxy xsel xclip xinput x11-utils upower gvfs-fuse gvfs-backends nfs-common \
-cifs-utils playerctl feh lxappearance qt*ct adwaita-qt* gnome-themes-extra papirus-icon-theme \
-breeze-icon-theme fonts-dejavu fonts-noto-color-emoji mate-polkit-bin lightdm lightdm-gtk-greeter \
-lightdm-gtk-greeter-settings plymouth plymouth-themes kitty python3-pypillowfight xterm lazygit \
-fastfetch htop cmus cava cmatrix ncal micro ranger ueberzug caca-utils highlight atool w3m \
-poppler-utils mediainfo fzf libimage-exiftool-perl apt-transport-https curl rsync dconf-cli thunar \
-thunar-archive-plugin tumbler-plugins-extra ffmpegthumbnailer heif-thumbnailer heif-gdk-pixbuf \
-xarchiver pipewire-audio pulseaudio-utils pavucontrol-qt synaptic timeshift mintstick scrot atril \
-imv mpv parole mousepad galculator filezilla gpick darktable gimp inkscape libreoffice-calc \
+sudo apt -y install build-essential pkg-config libbsd-dev libfontconfig1-dev libx11-xcb-dev \
+libxcb-cursor-dev libxcb-icccm4-dev libxcb-keysyms1-dev libxcb-randr0-dev libxcb-res0-dev libxcb-util-dev \
+libxcb-xinput-dev libxcb-xtest0-dev libxcb1-dev libxcursor-dev libxft-dev libxinerama-dev xserver-xorg \
+suckless-tools sxhkd polybar i3lock rofi dunst dex network-manager xdotool xbindkeys xssproxy xsel xclip \
+xinput x11-utils upower gvfs-fuse gvfs-backends nfs-common cifs-utils playerctl feh lxappearance qt*ct \
+adwaita-qt* gnome-themes-extra papirus-icon-theme breeze-icon-theme fonts-dejavu fonts-noto-color-emoji \
+mate-polkit-bin lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings plymouth plymouth-themes kitty \
+python3-pypillowfight xterm lazygit fastfetch htop cmus cava cmatrix ncal micro ranger ueberzug caca-utils \
+highlight atool w3m poppler-utils mediainfo fzf libimage-exiftool-perl apt-transport-https curl rsync \
+dconf-cli thunar thunar-archive-plugin tumbler-plugins-extra ffmpegthumbnailer heif-thumbnailer \
+heif-gdk-pixbuf xarchiver pipewire-audio pulseaudio-utils pavucontrol-qt synaptic timeshift mintstick \
+scrot atril imv mpv parole mousepad galculator filezilla gpick darktable gimp inkscape libreoffice-calc \
 libreoffice-draw libreoffice-impress libreoffice-writer libreoffice-gtk3
 
 if ! command -v dk > /dev/null 2>&1; then
@@ -52,7 +54,24 @@ if ! command -v dk > /dev/null 2>&1; then
     echo "Install dk from source"
     echo "========================================================================"
 
-    sh $HOME/scripts/install-dk-deb.sh
+    git clone https://github.com/natemaia/dk $HOME/dk
+    cd $HOME/dk
+    make
+    sudo make install
+    cd
+    rm -rf $HOME/dk
+
+    echo "========================================================================"
+    echo "Add dk.desktop file"
+    echo "========================================================================"
+
+    printf "%s\n" "[Desktop Entry]" "Encoding=UTF-8" "Type=Application" \
+    "Name=dk" "Comment=a dynamic tiling window manager" "TryExec=dk" \
+    "Exec=dk" "NoDisplay=false" "Hidden=false" "StartupNotify=false" \
+    "DesktopNames=dk" "X-LightDM-DesktopName=dk" \
+    "Keywords=tiling;window;manager;wm;windowmanager;" " " "[Window Manager]" \
+    "Name=dk" "SessionManaged=true" "StartupNotification=false" \
+    | sudo tee /usr/share/xsessions/dk.desktop > /dev/null
 fi
 
 if ! command -v brave-browser > /dev/null 2>&1; then
