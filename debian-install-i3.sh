@@ -87,6 +87,7 @@ echo "========================================================================"
 
 cp -R $HOME/core/home/.??* $HOME/
 cp -R $HOME/core/debian/home/.??* $HOME/
+cp -R $HOME/scripts/set-theming-i3.sh $HOME/.local/bin/set-theming-i3
 sudo cp -R $HOME/core/root/* /
 sudo cp -R $HOME/core/debian/root/* /
 sudo mkdir -p /boot/grub/fonts
@@ -104,6 +105,16 @@ if [ -f "/usr/share/xsessions/lightdm-xsession.desktop" ]; then
 fi
 sudo update-initramfs -u
 sudo update-grub
+
+echo "========================================================================"
+echo "Install custom themes and change Papirus folders color"
+echo "========================================================================"
+
+sh $HOME/scripts/install-custom-themes.sh
+if ! command -v papirus-folders > /dev/null 2>&1; then
+    wget -qO- https://git.io/papirus-folders-install | sh
+    papirus-folders -C adwaita --theme Papirus-Dark
+fi
 
 clear
 while true; do
@@ -160,32 +171,17 @@ if [ -f "/etc/devuan_version" ]; then
 fi
 
 echo "========================================================================"
-echo "Install custom themes and change Papirus folders color"
-echo "========================================================================"
-
-sh $HOME/scripts/install-custom-themes.sh
-if ! command -v papirus-folders > /dev/null 2>&1; then
-    wget -qO- https://git.io/papirus-folders-install | sh
-fi
-papirus-folders -C adwaita --theme Papirus-Dark
-
-echo "========================================================================"
-echo "Add bookmarks and clean up user directory"
+echo "Update and clean up user directory"
 echo "========================================================================"
 
 xdg-user-dirs-update
-echo "file:///home/$(whoami)/Downloads
-file:///home/$(whoami)/Documents
-file:///home/$(whoami)/Pictures
-file:///home/$(whoami)/Videos
-file:///home/$(whoami)/Music" > $HOME/.config/gtk-3.0/bookmarks
+sed -i "s/home\/.*\//home\/$(whoami)\//" $HOME/.config/gtk-3.0/bookmarks
 sed -i '/mate-polkit/d' $HOME/.config/i3/startup.conf
 sed -i '/xbindkeys/d' $HOME/.config/i3/startup.conf
 sed -i '/at-spi/d' $HOME/.config/i3/startup.conf
 sed -i 's/has imv, .* X, flag f = imv/X, flag f = \/usr\/libexec\/imv\/imv/' $HOME/.config/ranger/rifle.conf
 sed -i "s/home\/.*\/Desktop/home\/$(whoami)\/Desktop/" $HOME/.config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml
 sed -i "s/~\/\.gtkrc-2\.0\.mine/\/home\/$(whoami)\/\.gtkrc-2\.0\.mine/" $HOME/.gtkrc-2.0
-cp -R $HOME/scripts/set-theming-i3.sh $HOME/.local/bin/set-theming-i3
 echo "i3 installed via e33io script: $(date '+%B %d, %Y, %H:%M')" \
 | tee -a $HOME/.install-info > /dev/null
 rm -rf $HOME/core

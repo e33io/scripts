@@ -116,7 +116,7 @@ papirus-folders -C darkcyan --theme Papirus-Light
 papirus-folders -C darkcyan --theme Papirus-Dark
 
 echo "========================================================================"
-echo "Clean up user directory"
+echo "Update and clean up user directory"
 echo "========================================================================"
 
 xdg-user-dirs-update

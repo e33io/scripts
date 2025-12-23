@@ -85,8 +85,10 @@ echo "========================================================================"
 echo "Copy custom configuration files"
 echo "========================================================================"
 
+mkdir -p $HOME/.local/bin
 cp -R $HOME/extra/xfce/home/.??* $HOME/
 cp -R $HOME/extra/xfce/debian/home/.??* $HOME/
+cp -R $HOME/scripts/set-theming-xfce.sh $HOME/.local/bin/set-theming-xfce
 sudo cp -R $HOME/core/root/* /
 sudo cp -R $HOME/core/debian/root/* /
 sudo cp -R $HOME/extra/xfce/root/* /
@@ -109,6 +111,16 @@ sudo mv /usr/share/backgrounds/xfce/xfce-x.svg /usr/share/backgrounds/xfce/xfce-
 sudo ln -sf /usr/share/wallpapers/background-0.png /usr/share/backgrounds/xfce/xfce-x.svg
 sudo update-initramfs -u
 sudo update-grub
+
+echo "========================================================================"
+echo "Install custom themes and change Papirus folders color"
+echo "========================================================================"
+
+sh $HOME/scripts/install-custom-themes.sh
+if ! command -v papirus-folders > /dev/null 2>&1; then
+    wget -qO- https://git.io/papirus-folders-install | sh
+    papirus-folders -C adwaita --theme Papirus-Dark
+fi
 
 clear
 while true; do
@@ -157,29 +169,13 @@ if [ -f "/etc/devuan_version" ]; then
 fi
 
 echo "========================================================================"
-echo "Install custom themes and change Papirus folders color"
-echo "========================================================================"
-
-sh $HOME/scripts/install-custom-themes.sh
-if ! command -v papirus-folders > /dev/null 2>&1; then
-    wget -qO- https://git.io/papirus-folders-install | sh
-fi
-papirus-folders -C adwaita --theme Papirus-Dark
-
-echo "========================================================================"
-echo "Add bookmarks and clean up user directory"
+echo "Update and clean up user directory"
 echo "========================================================================"
 
 xdg-user-dirs-update
-echo "file:///home/$(whoami)/Downloads
-file:///home/$(whoami)/Documents
-file:///home/$(whoami)/Pictures
-file:///home/$(whoami)/Videos
-file:///home/$(whoami)/Music" > $HOME/.config/gtk-3.0/bookmarks
+sed -i "s/home\/.*\//home\/$(whoami)\//" $HOME/.config/gtk-3.0/bookmarks
 sed -i 's/has imv, .* X, flag f = imv/X, flag f = \/usr\/libexec\/imv\/imv/' $HOME/.config/ranger/rifle.conf
 sed -i "s/home\/.*\/Desktop/home\/$(whoami)\/Desktop/" $HOME/.config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml
-mkdir -p $HOME/.local/bin
-cp -R $HOME/scripts/set-theming-xfce.sh $HOME/.local/bin/set-theming-xfce
 echo "Xfce installed via e33io script: $(date '+%B %d, %Y, %H:%M')" \
 | tee -a $HOME/.install-info > /dev/null
 rm -rf $HOME/core

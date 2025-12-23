@@ -87,6 +87,7 @@ echo "========================================================================"
 
 cp -R $HOME/core/home/.??* $HOME/
 cp -R $HOME/core/debian/home/.??* $HOME/
+cp -R $HOME/scripts/set-theming-jwm.sh $HOME/.local/bin/set-theming-jwm
 cp -R $HOME/scripts/window-control.sh $HOME/.local/bin
 sudo cp -R $HOME/core/root/* /
 sudo cp -R $HOME/core/debian/root/* /
@@ -102,6 +103,16 @@ if [ ! -f "$HOME/.install-info" ]; then
 fi
 sudo update-initramfs -u
 sudo update-grub
+
+echo "========================================================================"
+echo "Install custom themes and change Papirus folders color"
+echo "========================================================================"
+
+sh $HOME/scripts/install-custom-themes.sh
+if ! command -v papirus-folders > /dev/null 2>&1; then
+    wget -qO- https://git.io/papirus-folders-install | sh
+    papirus-folders -C adwaita --theme Papirus-Dark
+fi
 
 clear
 while true; do
@@ -158,26 +169,12 @@ if [ -f "/etc/devuan_version" ]; then
 fi
 
 echo "========================================================================"
-echo "Install custom themes and change Papirus folders color"
-echo "========================================================================"
-
-sh $HOME/scripts/install-custom-themes.sh
-if ! command -v papirus-folders > /dev/null 2>&1; then
-    wget -qO- https://git.io/papirus-folders-install | sh
-fi
-papirus-folders -C adwaita --theme Papirus-Dark
-
-echo "========================================================================"
-echo "Add bookmarks and clean up user directory"
+echo "Update and clean up user directory"
 echo "========================================================================"
 
 xdg-user-dirs-update
-echo "file:///home/$(whoami)/Downloads
-file:///home/$(whoami)/Documents
-file:///home/$(whoami)/Pictures
-file:///home/$(whoami)/Videos
-file:///home/$(whoami)/Music" > $HOME/.config/gtk-3.0/bookmarks
 sed -i 's/16, 37/16, 56/' $HOME/.config/dunst/dunstrc
+sed -i "s/home\/.*\//home\/$(whoami)\//" $HOME/.config/gtk-3.0/bookmarks
 sed -i '/mate-polkit/d' $HOME/.config/jwm/autostart
 sed -i '/xbindkeys/d' $HOME/.config/jwm/autostart
 sed -i '/at-spi/d' $HOME/.config/jwm/autostart
@@ -185,9 +182,7 @@ sed -i 's/Dmenu/Floating/' $HOME/.config/rofi/config.rasi
 sed -i 's/has imv, .* X, flag f = imv/X, flag f = \/usr\/libexec\/imv\/imv/' $HOME/.config/ranger/rifle.conf
 sed -i "s/home\/.*\/Desktop/home\/$(whoami)\/Desktop/" $HOME/.config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml
 sed -i "s/~\/\.gtkrc-2\.0\.mine/\/home\/$(whoami)\/\.gtkrc-2\.0\.mine/" $HOME/.gtkrc-2.0
-printf "%s\n" "" "# Set XDG_CURRENT_DESKTOP" "export XDG_CURRENT_DESKTOP=jwm" \
-| tee -a $HOME/.profile > /dev/null
-cp -R $HOME/scripts/set-theming-jwm.sh $HOME/.local/bin/set-theming-jwm
+printf "%s\n" "" "export XDG_CURRENT_DESKTOP=jwm" | tee -a $HOME/.profile > /dev/null
 echo "JWM installed via e33io script: $(date '+%B %d, %Y, %H:%M')" \
 | tee -a $HOME/.install-info > /dev/null
 rm -rf $HOME/core
