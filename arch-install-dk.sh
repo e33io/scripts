@@ -167,7 +167,8 @@ sed -i "s/home\/.*\/\.config/home\/$(whoami)\/\.config/" $HOME/.config/qt6ct/qt6
 sed -i "s/home\/.*\/Desktop/home\/$(whoami)\/Desktop/" $HOME/.config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml
 sed -i "s/~\/\.gtkrc-2\.0\.mine/\/home\/$(whoami)\/\.gtkrc-2\.0\.mine/" $HOME/.gtkrc-2.0
 if ! grep -q 'XDG_CURRENT_DESKTOP=dk' $HOME/.profile; then
-    printf "%s\n" "" "export XDG_CURRENT_DESKTOP=dk" | tee -a $HOME/.profile > /dev/null
+    printf "%s\n" "" "# Set XDG desktop" "export XDG_CURRENT_DESKTOP=dk" \
+    | tee -a $HOME/.profile > /dev/null
 fi
 echo "dk installed via e33io script: $(date '+%B %d, %Y, %H:%M')" \
 | tee -a $HOME/.install-info > /dev/null
