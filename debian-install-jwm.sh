@@ -175,9 +175,7 @@ echo "========================================================================"
 xdg-user-dirs-update
 sed -i 's/16, 37/16, 56/' $HOME/.config/dunst/dunstrc
 sed -i "s/home\/.*\//home\/$(whoami)\//" $HOME/.config/gtk-3.0/bookmarks
-sed -i '/mate-polkit/d' $HOME/.config/jwm/autostart
-sed -i '/xbindkeys/d' $HOME/.config/jwm/autostart
-sed -i '/at-spi/d' $HOME/.config/jwm/autostart
+sed -i -e '/mate-polkit/d' -e '/xbindkeys/d' -e '/at-spi/d' $HOME/.config/jwm/autostart
 sed -i 's/Dmenu/Floating/' $HOME/.config/rofi/config.rasi
 sed -i 's/has imv, .* X, flag f = imv/X, flag f = \/usr\/libexec\/imv\/imv/' $HOME/.config/ranger/rifle.conf
 sed -i "s/home\/.*\/Desktop/home\/$(whoami)\/Desktop/" $HOME/.config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml

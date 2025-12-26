@@ -156,9 +156,7 @@ echo "Update and clean up user directory"
 echo "========================================================================"
 
 xdg-user-dirs-update
-sed -i '/libexec/d' $HOME/.config/dk/dkrc
-sed -i 's/#\/usr\/lib/\/usr\/lib/' $HOME/.config/dk/dkrc
-sed -i 's/#xbindkeys/xbindkeys/' $HOME/.config/dk/dkrc
+sed -i -e '/libexec/d' -e 's/#\/usr\/lib/\/usr\/lib/' -e 's/#xbindkeys/xbindkeys/' $HOME/.config/dk/dkrc
 sed -i 's/brave-browser/brave/' $HOME/.config/dk/sxhkdrc
 sed -i 's/"top": 1,/"top": 0,/' $HOME/.config/fastfetch/config.jsonc
 sed -i "s/home\/.*\//home\/$(whoami)\//" $HOME/.config/gtk-3.0/bookmarks

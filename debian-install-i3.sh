@@ -176,9 +176,7 @@ echo "========================================================================"
 
 xdg-user-dirs-update
 sed -i "s/home\/.*\//home\/$(whoami)\//" $HOME/.config/gtk-3.0/bookmarks
-sed -i '/mate-polkit/d' $HOME/.config/i3/startup.conf
-sed -i '/xbindkeys/d' $HOME/.config/i3/startup.conf
-sed -i '/at-spi/d' $HOME/.config/i3/startup.conf
+sed -i -e '/mate-polkit/d' -e '/xbindkeys/d' -e '/at-spi/d' $HOME/.config/i3/startup.conf
 sed -i 's/has imv, .* X, flag f = imv/X, flag f = \/usr\/libexec\/imv\/imv/' $HOME/.config/ranger/rifle.conf
 sed -i "s/home\/.*\/Desktop/home\/$(whoami)\/Desktop/" $HOME/.config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml
 sed -i "s/~\/\.gtkrc-2\.0\.mine/\/home\/$(whoami)\/\.gtkrc-2\.0\.mine/" $HOME/.gtkrc-2.0

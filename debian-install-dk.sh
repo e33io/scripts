@@ -196,9 +196,7 @@ echo "Update and clean up user directory"
 echo "========================================================================"
 
 xdg-user-dirs-update
-sed -i '/mate-polkit/d' $HOME/.config/dk/dkrc
-sed -i '/xbindkeys/d' $HOME/.config/dk/dkrc
-sed -i '/at-spi/d' $HOME/.config/dk/dkrc
+sed -i -e '/mate-polkit/d' -e '/xbindkeys/d' -e '/at-spi/d' $HOME/.config/dk/dkrc
 sed -i "s/home\/.*\//home\/$(whoami)\//" $HOME/.config/gtk-3.0/bookmarks
 sed -i 's/has imv, .* X, flag f = imv/X, flag f = \/usr\/libexec\/imv\/imv/' $HOME/.config/ranger/rifle.conf
 sed -i "s/home\/.*\/Desktop/home\/$(whoami)\/Desktop/" $HOME/.config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml

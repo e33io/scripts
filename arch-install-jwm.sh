@@ -160,9 +160,7 @@ xdg-user-dirs-update
 sed -i 's/16, 37/16, 56/' $HOME/.config/dunst/dunstrc
 sed -i 's/"top": 1,/"top": 0,/' $HOME/.config/fastfetch/config.jsonc
 sed -i "s/home\/.*\//home\/$(whoami)\//" $HOME/.config/gtk-3.0/bookmarks
-sed -i '/libexec/d' $HOME/.config/jwm/autostart
-sed -i 's/#\/usr\/lib/\/usr\/lib/' $HOME/.config/jwm/autostart
-sed -i 's/#xbindkeys/xbindkeys/' $HOME/.config/jwm/autostart
+sed -i -e '/libexec/d' -e 's/#\/usr\/lib/\/usr\/lib/' -e 's/#xbindkeys/xbindkeys/' $HOME/.config/jwm/autostart
 sed -i 's/brave-browser/brave/' $HOME/.config/jwm/jwmrc
 sed -i "s/home\/.*\/\.config/home\/$(whoami)\/\.config/" $HOME/.config/qt5ct/qt5ct.conf
 sed -i "s/home\/.*\/\.config/home\/$(whoami)\/\.config/" $HOME/.config/qt6ct/qt6ct.conf
