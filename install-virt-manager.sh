@@ -33,10 +33,10 @@ echo "========================================================================"
 echo "Set up virt-manager"
 echo "========================================================================"
 
-sudo sed -i "s/^#unix_sock_group = .*/unix_sock_group = \"libvirt\"/" /etc/libvirt/libvirtd.conf
-sudo sed -i "s/^#unix_sock_rw_perms = .*/unix_sock_rw_perms = \"0770\"/" /etc/libvirt/libvirtd.conf
-sudo sed -i "s/^#user = .*/user = \"$(whoami)\"/" /etc/libvirt/qemu.conf
-sudo sed -i "s/^#group = .*/group = \"libvirt\"/" /etc/libvirt/qemu.conf
+sudo sed -i -e "s/^#unix_sock_group = .*/unix_sock_group = \"libvirt\"/" \
+-e "s/^#unix_sock_rw_perms = .*/unix_sock_rw_perms = \"0770\"/" /etc/libvirt/libvirtd.conf
+sudo sed -i -e "s/^#user = .*/user = \"$(whoami)\"/" \
+-e "s/^#group = .*/group = \"libvirt\"/" /etc/libvirt/qemu.conf
 sudo systemctl enable --now libvirtd.service
 sudo usermod -aG libvirt $(whoami)
 

@@ -97,6 +97,6 @@ if [ -f "$HOME/.config/cava/config" ]; then
     echo "Update cava config file"
     echo "========================================================================"
 
-    sed -i 's/; method = pulse/method = pulse/' $HOME/.config/cava/config
-    sed -i 's/; source = auto/source = auto/' $HOME/.config/cava/config
+    sed -i -e 's/; method = pulse/method = pulse/' \
+    -e 's/; source = auto/source = auto/' $HOME/.config/cava/config
 fi

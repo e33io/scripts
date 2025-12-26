@@ -99,12 +99,8 @@ echo "========================================================================"
 echo "Remove prespecified GTK2 icon sizes to fix scaling issues"
 echo "========================================================================"
 
-sudo sed -i '/gtk-icon-sizes/d' /usr/share/themes/Mint*/gtk-2.0/gtkrc
-sudo sed -i '/gtk-menu/d' /usr/share/themes/Mint*/gtk-2.0/gtkrc
-sudo sed -i '/gtk-button/d' /usr/share/themes/Mint*/gtk-2.0/gtkrc
-sudo sed -i '/gtk-small-toolbar/d' /usr/share/themes/Mint*/gtk-2.0/gtkrc
-sudo sed -i '/gtk-dnd/d' /usr/share/themes/Mint*/gtk-2.0/gtkrc
-sudo sed -i '/gtk-dialog/d' /usr/share/themes/Mint*/gtk-2.0/gtkrc
+sudo sed -i -e '/gtk-icon-sizes/d' -e '/gtk-menu/d' -e '/gtk-button/d' -e '/gtk-small-toolbar/d' \
+-e '/gtk-dnd/d' -e '/gtk-dialog/d' /usr/share/themes/Mint*/gtk-2.0/gtkrc
 
 echo "========================================================================"
 echo "Clone custom theming repo"

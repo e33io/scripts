@@ -80,18 +80,18 @@ theming_files () {
         fi
     fi
     # Qt5ct theme and icon theme
-    sed -i "s/^style=.*/style=$qt_ct_theme/" $HOME/.config/qt5ct/qt5ct.conf
-    sed -i "s/icon_theme=.*/icon_theme=$icon_theme/" $HOME/.config/qt5ct/qt5ct.conf
+    sed -i -e "s/^style=.*/style=$qt_ct_theme/" \
+    -e "s/icon_theme=.*/icon_theme=$icon_theme/" $HOME/.config/qt5ct/qt5ct.conf
     # Qt6ct theme and icon theme
-    sed -i "s/^style=.*/style=$qt_ct_theme/" $HOME/.config/qt6ct/qt6ct.conf
-    sed -i "s/icon_theme=.*/icon_theme=$icon_theme/" $HOME/.config/qt6ct/qt6ct.conf
+    sed -i -e "s/^style=.*/style=$qt_ct_theme/" \
+    -e "s/icon_theme=.*/icon_theme=$icon_theme/" $HOME/.config/qt6ct/qt6ct.conf
     # Kvantum theme
     printf "[General]\ntheme=" | tee $HOME/.config/Kvantum/kvantum.kvconfig > /dev/null
     sed -i "s/theme=.*/theme=$kvantum_theme/" $HOME/.config/Kvantum/kvantum.kvconfig
     # Lightdm background color, GTK theme and icon theme
-    sudo sed -i "s/^background =.*/background = $desktop_bg_color/" /etc/lightdm/lightdm-gtk-greeter.conf
-    sudo sed -i "s/^icon-theme-name =.*/icon-theme-name = $icon_theme/" /etc/lightdm/lightdm-gtk-greeter.conf
-    sudo sed -i "s/^theme-name =.*/theme-name = $gtk_theme/" /etc/lightdm/lightdm-gtk-greeter.conf
+    sudo sed -i -e "s/^background =.*/background = $desktop_bg_color/" \
+    -e "s/^icon-theme-name =.*/icon-theme-name = $icon_theme/" \
+    -e "s/^theme-name =.*/theme-name = $gtk_theme/" /etc/lightdm/lightdm-gtk-greeter.conf
     # Papirus folders color
     papirus-folders -C $papirus_folders --theme $icon_theme > /dev/null
     # CAVA foreground color
