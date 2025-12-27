@@ -130,7 +130,7 @@ while true; do
     echo "  2) HiDPI (192 dpi settings for 'Window Scaling 2x')"
     echo "------------------------------------------------------------------------"
 
-    read -p "What type of monitor are you using? " n
+    read -rp "What type of monitor are you using? " n
     case $n in
         1) echo "You chose Standard HD (96 dpi) monitor";
            sh "$HOME"/scripts/mod-dpi-scaling-xfce.sh;

@@ -40,7 +40,7 @@ echo "(x-www-browser) web browser"
 echo "------------------------------------------------------------------------"
 
 while true; do
-    read -p "Do you want to set Brave as the default DebianAlternatives (x-www-browser) browser? (y/n) " yn
+    read -rp "Do you want to set Brave as the default DebianAlternatives (x-www-browser) browser? (y/n) " yn
     case $yn in
         [Yy]* ) sudo update-alternatives --set x-www-browser /usr/bin/brave-browser-stable;
                 echo "You chose to set Brave as the default browser";

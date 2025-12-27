@@ -87,7 +87,7 @@ echo "Option to install the backports kernel for newer hardware"
 echo "========================================================================"
 
 while true; do
-    read -p "Do you want to install the backports kernel? (y/n) " yn
+    read -rp "Do you want to install the backports kernel? (y/n) " yn
     case $yn in
         [Yy]* ) sudo apt -t trixie-backports -y install linux-image-amd64;
                 break;;

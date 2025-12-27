@@ -40,7 +40,7 @@ echo "(x-www-browser) web browser"
 echo "------------------------------------------------------------------------"
 
 while true; do
-    read -p "Do you want to set LibreWolf as the default DebianAlternatives (x-www-browser) browser? (y/n) " yn
+    read -rp "Do you want to set LibreWolf as the default DebianAlternatives (x-www-browser) browser? (y/n) " yn
     case $yn in
         [Yy]* ) sudo update-alternatives --set x-www-browser /usr/bin/librewolf;
                 echo "You chose to set LibreWolf as the default browser";

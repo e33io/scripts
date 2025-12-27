@@ -493,7 +493,7 @@ while true; do
     printf "  18) Yaru-Teal-Dark         \e[38;5;236m▇▇▇\e[0m\e[38;5;030m▇▇▇\e[0m\n"
     echo
 
-    read -p "Which theme do you want to use? " n
+    read -rp "Which theme do you want to use? " n
     case $n in
         0) echo "You chose to keep current theming";
            exit 1;;
