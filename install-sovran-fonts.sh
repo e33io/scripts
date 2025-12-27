@@ -16,25 +16,25 @@ echo "========================================================================"
 echo "Clone font files and make truetype directory"
 echo "========================================================================"
 
-git clone https://github.com/e33io/sovran-fonts $HOME/temp-fonts
+git clone https://github.com/e33io/sovran-fonts "$HOME"/temp-fonts
 sudo mkdir -p /usr/share/fonts/truetype
 
 echo "========================================================================"
 echo "Copy Sovran fonts to the truetype directory"
 echo "========================================================================"
 
-sudo cp -R $HOME/temp-fonts/SovranMono/SovranMono /usr/share/fonts/truetype
-sudo cp -R $HOME/temp-fonts/SovranMono/SovranMono-Nerd /usr/share/fonts/truetype
-sudo cp -R $HOME/temp-fonts/SovranMono/SovranMono-Nerd-Mono /usr/share/fonts/truetype
-sudo cp -R $HOME/temp-fonts/SovranMono/SovranMono-Nerd-Propo /usr/share/fonts/truetype
-sudo cp -R $HOME/temp-fonts/SovranSans/SovranSans /usr/share/fonts/truetype
-sudo cp -R $HOME/temp-fonts/SovranSerif/SovranSerif /usr/share/fonts/truetype
+sudo cp -R "$HOME"/temp-fonts/SovranMono/SovranMono /usr/share/fonts/truetype
+sudo cp -R "$HOME"/temp-fonts/SovranMono/SovranMono-Nerd /usr/share/fonts/truetype
+sudo cp -R "$HOME"/temp-fonts/SovranMono/SovranMono-Nerd-Mono /usr/share/fonts/truetype
+sudo cp -R "$HOME"/temp-fonts/SovranMono/SovranMono-Nerd-Propo /usr/share/fonts/truetype
+sudo cp -R "$HOME"/temp-fonts/SovranSans/SovranSans /usr/share/fonts/truetype
+sudo cp -R "$HOME"/temp-fonts/SovranSerif/SovranSerif /usr/share/fonts/truetype
 
 echo "========================================================================"
 echo "Clean up temp files and cache fonts"
 echo "========================================================================"
 
-rm -rf $HOME/temp-fonts
+rm -rf "$HOME"/temp-fonts
 fc-cache -f
 
 echo "========================================================================"

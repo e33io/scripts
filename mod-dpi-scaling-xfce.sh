@@ -20,20 +20,20 @@ fi
 # update xsettings.xml (cursor size and window scaling)
 sed -i -e 's/"CursorThemeSize" type="int" value="48"/"CursorThemeSize" type="int" value="24"/' \
 -e 's/"WindowScalingFactor" type="int" value="2"/"WindowScalingFactor" type="int" value="1"/' \
-$HOME/.config/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml
+"$HOME"/.config/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml
 
 # update xfwm4.xml (window theme)
 sed -i 's/"theme" type="string" value="System-40"/"theme" type="string" value="System-22"/' \
-$HOME/.config/xfce4/xfconf/xfce-perchannel-xml/xfwm4.xml
+"$HOME"/.config/xfce4/xfconf/xfce-perchannel-xml/xfwm4.xml
 
 # update .profile (comments out the Qt HiDPI environment variables)
 sed -i -e 's/export QT_AUTO_SCREEN_SET_FACTOR=0/#export QT_AUTO_SCREEN_SET_FACTOR=0/' \
 -e 's/export QT_SCALE_FACTOR=2/#export QT_SCALE_FACTOR=2/' \
--e 's/export QT_FONT_DPI=96/#export QT_FONT_DPI=96/' $HOME/.profile
+-e 's/export QT_FONT_DPI=96/#export QT_FONT_DPI=96/' "$HOME"/.profile
 
 # update .Xresources (font size and border spacing)
 sed -i -e 's/XTerm\*faceSize.*20/XTerm*faceSize:        10/' \
--e 's/XTerm\*internalBorder.*14/XTerm*internalBorder:  7/' $HOME/.Xresources
+-e 's/XTerm\*internalBorder.*14/XTerm*internalBorder:  7/' "$HOME"/.Xresources
 
 # update Xgsession script for lightdm-gtk-greeter (GTK scaling)
 if [ -f "/etc/lightdm/Xgsession" ]; then

@@ -26,7 +26,7 @@ if [ -f "/etc/pacman.conf" ]; then
 fi
 
 device="$(glxinfo -B | awk '/Vendor:/ { print $2 }')"
-if [ $device = Intel ]; then
+if [ "$device" = Intel ]; then
     echo 'Section "Device"
     Identifier "Intel Graphics"
     Driver     "intel"

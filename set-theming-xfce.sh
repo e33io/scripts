@@ -18,10 +18,10 @@ if [ "$(id -u)" = 0 ]; then
 fi
 
 # install custom-themes if needed
-if ! grep -q themes $HOME/.install-info; then
-    git clone https://github.com/e33io/scripts $HOME/scripts-theming
-    sh $HOME/scripts-theming/install-custom-themes.sh
-    rm -rf $HOME/scripts-theming
+if ! grep -q themes "$HOME"/.install-info; then
+    git clone https://github.com/e33io/scripts "$HOME"/scripts-theming
+    sh "$HOME"/scripts-theming/install-custom-themes.sh
+    rm -rf "$HOME"/scripts-theming
 fi
 
 # install papirus-icon-theme and papirus-folders if needed
@@ -42,52 +42,52 @@ theming_files () {
     xfconf-query -c xsettings -p /Net/ThemeName -s "$gtk_theme"
     xfconf-query -c xsettings -p /Net/IconThemeName -s "$icon_theme"
     # Xfce docklike plugin config and color
-    if [ -f $HOME/.config/xfce4/panel/docklike*.rc ]; then
-        if ! grep -q ^indicatorStyle= $HOME/.config/xfce4/panel/docklike*.rc; then
+    if [ -f "$HOME"/.config/xfce4/panel/docklike*.rc ]; then
+        if ! grep -q ^indicatorStyle= "$HOME"/.config/xfce4/panel/docklike*.rc; then
             echo "indicatorStyle=0" \
-            | tee -a $HOME/.config/xfce4/panel/docklike*.rc > /dev/null
+            | tee -a "$HOME"/.config/xfce4/panel/docklike*.rc > /dev/null
         else
             sed -i "s/^indicatorStyle=.*/indicatorStyle=0/" \
-            $HOME/.config/xfce4/panel/docklike*.rc
+            "$HOME"/.config/xfce4/panel/docklike*.rc
         fi
-        if ! grep -q inactiveIndicatorStyle= $HOME/.config/xfce4/panel/docklike*.rc; then
+        if ! grep -q inactiveIndicatorStyle= "$HOME"/.config/xfce4/panel/docklike*.rc; then
             echo "inactiveIndicatorStyle=2" \
-            | tee -a $HOME/.config/xfce4/panel/docklike*.rc > /dev/null
+            | tee -a "$HOME"/.config/xfce4/panel/docklike*.rc > /dev/null
         else
             sed -i "s/inactiveIndicatorStyle=.*/inactiveIndicatorStyle=2/" \
-            $HOME/.config/xfce4/panel/docklike*.rc
+            "$HOME"/.config/xfce4/panel/docklike*.rc
         fi
-        if ! grep -q indicatorColorFromTheme= $HOME/.config/xfce4/panel/docklike*.rc; then
+        if ! grep -q indicatorColorFromTheme= "$HOME"/.config/xfce4/panel/docklike*.rc; then
             echo "indicatorColorFromTheme=false" \
-            | tee -a $HOME/.config/xfce4/panel/docklike*.rc > /dev/null
+            | tee -a "$HOME"/.config/xfce4/panel/docklike*.rc > /dev/null
         else
             sed -i "s/indicatorColorFromTheme=true/indicatorColorFromTheme=false/" \
-            $HOME/.config/xfce4/panel/docklike*.rc
+            "$HOME"/.config/xfce4/panel/docklike*.rc
         fi
-        if ! grep -q indicatorColor= $HOME/.config/xfce4/panel/docklike*.rc; then
+        if ! grep -q indicatorColor= "$HOME"/.config/xfce4/panel/docklike*.rc; then
             echo "indicatorColor=$accent_color_rgb" \
-            | tee -a $HOME/.config/xfce4/panel/docklike*.rc > /dev/null
+            | tee -a "$HOME"/.config/xfce4/panel/docklike*.rc > /dev/null
         else
             sed -i "s/indicatorColor=.*/indicatorColor=$accent_color_rgb/" \
-            $HOME/.config/xfce4/panel/docklike*.rc
+            "$HOME"/.config/xfce4/panel/docklike*.rc
         fi
-        if ! grep -q inactiveColor= $HOME/.config/xfce4/panel/docklike*.rc; then
+        if ! grep -q inactiveColor= "$HOME"/.config/xfce4/panel/docklike*.rc; then
             echo "inactiveColor=$accent_color_rgb" \
-            | tee -a $HOME/.config/xfce4/panel/docklike*.rc > /dev/null
+            | tee -a "$HOME"/.config/xfce4/panel/docklike*.rc > /dev/null
         else
             sed -i "s/inactiveColor=.*/inactiveColor=$accent_color_rgb/" \
-            $HOME/.config/xfce4/panel/docklike*.rc
+            "$HOME"/.config/xfce4/panel/docklike*.rc
         fi
     fi
     # Qt5ct theme and icon theme
     sed -i -e "s/^style=.*/style=$qt_ct_theme/" \
-    -e "s/icon_theme=.*/icon_theme=$icon_theme/" $HOME/.config/qt5ct/qt5ct.conf
+    -e "s/icon_theme=.*/icon_theme=$icon_theme/" "$HOME"/.config/qt5ct/qt5ct.conf
     # Qt6ct theme and icon theme
     sed -i -e "s/^style=.*/style=$qt_ct_theme/" \
-    -e "s/icon_theme=.*/icon_theme=$icon_theme/" $HOME/.config/qt6ct/qt6ct.conf
+    -e "s/icon_theme=.*/icon_theme=$icon_theme/" "$HOME"/.config/qt6ct/qt6ct.conf
     # Kvantum theme
-    printf "[General]\ntheme=" | tee $HOME/.config/Kvantum/kvantum.kvconfig > /dev/null
-    sed -i "s/theme=.*/theme=$kvantum_theme/" $HOME/.config/Kvantum/kvantum.kvconfig
+    printf "[General]\ntheme=" | tee "$HOME"/.config/Kvantum/kvantum.kvconfig > /dev/null
+    sed -i "s/theme=.*/theme=$kvantum_theme/" "$HOME"/.config/Kvantum/kvantum.kvconfig
     # Lightdm background color, GTK theme and icon theme
     sudo sed -i -e "s/^background =.*/background = $desktop_bg_color/" \
     -e "s/^icon-theme-name =.*/icon-theme-name = $icon_theme/" \
@@ -96,7 +96,7 @@ theming_files () {
     papirus-folders -C $papirus_folders --theme $icon_theme > /dev/null
     # CAVA foreground color
     if [ -f "$HOME/.config/cava/config" ]; then
-        sed -i "s/^foreground = .*/foreground = '$accent_color'/" $HOME/.config/cava/config
+        sed -i "s/^foreground = .*/foreground = '$accent_color'/" "$HOME"/.config/cava/config
     fi
 }
 

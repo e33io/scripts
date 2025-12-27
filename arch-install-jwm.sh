@@ -49,18 +49,18 @@ echo "========================================================================"
 echo "Install graphics drivers"
 echo "========================================================================"
 
-bash $HOME/scripts/install-gpu-packages.sh
+bash "$HOME"/scripts/install-gpu-packages.sh
 
 if ! command -v yay > /dev/null 2>&1; then
     echo "========================================================================"
     echo "Setup Yay for AUR"
     echo "========================================================================"
 
-    git clone https://aur.archlinux.org/yay-bin.git $HOME/yay-bin
-    cd $HOME/yay-bin
+    git clone https://aur.archlinux.org/yay-bin.git "$HOME"/yay-bin
+    cd "$HOME"/yay-bin
     makepkg -si --noconfirm
     cd
-    rm -rf $HOME/yay-bin
+    rm -rf "$HOME"/yay-bin
 fi
 
 echo "========================================================================"
@@ -81,23 +81,23 @@ echo "========================================================================"
 echo "Clone custom configuration files"
 echo "========================================================================"
 
-git clone https://github.com/e33io/core $HOME/core
+git clone https://github.com/e33io/core "$HOME"/core
 
 echo "========================================================================"
 echo "Copy custom configuration files"
 echo "========================================================================"
 
-cp -R $HOME/core/home/.??* $HOME/
-cp -R $HOME/core/arch/home/.??* $HOME/
-cp -R $HOME/scripts/set-theming-jwm.sh $HOME/.local/bin/set-theming-jwm
-cp -R $HOME/scripts/window-control.sh $HOME/.local/bin
-sudo cp -R $HOME/core/root/* /
-sudo cp -R $HOME/core/arch/root/* /
+cp -R "$HOME"/core/home/.??* "$HOME"/
+cp -R "$HOME"/core/arch/home/.??* "$HOME"/
+cp -R "$HOME"/scripts/set-theming-jwm.sh "$HOME"/.local/bin/set-theming-jwm
+cp -R "$HOME"/scripts/window-control.sh "$HOME"/.local/bin
+sudo cp -R "$HOME"/core/root/* /
+sudo cp -R "$HOME"/core/arch/root/* /
 sudo mkdir -p /boot/grub/fonts
 sudo cp -R /usr/share/grub/ter-* /boot/grub/fonts
 sudo mkdir -p /root/.config/{gtk-3.0,micro,qt5ct,qt6ct}
 for dir in gtk-3.0 micro qt5ct qt6ct; do
-    sudo ln -sf $HOME/.config/$dir/* /root/.config/$dir/
+    sudo ln -sf "$HOME"/.config/$dir/* /root/.config/$dir/
 done
 if [ ! -f "$HOME/.install-info" ]; then
     printf '%s\n' '# Set command prompt' 'PS1="\[\e[01;31m\]\u \w/#\[\e[m\] "' \
@@ -108,7 +108,7 @@ echo "========================================================================"
 echo "Install custom themes and change Papirus folders color"
 echo "========================================================================"
 
-sh $HOME/scripts/install-custom-themes.sh
+sh "$HOME"/scripts/install-custom-themes.sh
 if ! command -v papirus-folders > /dev/null 2>&1; then
     wget -qO- https://git.io/papirus-folders-install | sh
     papirus-folders -C adwaita --theme Papirus-Dark
@@ -127,7 +127,7 @@ while true; do
     read -p "What type of monitor are you using? " n
     case $n in
         1) echo "You chose Standard HD (96 dpi) monitor";
-           sh $HOME/scripts/mod-dpi-scaling-wm.sh;
+           sh "$HOME"/scripts/mod-dpi-scaling-wm.sh;
            sudo sed -i 's/^greeter-wrapper/#greeter-wrapper/' /etc/lightdm/lightdm.conf;
            break;;
         2) echo "You chose HiDPI (192 dpi) monitor";
@@ -137,19 +137,19 @@ while true; do
 done
 
 pc_type="$(hostnamectl chassis)"
-if [ $pc_type = laptop ] || [ $pc_type = notebook ] \
-    || [ $pc_type = portable ]; then
+if [ "$pc_type" = laptop ] || [ "$pc_type" = notebook ] \
+    || [ "$pc_type" = portable ]; then
     echo "========================================================================"
     echo "Modify window manager configs for laptop use"
     echo "========================================================================"
 
-    sh $HOME/scripts/mod-wm-laptop.sh
-elif [ $pc_type = vm ]; then
+    sh "$HOME"/scripts/mod-wm-laptop.sh
+elif [ "$pc_type" = vm ]; then
     echo "========================================================================"
     echo "Install spice-vdagent and update VM-specific configs"
     echo "========================================================================"
 
-    sh $HOME/scripts/mod-virt-machines.sh
+    sh "$HOME"/scripts/mod-virt-machines.sh
 fi
 
 echo "========================================================================"
@@ -157,24 +157,24 @@ echo "Update and clean up user directory"
 echo "========================================================================"
 
 xdg-user-dirs-update
-sed -i 's/16, 37/16, 56/' $HOME/.config/dunst/dunstrc
-sed -i 's/"top": 1,/"top": 0,/' $HOME/.config/fastfetch/config.jsonc
-sed -i "s/home\/.*\//home\/$(whoami)\//" $HOME/.config/gtk-3.0/bookmarks
-sed -i -e '/libexec/d' -e 's/#\/usr\/lib/\/usr\/lib/' -e 's/#xbindkeys/xbindkeys/' $HOME/.config/jwm/autostart
-sed -i 's/brave-browser/brave/' $HOME/.config/jwm/jwmrc
-sed -i "s/home\/.*\/\.config/home\/$(whoami)\/\.config/" $HOME/.config/qt5ct/qt5ct.conf
-sed -i "s/home\/.*\/\.config/home\/$(whoami)\/\.config/" $HOME/.config/qt6ct/qt6ct.conf
-sed -i 's/Dmenu/Floating/' $HOME/.config/rofi/config.rasi
-sed -i "s/home\/.*\/Desktop/home\/$(whoami)\/Desktop/" $HOME/.config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml
-sed -i "s/~\/\.gtkrc-2\.0\.mine/\/home\/$(whoami)\/\.gtkrc-2\.0\.mine/" $HOME/.gtkrc-2.0
-if ! grep -q 'XDG_CURRENT_DESKTOP=jwm' $HOME/.profile; then
+sed -i 's/16, 37/16, 56/' "$HOME"/.config/dunst/dunstrc
+sed -i 's/"top": 1,/"top": 0,/' "$HOME"/.config/fastfetch/config.jsonc
+sed -i "s/home\/.*\//home\/$(whoami)\//" "$HOME"/.config/gtk-3.0/bookmarks
+sed -i -e '/libexec/d' -e 's/#\/usr\/lib/\/usr\/lib/' -e 's/#xbindkeys/xbindkeys/' "$HOME"/.config/jwm/autostart
+sed -i 's/brave-browser/brave/' "$HOME"/.config/jwm/jwmrc
+sed -i "s/home\/.*\/\.config/home\/$(whoami)\/\.config/" "$HOME"/.config/qt5ct/qt5ct.conf
+sed -i "s/home\/.*\/\.config/home\/$(whoami)\/\.config/" "$HOME"/.config/qt6ct/qt6ct.conf
+sed -i 's/Dmenu/Floating/' "$HOME"/.config/rofi/config.rasi
+sed -i "s/home\/.*\/Desktop/home\/$(whoami)\/Desktop/" "$HOME"/.config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml
+sed -i "s/~\/\.gtkrc-2\.0\.mine/\/home\/$(whoami)\/\.gtkrc-2\.0\.mine/" "$HOME"/.gtkrc-2.0
+if ! grep -q 'XDG_CURRENT_DESKTOP=jwm' "$HOME"/.profile; then
     printf "%s\n" "" "# Set XDG desktop" "export XDG_CURRENT_DESKTOP=jwm" \
-    | tee -a $HOME/.profile > /dev/null
+    | tee -a "$HOME"/.profile > /dev/null
 fi
 echo "JWM installed via e33io script: $(date '+%B %d, %Y, %H:%M')" \
-| tee -a $HOME/.install-info > /dev/null
-rm -rf $HOME/core
-rm -rf $HOME/scripts
+| tee -a "$HOME"/.install-info > /dev/null
+rm -rf "$HOME"/core
+rm -rf "$HOME"/scripts
 
 clear
 echo "========================================================================"

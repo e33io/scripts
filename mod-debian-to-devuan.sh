@@ -36,7 +36,7 @@ if { [ -d "$HOME/.config/i3" ] || [ -d "$HOME/.config/jwm" ] || [ -d "$HOME/.con
 fi
 
 sys_vendor="$(cat /sys/class/dmi/id/sys_vendor)"
-if [ $sys_vendor = QEMU ]; then
+if [ "$sys_vendor" = QEMU ]; then
     echo "========================================================================"
     echo "Install spice-vdagent and update VM-specific configs"
     echo "========================================================================"
@@ -49,12 +49,12 @@ echo "Replace systemctl with loginctl"
 echo "========================================================================"
 
 if [ -f "$HOME/.local/bin/lock-suspend.sh" ]; then
-    sed -i 's/systemctl/loginctl/g' $HOME/.local/bin/lock-suspend.sh
+    sed -i 's/systemctl/loginctl/g' "$HOME"/.local/bin/lock-suspend.sh
 fi
 if [ -f "$HOME/.local/bin/rofi-power.sh" ]; then
-    sed -i 's/systemctl/loginctl/g' $HOME/.local/bin/rofi-power.sh
+    sed -i 's/systemctl/loginctl/g' "$HOME"/.local/bin/rofi-power.sh
 fi
-sed -i 's/systemctl/loginctl/g' $HOME/.bashrc
+sed -i 's/systemctl/loginctl/g' "$HOME"/.bashrc
 
 echo "========================================================================"
 echo "Remove Debian logo files"
@@ -78,18 +78,18 @@ echo "========================================================================"
 echo "Set default mute and default volume level"
 echo "========================================================================"
 
-mkdir -p $HOME/.config/autostart
+mkdir -p "$HOME"/.config/autostart
 printf "%s\n" "[Desktop Entry]" "Version=1.0" "Type=Application" \
 "Name=audio-default" "Comment=set default mute and default volume level" \
 "Exec=sh -c 'sleep 1; pactl set-sink-mute @DEFAULT_SINK@ false; sleep 6; pactl set-sink-volume @DEFAULT_SINK@ 25%'" \
 "Icon=xfce4-mixer" "StartupNotify=false" "Terminal=false" "NoDisplay=true" \
-"Hidden=false" > $HOME/.config/autostart/audio-default.desktop
-chmod +x $HOME/.config/autostart/audio-default.desktop
+"Hidden=false" > "$HOME"/.config/autostart/audio-default.desktop
+chmod +x "$HOME"/.config/autostart/audio-default.desktop
 if [ -f "/bin/startxfce4" ]; then
-    sed -i 's/25%/25%%/' $HOME/.config/autostart/audio-default.desktop
+    sed -i 's/25%/25%%/' "$HOME"/.config/autostart/audio-default.desktop
 fi
-if [ $sys_vendor = QEMU ]; then
-    sed -i 's/@DEFAULT_SINK@ 25/@DEFAULT_SINK@ 75/' $HOME/.config/autostart/audio-default.desktop
+if [ "$sys_vendor" = QEMU ]; then
+    sed -i 's/@DEFAULT_SINK@ 25/@DEFAULT_SINK@ 75/' "$HOME"/.config/autostart/audio-default.desktop
 fi
 
 if [ -f "$HOME/.config/cava/config" ]; then
@@ -98,5 +98,5 @@ if [ -f "$HOME/.config/cava/config" ]; then
     echo "========================================================================"
 
     sed -i -e 's/; method = pulse/method = pulse/' \
-    -e 's/; source = auto/source = auto/' $HOME/.config/cava/config
+    -e 's/; source = auto/source = auto/' "$HOME"/.config/cava/config
 fi

@@ -26,7 +26,7 @@ if [ -f "/etc/pacman.conf" ]; then
 fi
 
 device="$(glxinfo -B | awk '/Vendor:/ { print $2 }')"
-if [ $device = AMD ]; then
+if [ "$device" = AMD ]; then
     echo 'Section "Device"
     Identifier "AMD Graphics"
     Driver     "amdgpu"
