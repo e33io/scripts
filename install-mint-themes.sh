@@ -17,7 +17,7 @@ if [ "$(id -u)" = 0 ]; then
     exit 1
 fi
 
-if ! { [ -f "/etc/debian_version" ] || [ -f "/etc/pacman.conf" ]; }; then
+if ! { [ -f /etc/debian_version ] || [ -f /etc/pacman.conf ]; }; then
     echo "========================================================================"
     echo "This script is NOT compatible with your version of Linux!"
     echo "It only works with Debian or Arch Linux and it will"
@@ -26,7 +26,7 @@ if ! { [ -f "/etc/debian_version" ] || [ -f "/etc/pacman.conf" ]; }; then
     exit 1
 fi
 
-if [ -f "/etc/debian_version" ]; then
+if [ -f /etc/debian_version ]; then
     echo "========================================================================"
     echo "Install theming dependencies"
     echo "========================================================================"
@@ -69,17 +69,17 @@ if [ -f "/etc/debian_version" ]; then
     rm mint-l-theme_2.0.2_all.deb
 fi
 
-if [ -f "/etc/pacman.conf" ]; then
+if [ -f /etc/pacman.conf ]; then
     if ! command -v yay > /dev/null 2>&1; then
         echo "========================================================================"
         echo "Setup Yay for AUR"
         echo "========================================================================"
 
-        git clone https://aur.archlinux.org/yay-bin.git "$HOME"/yay-bin
-        cd "$HOME"/yay-bin
+        git clone https://aur.archlinux.org/yay-bin.git ~/yay-bin
+        cd ~/yay-bin
         makepkg -si --noconfirm
         cd
-        rm -rf "$HOME"/yay-bin
+        rm -rf ~/yay-bin
     fi
 
     echo "========================================================================"
@@ -106,15 +106,15 @@ echo "========================================================================"
 echo "Clone custom theming repo"
 echo "========================================================================"
 
-git clone https://github.com/e33io/theming "$HOME"/theming-temp
+git clone https://github.com/e33io/theming ~/theming-temp
 
 echo "========================================================================"
 echo "Copy custom Mint themes"
 echo "========================================================================"
 
-sudo cp -R "$HOME"/theming-temp/gtk/Mint* /usr/share/themes
+sudo cp -R ~/theming-temp/gtk/Mint* /usr/share/themes
 sudo mkdir -p /usr/share/Kvantum
-sudo cp -R "$HOME"/theming-temp/Kvantum/Mint* /usr/share/Kvantum
+sudo cp -R ~/theming-temp/Kvantum/Mint* /usr/share/Kvantum
 
 echo "========================================================================"
 echo "Link config files to root user directories for styling"
@@ -123,51 +123,51 @@ echo "========================================================================"
 
 sudo mkdir -p /root/.config
 
-if [ -f "/usr/bin/lxappearance" ]; then
-    if [ ! -f "$HOME/.config/gtk-3.0/settings.ini" ]; then
-        mkdir -p "$HOME"/.config/gtk-3.0
-        touch "$HOME"/.config/gtk-3.0/settings.ini
+if [ -f /usr/bin/lxappearance ]; then
+    if [ ! -f ~/.config/gtk-3.0/settings.ini ]; then
+        mkdir -p ~/.config/gtk-3.0
+        touch ~/.config/gtk-3.0/settings.ini
     fi
-    if [ ! -f "$HOME/.gtkrc-2.0" ]; then
-        touch "$HOME"/.gtkrc-2.0
+    if [ ! -f ~/.gtkrc-2.0 ]; then
+        touch ~/.gtkrc-2.0
     fi
     sudo mkdir -p /root/.config/gtk-3.0
-    sudo ln -sf "$HOME"/.config/gtk-3.0/* /root/.config/gtk-3.0
-    sudo ln -sf "$HOME"/.gtkrc-2.0 /root/.gtkrc-2.0
+    sudo ln -sf ~/.config/gtk-3.0/* /root/.config/gtk-3.0
+    sudo ln -sf ~/.gtkrc-2.0 /root/.gtkrc-2.0
 fi
 
-if [ -f "/usr/bin/kvantummanager" ]; then
-    if [ ! -f "$HOME/.config/Kvantum/kvantum.kvconfig" ]; then
-        mkdir -p "$HOME"/.config/Kvantum
-        touch "$HOME"/.config/Kvantum/kvantum.kvconfig
+if [ -f /usr/bin/kvantummanager ]; then
+    if [ ! -f ~/.config/Kvantum/kvantum.kvconfig ]; then
+        mkdir -p ~/.config/Kvantum
+        touch ~/.config/Kvantum/kvantum.kvconfig
     fi
     sudo mkdir -p /root/.config/Kvantum
-    sudo ln -sf "$HOME"/.config/Kvantum/* /root/.config/Kvantum
+    sudo ln -sf ~/.config/Kvantum/* /root/.config/Kvantum
 fi
 
-if [ -f "/usr/bin/qt5ct" ]; then
-    if [ ! -f "$HOME/.config/qt5ct/qt5ct.conf" ]; then
-        mkdir -p "$HOME"/.config/qt5ct
-        touch "$HOME"/.config/qt5ct/qt5ct.conf
+if [ -f /usr/bin/qt5ct ]; then
+    if [ ! -f ~/.config/qt5ct/qt5ct.conf ]; then
+        mkdir -p ~/.config/qt5ct
+        touch ~/.config/qt5ct/qt5ct.conf
     fi
     sudo mkdir -p /root/.config/qt5ct
-    sudo ln -sf "$HOME"/.config/qt5ct/* /root/.config/qt5ct
+    sudo ln -sf ~/.config/qt5ct/* /root/.config/qt5ct
 fi
 
-if [ -f "/usr/bin/qt6ct" ]; then
-    if [ ! -f "$HOME/.config/qt6ct/qt6ct.conf" ]; then
-        mkdir -p "$HOME"/.config/qt6ct
-        touch "$HOME"/.config/qt6ct/qt6ct.conf
+if [ -f /usr/bin/qt6ct ]; then
+    if [ ! -f ~/.config/qt6ct/qt6ct.conf ]; then
+        mkdir -p ~/.config/qt6ct
+        touch ~/.config/qt6ct/qt6ct.conf
     fi
     sudo mkdir -p /root/.config/qt6ct
-    sudo ln -sf "$HOME"/.config/qt6ct/* /root/.config/qt6ct
+    sudo ln -sf ~/.config/qt6ct/* /root/.config/qt6ct
 fi
 
 echo "========================================================================"
 echo "Clean up user directory"
 echo "========================================================================"
 
-rm -rf "$HOME"/theming-temp
+rm -rf ~/theming-temp
 
 echo "========================================================================"
 echo "All done, themes and icons are now installed"

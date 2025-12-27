@@ -17,42 +17,42 @@ if [ "$(id -u)" = 0 ]; then
 fi
 
 # install other packages
-if [ -f "/etc/debian_version" ]; then
+if [ -f /etc/debian_version ]; then
     sudo apt -y install brightnessctl
 fi
-if [ -f "/etc/pacman.conf" ]; then
+if [ -f /etc/pacman.conf ]; then
     sudo pacman -S --noconfirm --needed brightnessctl
 fi
 
 # i3wm specific configs
-if [ -d "$HOME/.config/i3" ]; then
+if [ -d ~/.config/i3 ]; then
     # update startup.conf (add lock-suspend.sh to xss-lock command)
-    sed -i 's/xss-lock -l/xss-lock -n sh ~\/\.local\/bin\/lock-suspend\.sh -l/' "$HOME"/.config/i3/startup.conf
+    sed -i 's/xss-lock -l/xss-lock -n sh ~\/\.local\/bin\/lock-suspend\.sh -l/' ~/.config/i3/startup.conf
     # update polybar config.ini (modules)
     sed -i -e 's/time pulseaudio eth tray/time battery pulseaudio wlan tray/' \
     -e 's/maxlen = .*/maxlen = 140/' \
     -e 's/%a %b/%b/' \
-    -e 's/%M:%S/%M/' "$HOME"/.config/i3/polybar/config.ini
+    -e 's/%M:%S/%M/' ~/.config/i3/polybar/config.ini
 fi
 
 # JWM specific configs
-if [ -d "$HOME/.config/jwm" ]; then
+if [ -d ~/.config/jwm ]; then
     # update autostart (add lock-suspend.sh to xss-lock command)
-    sed -i 's/xss-lock -l/xss-lock -n sh ~\/\.local\/bin\/lock-suspend\.sh -l/' "$HOME"/.config/jwm/autostart
+    sed -i 's/xss-lock -l/xss-lock -n sh ~\/\.local\/bin\/lock-suspend\.sh -l/' ~/.config/jwm/autostart
     # update polybar config.ini (modules)
     sed -i -e 's/time pulseaudio eth tray/time battery pulseaudio wlan tray/' \
     -e 's/maxlen = .*/maxlen = 140/' \
     -e 's/%a %b/%b/' \
-    -e 's/%M:%S/%M/' "$HOME"/.config/jwm/polybar/config.ini
+    -e 's/%M:%S/%M/' ~/.config/jwm/polybar/config.ini
 fi
 
 # dk specific configs
-if [ -d "$HOME/.config/dk" ]; then
+if [ -d ~/.config/dk ]; then
     # update dkrc (add lock-suspend.sh to xss-lock command)
-    sed -i 's/xss-lock -l/xss-lock -n sh ~\/\.local\/bin\/lock-suspend\.sh -l/' "$HOME"/.config/dk/dkrc
+    sed -i 's/xss-lock -l/xss-lock -n sh ~\/\.local\/bin\/lock-suspend\.sh -l/' ~/.config/dk/dkrc
     # update polybar config.ini (modules)
     sed -i -e 's/time pulseaudio eth tray/time battery pulseaudio wlan tray/' \
     -e 's/maxlen = .*/maxlen = 140/' \
     -e 's/%a %b/%b/' \
-    -e 's/%M:%S/%M/' "$HOME"/.config/dk/polybar/config.ini
+    -e 's/%M:%S/%M/' ~/.config/dk/polybar/config.ini
 fi

@@ -25,7 +25,7 @@ sudo apt -y autoremove
 sudo apt -y autoclean
 sudo apt -y install pulseaudio laptop-detect
 
-if { [ -d "$HOME/.config/i3" ] || [ -d "$HOME/.config/jwm" ] || [ -d "$HOME/.config/dk" ]; }; then
+if { [ -d ~/.config/i3 ] || [ -d ~/.config/jwm ] || [ -d ~/.config/dk ]; }; then
     if laptop-detect > /dev/null 2>&1; then
         echo "========================================================================"
         echo "Modify window manager configs for laptop use"
@@ -48,13 +48,13 @@ echo "========================================================================"
 echo "Replace systemctl with loginctl"
 echo "========================================================================"
 
-if [ -f "$HOME/.local/bin/lock-suspend.sh" ]; then
-    sed -i 's/systemctl/loginctl/g' "$HOME"/.local/bin/lock-suspend.sh
+if [ -f ~/.local/bin/lock-suspend.sh ]; then
+    sed -i 's/systemctl/loginctl/g' ~/.local/bin/lock-suspend.sh
 fi
-if [ -f "$HOME/.local/bin/rofi-power.sh" ]; then
-    sed -i 's/systemctl/loginctl/g' "$HOME"/.local/bin/rofi-power.sh
+if [ -f ~/.local/bin/rofi-power.sh ]; then
+    sed -i 's/systemctl/loginctl/g' ~/.local/bin/rofi-power.sh
 fi
-sed -i 's/systemctl/loginctl/g' "$HOME"/.bashrc
+sed -i 's/systemctl/loginctl/g' ~/.bashrc
 
 echo "========================================================================"
 echo "Remove Debian logo files"
@@ -78,25 +78,25 @@ echo "========================================================================"
 echo "Set default mute and default volume level"
 echo "========================================================================"
 
-mkdir -p "$HOME"/.config/autostart
+mkdir -p ~/.config/autostart
 printf "%s\n" "[Desktop Entry]" "Version=1.0" "Type=Application" \
 "Name=audio-default" "Comment=set default mute and default volume level" \
 "Exec=sh -c 'sleep 1; pactl set-sink-mute @DEFAULT_SINK@ false; sleep 6; pactl set-sink-volume @DEFAULT_SINK@ 25%'" \
 "Icon=xfce4-mixer" "StartupNotify=false" "Terminal=false" "NoDisplay=true" \
-"Hidden=false" > "$HOME"/.config/autostart/audio-default.desktop
-chmod +x "$HOME"/.config/autostart/audio-default.desktop
-if [ -f "/bin/startxfce4" ]; then
-    sed -i 's/25%/25%%/' "$HOME"/.config/autostart/audio-default.desktop
+"Hidden=false" > ~/.config/autostart/audio-default.desktop
+chmod +x ~/.config/autostart/audio-default.desktop
+if [ -f /bin/startxfce4 ]; then
+    sed -i 's/25%/25%%/' ~/.config/autostart/audio-default.desktop
 fi
 if [ "$sys_vendor" = QEMU ]; then
-    sed -i 's/@DEFAULT_SINK@ 25/@DEFAULT_SINK@ 75/' "$HOME"/.config/autostart/audio-default.desktop
+    sed -i 's/@DEFAULT_SINK@ 25/@DEFAULT_SINK@ 75/' ~/.config/autostart/audio-default.desktop
 fi
 
-if [ -f "$HOME/.config/cava/config" ]; then
+if [ -f ~/.config/cava/config ]; then
     echo "========================================================================"
     echo "Update cava config file"
     echo "========================================================================"
 
     sed -i -e 's/; method = pulse/method = pulse/' \
-    -e 's/; source = auto/source = auto/' "$HOME"/.config/cava/config
+    -e 's/; source = auto/source = auto/' ~/.config/cava/config
 fi

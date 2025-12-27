@@ -53,18 +53,18 @@ echo "========================================================================"
 echo "Install graphics drivers"
 echo "========================================================================"
 
-bash "$HOME"/scripts/install-gpu-packages.sh
+bash ~/scripts/install-gpu-packages.sh
 
 if ! command -v yay > /dev/null 2>&1; then
     echo "========================================================================"
     echo "Setup Yay for AUR"
     echo "========================================================================"
 
-    git clone https://aur.archlinux.org/yay-bin.git "$HOME"/yay-bin
-    cd "$HOME"/yay-bin
+    git clone https://aur.archlinux.org/yay-bin.git ~/yay-bin
+    cd ~/yay-bin
     makepkg -si --noconfirm
     cd
-    rm -rf "$HOME"/yay-bin
+    rm -rf ~/yay-bin
 fi
 
 echo "========================================================================"
@@ -85,22 +85,22 @@ echo "========================================================================"
 echo "Clone custom configuration files"
 echo "========================================================================"
 
-git clone https://github.com/e33io/core "$HOME"/core
-git clone https://github.com/e33io/extra "$HOME"/extra
+git clone https://github.com/e33io/core ~/core
+git clone https://github.com/e33io/extra ~/extra
 
 echo "========================================================================"
 echo "Copy custom configuration files"
 echo "========================================================================"
 
-cp -R "$HOME"/extra/cosmic/home/.??* "$HOME"/
-cp -R "$HOME"/extra/cosmic/arch/home/.??* "$HOME"/
-sudo cp -R "$HOME"/core/root/* /
+cp -R ~/extra/cosmic/home/.??* ~/
+cp -R ~/extra/cosmic/arch/home/.??* ~/
+sudo cp -R ~/core/root/* /
 sudo cp -R /usr/share/wallpapers/* /usr/share/backgrounds
 sudo mkdir -p /boot/grub/fonts
 sudo cp -R /usr/share/grub/ter-* /boot/grub/fonts
 sudo mkdir -p /root/.config/micro
-sudo ln -sf "$HOME"/.config/micro/* /root/.config/micro
-if [ ! -f "$HOME/.install-info" ]; then
+sudo ln -sf ~/.config/micro/* /root/.config/micro
+if [ ! -f ~/.install-info ]; then
     printf '%s\n' '# Set command prompt' 'PS1="\[\e[01;31m\]\u \w/#\[\e[m\] "' \
     | sudo tee -a /root/.bashrc > /dev/null
 fi
@@ -121,10 +121,10 @@ echo "========================================================================"
 
 xdg-user-dirs-update
 echo "COSMIC installed via e33io script: $(date '+%B %d, %Y, %H:%M')" \
-| tee -a "$HOME"/.install-info > /dev/null
-rm -rf "$HOME"/core
-rm -rf "$HOME"/extra
-rm -rf "$HOME"/scripts
+| tee -a ~/.install-info > /dev/null
+rm -rf ~/core
+rm -rf ~/extra
+rm -rf ~/scripts
 
 clear
 echo "========================================================================"

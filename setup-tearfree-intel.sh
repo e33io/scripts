@@ -17,11 +17,11 @@ if [ "$(id -u)" = 0 ]; then
     exit 1
 fi
 
-if [ -f "/etc/debian_version" ]; then
+if [ -f /etc/debian_version ]; then
     sudo apt -y install xserver-xorg-video-intel
 fi
 
-if [ -f "/etc/pacman.conf" ]; then
+if [ -f /etc/pacman.conf ]; then
     sudo pacman -S --noconfirm --needed mesa-utils xf86-video-intel
 fi
 

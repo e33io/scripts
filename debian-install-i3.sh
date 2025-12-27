@@ -79,28 +79,28 @@ echo "========================================================================"
 echo "Clone custom configuration files"
 echo "========================================================================"
 
-git clone https://github.com/e33io/core "$HOME"/core
+git clone https://github.com/e33io/core ~/core
 
 echo "========================================================================"
 echo "Copy custom configuration files"
 echo "========================================================================"
 
-cp -R "$HOME"/core/home/.??* "$HOME"/
-cp -R "$HOME"/core/debian/home/.??* "$HOME"/
-cp -R "$HOME"/scripts/set-theming-i3.sh "$HOME"/.local/bin/set-theming-i3
-sudo cp -R "$HOME"/core/root/* /
-sudo cp -R "$HOME"/core/debian/root/* /
+cp -R ~/core/home/.??* ~/
+cp -R ~/core/debian/home/.??* ~/
+cp -R ~/scripts/set-theming-i3.sh ~/.local/bin/set-theming-i3
+sudo cp -R ~/core/root/* /
+sudo cp -R ~/core/debian/root/* /
 sudo mkdir -p /boot/grub/fonts
 sudo cp -R /usr/share/grub/ter-* /boot/grub/fonts
 bash -c 'sudo mkdir -p /root/.config/{gtk-3.0,micro,qt5ct,qt6ct}'
 for dir in gtk-3.0 micro qt5ct qt6ct; do
-    sudo ln -sf "$HOME"/.config/$dir/* /root/.config/$dir/
+    sudo ln -sf ~/.config/$dir/* /root/.config/$dir/
 done
-if [ ! -f "$HOME/.install-info" ]; then
+if [ ! -f ~/.install-info ]; then
     printf '%s\n' '# Set command prompt' 'PS1="\[\e[01;31m\]\u \w/#\[\e[m\] "' \
     | sudo tee -a /root/.bashrc > /dev/null
 fi
-if [ -f "/usr/share/xsessions/lightdm-xsession.desktop" ]; then
+if [ -f /usr/share/xsessions/lightdm-xsession.desktop ]; then
     sudo rm -rf /usr/share/xsessions/lightdm-xsession.desktop
 fi
 sudo update-initramfs -u
@@ -110,7 +110,7 @@ echo "========================================================================"
 echo "Install custom themes and change Papirus folders color"
 echo "========================================================================"
 
-sh "$HOME"/scripts/install-custom-themes.sh
+sh ~/scripts/install-custom-themes.sh
 if ! command -v papirus-folders > /dev/null 2>&1; then
     wget -qO- https://git.io/papirus-folders-install | sh
     papirus-folders -C adwaita --theme Papirus-Dark
@@ -129,7 +129,7 @@ while true; do
     read -rp "What type of monitor are you using? " n
     case $n in
         1) echo "You chose Standard HD (96 dpi) monitor";
-           sh "$HOME"/scripts/mod-dpi-scaling-wm.sh;
+           sh ~/scripts/mod-dpi-scaling-wm.sh;
            break;;
         2) echo "You chose HiDPI (192 dpi) monitor";
            break;;
@@ -145,13 +145,13 @@ if command -v hostnamectl > /dev/null 2>&1; then
         echo "Modify window manager configs for laptop use"
         echo "========================================================================"
 
-        sh "$HOME"/scripts/mod-wm-laptop.sh
+        sh ~/scripts/mod-wm-laptop.sh
     elif [ "$pc_type" = vm ]; then
         echo "========================================================================"
         echo "Install spice-vdagent and update VM-specific configs"
         echo "========================================================================"
 
-        sh "$HOME"/scripts/mod-virt-machines.sh
+        sh ~/scripts/mod-virt-machines.sh
     fi
 fi
 
@@ -162,12 +162,12 @@ echo "========================================================================"
 sudo update-alternatives --set x-terminal-emulator /usr/bin/kitty
 sudo update-alternatives --set x-www-browser /usr/bin/brave-browser-stable
 
-if [ -f "/etc/devuan_version" ]; then
+if [ -f /etc/devuan_version ]; then
     echo "========================================================================"
     echo "Modify Debian configs for use with Devuan Linux"
     echo "========================================================================"
 
-    sh "$HOME"/scripts/mod-debian-to-devuan.sh
+    sh ~/scripts/mod-debian-to-devuan.sh
 fi
 
 echo "========================================================================"
@@ -175,15 +175,15 @@ echo "Update and clean up user directory"
 echo "========================================================================"
 
 xdg-user-dirs-update
-sed -i "s/home\/.*\//home\/$(whoami)\//" "$HOME"/.config/gtk-3.0/bookmarks
-sed -i -e '/mate-polkit/d' -e '/xbindkeys/d' -e '/at-spi/d' "$HOME"/.config/i3/startup.conf
-sed -i 's/has imv, .* X, flag f = imv/X, flag f = \/usr\/libexec\/imv\/imv/' "$HOME"/.config/ranger/rifle.conf
-sed -i "s/home\/.*\/Desktop/home\/$(whoami)\/Desktop/" "$HOME"/.config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml
-sed -i "s/~\/\.gtkrc-2\.0\.mine/\/home\/$(whoami)\/\.gtkrc-2\.0\.mine/" "$HOME"/.gtkrc-2.0
+sed -i "s/home\/.*\//home\/$(whoami)\//" ~/.config/gtk-3.0/bookmarks
+sed -i -e '/mate-polkit/d' -e '/xbindkeys/d' -e '/at-spi/d' ~/.config/i3/startup.conf
+sed -i 's/has imv, .* X, flag f = imv/X, flag f = \/usr\/libexec\/imv\/imv/' ~/.config/ranger/rifle.conf
+sed -i "s/home\/.*\/Desktop/home\/$(whoami)\/Desktop/" ~/.config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml
+sed -i "s/~\/\.gtkrc-2\.0\.mine/\/home\/$(whoami)\/\.gtkrc-2\.0\.mine/" ~/.gtkrc-2.0
 echo "i3 installed via e33io script: $(date '+%B %d, %Y, %H:%M')" \
-| tee -a "$HOME"/.install-info > /dev/null
-rm -rf "$HOME"/core
-rm -rf "$HOME"/scripts
+| tee -a ~/.install-info > /dev/null
+rm -rf ~/core
+rm -rf ~/scripts
 
 clear
 echo "========================================================================"

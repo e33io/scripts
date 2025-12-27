@@ -21,46 +21,46 @@ clear
 
 theming_files () {
     # JWM theme
-    sed -i "s/jwm\/themes\/.*<\/Include>/jwm\/themes\/$jwm_theme<\/Include>/" "$HOME"/.config/jwm/jwmrc
+    sed -i "s/jwm\/themes\/.*<\/Include>/jwm\/themes\/$jwm_theme<\/Include>/" ~/.config/jwm/jwmrc
     # Polybar colors
     sed -i -e "s/bg = .*/bg = $bar_bg/" \
     -e "s/bg-act = .*/bg-act = $accent_color/" \
     -e "s/bg-occ = .*/bg-occ = $bar_bg/" \
     -e "s/fg = .*/fg = $bar_fg/" \
-    -e "s/\%{F.*}\|\%{F-}/\%{F$accent_color}\|\%{F-}/" "$HOME"/.config/jwm/polybar/config.ini
+    -e "s/\%{F.*}\|\%{F-}/\%{F$accent_color}\|\%{F-}/" ~/.config/jwm/polybar/config.ini
     # GTK 2 theme and icon theme
     sed -i -e "s/gtk-theme-name=\".*\"/gtk-theme-name=\"$gtk_theme\"/" \
-    -e "s/gtk-icon-theme-name=\".*\"/gtk-icon-theme-name=\"$icon_theme\"/" "$HOME"/.gtkrc-2.0
+    -e "s/gtk-icon-theme-name=\".*\"/gtk-icon-theme-name=\"$icon_theme\"/" ~/.gtkrc-2.0
     # GTK 3 theme and icon theme
     sed -i -e "s/gtk-theme-name=.*/gtk-theme-name=$gtk_theme/" \
     -e "s/gtk-icon-theme-name=.*/gtk-icon-theme-name=$icon_theme/" \
     -e "s/gtk-application-prefer-dark-theme=.*/gtk-application-prefer-dark-theme=$prefer_dark_theme/" \
-    "$HOME"/.config/gtk-3.0/settings.ini
+    ~/.config/gtk-3.0/settings.ini
     # Qt5ct theme and icon theme
     sed -i -e "s/^style=.*/style=$qt_ct_theme/" \
-    -e "s/icon_theme=.*/icon_theme=$icon_theme/" "$HOME"/.config/qt5ct/qt5ct.conf
+    -e "s/icon_theme=.*/icon_theme=$icon_theme/" ~/.config/qt5ct/qt5ct.conf
     # Qt6ct theme and icon theme
     sed -i -e "s/^style=.*/style=$qt_ct_theme/" \
-    -e "s/icon_theme=.*/icon_theme=$icon_theme/" "$HOME"/.config/qt6ct/qt6ct.conf
+    -e "s/icon_theme=.*/icon_theme=$icon_theme/" ~/.config/qt6ct/qt6ct.conf
     # Kvantum theme
-    printf "[General]\ntheme=" | tee "$HOME"/.config/Kvantum/kvantum.kvconfig > /dev/null
-    sed -i "s/theme=.*/theme=$kvantum_theme/" "$HOME"/.config/Kvantum/kvantum.kvconfig
+    printf "[General]\ntheme=" | tee ~/.config/Kvantum/kvantum.kvconfig > /dev/null
+    sed -i "s/theme=.*/theme=$kvantum_theme/" ~/.config/Kvantum/kvantum.kvconfig
     # Rofi theme and icon theme
-    if grep -q "Dmenu" "$HOME"/.config/rofi/config.rasi; then
+    if grep -q "Dmenu" ~/.config/rofi/config.rasi; then
         rofi_style=Dmenu
-    elif grep -q "Floating" "$HOME"/.config/rofi/config.rasi; then
+    elif grep -q "Floating" ~/.config/rofi/config.rasi; then
         rofi_style=Floating
-    elif grep -q "Panel" "$HOME"/.config/rofi/config.rasi; then
+    elif grep -q "Panel" ~/.config/rofi/config.rasi; then
         rofi_style=Panel
     fi
     sed -i -e "s/rofi\/themes\/.*\"/rofi\/themes\/$rofi_style-$rofi_theme\.rasi\"/" \
-    -e "s/icon-theme: \".*\"/icon-theme: \"$icon_theme\"/" "$HOME"/.config/rofi/config.rasi
+    -e "s/icon-theme: \".*\"/icon-theme: \"$icon_theme\"/" ~/.config/rofi/config.rasi
     # i3lock background color
     lock_bg_color=$(echo "$desktop_bg_color" | sed 's/^.//')
-    sed -i "s/-n -c .* \&/-n -c $lock_bg_color \&/" "$HOME"/.config/jwm/autostart
-    sed -i "s/-c .* \&/-c $lock_bg_color \&/" "$HOME"/.local/bin/lock-suspend.sh
+    sed -i "s/-n -c .* \&/-n -c $lock_bg_color \&/" ~/.config/jwm/autostart
+    sed -i "s/-c .* \&/-c $lock_bg_color \&/" ~/.local/bin/lock-suspend.sh
     # XSecureLock background color
-    sed -i "s/BACKGROUND_COLOR=\".*\"/BACKGROUND_COLOR=\"$desktop_bg_color\"/" "$HOME"/.profile
+    sed -i "s/BACKGROUND_COLOR=\".*\"/BACKGROUND_COLOR=\"$desktop_bg_color\"/" ~/.profile
     # Lightdm background color, GTK 3 theme and icon theme
     sudo sed -i -e "s/^background =.*/background = $desktop_bg_color/" \
     -e "s/^icon-theme-name =.*/icon-theme-name = $icon_theme/" \
@@ -68,8 +68,8 @@ theming_files () {
     # Papirus folders color
     papirus-folders -C $papirus_folders --theme $icon_theme > /dev/null
     # CAVA foreground color
-    if [ -f "$HOME/.config/cava/config" ]; then
-        sed -i "s/^foreground = .*/foreground = '$accent_color'/" "$HOME"/.config/cava/config
+    if [ -f ~/.config/cava/config ]; then
+        sed -i "s/^foreground = .*/foreground = '$accent_color'/" ~/.config/cava/config
     fi
 }
 

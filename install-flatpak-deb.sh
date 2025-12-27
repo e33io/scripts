@@ -29,22 +29,22 @@ echo "========================================================================"
 
 sudo apt -y install flatpak
 
-if { [ -f "/bin/gnome-shell" ] || [ -f "/bin/gnome-software" ]; }; then
+if { [ -f /bin/gnome-shell ] || [ -f /bin/gnome-software ]; }; then
     sudo apt -y install gnome-software-plugin-flatpak
 fi
 
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
-if [ -f "/bin/gnome-software" ]; then
+if [ -f /bin/gnome-software ]; then
     echo "========================================================================"
     echo "Add org.gnome.Software.desktop file to manually"
     echo "start Gnome Software (disable autostart)"
     echo "========================================================================"
 
-    mkdir -p "$HOME"/.config/autostart
-    cp -R /etc/xdg/autostart/org.gnome.Software.desktop "$HOME"/.config/autostart
+    mkdir -p ~/.config/autostart
+    cp -R /etc/xdg/autostart/org.gnome.Software.desktop ~/.config/autostart
     echo "X-GNOME-Autostart-enabled=false" \
-    | tee -a "$HOME"/.config/autostart/org.gnome.Software.desktop > /dev/null
+    | tee -a ~/.config/autostart/org.gnome.Software.desktop > /dev/null
 fi
 
 echo "========================================================================"

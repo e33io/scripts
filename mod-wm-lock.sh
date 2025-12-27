@@ -17,40 +17,40 @@ if [ "$(id -u)" = 0 ]; then
 fi
 
 # install xsecurelock
-if [ -f "/etc/debian_version" ]; then
+if [ -f /etc/debian_version ]; then
     sudo apt -y install xsecurelock
 fi
-if [ -f "/etc/pacman.conf" ]; then
+if [ -f /etc/pacman.conf ]; then
     sudo pacman -S --noconfirm --needed xsecurelock
 fi
 
 # i3wm specific configs
-if [ -d "$HOME/.config/i3" ]; then
+if [ -d ~/.config/i3 ]; then
     # update xss-lock command to use xsecurelock
-    sed -i 's/xss-lock -l .*/xss-lock -l -- xsecurelock/' "$HOME"/.config/i3/startup.conf
+    sed -i 's/xss-lock -l .*/xss-lock -l -- xsecurelock/' ~/.config/i3/startup.conf
     # update lock session keybinding to use xset
-    sed -i 's/loginctl lock-session/xset s activate/' "$HOME"/.config/i3/config
+    sed -i 's/loginctl lock-session/xset s activate/' ~/.config/i3/config
 fi
 
 # JWM specific configs
-if [ -d "$HOME/.config/jwm" ]; then
+if [ -d ~/.config/jwm ]; then
     # update xss-lock command to use xsecurelock
-    sed -i 's/xss-lock -l .*/xss-lock -l -- xsecurelock/' "$HOME"/.config/jwm/autostart
+    sed -i 's/xss-lock -l .*/xss-lock -l -- xsecurelock/' ~/.config/jwm/autostart
     # update lock session keybinding to use xset
-    sed -i 's/loginctl lock-session/xset s activate/' "$HOME"/.config/jwm/jwmrc
+    sed -i 's/loginctl lock-session/xset s activate/' ~/.config/jwm/jwmrc
 fi
 
 # dk specific configs
-if [ -d "$HOME/.config/dk" ]; then
+if [ -d ~/.config/dk ]; then
     # update xss-lock command to use xsecurelock
-    sed -i 's/xss-lock -l .*/xss-lock -l -- xsecurelock/' "$HOME"/.config/dk/dkrc
+    sed -i 's/xss-lock -l .*/xss-lock -l -- xsecurelock/' ~/.config/dk/dkrc
     # update lock session keybinding to use xset
-    sed -i 's/loginctl lock-session/xset s activate/' "$HOME"/.config/dk/sxhkdrc
+    sed -i 's/loginctl lock-session/xset s activate/' ~/.config/dk/sxhkdrc
 fi
 
 # update rofi-power.sh lock option to use xset
-if [ -f "$HOME/.local/bin/rofi-power.sh" ]; then
-    sed -i 's/loginctl lock-session/xset s activate/' "$HOME"/.local/bin/rofi-power.sh
+if [ -f ~/.local/bin/rofi-power.sh ]; then
+    sed -i 's/loginctl lock-session/xset s activate/' ~/.local/bin/rofi-power.sh
 fi
 
 # update .profile with xsecurelock settings
@@ -64,4 +64,4 @@ printf '%s\n' '' '# Set XSecureLock options' 'export XSECURELOCK_AUTH_FOREGROUND
 'export XSECURELOCK_KEY_XF86AudioPrev_COMMAND="playerctl --all-players previous"' \
 'export XSECURELOCK_KEY_XF86AudioPlay_COMMAND="playerctl --all-players play-pause"' \
 'export XSECURELOCK_KEY_XF86AudioNext_COMMAND="playerctl --all-players next"' \
-| tee -a "$HOME"/.profile > /dev/null
+| tee -a ~/.profile > /dev/null

@@ -29,47 +29,47 @@ echo "Disable and remove snapd, then de-prioritize snapd"
 echo "packages to avoid snap(s) installation"
 echo "========================================================================"
 
-if [ -d "/snap/firefox" ]; then
+if [ -d /snap/firefox ]; then
     sudo snap remove firefox
 fi
 
-if [ -d "/snap/firmware-updater" ]; then
+if [ -d /snap/firmware-updater ]; then
     sudo snap remove firmware-updater
 fi
 
-if [ -d "/snap/desktop-security-center" ]; then
+if [ -d /snap/desktop-security-center ]; then
     sudo snap remove desktop-security-center
 fi
 
-if [ -d "/snap/prompting-client" ]; then
+if [ -d /snap/prompting-client ]; then
     sudo snap remove prompting-client
 fi
 
-if [ -d "/snap/gnome-42-2204" ]; then
+if [ -d /snap/gnome-42-2204 ]; then
     sudo snap remove gnome-42-2204
 fi
 
-if [ -d "/snap/gtk-common-themes" ]; then
+if [ -d /snap/gtk-common-themes ]; then
     sudo snap remove gtk-common-themes
 fi
 
-if [ -d "/snap/snap-store" ]; then
+if [ -d /snap/snap-store ]; then
     sudo snap remove snap-store
 fi
 
-if [ -d "/snap/snapd-desktop-integration" ]; then
+if [ -d /snap/snapd-desktop-integration ]; then
     sudo snap remove snapd-desktop-integration
 fi
 
-if [ -d "/snap/bare" ]; then
+if [ -d /snap/bare ]; then
     sudo snap remove bare
 fi
 
-if [ -d "/snap/core22" ]; then
+if [ -d /snap/core22 ]; then
     sudo snap remove core22
 fi
 
-if [ -d "/snap/snapd" ]; then
+if [ -d /snap/snapd ]; then
     sudo snap remove snapd
 fi
 
@@ -93,22 +93,22 @@ echo "========================================================================"
 
 sudo apt -y install flatpak
 
-if { [ -f "/bin/gnome-shell" ] || [ -f "/bin/gnome-software" ]; }; then
+if { [ -f /bin/gnome-shell ] || [ -f /bin/gnome-software ]; }; then
     sudo apt -y install gnome-software-plugin-flatpak
 fi
 
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
-if [ -f "/bin/gnome-software" ]; then
+if [ -f /bin/gnome-software ]; then
     echo "========================================================================"
     echo "Add org.gnome.Software.desktop file to manually"
     echo "start Gnome Software (disable autostart)"
     echo "========================================================================"
 
-    mkdir -p "$HOME"/.config/autostart
-    cp -R /etc/xdg/autostart/org.gnome.Software.desktop "$HOME"/.config/autostart
+    mkdir -p ~/.config/autostart
+    cp -R /etc/xdg/autostart/org.gnome.Software.desktop ~/.config/autostart
     echo "X-GNOME-Autostart-enabled=false" \
-    | tee -a "$HOME"/.config/autostart/org.gnome.Software.desktop > /dev/null
+    | tee -a ~/.config/autostart/org.gnome.Software.desktop > /dev/null
 fi
 
 echo "========================================================================"
@@ -118,7 +118,7 @@ echo "========================================================================"
 sudo apt -y install fonts-ubuntu-classic fonts-ubuntu-console
 fc-cache -f
 
-if [ -f "/bin/gnome-shell" ]; then
+if [ -f /bin/gnome-shell ]; then
     dconf write /org/gnome/desktop/interface/font-name "'Ubuntu 11'"
     dconf write /org/gnome/desktop/interface/monospace-font-name "'Ubuntu Mono 13'"
 fi

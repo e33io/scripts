@@ -17,44 +17,44 @@ if [ "$(id -u)" = 0 ]; then
 fi
 
 # install spice-vdagent
-if [ -f "/etc/debian_version" ]; then
+if [ -f /etc/debian_version ]; then
     sudo apt -y install spice-vdagent
 fi
-if [ -f "/etc/pacman.conf" ]; then
+if [ -f /etc/pacman.conf ]; then
     sudo pacman -S --noconfirm --needed spice-vdagent
 fi
 
 # i3, JWM and dk configs
-if { [ -d "$HOME/.config/i3" ] || [ -d "$HOME/.config/jwm" ] || [ -d "$HOME/.config/dk" ]; }; then
-    mkdir -p "$HOME"/.config/autostart
+if { [ -d ~/.config/i3 ] || [ -d ~/.config/jwm ] || [ -d ~/.config/dk ]; }; then
+    mkdir -p ~/.config/autostart
     # add audio-default.desktop file
     printf "%s\n" "[Desktop Entry]" "Type=Application" "Name=audio-default" "Comment=set default volume level" \
     "Exec=sh -c 'sleep 2; pactl set-sink-volume @DEFAULT_SINK@ 75%'" "Icon=xfce4-mixer" "StartupNotify=false" \
-    "Terminal=false" "NoDisplay=true" > "$HOME"/.config/autostart/audio-default.desktop
-    chmod +x "$HOME"/.config/autostart/audio-default.desktop
+    "Terminal=false" "NoDisplay=true" > ~/.config/autostart/audio-default.desktop
+    chmod +x ~/.config/autostart/audio-default.desktop
     # add xrandr-vm.desktop file
     printf "%s\n" "[Desktop Entry]" "Version=1.0" "Type=Application" "Name=xrandr-vm" \
     "Comment=Set xrandr resolution" "Exec=sh -c 'xrandr -s 3840x2160'" "StartupNotify=false" \
-    "Terminal=false" "NoDisplay=true" > "$HOME"/.config/autostart/xrandr-vm.desktop
-    chmod +x "$HOME"/.config/autostart/xrandr-vm.desktop
+    "Terminal=false" "NoDisplay=true" > ~/.config/autostart/xrandr-vm.desktop
+    chmod +x ~/.config/autostart/xrandr-vm.desktop
     # update xrandr monitor resolution if needed
     Xft_dpi=$(grep Xft.dpi ~/.Xresources | grep -Eo '[0-9]+')
     if [ "$Xft_dpi" = 96 ]; then
-        sed -i 's/3840x2160/1920x1080/' "$HOME"/.config/autostart/xrandr-vm.desktop
+        sed -i 's/3840x2160/1920x1080/' ~/.config/autostart/xrandr-vm.desktop
     fi
     # update lightdm Xgsession file
     sudo sed -i 's/GDK_SCALE=2/GDK_SCALE=1/' /etc/lightdm/Xgsession
 fi
 
 # Xfce configs
-if [ -f "/bin/startxfce4" ]; then
-    mkdir -p "$HOME"/.config/autostart
+if [ -f /bin/startxfce4 ]; then
+    mkdir -p ~/.config/autostart
     # add audio-default.desktop file
     printf "%s\n" "[Desktop Entry]" "Version=1.0" "Type=Application" "Name=audio-default" \
     "Comment=set default volume level" "Exec=sh -c 'sleep 2; pactl set-sink-volume @DEFAULT_SINK@ 75%%'" \
     "Icon=xfce4-mixer" "StartupNotify=false" "Terminal=false" "NoDisplay=true" \
-    "Hidden=false" > "$HOME"/.config/autostart/audio-default.desktop
-    chmod +x "$HOME"/.config/autostart/audio-default.desktop
+    "Hidden=false" > ~/.config/autostart/audio-default.desktop
+    chmod +x ~/.config/autostart/audio-default.desktop
     # update lightdm Xgsession file
     sudo sed -i 's/GDK_SCALE=2/GDK_SCALE=1/' /etc/lightdm/Xgsession
 fi
