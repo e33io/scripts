@@ -390,7 +390,7 @@ Yaru_Orange_Light () {
     # Desktop background color
     desktop_bg_color="#4e372f"
     # GUI and TUI theme names
-    pprefer_dark_theme="0"
+    prefer_dark_theme="0"
     gtk_theme=Yaru
     qt_ct_theme=kvantum
     kvantum_theme=Yaru-orange
