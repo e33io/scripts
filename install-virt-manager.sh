@@ -38,7 +38,7 @@ sudo sed -i -e "s/^#unix_sock_group = .*/unix_sock_group = \"libvirt\"/" \
 sudo sed -i -e "s/^#user = .*/user = \"$(whoami)\"/" \
 -e "s/^#group = .*/group = \"libvirt\"/" /etc/libvirt/qemu.conf
 sudo systemctl enable --now libvirtd.service
-sudo usermod -aG libvirt $(whoami)
+sudo usermod -aG libvirt "$(whoami)"
 
 echo "========================================================================"
 echo "All done, virt-manager is now ready to use"
