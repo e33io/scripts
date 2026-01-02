@@ -70,9 +70,7 @@ theming_files () {
     # Papirus folders color
     papirus-folders -C $papirus_folders --theme $icon_theme > /dev/null
     # CAVA foreground color
-    if [ -f ~/.config/cava/config ]; then
-        sed -i "s/^foreground = .*/foreground = '$accent_color'/" ~/.config/cava/config
-    fi
+    sed -i "s/^foreground = .*/foreground = '$accent_color'/" ~/.config/cava/config
 }
 
 Adwaita_Dark () {
