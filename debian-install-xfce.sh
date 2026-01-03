@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # =============================================================================
-# Debian Linux - Install Xfce
+# Debian Linux - Install Xfce (desktop environment)
 # URL: https://github.com/e33io/scripts/blob/main/debian-install-xfce.sh
 # -----------------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!

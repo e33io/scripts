@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # =============================================================================
-# Debian Linux - Install i3
+# Debian Linux - Install i3 (tiling window manager)
 # URL: https://github.com/e33io/scripts/blob/main/debian-install-i3.sh
 # -----------------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # =============================================================================
-# Arch Linux - Install JWM
+# Arch Linux - Install JWM (floating window manager)
 # URL: https://github.com/e33io/scripts/blob/main/arch-install-jwm.sh
 # -----------------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!

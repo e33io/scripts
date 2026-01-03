@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # =============================================================================
-# Arch Linux - Install COSMIC
+# Arch Linux - Install COSMIC (desktop environment)
 # URL: https://github.com/e33io/scripts/blob/main/arch-install-cosmic.sh
 # -----------------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
