@@ -167,7 +167,7 @@ echo "Update and clean up user directory"
 echo "========================================================================"
 
 xdg-user-dirs-update
-sed -i "s/user/$(whoami)/" ~/.config/gtk-3.0/bookmarks
+sed -i "s/\/user\//\/$(whoami)\//" ~/.config/gtk-3.0/bookmarks
 sed -i -e 's/scheme_path=.*/scheme_path=\/usr\/share\/qt5ct\/colors\/airy\.conf/' \
 -e 's/custom_palette=.*/custom_palette=false/' ~/.config/qt5ct/qt5ct.conf
 sed -i -e 's/scheme_path=.*/scheme_path=\/usr\/share\/qt6ct\/colors\/airy\.conf/' \
