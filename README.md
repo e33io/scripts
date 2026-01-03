@@ -32,19 +32,19 @@ linux installation scripts
 
 ## theming
 
+- use [`install-mint-themes.sh`](https://github.com/e33io/scripts/blob/main/install-mint-themes.sh) to install Linux Mint themes and icons on Debian or Arch
+
+- use [`install-yaru-themes.sh`](https://github.com/e33io/scripts/blob/main/install-yaru-themes.sh) to install Yaru themes and icons on Debian or Arch
+
+- use [`install-custom-themes.sh`](https://github.com/e33io/scripts/blob/main/install-custom-themes.sh) to install custom Mint and Yaru themes on Debian or Arch
+
+- use [`install-sovran-fonts.sh`](https://github.com/e33io/scripts/blob/main/install-sovran-fonts.sh) to install [Sovran](https://sovranfonts.e33.io) fonts
+
 - use [`set-theming-i3.sh`](https://github.com/e33io/scripts/blob/main/set-theming-i3.sh) to select and set theming for i3 and applications
 
 - use [`set-theming-jwm.sh`](https://github.com/e33io/scripts/blob/main/set-theming-jwm.sh) to select and set theming for JWM and applications
 
 - use [`set-theming-xfce.sh`](https://github.com/e33io/scripts/blob/main/set-theming-xfce.sh) to select and set theming for Xfce and applications
-
-- use [`install-custom-themes.sh`](https://github.com/e33io/scripts/blob/main/install-custom-themes.sh) to install custom Mint and Yaru themes on Debian or Arch
-
-- use [`install-mint-themes.sh`](https://github.com/e33io/scripts/blob/main/install-mint-themes.sh) to install Linux Mint themes and icons on Debian or Arch
-
-- use [`install-yaru-themes.sh`](https://github.com/e33io/scripts/blob/main/install-yaru-themes.sh) to install Yaru themes and icons on Debian or Arch
-
-- use [`install-sovran-fonts.sh`](https://github.com/e33io/scripts/blob/main/install-sovran-fonts.sh) to install [Sovran](https://sovranfonts.e33.io) fonts
 
 &nbsp;
 
