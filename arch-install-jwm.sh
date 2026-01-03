@@ -153,8 +153,8 @@ echo "Update and clean up user directory"
 echo "========================================================================"
 
 xdg-user-dirs-update
-sed -i "s/home\/.*\//home\/$(whoami)\//" ~/.config/gtk-3.0/bookmarks \
-~/.gtkrc-2.0 ~/.config/qt5ct/qt5ct.conf ~/.config/qt6ct/qt6ct.conf \
+sed -i "s/user/$(whoami)/" ~/.config/gtk-3.0/bookmarks ~/.gtkrc-2.0 \
+~/.config/qt5ct/qt5ct.conf ~/.config/qt6ct/qt6ct.conf \
 ~/.config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml
 sed -i 's/16, 37/16, 56/' ~/.config/dunst/dunstrc
 sed -i 's/"top": 1,/"top": 0,/' ~/.config/fastfetch/config.jsonc
