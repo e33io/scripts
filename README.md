@@ -20,11 +20,9 @@ linux installation scripts
 
 ## applications
 
-- use [`install-brave-deb.sh`](https://github.com/e33io/scripts/blob/main/install-brave-deb.sh) to install [Brave Browser](https://brave.com) (.deb package)
+- use [`install-helium-browser.sh`](https://github.com/e33io/scripts/blob/main/install-helium-browser.sh) to install [Helium Browser](https://helium.computer) (AppImage)
 
-- use [`install-signal-deb.sh`](https://github.com/e33io/scripts/blob/main/install-signal-deb.sh) to install [Signal App](https://www.signal.org) (.deb package)
-
-- use [`install-librewolf-deb.sh`](https://github.com/e33io/scripts/blob/main/install-librewolf-deb.sh) to install [LibreWolf Browser](https://librewolf.net) (.deb package)
+- use [`install-virt-manager.sh`](https://github.com/e33io/scripts/blob/main/install-virt-manager.sh) to install [virt-manager](https://virt-manager.org) on Debian or Arch
 
 - use [`install-flatpak-deb.sh`](https://github.com/e33io/scripts/blob/main/install-flatpak-deb.sh) to install Flatpak and add Flathub on Debian
 
