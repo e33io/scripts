@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # =============================================================================
-# Update standalone window manager configs to use xsecurelock instead of i3lock
+# Update window manager configs to use xsecurelock instead of i3lock
 # URL: https://github.com/e33io/scripts/blob/main/mod-wm-lock.sh
 # -----------------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
@@ -38,14 +38,6 @@ if [ -d ~/.config/jwm ]; then
     sed -i 's/xss-lock -l .*/xss-lock -l -- xsecurelock/' ~/.config/jwm/autostart
     # update lock session keybinding to use xset
     sed -i 's/loginctl lock-session/xset s activate/' ~/.config/jwm/jwmrc
-fi
-
-# dk specific configs
-if [ -d ~/.config/dk ]; then
-    # update xss-lock command to use xsecurelock
-    sed -i 's/xss-lock -l .*/xss-lock -l -- xsecurelock/' ~/.config/dk/dkrc
-    # update lock session keybinding to use xset
-    sed -i 's/loginctl lock-session/xset s activate/' ~/.config/dk/sxhkdrc
 fi
 
 # update rofi-power.sh lock option to use xset

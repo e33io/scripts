@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # =============================================================================
-# Update standalone window manager configs from desktop use to laptop use
+# Update window manager configs from desktop use to laptop/notebook use
 # URL: https://github.com/e33io/scripts/blob/main/mod-wm-laptop.sh
 # -----------------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
@@ -44,15 +44,4 @@ if [ -d ~/.config/jwm ]; then
     -e 's/maxlen = .*/maxlen = 140/' \
     -e 's/%a %b/%b/' \
     -e 's/%M:%S/%M/' ~/.config/jwm/polybar/config.ini
-fi
-
-# dk specific configs
-if [ -d ~/.config/dk ]; then
-    # update dkrc (add lock-suspend.sh to xss-lock command)
-    sed -i 's/xss-lock -l/xss-lock -n sh ~\/\.local\/bin\/lock-suspend\.sh -l/' ~/.config/dk/dkrc
-    # update polybar config.ini (modules)
-    sed -i -e 's/time pulseaudio eth tray/time battery pulseaudio wlan tray/' \
-    -e 's/maxlen = .*/maxlen = 140/' \
-    -e 's/%a %b/%b/' \
-    -e 's/%M:%S/%M/' ~/.config/dk/polybar/config.ini
 fi

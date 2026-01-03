@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # =============================================================================
-# Update standalone window manager configs from 192 dpi (HiDPI scaling)
+# Update window manager configs from 192 dpi (HiDPI scaling)
 # to 96 dpi (non-HiDPI scaling)
 # URL: https://github.com/e33io/scripts/blob/main/mod-dpi-scaling-wm.sh
 # -----------------------------------------------------------------------------
@@ -115,37 +115,6 @@ if [ -d ~/.config/jwm ]; then
     -e 's/;3"/;2"/' \
     -e 's/dpi = 192/dpi = 96/' \
     -e 's/tray-spacing = 12/tray-spacing = 6/' ~/.config/jwm/polybar/config.ini
-fi
-
-# dk specific configs
-if [ -d ~/.config/dk ]; then
-    # update dk dkrc configs (window sizes and window decorations)
-    sed -i -e 's/w=1080 h=1080/w=540 h=540/' \
-    -e 's/w=1280 h=1080/w=640 h=540/' \
-    -e 's/w=1440 h=1080/w=720 h=540/' \
-    -e 's/w=1440 h=1152/w=720 h=576/' \
-    -e 's/w=1440 h=1280/w=720 h=640/' \
-    -e 's/w=1440 h=900/w=720 h=450/' \
-    -e 's/w=1600 h=1600/w=800 h=800/' \
-    -e 's/w=1728 h=1188/w=864 h=594/' \
-    -e 's/w=1920 h=1280/w=960 h=640/' \
-    -e 's/w=1920 h=1920/w=960 h=960/' \
-    -e 's/w=3000 h=2000/w=1500 h=1000/' \
-    -e 's/gap=16/gap=8/' \
-    -e 's/border width=4/border width=2/' ~/.config/dk/dkrc
-    # update dk sxhkdrc configs (keybindings)
-    if [ -f /etc/pacman.conf ]; then
-        sed -i "s/sh -c 'GDK_SCALE=1 brave'/brave/" ~/.config/dk/sxhkdrc
-    fi
-    sed -i -e "s/sh -c 'GDK_SCALE=1 brave-browser'/brave-browser/" \
-    -e "s/sh -c 'GDK_SCALE=1 signal-desktop'/signal-desktop/" ~/.config/dk/sxhkdrc
-    # update polybar configs (sizes and scaling)
-    sed -i -e 's/height = 40/height = 20/' \
-    -e 's/;3"/;2"/' \
-    -e 's/dpi = 192/dpi = 96/' \
-    -e 's/tray-spacing = 12/tray-spacing = 6/' ~/.config/dk/polybar/config.ini
-    # update rofi/config.rasi (rofi font size)
-    sed -i 's/sans-serif 9"/sans-serif 9.5"/' ~/.config/rofi/config.rasi
 fi
 
 # Remove unneeded .desktop files
