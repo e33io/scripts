@@ -152,15 +152,13 @@ echo "Update and clean up user directory"
 echo "========================================================================"
 
 xdg-user-dirs-update
+sed -i "s/home\/.*\//home\/$(whoami)\//" ~/.config/gtk-3.0/bookmarks \
+~/.gtkrc-2.0 ~/.config/qt5ct/qt5ct.conf ~/.config/qt6ct/qt6ct.conf \
+~/.config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml
 sed -i 's/"top": 1,/"top": 0,/' ~/.config/fastfetch/config.jsonc
-sed -i "s/home\/.*\//home\/$(whoami)\//" ~/.config/gtk-3.0/bookmarks
 sed -i 's/brave-browser/brave/' ~/.config/i3/config
 sed -i -e '/libexec/d' -e 's/#exec .* xbindkeys/exec --no-startup-id xbindkeys/' \
 -e 's/#exec .* \/usr/exec --no-startup-id \/usr/' ~/.config/i3/startup.conf
-sed -i "s/home\/.*\/\.config/home\/$(whoami)\/\.config/" ~/.config/qt5ct/qt5ct.conf
-sed -i "s/home\/.*\/\.config/home\/$(whoami)\/\.config/" ~/.config/qt6ct/qt6ct.conf
-sed -i "s/home\/.*\/Desktop/home\/$(whoami)\/Desktop/" ~/.config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml
-sed -i "s/~\/\.gtkrc-2\.0\.mine/\/home\/$(whoami)\/\.gtkrc-2\.0\.mine/" ~/.gtkrc-2.0
 echo "i3 installed via e33io script: $(date '+%B %d, %Y, %H:%M')" \
 | tee -a ~/.install-info > /dev/null
 rm -rf ~/core

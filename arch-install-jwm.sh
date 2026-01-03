@@ -153,16 +153,15 @@ echo "Update and clean up user directory"
 echo "========================================================================"
 
 xdg-user-dirs-update
+sed -i "s/home\/.*\//home\/$(whoami)\//" ~/.config/gtk-3.0/bookmarks \
+~/.gtkrc-2.0 ~/.config/qt5ct/qt5ct.conf ~/.config/qt6ct/qt6ct.conf \
+~/.config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml
 sed -i 's/16, 37/16, 56/' ~/.config/dunst/dunstrc
 sed -i 's/"top": 1,/"top": 0,/' ~/.config/fastfetch/config.jsonc
-sed -i "s/home\/.*\//home\/$(whoami)\//" ~/.config/gtk-3.0/bookmarks
-sed -i -e '/libexec/d' -e 's/#\/usr\/lib/\/usr\/lib/' -e 's/#xbindkeys/xbindkeys/' ~/.config/jwm/autostart
+sed -i -e '/libexec/d' -e 's/#\/usr\/lib/\/usr\/lib/' \
+-e 's/#xbindkeys/xbindkeys/' ~/.config/jwm/autostart
 sed -i 's/brave-browser/brave/' ~/.config/jwm/jwmrc
-sed -i "s/home\/.*\/\.config/home\/$(whoami)\/\.config/" ~/.config/qt5ct/qt5ct.conf
-sed -i "s/home\/.*\/\.config/home\/$(whoami)\/\.config/" ~/.config/qt6ct/qt6ct.conf
 sed -i 's/Dmenu/Floating/' ~/.config/rofi/config.rasi
-sed -i "s/home\/.*\/Desktop/home\/$(whoami)\/Desktop/" ~/.config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml
-sed -i "s/~\/\.gtkrc-2\.0\.mine/\/home\/$(whoami)\/\.gtkrc-2\.0\.mine/" ~/.gtkrc-2.0
 if ! grep -q 'XDG_CURRENT_DESKTOP=jwm' ~/.profile; then
     printf "%s\n" "" "# Set XDG desktop" "export XDG_CURRENT_DESKTOP=jwm" \
     | tee -a ~/.profile > /dev/null

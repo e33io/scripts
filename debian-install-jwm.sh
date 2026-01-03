@@ -169,17 +169,17 @@ echo "Update and clean up user directory"
 echo "========================================================================"
 
 xdg-user-dirs-update
+sed -i "s/home\/.*\//home\/$(whoami)\//" ~/.config/gtk-3.0/bookmarks ~/.gtkrc-2.0 \
+~/.config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml
+sed -i -e 's/scheme_path=.*/scheme_path=\/usr\/share\/qt5ct\/colors\/airy\.conf/' \
+-e 's/custom_palette=.*/custom_palette=false/' ~/.config/qt5ct/qt5ct.conf
+sed -i -e 's/scheme_path=.*/scheme_path=\/usr\/share\/qt6ct\/colors\/airy\.conf/' \
+-e 's/custom_palette=.*/custom_palette=false/' ~/.config/qt6ct/qt6ct.conf
 sed -i 's/16, 37/16, 56/' ~/.config/dunst/dunstrc
-sed -i "s/home\/.*\//home\/$(whoami)\//" ~/.config/gtk-3.0/bookmarks
 sed -i -e '/mate-polkit/d' -e '/xbindkeys/d' -e '/at-spi/d' ~/.config/jwm/autostart
 sed -i 's/Dmenu/Floating/' ~/.config/rofi/config.rasi
-sed -i -e 's/color_scheme_path=.*/color_scheme_path=\/usr\/share\/qt5ct\/colors\/airy\.conf/' \
--e 's/custom_palette=.*/custom_palette=false/' ~/.config/qt5ct/qt5ct.conf
-sed -i -e 's/color_scheme_path=.*/color_scheme_path=\/usr\/share\/qt6ct\/colors\/airy\.conf/' \
--e 's/custom_palette=.*/custom_palette=false/' ~/.config/qt6ct/qt6ct.conf
-sed -i 's/has imv, .* X, flag f = imv/X, flag f = \/usr\/libexec\/imv\/imv/' ~/.config/ranger/rifle.conf
-sed -i "s/home\/.*\/Desktop/home\/$(whoami)\/Desktop/" ~/.config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml
-sed -i "s/~\/\.gtkrc-2\.0\.mine/\/home\/$(whoami)\/\.gtkrc-2\.0\.mine/" ~/.gtkrc-2.0
+sed -i 's/has imv, .* X, flag f = imv/X, flag f = \/usr\/libexec\/imv\/imv/' \
+~/.config/ranger/rifle.conf
 if ! grep -q 'XDG_CURRENT_DESKTOP=jwm' ~/.profile; then
     printf "%s\n" "" "# Set XDG desktop" "export XDG_CURRENT_DESKTOP=jwm" \
     | tee -a ~/.profile > /dev/null
