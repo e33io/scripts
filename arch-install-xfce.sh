@@ -96,7 +96,6 @@ cp -R ~/scripts/set-theming-xfce.sh ~/.local/bin/set-theming-xfce
 sudo cp -R ~/core/root/* /
 sudo cp -R ~/extra/xfce/root/* /
 sudo cp -R ~/extra/xfce/arch/root/* /
-sudo cp -R ~/scripts/window-control.sh /usr/bin
 sudo mkdir -p /boot/grub/fonts
 sudo cp -R /usr/share/grub/ter-* /boot/grub/fonts
 sudo mkdir -p /root/.config/{micro,qt5ct,qt6ct}

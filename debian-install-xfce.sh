@@ -93,7 +93,6 @@ sudo cp -R ~/core/root/* /
 sudo cp -R ~/core/debian/root/* /
 sudo cp -R ~/extra/xfce/root/* /
 sudo cp -R ~/extra/xfce/debian/root/* /
-sudo cp -R ~/scripts/window-control.sh /usr/bin
 sudo mkdir -p /boot/grub/fonts
 sudo cp -R /usr/share/grub/ter-* /boot/grub/fonts
 sudo rm -rf /usr/share/xsessions/lightdm-xsession.desktop
