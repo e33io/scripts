@@ -157,8 +157,8 @@ sed -i "s/\/user\//\/$(whoami)\//" ~/.config/gtk-3.0/bookmarks ~/.gtkrc-2.0 \
 ~/.config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml
 sed -i 's/"top": 1,/"top": 0,/' ~/.config/fastfetch/config.jsonc
 sed -i 's/brave-browser/brave/' ~/.config/i3/config
-sed -i -e '/libexec/d' -e 's/#exec .* xbindkeys/exec --no-startup-id xbindkeys/' \
--e 's/#exec .* \/usr/exec --no-startup-id \/usr/' ~/.config/i3/startup.conf
+sed -i -e '/libexec/d' -e 's/#\$exec .* xbindkeys/\$exec xbindkeys/' \
+-e 's/#\$exec .* \/usr/\$exec \/usr/' ~/.config/i3/startup.conf
 echo "i3 installed via e33io script: $(date '+%B %d, %Y, %H:%M')" \
 | tee -a ~/.install-info > /dev/null
 rm -rf ~/core
