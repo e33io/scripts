@@ -18,10 +18,10 @@ fi
 
 # install other packages
 if [ -f /etc/debian_version ]; then
-    sudo apt -y install brightnessctl
+    sudo apt -y install brightnessctl libinput-tools wmctrl
 fi
 if [ -f /etc/pacman.conf ]; then
-    sudo pacman -S --noconfirm --needed brightnessctl
+    sudo pacman -S --noconfirm --needed brightnessctl libinput-tools wmctrl
 fi
 
 # i3wm specific configs
