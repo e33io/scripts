@@ -42,7 +42,7 @@ mate-polkit lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings feh lxappea
 qt5ct qt6ct ttf-dejavu noto-fonts noto-fonts-cjk noto-fonts-emoji papirus-icon-theme breeze-icons \
 plymouth pavucontrol-qt kitty python-pillowfight xterm bash-completion vim nano micro fzf lazygit \
 htop fastfetch cmus cava ranger ueberzug highlight atool w3m mediainfo perl-image-exiftool thunar \
-thunar-archive-plugin thunar-volman tumbler ffmpegthumbnailer xarchiver scrot atril imv mpv parole \
+thunar-archive-plugin thunar-volman tumbler ffmpegthumbnailer xarchiver maim atril imv mpv parole \
 mousepad galculator timeshift signal-desktop gpick darktable gimp inkscape filezilla libreoffice
 
 echo "========================================================================"
