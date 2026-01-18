@@ -118,9 +118,5 @@ if [ -d ~/.config/jwm ]; then
 fi
 
 # Remove unneeded .desktop files
-if [ -f ~/.local/share/applications/brave-browser.desktop ]; then
-    rm -rf ~/.local/share/applications/brave-browser.desktop
-fi
-if [ -f ~/.local/share/applications/signal-desktop.desktop ]; then
-    rm -rf ~/.local/share/applications/signal-desktop.desktop
-fi
+rm -rf ~/.local/share/applications/brave-browser.desktop
+rm -rf ~/.local/share/applications/signal-desktop.desktop
