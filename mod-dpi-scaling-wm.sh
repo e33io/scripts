@@ -69,13 +69,11 @@ if [ -d ~/.config/i3 ]; then
     -e 's/set 1280 1080/set 640 540/' \
     -e 's/set 1440 1080/set 720 540/' \
     -e 's/set 1440 1152/set 720 576/' \
-    -e 's/set 1440 1280/set 720 640/' \
     -e 's/set 1440 900/set 720 450/' \
     -e 's/set 1600 1600/set 800 800/' \
     -e 's/set 1728 1188/set 864 594/' \
     -e 's/set 1920 1280/set 960 640/' \
     -e 's/set 1920 1920/set 960 960/' \
-    -e 's/set 3000 2000/set 1500 1000/' \
     -e 's/GDK_SCALE=1 brave/brave/' \
     -e 's/GDK_SCALE=1 signal-desktop/signal-desktop/' ~/.config/i3/config
     # update polybar configs (sizes and scaling)
