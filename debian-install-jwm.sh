@@ -43,7 +43,7 @@ lightdm-gtk-greeter-settings plymouth plymouth-themes kitty python3-pypillowfigh
 fastfetch htop cmus cava cmatrix ncal micro ranger ueberzug caca-utils highlight atool w3m \
 poppler-utils mediainfo fzf libimage-exiftool-perl apt-transport-https curl rsync dconf-cli thunar \
 thunar-archive-plugin tumbler-plugins-extra ffmpegthumbnailer heif-thumbnailer heif-gdk-pixbuf \
-xarchiver pipewire-audio pulseaudio-utils pavucontrol-qt synaptic timeshift mintstick maim \
+xarchiver pipewire-audio pulseaudio-utils pavucontrol-qt synaptic timeshift mintstick scrot \
 atril imv mpv parole mousepad galculator filezilla gpick darktable gimp inkscape libreoffice-calc \
 libreoffice-draw libreoffice-impress libreoffice-writer libreoffice-gtk3
 
