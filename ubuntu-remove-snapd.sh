@@ -32,10 +32,11 @@ echo "packages to avoid snap(s) installation"
 echo "========================================================================"
 
 if command -v snap >/dev/null 2>&1; then
-    while [ "$(snap list 2>/dev/null | wc -l)" -gt 1 ]; do
-        snap list | awk 'NR>1 {print $1}' | while read -r s; do
-            sudo snap remove --purge "$s" || true
-        done
+    snap list | awk 'NR>1 {print $1}' | grep -Ev '^(bare|core[0-9]*|snapd)$' | while read -r snap; do
+        sudo snap remove --purge "$snap"
+    done
+    snap list | awk 'NR>1 {print $1}' | grep -E '^(bare|core[0-9]*|snapd)$' | while read -r snap; do
+        sudo snap remove --purge "$snap"
     done
 fi
 
@@ -43,7 +44,7 @@ sudo systemctl stop snapd.service snapd.socket snapd.seeded.service 2>/dev/null 
 sudo systemctl disable snapd.service snapd.socket snapd.seeded.service 2>/dev/null || true
 sudo systemctl mask snapd.service snapd.socket 2>/dev/null || true
 
-sudo apt -y purge snapd || true
+sudo apt -y purge snapd
 sudo apt -y autoremove --purge
 sudo apt -y autoclean
 
