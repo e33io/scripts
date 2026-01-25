@@ -82,7 +82,7 @@ echo "========================================================================"
 echo "Remove prespecified GTK2 icon sizes to fix scaling issues"
 echo "========================================================================"
 
-sudo sed -i -e '/gtk-icon-sizes/d' -e '/gtk-menu/d' -e '/gtk-button/d' -e '/gtk-small-toolbar/d' \
+sudo sed -i -e '/gtk-icon-sizes/d' -e '/gtk-button/d' -e '/gtk-small-toolbar/d' \
 -e '/gtk-dnd/d' -e '/gtk-dialog/d' /usr/share/themes/Yaru*/gtk-2.0/gtkrc
 
 echo "========================================================================"
