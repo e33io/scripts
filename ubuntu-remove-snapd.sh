@@ -8,7 +8,7 @@
 # NOTE: The system will automatically reboot at the end of script.
 # =============================================================================
 
-set -e
+set -euo pipefail
 
 if [ "$(id -u)" = 0 ]; then
     echo "========================================================================"
@@ -31,17 +31,20 @@ echo "Remove snaps, disable snapd, then de-prioritize snapd"
 echo "packages to avoid snap(s) installation"
 echo "========================================================================"
 
-if command -v snap > /dev/null 2>&1; then
-    snap list | awk 'NR>1 {print $1}' | while read -r snap; do
-        sudo snap remove --purge "$snap"
+if command -v snap >/dev/null 2>&1; then
+    while [ "$(snap list 2>/dev/null | wc -l)" -gt 1 ]; do
+        snap list | awk 'NR>1 {print $1}' | while read -r s; do
+            sudo snap remove --purge "$s" || true
+        done
     done
 fi
 
 sudo systemctl stop snapd.service snapd.socket snapd.seeded.service 2>/dev/null || true
 sudo systemctl disable snapd.service snapd.socket snapd.seeded.service 2>/dev/null || true
+sudo systemctl mask snapd.service snapd.socket 2>/dev/null || true
 
-sudo apt -y purge snapd
-sudo apt -y autoremove
+sudo apt -y purge snapd || true
+sudo apt -y autoremove --purge
 sudo apt -y autoclean
 
 sudo rm -rf /snap /var/snap /var/lib/snapd
