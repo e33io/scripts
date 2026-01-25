@@ -112,9 +112,9 @@ echo "========================================================================"
 echo "Copy custom Mint themes"
 echo "========================================================================"
 
-sudo cp -R ~/theming-temp/gtk/Mint* /usr/share/themes
+sudo cp -R ~/theming-temp/gtk/Mint-Mod* /usr/share/themes
 sudo mkdir -p /usr/share/Kvantum
-sudo cp -R ~/theming-temp/Kvantum/Mint* /usr/share/Kvantum
+sudo cp -R ~/theming-temp/Kvantum/Mint-Mod* /usr/share/Kvantum
 
 echo "========================================================================"
 echo "Link config files to root user directories for styling"

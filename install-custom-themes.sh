@@ -90,7 +90,7 @@ echo "Copy custom Yaru themes"
 echo "========================================================================"
 
 sudo cp -R ~/theming-temp/gtk/Yaru* /usr/share/themes
-# copy only selected theme variants
+# copy only selected Kvantum theme variants
 sudo cp -R ~/theming-temp/Kvantum/Yaru-blue-dark /usr/share/Kvantum
 sudo cp -R ~/theming-temp/Kvantum/Yaru-orange /usr/share/Kvantum
 sudo cp -R ~/theming-temp/Kvantum/Yaru-orange-dark /usr/share/Kvantum
