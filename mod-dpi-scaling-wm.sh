@@ -47,6 +47,9 @@ sed -i 's/border:.*4px;/border:           2px;/' ~/.config/rofi/themes/floating-
 # update dunstrc (dunst scaling)
 sed -i 's/scale = 2/scale = 1/' ~/.config/dunst/dunstrc
 
+# update screenshot.sh (selection line width)
+sed -i 's/width=2/width=1/' ~/.local/bin/screenshot.sh
+
 # update Xgsession script for lightdm-gtk-greeter (GTK scaling)
 if [ -f /etc/lightdm/Xgsession ]; then
     sudo sed -i 's/GDK_SCALE=2/GDK_SCALE=1/' /etc/lightdm/Xgsession
