@@ -68,18 +68,6 @@ fi
 
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
-if command -v gnome-software > /dev/null 2>&1; then
-    echo "========================================================================"
-    echo "Add org.gnome.Software.desktop file to manually"
-    echo "start Gnome Software (disable autostart)"
-    echo "========================================================================"
-
-    mkdir -p ~/.config/autostart
-    cp -R /etc/xdg/autostart/org.gnome.Software.desktop ~/.config/autostart
-    echo "X-GNOME-Autostart-enabled=false" \
-    | tee -a ~/.config/autostart/org.gnome.Software.desktop > /dev/null
-fi
-
 echo "========================================================================"
 echo "Revert fonts to classic Ubuntu fonts and reboot system"
 echo "========================================================================"
