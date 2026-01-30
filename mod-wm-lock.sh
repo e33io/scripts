@@ -32,14 +32,6 @@ if [ -d ~/.config/i3 ]; then
     sed -i 's/loginctl lock-session/xset s activate/' ~/.config/i3/config
 fi
 
-# JWM specific configs
-if [ -d ~/.config/jwm ]; then
-    # update xss-lock command to use xsecurelock
-    sed -i 's/xss-lock -l .*/xss-lock -l -- xsecurelock/' ~/.config/jwm/autostart
-    # update lock session keybinding to use xset
-    sed -i 's/loginctl lock-session/xset s activate/' ~/.config/jwm/jwmrc
-fi
-
 # update rofi-power.sh lock option to use xset
 if [ -f ~/.local/bin/rofi-power.sh ]; then
     sed -i 's/loginctl lock-session/xset s activate/' ~/.local/bin/rofi-power.sh

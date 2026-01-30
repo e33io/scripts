@@ -34,14 +34,3 @@ if [ -d ~/.config/i3 ]; then
     -e 's/%a %b/%b/' \
     -e 's/%M:%S/%M/' ~/.config/i3/polybar/config.ini
 fi
-
-# JWM specific configs
-if [ -d ~/.config/jwm ]; then
-    # update autostart (add lock-suspend.sh to xss-lock command)
-    sed -i 's/xss-lock -l/xss-lock -n sh ~\/\.local\/bin\/lock-suspend\.sh -l/' ~/.config/jwm/autostart
-    # update polybar config.ini (modules)
-    sed -i -e 's/time pulseaudio eth tray/time battery pulseaudio wlan tray/' \
-    -e 's/maxlen = .*/maxlen = 140/' \
-    -e 's/%a %b/%b/' \
-    -e 's/%M:%S/%M/' ~/.config/jwm/polybar/config.ini
-fi

@@ -88,36 +88,6 @@ if [ -d ~/.config/i3 ]; then
     sed -i 's/sans-serif 9"/sans-serif 9.5"/' ~/.config/rofi/config.rasi
 fi
 
-# JWM specific configs
-if [ -d ~/.config/jwm ]; then
-    # update jwm configs (window sizes, decorations and keybindings)
-    sed -i -e 's/<Option>height:1028/<Option>height:514/' \
-    -e 's/<Option>height:1188/<Option>height:594/' \
-    -e 's/<Option>height:1296/<Option>height:648/' \
-    -e 's/<Option>height:1536/<Option>height:768/' \
-    -e 's/<Option>height:1728/<Option>height:864/' \
-    -e 's/<Option>width:1350/<Option>width:675/' \
-    -e 's/<Option>width:1440/<Option>width:720/' \
-    -e 's/<Option>width:1536/<Option>width:768/' \
-    -e 's/<Option>width:1728/<Option>width:864/' \
-    -e 's/<Option>x:1152/<Option>x:576/' \
-    -e 's/<Option>x:1200/<Option>x:600/' \
-    -e 's/<Option>x:1594/<Option>x:797/' \
-    -e 's/<Option>y:312/<Option>y:156/' \
-    -e 's/<Option>y:566/<Option>y:283/' \
-    -e 's/<Option>y:725/<Option>y:362/' \
-    -e 's/height="41"/height="22"/' \
-    -e 's/GDK_SCALE=1 brave/brave/' \
-    -e 's/GDK_SCALE=1 signal-desktop/signal-desktop/' ~/.config/jwm/jwmrc
-    sed -i -e 's/<Width>4/<Width>2/' \
-    -e 's/<Height>39/<Height>20/' ~/.config/jwm/themes/*
-    # update polybar configs (sizes and scaling)
-    sed -i -e 's/height = 40/height = 20/' \
-    -e 's/;3"/;2"/' \
-    -e 's/dpi = 192/dpi = 96/' \
-    -e 's/tray-spacing = 12/tray-spacing = 6/' ~/.config/jwm/polybar/config.ini
-fi
-
 # Remove unneeded .desktop files
 rm -rf ~/.local/share/applications/brave-browser.desktop
 rm -rf ~/.local/share/applications/signal-desktop.desktop
