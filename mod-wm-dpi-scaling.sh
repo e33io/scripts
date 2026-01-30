@@ -3,7 +3,7 @@
 # =============================================================================
 # Update window manager configs from 192 dpi (HiDPI scaling)
 # to 96 dpi (non-HiDPI scaling)
-# URL: https://github.com/e33io/scripts/blob/main/mod-dpi-scaling-wm.sh
+# URL: https://github.com/e33io/scripts/blob/main/mod-wm-dpi-scaling.sh
 # -----------------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
 # =============================================================================

@@ -123,7 +123,7 @@ while true; do
     read -rp "What type of monitor are you using? " n
     case $n in
         1) echo "You chose Standard HD (96 dpi) monitor";
-           sh ~/scripts/mod-dpi-scaling-wm.sh;
+           sh ~/scripts/mod-wm-dpi-scaling.sh;
            break;;
         2) echo "You chose HiDPI (192 dpi) monitor";
            break;;
