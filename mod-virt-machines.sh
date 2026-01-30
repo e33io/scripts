@@ -43,15 +43,3 @@ if [ -d ~/.config/i3 ] || [ -d ~/.config/jwm ]; then
     # update lightdm Xgsession file
     sudo sed -i 's/GDK_SCALE=2/GDK_SCALE=1/' /etc/lightdm/Xgsession
 fi
-
-# Xfce configs
-if command -v startxfce4 > /dev/null 2>&1; then
-    mkdir -p ~/.config/autostart
-    # add audio-default.desktop file
-    printf "%s\n" "[Desktop Entry]" "Version=1.0" "Type=Application" "Name=audio-default" \
-    "Comment=set default volume level" "Exec=sh -c 'sleep 2; pactl set-sink-volume @DEFAULT_SINK@ 75%%'" \
-    "Icon=xfce4-mixer" "StartupNotify=false" "Terminal=false" "NoDisplay=true" \
-    "Hidden=false" > ~/.config/autostart/audio-default.desktop
-    # update lightdm Xgsession file
-    sudo sed -i 's/GDK_SCALE=2/GDK_SCALE=1/' /etc/lightdm/Xgsession
-fi

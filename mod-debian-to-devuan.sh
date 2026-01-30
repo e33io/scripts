@@ -84,9 +84,6 @@ printf "%s\n" "[Desktop Entry]" "Version=1.0" "Type=Application" \
 "Exec=sh -c 'sleep 1; pactl set-sink-mute @DEFAULT_SINK@ false; sleep 6; pactl set-sink-volume @DEFAULT_SINK@ 25%'" \
 "Icon=xfce4-mixer" "StartupNotify=false" "Terminal=false" "NoDisplay=true" \
 "Hidden=false" > ~/.config/autostart/audio-default.desktop
-if command -v startxfce4 > /dev/null 2>&1; then
-    sed -i 's/25%/25%%/' ~/.config/autostart/audio-default.desktop
-fi
 if [ "$sys_vendor" = QEMU ]; then
     sed -i 's/@DEFAULT_SINK@ 25/@DEFAULT_SINK@ 75/' ~/.config/autostart/audio-default.desktop
 fi
