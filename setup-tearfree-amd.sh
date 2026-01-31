@@ -20,7 +20,6 @@ fi
 if [ -f /etc/debian_version ]; then
     sudo apt -y install xserver-xorg-video-amdgpu
 fi
-
 if [ -f /etc/pacman.conf ]; then
     sudo pacman -S --noconfirm --needed mesa-utils xf86-video-amdgpu
 fi
