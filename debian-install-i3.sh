@@ -107,8 +107,8 @@ echo "========================================================================"
 sh ~/scripts/install-custom-themes.sh
 if ! command -v papirus-folders > /dev/null 2>&1; then
     wget -qO- https://git.io/papirus-folders-install | sh
-    papirus-folders -C adwaita --theme Papirus-Dark
 fi
+papirus-folders -C adwaita --theme Papirus-Dark
 
 clear
 while true; do
