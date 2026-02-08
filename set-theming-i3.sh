@@ -76,6 +76,26 @@ theming_files () {
     papirus-folders -C $papirus_folders --theme $icon_theme > /dev/null
     # CAVA foreground color
     sed -i "s/^foreground = .*/foreground = '$accent_color'/" ~/.config/cava/config
+    # Terminal and editor theme
+    sed -i "s/xcolors\/.*/xcolors\/$txt_theme/" ~/.profile
+    sed -i "s/themes\/.*\.conf/themes\/$txt_theme\.conf/" ~/.config/kitty/kitty.conf
+    sed -i "s/colorscheme\": \".*\"/colorscheme\": \"$txt_theme\"/" ~/.config/micro/settings.json
+}
+
+dconf_dark () {
+    # Interface color-scheme and gtk-theme
+    dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
+    dconf write /org/gnome/desktop/interface/gtk-theme "'Adwaita-dark'"
+    # Mousepad color-scheme
+    dconf write /org/xfce/mousepad/preferences/view/color-scheme "'monokai-mod'"
+}
+
+dconf_light () {
+    # Interface color-scheme and gtk-theme
+    dconf write /org/gnome/desktop/interface/color-scheme "'prefer-light'"
+    dconf write /org/gnome/desktop/interface/gtk-theme "'Adwaita'"
+    # Mousepad color-scheme
+    dconf write /org/xfce/mousepad/preferences/view/color-scheme "'monokai-mod-light'"
 }
 
 Adwaita_Dark () {
@@ -103,8 +123,11 @@ Adwaita_Dark () {
     rofi_theme=Adwaita-Dark
     icon_theme=Papirus-Dark
     papirus_folders=adwaita
+    txt_theme=monokai-mod
     # Call the theming files
     theming_files
+    # Call dconf settings
+    dconf_dark
 }
 
 Adwaita_Light () {
@@ -132,8 +155,11 @@ Adwaita_Light () {
     rofi_theme=Adwaita-Light
     icon_theme=Papirus-Light
     papirus_folders=yellow
+    txt_theme=monokai-mod-light
     # Call the theming files
     theming_files
+    # Call dconf settings
+    dconf_light
 }
 
 Mint_Blue_Dark () {
@@ -162,8 +188,11 @@ Mint_Blue_Dark () {
     rofi_theme=Mint-Mod-Blue-Dark
     icon_theme=Papirus-Dark
     papirus_folders=adwaita
+    txt_theme=monokai-mod
     # Call the theming files
     theming_files
+    # Call dconf settings
+    dconf_dark
 }
 
 Mint_Green_Dark () {
@@ -192,8 +221,11 @@ Mint_Green_Dark () {
     rofi_theme=Mint-Mod-Green-Dark
     icon_theme=Papirus-Dark
     papirus_folders=orange
+    txt_theme=monokai-mod
     # Call the theming files
     theming_files
+    # Call dconf settings
+    dconf_dark
 }
 
 Mint_Green_Light () {
@@ -222,8 +254,11 @@ Mint_Green_Light () {
     rofi_theme=Mint-Mod-Green-Light
     icon_theme=Papirus-Light
     papirus_folders=orange
+    txt_theme=monokai-mod-light
     # Call the theming files
     theming_files
+    # Call dconf settings
+    dconf_light
 }
 
 Mint_Grey_Dark () {
@@ -252,8 +287,11 @@ Mint_Grey_Dark () {
     rofi_theme=Mint-Mod-Grey-Dark
     icon_theme=Papirus-Dark
     papirus_folders=white
+    txt_theme=monokai-mod
     # Call the theming files
     theming_files
+    # Call dconf settings
+    dconf_dark
 }
 
 Mint_Orange_Dark () {
@@ -282,8 +320,11 @@ Mint_Orange_Dark () {
     rofi_theme=Mint-Mod-Orange-Dark
     icon_theme=Papirus-Dark
     papirus_folders=darkcyan
+    txt_theme=monokai-mod
     # Call the theming files
     theming_files
+    # Call dconf settings
+    dconf_dark
 }
 
 Mint_Purple_Dark () {
@@ -312,8 +353,11 @@ Mint_Purple_Dark () {
     rofi_theme=Mint-Mod-Purple-Dark
     icon_theme=Papirus-Dark
     papirus_folders=orange
+    txt_theme=monokai-mod
     # Call the theming files
     theming_files
+    # Call dconf settings
+    dconf_dark
 }
 
 Mint_Red_Dark () {
@@ -342,8 +386,11 @@ Mint_Red_Dark () {
     rofi_theme=Mint-Mod-Red-Dark
     icon_theme=Papirus-Dark
     papirus_folders=palebrown
+    txt_theme=monokai-mod
     # Call the theming files
     theming_files
+    # Call dconf settings
+    dconf_dark
 }
 
 Mint_Teal_Dark () {
@@ -372,8 +419,11 @@ Mint_Teal_Dark () {
     rofi_theme=Mint-Mod-Teal-Dark
     icon_theme=Papirus-Dark
     papirus_folders=orange
+    txt_theme=monokai-mod
     # Call the theming files
     theming_files
+    # Call dconf settings
+    dconf_dark
 }
 
 Yaru_Blue_Dark () {
@@ -402,8 +452,11 @@ Yaru_Blue_Dark () {
     rofi_theme=Yaru-Blue-Dark
     icon_theme=Papirus-Dark
     papirus_folders=adwaita
+    txt_theme=monokai-mod
     # Call the theming files
     theming_files
+    # Call dconf settings
+    dconf_dark
 }
 
 Yaru_Brown_Dark () {
@@ -432,8 +485,11 @@ Yaru_Brown_Dark () {
     rofi_theme=Yaru-Brown-Dark
     icon_theme=Papirus-Dark
     papirus_folders=palebrown
+    txt_theme=monokai-mod
     # Call the theming files
     theming_files
+    # Call dconf settings
+    dconf_dark
 }
 
 Yaru_Green_Dark () {
@@ -462,8 +518,11 @@ Yaru_Green_Dark () {
     rofi_theme=Yaru-Green-Dark
     icon_theme=Papirus-Dark
     papirus_folders=paleorange
+    txt_theme=monokai-mod
     # Call the theming files
     theming_files
+    # Call dconf settings
+    dconf_dark
 }
 
 Yaru_Orange_Dark () {
@@ -492,8 +551,11 @@ Yaru_Orange_Dark () {
     rofi_theme=Yaru-Orange-Dark
     icon_theme=Papirus-Dark
     papirus_folders=yaru
+    txt_theme=monokai-mod
     # Call the theming files
     theming_files
+    # Call dconf settings
+    dconf_dark
 }
 
 Yaru_Orange_Light () {
@@ -522,8 +584,11 @@ Yaru_Orange_Light () {
     rofi_theme=Yaru-Orange-Light
     icon_theme=Papirus-Light
     papirus_folders=yaru
+    txt_theme=monokai-mod-light
     # Call the theming files
     theming_files
+    # Call dconf settings
+    dconf_light
 }
 
 Yaru_Purple_Dark () {
@@ -552,8 +617,11 @@ Yaru_Purple_Dark () {
     rofi_theme=Yaru-Purple-Dark
     icon_theme=Papirus-Dark
     papirus_folders=orange
+    txt_theme=monokai-mod
     # Call the theming files
     theming_files
+    # Call dconf settings
+    dconf_dark
 }
 
 Yaru_Sage_Dark () {
@@ -582,8 +650,11 @@ Yaru_Sage_Dark () {
     rofi_theme=Yaru-Sage-Dark
     icon_theme=Papirus-Dark
     papirus_folders=paleorange
+    txt_theme=monokai-mod
     # Call the theming files
     theming_files
+    # Call dconf settings
+    dconf_dark
 }
 
 Yaru_Teal_Dark () {
@@ -612,8 +683,11 @@ Yaru_Teal_Dark () {
     rofi_theme=Yaru-Teal-Dark
     icon_theme=Papirus-Dark
     papirus_folders=orange
+    txt_theme=monokai-mod
     # Call the theming files
     theming_files
+    # Call dconf settings
+    dconf_dark
 }
 
 while true; do
