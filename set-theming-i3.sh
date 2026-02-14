@@ -87,7 +87,7 @@ dconf_dark () {
     dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
     dconf write /org/gnome/desktop/interface/gtk-theme "'Adwaita-dark'"
     # Mousepad color-scheme
-    dconf write /org/xfce/mousepad/preferences/view/color-scheme "'monokai-mod'"
+    dconf write /org/xfce/mousepad/preferences/view/color-scheme "'$txt_theme'"
 }
 
 dconf_light () {
@@ -95,7 +95,7 @@ dconf_light () {
     dconf write /org/gnome/desktop/interface/color-scheme "'prefer-light'"
     dconf write /org/gnome/desktop/interface/gtk-theme "'Adwaita'"
     # Mousepad color-scheme
-    dconf write /org/xfce/mousepad/preferences/view/color-scheme "'monokai-mod-light'"
+    dconf write /org/xfce/mousepad/preferences/view/color-scheme "'$txt_theme'"
 }
 
 Adwaita_Dark () {
