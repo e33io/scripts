@@ -171,11 +171,12 @@ echo "========================================================================"
 xdg-user-dirs-update
 sed -i "s/\/user\//\/$(whoami)\//" ~/.config/gtk-3.0/bookmarks ~/.gtkrc-2.0 \
 ~/.config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml
+sed -i 's/"top": 0,/"top": 1,/' ~/.config/fastfetch/config.jsonc
+sed -i -e '/mate-polkit/d' -e '/xbindkeys/d' -e '/at-spi/d' ~/.config/i3/startup.conf
 sed -i -e 's/scheme_path=.*/scheme_path=\/usr\/share\/qt5ct\/colors\/airy\.conf/' \
 -e 's/custom_palette=.*/custom_palette=false/' ~/.config/qt5ct/qt5ct.conf
 sed -i -e 's/scheme_path=.*/scheme_path=\/usr\/share\/qt6ct\/colors\/airy\.conf/' \
 -e 's/custom_palette=.*/custom_palette=false/' ~/.config/qt6ct/qt6ct.conf
-sed -i -e '/mate-polkit/d' -e '/xbindkeys/d' -e '/at-spi/d' ~/.config/i3/startup.conf
 sed -i 's/has imv, .* X, flag f = imv/X, flag f = \/usr\/libexec\/imv\/imv/' \
 ~/.config/ranger/rifle.conf
 sed -i 's/gif=mpv/gif=imv/' ~/.config/mimeapps.list

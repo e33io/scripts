@@ -155,7 +155,6 @@ xdg-user-dirs-update
 sed -i "s/\/user\//\/$(whoami)\//" ~/.config/gtk-3.0/bookmarks ~/.gtkrc-2.0 \
 ~/.config/qt5ct/qt5ct.conf ~/.config/qt6ct/qt6ct.conf \
 ~/.config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml
-sed -i 's/"top": 1,/"top": 0,/' ~/.config/fastfetch/config.jsonc
 sed -i 's/brave-browser/brave/' ~/.config/i3/config
 sed -i -e '/libexec/d' -e 's/^#\$exec/$exec/g' ~/.config/i3/startup.conf
 echo "i3 installed via e33io script: $(date '+%B %d, %Y, %H:%M')" \
