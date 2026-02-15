@@ -178,6 +178,7 @@ sed -i -e 's/scheme_path=.*/scheme_path=\/usr\/share\/qt6ct\/colors\/airy\.conf/
 sed -i -e '/mate-polkit/d' -e '/xbindkeys/d' -e '/at-spi/d' ~/.config/i3/startup.conf
 sed -i 's/has imv, .* X, flag f = imv/X, flag f = \/usr\/libexec\/imv\/imv/' \
 ~/.config/ranger/rifle.conf
+sed -i 's/gif=mpv/gif=imv/' ~/.config/mimeapps.list
 echo "i3 installed via e33io script: $(date '+%B %d, %Y, %H:%M')" \
 | tee -a ~/.install-info > /dev/null
 rm -rf ~/core
