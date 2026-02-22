@@ -79,7 +79,7 @@ echo "========================================================================"
 echo "Clone custom configuration files"
 echo "========================================================================"
 
-git clone https://github.com/e33io/core ~/core
+git clone https://github.com/e33io/dots ~/dots
 
 echo "========================================================================"
 echo "Copy custom configuration files"
@@ -182,7 +182,7 @@ sed -i 's/has imv, .* X, flag f = imv/X, flag f = \/usr\/libexec\/imv\/imv/' \
 sed -i 's/gif=mpv/gif=imv/' ~/.config/mimeapps.list
 echo "i3 installed via e33io script: $(date '+%B %d, %Y, %H:%M')" \
 | tee -a ~/.install-info > /dev/null
-rm -rf ~/core
+rm -rf ~/dots
 rm -rf ~/scripts
 
 clear

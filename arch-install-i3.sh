@@ -81,7 +81,7 @@ echo "========================================================================"
 echo "Clone custom configuration files"
 echo "========================================================================"
 
-git clone https://github.com/e33io/core ~/core
+git clone https://github.com/e33io/dots ~/dots
 
 echo "========================================================================"
 echo "Copy custom configuration files"
@@ -159,7 +159,7 @@ sed -i 's/brave-browser/brave/' ~/.config/i3/config
 sed -i -e '/libexec/d' -e 's/^#\$exec/$exec/g' ~/.config/i3/startup.conf
 echo "i3 installed via e33io script: $(date '+%B %d, %Y, %H:%M')" \
 | tee -a ~/.install-info > /dev/null
-rm -rf ~/core
+rm -rf ~/dots
 rm -rf ~/scripts
 
 clear
