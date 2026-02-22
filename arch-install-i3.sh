@@ -87,11 +87,11 @@ echo "========================================================================"
 echo "Copy custom configuration files"
 echo "========================================================================"
 
-cp -R ~/core/home/.??* ~/
-cp -R ~/core/arch/home/.??* ~/
+cp -R ~/dots/home/.??* ~/
+cp -R ~/dots/arch/home/.??* ~/
 cp -R ~/scripts/set-theming-i3.sh ~/.local/bin/set-theming
-sudo cp -R ~/core/root/* /
-sudo cp -R ~/core/arch/root/* /
+sudo cp -R ~/dots/root/* /
+sudo cp -R ~/dots/arch/root/* /
 sudo mkdir -p /boot/grub/fonts
 sudo cp -R /usr/share/grub/ter-* /boot/grub/fonts
 sudo mkdir -p /root/.config/{gtk-3.0,micro,qt5ct,qt6ct}

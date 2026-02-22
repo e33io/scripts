@@ -85,11 +85,11 @@ echo "========================================================================"
 echo "Copy custom configuration files"
 echo "========================================================================"
 
-cp -R ~/core/home/.??* ~/
-cp -R ~/core/debian/home/.??* ~/
+cp -R ~/dots/home/.??* ~/
+cp -R ~/dots/debian/home/.??* ~/
 cp -R ~/scripts/set-theming-i3.sh ~/.local/bin/set-theming
-sudo cp -R ~/core/root/* /
-sudo cp -R ~/core/debian/root/* /
+sudo cp -R ~/dots/root/* /
+sudo cp -R ~/dots/debian/root/* /
 sudo mkdir -p /boot/grub/fonts
 sudo cp -R /usr/share/grub/ter-* /boot/grub/fonts
 sudo rm -rf /usr/share/xsessions/lightdm-xsession.desktop
