@@ -32,8 +32,6 @@ linux installation scripts
 
 - use [`install-custom-themes.sh`](https://github.com/e33io/scripts/blob/main/install-custom-themes.sh) to install custom Mint and Yaru themes on Debian or Arch
 
-- use [`set-theming-i3.sh`](https://github.com/e33io/scripts/blob/main/set-theming-i3.sh) to select and set theming for i3 and applications
-
 - use [`install-sovran-fonts.sh`](https://github.com/e33io/scripts/blob/main/install-sovran-fonts.sh) to install [Sovran](https://sovranfonts.e33.io) fonts
 
 &nbsp;

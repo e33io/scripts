@@ -87,7 +87,6 @@ echo "========================================================================"
 
 cp -R ~/dots/home/.??* ~/
 cp -R ~/dots/debian/home/.??* ~/
-cp -R ~/scripts/set-theming-i3.sh ~/.local/bin/set-theming
 sudo cp -R ~/dots/root/* /
 sudo cp -R ~/dots/debian/root/* /
 sudo mkdir -p /boot/grub/fonts

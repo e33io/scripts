@@ -89,7 +89,6 @@ echo "========================================================================"
 
 cp -R ~/dots/home/.??* ~/
 cp -R ~/dots/arch/home/.??* ~/
-cp -R ~/scripts/set-theming-i3.sh ~/.local/bin/set-theming
 sudo cp -R ~/dots/root/* /
 sudo cp -R ~/dots/arch/root/* /
 sudo mkdir -p /boot/grub/fonts
