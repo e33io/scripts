@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # =============================================================================
-# Arch Linux - Install i3 (tiling window manager)
+# Install i3 (tiling window manager) on Arch Linux
 # URL: https://github.com/e33io/scripts/blob/main/arch-install-i3.sh
 # -----------------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
@@ -10,7 +10,6 @@
 # ready-to-use desktop session.
 # -----------------------------------------------------------------------------
 # Instructions for running this script:
-#   sudo pacman -S git
 #   git clone https://github.com/e33io/scripts
 #   cd scripts
 #   sh arch-install-i3.sh

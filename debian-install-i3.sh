@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # =============================================================================
-# Debian Linux - Install i3 (tiling window manager)
+# Install i3 (tiling window manager) on Debian Linux
 # URL: https://github.com/e33io/scripts/blob/main/debian-install-i3.sh
 # -----------------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
@@ -9,7 +9,6 @@
 # manager and a base set of apps for a ready-to-use desktop session.
 # -----------------------------------------------------------------------------
 # Instructions for running this script:
-#   sudo apt install git
 #   git clone https://github.com/e33io/scripts
 #   cd scripts
 #   sh debian-install-i3.sh
