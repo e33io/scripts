@@ -89,7 +89,28 @@ printf "Physical size: ~%.1f\" %s\n" "$diag_in" "$note"
 printf "HiDPI: %s\n" "$is_hidpi"
 echo "========================================================================"
 
-if [ "$is_hidpi" = "false" ]; then
+if [ "$pc_type" = "vm" ]; then
+    clear
+    while true; do
+        echo "========================================================================"
+        echo "The option below lets you select a configuration specific"
+        echo "to your monitor type for proper display scaling."
+        echo "========================================================================"
+        echo "  1) Standard HD (96 dpi settings for 1x scaling)"
+        echo "  2) HiDPI (192 dpi settings for 2x scaling)"
+        echo "------------------------------------------------------------------------"
+        read -rp "What type of monitor are you using? " n
+        case $n in
+            1) echo "You chose Standard HD (96 dpi) monitor";
+               bash ~/scripts/mod-wm-dpi-scaling.sh;
+               sudo sed -i 's/^greeter-wrapper/#greeter-wrapper/' /etc/lightdm/lightdm.conf;
+               break;;
+            2) echo "You chose HiDPI (192 dpi) monitor";
+               break;;
+            *) echo "Invalid selection, please enter a number from the list.";;
+        esac
+    done
+elif [ ! "$is_hidpi" = "true" ]; then
     echo "Standard HD (~96 dpi) monitor detected - updating configuration..."
     bash mod-wm-dpi-scaling.sh
 fi
