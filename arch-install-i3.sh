@@ -107,43 +107,11 @@ if ! command -v papirus-folders > /dev/null 2>&1; then
 fi
 papirus-folders -C adwaita --theme Papirus-Dark
 
-clear
-while true; do
-    echo "========================================================================"
-    echo "The option below lets you select a configuration specific"
-    echo "to your monitor type for proper display scaling."
-    echo "========================================================================"
-    echo "  1) Standard HD (96 dpi settings for 1x scaling)"
-    echo "  2) HiDPI (192 dpi settings for 2x scaling)"
-    echo "------------------------------------------------------------------------"
+echo "========================================================================"
+echo "Run system detect script to update device-specific configuration files"
+echo "========================================================================"
 
-    read -rp "What type of monitor are you using? " n
-    case $n in
-        1) echo "You chose Standard HD (96 dpi) monitor";
-           sh ~/scripts/mod-wm-dpi-scaling.sh;
-           sudo sed -i 's/^greeter-wrapper/#greeter-wrapper/' /etc/lightdm/lightdm.conf;
-           break;;
-        2) echo "You chose HiDPI (192 dpi) monitor";
-           break;;
-        *) echo "Invalid selection, please enter a number from the list.";;
-    esac
-done
-
-pc_type="$(hostnamectl chassis)"
-if [ "$pc_type" = laptop ] || [ "$pc_type" = notebook ] \
-    || [ "$pc_type" = portable ]; then
-    echo "========================================================================"
-    echo "Modify window manager configs for laptop use"
-    echo "========================================================================"
-
-    sh ~/scripts/mod-wm-laptop.sh
-elif [ "$pc_type" = vm ]; then
-    echo "========================================================================"
-    echo "Install spice-vdagent and update VM-specific configs"
-    echo "========================================================================"
-
-    sh ~/scripts/mod-virt-machines.sh
-fi
+bash system-detect.sh
 
 echo "========================================================================"
 echo "Update and clean up user directory"
