@@ -12,7 +12,7 @@ set -euo pipefail
 # Use C locale to avoid comma decimal separators in awk/printf
 export LC_ALL=C
 
-# Find the first connected display with a resolution
+# Find the first connected display
 display_line=$(xrandr --query | grep ' connected' | head -1)
 res_field=$(echo "$display_line" | grep -oE '[0-9]+x[0-9]+\+[0-9]+\+[0-9]+' | head -1)
 width_px=$(echo "$res_field" | sed 's/x.*//')
