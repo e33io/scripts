@@ -14,10 +14,11 @@ export LC_ALL=C
 
 # Find the first connected display with a resolution
 display_line=$(xrandr --query | grep ' connected' | head -1)
-width_px=$(echo "$display_line" | grep -oE '[0-9]+x[0-9]+\+[0-9]+\+[0-9]+' | head -1 | cut -dx -f1)
-height_px=$(echo "$display_line" | grep -oE '[0-9]+x[0-9]+\+[0-9]+\+[0-9]+' | head -1 | cut -dx -f2 | cut -d+ -f1)
-width_mm=$(echo "$display_line" | grep -oE '[0-9]+mm x [0-9]+mm' | grep -oE '^[0-9]+')
-height_mm=$(echo "$display_line" | grep -oE '[0-9]+mm x [0-9]+mm' | grep -oE '[0-9]+$')
+res_field=$(echo "$display_line" | grep -oE '[0-9]+x[0-9]+\+[0-9]+\+[0-9]+' | head -1)
+width_px=$(echo "$res_field" | sed 's/x.*//')
+height_px=$(echo "$res_field" | sed 's/[0-9]*x//' | sed 's/+.*//')
+width_mm=$(echo "$display_line" | grep -oE '[0-9]+mm x [0-9]+mm' | sed 's/mm.*//')
+height_mm=$(echo "$display_line" | grep -oE '[0-9]+mm x [0-9]+mm' | sed 's/.*x //' | sed 's/mm//')
 display_info="${width_px} ${height_px} ${width_mm:-0} ${height_mm:-0}"
 
 # Parse info safely
