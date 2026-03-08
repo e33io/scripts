@@ -101,7 +101,7 @@ echo "========================================================================"
 echo "Install custom themes and change Papirus folders color"
 echo "========================================================================"
 
-sh ~/scripts/install-custom-themes.sh
+bash ~/scripts/install-custom-themes.sh
 if ! command -v papirus-folders > /dev/null 2>&1; then
     wget -qO- https://git.io/papirus-folders-install | sh
 fi
