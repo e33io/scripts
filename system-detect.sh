@@ -104,17 +104,17 @@ if [ "$pc_type" = "vm" ]; then
     done
 elif [ "$is_hidpi" = "false" ]; then
     echo "Standard HD (~96 dpi) monitor detected - updating configuration..."
-    bash mod-wm-dpi-scaling.sh
+    bash ~/scripts/mod-wm-dpi-scaling.sh
 fi
 
 case "$pc_type" in
     laptop|portable|notebook|convertible|tablet)
         echo "Laptop/notebook device-type detected - updating configuration..."
-        bash mod-wm-laptop.sh
+        bash ~/scripts/mod-wm-laptop.sh
         ;;
     vm)
         echo "VM device-type detected - updating configuration..."
-        bash mod-virt-machines.sh
+        bash ~/scripts/mod-virt-machines.sh
         ;;
     *)
         :
