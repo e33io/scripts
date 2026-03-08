@@ -77,8 +77,7 @@ esac
 echo "========================================================================"
 printf "Device type: %s\n" "$pc_type"
 printf "Resolution: %sx%s\n" "$width_px" "$height_px"
-diag_in_fmt=$(awk -v d="$diag_in" 'BEGIN { printf "%.1f", d }')
-printf "Physical size: ~%s\" %s\n" "$diag_in_fmt" "$note"
+printf "Physical size: ~%s\" %s\n" "$diag_in_fmt" "${note:-}"
 printf "HiDPI: %s\n" "$is_hidpi"
 echo "========================================================================"
 
