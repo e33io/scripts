@@ -90,23 +90,17 @@ printf "HiDPI: %s\n" "$is_hidpi"
 echo "========================================================================"
 
 if [ "$is_hidpi" = "false" ]; then
-    echo "========================================================================"
-    echo "Modify window manager configs for standard HD monitors"
-    echo "========================================================================"
+    echo "Standard HD (~96 dpi) monitor detected - updating configuration..."
     bash mod-wm-dpi-scaling.sh
 fi
 
 case "$pc_type" in
     laptop|portable|notebook|convertible|tablet)
-        echo "========================================================================"
-        echo "Modify window manager configs for laptop/notebook use"
-        echo "========================================================================"
+        echo "Laptop/notebook device-type detected - updating configuration..."
         bash mod-wm-laptop.sh
         ;;
     vm)
-        echo "========================================================================"
-        echo "Install spice-vdagent and modify VM-specific configs"
-        echo "========================================================================"
+        echo "VM device-type detected - updating configuration..."
         bash mod-virt-machines.sh
         ;;
 esac
