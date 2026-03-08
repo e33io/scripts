@@ -38,13 +38,13 @@ sudo apt -y install i3 polybar rofi network-manager xdotool xbindkeys xssproxy x
 xinput x11-utils upower gvfs-fuse gvfs-backends nfs-common cifs-utils playerctl feh lxappearance \
 qt*ct adwaita-qt* gnome-themes-extra papirus-icon-theme breeze-icon-theme fonts-dejavu \
 fonts-noto-core fonts-noto-cjk fonts-noto-color-emoji mate-polkit-bin lightdm lightdm-gtk-greeter \
-lightdm-gtk-greeter-settings plymouth plymouth-themes kitty python3-pypillowfight xterm lazygit \
-fastfetch htop cmus cava cmatrix ncal micro ranger ueberzug caca-utils highlight atool w3m \
-poppler-utils mediainfo fzf libimage-exiftool-perl apt-transport-https curl rsync dconf-cli \
-thunar thunar-archive-plugin tumbler-plugins-extra ffmpegthumbnailer heif-thumbnailer \
-heif-gdk-pixbuf xarchiver pipewire-audio pulseaudio-utils pavucontrol-qt synaptic timeshift \
-mintstick scrot atril imv mpv parole mousepad galculator filezilla gpick darktable gimp inkscape \
-libreoffice-calc libreoffice-draw libreoffice-impress libreoffice-writer libreoffice-gtk3
+lightdm-gtk-greeter-settings plymouth plymouth-themes laptop-detect kitty python3-pypillowfight xterm \
+lazygit fastfetch htop cmus cava cmatrix ncal micro ranger ueberzug caca-utils highlight atool w3m \
+poppler-utils mediainfo fzf libimage-exiftool-perl apt-transport-https curl rsync dconf-cli thunar \
+thunar-archive-plugin tumbler-plugins-extra ffmpegthumbnailer heif-thumbnailer heif-gdk-pixbuf \
+xarchiver pipewire-audio pulseaudio-utils pavucontrol-qt synaptic timeshift mintstick scrot atril \
+imv mpv parole mousepad galculator filezilla gpick darktable gimp inkscape libreoffice-calc \
+libreoffice-draw libreoffice-impress libreoffice-writer libreoffice-gtk3
 
 if ! command -v brave-browser > /dev/null 2>&1; then
     echo "========================================================================"
@@ -114,20 +114,20 @@ echo "========================================================================"
 
 bash ~/scripts/system-detect.sh
 
+if [ -f /etc/devuan_version ]; then
+    echo "========================================================================"
+    echo "Modify Debian configs for use with Devuan Linux"
+    echo "========================================================================"
+
+    bash ~/scripts/mod-debian-to-devuan.sh
+fi
+
 echo "========================================================================"
 echo "Update x-terminal-emulator and x-www-browser settings"
 echo "========================================================================"
 
 sudo update-alternatives --set x-terminal-emulator /usr/bin/kitty
 sudo update-alternatives --set x-www-browser /usr/bin/brave-browser-stable
-
-if [ -f /etc/devuan_version ]; then
-    echo "========================================================================"
-    echo "Modify Debian configs for use with Devuan Linux"
-    echo "========================================================================"
-
-    sh ~/scripts/mod-debian-to-devuan.sh
-fi
 
 echo "========================================================================"
 echo "Update and clean up user directory"

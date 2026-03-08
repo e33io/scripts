@@ -23,26 +23,7 @@ echo "========================================================================"
 sudo apt -y purge pipewire*
 sudo apt -y autoremove
 sudo apt -y autoclean
-sudo apt -y install pulseaudio laptop-detect
-
-if [ -d ~/.config/i3 ]; then
-    if laptop-detect > /dev/null 2>&1; then
-        echo "========================================================================"
-        echo "Modify window manager configs for laptop use"
-        echo "========================================================================"
-
-        curl -fsSL https://raw.githubusercontent.com/e33io/scripts/refs/heads/main/mod-wm-laptop.sh | sh
-    fi
-fi
-
-sys_vendor="$(cat /sys/class/dmi/id/sys_vendor)"
-if [ "$sys_vendor" = QEMU ]; then
-    echo "========================================================================"
-    echo "Install spice-vdagent and update VM-specific configs"
-    echo "========================================================================"
-
-    curl -fsSL https://raw.githubusercontent.com/e33io/scripts/refs/heads/main/mod-virt-machines.sh | sh
-fi
+sudo apt -y install pulseaudio
 
 echo "========================================================================"
 echo "Replace systemctl with loginctl"
