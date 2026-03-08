@@ -28,7 +28,7 @@ if [ -z "$width_px" ] || [ -z "$height_px" ]; then
     exit 1
 fi
 
-# Handle missing physical size (assumes 96 DPI as fallback — may not reflect
+# Handle missing physical size (assumes 96 DPI as fallback - may not reflect
 # actual screen size on high-density or unusual displays)
 if [ "$width_mm" = "0" ] || [ -z "$width_mm" ]; then
     width_mm=$(awk -v px="$width_px" 'BEGIN { print int((px/96)*25.4) }')
@@ -116,5 +116,5 @@ case "$pc_type" in
         echo "VM device-type detected - updating configuration..."
         bash ~/scripts/mod-virt-machines.sh
         ;;
-    *) :;;
+    *) echo "Desktop device-type detected - no additional updates.";;
 esac
