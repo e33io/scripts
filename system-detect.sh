@@ -13,28 +13,19 @@ set -euo pipefail
 export LC_ALL=C
 
 # Find the first connected display with a resolution
-display_info=$(xrandr --query | awk '
-/ connected/ {
-    if (match($0, /([0-9]+)x([0-9]+)/, res)) {
-        width_px = res[1]; height_px = res[2];
-    }
-    if (match($0, /([0-9]+)mm x ([0-9]+)mm/, dim)) {
-        width_mm = dim[1]; height_mm = dim[2];
-    }
-    if (width_px && height_px) {
-        print width_px, height_px, (width_mm?width_mm:0), (height_mm?height_mm:0);
-        exit;
-    }
-}')
+display_line=$(xrandr --query | grep ' connected' | head -1)
+width_px=$(echo "$display_line" | grep -oE '[0-9]+x[0-9]+\+[0-9]+\+[0-9]+' | head -1 | cut -dx -f1)
+height_px=$(echo "$display_line" | grep -oE '[0-9]+x[0-9]+\+[0-9]+\+[0-9]+' | head -1 | cut -dx -f2 | cut -d+ -f1)
+width_mm=$(echo "$display_line" | grep -oE '[0-9]+mm x [0-9]+mm' | grep -oE '^[0-9]+')
+height_mm=$(echo "$display_line" | grep -oE '[0-9]+mm x [0-9]+mm' | grep -oE '[0-9]+$')
+display_info="${width_px} ${height_px} ${width_mm:-0} ${height_mm:-0}"
 
 # Parse info safely
-if [ -z "$display_info" ]; then
+if [ -z "$width_px" ] || [ -z "$height_px" ]; then
     echo "! Could not parse display info from xrandr."
     xrandr --query
     exit 1
 fi
-
-read -r width_px height_px width_mm height_mm <<<"$display_info"
 
 # Handle missing physical size (assumes 96 DPI as fallback — may not reflect
 # actual screen size on high-density or unusual displays)
@@ -110,7 +101,7 @@ if [ "$pc_type" = "vm" ]; then
             *) echo "Invalid selection, please enter a number from the list.";;
         esac
     done
-elif [ ! "$is_hidpi" = "true" ]; then
+elif [ "$is_hidpi" = "false" ]; then
     echo "Standard HD (~96 dpi) monitor detected - updating configuration..."
     bash mod-wm-dpi-scaling.sh
 fi
