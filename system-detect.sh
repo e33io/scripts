@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
 
 # =============================================================================
-# System type and HiDPI detection for X11
+# System type and HiDPI detection for modifying window manager configs
+# URL: https://github.com/e33io/scripts/blob/main/system-detect.sh
+# -----------------------------------------------------------------------------
+# Use this script at your own risk, it will overwrite existing files!
 # =============================================================================
 
 set -euo pipefail
