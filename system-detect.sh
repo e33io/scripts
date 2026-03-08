@@ -38,8 +38,8 @@ else
     note=""
 fi
 
-# Compute diagonal in inches
 diag_in=$(awk -v w="$width_mm" -v h="$height_mm" 'BEGIN { print sqrt(w*w + h*h)/25.4 }')
+diag_in_fmt=$(awk -v d="$diag_in" 'BEGIN { printf "%.1f", d }')
 
 # Detect device type
 if command -v hostnamectl > /dev/null 2>&1; then
@@ -77,7 +77,8 @@ esac
 echo "========================================================================"
 printf "Device type: %s\n" "$pc_type"
 printf "Resolution: %sx%s\n" "$width_px" "$height_px"
-printf "Physical size: ~%.1f\" %s\n" "$diag_in" "$note"
+diag_in_fmt=$(awk -v d="$diag_in" 'BEGIN { printf "%.1f", d }')
+printf "Physical size: ~%s\" %s\n" "$diag_in_fmt" "$note"
 printf "HiDPI: %s\n" "$is_hidpi"
 echo "========================================================================"
 
@@ -116,7 +117,5 @@ case "$pc_type" in
         echo "VM device-type detected - updating configuration..."
         bash ~/scripts/mod-virt-machines.sh
         ;;
-    *)
-        :
-        ;;
+    *) :;;
 esac
