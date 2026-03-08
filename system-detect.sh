@@ -116,4 +116,7 @@ case "$pc_type" in
         echo "VM device-type detected - updating configuration..."
         bash mod-virt-machines.sh
         ;;
+    *)
+        :
+        ;;
 esac
