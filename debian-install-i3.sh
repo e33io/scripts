@@ -112,7 +112,7 @@ echo "========================================================================"
 echo "Run system detect script to update device-specific configuration files"
 echo "========================================================================"
 
-bash system-detect.sh
+bash ~/scripts/system-detect.sh
 
 echo "========================================================================"
 echo "Update x-terminal-emulator and x-www-browser settings"
