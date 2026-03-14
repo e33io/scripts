@@ -73,7 +73,7 @@ case "$pc_type" in
         ;;
 esac
 
-# Output
+# Device and display info output
 echo "========================================================================"
 printf "Device type: %s\n" "$pc_type"
 printf "Resolution: %sx%s\n" "$width_px" "$height_px"
@@ -81,6 +81,7 @@ printf "Physical size: ~%s\" %s\n" "$diag_in_fmt" "${note:-}"
 printf "HiDPI: %s\n" "$is_hidpi"
 echo "========================================================================"
 
+# Function to run setup scripts
 run_setup() {
     if [ "$pc_type" = "vm" ]; then
         clear
@@ -121,6 +122,7 @@ run_setup() {
     esac
 }
 
+# Use `setup` argument to call `run_setup` function
 if [ "${1:-}" = "setup" ]; then
     run_setup
 fi
