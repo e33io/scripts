@@ -112,7 +112,7 @@ echo "========================================================================"
 echo "Run system detect script to update device-specific configuration files"
 echo "========================================================================"
 
-bash ~/scripts/system-detect.sh
+bash ~/scripts/system-detect.sh setup
 
 if [ -f /etc/devuan_version ]; then
     echo "========================================================================"
