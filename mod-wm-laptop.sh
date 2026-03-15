@@ -26,8 +26,10 @@ fi
 
 # i3wm specific configs
 if [ -d ~/.config/i3 ]; then
-    # update startup.conf (add lock-suspend.sh to xss-lock command)
-    sed -i 's/xss-lock -l/xss-lock -n sh ~\/\.local\/bin\/lock-suspend\.sh -l/' ~/.config/i3/startup.conf
+    # update startup.conf (xss-lock command)
+    sed -i 's|xss-lock -l -- i3lock -n -i ~/.cache/i3lock/lock.png|'\
+    'xss-lock -- sh -c "i3lock -i ~/.cache/i3lock/lock.png '\
+    '\&\& systemctl suspend"|' ~/.config/i3/startup.conf
     # update polybar config.ini (modules)
     sed -i -e 's/time pulseaudio eth tray/time battery pulseaudio wlan tray/' \
     -e 's/maxlen = .*/maxlen = 140/' \
