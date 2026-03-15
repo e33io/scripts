@@ -55,11 +55,15 @@ if [ -f /etc/lightdm/Xgsession ]; then
     sudo sed -i 's/GDK_SCALE=2/GDK_SCALE=1/' /etc/lightdm/Xgsession
 fi
 
-# update plymouthd.conf (scaling)
+# update plymouthd.conf (scaling) and grub (font size) on Debian
 if [ -f /etc/debian_version ]; then
     sudo sed -i 's/DeviceScale=2/DeviceScale=1/' /etc/plymouth/plymouthd.conf
+    sudo sed -i 's/u32b/u16b/' /etc/default/grub
     sudo update-initramfs -u
+    sudo update-grub
 fi
+
+# update plymouthd.conf (scaling) on Arch
 if [ -f /etc/pacman.conf ]; then
     sudo sed -i 's/DeviceScale=2/DeviceScale=1/' /etc/plymouth/plymouthd.conf
     sudo mkinitcpio -p linux
