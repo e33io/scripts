@@ -43,7 +43,7 @@ diag_in_fmt=$(awk -v d="$diag_in" 'BEGIN { printf "%.1f", d }')
 
 # Detect device type
 if command -v hostnamectl > /dev/null 2>&1; then
-    pc_type=$(hostnamectl 2>/dev/null | grep -i "Chassis" | awk '{print tolower($2)}')
+    pc_type=$(hostnamectl 2>/dev/null | grep -i "^[[:space:]]*Chassis:" | awk '{print tolower($2)}')
 else
     sys_vendor="$(cat /sys/class/dmi/id/sys_vendor 2>/dev/null || echo '')"
     # Check for laptop-detect tool before using it
