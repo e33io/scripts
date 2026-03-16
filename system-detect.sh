@@ -61,7 +61,7 @@ is_hidpi=false
 case "$pc_type" in
     laptop|portable|notebook|convertible|tablet)
         awk -v d="$diag_in" -v w="$width_px" \
-            'BEGIN { exit !(d > 13.5 && w > 2256) }' && is_hidpi=true || true
+            'BEGIN { exit !((d > 13.5 && w > 2256) || (d < 12.8 && w == 1920)) }' && is_hidpi=true || true
         ;;
     vm)
         awk -v d="$diag_in" -v w="$width_px" \
