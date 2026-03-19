@@ -15,7 +15,7 @@ export LC_ALL=C
 # Detect device type
 pc_type="$(hostnamectl chassis)"
 
-if [ ! "$pc_type" = "vm" ]; then
+if [ "$pc_type" != "vm" ]; then
     # Find the first connected display
     display_line=$(xrandr --query | grep ' connected' | head -1)
     res_field=$(echo "$display_line" | grep -oE '[0-9]+x[0-9]+\+[0-9]+\+[0-9]+' | head -1)
@@ -89,7 +89,7 @@ if [ "$pc_type" = "vm" ]; then
             *) echo "Invalid selection, please enter a number from the list.";;
         esac
     done
-elif [ "$is_hidpi" = "false" ]; then
+elif [ "${is_hidpi:-false}" = "false" ]; then
     echo "Standard HD (~96 dpi) monitor detected - updating configuration..."
     bash ~/scripts/mod-wm-dpi-scaling.sh
 fi
