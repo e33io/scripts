@@ -109,7 +109,7 @@ echo "========================================================================"
 echo "Run system detect script to update device-specific configuration files"
 echo "========================================================================"
 
-bash ~/scripts/system-detect.sh setup
+bash ~/scripts/system-detect.sh
 
 echo "========================================================================"
 echo "Update and clean up user directory"
