@@ -17,13 +17,10 @@ if [ "$(id -u)" = 0 ]; then
     exit 1
 fi
 
-if [ -f /etc/debian_version ]; then
-    sudo apt -y install xserver-xorg-video-intel
-fi
-if [ -f /etc/pacman.conf ]; then
-    sudo pacman -S --noconfirm --needed mesa-utils xf86-video-intel
-fi
+# install Intel packages
+sudo pacman -S --noconfirm --needed mesa-utils xf86-video-intel
 
+# setup TearFree option
 device="$(glxinfo -B | awk '/Vendor:/ { print $2 }')"
 if [ "$device" = Intel ]; then
     echo 'Section "Device"

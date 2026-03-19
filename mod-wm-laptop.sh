@@ -17,12 +17,7 @@ if [ "$(id -u)" = 0 ]; then
 fi
 
 # install other packages
-if [ -f /etc/debian_version ]; then
-    sudo apt -y install brightnessctl libinput-tools wmctrl
-fi
-if [ -f /etc/pacman.conf ]; then
-    sudo pacman -S --noconfirm --needed brightnessctl libinput-tools wmctrl
-fi
+sudo pacman -S --noconfirm --needed brightnessctl libinput-tools wmctrl
 
 # i3wm specific configs
 if [ -d ~/.config/i3 ]; then

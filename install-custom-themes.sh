@@ -1,11 +1,10 @@
 #!/bin/bash
 
 # =============================================================================
-# Install Custom Mint and Yaru Themes
+# Install Custom Mint and Yaru Themes on Arch Linux
 # URL: https://github.com/e33io/scripts/blob/main/install-custom-themes.sh
 # -----------------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
-# NOTE: Only use with Debian or Arch Linux!
 # =============================================================================
 
 if [ "$(id -u)" = 0 ]; then
@@ -17,49 +16,26 @@ if [ "$(id -u)" = 0 ]; then
     exit 1
 fi
 
-if ! { [ -f /etc/debian_version ] || [ -f /etc/pacman.conf ]; } then
-    echo "========================================================================"
-    echo "This script is NOT compatible with your version of Linux!"
-    echo "It only works with Debian or Arch Linux and it will"
-    echo "exit now without running."
-    echo "========================================================================"
-    exit 1
-fi
-
 echo "========================================================================"
 echo "Install theming dependencies"
 echo "========================================================================"
 
-if [ -f /etc/debian_version ]; then
-    sudo apt update
-    sudo apt -y install gnome-themes-extra gtk2-engines gtk2-engines-murrine \
-    gtk2-engines-pixbuf libglib2.0-bin libgtk-3-common libgtk-4-common \
-    libgtk2.0-common adwaita-qt* qt-style-kvantum git
-fi
+if ! command -v yay > /dev/null 2>&1; then
+    echo "========================================================================"
+    echo "Setup Yay for AUR"
+    echo "========================================================================"
 
-if [ -f /etc/pacman.conf ]; then
-    if ! command -v yay > /dev/null 2>&1; then
-        echo "========================================================================"
-        echo "Setup Yay for AUR"
-        echo "========================================================================"
-
-        git clone https://aur.archlinux.org/yay-bin.git ~/yay-bin
-        cd ~/yay-bin
-        makepkg -si --noconfirm
-        cd
-        rm -rf ~/yay-bin
-    fi
-    sudo pacman -Syu --noconfirm --needed gnome-themes-extra kvantum kvantum-qt5 less git
-    yay -S --noconfirm --needed --sudoloop adwaita-qt5 adwaita-qt6
+    git clone https://aur.archlinux.org/yay-bin.git ~/yay-bin
+    cd ~/yay-bin
+    makepkg -si --noconfirm
+    cd
+    rm -rf ~/yay-bin
 fi
+sudo pacman -Syu --noconfirm --needed gnome-themes-extra kvantum kvantum-qt5 less git
+yay -S --noconfirm --needed --sudoloop adwaita-qt5 adwaita-qt6
 
 if ! command -v lxqt-session > /dev/null 2>&1; then
-    if [ -f /etc/debian_version ]; then
-        sudo apt -y install qt*ct
-    fi
-    if [ -f /etc/pacman.conf ]; then
-        sudo pacman -S --noconfirm --needed qt5ct qt6ct
-    fi
+    sudo pacman -S --noconfirm --needed qt5ct qt6ct
 fi
 
 echo "========================================================================"

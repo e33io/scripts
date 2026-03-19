@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # =============================================================================
-# Install i3 (tiling window manager) on Arch Linux
+# Install i3 (window manager) on Arch Linux
 # URL: https://github.com/e33io/scripts/blob/main/arch-install-i3.sh
 # -----------------------------------------------------------------------------
 # Use this script at your own risk, it will overwrite existing files!
@@ -87,9 +87,7 @@ echo "Copy custom configuration files"
 echo "========================================================================"
 
 cp -R ~/dots/home/.??* ~/
-cp -R ~/dots/arch/home/.??* ~/
 sudo cp -R ~/dots/root/* /
-sudo cp -R ~/dots/arch/root/* /
 sudo mkdir -p /boot/grub/fonts
 sudo cp -R /usr/share/grub/ter-* /boot/grub/fonts
 sudo mkdir -p /root/.config/{gtk-3.0,micro,qt5ct,qt6ct}
@@ -121,7 +119,6 @@ xdg-user-dirs-update
 sed -i "s/\/user\//\/$(whoami)\//" ~/.config/gtk-3.0/bookmarks ~/.gtkrc-2.0 \
 ~/.config/qt5ct/qt5ct.conf ~/.config/qt6ct/qt6ct.conf \
 ~/.config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml
-sed -i -e '/libexec/d' -e 's/^#\$exec/$exec/g' ~/.config/i3/startup.conf
 echo "i3 installed via e33io script: $(date '+%B %d, %Y, %H:%M')" \
 | tee -a ~/.install-info > /dev/null
 rm -rf ~/dots

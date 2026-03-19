@@ -17,12 +17,7 @@ if [ "$(id -u)" = 0 ]; then
 fi
 
 # install spice-vdagent
-if [ -f /etc/debian_version ]; then
-    sudo apt -y install spice-vdagent
-fi
-if [ -f /etc/pacman.conf ]; then
-    sudo pacman -S --noconfirm --needed spice-vdagent
-fi
+sudo pacman -S --noconfirm --needed spice-vdagent
 
 # i3wm specific configs
 if [ -d ~/.config/i3 ]; then

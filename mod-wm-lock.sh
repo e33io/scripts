@@ -17,12 +17,7 @@ if [ "$(id -u)" = 0 ]; then
 fi
 
 # install xsecurelock
-if [ -f /etc/debian_version ]; then
-    sudo apt -y install xsecurelock
-fi
-if [ -f /etc/pacman.conf ]; then
-    sudo pacman -S --noconfirm --needed xsecurelock
-fi
+sudo pacman -S --noconfirm --needed xsecurelock
 
 # i3wm specific configs
 if [ -d ~/.config/i3 ]; then

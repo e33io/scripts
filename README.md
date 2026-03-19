@@ -4,11 +4,9 @@ linux installation scripts
 
 &nbsp;
 
-## window managers
+## i3 window manager
 
 - use [`arch-install-i3.sh`](https://github.com/e33io/scripts/blob/main/arch-install-i3.sh) to [install the i3 window manager](https://github.com/e33io/reference-wiki/blob/main/installation-docs/arch-i3-installation.md) on [Arch](https://archlinux.org)
-
-- use [`debian-install-i3.sh`](https://github.com/e33io/scripts/blob/main/debian-install-i3.sh) to [install the i3 window manager](https://github.com/e33io/reference-wiki/blob/main/installation-docs/debian-i3-installation.md) on [Debian](https://www.debian.org)
 
 &nbsp;
 
@@ -18,10 +16,6 @@ linux installation scripts
 
 - use [`install-virt-manager.sh`](https://github.com/e33io/scripts/blob/main/install-virt-manager.sh) to install [virt-manager](https://virt-manager.org) on Debian or Arch
 
-- use [`install-flatpak-deb.sh`](https://github.com/e33io/scripts/blob/main/install-flatpak-deb.sh) to install Flatpak and add Flathub on Debian
-
-- use [`ubuntu-remove-snapd.sh`](https://github.com/e33io/scripts/blob/main/ubuntu-remove-snapd.sh) to remove Snap and install Flatpak on Ubuntu
-
 &nbsp;
 
 ## theming
@@ -30,7 +24,7 @@ linux installation scripts
 
 - use [`install-yaru-themes.sh`](https://github.com/e33io/scripts/blob/main/install-yaru-themes.sh) to install Yaru themes and icons on Debian or Arch
 
-- use [`install-custom-themes.sh`](https://github.com/e33io/scripts/blob/main/install-custom-themes.sh) to install custom Mint and Yaru themes on Debian or Arch
+- use [`install-custom-themes.sh`](https://github.com/e33io/scripts/blob/main/install-custom-themes.sh) to install custom Mint and Yaru themes on Arch
 
 - use [`install-sovran-fonts.sh`](https://github.com/e33io/scripts/blob/main/install-sovran-fonts.sh) to install [Sovran](https://sovranfonts.e33.io) fonts
 

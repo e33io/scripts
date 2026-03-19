@@ -19,6 +19,7 @@ if [ "$(id -u)" = 0 ]; then
     exit 1
 fi
 
+# Check if Swap exists
 if free | awk '/^Swap:/ { exit !$2 }'; then
     echo "Swap file/partition already exists,"
     echo "no changes were made to the system."

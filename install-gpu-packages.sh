@@ -10,13 +10,13 @@ set -e
 # Detect any VGA/3D/Display devices
 gpu_info=$(lspci | grep -Ei 'VGA|3D|Display')
 
-# AMD GPU
+# Install AMD GPU packages
 if echo "$gpu_info" | grep -i 'amd' > /dev/null; then
     echo "AMD GPU detected – installing drivers..."
     sudo pacman -S --noconfirm --needed mesa vulkan-radeon
 fi
 
-# Intel GPU
+# Install Intel GPU packages
 INTEL_GPU=$(echo "$gpu_info" | grep -i 'intel')
 if [[ -n "$INTEL_GPU" ]]; then
     GPU_LOWER="${INTEL_GPU,,}"
