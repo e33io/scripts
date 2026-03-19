@@ -53,6 +53,7 @@ sed -i 's/width=2/width=1/' ~/.local/bin/screenshot.sh
 # update Xgsession script for lightdm-gtk-greeter (GTK scaling)
 if [ -f /etc/lightdm/Xgsession ]; then
     sudo sed -i 's/GDK_SCALE=2/GDK_SCALE=1/' /etc/lightdm/Xgsession
+    sudo sed -i 's/^greeter-wrapper/#greeter-wrapper/' /etc/lightdm/lightdm.conf
 fi
 
 # update plymouthd.conf (scaling)

@@ -65,6 +65,7 @@ if [ "$pc_type" != "vm" ]; then
     printf "Physical size: ~%s\" %s\n" "$diag_in_fmt" "${note:-}"
     printf "HiDPI: %s\n" "$is_hidpi"
     echo "========================================================================"
+    sleep 1
 fi
 
 # Run setup scripts
@@ -80,11 +81,10 @@ if [ "$pc_type" = "vm" ]; then
         echo "------------------------------------------------------------------------"
         read -rp "What type of monitor are you using? " n
         case $n in
-            1) echo "You chose Standard HD (96 dpi) monitor";
-               bash ~/scripts/mod-wm-dpi-scaling.sh;
-               sudo sed -i 's/^greeter-wrapper/#greeter-wrapper/' /etc/lightdm/lightdm.conf;
+            1) echo "You chose Standard HD (96 dpi) monitor"
+               bash ~/scripts/mod-wm-dpi-scaling.sh
                break;;
-            2) echo "You chose HiDPI (192 dpi) monitor";
+            2) echo "You chose HiDPI (192 dpi) monitor"
                break;;
             *) echo "Invalid selection, please enter a number from the list.";;
         esac
