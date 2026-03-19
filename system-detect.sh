@@ -42,19 +42,7 @@ diag_in=$(awk -v w="$width_mm" -v h="$height_mm" 'BEGIN { print sqrt(w*w + h*h)/
 diag_in_fmt=$(awk -v d="$diag_in" 'BEGIN { printf "%.1f", d }')
 
 # Detect device type
-if command -v hostnamectl > /dev/null 2>&1; then
-    pc_type=$(hostnamectl chassis 2>/dev/null)
-else
-    sys_vendor="$(cat /sys/class/dmi/id/sys_vendor 2>/dev/null || echo '')"
-    # Check for laptop-detect tool before using it
-    if command -v laptop-detect > /dev/null 2>&1 && laptop-detect > /dev/null 2>&1; then
-        pc_type="laptop"
-    elif [ "$sys_vendor" = "QEMU" ]; then
-        pc_type="vm"
-    else
-        pc_type="desktop"
-    fi
-fi
+pc_type="$(hostnamectl chassis)"
 
 # Determine if HiDPI
 is_hidpi=false
