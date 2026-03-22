@@ -26,12 +26,11 @@ if ! command -v yay > /dev/null 2>&1; then
     echo "========================================================================"
 
     git clone https://aur.archlinux.org/yay-bin.git ~/yay-bin
-    cd ~/yay-bin
-    makepkg -si --noconfirm
-    cd
+    (cd ~/yay-bin && makepkg -si --noconfirm)
     rm -rf ~/yay-bin
 fi
-sudo pacman -Syu --noconfirm --needed gnome-themes-extra kvantum kvantum-qt5 less git
+sudo pacman -Syu --noconfirm --needed gnome-themes-extra kvantum kvantum-qt5 \
+papirus-icon-theme less git
 yay -S --noconfirm --needed --sudoloop adwaita-qt5 adwaita-qt6
 
 if ! command -v lxqt-session > /dev/null 2>&1; then
@@ -112,6 +111,10 @@ if command -v qt6ct > /dev/null 2>&1; then
     fi
     sudo mkdir -p /root/.config/qt6ct
     sudo ln -sf ~/.config/qt6ct/* /root/.config/qt6ct
+fi
+
+if ! command -v papirus-folders > /dev/null 2>&1; then
+    wget -qO- https://git.io/papirus-folders-install | sh
 fi
 
 echo "========================================================================"

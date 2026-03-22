@@ -53,9 +53,7 @@ if [ -f /etc/pacman.conf ]; then
         echo "========================================================================"
 
         git clone https://aur.archlinux.org/yay-bin.git ~/yay-bin
-        cd ~/yay-bin
-        makepkg -si --noconfirm
-        cd
+        (cd ~/yay-bin && makepkg -si --noconfirm)
         rm -rf ~/yay-bin
     fi
 

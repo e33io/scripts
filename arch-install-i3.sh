@@ -56,9 +56,7 @@ if ! command -v yay > /dev/null 2>&1; then
     echo "========================================================================"
 
     git clone https://aur.archlinux.org/yay-bin.git ~/yay-bin
-    cd ~/yay-bin
-    makepkg -si --noconfirm
-    cd
+    (cd ~/yay-bin && makepkg -si --noconfirm)
     rm -rf ~/yay-bin
 fi
 
@@ -96,14 +94,10 @@ for dir in gtk-3.0 micro qt5ct qt6ct; do
 done
 
 echo "========================================================================"
-echo "Install custom themes and change Papirus folders color"
+echo "Install custom themes"
 echo "========================================================================"
 
 bash ~/scripts/install-custom-themes.sh
-if ! command -v papirus-folders > /dev/null 2>&1; then
-    wget -qO- https://git.io/papirus-folders-install | sh
-fi
-papirus-folders -C adwaita --theme Papirus-Dark
 
 echo "========================================================================"
 echo "Run system detect script to update device-specific configuration files"
@@ -116,9 +110,9 @@ echo "Update and clean up user directory"
 echo "========================================================================"
 
 xdg-user-dirs-update
-sed -i "s/\/user\//\/$(whoami)\//" ~/.config/gtk-3.0/bookmarks ~/.gtkrc-2.0 \
-~/.config/qt5ct/qt5ct.conf ~/.config/qt6ct/qt6ct.conf \
-~/.config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml
+sed -i "s/\/user\//\/$(whoami)\//" ~/.config/gtk-3.0/bookmarks \
+~/.gtkrc-2.0 ~/.config/qt5ct/qt5ct.conf ~/.config/qt6ct/qt6ct.conf \
+~/.config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml 2>/dev/null
 echo "i3 installed via e33io script: $(date '+%B %d, %Y, %H:%M')" \
 | tee -a ~/.install-info > /dev/null
 rm -rf ~/dots
