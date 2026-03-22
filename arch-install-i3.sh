@@ -115,8 +115,7 @@ sed -i "s/\/user\//\/$(whoami)\//" ~/.config/gtk-3.0/bookmarks \
 ~/.config/xfce4/xfconf/xfce-perchannel-xml/thunar.xml 2>/dev/null
 echo "i3 installed via e33io script: $(date '+%B %d, %Y, %H:%M')" \
 | tee -a ~/.install-info > /dev/null
-rm -rf ~/dots
-rm -rf ~/scripts
+rm -rf ~/dots ~/scripts
 
 clear
 echo "========================================================================"
