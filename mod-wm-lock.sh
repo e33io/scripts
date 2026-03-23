@@ -9,7 +9,9 @@
 
 if [ "$(id -u)" = 0 ]; then
     echo "========================================================================"
-    echo "Do not run as root. Run as a normal user with sudo privileges."
+    echo "NOTE! This script will not run for the root user!"
+    echo "Run this script as a normal user."
+    echo "You will be asked for a sudo password when necessary."
     echo "========================================================================"
     exit 1
 fi
