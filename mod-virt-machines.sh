@@ -31,8 +31,8 @@ if [ -d ~/.config/i3 ]; then
     "Comment=Set xrandr resolution" "Exec=sh -c 'xrandr -s 3840x2160'" "StartupNotify=false" \
     "Terminal=false" "NoDisplay=true" > ~/.config/autostart/xrandr-vm.desktop
     # update xrandr monitor resolution if needed
-    Xft_dpi=$(grep Xft.dpi ~/.Xresources | grep -Eo '[0-9]+')
-    if [ "$Xft_dpi" = 96 ]; then
+    Xft_dpi=$(grep -E '^Xft\.dpi' ~/.Xresources 2>/dev/null | grep -Eo '[0-9]+')
+    if [ "$Xft_dpi" = "96" ]; then
         sed -i 's/3840x2160/1920x1080/' ~/.config/autostart/xrandr-vm.desktop
     fi
     # update lightdm Xgsession file
