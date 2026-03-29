@@ -19,6 +19,7 @@ fi
 # install spice-vdagent
 sudo pacman -S --noconfirm --needed spice-vdagent
 
+# make autostart dir
 mkdir -p ~/.config/autostart
 
 # add audio-default.desktop file
