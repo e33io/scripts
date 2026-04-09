@@ -42,4 +42,3 @@ sudo sed -i 's/GDK_SCALE=2/GDK_SCALE=1/' /etc/lightdm/Xgsession
 
 # update plymouthd.conf file
 sudo sed -i 's/DeviceScale=2/DeviceScale=1/' /etc/plymouth/plymouthd.conf
-sudo mkinitcpio -p linux
