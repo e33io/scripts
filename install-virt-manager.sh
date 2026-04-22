@@ -25,8 +25,8 @@ if [ -f /etc/debian_version ]; then
     sudo apt -y install virt-manager
 fi
 if [ -f /etc/pacman.conf ]; then
-    sudo pacman -S --noconfirm --needed virt-manager qemu-full libvirt dnsmasq \
-    dmidecode bridge-utils edk2-ovmf
+    sudo pacman -S --noconfirm --needed virt-manager qemu-full libvirt \
+    dnsmasq dmidecode edk2-ovmf
 fi
 
 echo "========================================================================"
