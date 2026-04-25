@@ -7,15 +7,6 @@
 # Use this script at your own risk, it will overwrite existing files!
 # =============================================================================
 
-if [ "$(id -u)" = 0 ]; then
-    echo "========================================================================"
-    echo "NOTE! This script will not run for the root user!"
-    echo "Run this script as a normal user."
-    echo "You will be asked for a sudo password when necessary."
-    echo "========================================================================"
-    exit 1
-fi
-
 # install spice-vdagent
 sudo pacman -S --noconfirm --needed spice-vdagent
 
