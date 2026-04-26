@@ -64,7 +64,7 @@ echo "========================================================================"
 echo "Install packages from AUR"
 echo "========================================================================"
 
-yay -S --noconfirm --needed --sudoloop xssproxy adwaita-qt5 adwaita-qt6 mintstick brave-bin
+yay -S --noconfirm --needed --sudoloop xssproxy mintstick brave-bin
 
 echo "========================================================================"
 echo "Set boot target to graphical UI and enable system services"
