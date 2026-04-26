@@ -20,8 +20,18 @@ echo "========================================================================"
 echo "Install theming dependencies"
 echo "========================================================================"
 
-sudo pacman -S --noconfirm --needed gnome-themes-extra kvantum kvantum-qt5 \
-papirus-icon-theme curl git
+if ! command -v yay > /dev/null 2>&1; then
+    echo "========================================================================"
+    echo "Setup Yay for AUR"
+    echo "========================================================================"
+
+    git clone https://aur.archlinux.org/yay-bin.git ~/yay-bin
+    (cd ~/yay-bin && makepkg -si --noconfirm)
+    rm -rf ~/yay-bin
+fi
+sudo pacman -Syu --noconfirm --needed gnome-themes-extra kvantum kvantum-qt5 \
+papirus-icon-theme less git
+yay -S --noconfirm --needed --sudoloop adwaita-qt5 adwaita-qt6
 
 if ! command -v lxqt-session > /dev/null 2>&1; then
     sudo pacman -S --noconfirm --needed qt5ct qt6ct
@@ -47,8 +57,6 @@ echo "========================================================================"
 
 sudo cp -R ~/theming-temp/gtk/Yaru* /usr/share/themes
 # copy only selected Kvantum theme variants
-sudo cp -R ~/theming-temp/Kvantum/Adwaita-Dark /usr/share/Kvantum
-sudo cp -R ~/theming-temp/Kvantum/Adwaita-Light /usr/share/Kvantum
 sudo cp -R ~/theming-temp/Kvantum/Yaru-blue-dark /usr/share/Kvantum
 sudo cp -R ~/theming-temp/Kvantum/Yaru-orange /usr/share/Kvantum
 sudo cp -R ~/theming-temp/Kvantum/Yaru-orange-dark /usr/share/Kvantum
@@ -106,9 +114,7 @@ if command -v qt6ct > /dev/null 2>&1; then
 fi
 
 if ! command -v papirus-folders > /dev/null 2>&1; then
-    curl -fsSL \
-    https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-folders/master/install.sh \
-    | sh
+    wget -qO- https://git.io/papirus-folders-install | sh
 fi
 
 echo "========================================================================"

@@ -38,12 +38,11 @@ sudo pacman -S --noconfirm --needed xorg-server xorg-apps i3-wm i3status i3lock 
 dmenu rofi dunst base-devel upower gvfs nfs-utils cifs-utils wireplumber libmad gst-libav rsync cronie \
 git curl wget tar less 7zip xsel xclip xbindkeys xdotool yt-dlp playerctl dex xdg-desktop-portal-gtk \
 xdg-user-dirs mate-polkit lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings feh lxappearance \
-gnome-themes-extra qt5ct qt6ct kvantum kvantum-qt5 ttf-dejavu noto-fonts noto-fonts-cjk noto-fonts-emoji \
-papirus-icon-theme breeze-icons plymouth pavucontrol-qt kitty python-pillowfight xterm bash-completion \
-vim nano micro fzf lazygit htop fastfetch cmus cava ranger ueberzug highlight atool w3m mediainfo \
-perl-image-exiftool thunar thunar-archive-plugin thunar-volman tumbler ffmpegthumbnailer xarchiver \
-atril scrot imagemagick imv mpv parole mousepad galculator timeshift signal-desktop gpick darktable \
-gimp inkscape filezilla libreoffice
+gnome-themes-extra qt5ct qt6ct ttf-dejavu noto-fonts noto-fonts-cjk noto-fonts-emoji papirus-icon-theme \
+breeze-icons plymouth pavucontrol-qt kitty python-pillowfight xterm bash-completion vim nano micro fzf \
+lazygit htop fastfetch cmus cava ranger ueberzug highlight atool w3m mediainfo perl-image-exiftool thunar \
+thunar-archive-plugin thunar-volman tumbler ffmpegthumbnailer xarchiver atril scrot imagemagick imv mpv \
+parole mousepad galculator timeshift signal-desktop gpick darktable gimp inkscape filezilla libreoffice
 
 echo "========================================================================"
 echo "Install graphics drivers"
@@ -65,7 +64,7 @@ echo "========================================================================"
 echo "Install packages from AUR"
 echo "========================================================================"
 
-yay -S --noconfirm --needed --sudoloop xssproxy mintstick brave-bin
+yay -S --noconfirm --needed --sudoloop xssproxy adwaita-qt5 adwaita-qt6 mintstick brave-bin
 
 echo "========================================================================"
 echo "Set boot target to graphical UI and enable system services"
