@@ -21,7 +21,7 @@ echo "Install theming dependencies"
 echo "========================================================================"
 
 sudo pacman -S --noconfirm --needed gnome-themes-extra kvantum kvantum-qt5 \
-papirus-icon-theme git
+papirus-icon-theme curl git
 
 if ! command -v lxqt-session > /dev/null 2>&1; then
     sudo pacman -S --noconfirm --needed qt5ct qt6ct
@@ -106,7 +106,9 @@ if command -v qt6ct > /dev/null 2>&1; then
 fi
 
 if ! command -v papirus-folders > /dev/null 2>&1; then
-    wget -qO- https://git.io/papirus-folders-install | sh
+    curl -fsSL \
+    https://raw.githubusercontent.com/PapirusDevelopmentTeam/papirus-folders/master/install.sh \
+    | sh
 fi
 
 echo "========================================================================"
