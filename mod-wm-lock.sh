@@ -24,12 +24,12 @@ if [ -d ~/.config/i3 ]; then
     # update xss-lock command to use xsecurelock
     sed -i 's/xss-lock -l .*/xss-lock -l -- xsecurelock/' ~/.config/i3/startup.conf
     # update lock session keybinding to use xset
-    sed -i 's/loginctl lock-session/xset s activate/' ~/.config/i3/config
+    sed -i 's/i3lock -i ~\/\.cache\/i3lock\/lock\.png/xset s activate/' ~/.config/i3/config
 fi
 
 # update rofi-power.sh lock option to use xset
 if [ -f ~/.local/bin/rofi-power.sh ]; then
-    sed -i 's/loginctl lock-session/xset s activate/' ~/.local/bin/rofi-power.sh
+    sed -i 's/i3lock -i ~\/\.cache\/i3lock\/lock\.png/xset s activate/' ~/.local/bin/rofi-power.sh
 fi
 
 # update .profile with xsecurelock settings
