@@ -63,8 +63,8 @@ if [ -d ~/.config/i3 ]; then
     -e 's/set 1728 1188/set 864 594/' \
     -e 's/set 1920 1280/set 960 640/' \
     -e 's/set 1920 1920/set 960 960/' \
-    -e 's/GDK_SCALE=1 brave/brave/' \
-    -e 's/GDK_SCALE=1 signal-desktop/signal-desktop/' ~/.config/i3/config
+    -e 's/\$gdks brave \$fdfs/brave/' \
+    -e 's/\$gdks signal-desktop \$fdfs/signal-desktop/' ~/.config/i3/config
     # update polybar configs (sizes and scaling)
     sed -i -e 's/height = 40/height = 20/' \
     -e 's/;3"/;2"/' \
@@ -76,4 +76,4 @@ fi
 
 # Remove unneeded .desktop files
 rm -rf ~/.local/share/applications/brave-browser.desktop
-rm -rf ~/.local/share/applications/signal-desktop.desktop
+rm -rf ~/.local/share/applications/signal.desktop
