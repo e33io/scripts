@@ -32,8 +32,9 @@ if [ -f /etc/debian_version ]; then
     echo "========================================================================"
 
     sudo apt update
-    sudo apt -y install gnome-themes-extra gtk2-engines gtk2-engines-murrine gtk2-engines-pixbuf libglib2.0-bin \
-    libgtk-3-common libgtk-4-common libgtk2.0-common adwaita-qt* qt-style-kvantum curl git
+    sudo apt -y install gnome-themes-extra gtk2-engines gtk2-engines-murrine \
+    gtk2-engines-pixbuf libglib2.0-bin libgtk-3-common libgtk-4-common \
+    libgtk2.0-common adwaita-qt* qt-style-kvantum curl git
 
     if ! command -v lxqt-session > /dev/null 2>&1; then
         sudo apt -y install qt*ct
@@ -43,28 +44,30 @@ if [ -f /etc/debian_version ]; then
     echo "Install Linux Mint themes and icons"
     echo "========================================================================"
 
+    REPO="http://packages.linuxmint.com/pool/main/m"
+
     echo "Download mint-x-icons..."
-    curl -kOL# http://packages.linuxmint.com/pool/main/m/mint-x-icons/mint-x-icons_1.7.5_all.deb
+    curl -kOL# ${REPO}/mint-x-icons/mint-x-icons_1.7.5_all.deb
     sudo apt-get -yq install ./mint-x-icons_1.7.5_all.deb
     rm mint-x-icons_1.7.5_all.deb
 
     echo "Download mint-y-icons..."
-    curl -kOL# http://packages.linuxmint.com/pool/main/m/mint-y-icons/mint-y-icons_1.9.1_all.deb
+    curl -kOL# ${REPO}/mint-y-icons/mint-y-icons_1.9.1_all.deb
     sudo apt-get -yq install ./mint-y-icons_1.9.1_all.deb
     rm mint-y-icons_1.9.1_all.deb
 
     echo "Download mint-l-icons..."
-    curl -kOL# http://packages.linuxmint.com/pool/main/m/mint-l-icons/mint-l-icons_1.8.0_all.deb
+    curl -kOL# ${REPO}/mint-l-icons/mint-l-icons_1.8.0_all.deb
     sudo apt-get -yq install ./mint-l-icons_1.8.0_all.deb
     rm mint-l-icons_1.8.0_all.deb
 
     echo "Download mint-themes..."
-    curl -kOL# http://packages.linuxmint.com/pool/main/m/mint-themes/mint-themes_2.3.8_all.deb
+    curl -kOL# ${REPO}/mint-themes/mint-themes_2.3.8_all.deb
     sudo apt-get -yq install ./mint-themes_2.3.8_all.deb
     rm mint-themes_2.3.8_all.deb
 
     echo "Download mint-l-theme..."
-    curl -kOL# http://packages.linuxmint.com/pool/main/m/mint-l-theme/mint-l-theme_2.0.6_all.deb
+    curl -kOL# ${REPO}/mint-l-theme/mint-l-theme_2.0.6_all.deb
     sudo apt-get -yq install ./mint-l-theme_2.0.6_all.deb
     rm mint-l-theme_2.0.6_all.deb
 fi
@@ -84,9 +87,10 @@ if [ -f /etc/pacman.conf ]; then
     echo "Install Mint themes and dependencies"
     echo "========================================================================"
 
-    sudo pacman -Syu --noconfirm --needed gnome-themes-extra kvantum kvantum-qt5 less git
-    yay -S --noconfirm --needed --sudoloop mint-x-icons mint-y-icons mint-l-icons mint-themes mint-l-theme \
-    adwaita-qt5 adwaita-qt6
+    sudo pacman -Syu --noconfirm --needed gnome-themes-extra kvantum \
+    kvantum-qt5 less git
+    yay -S --noconfirm --needed --sudoloop mint-x-icons mint-y-icons \
+    mint-l-icons mint-themes mint-l-theme
 
     if ! command -v lxqt-session > /dev/null 2>&1; then
         sudo pacman -S --noconfirm --needed qt5ct qt6ct
@@ -97,8 +101,9 @@ echo "========================================================================"
 echo "Remove prespecified GTK2 icon sizes to fix scaling issues"
 echo "========================================================================"
 
-sudo sed -i -e '/gtk-icon-sizes/d' -e '/gtk-button/d' -e '/gtk-small-toolbar/d' \
--e '/gtk-dnd/d' -e '/gtk-dialog/d' /usr/share/themes/Mint*/gtk-2.0/gtkrc
+sudo sed -i -e '/gtk-icon-sizes/d' -e '/gtk-small-toolbar/d' \
+-e '/gtk-button/d' -e '/gtk-dnd/d' -e '/gtk-dialog/d' \
+/usr/share/themes/Mint*/gtk-2.0/gtkrc
 
 echo "========================================================================"
 echo "Clone custom theming repo"

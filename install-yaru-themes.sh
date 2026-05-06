@@ -32,8 +32,9 @@ if [ -f /etc/debian_version ]; then
     echo "========================================================================"
 
     sudo apt update
-    sudo apt -y install yaru-theme-gtk yaru-theme-icon gnome-themes-extra gtk2-engines gtk2-engines-murrine \
-    gtk2-engines-pixbuf libglib2.0-bin libgtk-3-common libgtk-4-common libgtk2.0-common
+    sudo apt -y install yaru-theme-gtk yaru-theme-icon gnome-themes-extra \
+    gtk2-engines gtk2-engines-murrine gtk2-engines-pixbuf libglib2.0-bin \
+    libgtk-3-common libgtk-4-common libgtk2.0-common
 
     echo "========================================================================"
     echo "Install Qt and Kvantum styling packages"
@@ -69,7 +70,6 @@ if [ -f /etc/pacman.conf ]; then
     echo "========================================================================"
 
     sudo pacman -Syu --noconfirm --needed kvantum kvantum-qt5
-    yay -S --noconfirm --needed --sudoloop adwaita-qt5 adwaita-qt6
 
     if ! command -v lxqt-session > /dev/null 2>&1; then
         sudo pacman -S --noconfirm --needed qt5ct qt6ct
@@ -80,8 +80,9 @@ echo "========================================================================"
 echo "Remove prespecified GTK2 icon sizes to fix scaling issues"
 echo "========================================================================"
 
-sudo sed -i -e '/gtk-icon-sizes/d' -e '/gtk-button/d' -e '/gtk-small-toolbar/d' \
--e '/gtk-dnd/d' -e '/gtk-dialog/d' /usr/share/themes/Yaru*/gtk-2.0/gtkrc
+sudo sed -i -e '/gtk-icon-sizes/d' -e '/gtk-small-toolbar/d' \
+-e '/gtk-button/d' -e '/gtk-dnd/d' -e '/gtk-dialog/d' \
+/usr/share/themes/Yaru*/gtk-2.0/gtkrc
 
 echo "========================================================================"
 echo "Clone custom theming repo"
