@@ -4,7 +4,6 @@
 # Setup TearFree for AMD GPUs
 # URL: https://github.com/e33io/scripts/blob/main/setup-tearfree-amd.sh
 # -----------------------------------------------------------------------------
-# Use this script at your own risk, it will overwrite existing files!
 # Only use on X11 systems with AMD GPUs
 # =============================================================================
 

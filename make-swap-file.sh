@@ -4,9 +4,6 @@
 # Make and setup a swap file
 # URL: https://github.com/e33io/scripts/blob/main/make-swap-file.sh
 # -----------------------------------------------------------------------------
-# Use this script at your own risk, it will overwrite existing files!
-# Only with file systems that do not already have a swap file/partition
-# -----------------------------------------------------------------------------
 # NOTE: Do not use with LVM or Btrfs file systems
 # =============================================================================
 

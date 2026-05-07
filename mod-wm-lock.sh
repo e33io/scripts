@@ -3,8 +3,6 @@
 # =============================================================================
 # Update window manager configs to use xsecurelock instead of i3lock
 # URL: https://github.com/e33io/scripts/blob/main/mod-wm-lock.sh
-# -----------------------------------------------------------------------------
-# Use this script at your own risk, it will overwrite existing files!
 # =============================================================================
 
 if [ "$(id -u)" = 0 ]; then

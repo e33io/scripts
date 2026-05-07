@@ -3,8 +3,6 @@
 # =============================================================================
 # Install Custom Mint and Yaru Themes on Arch Linux
 # URL: https://github.com/e33io/scripts/blob/main/install-custom-themes.sh
-# -----------------------------------------------------------------------------
-# Use this script at your own risk, it will overwrite existing files!
 # =============================================================================
 
 if [ "$(id -u)" = 0 ]; then

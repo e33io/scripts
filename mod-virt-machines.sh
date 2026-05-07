@@ -3,8 +3,6 @@
 # =============================================================================
 # Install spice-vdagent and update window manager configs
 # URL: https://github.com/e33io/scripts/blob/main/mod-virt-machines.sh
-# -----------------------------------------------------------------------------
-# Use this script at your own risk, it will overwrite existing files!
 # =============================================================================
 
 # install spice-vdagent

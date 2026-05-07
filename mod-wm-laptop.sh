@@ -3,8 +3,6 @@
 # =============================================================================
 # Update window manager configs from desktop use to laptop/notebook use
 # URL: https://github.com/e33io/scripts/blob/main/mod-wm-laptop.sh
-# -----------------------------------------------------------------------------
-# Use this script at your own risk, it will overwrite existing files!
 # =============================================================================
 
 # install other packages

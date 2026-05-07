@@ -4,7 +4,6 @@
 # Install Yaru Themes and Icons
 # URL: https://github.com/e33io/scripts/blob/main/install-yaru-themes.sh
 # -----------------------------------------------------------------------------
-# Use this script at your own risk, it will overwrite existing files!
 # NOTE: Only use with Debian or Arch Linux!
 # =============================================================================
 
