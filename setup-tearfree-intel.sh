@@ -4,7 +4,7 @@
 # Setup TearFree for Intel GPUs
 # URL: https://github.com/e33io/scripts/blob/main/setup-tearfree-intel.sh
 # -----------------------------------------------------------------------------
-# Only use on X11 systems with Intel GPUs
+# NOTE: if this stops/breaks graphical target, try: Driver "modesetting"
 # =============================================================================
 
 set -e
