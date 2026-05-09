@@ -7,6 +7,8 @@
 # Only use on X11 systems with Intel GPUs
 # =============================================================================
 
+set -e
+
 if [ "$(id -u)" = 0 ]; then
     echo "========================================================================"
     echo "NOTE! Do not run this script as root!"
@@ -17,7 +19,11 @@ if [ "$(id -u)" = 0 ]; then
 fi
 
 # install Intel packages
-sudo pacman -S --noconfirm --needed mesa-utils xf86-video-intel
+if pacman -Qi xlibre-xserver &>/dev/null; then
+    sudo pacman -S --noconfirm --needed mesa-utils xlibre-video-intel
+else
+    sudo pacman -S --noconfirm --needed mesa-utils xf86-video-intel
+fi
 
 # setup TearFree option
 device="$(glxinfo -B | awk '/Vendor:/ { print $2 }')"
