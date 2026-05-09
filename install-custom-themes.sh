@@ -18,12 +18,8 @@ echo "========================================================================"
 echo "Install theming dependencies"
 echo "========================================================================"
 
-sudo pacman -Syu --noconfirm --needed gnome-themes-extra kvantum kvantum-qt5 \
-papirus-icon-theme git
-
-if ! command -v lxqt-session > /dev/null 2>&1; then
-    sudo pacman -S --noconfirm --needed qt5ct qt6ct
-fi
+sudo pacman -S --noconfirm --needed gnome-themes-extra qt5ct qt6ct \
+kvantum kvantum-qt5 papirus-icon-theme git
 
 echo "========================================================================"
 echo "Clone custom theming repo"
@@ -40,7 +36,7 @@ sudo mkdir -p /usr/share/Kvantum
 sudo cp -R ~/theming-temp/Kvantum/Mint* /usr/share/Kvantum
 
 echo "========================================================================"
-echo "Copy custom Yaru themes"
+echo "Copy custom Adwaita and Yaru themes"
 echo "========================================================================"
 
 sudo cp -R ~/theming-temp/gtk/Yaru* /usr/share/themes
