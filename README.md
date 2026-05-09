@@ -4,12 +4,6 @@ linux installation scripts
 
 &nbsp;
 
-## i3 window manager
-
-- use [`arch-install-i3.sh`](https://github.com/e33io/scripts/blob/main/arch-install-i3.sh) to [install the i3 window manager](https://github.com/e33io/reference-wiki/blob/main/installation-docs/arch-i3-installation.md) on [Arch](https://archlinux.org)
-
-&nbsp;
-
 ## applications
 
 - use [`install-helium-browser.sh`](https://github.com/e33io/scripts/blob/main/install-helium-browser.sh) to install [Helium Browser](https://helium.computer) (AppImage)
@@ -23,8 +17,6 @@ linux installation scripts
 - use [`install-mint-themes.sh`](https://github.com/e33io/scripts/blob/main/install-mint-themes.sh) to install Linux Mint themes and icons on Debian or Arch
 
 - use [`install-yaru-themes.sh`](https://github.com/e33io/scripts/blob/main/install-yaru-themes.sh) to install Yaru themes and icons on Debian or Arch
-
-- use [`install-custom-themes.sh`](https://github.com/e33io/scripts/blob/main/install-custom-themes.sh) to install custom Mint and Yaru themes on Arch
 
 - use [`install-sovran-fonts.sh`](https://github.com/e33io/scripts/blob/main/install-sovran-fonts.sh) to install [Sovran](https://sovranfonts.e33.io) fonts
 
@@ -41,6 +33,8 @@ linux installation scripts
 &nbsp;
 
 ## links
+- view my [artix-i3](https://github.com/e33io/artix-i3) repo to install i3 on Artix
+- view my [arch-i3](https://github.com/e33io/arch-i3) repo to install i3 on Arch
 - view my documentation and notes [reference-wiki](https://github.com/e33io/reference-wiki) repo
 
 &nbsp;
